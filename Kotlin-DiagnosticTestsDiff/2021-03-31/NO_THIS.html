@@ -1,0 +1,63 @@
+<html>
+  <head>
+    <title>Diagnostics diff: NO_THIS</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row" id="summary">
+        <h1>NO_THIS</h1>
+      </div>
+      <div class="row">
+        <ul>
+          <li><strong>Total: </strong>18</li>
+          <li><strong>Match %: </strong>55.56%</li>
+          <li><a href="#matched"><strong># Matched: </strong>10</a></li>
+          <li><strong># Non-matched: </strong>8</li>
+          <li><a href="#missing"><strong># Missing: </strong>0</a></li>
+          <li><a href="#unexpected"><strong># Unexpected: </strong>4</a></li>
+          <li><a href="#mismatched"><strong># Mismatched: </strong>4</a></li>
+          <li><strong># of Files: </strong>12</li>
+        </ul>
+      </div>
+      <div class="row" id="unexpected">
+        <h2>Unexpected (4)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fregressions%2Fkt30245.kt&amp;actual=tests%2Fregressions%2Fkt30245.fir.kt" target="_blank">tests/regressions/kt30245.kt (4)</a></li>
+        </ul>
+      </div>
+      <div class="row" id="mismatched">
+        <h2>Mismatched (4)</h2>
+      </div>
+      <div class="row">
+        <h3>NO_THIS -&gt; UNRESOLVED_LABEL (4)</h3>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fregressions%2FUnavaliableQualifiedThis.kt&amp;actual=tests%2Fregressions%2FUnavaliableQualifiedThis.fir.kt" target="_blank">tests/regressions/UnavaliableQualifiedThis.kt (2)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2FthisAndSuper%2FthisInFunctionLiterals.kt&amp;actual=tests%2FthisAndSuper%2FthisInFunctionLiterals.fir.kt" target="_blank">tests/thisAndSuper/thisInFunctionLiterals.kt (1)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Flabels%2FlabeledFunctionLiteral.kt&amp;actual=tests%2Flabels%2FlabeledFunctionLiteral.fir.kt" target="_blank">tests/labels/labeledFunctionLiteral.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row" id="matched">
+        <h2>Matched (10)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fregressions%2FnoThis.kt&amp;actual=tests%2Fregressions%2FnoThis.kt" target="_blank">tests/regressions/noThis.kt (3)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2FcollectionLiterals%2FdefaultValuesWithConstantsInAnnotation.kt&amp;actual=tests%2FcollectionLiterals%2FdefaultValuesWithConstantsInAnnotation.fir.kt" target="_blank">tests/collectionLiterals/defaultValuesWithConstantsInAnnotation.kt (1)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fscopes%2FinitializerScopeOfExtensionProperty.kt&amp;actual=tests%2Fscopes%2FinitializerScopeOfExtensionProperty.fir.kt" target="_blank">tests/scopes/initializerScopeOfExtensionProperty.kt (1)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fscopes%2Fkt250.617.10.kt&amp;actual=tests%2Fscopes%2Fkt250.617.10.fir.kt" target="_blank">tests/scopes/kt250.617.10.kt (1)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2FthisAndSuper%2FthisInToplevelFunction.kt&amp;actual=tests%2FthisAndSuper%2FthisInToplevelFunction.fir.kt" target="_blank">tests/thisAndSuper/thisInToplevelFunction.kt (1)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fresolve%2FambiguityWithTwoCorrespondingFunctionTypes.kt&amp;actual=tests%2Fresolve%2FambiguityWithTwoCorrespondingFunctionTypes.fir.kt" target="_blank">tests/resolve/ambiguityWithTwoCorrespondingFunctionTypes.kt (1)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2FdelegatedProperty%2FthisInDelegate.kt&amp;actual=tests%2FdelegatedProperty%2FthisInDelegate.fir.kt" target="_blank">tests/delegatedProperty/thisInDelegate.kt (1)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2FcallableReference%2Fbound%2FnoThisInSuperCall.kt&amp;actual=tests%2FcallableReference%2Fbound%2FnoThisInSuperCall.kt" target="_blank">tests/callableReference/bound/noThisInSuperCall.kt (1)</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+<html>
+  <head>
+    <title>Diagnostics diff: RETURN_TYPE_MISMATCH_ON_OVERRIDE</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row" id="summary">
+        <h1>RETURN_TYPE_MISMATCH_ON_OVERRIDE</h1>
+      </div>
+      <div class="row">
+        <ul>
+          <li><strong>Total: </strong>19</li>
+          <li><strong>Match %: </strong>84.21%</li>
+          <li><a href="#matched"><strong># Matched: </strong>16</a></li>
+          <li><strong># Non-matched: </strong>3</li>
+          <li><a href="#missing"><strong># Missing: </strong>0</a></li>
+          <li><a href="#unexpected"><strong># Unexpected: </strong>3</a></li>
+          <li><a href="#mismatched"><strong># Mismatched: </strong>0</a></li>
+          <li><strong># of Files: </strong>12</li>
+        </ul>
+      </div>
+      <div class="row" id="unexpected">
+        <h2>Unexpected (3)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=testsWithStdLib%2Fcoroutines%2FsuspendCovarianJavaOverride.kt&amp;actual=testsWithStdLib%2Fcoroutines%2FsuspendCovarianJavaOverride.fir.kt" target="_blank">testsWithStdLib/coroutines/suspendCovarianJavaOverride.kt (1)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fdelegation%2FcovariantOverrides%2Fkt13952.kt&amp;actual=tests%2Fdelegation%2FcovariantOverrides%2Fkt13952.fir.kt" target="_blank">tests/delegation/covariantOverrides/kt13952.kt (1)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fj%2Bk%2FcollectionOverrides%2FirrelevantMapGetAbstract.kt&amp;actual=tests%2Fj%2Bk%2FcollectionOverrides%2FirrelevantMapGetAbstract.fir.kt" target="_blank">tests/j+k/collectionOverrides/irrelevantMapGetAbstract.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row" id="matched">
+        <h2>Matched (16)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2FCovariantOverrideType.kt&amp;actual=tests%2FCovariantOverrideType.kt" target="_blank">tests/CovariantOverrideType.kt (4)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Foverride%2FDelegation.kt&amp;actual=tests%2Foverride%2FDelegation.kt" target="_blank">tests/override/Delegation.kt (3)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fannotations%2Frendering%2FtypeMismatchOnOverrideJavaNullable.kt&amp;actual=tests%2Fannotations%2Frendering%2FtypeMismatchOnOverrideJavaNullable.fir.kt" target="_blank">tests/annotations/rendering/typeMismatchOnOverrideJavaNullable.kt (2)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2FplatformTypes%2FtypeEnhancement%2FsupertypeDifferentReturnNullability.kt&amp;actual=tests%2FplatformTypes%2FtypeEnhancement%2FsupertypeDifferentReturnNullability.kt" target="_blank">tests/platformTypes/typeEnhancement/supertypeDifferentReturnNullability.kt (2)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=testsWithStdLib%2Fregression%2Fea66827_dataClassWrongToString.kt&amp;actual=testsWithStdLib%2Fregression%2Fea66827_dataClassWrongToString.kt" target="_blank">testsWithStdLib/regression/ea66827_dataClassWrongToString.kt (1)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Foverride%2Fkt12482.kt&amp;actual=tests%2Foverride%2Fkt12482.fir.kt" target="_blank">tests/override/kt12482.kt (1)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2FdataClasses%2FimplementMethodsFromInterface.kt&amp;actual=tests%2FdataClasses%2FimplementMethodsFromInterface.fir.kt" target="_blank">tests/dataClasses/implementMethodsFromInterface.kt (1)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2FTypeMismatchOnOverrideWithSyntaxErrors.kt&amp;actual=tests%2FTypeMismatchOnOverrideWithSyntaxErrors.kt" target="_blank">tests/TypeMismatchOnOverrideWithSyntaxErrors.kt (1)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fannotations%2Frendering%2FtypeMismatchOnOverride.kt&amp;actual=tests%2Fannotations%2Frendering%2FtypeMismatchOnOverride.fir.kt" target="_blank">tests/annotations/rendering/typeMismatchOnOverride.kt (1)</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

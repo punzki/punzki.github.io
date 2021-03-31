@@ -1,0 +1,65 @@
+<html>
+  <head>
+    <title>Diagnostics diff: CANNOT_CHECK_FOR_ERASED</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row" id="summary">
+        <h1>CANNOT_CHECK_FOR_ERASED</h1>
+      </div>
+      <div class="row">
+        <ul>
+          <li><strong>Total: </strong>28</li>
+          <li><strong>Match %: </strong>0.00%</li>
+          <li><a href="#matched"><strong># Matched: </strong>0</a></li>
+          <li><strong># Non-matched: </strong>28</li>
+          <li><a href="#missing"><strong># Missing: </strong>27</a></li>
+          <li><a href="#unexpected"><strong># Unexpected: </strong>0</a></li>
+          <li><a href="#mismatched"><strong># Mismatched: </strong>1</a></li>
+          <li><strong># of Files: </strong>20</li>
+        </ul>
+      </div>
+      <div class="row" id="missing">
+        <h2>Missing (27)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=testsWithStdLib%2Fcontracts%2Fdsl%2Ferrors%2FtypeReferences.1.4.kt&amp;actual=testsWithStdLib%2Fcontracts%2Fdsl%2Ferrors%2FtypeReferences.1.4.fir.kt" target="_blank">testsWithStdLib/contracts/dsl/errors/typeReferences.1.4.kt (4)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=testsWithStdLib%2Fcontracts%2Fdsl%2Ferrors%2FtypeReferences.1.3.kt&amp;actual=testsWithStdLib%2Fcontracts%2Fdsl%2Ferrors%2FtypeReferences.1.3.fir.kt" target="_blank">testsWithStdLib/contracts/dsl/errors/typeReferences.1.3.kt (4)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fcast%2FIsRecursionSustainable.kt&amp;actual=tests%2Fcast%2FIsRecursionSustainable.fir.kt" target="_blank">tests/cast/IsRecursionSustainable.kt (2)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=testsWithStdLib%2Fcast%2FIsArray.kt&amp;actual=testsWithStdLib%2Fcast%2FIsArray.fir.kt" target="_blank">testsWithStdLib/cast/IsArray.kt (1)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fgenerics%2FcapturedParameters%2FuncheckedCast.kt&amp;actual=tests%2Fgenerics%2FcapturedParameters%2FuncheckedCast.fir.kt" target="_blank">tests/generics/capturedParameters/uncheckedCast.kt (1)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Ftypealias%2FtypeAliasAsBareType.kt&amp;actual=tests%2Ftypealias%2FtypeAliasAsBareType.fir.kt" target="_blank">tests/typealias/typeAliasAsBareType.kt (1)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fcast%2FIsErasedDisallowFromIn.kt&amp;actual=tests%2Fcast%2FIsErasedDisallowFromIn.fir.kt" target="_blank">tests/cast/IsErasedDisallowFromIn.kt (1)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fcast%2FIsErasedDisallowFromAny.kt&amp;actual=tests%2Fcast%2FIsErasedDisallowFromAny.fir.kt" target="_blank">tests/cast/IsErasedDisallowFromAny.kt (1)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fcast%2FIsErasedUpcastToNonReified.kt&amp;actual=tests%2Fcast%2FIsErasedUpcastToNonReified.fir.kt" target="_blank">tests/cast/IsErasedUpcastToNonReified.kt (1)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fcast%2FIsErasedDissallowForSubtypeMappedToTwoParamsWithSecondInvalid.kt&amp;actual=tests%2Fcast%2FIsErasedDissallowForSubtypeMappedToTwoParamsWithSecondInvalid.fir.kt" target="_blank">tests/cast/IsErasedDissallowForSubtypeMappedToTwoParamsWithSecondInvalid.kt (1)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fcast%2FIsErasedDissallowForSubtypeMappedToTwoParamsWithFirstInvalid.kt&amp;actual=tests%2Fcast%2FIsErasedDissallowForSubtypeMappedToTwoParamsWithFirstInvalid.fir.kt" target="_blank">tests/cast/IsErasedDissallowForSubtypeMappedToTwoParamsWithFirstInvalid.kt (1)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fcast%2FIsErasedDisallowForTypeWithConstraints.kt&amp;actual=tests%2Fcast%2FIsErasedDisallowForTypeWithConstraints.fir.kt" target="_blank">tests/cast/IsErasedDisallowForTypeWithConstraints.kt (1)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fcast%2FWhenErasedDisallowFromAny.kt&amp;actual=tests%2Fcast%2FWhenErasedDisallowFromAny.fir.kt" target="_blank">tests/cast/WhenErasedDisallowFromAny.kt (1)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fcast%2FIsErasedDisallowFromOut.kt&amp;actual=tests%2Fcast%2FIsErasedDisallowFromOut.fir.kt" target="_blank">tests/cast/IsErasedDisallowFromOut.kt (1)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fcast%2FIsErasedDisallowForOverridenVariance.kt&amp;actual=tests%2Fcast%2FIsErasedDisallowForOverridenVariance.fir.kt" target="_blank">tests/cast/IsErasedDisallowForOverridenVariance.kt (1)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fcast%2FIsErasedDisallowDifferentArgInvariantPosition.kt&amp;actual=tests%2Fcast%2FIsErasedDisallowDifferentArgInvariantPosition.fir.kt" target="_blank">tests/cast/IsErasedDisallowDifferentArgInvariantPosition.kt (1)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fcast%2FIsErasedDisallowFromOutAtClass.kt&amp;actual=tests%2Fcast%2FIsErasedDisallowFromOutAtClass.fir.kt" target="_blank">tests/cast/IsErasedDisallowFromOutAtClass.kt (1)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2FplatformTypes%2FgenericVarianceViolation%2FsmartCast.kt&amp;actual=tests%2FplatformTypes%2FgenericVarianceViolation%2FsmartCast.fir.kt" target="_blank">tests/platformTypes/genericVarianceViolation/smartCast.kt (1)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fregressions%2Fkt399.kt&amp;actual=tests%2Fregressions%2Fkt399.fir.kt" target="_blank">tests/regressions/kt399.kt (1)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fregressions%2Fkt398.kt&amp;actual=tests%2Fregressions%2Fkt398.fir.kt" target="_blank">tests/regressions/kt398.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row" id="mismatched">
+        <h2>Mismatched (1)</h2>
+      </div>
+      <div class="row">
+        <h3>CANNOT_CHECK_FOR_ERASED -&gt; UNRESOLVED_REFERENCE (1)</h3>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Ftypealias%2FtypeAliasAsBareType.kt&amp;actual=tests%2Ftypealias%2FtypeAliasAsBareType.fir.kt" target="_blank">tests/typealias/typeAliasAsBareType.kt (1)</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

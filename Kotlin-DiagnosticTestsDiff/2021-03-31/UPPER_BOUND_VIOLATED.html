@@ -1,0 +1,81 @@
+<html>
+  <head>
+    <title>Diagnostics diff: UPPER_BOUND_VIOLATED</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row" id="summary">
+        <h1>UPPER_BOUND_VIOLATED</h1>
+      </div>
+      <div class="row">
+        <ul>
+          <li><strong>Total: </strong>95</li>
+          <li><strong>Match %: </strong>13.68%</li>
+          <li><a href="#matched"><strong># Matched: </strong>13</a></li>
+          <li><strong># Non-matched: </strong>82</li>
+          <li><a href="#missing"><strong># Missing: </strong>80</a></li>
+          <li><a href="#unexpected"><strong># Unexpected: </strong>2</a></li>
+          <li><a href="#mismatched"><strong># Mismatched: </strong>0</a></li>
+          <li><strong># of Files: </strong>29</li>
+        </ul>
+      </div>
+      <div class="row" id="missing">
+        <h2>Missing (80)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fgenerics%2Fnullability%2FtpBoundsViolationVariance.kt&amp;actual=tests%2Fgenerics%2Fnullability%2FtpBoundsViolationVariance.fir.kt" target="_blank">tests/generics/nullability/tpBoundsViolationVariance.kt (10)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2FBounds.kt&amp;actual=tests%2FBounds.fir.kt" target="_blank">tests/Bounds.kt (10)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Ftypealias%2FboundViolationInTypeAliasConstructor.kt&amp;actual=tests%2Ftypealias%2FboundViolationInTypeAliasConstructor.fir.kt" target="_blank">tests/typealias/boundViolationInTypeAliasConstructor.kt (8)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=testsWithStdLib%2Fjava%2FcheckEnhancedUpperBoundsWithEnabledImprovements.kt&amp;actual=testsWithStdLib%2Fjava%2FcheckEnhancedUpperBoundsWithEnabledImprovements.fir.kt" target="_blank">testsWithStdLib/java/checkEnhancedUpperBoundsWithEnabledImprovements.kt (7)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Ftypealias%2FboundsViolationInTypeAliasExpansion.kt&amp;actual=tests%2Ftypealias%2FboundsViolationInTypeAliasExpansion.fir.kt" target="_blank">tests/typealias/boundsViolationInTypeAliasExpansion.kt (6)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fgenerics%2Fnullability%2FdeclarationsBoundsViolation.kt&amp;actual=tests%2Fgenerics%2Fnullability%2FdeclarationsBoundsViolation.fir.kt" target="_blank">tests/generics/nullability/declarationsBoundsViolation.kt (5)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fgenerics%2FprojectionsScope%2FtypeParameterBounds.kt&amp;actual=tests%2Fgenerics%2FprojectionsScope%2FtypeParameterBounds.fir.kt" target="_blank">tests/generics/projectionsScope/typeParameterBounds.kt (4)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fgenerics%2Fnullability%2FtpBoundsViolation.kt&amp;actual=tests%2Fgenerics%2Fnullability%2FtpBoundsViolation.fir.kt" target="_blank">tests/generics/nullability/tpBoundsViolation.kt (3)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fgenerics%2Fnullability%2FexpressionsBoundsViolation.kt&amp;actual=tests%2Fgenerics%2Fnullability%2FexpressionsBoundsViolation.fir.kt" target="_blank">tests/generics/nullability/expressionsBoundsViolation.kt (3)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2FMultipleBounds.kt&amp;actual=tests%2FMultipleBounds.fir.kt" target="_blank">tests/MultipleBounds.kt (3)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fgenerics%2FRecursiveUpperBoundCheck.kt&amp;actual=tests%2Fgenerics%2FRecursiveUpperBoundCheck.fir.kt" target="_blank">tests/generics/RecursiveUpperBoundCheck.kt (2)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Ftypealias%2FwrongNumberOfArgumentsInTypeAliasConstructor.kt&amp;actual=tests%2Ftypealias%2FwrongNumberOfArgumentsInTypeAliasConstructor.fir.kt" target="_blank">tests/typealias/wrongNumberOfArgumentsInTypeAliasConstructor.kt (2)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Ftypealias%2FboundsViolationInDeepTypeAliasExpansion.kt&amp;actual=tests%2Ftypealias%2FboundsViolationInDeepTypeAliasExpansion.fir.kt" target="_blank">tests/typealias/boundsViolationInDeepTypeAliasExpansion.kt (2)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fobjects%2FupperBoundViolated.kt&amp;actual=tests%2Fobjects%2FupperBoundViolated.fir.kt" target="_blank">tests/objects/upperBoundViolated.kt (2)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fgenerics%2FinnerClasses%2FcheckBoundsOuter.kt&amp;actual=tests%2Fgenerics%2FinnerClasses%2FcheckBoundsOuter.fir.kt" target="_blank">tests/generics/innerClasses/checkBoundsOuter.kt (1)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fgenerics%2FargumentsForT.kt&amp;actual=tests%2Fgenerics%2FargumentsForT.fir.kt" target="_blank">tests/generics/argumentsForT.kt (1)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fgenerics%2FRecursiveUpperBoundWithTwoArguments.kt&amp;actual=tests%2Fgenerics%2FRecursiveUpperBoundWithTwoArguments.fir.kt" target="_blank">tests/generics/RecursiveUpperBoundWithTwoArguments.kt (1)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Finference%2Fregressions%2Fkt742.kt&amp;actual=tests%2Finference%2Fregressions%2Fkt742.fir.kt" target="_blank">tests/inference/regressions/kt742.kt (1)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Ftypealias%2FboundsViolationInTypeAliasRHS.kt&amp;actual=tests%2Ftypealias%2FboundsViolationInTypeAliasRHS.fir.kt" target="_blank">tests/typealias/boundsViolationInTypeAliasRHS.kt (1)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Ftypealias%2Fkt19601.kt&amp;actual=tests%2Ftypealias%2Fkt19601.fir.kt" target="_blank">tests/typealias/kt19601.kt (1)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2FdeclarationChecks%2FkClassInSignature.kt&amp;actual=tests%2FdeclarationChecks%2FkClassInSignature.fir.kt" target="_blank">tests/declarationChecks/kClassInSignature.kt (1)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fextensions%2FthrowOutCandidatesByReceiver.kt&amp;actual=tests%2Fextensions%2FthrowOutCandidatesByReceiver.fir.kt" target="_blank">tests/extensions/throwOutCandidatesByReceiver.kt (1)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fresolve%2FoverloadConflicts%2Fkt10640.kt&amp;actual=tests%2Fresolve%2FoverloadConflicts%2Fkt10640.fir.kt" target="_blank">tests/resolve/overloadConflicts/kt10640.kt (1)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fregressions%2FWrongTraceInCallResolver.kt&amp;actual=tests%2Fregressions%2FWrongTraceInCallResolver.fir.kt" target="_blank">tests/regressions/WrongTraceInCallResolver.kt (1)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fregressions%2Fkt7585%2Fbase.kt&amp;actual=tests%2Fregressions%2Fkt7585%2Fbase.fir.kt" target="_blank">tests/regressions/kt7585/base.kt (1)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fregressions%2Fkt7585%2Fjava.kt&amp;actual=tests%2Fregressions%2Fkt7585%2Fjava.fir.kt" target="_blank">tests/regressions/kt7585/java.kt (1)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fsubstitutions%2FstarProjections.kt&amp;actual=tests%2Fsubstitutions%2FstarProjections.fir.kt" target="_blank">tests/substitutions/starProjections.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row" id="unexpected">
+        <h2>Unexpected (2)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2FtypeParameters%2Fkt42042.kt&amp;actual=tests%2FtypeParameters%2Fkt42042.fir.kt" target="_blank">tests/typeParameters/kt42042.kt (1)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2FBounds.kt&amp;actual=tests%2FBounds.fir.kt" target="_blank">tests/Bounds.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row" id="matched">
+        <h2>Matched (13)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2FBounds.kt&amp;actual=tests%2FBounds.fir.kt" target="_blank">tests/Bounds.kt (6)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2FnullableTypes%2FtakingNullabilityFromExplicitTypeArgmentsInsteadOfUsingFlexibleTypes.kt&amp;actual=tests%2FnullableTypes%2FtakingNullabilityFromExplicitTypeArgmentsInsteadOfUsingFlexibleTypes.fir.kt" target="_blank">tests/nullableTypes/takingNullabilityFromExplicitTypeArgmentsInsteadOfUsingFlexibleTypes.kt (4)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2FMultipleBounds.kt&amp;actual=tests%2FMultipleBounds.fir.kt" target="_blank">tests/MultipleBounds.kt (2)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Ftypealias%2FboundViolationInTypeAliasConstructor.kt&amp;actual=tests%2Ftypealias%2FboundViolationInTypeAliasConstructor.fir.kt" target="_blank">tests/typealias/boundViolationInTypeAliasConstructor.kt (1)</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

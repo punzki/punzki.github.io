@@ -1,0 +1,58 @@
+<html>
+  <head>
+    <title>Diagnostics diff: NON_CONST_VAL_USED_IN_CONSTANT_EXPRESSION</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row" id="summary">
+        <h1>NON_CONST_VAL_USED_IN_CONSTANT_EXPRESSION</h1>
+      </div>
+      <div class="row">
+        <ul>
+          <li><strong>Total: </strong>33</li>
+          <li><strong>Match %: </strong>69.70%</li>
+          <li><a href="#matched"><strong># Matched: </strong>23</a></li>
+          <li><strong># Non-matched: </strong>10</li>
+          <li><a href="#missing"><strong># Missing: </strong>9</a></li>
+          <li><a href="#unexpected"><strong># Unexpected: </strong>1</a></li>
+          <li><a href="#mismatched"><strong># Mismatched: </strong>0</a></li>
+          <li><strong># of Files: </strong>8</li>
+        </ul>
+      </div>
+      <div class="row" id="missing">
+        <h2>Missing (9)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=testsWithStdLib%2Fannotations%2FannotationParameterMustBeConstant%2Fvararg.kt&amp;actual=testsWithStdLib%2Fannotations%2FannotationParameterMustBeConstant%2Fvararg.fir.kt" target="_blank">testsWithStdLib/annotations/annotationParameterMustBeConstant/vararg.kt (4)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=testsWithStdLib%2Fannotations%2FannotationParameterMustBeConstant%2Farray.kt&amp;actual=testsWithStdLib%2Fannotations%2FannotationParameterMustBeConstant%2Farray.fir.kt" target="_blank">testsWithStdLib/annotations/annotationParameterMustBeConstant/array.kt (2)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fvarargs%2FassignNonConstSingleArrayElementAsVarargInAnnotationError.kt&amp;actual=tests%2Fvarargs%2FassignNonConstSingleArrayElementAsVarargInAnnotationError.fir.kt" target="_blank">tests/varargs/assignNonConstSingleArrayElementAsVarargInAnnotationError.kt (2)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=testsWithStdLib%2Fannotations%2FannotationParameterMustBeConstant%2FuseOfNonConstVal.kt&amp;actual=testsWithStdLib%2Fannotations%2FannotationParameterMustBeConstant%2FuseOfNonConstVal.fir.kt" target="_blank">testsWithStdLib/annotations/annotationParameterMustBeConstant/useOfNonConstVal.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row" id="unexpected">
+        <h2>Unexpected (1)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fannotations%2FdontReportWarningAboutChangingExecutionOrderForVararg.kt&amp;actual=tests%2Fannotations%2FdontReportWarningAboutChangingExecutionOrderForVararg.fir.kt" target="_blank">tests/annotations/dontReportWarningAboutChangingExecutionOrderForVararg.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row" id="matched">
+        <h2>Matched (23)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=nativeTests%2Fthrows.kt&amp;actual=nativeTests%2Fthrows.kt" target="_blank">nativeTests/throws.kt (8)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=testsWithStdLib%2Fannotations%2FannotationParameterMustBeConstant%2FuseOfNonConstVal.kt&amp;actual=testsWithStdLib%2Fannotations%2FannotationParameterMustBeConstant%2FuseOfNonConstVal.fir.kt" target="_blank">testsWithStdLib/annotations/annotationParameterMustBeConstant/useOfNonConstVal.kt (5)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=testsWithStdLib%2Fannotations%2FannotationParameterMustBeConstant%2Farray.kt&amp;actual=testsWithStdLib%2Fannotations%2FannotationParameterMustBeConstant%2Farray.fir.kt" target="_blank">testsWithStdLib/annotations/annotationParameterMustBeConstant/array.kt (4)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2FcollectionLiterals%2FargumentsOfAnnotation.kt&amp;actual=tests%2FcollectionLiterals%2FargumentsOfAnnotation.fir.kt" target="_blank">tests/collectionLiterals/argumentsOfAnnotation.kt (4)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2FclassLiteral%2FinAnnotationArguments.kt&amp;actual=tests%2FclassLiteral%2FinAnnotationArguments.kt" target="_blank">tests/classLiteral/inAnnotationArguments.kt (2)</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

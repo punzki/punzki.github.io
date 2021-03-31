@@ -1,0 +1,115 @@
+<html>
+  <head>
+    <title>Diagnostics diff: WRONG_NUMBER_OF_TYPE_ARGUMENTS</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row" id="summary">
+        <h1>WRONG_NUMBER_OF_TYPE_ARGUMENTS</h1>
+      </div>
+      <div class="row">
+        <ul>
+          <li><strong>Total: </strong>130</li>
+          <li><strong>Match %: </strong>12.31%</li>
+          <li><a href="#matched"><strong># Matched: </strong>16</a></li>
+          <li><strong># Non-matched: </strong>114</li>
+          <li><a href="#missing"><strong># Missing: </strong>68</a></li>
+          <li><a href="#unexpected"><strong># Unexpected: </strong>44</a></li>
+          <li><a href="#mismatched"><strong># Mismatched: </strong>2</a></li>
+          <li><strong># of Files: </strong>38</li>
+        </ul>
+      </div>
+      <div class="row" id="missing">
+        <h2>Missing (68)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fgenerics%2FinvalidArgumentsNumberInWhere.kt&amp;actual=tests%2Fgenerics%2FinvalidArgumentsNumberInWhere.fir.kt" target="_blank">tests/generics/invalidArgumentsNumberInWhere.kt (13)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Ftypealias%2FwrongNumberOfArgumentsInTypeAliasConstructor.kt&amp;actual=tests%2Ftypealias%2FwrongNumberOfArgumentsInTypeAliasConstructor.fir.kt" target="_blank">tests/typealias/wrongNumberOfArgumentsInTypeAliasConstructor.kt (7)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fgenerics%2FinnerClasses%2FqualifiedTypesResolution.kt&amp;actual=tests%2Fgenerics%2FinnerClasses%2FqualifiedTypesResolution.fir.kt" target="_blank">tests/generics/innerClasses/qualifiedTypesResolution.kt (4)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fcast%2Fbare%2FAsNestedBare.kt&amp;actual=tests%2Fcast%2Fbare%2FAsNestedBare.fir.kt" target="_blank">tests/cast/bare/AsNestedBare.kt (4)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fgenerics%2FwrongNumberOfTypeArgumentsDiagnostic.kt&amp;actual=tests%2Fgenerics%2FwrongNumberOfTypeArgumentsDiagnostic.fir.kt" target="_blank">tests/generics/wrongNumberOfTypeArgumentsDiagnostic.kt (3)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fgenerics%2FgenericsInType.kt&amp;actual=tests%2Fgenerics%2FgenericsInType.fir.kt" target="_blank">tests/generics/genericsInType.kt (3)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2FcallableReference%2FbareType.kt&amp;actual=tests%2FcallableReference%2FbareType.fir.kt" target="_blank">tests/callableReference/bareType.kt (3)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fgenerics%2FRawTypeInIsExpression.kt&amp;actual=tests%2Fgenerics%2FRawTypeInIsExpression.fir.kt" target="_blank">tests/generics/RawTypeInIsExpression.kt (2)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fgenerics%2FinnerClasses%2FbareTypes.kt&amp;actual=tests%2Fgenerics%2FinnerClasses%2FbareTypes.fir.kt" target="_blank">tests/generics/innerClasses/bareTypes.kt (2)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fgenerics%2FRawTypeInIsPattern.kt&amp;actual=tests%2Fgenerics%2FRawTypeInIsPattern.fir.kt" target="_blank">tests/generics/RawTypeInIsPattern.kt (2)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2FoperatorsOverloading%2Fkt13330.kt&amp;actual=tests%2FoperatorsOverloading%2Fkt13330.fir.kt" target="_blank">tests/operatorsOverloading/kt13330.kt (2)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fvariance%2FOutPosition.kt&amp;actual=tests%2Fvariance%2FOutPosition.fir.kt" target="_blank">tests/variance/OutPosition.kt (2)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fvariance%2FInPosition.kt&amp;actual=tests%2Fvariance%2FInPosition.fir.kt" target="_blank">tests/variance/InPosition.kt (2)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fvariance%2FInvariantPosition.kt&amp;actual=tests%2Fvariance%2FInvariantPosition.fir.kt" target="_blank">tests/variance/InvariantPosition.kt (2)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Ftypealias%2FtypeAliasAsBareType.kt&amp;actual=tests%2Ftypealias%2FtypeAliasAsBareType.fir.kt" target="_blank">tests/typealias/typeAliasAsBareType.kt (2)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Ftypealias%2FinnerTypeAliasAsType.kt&amp;actual=tests%2Ftypealias%2FinnerTypeAliasAsType.fir.kt" target="_blank">tests/typealias/innerTypeAliasAsType.kt (2)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fmultimodule%2FduplicateClass%2FgenericArgumentNumberMismatch.kt&amp;actual=tests%2Fmultimodule%2FduplicateClass%2FgenericArgumentNumberMismatch.fir.kt" target="_blank">tests/multimodule/duplicateClass/genericArgumentNumberMismatch.kt (2)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fresolve%2FwrongNumberOfTypeArguments.kt&amp;actual=tests%2Fresolve%2FwrongNumberOfTypeArguments.fir.kt" target="_blank">tests/resolve/wrongNumberOfTypeArguments.kt (2)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fgenerics%2FinnerClasses%2FqualifiedOuter.kt&amp;actual=tests%2Fgenerics%2FinnerClasses%2FqualifiedOuter.fir.kt" target="_blank">tests/generics/innerClasses/qualifiedOuter.kt (1)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fenum%2FtypeParametersInEnum.kt&amp;actual=tests%2Fenum%2FtypeParametersInEnum.fir.kt" target="_blank">tests/enum/typeParametersInEnum.kt (1)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Ftypealias%2FtypeAliasConstructorInferenceInSupertypesList.kt&amp;actual=tests%2Ftypealias%2FtypeAliasConstructorInferenceInSupertypesList.fir.kt" target="_blank">tests/typealias/typeAliasConstructorInferenceInSupertypesList.kt (1)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Finner%2FqualifiedExpression%2FgenericNestedClass.kt&amp;actual=tests%2Finner%2FqualifiedExpression%2FgenericNestedClass.fir.kt" target="_blank">tests/inner/qualifiedExpression/genericNestedClass.kt (1)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2FdeclarationChecks%2FfiniteBoundRestriction%2FCasesWithOneTypeParameter.kt&amp;actual=tests%2FdeclarationChecks%2FfiniteBoundRestriction%2FCasesWithOneTypeParameter.fir.kt" target="_blank">tests/declarationChecks/finiteBoundRestriction/CasesWithOneTypeParameter.kt (1)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2FUnresolved.kt&amp;actual=tests%2FUnresolved.fir.kt" target="_blank">tests/Unresolved.kt (1)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2FclassLiteral%2FnonClassesOnLHS.kt&amp;actual=tests%2FclassLiteral%2FnonClassesOnLHS.fir.kt" target="_blank">tests/classLiteral/nonClassesOnLHS.kt (1)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fregressions%2FOrphanStarProjection.kt&amp;actual=tests%2Fregressions%2FOrphanStarProjection.fir.kt" target="_blank">tests/regressions/OrphanStarProjection.kt (1)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2FFunctionCalleeExpressions.kt&amp;actual=tests%2FFunctionCalleeExpressions.fir.kt" target="_blank">tests/FunctionCalleeExpressions.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row" id="unexpected">
+        <h2>Unexpected (44)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fgenerics%2FinvalidArgumentsNumberInWhere.kt&amp;actual=tests%2Fgenerics%2FinvalidArgumentsNumberInWhere.fir.kt" target="_blank">tests/generics/invalidArgumentsNumberInWhere.kt (13)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fgenerics%2FinnerClasses%2FqualifiedTypesResolution.kt&amp;actual=tests%2Fgenerics%2FinnerClasses%2FqualifiedTypesResolution.fir.kt" target="_blank">tests/generics/innerClasses/qualifiedTypesResolution.kt (6)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fgenerics%2FgenericsInType.kt&amp;actual=tests%2Fgenerics%2FgenericsInType.fir.kt" target="_blank">tests/generics/genericsInType.kt (4)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fgenerics%2FinnerClasses%2FouterArgumentsRequired.kt&amp;actual=tests%2Fgenerics%2FinnerClasses%2FouterArgumentsRequired.fir.kt" target="_blank">tests/generics/innerClasses/outerArgumentsRequired.kt (3)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fgenerics%2FinnerClasses%2FbareTypes.kt&amp;actual=tests%2Fgenerics%2FinnerClasses%2FbareTypes.fir.kt" target="_blank">tests/generics/innerClasses/bareTypes.kt (2)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fvariance%2FOutPosition.kt&amp;actual=tests%2Fvariance%2FOutPosition.fir.kt" target="_blank">tests/variance/OutPosition.kt (2)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fvariance%2FInPosition.kt&amp;actual=tests%2Fvariance%2FInPosition.fir.kt" target="_blank">tests/variance/InPosition.kt (2)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fvariance%2FInvariantPosition.kt&amp;actual=tests%2Fvariance%2FInvariantPosition.fir.kt" target="_blank">tests/variance/InvariantPosition.kt (2)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fmultimodule%2FduplicateClass%2FgenericArgumentNumberMismatch.kt&amp;actual=tests%2Fmultimodule%2FduplicateClass%2FgenericArgumentNumberMismatch.fir.kt" target="_blank">tests/multimodule/duplicateClass/genericArgumentNumberMismatch.kt (2)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=testsWithStdLib%2FInaccessibleInternalClass.kt&amp;actual=testsWithStdLib%2FInaccessibleInternalClass.fir.kt" target="_blank">testsWithStdLib/InaccessibleInternalClass.kt (1)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fgenerics%2FRawTypeInIsExpression.kt&amp;actual=tests%2Fgenerics%2FRawTypeInIsExpression.fir.kt" target="_blank">tests/generics/RawTypeInIsExpression.kt (1)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fgenerics%2FinnerClasses%2FqualifiedOuter.kt&amp;actual=tests%2Fgenerics%2FinnerClasses%2FqualifiedOuter.fir.kt" target="_blank">tests/generics/innerClasses/qualifiedOuter.kt (1)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fgenerics%2FRawTypeInIsPattern.kt&amp;actual=tests%2Fgenerics%2FRawTypeInIsPattern.fir.kt" target="_blank">tests/generics/RawTypeInIsPattern.kt (1)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Ftypealias%2Fkt14518.kt&amp;actual=tests%2Ftypealias%2Fkt14518.fir.kt" target="_blank">tests/typealias/kt14518.kt (1)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2FdeclarationChecks%2FfiniteBoundRestriction%2FCasesWithOneTypeParameter.kt&amp;actual=tests%2FdeclarationChecks%2FfiniteBoundRestriction%2FCasesWithOneTypeParameter.fir.kt" target="_blank">tests/declarationChecks/finiteBoundRestriction/CasesWithOneTypeParameter.kt (1)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2FUnresolved.kt&amp;actual=tests%2FUnresolved.fir.kt" target="_blank">tests/Unresolved.kt (1)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fregressions%2FOrphanStarProjection.kt&amp;actual=tests%2Fregressions%2FOrphanStarProjection.fir.kt" target="_blank">tests/regressions/OrphanStarProjection.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row" id="mismatched">
+        <h2>Mismatched (2)</h2>
+      </div>
+      <div class="row">
+        <h3>WRONG_NUMBER_OF_TYPE_ARGUMENTS -&gt; NO_TYPE_ARGUMENTS_ON_RHS (2)</h3>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Ftypealias%2FtypeAliasAsBareType.kt&amp;actual=tests%2Ftypealias%2FtypeAliasAsBareType.fir.kt" target="_blank">tests/typealias/typeAliasAsBareType.kt (2)</a></li>
+        </ul>
+      </div>
+      <div class="row" id="matched">
+        <h2>Matched (16)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fvariance%2FOutPosition.kt&amp;actual=tests%2Fvariance%2FOutPosition.fir.kt" target="_blank">tests/variance/OutPosition.kt (2)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fvariance%2FInPosition.kt&amp;actual=tests%2Fvariance%2FInPosition.fir.kt" target="_blank">tests/variance/InPosition.kt (2)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fvariance%2FInvariantPosition.kt&amp;actual=tests%2Fvariance%2FInvariantPosition.fir.kt" target="_blank">tests/variance/InvariantPosition.kt (2)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fredeclarations%2FshadowedExtension%2FextensionOnErrorType.kt&amp;actual=tests%2Fredeclarations%2FshadowedExtension%2FextensionOnErrorType.kt" target="_blank">tests/redeclarations/shadowedExtension/extensionOnErrorType.kt (2)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=testsWithJsStdLib%2Fmodule%2FincompleteReifiedArg.kt&amp;actual=testsWithJsStdLib%2Fmodule%2FincompleteReifiedArg.kt" target="_blank">testsWithJsStdLib/module/incompleteReifiedArg.kt (1)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=testsWithJsStdLib%2FclassLiteral%2Farrays_before.kt&amp;actual=testsWithJsStdLib%2FclassLiteral%2Farrays_before.kt" target="_blank">testsWithJsStdLib/classLiteral/arrays_before.kt (1)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=testsWithJsStdLib%2FclassLiteral%2Farrays_after.kt&amp;actual=testsWithJsStdLib%2FclassLiteral%2Farrays_after.kt" target="_blank">testsWithJsStdLib/classLiteral/arrays_after.kt (1)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fgenerics%2FRawTypeInIsPattern.kt&amp;actual=tests%2Fgenerics%2FRawTypeInIsPattern.fir.kt" target="_blank">tests/generics/RawTypeInIsPattern.kt (1)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fsubtyping%2Fkt304.kt&amp;actual=tests%2Fsubtyping%2Fkt304.kt" target="_blank">tests/subtyping/kt304.kt (1)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2FUnresolved.kt&amp;actual=tests%2FUnresolved.fir.kt" target="_blank">tests/Unresolved.kt (1)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2FclassLiteral%2Farrays.kt&amp;actual=tests%2FclassLiteral%2Farrays.kt" target="_blank">tests/classLiteral/arrays.kt (1)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fcast%2Fbare%2FUnrelatedColon.kt&amp;actual=tests%2Fcast%2Fbare%2FUnrelatedColon.fir.kt" target="_blank">tests/cast/bare/UnrelatedColon.kt (1)</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

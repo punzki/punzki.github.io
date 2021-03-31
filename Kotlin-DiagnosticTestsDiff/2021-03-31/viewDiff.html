@@ -1,0 +1,74 @@
+<html>
+  <head>
+    <title>Diagnostics diff: View diff</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.60.0/codemirror.min.js" integrity="sha512-hc0zo04EIwTzKLvp2eycDTeIUuvoGYYmFIjYx7DmfgQeZPC5N27sPG2wEQPq8d8fCTwuguLrI1ffatqxyTbHJw==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.60.0/codemirror.min.css" integrity="sha512-xIf9AdJauwKIVtrVRZ0i4nHP61Ogx9fSRAkCLecmE2dL/U8ioWpDvFCAy4dcfecN72HHB9+7FfQj3aiO68aaaw==" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mergely/4.2.1/mergely.min.js" integrity="sha512-X+99D2EDdCDi6PqnpgDKpow/CYLbukQb4luITSY87VjOTa4vJjwmDyJcOlPRAL0Qpf7jPysYA1kd+jbl1eGwvg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mergely/4.2.1/mergely.min.css" integrity="sha512-hxJvLqtjF/KRLl7clgFSytE/spz9BsiW+lbsZ9cwMeoRg/KwOgeEuA/ILdmPJ+AAxX0PwIrn2jL7bcTXwPi7rQ==" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <ul>
+          <li><a id="expected" target="_blank"><strong>Expected file: </strong><span id="expected-path"></span></a></li>
+          <li><a id="actual" target="_blank"><strong>Actual file: </strong><span id="actual-path"></span></a></li>
+        </ul>
+      </div>
+      <div class="row"><button class="btn btn-primary btn-sm mr-1" id="prev">Previous diff</button><button class="btn btn-primary btn-sm mr-1" id="next">Next diff</button><button class="btn btn-primary btn-sm" id="wrap">Toggle line wrapping</button></div>
+      <div class="mergely-resizer">
+        <div id="compare"></div>
+      </div>
+    </div>
+    <script type="text/javascript">var urlParams = new URLSearchParams(window.location.search);
+var prefix = urlParams.get('prefix');
+var expectedPath = urlParams.get('expected');
+var actualPath = urlParams.get('actual');
+var expectedUrl = prefix + '/' + expectedPath;
+var actualUrl = prefix + '/' + actualPath;
+$('#expected').attr('href', expectedUrl);
+$('#actual').attr('href', actualUrl);
+$('#expected-path').text(expectedPath);
+$('#actual-path').text(actualPath);
+
+var comp = $('#compare');
+
+function download(url, callback) {
+  $.get(url, function(data) {
+    callback(data);
+  });
+}
+
+comp.mergely({
+  cmsettings: {
+    mode: 'clike',
+    readOnly: true,
+    lineWrapping: true
+  },
+  wrap_lines: true,
+
+  editor_width: 'calc(50% - 25px)',
+  editor_height: '100%',
+
+  lhs: function(setValue) {
+    download(expectedUrl, setValue);
+  },
+  rhs: function(setValue) {
+    download(actualUrl, setValue);
+  }
+});
+
+function changeOptions(changer) {
+  var options = comp.mergely('options');
+  changer(options);
+
+  comp.mergely('options', options);
+}
+
+$('#prev').click(function() { comp.mergely('scrollToDiff', 'prev'); });
+$('#next').click(function() { comp.mergely('scrollToDiff', 'next'); });
+$('#wrap').click(function() { changeOptions(function(x) { x.wrap_lines = !x.wrap_lines; }); });</script>
+  </body>
+</html>

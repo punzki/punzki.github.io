@@ -1,0 +1,111 @@
+<html>
+  <head>
+    <title>Diagnostics diff: REDECLARATION</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row" id="summary">
+        <h1>REDECLARATION</h1>
+      </div>
+      <div class="row">
+        <ul>
+          <li><strong>Total: </strong>241</li>
+          <li><strong>Match %: </strong>9.13%</li>
+          <li><a href="#matched"><strong># Matched: </strong>22</a></li>
+          <li><strong># Non-matched: </strong>219</li>
+          <li><a href="#missing"><strong># Missing: </strong>131</a></li>
+          <li><a href="#unexpected"><strong># Unexpected: </strong>88</a></li>
+          <li><a href="#mismatched"><strong># Mismatched: </strong>0</a></li>
+          <li><strong># of Files: </strong>42</li>
+        </ul>
+      </div>
+      <div class="row" id="missing">
+        <h2>Missing (131)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fredeclarations%2Fkt470.kt&amp;actual=tests%2Fredeclarations%2Fkt470.fir.kt" target="_blank">tests/redeclarations/kt470.kt (14)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2FfunctionLiterals%2FdestructuringInLambdas%2Fredeclaration.kt&amp;actual=tests%2FfunctionLiterals%2FdestructuringInLambdas%2Fredeclaration.fir.kt" target="_blank">tests/functionLiterals/destructuringInLambdas/redeclaration.kt (8)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2FdataClasses%2FrepeatedProperties.kt&amp;actual=tests%2FdataClasses%2FrepeatedProperties.fir.kt" target="_blank">tests/dataClasses/repeatedProperties.kt (8)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2FduplicateJvmSignature%2FmissingNames.kt&amp;actual=tests%2FduplicateJvmSignature%2FmissingNames.fir.kt" target="_blank">tests/duplicateJvmSignature/missingNames.kt (8)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fredeclarations%2FRedeclaredTypeParameters.kt&amp;actual=tests%2Fredeclarations%2FRedeclaredTypeParameters.fir.kt" target="_blank">tests/redeclarations/RedeclaredTypeParameters.kt (8)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fredeclarations%2FTopLevelPropertyVsClassifier.kt&amp;actual=tests%2Fredeclarations%2FTopLevelPropertyVsClassifier.fir.kt" target="_blank">tests/redeclarations/TopLevelPropertyVsClassifier.kt (8)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2FdeclarationChecks%2FRedeclarationsInMultiDecl.kt&amp;actual=tests%2FdeclarationChecks%2FRedeclarationsInMultiDecl.fir.kt" target="_blank">tests/declarationChecks/RedeclarationsInMultiDecl.kt (6)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fredeclarations%2FTypeAliasVsProperty.kt&amp;actual=tests%2Fredeclarations%2FTypeAliasVsProperty.fir.kt" target="_blank">tests/redeclarations/TypeAliasVsProperty.kt (6)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fredeclarations%2Fkt2438.kt&amp;actual=tests%2Fredeclarations%2Fkt2438.fir.kt" target="_blank">tests/redeclarations/kt2438.kt (6)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fredeclarations%2Fkt2418.kt&amp;actual=tests%2Fredeclarations%2Fkt2418.fir.kt" target="_blank">tests/redeclarations/kt2418.kt (6)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2FclassObjects%2FclassObjectRedeclaration.kt&amp;actual=tests%2FclassObjects%2FclassObjectRedeclaration.fir.kt" target="_blank">tests/classObjects/classObjectRedeclaration.kt (5)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2FfunctionLiterals%2FunderscopeParameters.kt&amp;actual=tests%2FfunctionLiterals%2FunderscopeParameters.fir.kt" target="_blank">tests/functionLiterals/underscopeParameters.kt (4)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fredeclarations%2FTypeAliasVsClass.kt&amp;actual=tests%2Fredeclarations%2FTypeAliasVsClass.fir.kt" target="_blank">tests/redeclarations/TypeAliasVsClass.kt (4)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fredeclarations%2FPropertyAndInnerClass.kt&amp;actual=tests%2Fredeclarations%2FPropertyAndInnerClass.fir.kt" target="_blank">tests/redeclarations/PropertyAndInnerClass.kt (4)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fredeclarations%2FRedeclarationsInObjects.kt&amp;actual=tests%2Fredeclarations%2FRedeclarationsInObjects.fir.kt" target="_blank">tests/redeclarations/RedeclarationsInObjects.kt (4)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fredeclarations%2FinterfaceTypeParameters.kt&amp;actual=tests%2Fredeclarations%2FinterfaceTypeParameters.fir.kt" target="_blank">tests/redeclarations/interfaceTypeParameters.kt (4)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fredeclarations%2FRedeclaringPrivateToFile.kt&amp;actual=tests%2Fredeclarations%2FRedeclaringPrivateToFile.fir.kt" target="_blank">tests/redeclarations/RedeclaringPrivateToFile.kt (3)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=testsWithStdLib%2FtryCatch%2FcatchRedeclaration.kt&amp;actual=testsWithStdLib%2FtryCatch%2FcatchRedeclaration.fir.kt" target="_blank">testsWithStdLib/tryCatch/catchRedeclaration.kt (2)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2FfunctionLiterals%2FdestructuringInLambdas%2Funderscore.kt&amp;actual=tests%2FfunctionLiterals%2FdestructuringInLambdas%2Funderscore.fir.kt" target="_blank">tests/functionLiterals/destructuringInLambdas/underscore.kt (2)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2FdeclarationChecks%2FdestructuringDeclarations%2Funderscore.kt&amp;actual=tests%2FdeclarationChecks%2FdestructuringDeclarations%2Funderscore.fir.kt" target="_blank">tests/declarationChecks/destructuringDeclarations/underscore.kt (2)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2FdeclarationChecks%2FdestructuringDeclarations%2FRedeclarationInForLoop.kt&amp;actual=tests%2FdeclarationChecks%2FdestructuringDeclarations%2FRedeclarationInForLoop.fir.kt" target="_blank">tests/declarationChecks/destructuringDeclarations/RedeclarationInForLoop.kt (2)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Foverload%2FConflictingOverloadsValsDifferentTypeInClass.kt&amp;actual=tests%2Foverload%2FConflictingOverloadsValsDifferentTypeInClass.fir.kt" target="_blank">tests/overload/ConflictingOverloadsValsDifferentTypeInClass.kt (2)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Foverload%2FConflictingOverloadsIdenticalValsInClass.kt&amp;actual=tests%2Foverload%2FConflictingOverloadsIdenticalValsInClass.fir.kt" target="_blank">tests/overload/ConflictingOverloadsIdenticalValsInClass.kt (2)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2FduplicateJvmSignature%2FspecialNames%2FclassObjectCopiedFieldObject.kt&amp;actual=tests%2FduplicateJvmSignature%2FspecialNames%2FclassObjectCopiedFieldObject.fir.kt" target="_blank">tests/duplicateJvmSignature/specialNames/classObjectCopiedFieldObject.kt (2)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fredeclarations%2FRedeclarations.kt&amp;actual=tests%2Fredeclarations%2FRedeclarations.fir.kt" target="_blank">tests/redeclarations/Redeclarations.kt (2)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fredeclarations%2FConflictingExtensionProperties.kt&amp;actual=tests%2Fredeclarations%2FConflictingExtensionProperties.fir.kt" target="_blank">tests/redeclarations/ConflictingExtensionProperties.kt (2)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fredeclarations%2FRedeclarationInMultiFile.kt&amp;actual=tests%2Fredeclarations%2FRedeclarationInMultiFile.fir.kt" target="_blank">tests/redeclarations/RedeclarationInMultiFile.kt (2)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fredeclarations%2FRedeclarationInDefaultObject.kt&amp;actual=tests%2Fredeclarations%2FRedeclarationInDefaultObject.fir.kt" target="_blank">tests/redeclarations/RedeclarationInDefaultObject.kt (2)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2FduplicateJvmSignature%2FspecialNames%2FclassObject.kt&amp;actual=tests%2FduplicateJvmSignature%2FspecialNames%2FclassObject.fir.kt" target="_blank">tests/duplicateJvmSignature/specialNames/classObject.kt (1)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fredeclarations%2FEnumName.kt&amp;actual=tests%2Fredeclarations%2FEnumName.fir.kt" target="_blank">tests/redeclarations/EnumName.kt (1)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fregressions%2Fea66984.kt&amp;actual=tests%2Fregressions%2Fea66984.fir.kt" target="_blank">tests/regressions/ea66984.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row" id="unexpected">
+        <h2>Unexpected (88)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fredeclarations%2Fkt470.kt&amp;actual=tests%2Fredeclarations%2Fkt470.fir.kt" target="_blank">tests/redeclarations/kt470.kt (14)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fredeclarations%2FTopLevelPropertyVsClassifier.kt&amp;actual=tests%2Fredeclarations%2FTopLevelPropertyVsClassifier.fir.kt" target="_blank">tests/redeclarations/TopLevelPropertyVsClassifier.kt (10)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fredeclarations%2FTypeAliasVsClass.kt&amp;actual=tests%2Fredeclarations%2FTypeAliasVsClass.fir.kt" target="_blank">tests/redeclarations/TypeAliasVsClass.kt (9)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fredeclarations%2Fkt2438.kt&amp;actual=tests%2Fredeclarations%2Fkt2438.fir.kt" target="_blank">tests/redeclarations/kt2438.kt (6)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2FclassObjects%2FclassObjectRedeclaration.kt&amp;actual=tests%2FclassObjects%2FclassObjectRedeclaration.fir.kt" target="_blank">tests/classObjects/classObjectRedeclaration.kt (5)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2FdataClasses%2FrepeatedProperties.kt&amp;actual=tests%2FdataClasses%2FrepeatedProperties.fir.kt" target="_blank">tests/dataClasses/repeatedProperties.kt (4)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fredeclarations%2FTypeAliasVsProperty.kt&amp;actual=tests%2Fredeclarations%2FTypeAliasVsProperty.fir.kt" target="_blank">tests/redeclarations/TypeAliasVsProperty.kt (4)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fredeclarations%2FPropertyAndInnerClass.kt&amp;actual=tests%2Fredeclarations%2FPropertyAndInnerClass.fir.kt" target="_blank">tests/redeclarations/PropertyAndInnerClass.kt (4)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fredeclarations%2FRedeclarationsInObjects.kt&amp;actual=tests%2Fredeclarations%2FRedeclarationsInObjects.fir.kt" target="_blank">tests/redeclarations/RedeclarationsInObjects.kt (4)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fredeclarations%2FRedeclarations.kt&amp;actual=tests%2Fredeclarations%2FRedeclarations.fir.kt" target="_blank">tests/redeclarations/Redeclarations.kt (3)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Ftypealias%2FprivateInFile.kt&amp;actual=tests%2Ftypealias%2FprivateInFile.fir.kt" target="_blank">tests/typealias/privateInFile.kt (2)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2FsecondaryConstructors%2FredeclarationsOfConstructorsIgnored.kt&amp;actual=tests%2FsecondaryConstructors%2FredeclarationsOfConstructorsIgnored.fir.kt" target="_blank">tests/secondaryConstructors/redeclarationsOfConstructorsIgnored.kt (2)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Foverload%2FConflictingOverloadsValsDifferentTypeInClass.kt&amp;actual=tests%2Foverload%2FConflictingOverloadsValsDifferentTypeInClass.fir.kt" target="_blank">tests/overload/ConflictingOverloadsValsDifferentTypeInClass.kt (2)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Foverload%2FConflictingOverloadsIdenticalValsInClass.kt&amp;actual=tests%2Foverload%2FConflictingOverloadsIdenticalValsInClass.fir.kt" target="_blank">tests/overload/ConflictingOverloadsIdenticalValsInClass.kt (2)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2FduplicateJvmSignature%2FspecialNames%2FclassObjectCopiedFieldObject.kt&amp;actual=tests%2FduplicateJvmSignature%2FspecialNames%2FclassObjectCopiedFieldObject.fir.kt" target="_blank">tests/duplicateJvmSignature/specialNames/classObjectCopiedFieldObject.kt (2)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fmultiplatform%2FheaderClass%2FexpectDeclarationWithWeakIncompatibilities.kt&amp;actual=tests%2Fmultiplatform%2FheaderClass%2FexpectDeclarationWithWeakIncompatibilities.fir.kt" target="_blank">tests/multiplatform/headerClass/expectDeclarationWithWeakIncompatibilities.kt (2)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fredeclarations%2FClassRedeclarationInDifferentFiles.kt&amp;actual=tests%2Fredeclarations%2FClassRedeclarationInDifferentFiles.fir.kt" target="_blank">tests/redeclarations/ClassRedeclarationInDifferentFiles.kt (2)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fredeclarations%2FRedeclaringPrivateToFile.kt&amp;actual=tests%2Fredeclarations%2FRedeclaringPrivateToFile.fir.kt" target="_blank">tests/redeclarations/RedeclaringPrivateToFile.kt (2)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fredeclarations%2FConflictingExtensionProperties.kt&amp;actual=tests%2Fredeclarations%2FConflictingExtensionProperties.fir.kt" target="_blank">tests/redeclarations/ConflictingExtensionProperties.kt (2)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fredeclarations%2FRedeclarationInMultiFile.kt&amp;actual=tests%2Fredeclarations%2FRedeclarationInMultiFile.fir.kt" target="_blank">tests/redeclarations/RedeclarationInMultiFile.kt (2)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fredeclarations%2FRedeclarationInDefaultObject.kt&amp;actual=tests%2Fredeclarations%2FRedeclarationInDefaultObject.fir.kt" target="_blank">tests/redeclarations/RedeclarationInDefaultObject.kt (2)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Fregressions%2FJet11.kt&amp;actual=tests%2Fregressions%2FJet11.fir.kt" target="_blank">tests/regressions/Jet11.kt (2)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2FduplicateJvmSignature%2FspecialNames%2FclassObject.kt&amp;actual=tests%2FduplicateJvmSignature%2FspecialNames%2FclassObject.fir.kt" target="_blank">tests/duplicateJvmSignature/specialNames/classObject.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row" id="matched">
+        <h2>Matched (22)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=testsWithJsStdLib%2Fname%2FdeclarationClash.kt&amp;actual=testsWithJsStdLib%2Fname%2FdeclarationClash.kt" target="_blank">testsWithJsStdLib/name/declarationClash.kt (8)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=testsWithJvmBackend%2FduplicateJvmSignature%2FspecialNames%2FclassObjectCopiedFieldObject_ir.kt&amp;actual=testsWithJvmBackend%2FduplicateJvmSignature%2FspecialNames%2FclassObjectCopiedFieldObject_ir.kt" target="_blank">testsWithJvmBackend/duplicateJvmSignature/specialNames/classObjectCopiedFieldObject_ir.kt (2)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=testsWithJvmBackend%2FduplicateJvmSignature%2FspecialNames%2FclassObject_old.kt&amp;actual=testsWithJvmBackend%2FduplicateJvmSignature%2FspecialNames%2FclassObject_old.kt" target="_blank">testsWithJvmBackend/duplicateJvmSignature/specialNames/classObject_old.kt (2)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=testsWithJvmBackend%2FduplicateJvmSignature%2FspecialNames%2FclassObject_ir.kt&amp;actual=testsWithJvmBackend%2FduplicateJvmSignature%2FspecialNames%2FclassObject_ir.kt" target="_blank">testsWithJvmBackend/duplicateJvmSignature/specialNames/classObject_ir.kt (2)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=testsWithJvmBackend%2FduplicateJvmSignature%2FspecialNames%2FclassObjectCopiedFieldObject_old.kt&amp;actual=testsWithJvmBackend%2FduplicateJvmSignature%2FspecialNames%2FclassObjectCopiedFieldObject_old.kt" target="_blank">testsWithJvmBackend/duplicateJvmSignature/specialNames/classObjectCopiedFieldObject_old.kt (2)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2FdataClasses%2FrepeatedProperties.kt&amp;actual=tests%2FdataClasses%2FrepeatedProperties.fir.kt" target="_blank">tests/dataClasses/repeatedProperties.kt (2)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2FclassObjects%2FClassObjects.kt&amp;actual=tests%2FclassObjects%2FClassObjects.fir.kt" target="_blank">tests/classObjects/ClassObjects.kt (2)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2FduplicateJvmSignature%2FspecialNames%2FclassObject.kt&amp;actual=tests%2FduplicateJvmSignature%2FspecialNames%2FclassObject.fir.kt" target="_blank">tests/duplicateJvmSignature/specialNames/classObject.kt (1)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2FclassObjects%2FclassObjectRedeclaration.kt&amp;actual=tests%2FclassObjects%2FclassObjectRedeclaration.fir.kt" target="_blank">tests/classObjects/classObjectRedeclaration.kt (1)</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

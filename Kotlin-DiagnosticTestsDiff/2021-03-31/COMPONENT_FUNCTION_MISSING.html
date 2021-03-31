@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <title>Diagnostics diff: COMPONENT_FUNCTION_MISSING</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row" id="summary">
+        <h1>COMPONENT_FUNCTION_MISSING</h1>
+      </div>
+      <div class="row">
+        <ul>
+          <li><strong>Total: </strong>14</li>
+          <li><strong>Match %: </strong>28.57%</li>
+          <li><a href="#matched"><strong># Matched: </strong>4</a></li>
+          <li><strong># Non-matched: </strong>10</li>
+          <li><a href="#missing"><strong># Missing: </strong>4</a></li>
+          <li><a href="#unexpected"><strong># Unexpected: </strong>6</a></li>
+          <li><a href="#mismatched"><strong># Mismatched: </strong>0</a></li>
+          <li><strong># of Files: </strong>7</li>
+        </ul>
+      </div>
+      <div class="row" id="missing">
+        <h2>Missing (4)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2FdeclarationChecks%2FMultiDeclarationErrors.kt&amp;actual=tests%2FdeclarationChecks%2FMultiDeclarationErrors.fir.kt" target="_blank">tests/declarationChecks/MultiDeclarationErrors.kt (2)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2Finference%2FreportingImprovements%2FtypeInferenceFailedOnComponentN.kt&amp;actual=tests%2Finference%2FreportingImprovements%2FtypeInferenceFailedOnComponentN.fir.kt" target="_blank">tests/inference/reportingImprovements/typeInferenceFailedOnComponentN.kt (1)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2FfunctionLiterals%2FDeprecatedSyntax.kt&amp;actual=tests%2FfunctionLiterals%2FDeprecatedSyntax.fir.kt" target="_blank">tests/functionLiterals/DeprecatedSyntax.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row" id="unexpected">
+        <h2>Unexpected (6)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2FdeclarationChecks%2FdestructuringDeclarations%2FdestructuringDeclarationAssignedUnresolved.kt&amp;actual=tests%2FdeclarationChecks%2FdestructuringDeclarations%2FdestructuringDeclarationAssignedUnresolved.fir.kt" target="_blank">tests/declarationChecks/destructuringDeclarations/destructuringDeclarationAssignedUnresolved.kt (3)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2FfunctionLiterals%2FdestructuringInLambdas%2FnoExpectedType.kt&amp;actual=tests%2FfunctionLiterals%2FdestructuringInLambdas%2FnoExpectedType.fir.kt" target="_blank">tests/functionLiterals/destructuringInLambdas/noExpectedType.kt (2)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2FfunctionLiterals%2FDeprecatedSyntax.kt&amp;actual=tests%2FfunctionLiterals%2FDeprecatedSyntax.fir.kt" target="_blank">tests/functionLiterals/DeprecatedSyntax.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row" id="matched">
+        <h2>Matched (4)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2FincompleteCode%2FdiagnosticWithSyntaxError%2FvalWithNoNameInBlock.kt&amp;actual=tests%2FincompleteCode%2FdiagnosticWithSyntaxError%2FvalWithNoNameInBlock.kt" target="_blank">tests/incompleteCode/diagnosticWithSyntaxError/valWithNoNameInBlock.kt (2)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2FdeclarationChecks%2FMultiDeclarationErrors.kt&amp;actual=tests%2FdeclarationChecks%2FMultiDeclarationErrors.fir.kt" target="_blank">tests/declarationChecks/MultiDeclarationErrors.kt (1)</a></li>
+          <li><a href="viewDiff.html?prefix=testData&amp;expected=tests%2FdeclarationChecks%2FdestructuringDeclarations%2FForLoopComponentFunctionMissing.kt&amp;actual=tests%2FdeclarationChecks%2FdestructuringDeclarations%2FForLoopComponentFunctionMissing.kt" target="_blank">tests/declarationChecks/destructuringDeclarations/ForLoopComponentFunctionMissing.kt (1)</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
