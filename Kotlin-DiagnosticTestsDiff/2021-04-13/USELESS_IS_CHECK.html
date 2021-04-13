@@ -1,0 +1,73 @@
+<html>
+  <head>
+    <title>Diagnostics diff: USELESS_IS_CHECK</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row" id="summary">
+        <h1>USELESS_IS_CHECK</h1>
+      </div>
+      <div class="row">
+        <ul>
+          <li><strong>Total: </strong>91</li>
+          <li><strong>Match %: </strong>10.99%</li>
+          <li><a href="#matched"><strong># Matched: </strong>10</a></li>
+          <li><strong># Non-matched: </strong>81</li>
+          <li><a href="#missing"><strong># Missing: </strong>81</a></li>
+          <li><a href="#unexpected"><strong># Unexpected: </strong>0</a></li>
+          <li><a href="#mismatched"><strong># Mismatched: </strong>0</a></li>
+          <li><strong># of Files: </strong>32</li>
+        </ul>
+      </div>
+      <div class="row" id="missing">
+        <h2>Missing (81)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?expected=tests%2FdataFlowInfoTraversal%2FManyIfs.kt&amp;actual=tests%2FdataFlowInfoTraversal%2FManyIfs.fir.kt" target="_blank">tests/dataFlowInfoTraversal/ManyIfs.kt (24)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fcast%2FIsErasedUpcastToNonReified.kt&amp;actual=tests%2Fcast%2FIsErasedUpcastToNonReified.fir.kt" target="_blank">tests/cast/IsErasedUpcastToNonReified.kt (8)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fcast%2FcheckCastToNullableType.kt&amp;actual=tests%2Fcast%2FcheckCastToNullableType.fir.kt" target="_blank">tests/cast/checkCastToNullableType.kt (7)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Finfos%2FSmartCasts.kt&amp;actual=tests%2Finfos%2FSmartCasts.fir.kt" target="_blank">tests/infos/SmartCasts.kt (5)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fwhen%2FWhen.kt&amp;actual=tests%2Fwhen%2FWhen.fir.kt" target="_blank">tests/when/When.kt (3)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FIsExpressions.kt&amp;actual=tests%2FIsExpressions.fir.kt" target="_blank">tests/IsExpressions.kt (3)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Finline%2FisCheck.kt&amp;actual=tests%2Finline%2FisCheck.fir.kt" target="_blank">tests/inline/isCheck.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FNumberPrefixAndSuffix.kt&amp;actual=tests%2FNumberPrefixAndSuffix.fir.kt" target="_blank">tests/NumberPrefixAndSuffix.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FEnumEntryAsType.kt&amp;actual=tests%2FEnumEntryAsType.fir.kt" target="_blank">tests/EnumEntryAsType.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fsealed%2FExhaustiveOnRoot.kt&amp;actual=tests%2Fsealed%2FExhaustiveOnRoot.fir.kt" target="_blank">tests/sealed/ExhaustiveOnRoot.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FStringPrefixAndSuffix.kt&amp;actual=tests%2FStringPrefixAndSuffix.fir.kt" target="_blank">tests/StringPrefixAndSuffix.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Fkt27221_2.kt&amp;actual=tests%2FsmartCasts%2Fkt27221_2.fir.kt" target="_blank">tests/smartCasts/kt27221_2.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fcast%2FIsArray.kt&amp;actual=testsWithStdLib%2Fcast%2FIsArray.fir.kt" target="_blank">testsWithStdLib/cast/IsArray.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fcontracts%2Fsmartcasts%2FvalueOfContractedFunctionIngored.kt&amp;actual=testsWithStdLib%2Fcontracts%2Fsmartcasts%2FvalueOfContractedFunctionIngored.fir.kt" target="_blank">testsWithStdLib/contracts/smartcasts/valueOfContractedFunctionIngored.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fgenerics%2FinnerClasses%2FbareTypesComplex.kt&amp;actual=tests%2Fgenerics%2FinnerClasses%2FbareTypesComplex.fir.kt" target="_blank">tests/generics/innerClasses/bareTypesComplex.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Finline%2Fwhen.kt&amp;actual=tests%2Finline%2Fwhen.fir.kt" target="_blank">tests/inline/when.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fsealed%2FNonExhaustiveWhenWithAnyCase.kt&amp;actual=tests%2Fsealed%2FNonExhaustiveWhenWithAnyCase.fir.kt" target="_blank">tests/sealed/NonExhaustiveWhenWithAnyCase.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FcontrolFlowAnalysis%2FUninitializedOrReassignedVariables.kt&amp;actual=tests%2FcontrolFlowAnalysis%2FUninitializedOrReassignedVariables.fir.kt" target="_blank">tests/controlFlowAnalysis/UninitializedOrReassignedVariables.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FLValueAssignment.kt&amp;actual=tests%2FLValueAssignment.fir.kt" target="_blank">tests/LValueAssignment.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FcontrolStructures%2Fwhen.kt234.kt973.kt&amp;actual=tests%2FcontrolStructures%2Fwhen.kt234.kt973.fir.kt" target="_blank">tests/controlStructures/when.kt234.kt973.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fcast%2FIsErasedAllowForExactSupertypeCheck.kt&amp;actual=tests%2Fcast%2FIsErasedAllowForExactSupertypeCheck.fir.kt" target="_blank">tests/cast/IsErasedAllowForExactSupertypeCheck.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fcast%2FIsErasedAllowFromOut2.kt&amp;actual=tests%2Fcast%2FIsErasedAllowFromOut2.fir.kt" target="_blank">tests/cast/IsErasedAllowFromOut2.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fcast%2FIsErasedTasT.kt&amp;actual=tests%2Fcast%2FIsErasedTasT.fir.kt" target="_blank">tests/cast/IsErasedTasT.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fcast%2FIsErasedAllowForSupertypeCheckWithCovariance.kt&amp;actual=tests%2Fcast%2FIsErasedAllowForSupertypeCheckWithCovariance.fir.kt" target="_blank">tests/cast/IsErasedAllowForSupertypeCheckWithCovariance.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fcast%2FIsErasedAllowFromOutAtClass.kt&amp;actual=tests%2Fcast%2FIsErasedAllowFromOutAtClass.fir.kt" target="_blank">tests/cast/IsErasedAllowFromOutAtClass.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fcast%2FIsErasedAllowFromOut.kt&amp;actual=tests%2Fcast%2FIsErasedAllowFromOut.fir.kt" target="_blank">tests/cast/IsErasedAllowFromOut.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fcast%2FIsErasedAllowForSupertypeCheckWithContrvariance.kt&amp;actual=tests%2Fcast%2FIsErasedAllowForSupertypeCheckWithContrvariance.fir.kt" target="_blank">tests/cast/IsErasedAllowForSupertypeCheckWithContrvariance.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fannotations%2FConstructorCall.kt&amp;actual=tests%2Fannotations%2FConstructorCall.fir.kt" target="_blank">tests/annotations/ConstructorCall.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Fkt27221.kt&amp;actual=tests%2FsmartCasts%2Fkt27221.fir.kt" target="_blank">tests/smartCasts/kt27221.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Fkt10232.kt&amp;actual=tests%2FsmartCasts%2Fkt10232.fir.kt" target="_blank">tests/smartCasts/kt10232.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FdataFlowInfoTraversal%2FIsExpression.kt&amp;actual=tests%2FdataFlowInfoTraversal%2FIsExpression.fir.kt" target="_blank">tests/dataFlowInfoTraversal/IsExpression.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row" id="matched">
+        <h2>Matched (10)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?expected=testsWithJsStdLib%2FdynamicTypes%2FdynamicCastTarget.kt&amp;actual=testsWithJsStdLib%2FdynamicTypes%2FdynamicCastTarget.kt" target="_blank">testsWithJsStdLib/dynamicTypes/dynamicCastTarget.kt (10)</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

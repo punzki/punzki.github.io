@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <title>Diagnostics diff: REDUNDANT_NULLABLE</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row" id="summary">
+        <h1>REDUNDANT_NULLABLE</h1>
+      </div>
+      <div class="row">
+        <ul>
+          <li><strong>Total: </strong>16</li>
+          <li><strong>Match %: </strong>25.00%</li>
+          <li><a href="#matched"><strong># Matched: </strong>4</a></li>
+          <li><strong># Non-matched: </strong>12</li>
+          <li><a href="#missing"><strong># Missing: </strong>12</a></li>
+          <li><a href="#unexpected"><strong># Unexpected: </strong>0</a></li>
+          <li><a href="#mismatched"><strong># Mismatched: </strong>0</a></li>
+          <li><strong># of Files: </strong>9</li>
+        </ul>
+      </div>
+      <div class="row" id="missing">
+        <h2>Missing (12)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?expected=tests%2FnullableTypes%2FredundantNullable.kt&amp;actual=tests%2FnullableTypes%2FredundantNullable.fir.kt" target="_blank">tests/nullableTypes/redundantNullable.kt (5)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FProjectionsInSupertypes.kt&amp;actual=tests%2FProjectionsInSupertypes.fir.kt" target="_blank">tests/ProjectionsInSupertypes.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Ftypealias%2Fkt15734.kt&amp;actual=tests%2Ftypealias%2Fkt15734.fir.kt" target="_blank">tests/typealias/kt15734.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Ftypealias%2FtypeAliasAsBareType.kt&amp;actual=tests%2Ftypealias%2FtypeAliasAsBareType.fir.kt" target="_blank">tests/typealias/typeAliasAsBareType.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FnullableTypes%2FbaseWithNullableUpperBound.kt&amp;actual=tests%2FnullableTypes%2FbaseWithNullableUpperBound.fir.kt" target="_blank">tests/nullableTypes/baseWithNullableUpperBound.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FnullableTypes%2FredundantNullableInSupertype.kt&amp;actual=tests%2FnullableTypes%2FredundantNullableInSupertype.fir.kt" target="_blank">tests/nullableTypes/redundantNullableInSupertype.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fcast%2Fbare%2FRedundantNullable.kt&amp;actual=tests%2Fcast%2Fbare%2FRedundantNullable.fir.kt" target="_blank">tests/cast/bare/RedundantNullable.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row" id="matched">
+        <h2>Matched (4)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?expected=testsWithJsStdLib%2FdynamicTypes%2Fnullable.kt&amp;actual=testsWithJsStdLib%2FdynamicTypes%2Fnullable.kt" target="_blank">testsWithJsStdLib/dynamicTypes/nullable.kt (3)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithJsStdLib%2FdynamicTypes%2FextensionsToDynamic.kt&amp;actual=testsWithJsStdLib%2FdynamicTypes%2FextensionsToDynamic.kt" target="_blank">testsWithJsStdLib/dynamicTypes/extensionsToDynamic.kt (1)</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

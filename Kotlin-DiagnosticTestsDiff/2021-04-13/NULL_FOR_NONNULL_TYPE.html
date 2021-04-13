@@ -1,0 +1,88 @@
+<html>
+  <head>
+    <title>Diagnostics diff: NULL_FOR_NONNULL_TYPE</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row" id="summary">
+        <h1>NULL_FOR_NONNULL_TYPE</h1>
+      </div>
+      <div class="row">
+        <ul>
+          <li><strong>Total: </strong>93</li>
+          <li><strong>Match %: </strong>0.00%</li>
+          <li><a href="#matched"><strong># Matched: </strong>0</a></li>
+          <li><strong># Non-matched: </strong>93</li>
+          <li><a href="#missing"><strong># Missing: </strong>64</a></li>
+          <li><a href="#unexpected"><strong># Unexpected: </strong>0</a></li>
+          <li><a href="#mismatched"><strong># Mismatched: </strong>29</a></li>
+          <li><strong># of Files: </strong>39</li>
+        </ul>
+      </div>
+      <div class="row" id="missing">
+        <h2>Missing (64)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2FpurelyImplementedCollection%2Fmaps.kt&amp;actual=testsWithStdLib%2FpurelyImplementedCollection%2Fmaps.fir.kt" target="_blank">testsWithStdLib/purelyImplementedCollection/maps.kt (12)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fgenerics%2Fnullability%2FnullToGeneric.kt&amp;actual=tests%2Fgenerics%2Fnullability%2FnullToGeneric.fir.kt" target="_blank">tests/generics/nullability/nullToGeneric.kt (6)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2FpurelyImplementedCollection%2FmapsWithNullableKey.kt&amp;actual=testsWithStdLib%2FpurelyImplementedCollection%2FmapsWithNullableKey.fir.kt" target="_blank">testsWithStdLib/purelyImplementedCollection/mapsWithNullableKey.kt (4)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2FpurelyImplementedCollection%2FmapsWithNullableValues.kt&amp;actual=testsWithStdLib%2FpurelyImplementedCollection%2FmapsWithNullableValues.fir.kt" target="_blank">testsWithStdLib/purelyImplementedCollection/mapsWithNullableValues.kt (4)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fj%2Bk%2Fsam%2FenhancedSamConstructor.kt&amp;actual=tests%2Fj%2Bk%2Fsam%2FenhancedSamConstructor.fir.kt" target="_blank">tests/j+k/sam/enhancedSamConstructor.kt (4)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FplatformTypes%2FnotNullTypeParameter%2FmethodTypeParameter.kt&amp;actual=tests%2FplatformTypes%2FnotNullTypeParameter%2FmethodTypeParameter.fir.kt" target="_blank">tests/platformTypes/notNullTypeParameter/methodTypeParameter.kt (4)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2FpurelyImplementedCollection%2Fsets.kt&amp;actual=testsWithStdLib%2FpurelyImplementedCollection%2Fsets.fir.kt" target="_blank">testsWithStdLib/purelyImplementedCollection/sets.kt (3)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FtargetedBuiltIns%2FconcurrentMapRemove.kt&amp;actual=tests%2FtargetedBuiltIns%2FconcurrentMapRemove.fir.kt" target="_blank">tests/targetedBuiltIns/concurrentMapRemove.kt (3)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FplatformTypes%2FnotNullTypeParameter%2FenhancementFromAnnotation.kt&amp;actual=tests%2FplatformTypes%2FnotNullTypeParameter%2FenhancementFromAnnotation.fir.kt" target="_blank">tests/platformTypes/notNullTypeParameter/enhancementFromAnnotation.kt (3)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2FpurelyImplementedCollection%2FcustomClassMutableList.kt&amp;actual=testsWithStdLib%2FpurelyImplementedCollection%2FcustomClassMutableList.fir.kt" target="_blank">testsWithStdLib/purelyImplementedCollection/customClassMutableList.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2FpurelyImplementedCollection%2FarrayList.kt&amp;actual=testsWithStdLib%2FpurelyImplementedCollection%2FarrayList.fir.kt" target="_blank">testsWithStdLib/purelyImplementedCollection/arrayList.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FcollectionLiterals%2FdefaultValuesWithConstantsInAnnotation.kt&amp;actual=tests%2FcollectionLiterals%2FdefaultValuesWithConstantsInAnnotation.fir.kt" target="_blank">tests/collectionLiterals/defaultValuesWithConstantsInAnnotation.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FexplicitDefinitelyNotNull%2Fsimple.kt&amp;actual=tests%2FexplicitDefinitelyNotNull%2Fsimple.fir.kt" target="_blank">tests/explicitDefinitelyNotNull/simple.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FexplicitDefinitelyNotNull%2Fapproximation.kt&amp;actual=tests%2FexplicitDefinitelyNotNull%2Fapproximation.fir.kt" target="_blank">tests/explicitDefinitelyNotNull/approximation.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2FpurelyImplementedCollection%2FcustomClassMutableCollection.kt&amp;actual=testsWithStdLib%2FpurelyImplementedCollection%2FcustomClassMutableCollection.fir.kt" target="_blank">testsWithStdLib/purelyImplementedCollection/customClassMutableCollection.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fgenerics%2FmultipleBoundsMemberScope%2Fproperties.kt&amp;actual=tests%2Fgenerics%2FmultipleBoundsMemberScope%2Fproperties.fir.kt" target="_blank">tests/generics/multipleBoundsMemberScope/properties.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FcollectionLiterals%2FcollectionLiteralsWithVarargs.kt&amp;actual=tests%2FcollectionLiterals%2FcollectionLiteralsWithVarargs.fir.kt" target="_blank">tests/collectionLiterals/collectionLiteralsWithVarargs.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fwhen%2Fkt9929.kt&amp;actual=tests%2Fwhen%2Fkt9929.fir.kt" target="_blank">tests/when/kt9929.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fwhen%2Fkt9972.kt&amp;actual=tests%2Fwhen%2Fkt9972.fir.kt" target="_blank">tests/when/kt9972.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsyntheticExtensions%2FjavaProperties%2FKotlinOverridesJava.kt&amp;actual=tests%2FsyntheticExtensions%2FjavaProperties%2FKotlinOverridesJava.fir.kt" target="_blank">tests/syntheticExtensions/javaProperties/KotlinOverridesJava.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FtargetedBuiltIns%2FmutableMapRemove.kt&amp;actual=tests%2FtargetedBuiltIns%2FmutableMapRemove.fir.kt" target="_blank">tests/targetedBuiltIns/mutableMapRemove.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FfunctionLiterals%2FreturnNullWithReturn.kt&amp;actual=tests%2FfunctionLiterals%2FreturnNullWithReturn.fir.kt" target="_blank">tests/functionLiterals/returnNullWithReturn.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FFunctionReturnTypes.kt&amp;actual=tests%2FFunctionReturnTypes.fir.kt" target="_blank">tests/FunctionReturnTypes.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FfunctionAsExpression%2FReturnTypeCheck.kt&amp;actual=tests%2FfunctionAsExpression%2FReturnTypeCheck.fir.kt" target="_blank">tests/functionAsExpression/ReturnTypeCheck.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2FintersectionScope%2Fproperties.kt&amp;actual=tests%2FsmartCasts%2FintersectionScope%2Fproperties.fir.kt" target="_blank">tests/smartCasts/intersectionScope/properties.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row" id="mismatched">
+        <h2>Mismatched (29)</h2>
+      </div>
+      <div class="row">
+        <h3>NULL_FOR_NONNULL_TYPE -&gt; ARGUMENT_TYPE_MISMATCH (29)</h3>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?expected=tests%2FplatformTypes%2FnotNullTypeParameter%2FsubstitutionInSuperType.kt&amp;actual=tests%2FplatformTypes%2FnotNullTypeParameter%2FsubstitutionInSuperType.fir.kt" target="_blank">tests/platformTypes/notNullTypeParameter/substitutionInSuperType.kt (3)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FplatformTypes%2FnotNullTypeParameter%2FnoInheritanceValueParameter.kt&amp;actual=tests%2FplatformTypes%2FnotNullTypeParameter%2FnoInheritanceValueParameter.fir.kt" target="_blank">tests/platformTypes/notNullTypeParameter/noInheritanceValueParameter.kt (3)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fcoroutines%2Fkt37309.kt&amp;actual=testsWithStdLib%2Fcoroutines%2Fkt37309.fir.kt" target="_blank">testsWithStdLib/coroutines/kt37309.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fgenerics%2Fnullability%2FnullToGeneric.kt&amp;actual=tests%2Fgenerics%2Fnullability%2FnullToGeneric.fir.kt" target="_blank">tests/generics/nullability/nullToGeneric.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Ftypealias%2FtypeAliasObjectWithInvoke.kt&amp;actual=tests%2Ftypealias%2FtypeAliasObjectWithInvoke.fir.kt" target="_blank">tests/typealias/typeAliasObjectWithInvoke.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsyntheticExtensions%2FsamAdapters%2FParameterTypeAnnotation.kt&amp;actual=tests%2FsyntheticExtensions%2FsamAdapters%2FParameterTypeAnnotation.fir.kt" target="_blank">tests/syntheticExtensions/samAdapters/ParameterTypeAnnotation.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FplatformTypes%2FrawTypes%2FtypeEnhancement.kt&amp;actual=tests%2FplatformTypes%2FrawTypes%2FtypeEnhancement.fir.kt" target="_blank">tests/platformTypes/rawTypes/typeEnhancement.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FcallableReference%2Fgeneric%2FgenericFunctionsWithNullableTypes.kt&amp;actual=tests%2FcallableReference%2Fgeneric%2FgenericFunctionsWithNullableTypes.fir.kt" target="_blank">tests/callableReference/generic/genericFunctionsWithNullableTypes.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Finference%2Fregressions%2Fkt2838.kt&amp;actual=tests%2Finference%2Fregressions%2Fkt2838.fir.kt" target="_blank">tests/inference/regressions/kt2838.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Ftypealias%2FtypeAliasConstructorTypeArgumentsInference.kt&amp;actual=tests%2Ftypealias%2FtypeAliasConstructorTypeArgumentsInference.fir.kt" target="_blank">tests/typealias/typeAliasConstructorTypeArgumentsInference.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsyntheticExtensions%2FjavaProperties%2FKotlinOverridesJava.kt&amp;actual=tests%2FsyntheticExtensions%2FjavaProperties%2FKotlinOverridesJava.fir.kt" target="_blank">tests/syntheticExtensions/javaProperties/KotlinOverridesJava.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FexplicitDefinitelyNotNull%2Fsimple.kt&amp;actual=tests%2FexplicitDefinitelyNotNull%2Fsimple.fir.kt" target="_blank">tests/explicitDefinitelyNotNull/simple.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FexplicitDefinitelyNotNull%2Fapproximation.kt&amp;actual=tests%2FexplicitDefinitelyNotNull%2Fapproximation.fir.kt" target="_blank">tests/explicitDefinitelyNotNull/approximation.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FtargetedBuiltIns%2FmutableMapRemove.kt&amp;actual=tests%2FtargetedBuiltIns%2FmutableMapRemove.fir.kt" target="_blank">tests/targetedBuiltIns/mutableMapRemove.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FtargetedBuiltIns%2FforEachRemainingNullability.kt&amp;actual=tests%2FtargetedBuiltIns%2FforEachRemainingNullability.fir.kt" target="_blank">tests/targetedBuiltIns/forEachRemainingNullability.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fj%2Bk%2FSupertypeArgumentsNullability-NotNull-UserTypes.kt&amp;actual=tests%2Fj%2Bk%2FSupertypeArgumentsNullability-NotNull-UserTypes.fir.kt" target="_blank">tests/j+k/SupertypeArgumentsNullability-NotNull-UserTypes.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fj%2Bk%2FSupertypeArgumentsNullability-NotNull-SpecialTypes.kt&amp;actual=tests%2Fj%2Bk%2FSupertypeArgumentsNullability-NotNull-SpecialTypes.fir.kt" target="_blank">tests/j+k/SupertypeArgumentsNullability-NotNull-SpecialTypes.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fj%2Bk%2FwrongVarianceInJava.kt&amp;actual=tests%2Fj%2Bk%2FwrongVarianceInJava.fir.kt" target="_blank">tests/j+k/wrongVarianceInJava.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FplatformTypes%2FmethodCall%2Fint.kt&amp;actual=tests%2FplatformTypes%2FmethodCall%2Fint.fir.kt" target="_blank">tests/platformTypes/methodCall/int.kt (1)</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

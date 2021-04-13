@@ -1,0 +1,108 @@
+<html>
+  <head>
+    <title>Diagnostics diff: DEPRECATION</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row" id="summary">
+        <h1>DEPRECATION</h1>
+      </div>
+      <div class="row">
+        <ul>
+          <li><strong>Total: </strong>257</li>
+          <li><strong>Match %: </strong>10.51%</li>
+          <li><a href="#matched"><strong># Matched: </strong>27</a></li>
+          <li><strong># Non-matched: </strong>230</li>
+          <li><a href="#missing"><strong># Missing: </strong>227</a></li>
+          <li><a href="#unexpected"><strong># Unexpected: </strong>0</a></li>
+          <li><a href="#mismatched"><strong># Mismatched: </strong>3</a></li>
+          <li><strong># of Files: </strong>56</li>
+        </ul>
+      </div>
+      <div class="row" id="missing">
+        <h2>Missing (227)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?expected=tests%2Fdeprecated%2FtypeUsage.kt&amp;actual=tests%2Fdeprecated%2FtypeUsage.fir.kt" target="_blank">tests/deprecated/typeUsage.kt (20)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fdeprecated%2FpropertyUsage.kt&amp;actual=tests%2Fdeprecated%2FpropertyUsage.fir.kt" target="_blank">tests/deprecated/propertyUsage.kt (14)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2FfunctionLiterals%2FpseudocodeMemoryOverhead.kt&amp;actual=testsWithStdLib%2FfunctionLiterals%2FpseudocodeMemoryOverhead.fir.kt" target="_blank">testsWithStdLib/functionLiterals/pseudocodeMemoryOverhead.kt (11)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fdeprecated%2FdeprecatedPropertyInheritance.kt&amp;actual=tests%2Fdeprecated%2FdeprecatedPropertyInheritance.fir.kt" target="_blank">tests/deprecated/deprecatedPropertyInheritance.kt (11)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsyntheticExtensions%2FjavaProperties%2FDeprecated.kt&amp;actual=tests%2FsyntheticExtensions%2FjavaProperties%2FDeprecated.fir.kt" target="_blank">tests/syntheticExtensions/javaProperties/Deprecated.kt (10)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fdeprecated%2FfunctionUsage.kt&amp;actual=tests%2Fdeprecated%2FfunctionUsage.fir.kt" target="_blank">tests/deprecated/functionUsage.kt (10)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fdeprecated%2FcompanionObjectUsage.kt&amp;actual=tests%2Fdeprecated%2FcompanionObjectUsage.fir.kt" target="_blank">tests/deprecated/companionObjectUsage.kt (9)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fdeprecated%2FdeprecatedInheritance.kt&amp;actual=tests%2Fdeprecated%2FdeprecatedInheritance.fir.kt" target="_blank">tests/deprecated/deprecatedInheritance.kt (9)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fdeprecated%2FtypealiasUsage.kt&amp;actual=tests%2Fdeprecated%2FtypealiasUsage.fir.kt" target="_blank">tests/deprecated/typealiasUsage.kt (8)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fannotations%2FjvmDefault%2FnoJvmDefaultFlag.kt&amp;actual=testsWithStdLib%2Fannotations%2FjvmDefault%2FnoJvmDefaultFlag.fir.kt" target="_blank">testsWithStdLib/annotations/jvmDefault/noJvmDefaultFlag.kt (7)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fannotations%2FjvmDefault%2Ftarget6.kt&amp;actual=testsWithStdLib%2Fannotations%2FjvmDefault%2Ftarget6.fir.kt" target="_blank">testsWithStdLib/annotations/jvmDefault/target6.kt (7)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fannotations%2FjvmDefault%2Ftarget8.kt&amp;actual=testsWithStdLib%2Fannotations%2FjvmDefault%2Ftarget8.fir.kt" target="_blank">testsWithStdLib/annotations/jvmDefault/target8.kt (7)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fj%2Bk%2Fdeprecations%2FforFakeOverrides.kt&amp;actual=tests%2Fj%2Bk%2Fdeprecations%2FforFakeOverrides.fir.kt" target="_blank">tests/j+k/deprecations/forFakeOverrides.kt (7)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fannotations%2FjvmDefault%2FjvmDefaults.kt&amp;actual=testsWithStdLib%2Fannotations%2FjvmDefault%2FjvmDefaults.fir.kt" target="_blank">testsWithStdLib/annotations/jvmDefault/jvmDefaults.kt (6)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fdeprecated%2FpropertyUseSiteTargetedAnnotations.kt&amp;actual=tests%2Fdeprecated%2FpropertyUseSiteTargetedAnnotations.fir.kt" target="_blank">tests/deprecated/propertyUseSiteTargetedAnnotations.kt (6)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fdeprecated%2FjavaDeprecatedInheritance.kt&amp;actual=tests%2Fdeprecated%2FjavaDeprecatedInheritance.fir.kt" target="_blank">tests/deprecated/javaDeprecatedInheritance.kt (6)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fannotations%2FjvmDefault%2FjvmDefaultsWithJava.kt&amp;actual=testsWithStdLib%2Fannotations%2FjvmDefault%2FjvmDefaultsWithJava.fir.kt" target="_blank">testsWithStdLib/annotations/jvmDefault/jvmDefaultsWithJava.kt (5)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fannotations%2FjvmDefault%2FnotInterface.kt&amp;actual=testsWithStdLib%2Fannotations%2FjvmDefault%2FnotInterface.fir.kt" target="_blank">testsWithStdLib/annotations/jvmDefault/notInterface.kt (5)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fannotations%2FjvmDefault%2FpropertyAccessor.kt&amp;actual=testsWithStdLib%2Fannotations%2FjvmDefault%2FpropertyAccessor.fir.kt" target="_blank">testsWithStdLib/annotations/jvmDefault/propertyAccessor.kt (4)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fannotations%2FjvmDefault%2FjavaOverride.kt&amp;actual=testsWithStdLib%2Fannotations%2FjvmDefault%2FjavaOverride.fir.kt" target="_blank">testsWithStdLib/annotations/jvmDefault/javaOverride.kt (4)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fannotations%2FjvmDefault%2FsuperCallAmbiguity.kt&amp;actual=testsWithStdLib%2Fannotations%2FjvmDefault%2FsuperCallAmbiguity.fir.kt" target="_blank">testsWithStdLib/annotations/jvmDefault/superCallAmbiguity.kt (3)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fdeprecated%2FdeprecatedConstructor.kt&amp;actual=tests%2Fdeprecated%2FdeprecatedConstructor.fir.kt" target="_blank">tests/deprecated/deprecatedConstructor.kt (3)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fdeprecated%2FiteratorUsage.kt&amp;actual=tests%2Fdeprecated%2FiteratorUsage.fir.kt" target="_blank">tests/deprecated/iteratorUsage.kt (3)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fdeprecated%2FdeprecatedSinceKotlin%2Fwarning.kt&amp;actual=tests%2Fdeprecated%2FdeprecatedSinceKotlin%2Fwarning.fir.kt" target="_blank">tests/deprecated/deprecatedSinceKotlin/warning.kt (3)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fdeprecated%2FjavaDeprecated.kt&amp;actual=tests%2Fdeprecated%2FjavaDeprecated.fir.kt" target="_blank">tests/deprecated/javaDeprecated.kt (3)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fdeprecated%2FtypealiasCompanionObject.kt&amp;actual=tests%2Fdeprecated%2FtypealiasCompanionObject.fir.kt" target="_blank">tests/deprecated/typealiasCompanionObject.kt (3)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fdeprecated%2FnestedTypesUsage.kt&amp;actual=tests%2Fdeprecated%2FnestedTypesUsage.fir.kt" target="_blank">tests/deprecated/nestedTypesUsage.kt (3)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fj%2Bk%2Fdeprecations%2FforMixedOverride.kt&amp;actual=tests%2Fj%2Bk%2Fdeprecations%2FforMixedOverride.fir.kt" target="_blank">tests/j+k/deprecations/forMixedOverride.kt (3)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fannotations%2FjvmDefault%2FsuperCall.kt&amp;actual=testsWithStdLib%2Fannotations%2FjvmDefault%2FsuperCall.fir.kt" target="_blank">testsWithStdLib/annotations/jvmDefault/superCall.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fannotations%2FjvmDefault%2FjvmDefaultInInheritance.kt&amp;actual=testsWithStdLib%2Fannotations%2FjvmDefault%2FjvmDefaultInInheritance.fir.kt" target="_blank">testsWithStdLib/annotations/jvmDefault/jvmDefaultInInheritance.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsyntheticExtensions%2FsamAdapters%2FDeprecated.kt&amp;actual=tests%2FsyntheticExtensions%2FsamAdapters%2FDeprecated.fir.kt" target="_blank">tests/syntheticExtensions/samAdapters/Deprecated.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FtestWithModifiedMockJdk%2FthrowableConstructor.kt&amp;actual=tests%2FtestWithModifiedMockJdk%2FthrowableConstructor.fir.kt" target="_blank">tests/testWithModifiedMockJdk/throwableConstructor.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fdeprecated%2FjavaDocDeprecated.kt&amp;actual=tests%2Fdeprecated%2FjavaDocDeprecated.fir.kt" target="_blank">tests/deprecated/javaDocDeprecated.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fdeprecated%2FannotationUsage.kt&amp;actual=tests%2Fdeprecated%2FannotationUsage.fir.kt" target="_blank">tests/deprecated/annotationUsage.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fdeprecated%2Fimports.kt&amp;actual=tests%2Fdeprecated%2Fimports.fir.kt" target="_blank">tests/deprecated/imports.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fdeprecated%2FwarningOnConstructorErrorOnClass.kt&amp;actual=tests%2Fdeprecated%2FwarningOnConstructorErrorOnClass.fir.kt" target="_blank">tests/deprecated/warningOnConstructorErrorOnClass.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fdeprecated%2FobjectUsage.kt&amp;actual=tests%2Fdeprecated%2FobjectUsage.fir.kt" target="_blank">tests/deprecated/objectUsage.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fdeprecated%2FtypealiasForDeprecatedClass.kt&amp;actual=tests%2Fdeprecated%2FtypealiasForDeprecatedClass.fir.kt" target="_blank">tests/deprecated/typealiasForDeprecatedClass.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fdeprecated%2FtypealiasConstructor.kt&amp;actual=tests%2Fdeprecated%2FtypealiasConstructor.fir.kt" target="_blank">tests/deprecated/typealiasConstructor.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fannotations%2FjvmDefault%2FsuperCallAmbiguity2.kt&amp;actual=testsWithStdLib%2Fannotations%2FjvmDefault%2FsuperCallAmbiguity2.fir.kt" target="_blank">testsWithStdLib/annotations/jvmDefault/superCallAmbiguity2.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fannotations%2FjvmDefault%2FjavaOverrideAll.kt&amp;actual=testsWithStdLib%2Fannotations%2FjvmDefault%2FjavaOverrideAll.fir.kt" target="_blank">testsWithStdLib/annotations/jvmDefault/javaOverrideAll.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fannotations%2FjvmDefault%2FsimpleOverride.kt&amp;actual=testsWithStdLib%2Fannotations%2FjvmDefault%2FsimpleOverride.fir.kt" target="_blank">testsWithStdLib/annotations/jvmDefault/simpleOverride.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fannotations%2FjvmDefault%2Fgeneric.kt&amp;actual=testsWithStdLib%2Fannotations%2FjvmDefault%2Fgeneric.fir.kt" target="_blank">testsWithStdLib/annotations/jvmDefault/generic.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fannotations%2FjvmDefault%2FsuperCallAmbiguity3.kt&amp;actual=testsWithStdLib%2Fannotations%2FjvmDefault%2FsuperCallAmbiguity3.fir.kt" target="_blank">testsWithStdLib/annotations/jvmDefault/superCallAmbiguity3.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fannotations%2FjvmDefault%2FsimplePropertyOverride.kt&amp;actual=testsWithStdLib%2Fannotations%2FjvmDefault%2FsimplePropertyOverride.fir.kt" target="_blank">testsWithStdLib/annotations/jvmDefault/simplePropertyOverride.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FtestWithModifiedMockJdk%2FnotConsideredMethod.kt&amp;actual=tests%2FtestWithModifiedMockJdk%2FnotConsideredMethod.fir.kt" target="_blank">tests/testWithModifiedMockJdk/notConsideredMethod.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fdeprecated%2FunusedImport.kt&amp;actual=tests%2Fdeprecated%2FunusedImport.fir.kt" target="_blank">tests/deprecated/unusedImport.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fdeprecated%2FdeprecatedSinceKotlin%2FmessageFromDeprecatedAnnotation.kt&amp;actual=tests%2Fdeprecated%2FdeprecatedSinceKotlin%2FmessageFromDeprecatedAnnotation.fir.kt" target="_blank">tests/deprecated/deprecatedSinceKotlin/messageFromDeprecatedAnnotation.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fdeprecated%2FcomponentUsage.kt&amp;actual=tests%2Fdeprecated%2FcomponentUsage.fir.kt" target="_blank">tests/deprecated/componentUsage.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fdeprecated%2FimportJavaSamInterface.kt&amp;actual=tests%2Fdeprecated%2FimportJavaSamInterface.fir.kt" target="_blank">tests/deprecated/importJavaSamInterface.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fdeprecated%2FpropertyWithInvoke.kt&amp;actual=tests%2Fdeprecated%2FpropertyWithInvoke.fir.kt" target="_blank">tests/deprecated/propertyWithInvoke.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fdeprecated%2FgenericConstructorUsage.kt&amp;actual=tests%2Fdeprecated%2FgenericConstructorUsage.fir.kt" target="_blank">tests/deprecated/genericConstructorUsage.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fmultiplatform%2FtopLevelFun%2FcallableReferenceOnExpectFun.kt&amp;actual=tests%2Fmultiplatform%2FtopLevelFun%2FcallableReferenceOnExpectFun.fir.kt" target="_blank">tests/multiplatform/topLevelFun/callableReferenceOnExpectFun.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fj%2Bk%2Fdeprecations%2FforOverrides.kt&amp;actual=tests%2Fj%2Bk%2Fdeprecations%2FforOverrides.fir.kt" target="_blank">tests/j+k/deprecations/forOverrides.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row" id="mismatched">
+        <h2>Mismatched (3)</h2>
+      </div>
+      <div class="row">
+        <h3>DEPRECATION -&gt; UNRESOLVED_REFERENCE (3)</h3>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?expected=tests%2FtestWithModifiedMockJdk%2FnotConsideredMethod.kt&amp;actual=tests%2FtestWithModifiedMockJdk%2FnotConsideredMethod.fir.kt" target="_blank">tests/testWithModifiedMockJdk/notConsideredMethod.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FtestWithModifiedMockJdk%2FnewStringMethods.kt&amp;actual=tests%2FtestWithModifiedMockJdk%2FnewStringMethods.fir.kt" target="_blank">tests/testWithModifiedMockJdk/newStringMethods.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row" id="matched">
+        <h2>Matched (27)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?expected=nativeTests%2FthrowsClash.kt&amp;actual=nativeTests%2FthrowsClash.kt" target="_blank">nativeTests/throwsClash.kt (27)</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

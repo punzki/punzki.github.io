@@ -1,0 +1,141 @@
+<html>
+  <head>
+    <title>Diagnostics diff: CONSTANT_EXPECTED_TYPE_MISMATCH</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row" id="summary">
+        <h1>CONSTANT_EXPECTED_TYPE_MISMATCH</h1>
+      </div>
+      <div class="row">
+        <ul>
+          <li><strong>Total: </strong>204</li>
+          <li><strong>Match %: </strong>1.47%</li>
+          <li><a href="#matched"><strong># Matched: </strong>3</a></li>
+          <li><strong># Non-matched: </strong>201</li>
+          <li><a href="#missing"><strong># Missing: </strong>121</a></li>
+          <li><a href="#unexpected"><strong># Unexpected: </strong>0</a></li>
+          <li><a href="#mismatched"><strong># Mismatched: </strong>80</a></li>
+          <li><strong># of Files: </strong>85</li>
+        </ul>
+      </div>
+      <div class="row" id="missing">
+        <h2>Missing (121)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?expected=tests%2FFunctionReturnTypes.kt&amp;actual=tests%2FFunctionReturnTypes.fir.kt" target="_blank">tests/FunctionReturnTypes.kt (23)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Finference%2FbuilderInference%2FspecialCallsWithLambdas.kt&amp;actual=tests%2Finference%2FbuilderInference%2FspecialCallsWithLambdas.fir.kt" target="_blank">tests/inference/builderInference/specialCallsWithLambdas.kt (6)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FfunctionLiterals%2FExpectedParametersTypesMismatch.kt&amp;actual=tests%2FfunctionLiterals%2FExpectedParametersTypesMismatch.fir.kt" target="_blank">tests/functionLiterals/ExpectedParametersTypesMismatch.kt (6)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fevaluate%2Finteger.kt&amp;actual=tests%2Fevaluate%2Finteger.fir.kt" target="_blank">tests/evaluate/integer.kt (5)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2FcommonCollections.kt&amp;actual=testsWithStdLib%2FcommonCollections.fir.kt" target="_blank">testsWithStdLib/commonCollections.kt (4)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Ftypealias%2FinnerTypeAliasConstructor.kt&amp;actual=tests%2Ftypealias%2FinnerTypeAliasConstructor.fir.kt" target="_blank">tests/typealias/innerTypeAliasConstructor.kt (4)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FcheckArguments%2Fkt1897_diagnostic_part.kt&amp;actual=tests%2FcheckArguments%2Fkt1897_diagnostic_part.fir.kt" target="_blank">tests/checkArguments/kt1897_diagnostic_part.kt (4)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fresolve%2FspecialConstructions%2FconstantsInIf.kt&amp;actual=tests%2Fresolve%2FspecialConstructions%2FconstantsInIf.fir.kt" target="_blank">tests/resolve/specialConstructions/constantsInIf.kt (4)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FcontrolStructures%2FifWhenWithoutElse.kt&amp;actual=tests%2FcontrolStructures%2FifWhenWithoutElse.fir.kt" target="_blank">tests/controlStructures/ifWhenWithoutElse.kt (3)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Finference%2FannotationsForResolve%2Fkt29307.kt&amp;actual=testsWithStdLib%2Finference%2FannotationsForResolve%2Fkt29307.fir.kt" target="_blank">testsWithStdLib/inference/annotationsForResolve/kt29307.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fcoroutines%2FlambdaExpectedType.kt&amp;actual=testsWithStdLib%2Fcoroutines%2FlambdaExpectedType.fir.kt" target="_blank">testsWithStdLib/coroutines/lambdaExpectedType.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fannotations%2FprohibitPositionedArgument%2FtypeMismatch.kt&amp;actual=testsWithStdLib%2Fannotations%2FprohibitPositionedArgument%2FtypeMismatch.fir.kt" target="_blank">testsWithStdLib/annotations/prohibitPositionedArgument/typeMismatch.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FcollectionLiterals%2FcollectionLiteralsAsPrimitiveArrays.kt&amp;actual=tests%2FcollectionLiterals%2FcollectionLiteralsAsPrimitiveArrays.fir.kt" target="_blank">tests/collectionLiterals/collectionLiteralsAsPrimitiveArrays.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FcollectionLiterals%2FargumentsOfAnnotation.kt&amp;actual=tests%2FcollectionLiterals%2FargumentsOfAnnotation.fir.kt" target="_blank">tests/collectionLiterals/argumentsOfAnnotation.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Finference%2Fregressions%2Fkt2283.kt&amp;actual=tests%2Finference%2Fregressions%2Fkt2283.fir.kt" target="_blank">tests/inference/regressions/kt2283.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fwhen%2Fkt10439.kt&amp;actual=tests%2Fwhen%2Fkt10439.fir.kt" target="_blank">tests/when/kt10439.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Finner%2FinnerConstructorsFromQualifiersWithIrrelevantCandidate.kt&amp;actual=tests%2Finner%2FinnerConstructorsFromQualifiersWithIrrelevantCandidate.fir.kt" target="_blank">tests/inner/innerConstructorsFromQualifiersWithIrrelevantCandidate.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FunsignedTypes%2Fconversions%2FsignedToUnsignedConversionWithExpectedType.kt&amp;actual=tests%2FunsignedTypes%2Fconversions%2FsignedToUnsignedConversionWithExpectedType.fir.kt" target="_blank">tests/unsignedTypes/conversions/signedToUnsignedConversionWithExpectedType.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FunsignedTypes%2Fconversions%2FnoConversionForUnsignedTypesOnReceiver.kt&amp;actual=tests%2FunsignedTypes%2Fconversions%2FnoConversionForUnsignedTypesOnReceiver.fir.kt" target="_blank">tests/unsignedTypes/conversions/noConversionForUnsignedTypesOnReceiver.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FunsignedTypes%2FexplicitUnsignedLongTypeCheck.kt&amp;actual=tests%2FunsignedTypes%2FexplicitUnsignedLongTypeCheck.fir.kt" target="_blank">tests/unsignedTypes/explicitUnsignedLongTypeCheck.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FunsignedTypes%2FunsignedLiteralsTypeCheck.kt&amp;actual=tests%2FunsignedTypes%2FunsignedLiteralsTypeCheck.fir.kt" target="_blank">tests/unsignedTypes/unsignedLiteralsTypeCheck.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fproperties%2FinferenceFromGetters%2Foverrides.kt&amp;actual=tests%2Fproperties%2FinferenceFromGetters%2Foverrides.fir.kt" target="_blank">tests/properties/inferenceFromGetters/overrides.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FcontrolStructures%2Fkt657.kt&amp;actual=tests%2FcontrolStructures%2Fkt657.fir.kt" target="_blank">tests/controlStructures/kt657.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fj%2Bk%2FcollectionOverrides%2FcontainsAndOverload.kt&amp;actual=tests%2Fj%2Bk%2FcollectionOverrides%2FcontainsAndOverload.fir.kt" target="_blank">tests/j+k/collectionOverrides/containsAndOverload.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fregressions%2FTypeMismatchOnUnaryOperations.kt&amp;actual=tests%2Fregressions%2FTypeMismatchOnUnaryOperations.fir.kt" target="_blank">tests/regressions/TypeMismatchOnUnaryOperations.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Finference%2FannotationsForResolve%2FnoInferAnnotation.kt&amp;actual=testsWithStdLib%2Finference%2FannotationsForResolve%2FnoInferAnnotation.fir.kt" target="_blank">testsWithStdLib/inference/annotationsForResolve/noInferAnnotation.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2FtryCatch%2FassignTry.kt&amp;actual=testsWithStdLib%2FtryCatch%2FassignTry.fir.kt" target="_blank">testsWithStdLib/tryCatch/assignTry.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2FfactoryPattern%2FoverloadByLambdaReturnType_enabled.kt&amp;actual=testsWithStdLib%2FfactoryPattern%2FoverloadByLambdaReturnType_enabled.fir.kt" target="_blank">testsWithStdLib/factoryPattern/overloadByLambdaReturnType_enabled.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fannotations%2FannotationWithVarargParameter%2FkotlinAnnotationWithVarargArgument.kt&amp;actual=testsWithStdLib%2Fannotations%2FannotationWithVarargParameter%2FkotlinAnnotationWithVarargArgument.fir.kt" target="_blank">testsWithStdLib/annotations/annotationWithVarargParameter/kotlinAnnotationWithVarargArgument.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fannotations%2FannotationWithVarargParameter%2FjavaAnnotationWithVarargArgument.kt&amp;actual=testsWithStdLib%2Fannotations%2FannotationWithVarargParameter%2FjavaAnnotationWithVarargArgument.fir.kt" target="_blank">testsWithStdLib/annotations/annotationWithVarargParameter/javaAnnotationWithVarargArgument.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fannotations%2FprohibitPositionedArgument%2FtooManyArgs.kt&amp;actual=testsWithStdLib%2Fannotations%2FprohibitPositionedArgument%2FtooManyArgs.fir.kt" target="_blank">testsWithStdLib/annotations/prohibitPositionedArgument/tooManyArgs.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fannotations%2FjvmPackageName%2FincorrectJvmPackageName.kt&amp;actual=testsWithStdLib%2Fannotations%2FjvmPackageName%2FincorrectJvmPackageName.fir.kt" target="_blank">testsWithStdLib/annotations/jvmPackageName/incorrectJvmPackageName.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fcontracts%2Fsmartcasts%2FpartiallyIncorrect.kt&amp;actual=testsWithStdLib%2Fcontracts%2Fsmartcasts%2FpartiallyIncorrect.fir.kt" target="_blank">testsWithStdLib/contracts/smartcasts/partiallyIncorrect.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fgenerics%2FprojectionsScope%2FtypeMismatchInLambda.kt&amp;actual=tests%2Fgenerics%2FprojectionsScope%2FtypeMismatchInLambda.fir.kt" target="_blank">tests/generics/projectionsScope/typeMismatchInLambda.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fvarargs%2FprohibitAssigningSingleElementsInNamedForm.kt&amp;actual=tests%2Fvarargs%2FprohibitAssigningSingleElementsInNamedForm.fir.kt" target="_blank">tests/varargs/prohibitAssigningSingleElementsInNamedForm.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FcollectionLiterals%2FdefaultValuesInAnnotation.kt&amp;actual=tests%2FcollectionLiterals%2FdefaultValuesInAnnotation.fir.kt" target="_blank">tests/collectionLiterals/defaultValuesInAnnotation.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Finference%2FcapturedTypes%2FapproximateContravariantCapturedTypes.kt&amp;actual=tests%2Finference%2FcapturedTypes%2FapproximateContravariantCapturedTypes.fir.kt" target="_blank">tests/inference/capturedTypes/approximateContravariantCapturedTypes.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Ftypealias%2FwrongNumberOfArgumentsInTypeAliasConstructor.kt&amp;actual=tests%2Ftypealias%2FwrongNumberOfArgumentsInTypeAliasConstructor.fir.kt" target="_blank">tests/typealias/wrongNumberOfArgumentsInTypeAliasConstructor.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsyntheticExtensions%2FjavaProperties%2FOverrideGetterOnly.kt&amp;actual=tests%2FsyntheticExtensions%2FjavaProperties%2FOverrideGetterOnly.fir.kt" target="_blank">tests/syntheticExtensions/javaProperties/OverrideGetterOnly.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsyntheticExtensions%2FjavaProperties%2FKotlinOverridesJava2.kt&amp;actual=tests%2FsyntheticExtensions%2FjavaProperties%2FKotlinOverridesJava2.fir.kt" target="_blank">tests/syntheticExtensions/javaProperties/KotlinOverridesJava2.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsyntheticExtensions%2FjavaProperties%2FKotlinOverridesJava.kt&amp;actual=tests%2FsyntheticExtensions%2FjavaProperties%2FKotlinOverridesJava.fir.kt" target="_blank">tests/syntheticExtensions/javaProperties/KotlinOverridesJava.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FfunctionLiterals%2Freturn%2FIfWithoutElseWithExplicitType.kt&amp;actual=tests%2FfunctionLiterals%2Freturn%2FIfWithoutElseWithExplicitType.fir.kt" target="_blank">tests/functionLiterals/return/IfWithoutElseWithExplicitType.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FBinaryCallsOnNullableValues.kt&amp;actual=tests%2FBinaryCallsOnNullableValues.fir.kt" target="_blank">tests/BinaryCallsOnNullableValues.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FcheckArguments%2FarrayAccessSet.kt&amp;actual=tests%2FcheckArguments%2FarrayAccessSet.fir.kt" target="_blank">tests/checkArguments/arrayAccessSet.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsecondaryConstructors%2FconstructorCallType.kt&amp;actual=tests%2FsecondaryConstructors%2FconstructorCallType.fir.kt" target="_blank">tests/secondaryConstructors/constructorCallType.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsecondaryConstructors%2Freturn.kt&amp;actual=tests%2FsecondaryConstructors%2Freturn.fir.kt" target="_blank">tests/secondaryConstructors/return.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FunsignedTypes%2FunsignedLiteralsOverflowSignedBorder.kt&amp;actual=tests%2FunsignedTypes%2FunsignedLiteralsOverflowSignedBorder.fir.kt" target="_blank">tests/unsignedTypes/unsignedLiteralsOverflowSignedBorder.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FcontrolStructures%2FimproperElseInExpression.kt&amp;actual=tests%2FcontrolStructures%2FimproperElseInExpression.fir.kt" target="_blank">tests/controlStructures/improperElseInExpression.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FcontrolStructures%2Fkt770.kt351.kt735_StatementType.kt&amp;actual=tests%2FcontrolStructures%2Fkt770.kt351.kt735_StatementType.fir.kt" target="_blank">tests/controlStructures/kt770.kt351.kt735_StatementType.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FcontrolStructures%2FifToAnyDiscriminatingUsages.kt&amp;actual=tests%2FcontrolStructures%2FifToAnyDiscriminatingUsages.fir.kt" target="_blank">tests/controlStructures/ifToAnyDiscriminatingUsages.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FfunctionAsExpression%2FReturnTypeCheck.kt&amp;actual=tests%2FfunctionAsExpression%2FReturnTypeCheck.fir.kt" target="_blank">tests/functionAsExpression/ReturnTypeCheck.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fj%2Bk%2FcollectionOverrides%2FirrelevantImplMutableList.kt&amp;actual=tests%2Fj%2Bk%2FcollectionOverrides%2FirrelevantImplMutableList.fir.kt" target="_blank">tests/j+k/collectionOverrides/irrelevantImplMutableList.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fj%2Bk%2FcollectionOverrides%2FirrelevantImplMutableListKotlin.kt&amp;actual=tests%2Fj%2Bk%2FcollectionOverrides%2FirrelevantImplMutableListKotlin.fir.kt" target="_blank">tests/j+k/collectionOverrides/irrelevantImplMutableListKotlin.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fregressions%2Fkt411.kt&amp;actual=tests%2Fregressions%2Fkt411.fir.kt" target="_blank">tests/regressions/kt411.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fregressions%2Fkt10633.kt&amp;actual=tests%2Fregressions%2Fkt10633.fir.kt" target="_blank">tests/regressions/kt10633.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row" id="mismatched">
+        <h2>Mismatched (80)</h2>
+      </div>
+      <div class="row">
+        <h3>CONSTANT_EXPECTED_TYPE_MISMATCH -&gt; ARGUMENT_TYPE_MISMATCH (80)</h3>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?expected=tests%2FConstants.kt&amp;actual=tests%2FConstants.fir.kt" target="_blank">tests/Constants.kt (12)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fj%2Bk%2FcollectionOverrides%2Fcontains.kt&amp;actual=tests%2Fj%2Bk%2FcollectionOverrides%2Fcontains.fir.kt" target="_blank">tests/j+k/collectionOverrides/contains.kt (12)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FtargetedBuiltIns%2FgetOrDefault.kt&amp;actual=tests%2FtargetedBuiltIns%2FgetOrDefault.fir.kt" target="_blank">tests/targetedBuiltIns/getOrDefault.kt (6)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fgenerics%2FProjections.kt&amp;actual=tests%2Fgenerics%2FProjections.fir.kt" target="_blank">tests/generics/Projections.kt (4)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fj%2Bk%2FcollectionOverrides%2FcommonCollections.kt&amp;actual=tests%2Fj%2Bk%2FcollectionOverrides%2FcommonCollections.fir.kt" target="_blank">tests/j+k/collectionOverrides/commonCollections.kt (4)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Flibrary%2FCollections.kt&amp;actual=tests%2Flibrary%2FCollections.fir.kt" target="_blank">tests/library/Collections.kt (4)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Ftypealias%2FtypeAliasConstructorTypeArgumentsInference.kt&amp;actual=tests%2Ftypealias%2FtypeAliasConstructorTypeArgumentsInference.fir.kt" target="_blank">tests/typealias/typeAliasConstructorTypeArgumentsInference.kt (3)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fgenerics%2FstarProjections%2Finvalid.kt&amp;actual=tests%2Fgenerics%2FstarProjections%2Finvalid.fir.kt" target="_blank">tests/generics/starProjections/invalid.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Finference%2FreportingImprovements%2FinferTypeFromUnresolvedArgument.kt&amp;actual=tests%2Finference%2FreportingImprovements%2FinferTypeFromUnresolvedArgument.fir.kt" target="_blank">tests/inference/reportingImprovements/inferTypeFromUnresolvedArgument.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Ftypealias%2FwrongNumberOfArgumentsInTypeAliasConstructor.kt&amp;actual=tests%2Ftypealias%2FwrongNumberOfArgumentsInTypeAliasConstructor.fir.kt" target="_blank">tests/typealias/wrongNumberOfArgumentsInTypeAliasConstructor.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FBasic.kt&amp;actual=tests%2FBasic.fir.kt" target="_blank">tests/Basic.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FcheckArguments%2Fkt1897_diagnostic_part.kt&amp;actual=tests%2FcheckArguments%2Fkt1897_diagnostic_part.fir.kt" target="_blank">tests/checkArguments/kt1897_diagnostic_part.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fj%2Bk%2FcollectionOverrides%2FcontainsAndOverload.kt&amp;actual=tests%2Fj%2Bk%2FcollectionOverrides%2FcontainsAndOverload.fir.kt" target="_blank">tests/j+k/collectionOverrides/containsAndOverload.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fnumbers%2FnumbersInSimpleConstraints.kt&amp;actual=tests%2Fnumbers%2FnumbersInSimpleConstraints.fir.kt" target="_blank">tests/numbers/numbersInSimpleConstraints.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fregressions%2FCoercionToUnit.kt&amp;actual=tests%2Fregressions%2FCoercionToUnit.fir.kt" target="_blank">tests/regressions/CoercionToUnit.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fcoroutines%2Finference%2FplusAssignWithLambda.kt&amp;actual=testsWithStdLib%2Fcoroutines%2Finference%2FplusAssignWithLambda.fir.kt" target="_blank">testsWithStdLib/coroutines/inference/plusAssignWithLambda.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fcoroutines%2Finference%2FplusAssignInCoroutineContext.kt&amp;actual=testsWithStdLib%2Fcoroutines%2Finference%2FplusAssignInCoroutineContext.fir.kt" target="_blank">testsWithStdLib/coroutines/inference/plusAssignInCoroutineContext.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fcoroutines%2FsuspendFunctions.kt&amp;actual=testsWithStdLib%2Fcoroutines%2FsuspendFunctions.fir.kt" target="_blank">testsWithStdLib/coroutines/suspendFunctions.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fcoroutines%2FsuspendExternalFunctions.kt&amp;actual=testsWithStdLib%2Fcoroutines%2FsuspendExternalFunctions.fir.kt" target="_blank">testsWithStdLib/coroutines/suspendExternalFunctions.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fregression%2Fea70880_illegalJvmName.kt&amp;actual=testsWithStdLib%2Fregression%2Fea70880_illegalJvmName.fir.kt" target="_blank">testsWithStdLib/regression/ea70880_illegalJvmName.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fgenerics%2FprojectionsScope%2FaddAll.kt&amp;actual=tests%2Fgenerics%2FprojectionsScope%2FaddAll.fir.kt" target="_blank">tests/generics/projectionsScope/addAll.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Finference%2FcapturedTypes%2FapproximateContravariantCapturedTypes.kt&amp;actual=tests%2Finference%2FcapturedTypes%2FapproximateContravariantCapturedTypes.fir.kt" target="_blank">tests/inference/capturedTypes/approximateContravariantCapturedTypes.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Finference%2FreportingImprovements%2FwrongArgumentPassedToLocalExtensionFunction.kt&amp;actual=tests%2Finference%2FreportingImprovements%2FwrongArgumentPassedToLocalExtensionFunction.fir.kt" target="_blank">tests/inference/reportingImprovements/wrongArgumentPassedToLocalExtensionFunction.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Finference%2Fsubstitutions%2FsimpleSubstitutionCheckTypeArgumentsNotTypeParameters.kt&amp;actual=tests%2Finference%2Fsubstitutions%2FsimpleSubstitutionCheckTypeArgumentsNotTypeParameters.fir.kt" target="_blank">tests/inference/substitutions/simpleSubstitutionCheckTypeArgumentsNotTypeParameters.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Ftypealias%2FstarProjection.kt&amp;actual=tests%2Ftypealias%2FstarProjection.fir.kt" target="_blank">tests/typealias/starProjection.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsyntheticExtensions%2FsamAdapters%2FInnerClassInGeneric.kt&amp;actual=tests%2FsyntheticExtensions%2FsamAdapters%2FInnerClassInGeneric.fir.kt" target="_blank">tests/syntheticExtensions/samAdapters/InnerClassInGeneric.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FfunctionLiterals%2Fkt7383_starProjectedFunction.kt&amp;actual=tests%2FfunctionLiterals%2Fkt7383_starProjectedFunction.fir.kt" target="_blank">tests/functionLiterals/kt7383_starProjectedFunction.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Finner%2FinnerConstructorsFromQualifiersWithIrrelevantCandidate.kt&amp;actual=tests%2Finner%2FinnerConstructorsFromQualifiersWithIrrelevantCandidate.fir.kt" target="_blank">tests/inner/innerConstructorsFromQualifiersWithIrrelevantCandidate.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fevaluate%2FlogicWithNumber.kt&amp;actual=tests%2Fevaluate%2FlogicWithNumber.fir.kt" target="_blank">tests/evaluate/logicWithNumber.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FResolveToJava.kt&amp;actual=tests%2FResolveToJava.fir.kt" target="_blank">tests/ResolveToJava.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fannotations%2FWrongAnnotationArgsOnObject.kt&amp;actual=tests%2Fannotations%2FWrongAnnotationArgsOnObject.fir.kt" target="_blank">tests/annotations/WrongAnnotationArgsOnObject.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fannotations%2Frendering%2FmemberProjectedOut.kt&amp;actual=tests%2Fannotations%2Frendering%2FmemberProjectedOut.fir.kt" target="_blank">tests/annotations/rendering/memberProjectedOut.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fnumbers%2FcharacterIsNotANumber.kt&amp;actual=tests%2Fnumbers%2FcharacterIsNotANumber.fir.kt" target="_blank">tests/numbers/characterIsNotANumber.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FVarargs.kt&amp;actual=tests%2FVarargs.fir.kt" target="_blank">tests/Varargs.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row" id="matched">
+        <h2>Matched (3)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?expected=testsWithJsStdLib%2FjsCode%2FargumentIsLiteral.kt&amp;actual=testsWithJsStdLib%2FjsCode%2FargumentIsLiteral.kt" target="_blank">testsWithJsStdLib/jsCode/argumentIsLiteral.kt (3)</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

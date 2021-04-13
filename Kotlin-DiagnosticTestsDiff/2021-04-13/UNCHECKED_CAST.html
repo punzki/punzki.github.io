@@ -1,0 +1,67 @@
+<html>
+  <head>
+    <title>Diagnostics diff: UNCHECKED_CAST</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row" id="summary">
+        <h1>UNCHECKED_CAST</h1>
+      </div>
+      <div class="row">
+        <ul>
+          <li><strong>Total: </strong>61</li>
+          <li><strong>Match %: </strong>0.00%</li>
+          <li><a href="#matched"><strong># Matched: </strong>0</a></li>
+          <li><strong># Non-matched: </strong>61</li>
+          <li><a href="#missing"><strong># Missing: </strong>61</a></li>
+          <li><a href="#unexpected"><strong># Unexpected: </strong>0</a></li>
+          <li><a href="#mismatched"><strong># Mismatched: </strong>0</a></li>
+          <li><strong># of Files: </strong>33</li>
+        </ul>
+      </div>
+      <div class="row" id="missing">
+        <h2>Missing (61)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?expected=tests%2Fcast%2FAsWithOtherParameter.kt&amp;actual=tests%2Fcast%2FAsWithOtherParameter.fir.kt" target="_blank">tests/cast/AsWithOtherParameter.kt (6)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FplatformTypes%2FgenericVarianceViolation%2Fsimple.kt&amp;actual=tests%2FplatformTypes%2FgenericVarianceViolation%2Fsimple.fir.kt" target="_blank">tests/platformTypes/genericVarianceViolation/simple.kt (5)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fgenerics%2FcapturedParameters%2FuncheckedCast.kt&amp;actual=tests%2Fgenerics%2FcapturedParameters%2FuncheckedCast.fir.kt" target="_blank">tests/generics/capturedParameters/uncheckedCast.kt (3)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fsuppress%2FoneWarning%2FonBlockStatementSameLine.kt&amp;actual=tests%2Fsuppress%2FoneWarning%2FonBlockStatementSameLine.fir.kt" target="_blank">tests/suppress/oneWarning/onBlockStatementSameLine.kt (3)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsamConversions%2FsamConversionsWithSmartCasts.kt&amp;actual=tests%2FsamConversions%2FsamConversionsWithSmartCasts.fir.kt" target="_blank">tests/samConversions/samConversionsWithSmartCasts.kt (3)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsamConversions%2FsamConversionToGeneric.kt&amp;actual=tests%2FsamConversions%2FsamConversionToGeneric.fir.kt" target="_blank">tests/samConversions/samConversionToGeneric.kt (3)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FclassObjects%2FtypeParametersInAnnonymousObject.kt&amp;actual=tests%2FclassObjects%2FtypeParametersInAnnonymousObject.fir.kt" target="_blank">tests/classObjects/typeParametersInAnnonymousObject.kt (3)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FclassObjects%2FtypeParametersInAnnonymousObject_after.kt&amp;actual=tests%2FclassObjects%2FtypeParametersInAnnonymousObject_after.fir.kt" target="_blank">tests/classObjects/typeParametersInAnnonymousObject_after.kt (3)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2FfunctionLiterals%2FpseudocodeMemoryOverhead.kt&amp;actual=testsWithStdLib%2FfunctionLiterals%2FpseudocodeMemoryOverhead.fir.kt" target="_blank">testsWithStdLib/functionLiterals/pseudocodeMemoryOverhead.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fcoroutines%2Finference%2Fkt15516.kt&amp;actual=testsWithStdLib%2Fcoroutines%2Finference%2Fkt15516.fir.kt" target="_blank">testsWithStdLib/coroutines/inference/kt15516.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Finference%2Fregressions%2Fkt35844.kt&amp;actual=tests%2Finference%2Fregressions%2Fkt35844.fir.kt" target="_blank">tests/inference/regressions/kt35844.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FnullableTypes%2FuselessElvis.kt&amp;actual=tests%2FnullableTypes%2FuselessElvis.fir.kt" target="_blank">tests/nullableTypes/uselessElvis.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fcast%2FIsErasedUpcastToNonReified.kt&amp;actual=tests%2Fcast%2FIsErasedUpcastToNonReified.fir.kt" target="_blank">tests/cast/IsErasedUpcastToNonReified.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Flibrary%2FCollections.kt&amp;actual=tests%2Flibrary%2FCollections.fir.kt" target="_blank">tests/library/Collections.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Fkt10444.kt&amp;actual=tests%2FsmartCasts%2Fkt10444.fir.kt" target="_blank">tests/smartCasts/kt10444.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fcoroutines%2FusageOfResultTypeInReturnType_1_4.kt&amp;actual=testsWithStdLib%2Fcoroutines%2FusageOfResultTypeInReturnType_1_4.fir.kt" target="_blank">testsWithStdLib/coroutines/usageOfResultTypeInReturnType_1_4.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fcoroutines%2FusageOfResultTypeInReturnType.kt&amp;actual=testsWithStdLib%2Fcoroutines%2FusageOfResultTypeInReturnType.fir.kt" target="_blank">testsWithStdLib/coroutines/usageOfResultTypeInReturnType.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fcoroutines%2FlambdaExpectedType.kt&amp;actual=testsWithStdLib%2Fcoroutines%2FlambdaExpectedType.fir.kt" target="_blank">testsWithStdLib/coroutines/lambdaExpectedType.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Finference%2FupperBounds%2Fkt2856.kt&amp;actual=tests%2Finference%2FupperBounds%2Fkt2856.fir.kt" target="_blank">tests/inference/upperBounds/kt2856.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Finference%2Fregressions%2Fkt38691.kt&amp;actual=tests%2Finference%2Fregressions%2Fkt38691.fir.kt" target="_blank">tests/inference/regressions/kt38691.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Finference%2FexpectedTypeAdditionalTest.kt&amp;actual=tests%2Finference%2FexpectedTypeAdditionalTest.fir.kt" target="_blank">tests/inference/expectedTypeAdditionalTest.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FEnumEntryAsType.kt&amp;actual=tests%2FEnumEntryAsType.fir.kt" target="_blank">tests/EnumEntryAsType.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fcast%2FAsArray.kt&amp;actual=tests%2Fcast%2FAsArray.fir.kt" target="_blank">tests/cast/AsArray.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fcast%2FAsErasedError.kt&amp;actual=tests%2Fcast%2FAsErasedError.fir.kt" target="_blank">tests/cast/AsErasedError.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fcast%2FAsErasedWarning.kt&amp;actual=tests%2Fcast%2FAsErasedWarning.fir.kt" target="_blank">tests/cast/AsErasedWarning.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FdelegatedProperty%2Finference%2FdifferentDelegatedExpressions.kt&amp;actual=tests%2FdelegatedProperty%2Finference%2FdifferentDelegatedExpressions.fir.kt" target="_blank">tests/delegatedProperty/inference/differentDelegatedExpressions.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FplatformTypes%2FgenericVarianceViolation%2FsmartCast.kt&amp;actual=tests%2FplatformTypes%2FgenericVarianceViolation%2FsmartCast.fir.kt" target="_blank">tests/platformTypes/genericVarianceViolation/smartCast.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fregressions%2Fkt307.kt&amp;actual=tests%2Fregressions%2Fkt307.fir.kt" target="_blank">tests/regressions/kt307.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fregressions%2Fkt498.kt&amp;actual=tests%2Fregressions%2Fkt498.fir.kt" target="_blank">tests/regressions/kt498.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fregressions%2Fkt716.kt&amp;actual=tests%2Fregressions%2Fkt716.fir.kt" target="_blank">tests/regressions/kt716.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Fkt3224.kt&amp;actual=tests%2FsmartCasts%2Fkt3224.fir.kt" target="_blank">tests/smartCasts/kt3224.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FcallableReference%2FpropertyOfNestedGenericClass.kt&amp;actual=tests%2FcallableReference%2FpropertyOfNestedGenericClass.fir.kt" target="_blank">tests/callableReference/propertyOfNestedGenericClass.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fsubstitutions%2Fkt4887.kt&amp;actual=tests%2Fsubstitutions%2Fkt4887.fir.kt" target="_blank">tests/substitutions/kt4887.kt (1)</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

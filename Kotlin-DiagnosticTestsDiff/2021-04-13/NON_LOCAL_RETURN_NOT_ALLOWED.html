@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <title>Diagnostics diff: NON_LOCAL_RETURN_NOT_ALLOWED</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row" id="summary">
+        <h1>NON_LOCAL_RETURN_NOT_ALLOWED</h1>
+      </div>
+      <div class="row">
+        <ul>
+          <li><strong>Total: </strong>27</li>
+          <li><strong>Match %: </strong>0.00%</li>
+          <li><a href="#matched"><strong># Matched: </strong>0</a></li>
+          <li><strong># Non-matched: </strong>27</li>
+          <li><a href="#missing"><strong># Missing: </strong>27</a></li>
+          <li><a href="#unexpected"><strong># Unexpected: </strong>0</a></li>
+          <li><a href="#mismatched"><strong># Mismatched: </strong>0</a></li>
+          <li><strong># of Files: </strong>13</li>
+        </ul>
+      </div>
+      <div class="row" id="missing">
+        <h2>Missing (27)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?expected=tests%2Finline%2FinlineLambdaInDefaultInlineParameterDisabled.kt&amp;actual=tests%2Finline%2FinlineLambdaInDefaultInlineParameterDisabled.fir.kt" target="_blank">tests/inline/inlineLambdaInDefaultInlineParameterDisabled.kt (4)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Finline%2FnonLocalReturns%2FanonymousObjectsNested.kt&amp;actual=tests%2Finline%2FnonLocalReturns%2FanonymousObjectsNested.fir.kt" target="_blank">tests/inline/nonLocalReturns/anonymousObjectsNested.kt (4)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Finline%2FinlineLambdaInDefaultInlineParameter.kt&amp;actual=tests%2Finline%2FinlineLambdaInDefaultInlineParameter.fir.kt" target="_blank">tests/inline/inlineLambdaInDefaultInlineParameter.kt (3)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fcoroutines%2FinlineCrossinline%2FinlineSuspendOfOrdinary.kt&amp;actual=testsWithStdLib%2Fcoroutines%2FinlineCrossinline%2FinlineSuspendOfOrdinary.fir.kt" target="_blank">testsWithStdLib/coroutines/inlineCrossinline/inlineSuspendOfOrdinary.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fcoroutines%2FinlineCrossinline%2FinlineSuspendOfSuspend.kt&amp;actual=testsWithStdLib%2Fcoroutines%2FinlineCrossinline%2FinlineSuspendOfSuspend.fir.kt" target="_blank">testsWithStdLib/coroutines/inlineCrossinline/inlineSuspendOfSuspend.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fcoroutines%2FinlineCrossinline%2FinlineOrdinaryOfSuspend.kt&amp;actual=testsWithStdLib%2Fcoroutines%2FinlineCrossinline%2FinlineOrdinaryOfSuspend.fir.kt" target="_blank">testsWithStdLib/coroutines/inlineCrossinline/inlineOrdinaryOfSuspend.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fcoroutines%2FinlineCrossinline%2FinlineOrdinaryOfOrdinary.kt&amp;actual=testsWithStdLib%2Fcoroutines%2FinlineCrossinline%2FinlineOrdinaryOfOrdinary.fir.kt" target="_blank">testsWithStdLib/coroutines/inlineCrossinline/inlineOrdinaryOfOrdinary.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Finline%2FnonLocalReturns%2FnonInlinedClass.kt&amp;actual=tests%2Finline%2FnonLocalReturns%2FnonInlinedClass.fir.kt" target="_blank">tests/inline/nonLocalReturns/nonInlinedClass.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Finline%2FnonLocalReturns%2FanonymousObjects.kt&amp;actual=tests%2Finline%2FnonLocalReturns%2FanonymousObjects.fir.kt" target="_blank">tests/inline/nonLocalReturns/anonymousObjects.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Finline%2FnonLocalReturns%2FtoOnlyLocal.kt&amp;actual=tests%2Finline%2FnonLocalReturns%2FtoOnlyLocal.fir.kt" target="_blank">tests/inline/nonLocalReturns/toOnlyLocal.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Finline%2FnonLocalReturns%2FnoInlineLambda.kt&amp;actual=tests%2Finline%2FnonLocalReturns%2FnoInlineLambda.fir.kt" target="_blank">tests/inline/nonLocalReturns/noInlineLambda.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Finline%2FnonLocalReturns%2FlocalFun.kt&amp;actual=tests%2Finline%2FnonLocalReturns%2FlocalFun.fir.kt" target="_blank">tests/inline/nonLocalReturns/localFun.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Finline%2FnonLocalReturns%2FlambdaWithGlobalReturnsInsideOnlyLocalOne.kt&amp;actual=tests%2Finline%2FnonLocalReturns%2FlambdaWithGlobalReturnsInsideOnlyLocalOne.fir.kt" target="_blank">tests/inline/nonLocalReturns/lambdaWithGlobalReturnsInsideOnlyLocalOne.kt (1)</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

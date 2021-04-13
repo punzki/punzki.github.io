@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <title>Diagnostics diff: FUNCTION_CALL_EXPECTED</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row" id="summary">
+        <h1>FUNCTION_CALL_EXPECTED</h1>
+      </div>
+      <div class="row">
+        <ul>
+          <li><strong>Total: </strong>22</li>
+          <li><strong>Match %: </strong>0.00%</li>
+          <li><a href="#matched"><strong># Matched: </strong>0</a></li>
+          <li><strong># Non-matched: </strong>22</li>
+          <li><a href="#missing"><strong># Missing: </strong>12</a></li>
+          <li><a href="#unexpected"><strong># Unexpected: </strong>0</a></li>
+          <li><a href="#mismatched"><strong># Mismatched: </strong>10</a></li>
+          <li><strong># of Files: </strong>12</li>
+        </ul>
+      </div>
+      <div class="row" id="missing">
+        <h2>Missing (12)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?expected=tests%2Ftypealias%2FinnerTypeAliasConstructor.kt&amp;actual=tests%2Ftypealias%2FinnerTypeAliasConstructor.fir.kt" target="_blank">tests/typealias/innerTypeAliasConstructor.kt (5)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FResolveToJava.kt&amp;actual=tests%2FResolveToJava.fir.kt" target="_blank">tests/ResolveToJava.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Finference%2Fkt1558.kt&amp;actual=testsWithStdLib%2Finference%2Fkt1558.fir.kt" target="_blank">testsWithStdLib/inference/kt1558.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Finference%2Fregressions%2Fkt34029.kt&amp;actual=tests%2Finference%2Fregressions%2Fkt34029.fir.kt" target="_blank">tests/inference/regressions/kt34029.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Ftypealias%2FtypeAliasArgumentsInCompanionObject.kt&amp;actual=tests%2Ftypealias%2FtypeAliasArgumentsInCompanionObject.fir.kt" target="_blank">tests/typealias/typeAliasArgumentsInCompanionObject.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FincompleteCode%2Fkt2014.kt&amp;actual=tests%2FincompleteCode%2Fkt2014.fir.kt" target="_blank">tests/incompleteCode/kt2014.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fregressions%2Fkt10843.kt&amp;actual=tests%2Fregressions%2Fkt10843.fir.kt" target="_blank">tests/regressions/kt10843.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row" id="mismatched">
+        <h2>Mismatched (10)</h2>
+      </div>
+      <div class="row">
+        <h3>FUNCTION_CALL_EXPECTED -&gt; UNRESOLVED_REFERENCE (10)</h3>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?expected=tests%2Frecovery%2FabsentLeftHandSide.kt&amp;actual=tests%2Frecovery%2FabsentLeftHandSide.fir.kt" target="_blank">tests/recovery/absentLeftHandSide.kt (4)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FtestsWithJava15%2FjvmRecord%2FdisabledFeature.kt&amp;actual=tests%2FtestsWithJava15%2FjvmRecord%2FdisabledFeature.fir.kt" target="_blank">tests/testsWithJava15/jvmRecord/disabledFeature.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsyntheticExtensions%2FjavaProperties%2FIsNaming.kt&amp;actual=tests%2FsyntheticExtensions%2FjavaProperties%2FIsNaming.fir.kt" target="_blank">tests/syntheticExtensions/javaProperties/IsNaming.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FincompleteCode%2Fkt2014.kt&amp;actual=tests%2FincompleteCode%2Fkt2014.fir.kt" target="_blank">tests/incompleteCode/kt2014.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fresolve%2Finvoke%2FinvokeOnVariableWithExtensionFunctionType.kt&amp;actual=tests%2Fresolve%2Finvoke%2FinvokeOnVariableWithExtensionFunctionType.fir.kt" target="_blank">tests/resolve/invoke/invokeOnVariableWithExtensionFunctionType.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FcallableReference%2Fbound%2FfunctionCallWithoutArguments.kt&amp;actual=tests%2FcallableReference%2Fbound%2FfunctionCallWithoutArguments.fir.kt" target="_blank">tests/callableReference/bound/functionCallWithoutArguments.kt (1)</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,64 @@
+<html>
+  <head>
+    <title>Diagnostics diff: NAME_SHADOWING</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row" id="summary">
+        <h1>NAME_SHADOWING</h1>
+      </div>
+      <div class="row">
+        <ul>
+          <li><strong>Total: </strong>41</li>
+          <li><strong>Match %: </strong>0.00%</li>
+          <li><a href="#matched"><strong># Matched: </strong>0</a></li>
+          <li><strong># Non-matched: </strong>41</li>
+          <li><a href="#missing"><strong># Missing: </strong>41</a></li>
+          <li><a href="#unexpected"><strong># Unexpected: </strong>0</a></li>
+          <li><a href="#mismatched"><strong># Mismatched: </strong>0</a></li>
+          <li><strong># of Files: </strong>30</li>
+        </ul>
+      </div>
+      <div class="row" id="missing">
+        <h2>Missing (41)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2FtryCatch%2FcatchRedeclaration.kt&amp;actual=testsWithStdLib%2FtryCatch%2FcatchRedeclaration.fir.kt" target="_blank">testsWithStdLib/tryCatch/catchRedeclaration.kt (3)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fwhen%2FwithSubjectVariable%2FshadowingOtherVariable.kt&amp;actual=tests%2Fwhen%2FwithSubjectVariable%2FshadowingOtherVariable.fir.kt" target="_blank">tests/when/withSubjectVariable/shadowingOtherVariable.kt (3)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fshadowing%2FShadowLambdaParameter.kt&amp;actual=tests%2Fshadowing%2FShadowLambdaParameter.fir.kt" target="_blank">tests/shadowing/ShadowLambdaParameter.kt (3)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FdeclarationChecks%2FRedeclarationsInMultiDecl.kt&amp;actual=tests%2FdeclarationChecks%2FRedeclarationsInMultiDecl.fir.kt" target="_blank">tests/declarationChecks/RedeclarationsInMultiDecl.kt (3)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fcoroutines%2FlambdaExpectedType.kt&amp;actual=testsWithStdLib%2Fcoroutines%2FlambdaExpectedType.fir.kt" target="_blank">testsWithStdLib/coroutines/lambdaExpectedType.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fshadowing%2FShadowMultiDeclarationWithFunParameter.kt&amp;actual=tests%2Fshadowing%2FShadowMultiDeclarationWithFunParameter.fir.kt" target="_blank">tests/shadowing/ShadowMultiDeclarationWithFunParameter.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fannotations%2FblockLevelOnTheSameLineWarning.kt&amp;actual=tests%2Fannotations%2FblockLevelOnTheSameLineWarning.fir.kt" target="_blank">tests/annotations/blockLevelOnTheSameLineWarning.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fcontracts%2Fcontrolflow%2Finitialization%2FexactlyOnce%2FvalDefiniteInitialization.kt&amp;actual=testsWithStdLib%2Fcontracts%2Fcontrolflow%2Finitialization%2FexactlyOnce%2FvalDefiniteInitialization.fir.kt" target="_blank">testsWithStdLib/contracts/controlflow/initialization/exactlyOnce/valDefiniteInitialization.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fcontracts%2Fcontrolflow%2Finitialization%2FatLeastOnce%2FvarIndefiniteInitialization.kt&amp;actual=testsWithStdLib%2Fcontracts%2Fcontrolflow%2Finitialization%2FatLeastOnce%2FvarIndefiniteInitialization.fir.kt" target="_blank">testsWithStdLib/contracts/controlflow/initialization/atLeastOnce/varIndefiniteInitialization.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fcontracts%2Fcontrolflow%2Finitialization%2FatLeastOnce%2FvalDefiniteReassignment.kt&amp;actual=testsWithStdLib%2Fcontracts%2Fcontrolflow%2Finitialization%2FatLeastOnce%2FvalDefiniteReassignment.fir.kt" target="_blank">testsWithStdLib/contracts/controlflow/initialization/atLeastOnce/valDefiniteReassignment.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Finline%2Fkt4869.kt&amp;actual=tests%2Finline%2Fkt4869.fir.kt" target="_blank">tests/inline/kt4869.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Finference%2FinvokeLambdaAsFunction.kt&amp;actual=tests%2Finference%2FinvokeLambdaAsFunction.fir.kt" target="_blank">tests/inference/invokeLambdaAsFunction.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fwhen%2FwithSubjectVariable%2FnestedWhenWithSubject.kt&amp;actual=tests%2Fwhen%2FwithSubjectVariable%2FnestedWhenWithSubject.fir.kt" target="_blank">tests/when/withSubjectVariable/nestedWhenWithSubject.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fshadowing%2FShadowVariableInNestedClosure.kt&amp;actual=tests%2Fshadowing%2FShadowVariableInNestedClosure.fir.kt" target="_blank">tests/shadowing/ShadowVariableInNestedClosure.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fshadowing%2FShadowParameterInFunctionBody.kt&amp;actual=tests%2Fshadowing%2FShadowParameterInFunctionBody.fir.kt" target="_blank">tests/shadowing/ShadowParameterInFunctionBody.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fshadowing%2FShadowVariableInNestedClosureParam.kt&amp;actual=tests%2Fshadowing%2FShadowVariableInNestedClosureParam.fir.kt" target="_blank">tests/shadowing/ShadowVariableInNestedClosureParam.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fshadowing%2FShadowParameterInNestedBlockInFor.kt&amp;actual=tests%2Fshadowing%2FShadowParameterInNestedBlockInFor.fir.kt" target="_blank">tests/shadowing/ShadowParameterInNestedBlockInFor.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fshadowing%2FShadowVariableInNestedBlock.kt&amp;actual=tests%2Fshadowing%2FShadowVariableInNestedBlock.fir.kt" target="_blank">tests/shadowing/ShadowVariableInNestedBlock.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fshadowing%2FShadowVariableInFor.kt&amp;actual=tests%2Fshadowing%2FShadowVariableInFor.fir.kt" target="_blank">tests/shadowing/ShadowVariableInFor.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FdeclarationChecks%2FdestructuringDeclarations%2Funderscore.kt&amp;actual=tests%2FdeclarationChecks%2FdestructuringDeclarations%2Funderscore.fir.kt" target="_blank">tests/declarationChecks/destructuringDeclarations/underscore.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FdeclarationChecks%2FdestructuringDeclarations%2FRedeclarationInForLoop.kt&amp;actual=tests%2FdeclarationChecks%2FdestructuringDeclarations%2FRedeclarationInForLoop.fir.kt" target="_blank">tests/declarationChecks/destructuringDeclarations/RedeclarationInForLoop.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fresolve%2FcapturedTypesInLambdaParameter.kt&amp;actual=tests%2Fresolve%2FcapturedTypesInLambdaParameter.fir.kt" target="_blank">tests/resolve/capturedTypesInLambdaParameter.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FcontrolStructures%2Fkt770.kt351.kt735_StatementType.kt&amp;actual=tests%2FcontrolStructures%2Fkt770.kt351.kt735_StatementType.fir.kt" target="_blank">tests/controlStructures/kt770.kt351.kt735_StatementType.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FbackingField%2FFieldShadow.kt&amp;actual=tests%2FbackingField%2FFieldShadow.fir.kt" target="_blank">tests/backingField/FieldShadow.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fannotations%2Foptions%2Ftargets%2Ffuntypeargs.kt&amp;actual=tests%2Fannotations%2Foptions%2Ftargets%2Ffuntypeargs.fir.kt" target="_blank">tests/annotations/options/targets/funtypeargs.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fannotations%2Foptions%2Ftargets%2FtypeParams.kt&amp;actual=tests%2Fannotations%2Foptions%2Ftargets%2FtypeParams.fir.kt" target="_blank">tests/annotations/options/targets/typeParams.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fannotations%2FfunctionalTypes%2FnonParenthesizedAnnotationsWithError.kt&amp;actual=tests%2Fannotations%2FfunctionalTypes%2FnonParenthesizedAnnotationsWithError.fir.kt" target="_blank">tests/annotations/functionalTypes/nonParenthesizedAnnotationsWithError.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Flibrary%2FCollections.kt&amp;actual=tests%2Flibrary%2FCollections.fir.kt" target="_blank">tests/library/Collections.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fregressions%2Fkt5326.kt&amp;actual=tests%2Fregressions%2Fkt5326.fir.kt" target="_blank">tests/regressions/kt5326.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Fvariables%2FaccessorAndFunction.kt&amp;actual=tests%2FsmartCasts%2Fvariables%2FaccessorAndFunction.fir.kt" target="_blank">tests/smartCasts/variables/accessorAndFunction.kt (1)</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

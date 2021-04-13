@@ -1,0 +1,97 @@
+<html>
+  <head>
+    <title>Diagnostics diff: CONFLICTING_OVERLOADS</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row" id="summary">
+        <h1>CONFLICTING_OVERLOADS</h1>
+      </div>
+      <div class="row">
+        <ul>
+          <li><strong>Total: </strong>275</li>
+          <li><strong>Match %: </strong>37.09%</li>
+          <li><a href="#matched"><strong># Matched: </strong>102</a></li>
+          <li><strong># Non-matched: </strong>173</li>
+          <li><a href="#missing"><strong># Missing: </strong>169</a></li>
+          <li><a href="#unexpected"><strong># Unexpected: </strong>4</a></li>
+          <li><a href="#mismatched"><strong># Mismatched: </strong>0</a></li>
+          <li><strong># of Files: </strong>46</li>
+        </ul>
+      </div>
+      <div class="row" id="missing">
+        <h2>Missing (169)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?expected=tests%2Foverload%2FLocalFunctions.kt&amp;actual=tests%2Foverload%2FLocalFunctions.fir.kt" target="_blank">tests/overload/LocalFunctions.kt (100)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsecondaryConstructors%2Fredeclarations.kt&amp;actual=tests%2FsecondaryConstructors%2Fredeclarations.fir.kt" target="_blank">tests/secondaryConstructors/redeclarations.kt (12)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FdeclarationChecks%2FFunctionWithMissingNames.kt&amp;actual=tests%2FdeclarationChecks%2FFunctionWithMissingNames.fir.kt" target="_blank">tests/declarationChecks/FunctionWithMissingNames.kt (6)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Foverload%2FConflictingOlverloadsGenericFunctions.kt&amp;actual=tests%2Foverload%2FConflictingOlverloadsGenericFunctions.fir.kt" target="_blank">tests/overload/ConflictingOlverloadsGenericFunctions.kt (6)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Foverload%2FConstructorVsFunOverload.kt&amp;actual=tests%2Foverload%2FConstructorVsFunOverload.fir.kt" target="_blank">tests/overload/ConstructorVsFunOverload.kt (6)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FexplicitDefinitelyNotNull%2FnotApplicable.kt&amp;actual=tests%2FexplicitDefinitelyNotNull%2FnotApplicable.fir.kt" target="_blank">tests/explicitDefinitelyNotNull/notApplicable.kt (5)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fredeclarations%2FTypeAliasCtorVsFun.kt&amp;actual=tests%2Fredeclarations%2FTypeAliasCtorVsFun.fir.kt" target="_blank">tests/redeclarations/TypeAliasCtorVsFun.kt (4)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Foverride%2FGenerics.kt&amp;actual=tests%2Foverride%2FGenerics.fir.kt" target="_blank">tests/override/Generics.kt (3)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fcoroutines%2FsuspendOverridability.kt&amp;actual=testsWithStdLib%2Fcoroutines%2FsuspendOverridability.fir.kt" target="_blank">testsWithStdLib/coroutines/suspendOverridability.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fcoroutines%2FsuspendConflictsWithNoSuspend.kt&amp;actual=testsWithStdLib%2Fcoroutines%2FsuspendConflictsWithNoSuspend.fir.kt" target="_blank">testsWithStdLib/coroutines/suspendConflictsWithNoSuspend.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FdataClasses%2FconflictingOverloads.kt&amp;actual=tests%2FdataClasses%2FconflictingOverloads.fir.kt" target="_blank">tests/dataClasses/conflictingOverloads.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fresolve%2FoverloadConflicts%2FwithVariance.kt&amp;actual=tests%2Fresolve%2FoverloadConflicts%2FwithVariance.fir.kt" target="_blank">tests/resolve/overloadConflicts/withVariance.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fredeclarations%2FRedeclarationSuspendMainInMultiFile_before.kt&amp;actual=tests%2Fredeclarations%2FRedeclarationSuspendMainInMultiFile_before.fir.kt" target="_blank">tests/redeclarations/RedeclarationSuspendMainInMultiFile_before.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fredeclarations%2FRedeclarationParameterlessMainInvalid.kt&amp;actual=tests%2Fredeclarations%2FRedeclarationParameterlessMainInvalid.fir.kt" target="_blank">tests/redeclarations/RedeclarationParameterlessMainInvalid.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fredeclarations%2FSingletonAndFunctionSameName.kt&amp;actual=tests%2Fredeclarations%2FSingletonAndFunctionSameName.fir.kt" target="_blank">tests/redeclarations/SingletonAndFunctionSameName.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fredeclarations%2FRedeclarationParameterlessMain_before.kt&amp;actual=tests%2Fredeclarations%2FRedeclarationParameterlessMain_before.fir.kt" target="_blank">tests/redeclarations/RedeclarationParameterlessMain_before.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Foverride%2FConflictingFunctionSignatureFromSuperclass.kt&amp;actual=tests%2Foverride%2FConflictingFunctionSignatureFromSuperclass.fir.kt" target="_blank">tests/override/ConflictingFunctionSignatureFromSuperclass.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Foverride%2FclashesOnInheritance%2Fkt9550.kt&amp;actual=tests%2Foverride%2FclashesOnInheritance%2Fkt9550.fir.kt" target="_blank">tests/override/clashesOnInheritance/kt9550.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Foverride%2FConflictingPropertySignatureFromSuperclass.kt&amp;actual=tests%2Foverride%2FConflictingPropertySignatureFromSuperclass.fir.kt" target="_blank">tests/override/ConflictingPropertySignatureFromSuperclass.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Foverride%2FComplexValRedeclaration.kt&amp;actual=tests%2Foverride%2FComplexValRedeclaration.fir.kt" target="_blank">tests/override/ComplexValRedeclaration.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FdataClasses%2FdataClassExplicitlyOverridingCopyWithDefaults.kt&amp;actual=tests%2FdataClasses%2FdataClassExplicitlyOverridingCopyWithDefaults.fir.kt" target="_blank">tests/dataClasses/dataClassExplicitlyOverridingCopyWithDefaults.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FdataClasses%2FdataClassExplicitlyOverridingCopyNoDefaults.kt&amp;actual=tests%2FdataClasses%2FdataClassExplicitlyOverridingCopyNoDefaults.fir.kt" target="_blank">tests/dataClasses/dataClassExplicitlyOverridingCopyNoDefaults.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fresolve%2FresolveWithRedeclarationError.kt&amp;actual=tests%2Fresolve%2FresolveWithRedeclarationError.fir.kt" target="_blank">tests/resolve/resolveWithRedeclarationError.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Frecovery%2FnamelessToplevelDeclarations.kt&amp;actual=tests%2Frecovery%2FnamelessToplevelDeclarations.fir.kt" target="_blank">tests/recovery/namelessToplevelDeclarations.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FduplicateJvmSignature%2FmissingNames.kt&amp;actual=tests%2FduplicateJvmSignature%2FmissingNames.fir.kt" target="_blank">tests/duplicateJvmSignature/missingNames.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fredeclarations%2FRedeclaringPrivateToFile.kt&amp;actual=tests%2Fredeclarations%2FRedeclaringPrivateToFile.fir.kt" target="_blank">tests/redeclarations/RedeclaringPrivateToFile.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fannotations%2Frendering%2FconflictingOverloads.kt&amp;actual=tests%2Fannotations%2Frendering%2FconflictingOverloads.fir.kt" target="_blank">tests/annotations/rendering/conflictingOverloads.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row" id="unexpected">
+        <h2>Unexpected (4)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Finference%2FannotationsForResolve%2FnoInferAndLowPriority.kt&amp;actual=testsWithStdLib%2Finference%2FannotationsForResolve%2FnoInferAndLowPriority.fir.kt" target="_blank">testsWithStdLib/inference/annotationsForResolve/noInferAndLowPriority.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Finference%2FannotationsForResolve%2FonlyInputTypesAndLowPriority.kt&amp;actual=testsWithStdLib%2Finference%2FannotationsForResolve%2FonlyInputTypesAndLowPriority.fir.kt" target="_blank">testsWithStdLib/inference/annotationsForResolve/onlyInputTypesAndLowPriority.kt (2)</a></li>
+        </ul>
+      </div>
+      <div class="row" id="matched">
+        <h2>Matched (102)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?expected=tests%2Fresolve%2FresolveWithRedeclarationError.kt&amp;actual=tests%2Fresolve%2FresolveWithRedeclarationError.fir.kt" target="_blank">tests/resolve/resolveWithRedeclarationError.kt (27)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fredeclarations%2Fkt470.kt&amp;actual=tests%2Fredeclarations%2Fkt470.fir.kt" target="_blank">tests/redeclarations/kt470.kt (14)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fredeclarations%2FRedeclaringPrivateToFile.kt&amp;actual=tests%2Fredeclarations%2FRedeclaringPrivateToFile.fir.kt" target="_blank">tests/redeclarations/RedeclaringPrivateToFile.kt (11)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithJsStdLib%2Fname%2FdeclarationClash.kt&amp;actual=testsWithJsStdLib%2Fname%2FdeclarationClash.kt" target="_blank">testsWithJsStdLib/name/declarationClash.kt (8)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fredeclarations%2FFunVsCtorInDifferentFiles.kt&amp;actual=tests%2Fredeclarations%2FFunVsCtorInDifferentFiles.kt" target="_blank">tests/redeclarations/FunVsCtorInDifferentFiles.kt (6)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fcoroutines%2FsuspendConflictsWithNoSuspend.kt&amp;actual=testsWithStdLib%2Fcoroutines%2FsuspendConflictsWithNoSuspend.fir.kt" target="_blank">testsWithStdLib/coroutines/suspendConflictsWithNoSuspend.kt (4)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Foverload%2FTypeParameterMultipleBounds.kt&amp;actual=tests%2Foverload%2FTypeParameterMultipleBounds.kt" target="_blank">tests/overload/TypeParameterMultipleBounds.kt (4)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fmultiplatform%2FtopLevelFun%2FconflictingImplDeclarations.kt&amp;actual=tests%2Fmultiplatform%2FtopLevelFun%2FconflictingImplDeclarations.fir.kt" target="_blank">tests/multiplatform/topLevelFun/conflictingImplDeclarations.kt (4)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Foverride%2FDuplicateMethod.kt&amp;actual=tests%2Foverride%2FDuplicateMethod.kt" target="_blank">tests/override/DuplicateMethod.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FdeclarationChecks%2FMultiDeclarationErrors.kt&amp;actual=tests%2FdeclarationChecks%2FMultiDeclarationErrors.fir.kt" target="_blank">tests/declarationChecks/MultiDeclarationErrors.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FdeclarationChecks%2FdestructuringDeclarations%2FForLoopComponentFunctionAmbiguity.kt&amp;actual=tests%2FdeclarationChecks%2FdestructuringDeclarations%2FForLoopComponentFunctionAmbiguity.kt" target="_blank">tests/declarationChecks/destructuringDeclarations/ForLoopComponentFunctionAmbiguity.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FdataClasses%2FconflictingCopyOverloads.kt&amp;actual=tests%2FdataClasses%2FconflictingCopyOverloads.fir.kt" target="_blank">tests/dataClasses/conflictingCopyOverloads.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Foverload%2FConflictingOverloadsFunsDifferentReturnInClass.kt&amp;actual=tests%2Foverload%2FConflictingOverloadsFunsDifferentReturnInClass.kt" target="_blank">tests/overload/ConflictingOverloadsFunsDifferentReturnInClass.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Foverload%2FConflictingOverloadsIdenticalFunsInClass.kt&amp;actual=tests%2Foverload%2FConflictingOverloadsIdenticalFunsInClass.kt" target="_blank">tests/overload/ConflictingOverloadsIdenticalFunsInClass.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Foverload%2FConflictingOverloadsIdenticalExtFunsInPackage.kt&amp;actual=tests%2Foverload%2FConflictingOverloadsIdenticalExtFunsInPackage.kt" target="_blank">tests/overload/ConflictingOverloadsIdenticalExtFunsInPackage.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Foverload%2FConflictingOverloadsFunsDifferentReturnInPackage.kt&amp;actual=tests%2Foverload%2FConflictingOverloadsFunsDifferentReturnInPackage.kt" target="_blank">tests/overload/ConflictingOverloadsFunsDifferentReturnInPackage.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fmultiplatform%2FtopLevelFun%2FheaderDeclarationWithBody.kt&amp;actual=tests%2Fmultiplatform%2FtopLevelFun%2FheaderDeclarationWithBody.kt" target="_blank">tests/multiplatform/topLevelFun/headerDeclarationWithBody.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fmultiplatform%2FtopLevelFun%2FconflictingHeaderDeclarations.kt&amp;actual=tests%2Fmultiplatform%2FtopLevelFun%2FconflictingHeaderDeclarations.kt" target="_blank">tests/multiplatform/topLevelFun/conflictingHeaderDeclarations.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fredeclarations%2FRedeclarationMainInFile.kt&amp;actual=tests%2Fredeclarations%2FRedeclarationMainInFile.kt" target="_blank">tests/redeclarations/RedeclarationMainInFile.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fredeclarations%2FRedeclarationInMultiFile.kt&amp;actual=tests%2Fredeclarations%2FRedeclarationInMultiFile.fir.kt" target="_blank">tests/redeclarations/RedeclarationInMultiFile.kt (2)</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

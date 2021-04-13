@@ -1,0 +1,61 @@
+<html>
+  <head>
+    <title>Diagnostics diff: UNSAFE_OPERATOR_CALL</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row" id="summary">
+        <h1>UNSAFE_OPERATOR_CALL</h1>
+      </div>
+      <div class="row">
+        <ul>
+          <li><strong>Total: </strong>15</li>
+          <li><strong>Match %: </strong>26.67%</li>
+          <li><a href="#matched"><strong># Matched: </strong>4</a></li>
+          <li><strong># Non-matched: </strong>11</li>
+          <li><a href="#missing"><strong># Missing: </strong>2</a></li>
+          <li><a href="#unexpected"><strong># Unexpected: </strong>0</a></li>
+          <li><a href="#mismatched"><strong># Mismatched: </strong>9</a></li>
+          <li><strong># of Files: </strong>8</li>
+        </ul>
+      </div>
+      <div class="row" id="missing">
+        <h2>Missing (2)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?expected=tests%2FplatformTypes%2FnullabilityWarnings%2Farithmetic.kt&amp;actual=tests%2FplatformTypes%2FnullabilityWarnings%2Farithmetic.fir.kt" target="_blank">tests/platformTypes/nullabilityWarnings/arithmetic.kt (2)</a></li>
+        </ul>
+      </div>
+      <div class="row" id="mismatched">
+        <h2>Mismatched (9)</h2>
+      </div>
+      <div class="row">
+        <h3>UNSAFE_OPERATOR_CALL -&gt; NONE_APPLICABLE (9)</h3>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?expected=tests%2FBinaryCallsOnNullableValues.kt&amp;actual=tests%2FBinaryCallsOnNullableValues.fir.kt" target="_blank">tests/BinaryCallsOnNullableValues.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fresolve%2FspecialConstructions%2FelvisAsCall.kt&amp;actual=tests%2Fresolve%2FspecialConstructions%2FelvisAsCall.fir.kt" target="_blank">tests/resolve/specialConstructions/elvisAsCall.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FnullabilityAndSmartCasts%2FInfixCallNullability.kt&amp;actual=tests%2FnullabilityAndSmartCasts%2FInfixCallNullability.fir.kt" target="_blank">tests/nullabilityAndSmartCasts/InfixCallNullability.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FnullabilityAndSmartCasts%2Fkt2216.kt&amp;actual=tests%2FnullabilityAndSmartCasts%2Fkt2216.fir.kt" target="_blank">tests/nullabilityAndSmartCasts/kt2216.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fregressions%2Fkt282.kt&amp;actual=tests%2Fregressions%2Fkt282.fir.kt" target="_blank">tests/regressions/kt282.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2FobjectLiterals%2Fexclexcl.kt&amp;actual=tests%2FsmartCasts%2FobjectLiterals%2Fexclexcl.fir.kt" target="_blank">tests/smartCasts/objectLiterals/exclexcl.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Fvarnotnull%2FplusplusMinusminus.kt&amp;actual=tests%2FsmartCasts%2Fvarnotnull%2FplusplusMinusminus.fir.kt" target="_blank">tests/smartCasts/varnotnull/plusplusMinusminus.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row" id="matched">
+        <h2>Matched (4)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?expected=tests%2FnullabilityAndSmartCasts%2FInfixCallNullability.kt&amp;actual=tests%2FnullabilityAndSmartCasts%2FInfixCallNullability.fir.kt" target="_blank">tests/nullabilityAndSmartCasts/InfixCallNullability.kt (3)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fregressions%2Fkt282.kt&amp;actual=tests%2Fregressions%2Fkt282.fir.kt" target="_blank">tests/regressions/kt282.kt (1)</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

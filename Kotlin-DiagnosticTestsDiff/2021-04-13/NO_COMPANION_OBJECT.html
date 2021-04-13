@@ -1,0 +1,62 @@
+<html>
+  <head>
+    <title>Diagnostics diff: NO_COMPANION_OBJECT</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row" id="summary">
+        <h1>NO_COMPANION_OBJECT</h1>
+      </div>
+      <div class="row">
+        <ul>
+          <li><strong>Total: </strong>48</li>
+          <li><strong>Match %: </strong>0.00%</li>
+          <li><a href="#matched"><strong># Matched: </strong>0</a></li>
+          <li><strong># Non-matched: </strong>48</li>
+          <li><a href="#missing"><strong># Missing: </strong>47</a></li>
+          <li><a href="#unexpected"><strong># Unexpected: </strong>0</a></li>
+          <li><a href="#mismatched"><strong># Mismatched: </strong>1</a></li>
+          <li><strong># of Files: </strong>17</li>
+        </ul>
+      </div>
+      <div class="row" id="missing">
+        <h2>Missing (47)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?expected=tests%2FPackageInExpressionPosition.kt&amp;actual=tests%2FPackageInExpressionPosition.fir.kt" target="_blank">tests/PackageInExpressionPosition.kt (13)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Finner%2FnestedClassAccessedViaInstanceReference.kt&amp;actual=tests%2Finner%2FnestedClassAccessedViaInstanceReference.fir.kt" target="_blank">tests/inner/nestedClassAccessedViaInstanceReference.kt (9)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fresolve%2FnoCandidates%2FresolvedToClassifierWithReceiver.kt&amp;actual=tests%2Fresolve%2FnoCandidates%2FresolvedToClassifierWithReceiver.fir.kt" target="_blank">tests/resolve/noCandidates/resolvedToClassifierWithReceiver.kt (6)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fresolve%2FjavaStaticMembers.kt&amp;actual=testsWithStdLib%2Fresolve%2FjavaStaticMembers.fir.kt" target="_blank">testsWithStdLib/resolve/javaStaticMembers.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fresolve%2FconstructorVsCompanion.kt&amp;actual=tests%2Fresolve%2FconstructorVsCompanion.fir.kt" target="_blank">tests/resolve/constructorVsCompanion.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fresolve%2FnoCandidates%2FresolvedToClassifier.kt&amp;actual=tests%2Fresolve%2FnoCandidates%2FresolvedToClassifier.fir.kt" target="_blank">tests/resolve/noCandidates/resolvedToClassifier.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FclassObjects%2FInnerClassAccessThroughClassObject.kt&amp;actual=tests%2FclassObjects%2FInnerClassAccessThroughClassObject.fir.kt" target="_blank">tests/classObjects/InnerClassAccessThroughClassObject.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FSafeCallOnFakePackage.kt&amp;actual=tests%2FSafeCallOnFakePackage.fir.kt" target="_blank">tests/SafeCallOnFakePackage.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fcoroutines%2Finference%2FsuspendCallsWithErrors.kt&amp;actual=testsWithStdLib%2Fcoroutines%2Finference%2FsuspendCallsWithErrors.fir.kt" target="_blank">testsWithStdLib/coroutines/inference/suspendCallsWithErrors.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Ftypealias%2FthrowJLException.kt&amp;actual=tests%2Ftypealias%2FthrowJLException.fir.kt" target="_blank">tests/typealias/throwJLException.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Ftypealias%2Fkt14641.kt&amp;actual=tests%2Ftypealias%2Fkt14641.fir.kt" target="_blank">tests/typealias/kt14641.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Ftypealias%2FtypeAliasConstructorForInterface.kt&amp;actual=tests%2Ftypealias%2FtypeAliasConstructorForInterface.fir.kt" target="_blank">tests/typealias/typeAliasConstructorForInterface.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fsealed%2FTreeWhenFunctionalNoIs.kt&amp;actual=tests%2Fsealed%2FTreeWhenFunctionalNoIs.fir.kt" target="_blank">tests/sealed/TreeWhenFunctionalNoIs.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FincompleteCode%2FdiagnosticWithSyntaxError%2FarrayExpression.kt&amp;actual=tests%2FincompleteCode%2FdiagnosticWithSyntaxError%2FarrayExpression.fir.kt" target="_blank">tests/incompleteCode/diagnosticWithSyntaxError/arrayExpression.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsourceCompatibility%2FapiVersion%2FtypealiasesAsCompanionObjects.kt&amp;actual=tests%2FsourceCompatibility%2FapiVersion%2FtypealiasesAsCompanionObjects.fir.kt" target="_blank">tests/sourceCompatibility/apiVersion/typealiasesAsCompanionObjects.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FclassObjects%2FClassObjects.kt&amp;actual=tests%2FclassObjects%2FClassObjects.fir.kt" target="_blank">tests/classObjects/ClassObjects.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fregressions%2Fkt2956.kt&amp;actual=tests%2Fregressions%2Fkt2956.fir.kt" target="_blank">tests/regressions/kt2956.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row" id="mismatched">
+        <h2>Mismatched (1)</h2>
+      </div>
+      <div class="row">
+        <h3>NO_COMPANION_OBJECT -&gt; UNRESOLVED_REFERENCE (1)</h3>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?expected=tests%2FPackageInExpressionPosition.kt&amp;actual=tests%2FPackageInExpressionPosition.fir.kt" target="_blank">tests/PackageInExpressionPosition.kt (1)</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

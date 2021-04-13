@@ -1,0 +1,79 @@
+<html>
+  <head>
+    <title>Diagnostics diff: CYCLIC_INHERITANCE_HIERARCHY</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row" id="summary">
+        <h1>CYCLIC_INHERITANCE_HIERARCHY</h1>
+      </div>
+      <div class="row">
+        <ul>
+          <li><strong>Total: </strong>33</li>
+          <li><strong>Match %: </strong>0.00%</li>
+          <li><a href="#matched"><strong># Matched: </strong>0</a></li>
+          <li><strong># Non-matched: </strong>33</li>
+          <li><a href="#missing"><strong># Missing: </strong>22</a></li>
+          <li><a href="#unexpected"><strong># Unexpected: </strong>0</a></li>
+          <li><a href="#mismatched"><strong># Mismatched: </strong>11</a></li>
+          <li><strong># of Files: </strong>14</li>
+        </ul>
+      </div>
+      <div class="row" id="missing">
+        <h2>Missing (22)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?expected=tests%2FcyclicHierarchy%2FobjectInheritsNested.kt&amp;actual=tests%2FcyclicHierarchy%2FobjectInheritsNested.fir.kt" target="_blank">tests/cyclicHierarchy/objectInheritsNested.kt (5)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FcyclicHierarchy%2FcyclicHierarchy.kt&amp;actual=tests%2FcyclicHierarchy%2FcyclicHierarchy.fir.kt" target="_blank">tests/cyclicHierarchy/cyclicHierarchy.kt (4)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Ftypealias%2FcyclicInheritanceViaTypeAlias.kt&amp;actual=tests%2Ftypealias%2FcyclicInheritanceViaTypeAlias.fir.kt" target="_blank">tests/typealias/cyclicInheritanceViaTypeAlias.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FcyclicHierarchy%2FtwoClassesWithNestedCycle.kt&amp;actual=tests%2FcyclicHierarchy%2FtwoClassesWithNestedCycle.fir.kt" target="_blank">tests/cyclicHierarchy/twoClassesWithNestedCycle.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FcyclicHierarchy%2FclassIndirectlyInheritsNested.kt&amp;actual=tests%2FcyclicHierarchy%2FclassIndirectlyInheritsNested.fir.kt" target="_blank">tests/cyclicHierarchy/classIndirectlyInheritsNested.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FcyclicHierarchy%2FkotlinJavaNestedCycle.kt&amp;actual=tests%2FcyclicHierarchy%2FkotlinJavaNestedCycle.fir.kt" target="_blank">tests/cyclicHierarchy/kotlinJavaNestedCycle.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FcyclicHierarchy%2FclassInheritsNested.kt&amp;actual=tests%2FcyclicHierarchy%2FclassInheritsNested.fir.kt" target="_blank">tests/cyclicHierarchy/classInheritsNested.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FcyclicHierarchy%2Fkt303.kt&amp;actual=tests%2FcyclicHierarchy%2Fkt303.fir.kt" target="_blank">tests/cyclicHierarchy/kt303.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FcyclicHierarchy%2FkotlinJavaKotlinCycle.kt&amp;actual=tests%2FcyclicHierarchy%2FkotlinJavaKotlinCycle.fir.kt" target="_blank">tests/cyclicHierarchy/kotlinJavaKotlinCycle.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FcyclicHierarchy%2FcommonSupertypeForCyclicAndUsualTypes.kt&amp;actual=tests%2FcyclicHierarchy%2FcommonSupertypeForCyclicAndUsualTypes.fir.kt" target="_blank">tests/cyclicHierarchy/commonSupertypeForCyclicAndUsualTypes.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FcyclicHierarchy%2FcommonSupertypeForCyclicTypes.kt&amp;actual=tests%2FcyclicHierarchy%2FcommonSupertypeForCyclicTypes.fir.kt" target="_blank">tests/cyclicHierarchy/commonSupertypeForCyclicTypes.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fcast%2FIsRecursionSustainable.kt&amp;actual=tests%2Fcast%2FIsRecursionSustainable.fir.kt" target="_blank">tests/cast/IsRecursionSustainable.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row" id="mismatched">
+        <h2>Mismatched (11)</h2>
+      </div>
+      <div class="row">
+        <h3>CYCLIC_INHERITANCE_HIERARCHY -&gt; OTHER_ERROR (7)</h3>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?expected=tests%2FcyclicHierarchy%2FcyclicHierarchy.kt&amp;actual=tests%2FcyclicHierarchy%2FcyclicHierarchy.fir.kt" target="_blank">tests/cyclicHierarchy/cyclicHierarchy.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fcast%2FIsRecursionSustainable.kt&amp;actual=tests%2Fcast%2FIsRecursionSustainable.fir.kt" target="_blank">tests/cast/IsRecursionSustainable.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FcyclicHierarchy%2Fkt303.kt&amp;actual=tests%2FcyclicHierarchy%2Fkt303.fir.kt" target="_blank">tests/cyclicHierarchy/kt303.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FcyclicHierarchy%2FcommonSupertypeForCyclicAndUsualTypes.kt&amp;actual=tests%2FcyclicHierarchy%2FcommonSupertypeForCyclicAndUsualTypes.fir.kt" target="_blank">tests/cyclicHierarchy/commonSupertypeForCyclicAndUsualTypes.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FcyclicHierarchy%2FcommonSupertypeForCyclicTypes.kt&amp;actual=tests%2FcyclicHierarchy%2FcommonSupertypeForCyclicTypes.fir.kt" target="_blank">tests/cyclicHierarchy/commonSupertypeForCyclicTypes.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row">
+        <h3>CYCLIC_INHERITANCE_HIERARCHY -&gt; EXPOSED_SUPER_INTERFACE (2)</h3>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?expected=tests%2FcyclicHierarchy%2FkotlinJavaNestedCycle.kt&amp;actual=tests%2FcyclicHierarchy%2FkotlinJavaNestedCycle.fir.kt" target="_blank">tests/cyclicHierarchy/kotlinJavaNestedCycle.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FcyclicHierarchy%2FjavaKotlinJavaCycle.kt&amp;actual=tests%2FcyclicHierarchy%2FjavaKotlinJavaCycle.fir.kt" target="_blank">tests/cyclicHierarchy/javaKotlinJavaCycle.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row">
+        <h3>CYCLIC_INHERITANCE_HIERARCHY -&gt; EXPOSED_SUPER_CLASS (2)</h3>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?expected=tests%2FcyclicHierarchy%2FkotlinJavaCycle.kt&amp;actual=tests%2FcyclicHierarchy%2FkotlinJavaCycle.fir.kt" target="_blank">tests/cyclicHierarchy/kotlinJavaCycle.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FcyclicHierarchy%2FkotlinJavaKotlinCycle.kt&amp;actual=tests%2FcyclicHierarchy%2FkotlinJavaKotlinCycle.fir.kt" target="_blank">tests/cyclicHierarchy/kotlinJavaKotlinCycle.kt (1)</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

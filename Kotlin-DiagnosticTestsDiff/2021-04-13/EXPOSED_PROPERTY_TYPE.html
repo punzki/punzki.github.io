@@ -1,0 +1,63 @@
+<html>
+  <head>
+    <title>Diagnostics diff: EXPOSED_PROPERTY_TYPE</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row" id="summary">
+        <h1>EXPOSED_PROPERTY_TYPE</h1>
+      </div>
+      <div class="row">
+        <ul>
+          <li><strong>Total: </strong>39</li>
+          <li><strong>Match %: </strong>58.97%</li>
+          <li><a href="#matched"><strong># Matched: </strong>23</a></li>
+          <li><strong># Non-matched: </strong>16</li>
+          <li><a href="#missing"><strong># Missing: </strong>15</a></li>
+          <li><a href="#unexpected"><strong># Unexpected: </strong>1</a></li>
+          <li><a href="#mismatched"><strong># Mismatched: </strong>0</a></li>
+          <li><strong># of Files: </strong>13</li>
+        </ul>
+      </div>
+      <div class="row" id="missing">
+        <h2>Missing (15)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?expected=tests%2FdeclarationChecks%2FambiguousObjectExpressionType.kt&amp;actual=tests%2FdeclarationChecks%2FambiguousObjectExpressionType.fir.kt" target="_blank">tests/declarationChecks/ambiguousObjectExpressionType.kt (13)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fexposed%2FlocalInPropertyType.kt&amp;actual=tests%2Fexposed%2FlocalInPropertyType.fir.kt" target="_blank">tests/exposed/localInPropertyType.kt (2)</a></li>
+        </ul>
+      </div>
+      <div class="row" id="unexpected">
+        <h2>Unexpected (1)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?expected=tests%2Fimports%2FInaccessiblePrivateClass.kt&amp;actual=tests%2Fimports%2FInaccessiblePrivateClass.fir.kt" target="_blank">tests/imports/InaccessiblePrivateClass.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row" id="matched">
+        <h2>Matched (23)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?expected=tests%2Fj%2Bk%2FpackageVisibility.kt&amp;actual=tests%2Fj%2Bk%2FpackageVisibility.fir.kt" target="_blank">tests/j+k/packageVisibility.kt (6)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fexposed%2FlocalInPropertyType.kt&amp;actual=tests%2Fexposed%2FlocalInPropertyType.fir.kt" target="_blank">tests/exposed/localInPropertyType.kt (3)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fexposed%2FlocalInMemberType.kt&amp;actual=tests%2Fexposed%2FlocalInMemberType.kt" target="_blank">tests/exposed/localInMemberType.kt (3)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Ftypealias%2FtypeAliasInvisibleObject.kt&amp;actual=tests%2Ftypealias%2FtypeAliasInvisibleObject.fir.kt" target="_blank">tests/typealias/typeAliasInvisibleObject.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fexposed%2FprivateInFile.kt&amp;actual=tests%2Fexposed%2FprivateInFile.fir.kt" target="_blank">tests/exposed/privateInFile.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2FInaccessibleInternalClass.kt&amp;actual=testsWithStdLib%2FInaccessibleInternalClass.fir.kt" target="_blank">testsWithStdLib/InaccessibleInternalClass.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fresolve%2FconstructorVsCompanion.kt&amp;actual=tests%2Fresolve%2FconstructorVsCompanion.fir.kt" target="_blank">tests/resolve/constructorVsCompanion.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fimports%2FInaccessiblePrivateClass.kt&amp;actual=tests%2Fimports%2FInaccessiblePrivateClass.fir.kt" target="_blank">tests/imports/InaccessiblePrivateClass.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fexposed%2Finternal.kt&amp;actual=tests%2Fexposed%2Finternal.fir.kt" target="_blank">tests/exposed/internal.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fexposed%2Fobject.kt&amp;actual=tests%2Fexposed%2Fobject.fir.kt" target="_blank">tests/exposed/object.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fexposed%2FprivateInFileDisabled.kt&amp;actual=tests%2Fexposed%2FprivateInFileDisabled.fir.kt" target="_blank">tests/exposed/privateInFileDisabled.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fexposed%2Fsimple.kt&amp;actual=tests%2Fexposed%2Fsimple.fir.kt" target="_blank">tests/exposed/simple.kt (1)</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

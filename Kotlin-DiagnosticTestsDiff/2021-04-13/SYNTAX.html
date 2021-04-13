@@ -1,0 +1,148 @@
+<html>
+  <head>
+    <title>Diagnostics diff: SYNTAX</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row" id="summary">
+        <h1>SYNTAX</h1>
+      </div>
+      <div class="row">
+        <ul>
+          <li><strong>Total: </strong>341</li>
+          <li><strong>Match %: </strong>100.00%</li>
+          <li><a href="#matched"><strong># Matched: </strong>341</a></li>
+          <li><strong># Non-matched: </strong>0</li>
+          <li><a href="#missing"><strong># Missing: </strong>0</a></li>
+          <li><a href="#unexpected"><strong># Unexpected: </strong>0</a></li>
+          <li><a href="#mismatched"><strong># Mismatched: </strong>0</a></li>
+          <li><strong># of Files: </strong>114</li>
+        </ul>
+      </div>
+      <div class="row" id="matched">
+        <h2>Matched (341)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?expected=tests%2Fimports%2FSyntaxError.kt&amp;actual=tests%2Fimports%2FSyntaxError.fir.kt" target="_blank">tests/imports/SyntaxError.kt (37)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FexplicitDefinitelyNotNull%2FnotApplicable.kt&amp;actual=tests%2FexplicitDefinitelyNotNull%2FnotApplicable.fir.kt" target="_blank">tests/explicitDefinitelyNotNull/notApplicable.kt (20)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FincompleteCode%2FdiagnosticWithSyntaxError%2FvalNoName.kt&amp;actual=tests%2FincompleteCode%2FdiagnosticWithSyntaxError%2FvalNoName.kt" target="_blank">tests/incompleteCode/diagnosticWithSyntaxError/valNoName.kt (12)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FduplicateJvmSignature%2FmissingNames.kt&amp;actual=tests%2FduplicateJvmSignature%2FmissingNames.fir.kt" target="_blank">tests/duplicateJvmSignature/missingNames.kt (12)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FfunctionLiterals%2FDeprecatedSyntax.kt&amp;actual=tests%2FfunctionLiterals%2FDeprecatedSyntax.fir.kt" target="_blank">tests/functionLiterals/DeprecatedSyntax.kt (11)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Flabels%2FlabelsMustBeNamed.kt&amp;actual=tests%2Flabels%2FlabelsMustBeNamed.fir.kt" target="_blank">tests/labels/labelsMustBeNamed.kt (10)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fimports%2FtwoImportLists.kt&amp;actual=tests%2Fimports%2FtwoImportLists.fir.kt" target="_blank">tests/imports/twoImportLists.kt (10)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FqualifiedExpression%2FTypeWithError.kt&amp;actual=tests%2FqualifiedExpression%2FTypeWithError.fir.kt" target="_blank">tests/qualifiedExpression/TypeWithError.kt (8)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Frecovery%2FabsentLeftHandSide.kt&amp;actual=tests%2Frecovery%2FabsentLeftHandSide.fir.kt" target="_blank">tests/recovery/absentLeftHandSide.kt (8)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FincompleteCode%2FdiagnosticWithSyntaxError%2FvalWithNoNameInBlock.kt&amp;actual=tests%2FincompleteCode%2FdiagnosticWithSyntaxError%2FvalWithNoNameInBlock.kt" target="_blank">tests/incompleteCode/diagnosticWithSyntaxError/valWithNoNameInBlock.kt (7)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Frecovery%2FnamelessToplevelDeclarations.kt&amp;actual=tests%2Frecovery%2FnamelessToplevelDeclarations.fir.kt" target="_blank">tests/recovery/namelessToplevelDeclarations.kt (7)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fexceptions%2Fkt24158.kt&amp;actual=tests%2Fexceptions%2Fkt24158.kt" target="_blank">tests/exceptions/kt24158.kt (7)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fimports%2FMalformedImports.kt&amp;actual=tests%2Fimports%2FMalformedImports.fir.kt" target="_blank">tests/imports/MalformedImports.kt (7)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fregressions%2Fea66984.kt&amp;actual=tests%2Fregressions%2Fea66984.fir.kt" target="_blank">tests/regressions/ea66984.kt (7)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FincompleteCode%2FdiagnosticWithSyntaxError%2FdeclarationAfterDotSelectorExpected.kt&amp;actual=tests%2FincompleteCode%2FdiagnosticWithSyntaxError%2FdeclarationAfterDotSelectorExpected.fir.kt" target="_blank">tests/incompleteCode/diagnosticWithSyntaxError/declarationAfterDotSelectorExpected.kt (6)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Ftypealias%2FnoRHS.kt&amp;actual=tests%2Ftypealias%2FnoRHS.kt" target="_blank">tests/typealias/noRHS.kt (5)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FincompleteCode%2FincompleteTryCatchBlock.kt&amp;actual=tests%2FincompleteCode%2FincompleteTryCatchBlock.kt" target="_blank">tests/incompleteCode/incompleteTryCatchBlock.kt (5)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Frecovery%2FnamelessMembers.kt&amp;actual=tests%2Frecovery%2FnamelessMembers.kt" target="_blank">tests/recovery/namelessMembers.kt (5)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FincompleteCode%2FdiagnosticWithSyntaxError%2FtypeReferenceError.kt&amp;actual=tests%2FincompleteCode%2FdiagnosticWithSyntaxError%2FtypeReferenceError.fir.kt" target="_blank">tests/incompleteCode/diagnosticWithSyntaxError/typeReferenceError.kt (4)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FincompleteCode%2FdiagnosticWithSyntaxError%2FvalWithNoNameBeforeNextDeclarationWithModifiers.kt&amp;actual=tests%2FincompleteCode%2FdiagnosticWithSyntaxError%2FvalWithNoNameBeforeNextDeclarationWithModifiers.kt" target="_blank">tests/incompleteCode/diagnosticWithSyntaxError/valWithNoNameBeforeNextDeclarationWithModifiers.kt (4)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FincompleteCode%2FdiagnosticWithSyntaxError%2FfuncitonTypes.kt&amp;actual=tests%2FincompleteCode%2FdiagnosticWithSyntaxError%2FfuncitonTypes.fir.kt" target="_blank">tests/incompleteCode/diagnosticWithSyntaxError/funcitonTypes.kt (4)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FincompleteCode%2FdiagnosticWithSyntaxError%2FdeclarationAfterIncompleteElvis.kt&amp;actual=tests%2FincompleteCode%2FdiagnosticWithSyntaxError%2FdeclarationAfterIncompleteElvis.kt" target="_blank">tests/incompleteCode/diagnosticWithSyntaxError/declarationAfterIncompleteElvis.kt (4)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FTypeMismatchOnOverrideWithSyntaxErrors.kt&amp;actual=tests%2FTypeMismatchOnOverrideWithSyntaxErrors.kt" target="_blank">tests/TypeMismatchOnOverrideWithSyntaxErrors.kt (4)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fannotations%2FDanglingWithBrackets.kt&amp;actual=tests%2Fannotations%2FDanglingWithBrackets.kt" target="_blank">tests/annotations/DanglingWithBrackets.kt (4)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fregressions%2Fkt9620.kt&amp;actual=tests%2Fregressions%2Fkt9620.fir.kt" target="_blank">tests/regressions/kt9620.kt (4)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fscopes%2Fkt250.617.10.kt&amp;actual=tests%2Fscopes%2Fkt250.617.10.fir.kt" target="_blank">tests/scopes/kt250.617.10.kt (3)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FdeclarationChecks%2FnamedFunAsLastExpressionInBlock.kt&amp;actual=tests%2FdeclarationChecks%2FnamedFunAsLastExpressionInBlock.fir.kt" target="_blank">tests/declarationChecks/namedFunAsLastExpressionInBlock.kt (3)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fannotations%2FannotatedExpressionInsideAnnotation.kt&amp;actual=tests%2Fannotations%2FannotatedExpressionInsideAnnotation.fir.kt" target="_blank">tests/annotations/annotatedExpressionInsideAnnotation.kt (3)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fannotations%2FwithUseSiteTarget%2FfileAnnotationWithoutColon_after.kt&amp;actual=tests%2Fannotations%2FwithUseSiteTarget%2FfileAnnotationWithoutColon_after.fir.kt" target="_blank">tests/annotations/withUseSiteTarget/fileAnnotationWithoutColon_after.kt (3)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fannotations%2FwithUseSiteTarget%2FfileAnnotationWithoutColon_before.kt&amp;actual=tests%2Fannotations%2FwithUseSiteTarget%2FfileAnnotationWithoutColon_before.fir.kt" target="_blank">tests/annotations/withUseSiteTarget/fileAnnotationWithoutColon_before.kt (3)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fannotations%2FDanglingNoBrackets.kt&amp;actual=tests%2Fannotations%2FDanglingNoBrackets.kt" target="_blank">tests/annotations/DanglingNoBrackets.kt (3)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fannotations%2FDanglingMixed.kt&amp;actual=tests%2Fannotations%2FDanglingMixed.fir.kt" target="_blank">tests/annotations/DanglingMixed.kt (3)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fregressions%2Fea72837.kt&amp;actual=tests%2Fregressions%2Fea72837.fir.kt" target="_blank">tests/regressions/ea72837.kt (3)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fregressions%2Fea65509.kt&amp;actual=tests%2Fregressions%2Fea65509.kt" target="_blank">tests/regressions/ea65509.kt (3)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2FtrailingComma%2FnoDisambiguation.kt&amp;actual=testsWithStdLib%2FtrailingComma%2FnoDisambiguation.kt" target="_blank">testsWithStdLib/trailingComma/noDisambiguation.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FCharacterLiterals.kt&amp;actual=tests%2FCharacterLiterals.fir.kt" target="_blank">tests/CharacterLiterals.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fwhen%2FReservedExhaustiveWhen.kt&amp;actual=tests%2Fwhen%2FReservedExhaustiveWhen.fir.kt" target="_blank">tests/when/ReservedExhaustiveWhen.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fmodifiers%2FIllegalModifiers.kt&amp;actual=tests%2Fmodifiers%2FIllegalModifiers.fir.kt" target="_blank">tests/modifiers/IllegalModifiers.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FqualifiedExpression%2FnullCalleeExpression.kt&amp;actual=tests%2FqualifiedExpression%2FnullCalleeExpression.fir.kt" target="_blank">tests/qualifiedExpression/nullCalleeExpression.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FdeclarationChecks%2FdestructuringDeclarations%2FForLoopMissingLoopParameter.kt&amp;actual=tests%2FdeclarationChecks%2FdestructuringDeclarations%2FForLoopMissingLoopParameter.fir.kt" target="_blank">tests/declarationChecks/destructuringDeclarations/ForLoopMissingLoopParameter.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FincompleteCode%2FsenselessComparisonWithNull.kt&amp;actual=tests%2FincompleteCode%2FsenselessComparisonWithNull.fir.kt" target="_blank">tests/incompleteCode/senselessComparisonWithNull.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FincompleteCode%2FdiagnosticWithSyntaxError%2FcompleteFunctionArgumentsOfNestedCalls.kt&amp;actual=tests%2FincompleteCode%2FdiagnosticWithSyntaxError%2FcompleteFunctionArgumentsOfNestedCalls.kt" target="_blank">tests/incompleteCode/diagnosticWithSyntaxError/completeFunctionArgumentsOfNestedCalls.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FincompleteCode%2FdiagnosticWithSyntaxError%2FfunKeyword.kt&amp;actual=tests%2FincompleteCode%2FdiagnosticWithSyntaxError%2FfunKeyword.kt" target="_blank">tests/incompleteCode/diagnosticWithSyntaxError/funKeyword.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FincompleteCode%2FdiagnosticWithSyntaxError%2FcheckBackingFieldException.kt&amp;actual=tests%2FincompleteCode%2FdiagnosticWithSyntaxError%2FcheckBackingFieldException.kt" target="_blank">tests/incompleteCode/diagnosticWithSyntaxError/checkBackingFieldException.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FincompleteCode%2FdiagnosticWithSyntaxError%2FarrayExpression.kt&amp;actual=tests%2FincompleteCode%2FdiagnosticWithSyntaxError%2FarrayExpression.fir.kt" target="_blank">tests/incompleteCode/diagnosticWithSyntaxError/arrayExpression.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FincompleteCode%2FcheckNothingIsSubtype.kt&amp;actual=tests%2FincompleteCode%2FcheckNothingIsSubtype.fir.kt" target="_blank">tests/incompleteCode/checkNothingIsSubtype.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FStringPrefixAndSuffix.kt&amp;actual=tests%2FStringPrefixAndSuffix.fir.kt" target="_blank">tests/StringPrefixAndSuffix.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FdataClasses%2FrepeatedProperties.kt&amp;actual=tests%2FdataClasses%2FrepeatedProperties.fir.kt" target="_blank">tests/dataClasses/repeatedProperties.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FdataClasses%2FdataClassNoName.kt&amp;actual=tests%2FdataClasses%2FdataClassNoName.fir.kt" target="_blank">tests/dataClasses/dataClassNoName.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fannotations%2FwithUseSiteTarget%2FdiagnosticFileAnnotationInWrongPlace.kt&amp;actual=tests%2Fannotations%2FwithUseSiteTarget%2FdiagnosticFileAnnotationInWrongPlace.fir.kt" target="_blank">tests/annotations/withUseSiteTarget/diagnosticFileAnnotationInWrongPlace.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FdelegatedProperty%2FbackingField.kt&amp;actual=tests%2FdelegatedProperty%2FbackingField.kt" target="_blank">tests/delegatedProperty/backingField.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fregressions%2Fea69735.kt&amp;actual=tests%2Fregressions%2Fea69735.kt" target="_blank">tests/regressions/ea69735.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FdataFlowInfoTraversal%2FIfThenElseBothInvalid.kt&amp;actual=tests%2FdataFlowInfoTraversal%2FIfThenElseBothInvalid.fir.kt" target="_blank">tests/dataFlowInfoTraversal/IfThenElseBothInvalid.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FcallableReference%2FwithQuestionMarks.kt&amp;actual=tests%2FcallableReference%2FwithQuestionMarks.fir.kt" target="_blank">tests/callableReference/withQuestionMarks.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FcallableReference%2Ffunction%2Fempty.kt&amp;actual=tests%2FcallableReference%2Ffunction%2Fempty.kt" target="_blank">tests/callableReference/function/empty.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FcallableReference%2FparsingPriorityOfGenericArgumentsVsLess.kt&amp;actual=tests%2FcallableReference%2FparsingPriorityOfGenericArgumentsVsLess.fir.kt" target="_blank">tests/callableReference/parsingPriorityOfGenericArgumentsVsLess.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fregression%2Fea65206.kt&amp;actual=testsWithStdLib%2Fregression%2Fea65206.fir.kt" target="_blank">testsWithStdLib/regression/ea65206.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fgenerics%2FRawTypeInIsExpression.kt&amp;actual=tests%2Fgenerics%2FRawTypeInIsExpression.fir.kt" target="_blank">tests/generics/RawTypeInIsExpression.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fgenerics%2FRawTypeInIsPattern.kt&amp;actual=tests%2Fgenerics%2FRawTypeInIsPattern.fir.kt" target="_blank">tests/generics/RawTypeInIsPattern.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fenum%2FenumWithEmptyName.kt&amp;actual=tests%2Fenum%2FenumWithEmptyName.kt" target="_blank">tests/enum/enumWithEmptyName.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fenum%2FenumMissingName.kt&amp;actual=tests%2Fenum%2FenumMissingName.kt" target="_blank">tests/enum/enumMissingName.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fenum%2FlocalEnums.kt&amp;actual=tests%2Fenum%2FlocalEnums.fir.kt" target="_blank">tests/enum/localEnums.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fvariance%2FOutPosition.kt&amp;actual=tests%2Fvariance%2FOutPosition.fir.kt" target="_blank">tests/variance/OutPosition.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fvariance%2FInPosition.kt&amp;actual=tests%2Fvariance%2FInPosition.fir.kt" target="_blank">tests/variance/InPosition.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fvariance%2FInvariantPosition.kt&amp;actual=tests%2Fvariance%2FInvariantPosition.fir.kt" target="_blank">tests/variance/InvariantPosition.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FReturnInFunctionWithoutBody.kt&amp;actual=tests%2FReturnInFunctionWithoutBody.fir.kt" target="_blank">tests/ReturnInFunctionWithoutBody.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fwhen%2FwithSubjectVariable%2FnoSubjectVariableName.kt&amp;actual=tests%2Fwhen%2FwithSubjectVariable%2FnoSubjectVariableName.kt" target="_blank">tests/when/withSubjectVariable/noSubjectVariableName.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fwhen%2FCommaInWhenConditionWithoutArgument.kt&amp;actual=tests%2Fwhen%2FCommaInWhenConditionWithoutArgument.fir.kt" target="_blank">tests/when/CommaInWhenConditionWithoutArgument.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fwhen%2FEmptyConditionWithExpressionEnum.kt&amp;actual=tests%2Fwhen%2FEmptyConditionWithExpressionEnum.kt" target="_blank">tests/when/EmptyConditionWithExpressionEnum.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fwhen%2FEmptyConditionWithExpression.kt&amp;actual=tests%2Fwhen%2FEmptyConditionWithExpression.kt" target="_blank">tests/when/EmptyConditionWithExpression.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fmodifiers%2FprimaryConstructorMissingBrackets.kt&amp;actual=tests%2Fmodifiers%2FprimaryConstructorMissingBrackets.fir.kt" target="_blank">tests/modifiers/primaryConstructorMissingBrackets.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Ftypealias%2FparameterRestrictions.kt&amp;actual=tests%2Ftypealias%2FparameterRestrictions.fir.kt" target="_blank">tests/typealias/parameterRestrictions.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fmultimodule%2FduplicateMethod%2FincompleteCodeNoNoneApplicable.kt&amp;actual=tests%2Fmultimodule%2FduplicateMethod%2FincompleteCodeNoNoneApplicable.fir.kt" target="_blank">tests/multimodule/duplicateMethod/incompleteCodeNoNoneApplicable.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FSyntaxErrorInTestHighlightingEof.kt&amp;actual=tests%2FSyntaxErrorInTestHighlightingEof.kt" target="_blank">tests/SyntaxErrorInTestHighlightingEof.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FthisAndSuper%2FSuper.kt&amp;actual=tests%2FthisAndSuper%2FSuper.fir.kt" target="_blank">tests/thisAndSuper/Super.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FcontrolFlowAnalysis%2Fkt843.kt&amp;actual=tests%2FcontrolFlowAnalysis%2Fkt843.kt" target="_blank">tests/controlFlowAnalysis/kt843.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FincompleteCode%2FincompleteAssignment.kt&amp;actual=tests%2FincompleteCode%2FincompleteAssignment.fir.kt" target="_blank">tests/incompleteCode/incompleteAssignment.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FincompleteCode%2FarrayBracketsRange.kt&amp;actual=tests%2FincompleteCode%2FarrayBracketsRange.kt" target="_blank">tests/incompleteCode/arrayBracketsRange.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FincompleteCode%2FvariableDeclarationInSelector.kt&amp;actual=tests%2FincompleteCode%2FvariableDeclarationInSelector.kt" target="_blank">tests/incompleteCode/variableDeclarationInSelector.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FincompleteCode%2FinExpr.kt&amp;actual=tests%2FincompleteCode%2FinExpr.fir.kt" target="_blank">tests/incompleteCode/inExpr.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FincompleteCode%2FincompleteEquals.kt&amp;actual=tests%2FincompleteCode%2FincompleteEquals.fir.kt" target="_blank">tests/incompleteCode/incompleteEquals.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FincompleteCode%2FpseudocodeTraverseNextInstructions.kt&amp;actual=tests%2FincompleteCode%2FpseudocodeTraverseNextInstructions.fir.kt" target="_blank">tests/incompleteCode/pseudocodeTraverseNextInstructions.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FincompleteCode%2FdiagnosticWithSyntaxError%2FincompleteValWithAccessor.kt&amp;actual=tests%2FincompleteCode%2FdiagnosticWithSyntaxError%2FincompleteValWithAccessor.kt" target="_blank">tests/incompleteCode/diagnosticWithSyntaxError/incompleteValWithAccessor.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FincompleteCode%2FdiagnosticWithSyntaxError%2FincompleteVal.kt&amp;actual=tests%2FincompleteCode%2FdiagnosticWithSyntaxError%2FincompleteVal.kt" target="_blank">tests/incompleteCode/diagnosticWithSyntaxError/incompleteVal.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FincompleteCode%2FdiagnosticWithSyntaxError%2FincompleteEnumReference.kt&amp;actual=tests%2FincompleteCode%2FdiagnosticWithSyntaxError%2FincompleteEnumReference.kt" target="_blank">tests/incompleteCode/diagnosticWithSyntaxError/incompleteEnumReference.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FincompleteCode%2FdiagnosticWithSyntaxError%2FincompleteWhen.kt&amp;actual=tests%2FincompleteCode%2FdiagnosticWithSyntaxError%2FincompleteWhen.kt" target="_blank">tests/incompleteCode/diagnosticWithSyntaxError/incompleteWhen.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FincompleteCode%2FdiagnosticWithSyntaxError%2FfunEquals.kt&amp;actual=tests%2FincompleteCode%2FdiagnosticWithSyntaxError%2FfunEquals.kt" target="_blank">tests/incompleteCode/diagnosticWithSyntaxError/funEquals.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FincompleteCode%2FdiagnosticWithSyntaxError%2FnoTypeParamsInReturnType.kt&amp;actual=tests%2FincompleteCode%2FdiagnosticWithSyntaxError%2FnoTypeParamsInReturnType.fir.kt" target="_blank">tests/incompleteCode/diagnosticWithSyntaxError/noTypeParamsInReturnType.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FincompleteCode%2FplusOnTheRight.kt&amp;actual=tests%2FincompleteCode%2FplusOnTheRight.fir.kt" target="_blank">tests/incompleteCode/plusOnTheRight.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FincompleteCode%2Fkt1955.kt&amp;actual=tests%2FincompleteCode%2Fkt1955.kt" target="_blank">tests/incompleteCode/kt1955.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FProcessingEmptyImport.kt&amp;actual=tests%2FProcessingEmptyImport.kt" target="_blank">tests/ProcessingEmptyImport.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FReturn.kt&amp;actual=tests%2FReturn.fir.kt" target="_blank">tests/Return.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FConstructors.kt&amp;actual=tests%2FConstructors.fir.kt" target="_blank">tests/Constructors.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FTraitWithConstructor.kt&amp;actual=tests%2FTraitWithConstructor.fir.kt" target="_blank">tests/TraitWithConstructor.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FSyntaxErrorInTestHighlighting.kt&amp;actual=tests%2FSyntaxErrorInTestHighlighting.kt" target="_blank">tests/SyntaxErrorInTestHighlighting.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FLValueAssignment.kt&amp;actual=tests%2FLValueAssignment.fir.kt" target="_blank">tests/LValueAssignment.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FcontrolStructures%2FcontinueAndBreakLabelWithSameFunctionName.kt&amp;actual=tests%2FcontrolStructures%2FcontinueAndBreakLabelWithSameFunctionName.fir.kt" target="_blank">tests/controlStructures/continueAndBreakLabelWithSameFunctionName.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Frecovery%2FnamelessInJava.kt&amp;actual=tests%2Frecovery%2FnamelessInJava.kt" target="_blank">tests/recovery/namelessInJava.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Frecovery%2FemptyTypeArgs.kt&amp;actual=tests%2Frecovery%2FemptyTypeArgs.kt" target="_blank">tests/recovery/emptyTypeArgs.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FFunctionParameterWithoutType.kt&amp;actual=tests%2FFunctionParameterWithoutType.fir.kt" target="_blank">tests/FunctionParameterWithoutType.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fkt34440.kt&amp;actual=tests%2Fkt34440.fir.kt" target="_blank">tests/kt34440.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fcast%2FWhenErasedDisallowFromAny.kt&amp;actual=tests%2Fcast%2FWhenErasedDisallowFromAny.fir.kt" target="_blank">tests/cast/WhenErasedDisallowFromAny.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fannotations%2FnoNameProperty.kt&amp;actual=tests%2Fannotations%2FnoNameProperty.kt" target="_blank">tests/annotations/noNameProperty.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fannotations%2Fkt1860-negative.kt&amp;actual=tests%2Fannotations%2Fkt1860-negative.fir.kt" target="_blank">tests/annotations/kt1860-negative.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fannotations%2Fkt1860-positive.kt&amp;actual=tests%2Fannotations%2Fkt1860-positive.fir.kt" target="_blank">tests/annotations/kt1860-positive.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FclassObjects%2FtypeParametersInAnnonymousObject.kt&amp;actual=tests%2FclassObjects%2FtypeParametersInAnnonymousObject.fir.kt" target="_blank">tests/classObjects/typeParametersInAnnonymousObject.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FclassObjects%2FtypeParametersInAnnonymousObject_after.kt&amp;actual=tests%2FclassObjects%2FtypeParametersInAnnonymousObject_after.fir.kt" target="_blank">tests/classObjects/typeParametersInAnnonymousObject_after.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fregressions%2Fkt13685.kt&amp;actual=tests%2Fregressions%2Fkt13685.fir.kt" target="_blank">tests/regressions/kt13685.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fregressions%2Fkt328.kt&amp;actual=tests%2Fregressions%2Fkt328.fir.kt" target="_blank">tests/regressions/kt328.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fregressions%2Fkt847.kt&amp;actual=tests%2Fregressions%2Fkt847.kt" target="_blank">tests/regressions/kt847.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fregressions%2Fea43298.kt&amp;actual=tests%2Fregressions%2Fea43298.kt" target="_blank">tests/regressions/ea43298.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fregressions%2Fea40964.kt&amp;actual=tests%2Fregressions%2Fea40964.kt" target="_blank">tests/regressions/ea40964.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FdataFlowInfoTraversal%2FWhileCondition.kt&amp;actual=tests%2FdataFlowInfoTraversal%2FWhileCondition.fir.kt" target="_blank">tests/dataFlowInfoTraversal/WhileCondition.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FcallableReference%2Fbound%2FreservedExpressionSyntax.kt&amp;actual=tests%2FcallableReference%2Fbound%2FreservedExpressionSyntax.fir.kt" target="_blank">tests/callableReference/bound/reservedExpressionSyntax.kt (1)</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

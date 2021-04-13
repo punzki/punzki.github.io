@@ -1,0 +1,74 @@
+<html>
+  <head>
+    <title>Diagnostics diff: CANNOT_INFER_PARAMETER_TYPE</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row" id="summary">
+        <h1>CANNOT_INFER_PARAMETER_TYPE</h1>
+      </div>
+      <div class="row">
+        <ul>
+          <li><strong>Total: </strong>98</li>
+          <li><strong>Match %: </strong>0.00%</li>
+          <li><a href="#matched"><strong># Matched: </strong>0</a></li>
+          <li><strong># Non-matched: </strong>98</li>
+          <li><a href="#missing"><strong># Missing: </strong>96</a></li>
+          <li><a href="#unexpected"><strong># Unexpected: </strong>0</a></li>
+          <li><a href="#mismatched"><strong># Mismatched: </strong>2</a></li>
+          <li><strong># of Files: </strong>29</li>
+        </ul>
+      </div>
+      <div class="row" id="missing">
+        <h2>Missing (96)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?expected=tests%2Finference%2Fcompletion%2FpostponedArgumentsAnalysis%2FnotInferableParameterOfAnonymousFunction.kt&amp;actual=tests%2Finference%2Fcompletion%2FpostponedArgumentsAnalysis%2FnotInferableParameterOfAnonymousFunction.fir.kt" target="_blank">tests/inference/completion/postponedArgumentsAnalysis/notInferableParameterOfAnonymousFunction.kt (19)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Finference%2Fcompletion%2FpostponedArgumentsAnalysis%2Fbasic.kt&amp;actual=tests%2Finference%2Fcompletion%2FpostponedArgumentsAnalysis%2Fbasic.fir.kt" target="_blank">tests/inference/completion/postponedArgumentsAnalysis/basic.kt (14)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Finference%2FnonFunctionalExpectedTypeForLambdaArgument.kt&amp;actual=tests%2Finference%2FnonFunctionalExpectedTypeForLambdaArgument.fir.kt" target="_blank">tests/inference/nonFunctionalExpectedTypeForLambdaArgument.kt (10)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Finference%2FextensionLambdasAndArrow.kt&amp;actual=tests%2Finference%2FextensionLambdasAndArrow.fir.kt" target="_blank">tests/inference/extensionLambdasAndArrow.kt (5)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fregressions%2Fkt30245.kt&amp;actual=tests%2Fregressions%2Fkt30245.fir.kt" target="_blank">tests/regressions/kt30245.kt (5)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Finference%2Fkt6175.kt&amp;actual=tests%2Finference%2Fkt6175.fir.kt" target="_blank">tests/inference/kt6175.kt (4)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FfunctionLiterals%2Fkt16016.kt&amp;actual=tests%2FfunctionLiterals%2Fkt16016.fir.kt" target="_blank">tests/functionLiterals/kt16016.kt (4)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FfunctionLiterals%2FDeprecatedSyntax.kt&amp;actual=tests%2FfunctionLiterals%2FDeprecatedSyntax.fir.kt" target="_blank">tests/functionLiterals/DeprecatedSyntax.kt (4)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Finference%2FinvokeLambdaAsFunction.kt&amp;actual=tests%2Finference%2FinvokeLambdaAsFunction.fir.kt" target="_blank">tests/inference/invokeLambdaAsFunction.kt (3)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FfunctionLiterals%2FExpectedParametersTypesMismatch.kt&amp;actual=tests%2FfunctionLiterals%2FExpectedParametersTypesMismatch.fir.kt" target="_blank">tests/functionLiterals/ExpectedParametersTypesMismatch.kt (3)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Finference%2FreportingImprovements%2FFunctionPlaceholder.kt&amp;actual=tests%2Finference%2FreportingImprovements%2FFunctionPlaceholder.fir.kt" target="_blank">tests/inference/reportingImprovements/FunctionPlaceholder.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Finference%2FnothingType%2FlambdaNothingAndExpectedType.kt&amp;actual=tests%2Finference%2FnothingType%2FlambdaNothingAndExpectedType.fir.kt" target="_blank">tests/inference/nothingType/lambdaNothingAndExpectedType.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Finference%2FnothingType%2Fkt34335.kt&amp;actual=tests%2Finference%2FnothingType%2Fkt34335.fir.kt" target="_blank">tests/inference/nothingType/kt34335.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FFunctionParameterWithoutType.kt&amp;actual=tests%2FFunctionParameterWithoutType.fir.kt" target="_blank">tests/FunctionParameterWithoutType.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fj%2Bk%2FsamByProjectedType%2FnoAdapterBecuaseOfRecursiveUpperBound.kt&amp;actual=tests%2Fj%2Bk%2FsamByProjectedType%2FnoAdapterBecuaseOfRecursiveUpperBound.fir.kt" target="_blank">tests/j+k/samByProjectedType/noAdapterBecuaseOfRecursiveUpperBound.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FFunctionCalleeExpressions.kt&amp;actual=tests%2FFunctionCalleeExpressions.fir.kt" target="_blank">tests/FunctionCalleeExpressions.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Finference%2FcannotCompleteResolveWithFunctionLiterals.kt&amp;actual=tests%2Finference%2FcannotCompleteResolveWithFunctionLiterals.fir.kt" target="_blank">tests/inference/cannotCompleteResolveWithFunctionLiterals.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Finference%2FcannotCompleteResolveFunctionLiteralsNoUse.kt&amp;actual=tests%2Finference%2FcannotCompleteResolveFunctionLiteralsNoUse.fir.kt" target="_blank">tests/inference/cannotCompleteResolveFunctionLiteralsNoUse.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Finference%2FresolveWithUnknownLambdaParameterType.kt&amp;actual=tests%2Finference%2FresolveWithUnknownLambdaParameterType.fir.kt" target="_blank">tests/inference/resolveWithUnknownLambdaParameterType.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Finference%2FreportingImprovements%2FcannotInferParameterTypeWithInference.kt&amp;actual=tests%2Finference%2FreportingImprovements%2FcannotInferParameterTypeWithInference.fir.kt" target="_blank">tests/inference/reportingImprovements/cannotInferParameterTypeWithInference.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Finference%2Fkt12399.kt&amp;actual=tests%2Finference%2Fkt12399.fir.kt" target="_blank">tests/inference/kt12399.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fwhen%2FwhenAndLambdaWithExpectedType.kt&amp;actual=tests%2Fwhen%2FwhenAndLambdaWithExpectedType.fir.kt" target="_blank">tests/when/whenAndLambdaWithExpectedType.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FfunctionLiterals%2FdestructuringInLambdas%2FcomplexInference.kt&amp;actual=tests%2FfunctionLiterals%2FdestructuringInLambdas%2FcomplexInference.fir.kt" target="_blank">tests/functionLiterals/destructuringInLambdas/complexInference.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FfunctionLiterals%2FdestructuringInLambdas%2FnoExpectedType.kt&amp;actual=tests%2FfunctionLiterals%2FdestructuringInLambdas%2FnoExpectedType.fir.kt" target="_blank">tests/functionLiterals/destructuringInLambdas/noExpectedType.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FAutoCreatedIt.kt&amp;actual=tests%2FAutoCreatedIt.fir.kt" target="_blank">tests/AutoCreatedIt.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fresolve%2FoverloadConflicts%2FallLambdas.kt&amp;actual=tests%2Fresolve%2FoverloadConflicts%2FallLambdas.fir.kt" target="_blank">tests/resolve/overloadConflicts/allLambdas.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fresolve%2FnewLineLambda.kt&amp;actual=tests%2Fresolve%2FnewLineLambda.fir.kt" target="_blank">tests/resolve/newLineLambda.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FfunctionAsExpression%2FMissingParameterTypes.kt&amp;actual=tests%2FfunctionAsExpression%2FMissingParameterTypes.fir.kt" target="_blank">tests/functionAsExpression/MissingParameterTypes.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fregressions%2Fkt10843.kt&amp;actual=tests%2Fregressions%2Fkt10843.fir.kt" target="_blank">tests/regressions/kt10843.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row" id="mismatched">
+        <h2>Mismatched (2)</h2>
+      </div>
+      <div class="row">
+        <h3>CANNOT_INFER_PARAMETER_TYPE -&gt; COMPONENT_FUNCTION_MISSING (2)</h3>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?expected=tests%2FfunctionLiterals%2FDeprecatedSyntax.kt&amp;actual=tests%2FfunctionLiterals%2FDeprecatedSyntax.fir.kt" target="_blank">tests/functionLiterals/DeprecatedSyntax.kt (2)</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

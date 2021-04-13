@@ -1,0 +1,58 @@
+<html>
+  <head>
+    <title>Diagnostics diff: MUST_BE_INITIALIZED</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row" id="summary">
+        <h1>MUST_BE_INITIALIZED</h1>
+      </div>
+      <div class="row">
+        <ul>
+          <li><strong>Total: </strong>25</li>
+          <li><strong>Match %: </strong>72.00%</li>
+          <li><a href="#matched"><strong># Matched: </strong>18</a></li>
+          <li><strong># Non-matched: </strong>7</li>
+          <li><a href="#missing"><strong># Missing: </strong>7</a></li>
+          <li><a href="#unexpected"><strong># Unexpected: </strong>0</a></li>
+          <li><a href="#mismatched"><strong># Mismatched: </strong>0</a></li>
+          <li><strong># of Files: </strong>15</li>
+        </ul>
+      </div>
+      <div class="row" id="missing">
+        <h2>Missing (7)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?expected=tests%2FAbstract.kt&amp;actual=tests%2FAbstract.fir.kt" target="_blank">tests/Abstract.kt (3)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fproperties%2FinferenceFromGetters%2FexplicitGetterType.kt&amp;actual=tests%2Fproperties%2FinferenceFromGetters%2FexplicitGetterType.fir.kt" target="_blank">tests/properties/inferenceFromGetters/explicitGetterType.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fproperties%2FinferenceFromGetters%2FunsupportedInferenceFromGetters.kt&amp;actual=tests%2Fproperties%2FinferenceFromGetters%2FunsupportedInferenceFromGetters.fir.kt" target="_blank">tests/properties/inferenceFromGetters/unsupportedInferenceFromGetters.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FbackingField%2FFieldAsParam.kt&amp;actual=tests%2FbackingField%2FFieldAsParam.fir.kt" target="_blank">tests/backingField/FieldAsParam.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FbackingField%2FInitCustomSetter.kt&amp;actual=tests%2FbackingField%2FInitCustomSetter.fir.kt" target="_blank">tests/backingField/InitCustomSetter.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row" id="matched">
+        <h2>Matched (18)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?expected=tests%2FAbstract.kt&amp;actual=tests%2FAbstract.fir.kt" target="_blank">tests/Abstract.kt (4)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Finfos%2FPropertiesWithBackingFields.kt&amp;actual=tests%2Finfos%2FPropertiesWithBackingFields.fir.kt" target="_blank">tests/infos/PropertiesWithBackingFields.kt (4)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fenum%2FAbstractInEnum.kt&amp;actual=tests%2Fenum%2FAbstractInEnum.fir.kt" target="_blank">tests/enum/AbstractInEnum.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Finference%2Fkt11963.kt&amp;actual=tests%2Finference%2Fkt11963.fir.kt" target="_blank">tests/inference/kt11963.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FcontrolFlowAnalysis%2FinitializationInLocalClass.kt&amp;actual=tests%2FcontrolFlowAnalysis%2FinitializationInLocalClass.fir.kt" target="_blank">tests/controlFlowAnalysis/initializationInLocalClass.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FAbstractInAbstractClass.kt&amp;actual=tests%2FAbstractInAbstractClass.fir.kt" target="_blank">tests/AbstractInAbstractClass.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fproperties%2FinferenceFromGetters%2Fvars.kt&amp;actual=tests%2Fproperties%2FinferenceFromGetters%2Fvars.fir.kt" target="_blank">tests/properties/inferenceFromGetters/vars.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsourceCompatibility%2FnoMultiplatformProjects.kt&amp;actual=tests%2FsourceCompatibility%2FnoMultiplatformProjects.fir.kt" target="_blank">tests/sourceCompatibility/noMultiplatformProjects.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FbackingField%2FInitCustomSetter.kt&amp;actual=tests%2FbackingField%2FInitCustomSetter.fir.kt" target="_blank">tests/backingField/InitCustomSetter.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fannotations%2FwithUseSiteTarget%2FdiagnosticFileAnnotationInWrongPlace.kt&amp;actual=tests%2Fannotations%2FwithUseSiteTarget%2FdiagnosticFileAnnotationInWrongPlace.fir.kt" target="_blank">tests/annotations/withUseSiteTarget/diagnosticFileAnnotationInWrongPlace.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FAbstractInClass.kt&amp;actual=tests%2FAbstractInClass.fir.kt" target="_blank">tests/AbstractInClass.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fregressions%2Fkt10243a.kt&amp;actual=tests%2Fregressions%2Fkt10243a.kt" target="_blank">tests/regressions/kt10243a.kt (1)</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
