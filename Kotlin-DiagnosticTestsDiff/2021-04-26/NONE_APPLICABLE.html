@@ -1,0 +1,128 @@
+<html>
+  <head>
+    <title>Diagnostics diff: NONE_APPLICABLE</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row" id="summary">
+        <h1>NONE_APPLICABLE</h1>
+      </div>
+      <div class="row">
+        <ul>
+          <li><strong>Total: </strong>103</li>
+          <li><strong>Match %: </strong>38.83%</li>
+          <li><a href="#matched"><strong># Matched: </strong>40</a></li>
+          <li><strong># Non-matched: </strong>63</li>
+          <li><a href="#missing"><strong># Missing: </strong>22</a></li>
+          <li><a href="#unexpected"><strong># Unexpected: </strong>33</a></li>
+          <li><a href="#mismatched"><strong># Mismatched: </strong>8</a></li>
+          <li><strong># of Files: </strong>73</li>
+        </ul>
+      </div>
+      <div class="row" id="missing">
+        <h2>Missing (22)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?expected=tests%2FcallableReference%2Fgeneric%2FresolutionWithGenericCallable.kt&amp;actual=tests%2FcallableReference%2Fgeneric%2FresolutionWithGenericCallable.fir.kt" target="_blank">tests/callableReference/generic/resolutionWithGenericCallable.kt (5)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fvarargs%2FassigningSingleElementsInNamedFormFunDeprecation_after.kt&amp;actual=tests%2Fvarargs%2FassigningSingleElementsInNamedFormFunDeprecation_after.fir.kt" target="_blank">tests/varargs/assigningSingleElementsInNamedFormFunDeprecation_after.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fvarargs%2FassigningSingleElementsInNamedFormFunDeprecation_before.kt&amp;actual=tests%2Fvarargs%2FassigningSingleElementsInNamedFormFunDeprecation_before.fir.kt" target="_blank">tests/varargs/assigningSingleElementsInNamedFormFunDeprecation_before.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fresolve%2Finvoke%2Ferrors%2FambiguityForInvoke.kt&amp;actual=tests%2Fresolve%2Finvoke%2Ferrors%2FambiguityForInvoke.fir.kt" target="_blank">tests/resolve/invoke/errors/ambiguityForInvoke.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsamConversions%2FarrayAsVarargAfterSamArgumentWithoutSamConversionsPerArgument.kt&amp;actual=tests%2FsamConversions%2FarrayAsVarargAfterSamArgumentWithoutSamConversionsPerArgument.fir.kt" target="_blank">tests/samConversions/arrayAsVarargAfterSamArgumentWithoutSamConversionsPerArgument.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FcallableReference%2Fgeneric%2FnestedCallWithOverload.kt&amp;actual=tests%2FcallableReference%2Fgeneric%2FnestedCallWithOverload.fir.kt" target="_blank">tests/callableReference/generic/nestedCallWithOverload.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Finference%2Fregressions%2Fkt32862_none.kt&amp;actual=tests%2Finference%2Fregressions%2Fkt32862_none.fir.kt" target="_blank">tests/inference/regressions/kt32862_none.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fresolve%2FoverloadConflicts%2FvarargsMixed.kt&amp;actual=tests%2Fresolve%2FoverloadConflicts%2FvarargsMixed.fir.kt" target="_blank">tests/resolve/overloadConflicts/varargsMixed.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fannotations%2FAmbigiousAnnotationConstructor.kt&amp;actual=tests%2Fannotations%2FAmbigiousAnnotationConstructor.fir.kt" target="_blank">tests/annotations/AmbigiousAnnotationConstructor.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2FsmartcastToNothingAfterCheckingForNull.kt&amp;actual=tests%2FsmartCasts%2FsmartcastToNothingAfterCheckingForNull.fir.kt" target="_blank">tests/smartCasts/smartcastToNothingAfterCheckingForNull.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FcallableReference%2Fresolve%2FwithVararg.kt&amp;actual=tests%2FcallableReference%2Fresolve%2FwithVararg.fir.kt" target="_blank">tests/callableReference/resolve/withVararg.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FcallableReference%2Fresolve%2FwithGenericFun.kt&amp;actual=tests%2FcallableReference%2Fresolve%2FwithGenericFun.fir.kt" target="_blank">tests/callableReference/resolve/withGenericFun.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FcallableReference%2Fresolve%2FbyGenericArgType.kt&amp;actual=tests%2FcallableReference%2Fresolve%2FbyGenericArgType.fir.kt" target="_blank">tests/callableReference/resolve/byGenericArgType.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row" id="unexpected">
+        <h2>Unexpected (33)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?expected=tests%2FsamConversions%2FarrayAsVarargAfterSamArgumentWithoutSamConversionsPerArgument.kt&amp;actual=tests%2FsamConversions%2FarrayAsVarargAfterSamArgumentWithoutSamConversionsPerArgument.fir.kt" target="_blank">tests/samConversions/arrayAsVarargAfterSamArgumentWithoutSamConversionsPerArgument.kt (4)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsamConversions%2FarrayAsVarargAfterSamArgument.kt&amp;actual=tests%2FsamConversions%2FarrayAsVarargAfterSamArgument.fir.kt" target="_blank">tests/samConversions/arrayAsVarargAfterSamArgument.kt (4)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Finference%2FspecialCallsWithCallableReferences.kt&amp;actual=tests%2Finference%2FspecialCallsWithCallableReferences.fir.kt" target="_blank">tests/inference/specialCallsWithCallableReferences.kt (3)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FObjectWithConstructor.kt&amp;actual=tests%2FObjectWithConstructor.fir.kt" target="_blank">tests/ObjectWithConstructor.kt (3)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FoperatorRem%2FnoDeprecatedModConventionWithoutFeature.kt&amp;actual=tests%2FoperatorRem%2FnoDeprecatedModConventionWithoutFeature.fir.kt" target="_blank">tests/operatorRem/noDeprecatedModConventionWithoutFeature.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsecondaryConstructors%2Fgenerics2.kt&amp;actual=tests%2FsecondaryConstructors%2Fgenerics2.fir.kt" target="_blank">tests/secondaryConstructors/generics2.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FunsignedTypes%2Fconversions%2FnoConversionForUnsignedTypesOnReceiver.kt&amp;actual=tests%2FunsignedTypes%2Fconversions%2FnoConversionForUnsignedTypesOnReceiver.fir.kt" target="_blank">tests/unsignedTypes/conversions/noConversionForUnsignedTypesOnReceiver.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fj%2Bk%2FprimitiveOverrides%2FspecializedMap.kt&amp;actual=tests%2Fj%2Bk%2FprimitiveOverrides%2FspecializedMap.fir.kt" target="_blank">tests/j+k/primitiveOverrides/specializedMap.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fj%2Bk%2FcollectionOverrides%2FcontainsAndOverload.kt&amp;actual=tests%2Fj%2Bk%2FcollectionOverrides%2FcontainsAndOverload.fir.kt" target="_blank">tests/j+k/collectionOverrides/containsAndOverload.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fcontracts%2Fdsl%2FcallUsualContractFunction.kt&amp;actual=testsWithStdLib%2Fcontracts%2Fdsl%2FcallUsualContractFunction.fir.kt" target="_blank">testsWithStdLib/contracts/dsl/callUsualContractFunction.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fmultimodule%2FduplicateMethod%2FincompleteCodeNoNoneApplicable.kt&amp;actual=tests%2Fmultimodule%2FduplicateMethod%2FincompleteCodeNoNoneApplicable.fir.kt" target="_blank">tests/multimodule/duplicateMethod/incompleteCodeNoNoneApplicable.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FnullableTypes%2FnullableArgumentToNonNullParameterPlatform.kt&amp;actual=tests%2FnullableTypes%2FnullableArgumentToNonNullParameterPlatform.fir.kt" target="_blank">tests/nullableTypes/nullableArgumentToNonNullParameterPlatform.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FnullableTypes%2FnullableArgumentToNonNullParameterSimple.kt&amp;actual=tests%2FnullableTypes%2FnullableArgumentToNonNullParameterSimple.fir.kt" target="_blank">tests/nullableTypes/nullableArgumentToNonNullParameterSimple.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsecondaryConstructors%2FconstructorCallType.kt&amp;actual=tests%2FsecondaryConstructors%2FconstructorCallType.fir.kt" target="_blank">tests/secondaryConstructors/constructorCallType.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FunsignedTypes%2Fconversions%2FinferenceForSignedAndUnsignedTypes.kt&amp;actual=tests%2FunsignedTypes%2Fconversions%2FinferenceForSignedAndUnsignedTypes.fir.kt" target="_blank">tests/unsignedTypes/conversions/inferenceForSignedAndUnsignedTypes.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FunsignedTypes%2Fconversions%2FoverloadResolutionForSignedAndUnsignedTypes.kt&amp;actual=tests%2FunsignedTypes%2Fconversions%2FoverloadResolutionForSignedAndUnsignedTypes.fir.kt" target="_blank">tests/unsignedTypes/conversions/overloadResolutionForSignedAndUnsignedTypes.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fmultiplatform%2Fenum%2FconstructorInHeaderEnum.kt&amp;actual=tests%2Fmultiplatform%2Fenum%2FconstructorInHeaderEnum.fir.kt" target="_blank">tests/multiplatform/enum/constructorInHeaderEnum.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fregressions%2FWrongTraceInCallResolver.kt&amp;actual=tests%2Fregressions%2FWrongTraceInCallResolver.fir.kt" target="_blank">tests/regressions/WrongTraceInCallResolver.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row" id="mismatched">
+        <h2>Mismatched (8)</h2>
+      </div>
+      <div class="row">
+        <h3>NONE_APPLICABLE -&gt; UNRESOLVED_REFERENCE (8)</h3>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?expected=tests%2FoperatorsOverloading%2FassignmentOperationsCheckReturnType.kt&amp;actual=tests%2FoperatorsOverloading%2FassignmentOperationsCheckReturnType.fir.kt" target="_blank">tests/operatorsOverloading/assignmentOperationsCheckReturnType.kt (4)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fresolve%2FoverloadConflicts%2FgenericWithProjection.kt&amp;actual=tests%2Fresolve%2FoverloadConflicts%2FgenericWithProjection.fir.kt" target="_blank">tests/resolve/overloadConflicts/genericWithProjection.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FcallableReference%2Ffunction%2FambiguityTopLevelVsTopLevel.kt&amp;actual=tests%2FcallableReference%2Ffunction%2FambiguityTopLevelVsTopLevel.fir.kt" target="_blank">tests/callableReference/function/ambiguityTopLevelVsTopLevel.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FcallableReference%2Fresolve%2FbyValType.kt&amp;actual=tests%2FcallableReference%2Fresolve%2FbyValType.fir.kt" target="_blank">tests/callableReference/resolve/byValType.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FcallableReference%2Fresolve%2FmoreSpecificAmbiguousExtensions.kt&amp;actual=tests%2FcallableReference%2Fresolve%2FmoreSpecificAmbiguousExtensions.fir.kt" target="_blank">tests/callableReference/resolve/moreSpecificAmbiguousExtensions.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row" id="matched">
+        <h2>Matched (40)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?expected=tests%2FsamConversions%2FarrayAsVarargAfterSamArgumentProhibited.kt&amp;actual=tests%2FsamConversions%2FarrayAsVarargAfterSamArgumentProhibited.fir.kt" target="_blank">tests/samConversions/arrayAsVarargAfterSamArgumentProhibited.kt (4)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FcheckArguments%2FoverloadedFunction.kt&amp;actual=tests%2FcheckArguments%2FoverloadedFunction.fir.kt" target="_blank">tests/checkArguments/overloadedFunction.kt (3)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fgenerics%2FwrongNumberOfTypeArgumentsDiagnostic.kt&amp;actual=tests%2Fgenerics%2FwrongNumberOfTypeArgumentsDiagnostic.fir.kt" target="_blank">tests/generics/wrongNumberOfTypeArgumentsDiagnostic.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2FtargetedBuiltIns%2FunsupportedFeature.kt&amp;actual=testsWithStdLib%2FtargetedBuiltIns%2FunsupportedFeature.fir.kt" target="_blank">testsWithStdLib/targetedBuiltIns/unsupportedFeature.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fjava%2FfunctionN.kt&amp;actual=testsWithStdLib%2Fjava%2FfunctionN.fir.kt" target="_blank">testsWithStdLib/java/functionN.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fgenerics%2FProjections.kt&amp;actual=tests%2Fgenerics%2FProjections.fir.kt" target="_blank">tests/generics/Projections.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fvarargs%2FassigningSingleElementsInNamedFormFunDeprecation_after.kt&amp;actual=tests%2Fvarargs%2FassigningSingleElementsInNamedFormFunDeprecation_after.fir.kt" target="_blank">tests/varargs/assigningSingleElementsInNamedFormFunDeprecation_after.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fvarargs%2FassigningSingleElementsInNamedFormFunDeprecation_before.kt&amp;actual=tests%2Fvarargs%2FassigningSingleElementsInNamedFormFunDeprecation_before.fir.kt" target="_blank">tests/varargs/assigningSingleElementsInNamedFormFunDeprecation_before.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Finference%2FcannotCompleteResolveNoneApplicable.kt&amp;actual=tests%2Finference%2FcannotCompleteResolveNoneApplicable.kt" target="_blank">tests/inference/cannotCompleteResolveNoneApplicable.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Ftypealias%2FtypeAliasConstructor.kt&amp;actual=tests%2Ftypealias%2FtypeAliasConstructor.fir.kt" target="_blank">tests/typealias/typeAliasConstructor.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fmultimodule%2FduplicateMethod%2FfunctionGenericsInParamsBoundsMismatch.kt&amp;actual=tests%2Fmultimodule%2FduplicateMethod%2FfunctionGenericsInParamsBoundsMismatch.kt" target="_blank">tests/multimodule/duplicateMethod/functionGenericsInParamsBoundsMismatch.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsyntheticExtensions%2FsamAdapters%2FoverloadResolutionStaticWithoutRefinedSams.kt&amp;actual=tests%2FsyntheticExtensions%2FsamAdapters%2FoverloadResolutionStaticWithoutRefinedSams.fir.kt" target="_blank">tests/syntheticExtensions/samAdapters/overloadResolutionStaticWithoutRefinedSams.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsyntheticExtensions%2FsamAdapters%2FoverloadResolutionWithoutRefinedSams.kt&amp;actual=tests%2FsyntheticExtensions%2FsamAdapters%2FoverloadResolutionWithoutRefinedSams.fir.kt" target="_blank">tests/syntheticExtensions/samAdapters/overloadResolutionWithoutRefinedSams.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsyntheticExtensions%2FsamAdapters%2FoverloadResolution.kt&amp;actual=tests%2FsyntheticExtensions%2FsamAdapters%2FoverloadResolution.kt" target="_blank">tests/syntheticExtensions/samAdapters/overloadResolution.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsyntheticExtensions%2FsamAdapters%2FoverloadResolutionStatic.kt&amp;actual=tests%2FsyntheticExtensions%2FsamAdapters%2FoverloadResolutionStatic.kt" target="_blank">tests/syntheticExtensions/samAdapters/overloadResolutionStatic.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FBasic.kt&amp;actual=tests%2FBasic.fir.kt" target="_blank">tests/Basic.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FcontrolFlowAnalysis%2FunnecessaryLateinit%2FlateinitWithErroneousDelegation.kt&amp;actual=tests%2FcontrolFlowAnalysis%2FunnecessaryLateinit%2FlateinitWithErroneousDelegation.fir.kt" target="_blank">tests/controlFlowAnalysis/unnecessaryLateinit/lateinitWithErroneousDelegation.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FincompleteCode%2FdiagnosticWithSyntaxError%2FcompleteFunctionArgumentsOfNestedCalls.kt&amp;actual=tests%2FincompleteCode%2FdiagnosticWithSyntaxError%2FcompleteFunctionArgumentsOfNestedCalls.kt" target="_blank">tests/incompleteCode/diagnosticWithSyntaxError/completeFunctionArgumentsOfNestedCalls.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FnullableTypes%2FnullableArgumentToNonNullParameterSimple.kt&amp;actual=tests%2FnullableTypes%2FnullableArgumentToNonNullParameterSimple.fir.kt" target="_blank">tests/nullableTypes/nullableArgumentToNonNullParameterSimple.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsecondaryConstructors%2FargumentsResolveInBodyAndDelegationCall.kt&amp;actual=tests%2FsecondaryConstructors%2FargumentsResolveInBodyAndDelegationCall.fir.kt" target="_blank">tests/secondaryConstructors/argumentsResolveInBodyAndDelegationCall.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsecondaryConstructors%2FthisNonExisting.kt&amp;actual=tests%2FsecondaryConstructors%2FthisNonExisting.kt" target="_blank">tests/secondaryConstructors/thisNonExisting.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsecondaryConstructors%2FerrorsOnEmptyDelegationCall.kt&amp;actual=tests%2FsecondaryConstructors%2FerrorsOnEmptyDelegationCall.fir.kt" target="_blank">tests/secondaryConstructors/errorsOnEmptyDelegationCall.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsecondaryConstructors%2FcompanionObjectScope.kt&amp;actual=tests%2FsecondaryConstructors%2FcompanionObjectScope.kt" target="_blank">tests/secondaryConstructors/companionObjectScope.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsecondaryConstructors%2Fgenerics3.kt&amp;actual=tests%2FsecondaryConstructors%2Fgenerics3.kt" target="_blank">tests/secondaryConstructors/generics3.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsecondaryConstructors%2FsuperSecondaryNonExisting.kt&amp;actual=tests%2FsecondaryConstructors%2FsuperSecondaryNonExisting.kt" target="_blank">tests/secondaryConstructors/superSecondaryNonExisting.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FdataFlow%2FIsExpression.kt&amp;actual=tests%2FdataFlow%2FIsExpression.fir.kt" target="_blank">tests/dataFlow/IsExpression.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fresolve%2FoverloadConflicts%2FgenericWithProjection.kt&amp;actual=tests%2Fresolve%2FoverloadConflicts%2FgenericWithProjection.fir.kt" target="_blank">tests/resolve/overloadConflicts/genericWithProjection.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fresolve%2FnestedCalls%2FcompleteTypeInferenceForNestedInNoneApplicable.kt&amp;actual=tests%2Fresolve%2FnestedCalls%2FcompleteTypeInferenceForNestedInNoneApplicable.fir.kt" target="_blank">tests/resolve/nestedCalls/completeTypeInferenceForNestedInNoneApplicable.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FunsignedTypes%2Fconversions%2FinferenceForSignedAndUnsignedTypes.kt&amp;actual=tests%2FunsignedTypes%2Fconversions%2FinferenceForSignedAndUnsignedTypes.fir.kt" target="_blank">tests/unsignedTypes/conversions/inferenceForSignedAndUnsignedTypes.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FnullabilityAndSmartCasts%2FnullableReceiverWithOverloadedMethod.kt&amp;actual=tests%2FnullabilityAndSmartCasts%2FnullableReceiverWithOverloadedMethod.fir.kt" target="_blank">tests/nullabilityAndSmartCasts/nullableReceiverWithOverloadedMethod.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Foverload%2FonlyPrivateOverloadsDiagnostic.kt&amp;actual=tests%2Foverload%2FonlyPrivateOverloadsDiagnostic.fir.kt" target="_blank">tests/overload/onlyPrivateOverloadsDiagnostic.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2FsmartcastToNothingAfterCheckingForNull.kt&amp;actual=tests%2FsmartCasts%2FsmartcastToNothingAfterCheckingForNull.fir.kt" target="_blank">tests/smartCasts/smartcastToNothingAfterCheckingForNull.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FcallableReference%2Ffunction%2FextensionToSupertype.kt&amp;actual=tests%2FcallableReference%2Ffunction%2FextensionToSupertype.kt" target="_blank">tests/callableReference/function/extensionToSupertype.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FcallableReference%2Fresolve%2FintersectionTypeOverloadWithWrongParameter.kt&amp;actual=tests%2FcallableReference%2Fresolve%2FintersectionTypeOverloadWithWrongParameter.fir.kt" target="_blank">tests/callableReference/resolve/intersectionTypeOverloadWithWrongParameter.kt (1)</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,52 @@
+<html>
+  <head>
+    <title>Diagnostics diff: ASSIGNED_BUT_NEVER_ACCESSED_VARIABLE</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row" id="summary">
+        <h1>ASSIGNED_BUT_NEVER_ACCESSED_VARIABLE</h1>
+      </div>
+      <div class="row">
+        <ul>
+          <li><strong>Total: </strong>25</li>
+          <li><strong>Match %: </strong>0.00%</li>
+          <li><a href="#matched"><strong># Matched: </strong>0</a></li>
+          <li><strong># Non-matched: </strong>25</li>
+          <li><a href="#missing"><strong># Missing: </strong>25</a></li>
+          <li><a href="#unexpected"><strong># Unexpected: </strong>0</a></li>
+          <li><a href="#mismatched"><strong># Mismatched: </strong>0</a></li>
+          <li><strong># of Files: </strong>18</li>
+        </ul>
+      </div>
+      <div class="row" id="missing">
+        <h2>Missing (25)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?expected=tests%2FFunctionReturnTypes.kt&amp;actual=tests%2FFunctionReturnTypes.fir.kt" target="_blank">tests/FunctionReturnTypes.kt (3)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FcontrolStructures%2Fkt770.kt351.kt735_StatementType.kt&amp;actual=tests%2FcontrolStructures%2Fkt770.kt351.kt735_StatementType.fir.kt" target="_blank">tests/controlStructures/kt770.kt351.kt735_StatementType.kt (3)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Finference%2FnullableTypeArgumentWithNotNullUpperBound.kt&amp;actual=tests%2Finference%2FnullableTypeArgumentWithNotNullUpperBound.fir.kt" target="_blank">tests/inference/nullableTypeArgumentWithNotNullUpperBound.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FUnusedVariables.kt&amp;actual=tests%2FUnusedVariables.fir.kt" target="_blank">tests/UnusedVariables.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FdataFlowInfoTraversal%2Fsmartcasts%2FSmartcastsForStableIdentifiers.kt&amp;actual=tests%2FdataFlowInfoTraversal%2Fsmartcasts%2FSmartcastsForStableIdentifiers.fir.kt" target="_blank">tests/dataFlowInfoTraversal/smartcasts/SmartcastsForStableIdentifiers.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fcontracts%2FfromStdlib%2FfromStandardKt.kt&amp;actual=testsWithStdLib%2Fcontracts%2FfromStdlib%2FfromStandardKt.fir.kt" target="_blank">testsWithStdLib/contracts/fromStdlib/fromStandardKt.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fcontracts%2Fcontrolflow%2FflowInlining%2FseveralJumpOutsFromInlinedLambda.kt&amp;actual=testsWithStdLib%2Fcontracts%2Fcontrolflow%2FflowInlining%2FseveralJumpOutsFromInlinedLambda.fir.kt" target="_blank">testsWithStdLib/contracts/controlflow/flowInlining/severalJumpOutsFromInlinedLambda.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fenum%2FentryShouldBeOfEnumType.kt&amp;actual=tests%2Fenum%2FentryShouldBeOfEnumType.fir.kt" target="_blank">tests/enum/entryShouldBeOfEnumType.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FdeclarationChecks%2Fkt2643MultiDeclInControlFlow.kt&amp;actual=tests%2FdeclarationChecks%2Fkt2643MultiDeclInControlFlow.fir.kt" target="_blank">tests/declarationChecks/kt2643MultiDeclInControlFlow.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FcontrolFlowAnalysis%2Fkt610.kt&amp;actual=tests%2FcontrolFlowAnalysis%2Fkt610.fir.kt" target="_blank">tests/controlFlowAnalysis/kt610.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FcontrolFlowAnalysis%2FfieldInitialization.kt&amp;actual=tests%2FcontrolFlowAnalysis%2FfieldInitialization.fir.kt" target="_blank">tests/controlFlowAnalysis/fieldInitialization.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FcontrolFlowAnalysis%2Fkt609.kt&amp;actual=tests%2FcontrolFlowAnalysis%2Fkt609.fir.kt" target="_blank">tests/controlFlowAnalysis/kt609.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FcontrolFlowAnalysis%2FUninitializedOrReassignedVariables.kt&amp;actual=tests%2FcontrolFlowAnalysis%2FUninitializedOrReassignedVariables.fir.kt" target="_blank">tests/controlFlowAnalysis/UninitializedOrReassignedVariables.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FcontrolFlowAnalysis%2FreassignmentInTryCatch.kt&amp;actual=tests%2FcontrolFlowAnalysis%2FreassignmentInTryCatch.fir.kt" target="_blank">tests/controlFlowAnalysis/reassignmentInTryCatch.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Finfos%2FSmartCasts.kt&amp;actual=tests%2Finfos%2FSmartCasts.fir.kt" target="_blank">tests/infos/SmartCasts.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Flabels%2FlabelsMustBeNamed.kt&amp;actual=tests%2Flabels%2FlabelsMustBeNamed.fir.kt" target="_blank">tests/labels/labelsMustBeNamed.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FLValueAssignment.kt&amp;actual=tests%2FLValueAssignment.fir.kt" target="_blank">tests/LValueAssignment.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fregressions%2Fkt235.kt&amp;actual=tests%2Fregressions%2Fkt235.fir.kt" target="_blank">tests/regressions/kt235.kt (1)</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

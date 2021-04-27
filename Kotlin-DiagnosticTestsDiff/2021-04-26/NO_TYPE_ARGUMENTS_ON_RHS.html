@@ -1,0 +1,70 @@
+<html>
+  <head>
+    <title>Diagnostics diff: NO_TYPE_ARGUMENTS_ON_RHS</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row" id="summary">
+        <h1>NO_TYPE_ARGUMENTS_ON_RHS</h1>
+      </div>
+      <div class="row">
+        <ul>
+          <li><strong>Total: </strong>17</li>
+          <li><strong>Match %: </strong>76.47%</li>
+          <li><a href="#matched"><strong># Matched: </strong>13</a></li>
+          <li><strong># Non-matched: </strong>4</li>
+          <li><a href="#missing"><strong># Missing: </strong>1</a></li>
+          <li><a href="#unexpected"><strong># Unexpected: </strong>2</a></li>
+          <li><a href="#mismatched"><strong># Mismatched: </strong>1</a></li>
+          <li><strong># of Files: </strong>12</li>
+        </ul>
+      </div>
+      <div class="row" id="missing">
+        <h2>Missing (1)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?expected=tests%2Fcast%2Fbare%2FFromErrorType.kt&amp;actual=tests%2Fcast%2Fbare%2FFromErrorType.fir.kt" target="_blank">tests/cast/bare/FromErrorType.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row" id="unexpected">
+        <h2>Unexpected (2)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?expected=tests%2Ftypealias%2FtypeAliasAsBareType.kt&amp;actual=tests%2Ftypealias%2FtypeAliasAsBareType.fir.kt" target="_blank">tests/typealias/typeAliasAsBareType.kt (2)</a></li>
+        </ul>
+      </div>
+      <div class="row" id="mismatched">
+        <h2>Mismatched (1)</h2>
+      </div>
+      <div class="row">
+        <h3>NO_TYPE_ARGUMENTS_ON_RHS -&gt; UNRESOLVED_REFERENCE (1)</h3>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?expected=tests%2Fgenerics%2FcapturedParameters%2FuncheckedCast.kt&amp;actual=tests%2Fgenerics%2FcapturedParameters%2FuncheckedCast.fir.kt" target="_blank">tests/generics/capturedParameters/uncheckedCast.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row" id="matched">
+        <h2>Matched (13)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?expected=tests%2Fgenerics%2FRawTypeInIsExpression.kt&amp;actual=tests%2Fgenerics%2FRawTypeInIsExpression.fir.kt" target="_blank">tests/generics/RawTypeInIsExpression.kt (3)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fgenerics%2FinnerClasses%2FinnerUncheckedCast.kt&amp;actual=tests%2Fgenerics%2FinnerClasses%2FinnerUncheckedCast.fir.kt" target="_blank">tests/generics/innerClasses/innerUncheckedCast.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fgenerics%2FRawTypeInIsPattern.kt&amp;actual=tests%2Fgenerics%2FRawTypeInIsPattern.fir.kt" target="_blank">tests/generics/RawTypeInIsPattern.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fgenerics%2FinnerClasses%2FbareTypesComplex.kt&amp;actual=tests%2Fgenerics%2FinnerClasses%2FbareTypesComplex.fir.kt" target="_blank">tests/generics/innerClasses/bareTypesComplex.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fcast%2Fbare%2FUnrelatedAs.kt&amp;actual=tests%2Fcast%2Fbare%2FUnrelatedAs.fir.kt" target="_blank">tests/cast/bare/UnrelatedAs.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fcast%2Fbare%2FAsNullableNotEnough.kt&amp;actual=tests%2Fcast%2Fbare%2FAsNullableNotEnough.kt" target="_blank">tests/cast/bare/AsNullableNotEnough.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fcast%2Fbare%2FNullableAsNullableNotEnough.kt&amp;actual=tests%2Fcast%2Fbare%2FNullableAsNullableNotEnough.kt" target="_blank">tests/cast/bare/NullableAsNullableNotEnough.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fcast%2Fbare%2FNullableAsNotEnough.kt&amp;actual=tests%2Fcast%2Fbare%2FNullableAsNotEnough.fir.kt" target="_blank">tests/cast/bare/NullableAsNotEnough.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fcast%2Fbare%2FUnrelatedIs.kt&amp;actual=tests%2Fcast%2Fbare%2FUnrelatedIs.kt" target="_blank">tests/cast/bare/UnrelatedIs.kt (1)</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

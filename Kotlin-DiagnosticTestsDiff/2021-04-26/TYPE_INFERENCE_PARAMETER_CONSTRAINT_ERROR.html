@@ -1,0 +1,75 @@
+<html>
+  <head>
+    <title>Diagnostics diff: TYPE_INFERENCE_PARAMETER_CONSTRAINT_ERROR</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row" id="summary">
+        <h1>TYPE_INFERENCE_PARAMETER_CONSTRAINT_ERROR</h1>
+      </div>
+      <div class="row">
+        <ul>
+          <li><strong>Total: </strong>25</li>
+          <li><strong>Match %: </strong>0.00%</li>
+          <li><a href="#matched"><strong># Matched: </strong>0</a></li>
+          <li><strong># Non-matched: </strong>25</li>
+          <li><a href="#missing"><strong># Missing: </strong>21</a></li>
+          <li><a href="#unexpected"><strong># Unexpected: </strong>0</a></li>
+          <li><a href="#mismatched"><strong># Mismatched: </strong>4</a></li>
+          <li><strong># of Files: </strong>16</li>
+        </ul>
+      </div>
+      <div class="row" id="missing">
+        <h2>Missing (21)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?expected=tests%2Finference%2FreportingImprovements%2FFunctionPlaceholder.kt&amp;actual=tests%2Finference%2FreportingImprovements%2FFunctionPlaceholder.fir.kt" target="_blank">tests/inference/reportingImprovements/FunctionPlaceholder.kt (3)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FcheckArguments%2FSpreadVarargs.kt&amp;actual=tests%2FcheckArguments%2FSpreadVarargs.fir.kt" target="_blank">tests/checkArguments/SpreadVarargs.kt (3)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Finference%2FtypeConstructorMismatch.kt&amp;actual=tests%2Finference%2FtypeConstructorMismatch.fir.kt" target="_blank">tests/inference/typeConstructorMismatch.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Finference%2FcapturedTypes%2FcaptureTypeOnlyOnTopLevel.kt&amp;actual=tests%2Finference%2FcapturedTypes%2FcaptureTypeOnlyOnTopLevel.fir.kt" target="_blank">tests/inference/capturedTypes/captureTypeOnlyOnTopLevel.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Ftypealias%2FtypeAliasConstructorTypeArgumentsInference.kt&amp;actual=tests%2Ftypealias%2FtypeAliasConstructorTypeArgumentsInference.fir.kt" target="_blank">tests/typealias/typeAliasConstructorTypeArgumentsInference.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fcoroutines%2Finference%2FrecursiveGenerators2.kt&amp;actual=testsWithStdLib%2Fcoroutines%2Finference%2FrecursiveGenerators2.fir.kt" target="_blank">testsWithStdLib/coroutines/inference/recursiveGenerators2.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fcoroutines%2FlambdaExpectedType.kt&amp;actual=testsWithStdLib%2Fcoroutines%2FlambdaExpectedType.fir.kt" target="_blank">testsWithStdLib/coroutines/lambdaExpectedType.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Finference%2Fconstraints%2FconstraintFromVariantTypeWithNestedProjection.kt&amp;actual=tests%2Finference%2Fconstraints%2FconstraintFromVariantTypeWithNestedProjection.fir.kt" target="_blank">tests/inference/constraints/constraintFromVariantTypeWithNestedProjection.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Finference%2FreportingImprovements%2FinferTypeFromUnresolvedArgument.kt&amp;actual=tests%2Finference%2FreportingImprovements%2FinferTypeFromUnresolvedArgument.fir.kt" target="_blank">tests/inference/reportingImprovements/inferTypeFromUnresolvedArgument.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Ftypealias%2FwrongNumberOfArgumentsInTypeAliasConstructor.kt&amp;actual=tests%2Ftypealias%2FwrongNumberOfArgumentsInTypeAliasConstructor.fir.kt" target="_blank">tests/typealias/wrongNumberOfArgumentsInTypeAliasConstructor.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fnumbers%2FnumbersInSimpleConstraints.kt&amp;actual=tests%2Fnumbers%2FnumbersInSimpleConstraints.fir.kt" target="_blank">tests/numbers/numbersInSimpleConstraints.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fregressions%2FcorrectResultSubstitutorForErrorCandidate.kt&amp;actual=tests%2Fregressions%2FcorrectResultSubstitutorForErrorCandidate.fir.kt" target="_blank">tests/regressions/correctResultSubstitutorForErrorCandidate.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FcallableReference%2Fgeneric%2FexpectedFunctionType.kt&amp;actual=tests%2FcallableReference%2Fgeneric%2FexpectedFunctionType.fir.kt" target="_blank">tests/callableReference/generic/expectedFunctionType.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FcallableReference%2FexpectedTypeAsSubtypeOfFunctionType.kt&amp;actual=tests%2FcallableReference%2FexpectedTypeAsSubtypeOfFunctionType.fir.kt" target="_blank">tests/callableReference/expectedTypeAsSubtypeOfFunctionType.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row" id="mismatched">
+        <h2>Mismatched (4)</h2>
+      </div>
+      <div class="row">
+        <h3>TYPE_INFERENCE_PARAMETER_CONSTRAINT_ERROR -&gt; UNRESOLVED_REFERENCE (2)</h3>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?expected=tests%2Ftypealias%2FinnerTypeAliasConstructor.kt&amp;actual=tests%2Ftypealias%2FinnerTypeAliasConstructor.fir.kt" target="_blank">tests/typealias/innerTypeAliasConstructor.kt (2)</a></li>
+        </ul>
+      </div>
+      <div class="row">
+        <h3>TYPE_INFERENCE_PARAMETER_CONSTRAINT_ERROR -&gt; NONE_APPLICABLE (1)</h3>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?expected=tests%2Finference%2FcompleteInferenceIfManyFailed.kt&amp;actual=tests%2Finference%2FcompleteInferenceIfManyFailed.fir.kt" target="_blank">tests/inference/completeInferenceIfManyFailed.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row">
+        <h3>TYPE_INFERENCE_PARAMETER_CONSTRAINT_ERROR -&gt; INAPPLICABLE_CANDIDATE (1)</h3>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?expected=tests%2FcallableReference%2FexpectedTypeAsSubtypeOfFunctionType.kt&amp;actual=tests%2FcallableReference%2FexpectedTypeAsSubtypeOfFunctionType.fir.kt" target="_blank">tests/callableReference/expectedTypeAsSubtypeOfFunctionType.kt (1)</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

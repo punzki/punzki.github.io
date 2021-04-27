@@ -1,0 +1,70 @@
+<html>
+  <head>
+    <title>Diagnostics diff: TYPE_INFERENCE_UPPER_BOUND_VIOLATED</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row" id="summary">
+        <h1>TYPE_INFERENCE_UPPER_BOUND_VIOLATED</h1>
+      </div>
+      <div class="row">
+        <ul>
+          <li><strong>Total: </strong>48</li>
+          <li><strong>Match %: </strong>0.00%</li>
+          <li><a href="#matched"><strong># Matched: </strong>0</a></li>
+          <li><strong># Non-matched: </strong>48</li>
+          <li><a href="#missing"><strong># Missing: </strong>47</a></li>
+          <li><a href="#unexpected"><strong># Unexpected: </strong>0</a></li>
+          <li><a href="#mismatched"><strong># Mismatched: </strong>1</a></li>
+          <li><strong># of Files: </strong>26</li>
+        </ul>
+      </div>
+      <div class="row" id="missing">
+        <h2>Missing (47)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?expected=tests%2Fgenerics%2Fnullability%2FtpBoundsViolationVariance.kt&amp;actual=tests%2Fgenerics%2Fnullability%2FtpBoundsViolationVariance.fir.kt" target="_blank">tests/generics/nullability/tpBoundsViolationVariance.kt (10)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fgenerics%2FprojectionsScope%2FtypeParameterBounds.kt&amp;actual=tests%2Fgenerics%2FprojectionsScope%2FtypeParameterBounds.fir.kt" target="_blank">tests/generics/projectionsScope/typeParameterBounds.kt (4)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fgenerics%2Fnullability%2FsmartCastsValueArgument.kt&amp;actual=tests%2Fgenerics%2Fnullability%2FsmartCastsValueArgument.fir.kt" target="_blank">tests/generics/nullability/smartCastsValueArgument.kt (3)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fgenerics%2Fnullability%2FexpressionsBoundsViolation.kt&amp;actual=tests%2Fgenerics%2Fnullability%2FexpressionsBoundsViolation.fir.kt" target="_blank">tests/generics/nullability/expressionsBoundsViolation.kt (3)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fgenerics%2Fnullability%2FsmartCastsOnThis.kt&amp;actual=tests%2Fgenerics%2Fnullability%2FsmartCastsOnThis.fir.kt" target="_blank">tests/generics/nullability/smartCastsOnThis.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fgenerics%2Fnullability%2FtpBoundsViolation.kt&amp;actual=tests%2Fgenerics%2Fnullability%2FtpBoundsViolation.fir.kt" target="_blank">tests/generics/nullability/tpBoundsViolation.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Ftypealias%2FtypeAliasConstructorTypeArgumentsInferenceWithPhantomTypes.kt&amp;actual=tests%2Ftypealias%2FtypeAliasConstructorTypeArgumentsInferenceWithPhantomTypes.fir.kt" target="_blank">tests/typealias/typeAliasConstructorTypeArgumentsInferenceWithPhantomTypes.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fresolve%2FspecialConstructions%2FexclExclAsCall.kt&amp;actual=tests%2Fresolve%2FspecialConstructions%2FexclExclAsCall.fir.kt" target="_blank">tests/resolve/specialConstructions/exclExclAsCall.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FdelegatedProperty%2Finference%2FextensionProperty.kt&amp;actual=tests%2FdelegatedProperty%2Finference%2FextensionProperty.fir.kt" target="_blank">tests/delegatedProperty/inference/extensionProperty.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fj%2Bk%2FgenericConstructorWithMultipleBounds.kt&amp;actual=tests%2Fj%2Bk%2FgenericConstructorWithMultipleBounds.fir.kt" target="_blank">tests/j+k/genericConstructorWithMultipleBounds.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Finference%2Fkt27772.kt&amp;actual=testsWithStdLib%2Finference%2Fkt27772.fir.kt" target="_blank">testsWithStdLib/inference/kt27772.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Finference%2FannotationsForResolve%2FonlyInputTypesAndTopLevelCapturedTypes.kt&amp;actual=testsWithStdLib%2Finference%2FannotationsForResolve%2FonlyInputTypesAndTopLevelCapturedTypes.fir.kt" target="_blank">testsWithStdLib/inference/annotationsForResolve/onlyInputTypesAndTopLevelCapturedTypes.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fgenerics%2Fnullability%2FuseAsReceiver.kt&amp;actual=tests%2Fgenerics%2Fnullability%2FuseAsReceiver.fir.kt" target="_blank">tests/generics/nullability/useAsReceiver.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fgenerics%2Fnullability%2FsmartCasts.kt&amp;actual=tests%2Fgenerics%2Fnullability%2FsmartCasts.fir.kt" target="_blank">tests/generics/nullability/smartCasts.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fgenerics%2Fnullability%2FuseAsValueArgument.kt&amp;actual=tests%2Fgenerics%2Fnullability%2FuseAsValueArgument.fir.kt" target="_blank">tests/generics/nullability/useAsValueArgument.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Finference%2FexpectedTypeWithGenerics.kt&amp;actual=tests%2Finference%2FexpectedTypeWithGenerics.fir.kt" target="_blank">tests/inference/expectedTypeWithGenerics.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Finference%2Fconstraints%2FmanyConstraintsDueToFlexibleRawTypes.kt&amp;actual=tests%2Finference%2Fconstraints%2FmanyConstraintsDueToFlexibleRawTypes.fir.kt" target="_blank">tests/inference/constraints/manyConstraintsDueToFlexibleRawTypes.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Finference%2Fconstraints%2FconstraintOnFunctionLiteral.kt&amp;actual=tests%2Finference%2Fconstraints%2FconstraintOnFunctionLiteral.fir.kt" target="_blank">tests/inference/constraints/constraintOnFunctionLiteral.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Finference%2Fconstraints%2FmanyConstraintsDueToRecursiveFlexibleTypesWithWildcards.kt&amp;actual=tests%2Finference%2Fconstraints%2FmanyConstraintsDueToRecursiveFlexibleTypesWithWildcards.fir.kt" target="_blank">tests/inference/constraints/manyConstraintsDueToRecursiveFlexibleTypesWithWildcards.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Finference%2FupperBounds%2FuseBoundsToInferTypeParamsSimple.kt&amp;actual=tests%2Finference%2FupperBounds%2FuseBoundsToInferTypeParamsSimple.fir.kt" target="_blank">tests/inference/upperBounds/useBoundsToInferTypeParamsSimple.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Ftypealias%2FwrongNumberOfArgumentsInTypeAliasConstructor.kt&amp;actual=tests%2Ftypealias%2FwrongNumberOfArgumentsInTypeAliasConstructor.fir.kt" target="_blank">tests/typealias/wrongNumberOfArgumentsInTypeAliasConstructor.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Ftypealias%2FtypeAliasConstructorTypeArgumentsInference.kt&amp;actual=tests%2Ftypealias%2FtypeAliasConstructorTypeArgumentsInference.fir.kt" target="_blank">tests/typealias/typeAliasConstructorTypeArgumentsInference.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fresolve%2FspecialConstructions%2FelvisAsCall.kt&amp;actual=tests%2Fresolve%2FspecialConstructions%2FelvisAsCall.fir.kt" target="_blank">tests/resolve/specialConstructions/elvisAsCall.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fregressions%2Fkt1489_1728.kt&amp;actual=tests%2Fregressions%2Fkt1489_1728.fir.kt" target="_blank">tests/regressions/kt1489_1728.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2FlambdaArgumentWithBoundWithoutType.kt&amp;actual=tests%2FsmartCasts%2FlambdaArgumentWithBoundWithoutType.fir.kt" target="_blank">tests/smartCasts/lambdaArgumentWithBoundWithoutType.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row" id="mismatched">
+        <h2>Mismatched (1)</h2>
+      </div>
+      <div class="row">
+        <h3>TYPE_INFERENCE_UPPER_BOUND_VIOLATED -&gt; UNRESOLVED_REFERENCE (1)</h3>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?expected=tests%2FcallableReference%2Fgeneric%2FexplicitTypeArguments.kt&amp;actual=tests%2FcallableReference%2Fgeneric%2FexplicitTypeArguments.fir.kt" target="_blank">tests/callableReference/generic/explicitTypeArguments.kt (1)</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

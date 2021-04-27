@@ -1,0 +1,55 @@
+<html>
+  <head>
+    <title>Diagnostics diff: UNSAFE_IMPLICIT_INVOKE_CALL</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row" id="summary">
+        <h1>UNSAFE_IMPLICIT_INVOKE_CALL</h1>
+      </div>
+      <div class="row">
+        <ul>
+          <li><strong>Total: </strong>28</li>
+          <li><strong>Match %: </strong>50.00%</li>
+          <li><a href="#matched"><strong># Matched: </strong>14</a></li>
+          <li><strong># Non-matched: </strong>14</li>
+          <li><a href="#missing"><strong># Missing: </strong>14</a></li>
+          <li><a href="#unexpected"><strong># Unexpected: </strong>0</a></li>
+          <li><a href="#mismatched"><strong># Mismatched: </strong>0</a></li>
+          <li><strong># of Files: </strong>12</li>
+        </ul>
+      </div>
+      <div class="row" id="missing">
+        <h2>Missing (14)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?expected=tests%2Fresolve%2Finvoke%2FinvokeAndSmartCast.kt&amp;actual=tests%2Fresolve%2Finvoke%2FinvokeAndSmartCast.fir.kt" target="_blank">tests/resolve/invoke/invokeAndSmartCast.kt (4)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fresolve%2Finvoke%2FimplicitInvokeAfterSafeCall.kt&amp;actual=tests%2Fresolve%2Finvoke%2FimplicitInvokeAfterSafeCall.fir.kt" target="_blank">tests/resolve/invoke/implicitInvokeAfterSafeCall.kt (3)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fresolve%2Finvoke%2Fkt30695.kt&amp;actual=tests%2Fresolve%2Finvoke%2Fkt30695.fir.kt" target="_blank">tests/resolve/invoke/kt30695.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fresolve%2Finvoke%2Fkt30695_2.kt&amp;actual=tests%2Fresolve%2Finvoke%2Fkt30695_2.fir.kt" target="_blank">tests/resolve/invoke/kt30695_2.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FoperatorsOverloading%2Fkt13330.kt&amp;actual=tests%2FoperatorsOverloading%2Fkt13330.fir.kt" target="_blank">tests/operatorsOverloading/kt13330.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FSafeCallInvoke.kt&amp;actual=tests%2FSafeCallInvoke.fir.kt" target="_blank">tests/SafeCallInvoke.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Fsafecalls%2FsafeAccessReceiverNotNull.kt&amp;actual=tests%2FsmartCasts%2Fsafecalls%2FsafeAccessReceiverNotNull.fir.kt" target="_blank">tests/smartCasts/safecalls/safeAccessReceiverNotNull.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row" id="matched">
+        <h2>Matched (14)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?expected=tests%2Fresolve%2Finvoke%2Fkt30695_2.kt&amp;actual=tests%2Fresolve%2Finvoke%2Fkt30695_2.fir.kt" target="_blank">tests/resolve/invoke/kt30695_2.kt (4)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fresolve%2Finvoke%2FinvokeAndSmartCast.kt&amp;actual=tests%2Fresolve%2Finvoke%2FinvokeAndSmartCast.fir.kt" target="_blank">tests/resolve/invoke/invokeAndSmartCast.kt (3)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fextensions%2Fkt1875.kt&amp;actual=tests%2Fextensions%2Fkt1875.fir.kt" target="_blank">tests/extensions/kt1875.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsafeCall.kt&amp;actual=tests%2FsafeCall.kt" target="_blank">tests/safeCall.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fgenerics%2Fnullability%2FfunctionalBound.kt&amp;actual=tests%2Fgenerics%2Fnullability%2FfunctionalBound.fir.kt" target="_blank">tests/generics/nullability/functionalBound.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fresolve%2Finvoke%2Ferrors%2FunsafeCallWithInvoke.kt&amp;actual=tests%2Fresolve%2Finvoke%2Ferrors%2FunsafeCallWithInvoke.fir.kt" target="_blank">tests/resolve/invoke/errors/unsafeCallWithInvoke.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FplatformTypes%2FnullabilityWarnings%2Finvoke.kt&amp;actual=tests%2FplatformTypes%2FnullabilityWarnings%2Finvoke.kt" target="_blank">tests/platformTypes/nullabilityWarnings/invoke.kt (1)</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

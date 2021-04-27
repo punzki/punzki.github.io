@@ -1,0 +1,128 @@
+<html>
+  <head>
+    <title>Diagnostics diff: WRONG_MODIFIER_TARGET</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row" id="summary">
+        <h1>WRONG_MODIFIER_TARGET</h1>
+      </div>
+      <div class="row">
+        <ul>
+          <li><strong>Total: </strong>355</li>
+          <li><strong>Match %: </strong>5.07%</li>
+          <li><a href="#matched"><strong># Matched: </strong>18</a></li>
+          <li><strong># Non-matched: </strong>337</li>
+          <li><a href="#missing"><strong># Missing: </strong>320</a></li>
+          <li><a href="#unexpected"><strong># Unexpected: </strong>0</a></li>
+          <li><a href="#mismatched"><strong># Mismatched: </strong>17</a></li>
+          <li><strong># of Files: </strong>65</li>
+        </ul>
+      </div>
+      <div class="row" id="missing">
+        <h2>Missing (320)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?expected=tests%2Fmodifiers%2FIllegalModifiers.kt&amp;actual=tests%2Fmodifiers%2FIllegalModifiers.fir.kt" target="_blank">tests/modifiers/IllegalModifiers.kt (61)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FAbstract.kt&amp;actual=tests%2FAbstract.fir.kt" target="_blank">tests/Abstract.kt (24)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fenum%2FmodifiersOnEnumEntry.kt&amp;actual=tests%2Fenum%2FmodifiersOnEnumEntry.fir.kt" target="_blank">tests/enum/modifiersOnEnumEntry.kt (17)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fenum%2FAbstractInEnum.kt&amp;actual=tests%2Fenum%2FAbstractInEnum.fir.kt" target="_blank">tests/enum/AbstractInEnum.kt (14)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FAbstractInTrait.kt&amp;actual=tests%2FAbstractInTrait.fir.kt" target="_blank">tests/AbstractInTrait.kt (14)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FAbstractInAbstractClass.kt&amp;actual=tests%2FAbstractInAbstractClass.fir.kt" target="_blank">tests/AbstractInAbstractClass.kt (14)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FAbstractInClass.kt&amp;actual=tests%2FAbstractInClass.fir.kt" target="_blank">tests/AbstractInClass.kt (14)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fmultiplatform%2FmodifierApplicability.kt&amp;actual=tests%2Fmultiplatform%2FmodifierApplicability.fir.kt" target="_blank">tests/multiplatform/modifierApplicability.kt (13)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Finner%2FillegalModifier_lv12.kt&amp;actual=tests%2Finner%2FillegalModifier_lv12.fir.kt" target="_blank">tests/inner/illegalModifier_lv12.kt (10)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Finner%2FillegalModifier.kt&amp;actual=tests%2Finner%2FillegalModifier.fir.kt" target="_blank">tests/inner/illegalModifier.kt (10)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FdeclarationChecks%2FillegalModifiersOnClass.kt&amp;actual=tests%2FdeclarationChecks%2FillegalModifiersOnClass.fir.kt" target="_blank">tests/declarationChecks/illegalModifiersOnClass.kt (10)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fmodifiers%2FdefaultModifier.kt&amp;actual=tests%2Fmodifiers%2FdefaultModifier.fir.kt" target="_blank">tests/modifiers/defaultModifier.kt (8)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fmultiplatform%2FheaderClass%2FnestedClassesWithErrors.kt&amp;actual=tests%2Fmultiplatform%2FheaderClass%2FnestedClassesWithErrors.fir.kt" target="_blank">tests/multiplatform/headerClass/nestedClassesWithErrors.kt (8)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fenum%2FenumModifier.kt&amp;actual=tests%2Fenum%2FenumModifier.fir.kt" target="_blank">tests/enum/enumModifier.kt (6)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fannotations%2FannotationModifier.kt&amp;actual=tests%2Fannotations%2FannotationModifier.fir.kt" target="_blank">tests/annotations/annotationModifier.kt (6)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fenum%2FlocalEnums.kt&amp;actual=tests%2Fenum%2FlocalEnums.fir.kt" target="_blank">tests/enum/localEnums.kt (5)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FdeclarationChecks%2FpackageDeclarationModifiers.kt&amp;actual=tests%2FdeclarationChecks%2FpackageDeclarationModifiers.fir.kt" target="_blank">tests/declarationChecks/packageDeclarationModifiers.kt (5)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fnative%2Fconstructor.kt&amp;actual=testsWithStdLib%2Fnative%2Fconstructor.fir.kt" target="_blank">testsWithStdLib/native/constructor.kt (4)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fmodifiers%2FNoLocalVisibility.kt&amp;actual=tests%2Fmodifiers%2FNoLocalVisibility.fir.kt" target="_blank">tests/modifiers/NoLocalVisibility.kt (4)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FdeclarationChecks%2FlocalDeclarationModifiers.kt&amp;actual=tests%2FdeclarationChecks%2FlocalDeclarationModifiers.fir.kt" target="_blank">tests/declarationChecks/localDeclarationModifiers.kt (4)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FdeclarationChecks%2FsealedOnMembers.kt&amp;actual=tests%2FdeclarationChecks%2FsealedOnMembers.fir.kt" target="_blank">tests/declarationChecks/sealedOnMembers.kt (4)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FvalueClasses%2FbasicValueClassDeclaration.kt&amp;actual=tests%2FvalueClasses%2FbasicValueClassDeclaration.fir.kt" target="_blank">tests/valueClasses/basicValueClassDeclaration.kt (4)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FinlineClasses%2FbasicInlineClassDeclaration.kt&amp;actual=tests%2FinlineClasses%2FbasicInlineClassDeclaration.fir.kt" target="_blank">tests/inlineClasses/basicInlineClassDeclaration.kt (4)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FdataClasses%2Fstrange.kt&amp;actual=tests%2FdataClasses%2Fstrange.fir.kt" target="_blank">tests/dataClasses/strange.kt (4)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FvalueClasses%2FbasicValueClassDeclarationDisabled.kt&amp;actual=tests%2FvalueClasses%2FbasicValueClassDeclarationDisabled.fir.kt" target="_blank">tests/valueClasses/basicValueClassDeclarationDisabled.kt (3)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FinlineClasses%2FbasicInlineClassDeclarationDisabled.kt&amp;actual=tests%2FinlineClasses%2FbasicInlineClassDeclarationDisabled.fir.kt" target="_blank">tests/inlineClasses/basicInlineClassDeclarationDisabled.kt (3)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Finfos%2FPropertiesWithBackingFields.kt&amp;actual=tests%2Finfos%2FPropertiesWithBackingFields.fir.kt" target="_blank">tests/infos/PropertiesWithBackingFields.kt (3)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fmultiplatform%2FtopLevelProperty%2FdifferentKindsOfProperties.kt&amp;actual=tests%2Fmultiplatform%2FtopLevelProperty%2FdifferentKindsOfProperties.fir.kt" target="_blank">tests/multiplatform/topLevelProperty/differentKindsOfProperties.kt (3)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fcoroutines%2FsuspendFunctionType%2FmodifierApplicability.kt&amp;actual=testsWithStdLib%2Fcoroutines%2FsuspendFunctionType%2FmodifierApplicability.fir.kt" target="_blank">testsWithStdLib/coroutines/suspendFunctionType/modifierApplicability.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FfunctionLiterals%2FdestructuringInLambdas%2Fmodifiers.kt&amp;actual=tests%2FfunctionLiterals%2FdestructuringInLambdas%2Fmodifiers.fir.kt" target="_blank">tests/functionLiterals/destructuringInLambdas/modifiers.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fscopes%2Fvisibility.kt&amp;actual=tests%2Fscopes%2Fvisibility.fir.kt" target="_blank">tests/scopes/visibility.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FdeclarationChecks%2FambiguousObjectExpressionType.kt&amp;actual=tests%2FdeclarationChecks%2FambiguousObjectExpressionType.fir.kt" target="_blank">tests/declarationChecks/ambiguousObjectExpressionType.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FdeclarationChecks%2FunambiguousObjectExpressionType.kt&amp;actual=tests%2FdeclarationChecks%2FunambiguousObjectExpressionType.fir.kt" target="_blank">tests/declarationChecks/unambiguousObjectExpressionType.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FdeclarationChecks%2FlocalFunctionNoInheritVisibility.kt&amp;actual=tests%2FdeclarationChecks%2FlocalFunctionNoInheritVisibility.fir.kt" target="_blank">tests/declarationChecks/localFunctionNoInheritVisibility.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fmultiplatform%2FheaderFunInNonHeaderClass.kt&amp;actual=tests%2Fmultiplatform%2FheaderFunInNonHeaderClass.fir.kt" target="_blank">tests/multiplatform/headerFunInNonHeaderClass.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fmultiplatform%2FheaderClass%2FextraHeaderOnMembers.kt&amp;actual=tests%2Fmultiplatform%2FheaderClass%2FextraHeaderOnMembers.fir.kt" target="_blank">tests/multiplatform/headerClass/extraHeaderOnMembers.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fannotations%2Foptions%2FmultiDeclaration.kt&amp;actual=tests%2Fannotations%2Foptions%2FmultiDeclaration.fir.kt" target="_blank">tests/annotations/options/multiDeclaration.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Finstar.kt&amp;actual=testsWithStdLib%2Finstar.fir.kt" target="_blank">testsWithStdLib/instar.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Foutstar.kt&amp;actual=testsWithStdLib%2Foutstar.fir.kt" target="_blank">testsWithStdLib/outstar.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fenum%2FenumWithAnnotationKeyword.kt&amp;actual=tests%2Fenum%2FenumWithAnnotationKeyword.fir.kt" target="_blank">tests/enum/enumWithAnnotationKeyword.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fenum%2FinterfaceWithEnumKeyword.kt&amp;actual=tests%2Fenum%2FinterfaceWithEnumKeyword.fir.kt" target="_blank">tests/enum/interfaceWithEnumKeyword.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fenum%2FinheritanceFromEnum.kt&amp;actual=tests%2Fenum%2FinheritanceFromEnum.fir.kt" target="_blank">tests/enum/inheritanceFromEnum.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fenum%2FAbstractEnum.kt&amp;actual=tests%2Fenum%2FAbstractEnum.fir.kt" target="_blank">tests/enum/AbstractEnum.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fmodifiers%2FrepeatedModifiers.kt&amp;actual=tests%2Fmodifiers%2FrepeatedModifiers.fir.kt" target="_blank">tests/modifiers/repeatedModifiers.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fmodifiers%2Fconst%2Fapplicability.kt&amp;actual=tests%2Fmodifiers%2Fconst%2Fapplicability.fir.kt" target="_blank">tests/modifiers/const/applicability.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Ftypealias%2FlocalTypeAliasModifiers.kt&amp;actual=tests%2Ftypealias%2FlocalTypeAliasModifiers.fir.kt" target="_blank">tests/typealias/localTypeAliasModifiers.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FdeclarationChecks%2FlocalVariablesWithTypeParameters_1_4.kt&amp;actual=tests%2FdeclarationChecks%2FlocalVariablesWithTypeParameters_1_4.fir.kt" target="_blank">tests/declarationChecks/localVariablesWithTypeParameters_1_4.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FdeclarationChecks%2FlocalVariablesWithTypeParameters_1_3.kt&amp;actual=tests%2FdeclarationChecks%2FlocalVariablesWithTypeParameters_1_3.fir.kt" target="_blank">tests/declarationChecks/localVariablesWithTypeParameters_1_3.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FdeclarationChecks%2FpropertyInPackageHasNoInheritVisibility.kt&amp;actual=tests%2FdeclarationChecks%2FpropertyInPackageHasNoInheritVisibility.fir.kt" target="_blank">tests/declarationChecks/propertyInPackageHasNoInheritVisibility.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fsealed%2FNeverEnum.kt&amp;actual=tests%2Fsealed%2FNeverEnum.fir.kt" target="_blank">tests/sealed/NeverEnum.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fsealed%2FNeverObject.kt&amp;actual=tests%2Fsealed%2FNeverObject.fir.kt" target="_blank">tests/sealed/NeverObject.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fsealed%2FLocalSealed.kt&amp;actual=tests%2Fsealed%2FLocalSealed.fir.kt" target="_blank">tests/sealed/LocalSealed.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FinlineClasses%2FinlineClassDeclarationCheck.kt&amp;actual=tests%2FinlineClasses%2FinlineClassDeclarationCheck.fir.kt" target="_blank">tests/inlineClasses/inlineClassDeclarationCheck.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsecondaryConstructors%2FvalOrValAndModifiersInCtr.kt&amp;actual=tests%2FsecondaryConstructors%2FvalOrValAndModifiersInCtr.fir.kt" target="_blank">tests/secondaryConstructors/valOrValAndModifiersInCtr.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FdataClasses%2FdataObject.kt&amp;actual=tests%2FdataClasses%2FdataObject.fir.kt" target="_blank">tests/dataClasses/dataObject.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FdataClasses%2FdataClassNoName.kt&amp;actual=tests%2FdataClasses%2FdataClassNoName.fir.kt" target="_blank">tests/dataClasses/dataClassNoName.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fdelegation%2FDelegationNotTotrait.kt&amp;actual=tests%2Fdelegation%2FDelegationNotTotrait.fir.kt" target="_blank">tests/delegation/DelegationNotTotrait.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fannotations%2Foptions%2FsetterParam.kt&amp;actual=tests%2Fannotations%2Foptions%2FsetterParam.fir.kt" target="_blank">tests/annotations/options/setterParam.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fannotations%2Foptions%2FforParam.kt&amp;actual=tests%2Fannotations%2Foptions%2FforParam.fir.kt" target="_blank">tests/annotations/options/forParam.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fregressions%2Fkt9384.kt&amp;actual=tests%2Fregressions%2Fkt9384.fir.kt" target="_blank">tests/regressions/kt9384.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row" id="mismatched">
+        <h2>Mismatched (17)</h2>
+      </div>
+      <div class="row">
+        <h3>WRONG_MODIFIER_TARGET -&gt; INCOMPATIBLE_MODIFIERS (15)</h3>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?expected=tests%2Fmodifiers%2FIllegalModifiers.kt&amp;actual=tests%2Fmodifiers%2FIllegalModifiers.fir.kt" target="_blank">tests/modifiers/IllegalModifiers.kt (14)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fmodifiers%2FrepeatedModifiers.kt&amp;actual=tests%2Fmodifiers%2FrepeatedModifiers.fir.kt" target="_blank">tests/modifiers/repeatedModifiers.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row">
+        <h3>WRONG_MODIFIER_TARGET -&gt; INNER_CLASS_INSIDE_INLINE_CLASS (2)</h3>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?expected=tests%2FinlineClasses%2FinnerClassInsideInlineClass.kt&amp;actual=tests%2FinlineClasses%2FinnerClassInsideInlineClass.fir.kt" target="_blank">tests/inlineClasses/innerClassInsideInlineClass.kt (2)</a></li>
+        </ul>
+      </div>
+      <div class="row" id="matched">
+        <h2>Matched (18)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fcoroutines%2FsuspendFunctionType%2FmodifierApplicability.kt&amp;actual=testsWithStdLib%2Fcoroutines%2FsuspendFunctionType%2FmodifierApplicability.fir.kt" target="_blank">testsWithStdLib/coroutines/suspendFunctionType/modifierApplicability.kt (7)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fnative%2FnonFunction.kt&amp;actual=testsWithStdLib%2Fnative%2FnonFunction.kt" target="_blank">testsWithStdLib/native/nonFunction.kt (4)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fcoroutines%2FsuspendFunctionType%2FnullableSuspendFunction.kt&amp;actual=testsWithStdLib%2Fcoroutines%2FsuspendFunctionType%2FnullableSuspendFunction.fir.kt" target="_blank">testsWithStdLib/coroutines/suspendFunctionType/nullableSuspendFunction.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fmodifiers%2FrepeatedModifiers.kt&amp;actual=tests%2Fmodifiers%2FrepeatedModifiers.fir.kt" target="_blank">tests/modifiers/repeatedModifiers.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithJsStdLib%2Fnative%2FinlineClass.kt&amp;actual=testsWithJsStdLib%2Fnative%2FinlineClass.kt" target="_blank">testsWithJsStdLib/native/inlineClass.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fmodifiers%2Fconst%2Fapplicability.kt&amp;actual=tests%2Fmodifiers%2Fconst%2Fapplicability.fir.kt" target="_blank">tests/modifiers/const/applicability.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fmodifiers%2Fconst%2Ftypes.kt&amp;actual=tests%2Fmodifiers%2Fconst%2Ftypes.kt" target="_blank">tests/modifiers/const/types.kt (1)</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

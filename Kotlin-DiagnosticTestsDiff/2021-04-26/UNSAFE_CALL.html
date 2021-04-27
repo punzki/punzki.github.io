@@ -1,0 +1,268 @@
+<html>
+  <head>
+    <title>Diagnostics diff: UNSAFE_CALL</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row" id="summary">
+        <h1>UNSAFE_CALL</h1>
+      </div>
+      <div class="row">
+        <ul>
+          <li><strong>Total: </strong>422</li>
+          <li><strong>Match %: </strong>71.33%</li>
+          <li><a href="#matched"><strong># Matched: </strong>301</a></li>
+          <li><strong># Non-matched: </strong>121</li>
+          <li><a href="#missing"><strong># Missing: </strong>52</a></li>
+          <li><a href="#unexpected"><strong># Unexpected: </strong>59</a></li>
+          <li><a href="#mismatched"><strong># Mismatched: </strong>10</a></li>
+          <li><strong># of Files: </strong>184</li>
+        </ul>
+      </div>
+      <div class="row" id="missing">
+        <h2>Missing (52)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Flevel_1_0.kt&amp;actual=tests%2FsmartCasts%2Flevel_1_0.fir.kt" target="_blank">tests/smartCasts/level_1_0.kt (8)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Fcastchecks%2FbasicOff.kt&amp;actual=tests%2FsmartCasts%2Fcastchecks%2FbasicOff.fir.kt" target="_blank">tests/smartCasts/castchecks/basicOff.kt (3)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Fvarnotnull%2FboundInitializerWrong.kt&amp;actual=tests%2FsmartCasts%2Fvarnotnull%2FboundInitializerWrong.fir.kt" target="_blank">tests/smartCasts/varnotnull/boundInitializerWrong.kt (3)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fassert%2FsafeCall.kt&amp;actual=testsWithStdLib%2Fassert%2FsafeCall.fir.kt" target="_blank">testsWithStdLib/assert/safeCall.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2FtryCatch%2FfalsePositiveSmartcasts_after.kt&amp;actual=testsWithStdLib%2FtryCatch%2FfalsePositiveSmartcasts_after.fir.kt" target="_blank">testsWithStdLib/tryCatch/falsePositiveSmartcasts_after.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Floops%2FsafeCallBreakInsideDoWhile.kt&amp;actual=tests%2FsmartCasts%2Floops%2FsafeCallBreakInsideDoWhile.fir.kt" target="_blank">tests/smartCasts/loops/safeCallBreakInsideDoWhile.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Floops%2FnestedLoopsWithLongContinue.kt&amp;actual=tests%2FsmartCasts%2Floops%2FnestedLoopsWithLongContinue.fir.kt" target="_blank">tests/smartCasts/loops/nestedLoopsWithLongContinue.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Fvarnotnull%2FboundInitializer.kt&amp;actual=tests%2FsmartCasts%2Fvarnotnull%2FboundInitializer.fir.kt" target="_blank">tests/smartCasts/varnotnull/boundInitializer.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FcallableReference%2FwithQuestionMarks.kt&amp;actual=tests%2FcallableReference%2FwithQuestionMarks.fir.kt" target="_blank">tests/callableReference/withQuestionMarks.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fsmartcasts%2FletAlwaysChangesToNotNull.kt&amp;actual=testsWithStdLib%2Fsmartcasts%2FletAlwaysChangesToNotNull.fir.kt" target="_blank">testsWithStdLib/smartcasts/letAlwaysChangesToNotNull.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2FtryCatch%2FfalseNegativeSmartcasts_after.kt&amp;actual=testsWithStdLib%2FtryCatch%2FfalseNegativeSmartcasts_after.fir.kt" target="_blank">testsWithStdLib/tryCatch/falseNegativeSmartcasts_after.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fcontracts%2Fsmartcasts%2FextensionReceiver.kt&amp;actual=testsWithStdLib%2Fcontracts%2Fsmartcasts%2FextensionReceiver.fir.kt" target="_blank">testsWithStdLib/contracts/smartcasts/extensionReceiver.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fgenerics%2Fnullability%2FuseAsReceiver.kt&amp;actual=tests%2Fgenerics%2Fnullability%2FuseAsReceiver.fir.kt" target="_blank">tests/generics/nullability/useAsReceiver.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fwhen%2FwithSubjectVariable%2FjumpoutInInitializer.kt&amp;actual=tests%2Fwhen%2FwithSubjectVariable%2FjumpoutInInitializer.fir.kt" target="_blank">tests/when/withSubjectVariable/jumpoutInInitializer.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fwhen%2FwithSubjectVariable%2FsmartCastOnValueBoundToSubjectVariable.kt&amp;actual=tests%2Fwhen%2FwithSubjectVariable%2FsmartCastOnValueBoundToSubjectVariable.fir.kt" target="_blank">tests/when/withSubjectVariable/smartCastOnValueBoundToSubjectVariable.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fextensions%2Fkt1875.kt&amp;actual=tests%2Fextensions%2Fkt1875.fir.kt" target="_blank">tests/extensions/kt1875.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FExtensionCallInvoke.kt&amp;actual=tests%2FExtensionCallInvoke.fir.kt" target="_blank">tests/ExtensionCallInvoke.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FdataFlow%2Fassignment%2FassignToNewVal.kt&amp;actual=tests%2FdataFlow%2Fassignment%2FassignToNewVal.fir.kt" target="_blank">tests/dataFlow/assignment/assignToNewVal.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fresolve%2Finvoke%2Ferrors%2FunsafeCallWithInvoke.kt&amp;actual=tests%2Fresolve%2Finvoke%2Ferrors%2FunsafeCallWithInvoke.fir.kt" target="_blank">tests/resolve/invoke/errors/unsafeCallWithInvoke.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fresolve%2Finvoke%2Fkt30695_2.kt&amp;actual=tests%2Fresolve%2Finvoke%2Fkt30695_2.fir.kt" target="_blank">tests/resolve/invoke/kt30695_2.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FplatformTypes%2FnullabilityWarnings%2Farithmetic.kt&amp;actual=tests%2FplatformTypes%2FnullabilityWarnings%2Farithmetic.fir.kt" target="_blank">tests/platformTypes/nullabilityWarnings/arithmetic.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FplatformTypes%2FnullableTypeArgument.kt&amp;actual=tests%2FplatformTypes%2FnullableTypeArgument.fir.kt" target="_blank">tests/platformTypes/nullableTypeArgument.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Fvariables%2FifNullAssignment.kt&amp;actual=tests%2FsmartCasts%2Fvariables%2FifNullAssignment.fir.kt" target="_blank">tests/smartCasts/variables/ifNullAssignment.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Fsafecalls%2FsafeAccessReceiverNotNull.kt&amp;actual=tests%2FsmartCasts%2Fsafecalls%2FsafeAccessReceiverNotNull.fir.kt" target="_blank">tests/smartCasts/safecalls/safeAccessReceiverNotNull.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Floops%2FwhenReturnInsideWhileTrue.kt&amp;actual=tests%2FsmartCasts%2Floops%2FwhenReturnInsideWhileTrue.fir.kt" target="_blank">tests/smartCasts/loops/whenReturnInsideWhileTrue.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Floops%2FdoWhileEarlyContinue.kt&amp;actual=tests%2FsmartCasts%2Floops%2FdoWhileEarlyContinue.fir.kt" target="_blank">tests/smartCasts/loops/doWhileEarlyContinue.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Floops%2FdoWhileLiteral.kt&amp;actual=tests%2FsmartCasts%2Floops%2FdoWhileLiteral.fir.kt" target="_blank">tests/smartCasts/loops/doWhileLiteral.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Floops%2FnestedDoWhileWithLongContinue.kt&amp;actual=tests%2FsmartCasts%2Floops%2FnestedDoWhileWithLongContinue.fir.kt" target="_blank">tests/smartCasts/loops/nestedDoWhileWithLongContinue.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2FalwaysNullWithJava.kt&amp;actual=tests%2FsmartCasts%2FalwaysNullWithJava.fir.kt" target="_blank">tests/smartCasts/alwaysNullWithJava.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Fcastchecks%2Fvariables.kt&amp;actual=tests%2FsmartCasts%2Fcastchecks%2Fvariables.fir.kt" target="_blank">tests/smartCasts/castchecks/variables.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Fvarnotnull%2FwhileTrueWithBracketSet.kt&amp;actual=tests%2FsmartCasts%2Fvarnotnull%2FwhileTrueWithBracketSet.fir.kt" target="_blank">tests/smartCasts/varnotnull/whileTrueWithBracketSet.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Fvarnotnull%2FwhileTrueWithBrackets.kt&amp;actual=tests%2FsmartCasts%2Fvarnotnull%2FwhileTrueWithBrackets.fir.kt" target="_blank">tests/smartCasts/varnotnull/whileTrueWithBrackets.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Fvarnotnull%2FwhileTrue.kt&amp;actual=tests%2FsmartCasts%2Fvarnotnull%2FwhileTrue.fir.kt" target="_blank">tests/smartCasts/varnotnull/whileTrue.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Fvarnotnull%2FsetSameInTry.kt&amp;actual=tests%2FsmartCasts%2Fvarnotnull%2FsetSameInTry.fir.kt" target="_blank">tests/smartCasts/varnotnull/setSameInTry.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FFunctionCalleeExpressions.kt&amp;actual=tests%2FFunctionCalleeExpressions.fir.kt" target="_blank">tests/FunctionCalleeExpressions.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row" id="unexpected">
+        <h2>Unexpected (59)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2FtryCatch%2FfalsePositiveSmartcasts.kt&amp;actual=testsWithStdLib%2FtryCatch%2FfalsePositiveSmartcasts.fir.kt" target="_blank">testsWithStdLib/tryCatch/falsePositiveSmartcasts.kt (10)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FexplicitDefinitelyNotNull%2Finference.kt&amp;actual=tests%2FexplicitDefinitelyNotNull%2Finference.fir.kt" target="_blank">tests/explicitDefinitelyNotNull/inference.kt (5)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FexplicitDefinitelyNotNull%2Fsimple.kt&amp;actual=tests%2FexplicitDefinitelyNotNull%2Fsimple.fir.kt" target="_blank">tests/explicitDefinitelyNotNull/simple.kt (4)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FnullabilityAndSmartCasts%2FnullableReceiverWithOverloadedMethod.kt&amp;actual=tests%2FnullabilityAndSmartCasts%2FnullableReceiverWithOverloadedMethod.fir.kt" target="_blank">tests/nullabilityAndSmartCasts/nullableReceiverWithOverloadedMethod.kt (3)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Fvarnotnull%2FcapturedInClosureModifiedBefore.kt&amp;actual=tests%2FsmartCasts%2Fvarnotnull%2FcapturedInClosureModifiedBefore.fir.kt" target="_blank">tests/smartCasts/varnotnull/capturedInClosureModifiedBefore.kt (3)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fwhen%2FwithSubjectVariable%2FcapturingInInitializer.kt&amp;actual=tests%2Fwhen%2FwithSubjectVariable%2FcapturingInInitializer.fir.kt" target="_blank">tests/when/withSubjectVariable/capturingInInitializer.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FnullabilityAndSmartCasts%2FNullableNothingIsExactlyNull.kt&amp;actual=tests%2FnullabilityAndSmartCasts%2FNullableNothingIsExactlyNull.fir.kt" target="_blank">tests/nullabilityAndSmartCasts/NullableNothingIsExactlyNull.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Fsafecalls%2FsafeAccessReceiverNotNull.kt&amp;actual=tests%2FsmartCasts%2Fsafecalls%2FsafeAccessReceiverNotNull.fir.kt" target="_blank">tests/smartCasts/safecalls/safeAccessReceiverNotNull.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2FpublicVals%2Fvar.kt&amp;actual=tests%2FsmartCasts%2FpublicVals%2Fvar.fir.kt" target="_blank">tests/smartCasts/publicVals/var.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Floops%2FwhileWithAssertInConditionAndBreakBefore.kt&amp;actual=tests%2FsmartCasts%2Floops%2FwhileWithAssertInConditionAndBreakBefore.fir.kt" target="_blank">tests/smartCasts/loops/whileWithAssertInConditionAndBreakBefore.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Floops%2FwhileWithAssertInConditionAndBreakAfter.kt&amp;actual=tests%2FsmartCasts%2Floops%2FwhileWithAssertInConditionAndBreakAfter.fir.kt" target="_blank">tests/smartCasts/loops/whileWithAssertInConditionAndBreakAfter.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2FownerDeclaresBothModifies.kt&amp;actual=tests%2FsmartCasts%2FownerDeclaresBothModifies.fir.kt" target="_blank">tests/smartCasts/ownerDeclaresBothModifies.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Felvis%2FbasicOn.kt&amp;actual=tests%2FsmartCasts%2Felvis%2FbasicOn.fir.kt" target="_blank">tests/smartCasts/elvis/basicOn.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2FcomparisonUnderAnd.kt&amp;actual=tests%2FsmartCasts%2FcomparisonUnderAnd.fir.kt" target="_blank">tests/smartCasts/comparisonUnderAnd.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2FtryCatch%2FfalsePositiveSmartcasts_after.kt&amp;actual=testsWithStdLib%2FtryCatch%2FfalsePositiveSmartcasts_after.fir.kt" target="_blank">testsWithStdLib/tryCatch/falsePositiveSmartcasts_after.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fcontracts%2Fsmartcasts%2Freceiver.kt&amp;actual=testsWithStdLib%2Fcontracts%2Fsmartcasts%2Freceiver.fir.kt" target="_blank">testsWithStdLib/contracts/smartcasts/receiver.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FnullabilityAndSmartCasts%2FunstableSmartcastWithOverloadedExtensions.kt&amp;actual=tests%2FnullabilityAndSmartCasts%2FunstableSmartcastWithOverloadedExtensions.fir.kt" target="_blank">tests/nullabilityAndSmartCasts/unstableSmartcastWithOverloadedExtensions.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fregressions%2Fkt12898.kt&amp;actual=tests%2Fregressions%2Fkt12898.fir.kt" target="_blank">tests/regressions/kt12898.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Fkt32358_2.kt&amp;actual=tests%2FsmartCasts%2Fkt32358_2.fir.kt" target="_blank">tests/smartCasts/kt32358_2.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Finference%2Fkt39010.kt&amp;actual=tests%2FsmartCasts%2Finference%2Fkt39010.fir.kt" target="_blank">tests/smartCasts/inference/kt39010.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2FopenInSealed.kt&amp;actual=tests%2FsmartCasts%2FopenInSealed.fir.kt" target="_blank">tests/smartCasts/openInSealed.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2FobjectLiterals%2Fkt7110.kt&amp;actual=tests%2FsmartCasts%2FobjectLiterals%2Fkt7110.fir.kt" target="_blank">tests/smartCasts/objectLiterals/kt7110.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2FpublicVals%2FcustomGetter.kt&amp;actual=tests%2FsmartCasts%2FpublicVals%2FcustomGetter.fir.kt" target="_blank">tests/smartCasts/publicVals/customGetter.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2FunstableToStable.kt&amp;actual=tests%2FsmartCasts%2FunstableToStable.fir.kt" target="_blank">tests/smartCasts/unstableToStable.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2FlambdaAndArgumentFun.kt&amp;actual=tests%2FsmartCasts%2FlambdaAndArgumentFun.fir.kt" target="_blank">tests/smartCasts/lambdaAndArgumentFun.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2FenumEntryMembers_before.kt&amp;actual=tests%2FsmartCasts%2FenumEntryMembers_before.fir.kt" target="_blank">tests/smartCasts/enumEntryMembers_before.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Fkt32358_3.kt&amp;actual=tests%2FsmartCasts%2Fkt32358_3.fir.kt" target="_blank">tests/smartCasts/kt32358_3.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Fvarnotnull%2FsetNullInTryUnsound.kt&amp;actual=tests%2FsmartCasts%2Fvarnotnull%2FsetNullInTryUnsound.fir.kt" target="_blank">tests/smartCasts/varnotnull/setNullInTryUnsound.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Fvarnotnull%2FvarNotChangedInLoop.kt&amp;actual=tests%2FsmartCasts%2Fvarnotnull%2FvarNotChangedInLoop.fir.kt" target="_blank">tests/smartCasts/varnotnull/varNotChangedInLoop.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Fvarnotnull%2FboundInitializerWrong.kt&amp;actual=tests%2FsmartCasts%2Fvarnotnull%2FboundInitializerWrong.fir.kt" target="_blank">tests/smartCasts/varnotnull/boundInitializerWrong.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row" id="mismatched">
+        <h2>Mismatched (10)</h2>
+      </div>
+      <div class="row">
+        <h3>UNSAFE_CALL -&gt; UNRESOLVED_REFERENCE (9)</h3>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?expected=tests%2FcallableReference%2Fbound%2FexpressionWithNullableType.kt&amp;actual=tests%2FcallableReference%2Fbound%2FexpressionWithNullableType.fir.kt" target="_blank">tests/callableReference/bound/expressionWithNullableType.kt (5)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FcallableReference%2Fbound%2FreservedExpressionSyntax.kt&amp;actual=tests%2FcallableReference%2Fbound%2FreservedExpressionSyntax.fir.kt" target="_blank">tests/callableReference/bound/reservedExpressionSyntax.kt (3)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FcallableReference%2Fbound%2FreservedExpressionSyntax2.kt&amp;actual=tests%2FcallableReference%2Fbound%2FreservedExpressionSyntax2.fir.kt" target="_blank">tests/callableReference/bound/reservedExpressionSyntax2.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row">
+        <h3>UNSAFE_CALL -&gt; UNSAFE_IMPLICIT_INVOKE_CALL (1)</h3>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?expected=tests%2Fresolve%2Finvoke%2Ferrors%2FunsafeCallWithInvoke.kt&amp;actual=tests%2Fresolve%2Finvoke%2Ferrors%2FunsafeCallWithInvoke.fir.kt" target="_blank">tests/resolve/invoke/errors/unsafeCallWithInvoke.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row" id="matched">
+        <h2>Matched (301)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2FtryCatch%2FfalsePositiveSmartcasts_after.kt&amp;actual=testsWithStdLib%2FtryCatch%2FfalsePositiveSmartcasts_after.fir.kt" target="_blank">testsWithStdLib/tryCatch/falsePositiveSmartcasts_after.kt (12)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FNullability.kt&amp;actual=tests%2FNullability.fir.kt" target="_blank">tests/Nullability.kt (11)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2FtryCatch%2FboundedSmartcasts.kt&amp;actual=testsWithStdLib%2FtryCatch%2FboundedSmartcasts.fir.kt" target="_blank">testsWithStdLib/tryCatch/boundedSmartcasts.kt (10)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2FcomplexConditionsWithExcl.kt&amp;actual=tests%2FsmartCasts%2FcomplexConditionsWithExcl.fir.kt" target="_blank">tests/smartCasts/complexConditionsWithExcl.kt (10)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2FcomparisonUnderAnd.kt&amp;actual=tests%2FsmartCasts%2FcomparisonUnderAnd.fir.kt" target="_blank">tests/smartCasts/comparisonUnderAnd.kt (10)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Fcastchecks%2Fvariables.kt&amp;actual=tests%2FsmartCasts%2Fcastchecks%2Fvariables.fir.kt" target="_blank">tests/smartCasts/castchecks/variables.kt (9)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fresolve%2Finvoke%2FimplicitInvokeAfterSafeCall.kt&amp;actual=tests%2Fresolve%2Finvoke%2FimplicitInvokeAfterSafeCall.fir.kt" target="_blank">tests/resolve/invoke/implicitInvokeAfterSafeCall.kt (8)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FnullabilityAndSmartCasts%2FInfixCallNullability.kt&amp;actual=tests%2FnullabilityAndSmartCasts%2FInfixCallNullability.kt" target="_blank">tests/nullabilityAndSmartCasts/InfixCallNullability.kt (8)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2FtryCatch%2FassignTry.kt&amp;actual=testsWithStdLib%2FtryCatch%2FassignTry.fir.kt" target="_blank">testsWithStdLib/tryCatch/assignTry.kt (7)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fcontracts%2Fsmartcasts%2FoperatorsTests%2FequalsOperator.kt&amp;actual=testsWithStdLib%2Fcontracts%2Fsmartcasts%2FoperatorsTests%2FequalsOperator.fir.kt" target="_blank">testsWithStdLib/contracts/smartcasts/operatorsTests/equalsOperator.kt (6)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fcontracts%2Fsmartcasts%2FnullabilitySmartcastWhenNullability.kt&amp;actual=testsWithStdLib%2Fcontracts%2Fsmartcasts%2FnullabilitySmartcastWhenNullability.fir.kt" target="_blank">testsWithStdLib/contracts/smartcasts/nullabilitySmartcastWhenNullability.kt (6)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FnullabilityAndSmartCasts%2FReceiverNullability.kt&amp;actual=tests%2FnullabilityAndSmartCasts%2FReceiverNullability.kt" target="_blank">tests/nullabilityAndSmartCasts/ReceiverNullability.kt (6)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Fsafecalls%2FnullableReceiverInLongChain.kt&amp;actual=tests%2FsmartCasts%2Fsafecalls%2FnullableReceiverInLongChain.fir.kt" target="_blank">tests/smartCasts/safecalls/nullableReceiverInLongChain.kt (6)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2FcomplexComparison.kt&amp;actual=tests%2FsmartCasts%2FcomplexComparison.fir.kt" target="_blank">tests/smartCasts/complexComparison.kt (6)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Finference%2Fcompletion%2FlambdaWithVariableAndNothing.kt&amp;actual=tests%2Finference%2Fcompletion%2FlambdaWithVariableAndNothing.fir.kt" target="_blank">tests/inference/completion/lambdaWithVariableAndNothing.kt (4)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FnullabilityAndSmartCasts%2FQualifiedExpressionNullability.kt&amp;actual=tests%2FnullabilityAndSmartCasts%2FQualifiedExpressionNullability.fir.kt" target="_blank">tests/nullabilityAndSmartCasts/QualifiedExpressionNullability.kt (4)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2FexclUnderAnd.kt&amp;actual=tests%2FsmartCasts%2FexclUnderAnd.fir.kt" target="_blank">tests/smartCasts/exclUnderAnd.kt (4)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Fsafecalls%2FinsideIfExpr.kt&amp;actual=tests%2FsmartCasts%2Fsafecalls%2FinsideIfExpr.kt" target="_blank">tests/smartCasts/safecalls/insideIfExpr.kt (4)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Felvis%2FbasicOff.kt&amp;actual=tests%2FsmartCasts%2Felvis%2FbasicOff.kt" target="_blank">tests/smartCasts/elvis/basicOff.kt (4)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2FtryCatch%2FcorrectSmartcasts.kt&amp;actual=testsWithStdLib%2FtryCatch%2FcorrectSmartcasts.fir.kt" target="_blank">testsWithStdLib/tryCatch/correctSmartcasts.kt (3)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2FtryCatch%2FcorrectSmartcasts_after.kt&amp;actual=testsWithStdLib%2FtryCatch%2FcorrectSmartcasts_after.fir.kt" target="_blank">testsWithStdLib/tryCatch/correctSmartcasts_after.kt (3)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2FtryCatch%2FfalsePositiveSmartcasts.kt&amp;actual=testsWithStdLib%2FtryCatch%2FfalsePositiveSmartcasts.fir.kt" target="_blank">testsWithStdLib/tryCatch/falsePositiveSmartcasts.kt (3)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Finference%2Fregressions%2Fkt2842.kt&amp;actual=tests%2Finference%2Fregressions%2Fkt2842.fir.kt" target="_blank">tests/inference/regressions/kt2842.kt (3)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fwhen%2FwithSubjectVariable%2FjumpoutInInitializer.kt&amp;actual=tests%2Fwhen%2FwithSubjectVariable%2FjumpoutInInitializer.fir.kt" target="_blank">tests/when/withSubjectVariable/jumpoutInInitializer.kt (3)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FBreakContinue.kt&amp;actual=tests%2FBreakContinue.fir.kt" target="_blank">tests/BreakContinue.kt (3)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2FunstableToStable.kt&amp;actual=tests%2FsmartCasts%2FunstableToStable.fir.kt" target="_blank">tests/smartCasts/unstableToStable.kt (3)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Fcastchecks%2FbasicOn.kt&amp;actual=tests%2FsmartCasts%2Fcastchecks%2FbasicOn.fir.kt" target="_blank">tests/smartCasts/castchecks/basicOn.kt (3)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Fcastchecks%2FbasicOff.kt&amp;actual=tests%2FsmartCasts%2Fcastchecks%2FbasicOff.fir.kt" target="_blank">tests/smartCasts/castchecks/basicOff.kt (3)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Fvarnotnull%2FdoWhileWithBreak.kt&amp;actual=tests%2FsmartCasts%2Fvarnotnull%2FdoWhileWithBreak.kt" target="_blank">tests/smartCasts/varnotnull/doWhileWithBreak.kt (3)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Fvarnotnull%2FinitInTryReturnInCatch.kt&amp;actual=tests%2FsmartCasts%2Fvarnotnull%2FinitInTryReturnInCatch.fir.kt" target="_blank">tests/smartCasts/varnotnull/initInTryReturnInCatch.kt (3)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FdataFlowInfoTraversal%2FUnaryExpression.kt&amp;actual=tests%2FdataFlowInfoTraversal%2FUnaryExpression.fir.kt" target="_blank">tests/dataFlowInfoTraversal/UnaryExpression.kt (3)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fcoroutines%2Fkt36947.kt&amp;actual=testsWithStdLib%2Fcoroutines%2Fkt36947.kt" target="_blank">testsWithStdLib/coroutines/kt36947.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fcontracts%2FfromStdlib%2FisNullOrBlank.kt&amp;actual=testsWithStdLib%2Fcontracts%2FfromStdlib%2FisNullOrBlank.fir.kt" target="_blank">testsWithStdLib/contracts/fromStdlib/isNullOrBlank.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fcontracts%2FfromStdlib%2FisNullOrEmpty.kt&amp;actual=testsWithStdLib%2Fcontracts%2FfromStdlib%2FisNullOrEmpty.fir.kt" target="_blank">testsWithStdLib/contracts/fromStdlib/isNullOrEmpty.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fcontracts%2Fsmartcasts%2FextensionReceiver_after.kt&amp;actual=testsWithStdLib%2Fcontracts%2Fsmartcasts%2FextensionReceiver_after.fir.kt" target="_blank">testsWithStdLib/contracts/smartcasts/extensionReceiver_after.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fcontracts%2Fsmartcasts%2Freceiver.kt&amp;actual=testsWithStdLib%2Fcontracts%2Fsmartcasts%2Freceiver.fir.kt" target="_blank">testsWithStdLib/contracts/smartcasts/receiver.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fcontracts%2Fsmartcasts%2FextensionReceiver.kt&amp;actual=testsWithStdLib%2Fcontracts%2Fsmartcasts%2FextensionReceiver.fir.kt" target="_blank">testsWithStdLib/contracts/smartcasts/extensionReceiver.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fgenerics%2Fnullability%2FuseAsReceiver.kt&amp;actual=tests%2Fgenerics%2Fnullability%2FuseAsReceiver.fir.kt" target="_blank">tests/generics/nullability/useAsReceiver.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fwhen%2FwithSubjectVariable%2FsmartCastOnValueBoundToSubjectVariable.kt&amp;actual=tests%2Fwhen%2FwithSubjectVariable%2FsmartCastOnValueBoundToSubjectVariable.fir.kt" target="_blank">tests/when/withSubjectVariable/smartCastOnValueBoundToSubjectVariable.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsyntheticExtensions%2FjavaProperties%2FTypeAnnotation.kt&amp;actual=tests%2FsyntheticExtensions%2FjavaProperties%2FTypeAnnotation.kt" target="_blank">tests/syntheticExtensions/javaProperties/TypeAnnotation.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fj%2Bk%2Fsam%2FenhancedSamConstructor.kt&amp;actual=tests%2Fj%2Bk%2Fsam%2FenhancedSamConstructor.fir.kt" target="_blank">tests/j+k/sam/enhancedSamConstructor.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FplatformTypes%2FnullabilityWarnings%2Farray.kt&amp;actual=tests%2FplatformTypes%2FnullabilityWarnings%2Farray.kt" target="_blank">tests/platformTypes/nullabilityWarnings/array.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FplatformTypes%2FnullabilityWarnings%2Farithmetic.kt&amp;actual=tests%2FplatformTypes%2FnullabilityWarnings%2Farithmetic.fir.kt" target="_blank">tests/platformTypes/nullabilityWarnings/arithmetic.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FplatformTypes%2FnullabilityWarnings%2FderefenceExtension.kt&amp;actual=tests%2FplatformTypes%2FnullabilityWarnings%2FderefenceExtension.kt" target="_blank">tests/platformTypes/nullabilityWarnings/derefenceExtension.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FplatformTypes%2FnullabilityWarnings%2FderefenceMember.kt&amp;actual=tests%2FplatformTypes%2FnullabilityWarnings%2FderefenceMember.kt" target="_blank">tests/platformTypes/nullabilityWarnings/derefenceMember.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FplatformTypes%2FnullabilityWarnings%2FprimitiveArray.kt&amp;actual=tests%2FplatformTypes%2FnullabilityWarnings%2FprimitiveArray.kt" target="_blank">tests/platformTypes/nullabilityWarnings/primitiveArray.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FplatformTypes%2FtypeEnhancement%2FoverriddenExtensions.kt&amp;actual=tests%2FplatformTypes%2FtypeEnhancement%2FoverriddenExtensions.fir.kt" target="_blank">tests/platformTypes/typeEnhancement/overriddenExtensions.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Fsafecalls%2FnullableReceiver.kt&amp;actual=tests%2FsmartCasts%2Fsafecalls%2FnullableReceiver.kt" target="_blank">tests/smartCasts/safecalls/nullableReceiver.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Fsafecalls%2FchainMixedUnsafe.kt&amp;actual=tests%2FsmartCasts%2Fsafecalls%2FchainMixedUnsafe.fir.kt" target="_blank">tests/smartCasts/safecalls/chainMixedUnsafe.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Fsafecalls%2FsafeAccessReceiverNotNull.kt&amp;actual=tests%2FsmartCasts%2Fsafecalls%2FsafeAccessReceiverNotNull.fir.kt" target="_blank">tests/smartCasts/safecalls/safeAccessReceiverNotNull.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Floops%2FassignElvisIfBreakInsideWhileTrue.kt&amp;actual=tests%2FsmartCasts%2Floops%2FassignElvisIfBreakInsideWhileTrue.fir.kt" target="_blank">tests/smartCasts/loops/assignElvisIfBreakInsideWhileTrue.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Floops%2FcallBreakFirstInsideDoWhile.kt&amp;actual=tests%2FsmartCasts%2Floops%2FcallBreakFirstInsideDoWhile.fir.kt" target="_blank">tests/smartCasts/loops/callBreakFirstInsideDoWhile.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Floops%2FelvisIfBreakInsideWhileTrue.kt&amp;actual=tests%2FsmartCasts%2Floops%2FelvisIfBreakInsideWhileTrue.fir.kt" target="_blank">tests/smartCasts/loops/elvisIfBreakInsideWhileTrue.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Floops%2FcallBreakBetweenInsideDoWhile.kt&amp;actual=tests%2FsmartCasts%2Floops%2FcallBreakBetweenInsideDoWhile.fir.kt" target="_blank">tests/smartCasts/loops/callBreakBetweenInsideDoWhile.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Floops%2FelvisLeftBreakInsideWhileTrue.kt&amp;actual=tests%2FsmartCasts%2Floops%2FelvisLeftBreakInsideWhileTrue.kt" target="_blank">tests/smartCasts/loops/elvisLeftBreakInsideWhileTrue.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Fvarnotnull%2Finitialization.kt&amp;actual=tests%2FsmartCasts%2Fvarnotnull%2Finitialization.fir.kt" target="_blank">tests/smartCasts/varnotnull/initialization.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Fvarnotnull%2FforEach.kt&amp;actual=tests%2FsmartCasts%2Fvarnotnull%2FforEach.fir.kt" target="_blank">tests/smartCasts/varnotnull/forEach.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Fvarnotnull%2Fassignment.kt&amp;actual=tests%2FsmartCasts%2Fvarnotnull%2Fassignment.fir.kt" target="_blank">tests/smartCasts/varnotnull/assignment.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fsmartcasts%2FletChangesToNotNull.kt&amp;actual=testsWithStdLib%2Fsmartcasts%2FletChangesToNotNull.kt" target="_blank">testsWithStdLib/smartcasts/letChangesToNotNull.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fsmartcasts%2FwithChangesToNull.kt&amp;actual=testsWithStdLib%2Fsmartcasts%2FwithChangesToNull.fir.kt" target="_blank">testsWithStdLib/smartcasts/withChangesToNull.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fsmartcasts%2FletChangesToNullComplex.kt&amp;actual=testsWithStdLib%2Fsmartcasts%2FletChangesToNullComplex.fir.kt" target="_blank">testsWithStdLib/smartcasts/letChangesToNullComplex.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fcontracts%2Fsmartcasts%2FvalueOfContractedFunctionIngored.kt&amp;actual=testsWithStdLib%2Fcontracts%2Fsmartcasts%2FvalueOfContractedFunctionIngored.fir.kt" target="_blank">testsWithStdLib/contracts/smartcasts/valueOfContractedFunctionIngored.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fgenerics%2Fnullability%2FtpInBounds.kt&amp;actual=tests%2Fgenerics%2Fnullability%2FtpInBounds.fir.kt" target="_blank">tests/generics/nullability/tpInBounds.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fgenerics%2Fnullability%2FsmartCasts.kt&amp;actual=tests%2Fgenerics%2Fnullability%2FsmartCasts.fir.kt" target="_blank">tests/generics/nullability/smartCasts.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fgenerics%2Fnullability%2FsmartCastsOnThis.kt&amp;actual=tests%2Fgenerics%2Fnullability%2FsmartCastsOnThis.fir.kt" target="_blank">tests/generics/nullability/smartCastsOnThis.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fgenerics%2Fnullability%2FsmartCastRefinedClass.kt&amp;actual=tests%2Fgenerics%2Fnullability%2FsmartCastRefinedClass.fir.kt" target="_blank">tests/generics/nullability/smartCastRefinedClass.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fgenerics%2Fnullability%2FexpressionsBoundsViolation.kt&amp;actual=tests%2Fgenerics%2Fnullability%2FexpressionsBoundsViolation.fir.kt" target="_blank">tests/generics/nullability/expressionsBoundsViolation.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Ftypealias%2Fkt15734.kt&amp;actual=tests%2Ftypealias%2Fkt15734.fir.kt" target="_blank">tests/typealias/kt15734.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsyntheticExtensions%2FsamAdapters%2FReturnTypeAnnotation.kt&amp;actual=tests%2FsyntheticExtensions%2FsamAdapters%2FReturnTypeAnnotation.kt" target="_blank">tests/syntheticExtensions/samAdapters/ReturnTypeAnnotation.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FtargetedBuiltIns%2FforEachRemainingNullability.kt&amp;actual=tests%2FtargetedBuiltIns%2FforEachRemainingNullability.fir.kt" target="_blank">tests/targetedBuiltIns/forEachRemainingNullability.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fextensions%2Fkt1875.kt&amp;actual=tests%2Fextensions%2Fkt1875.fir.kt" target="_blank">tests/extensions/kt1875.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fextensions%2FExtensionFunctions.kt&amp;actual=tests%2Fextensions%2FExtensionFunctions.fir.kt" target="_blank">tests/extensions/ExtensionFunctions.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FdataFlow%2Fassignment%2FuninitializedValNullability.kt&amp;actual=tests%2FdataFlow%2Fassignment%2FuninitializedValNullability.fir.kt" target="_blank">tests/dataFlow/assignment/uninitializedValNullability.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FnullabilityAndSmartCasts%2Fkt2125.kt&amp;actual=tests%2FnullabilityAndSmartCasts%2Fkt2125.kt" target="_blank">tests/nullabilityAndSmartCasts/kt2125.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FnullabilityAndSmartCasts%2Fkt1270.kt&amp;actual=tests%2FnullabilityAndSmartCasts%2Fkt1270.kt" target="_blank">tests/nullabilityAndSmartCasts/kt1270.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FcontrolStructures%2FForLoopWithExtensionIteratorOnNullable.kt&amp;actual=tests%2FcontrolStructures%2FForLoopWithExtensionIteratorOnNullable.kt" target="_blank">tests/controlStructures/ForLoopWithExtensionIteratorOnNullable.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FplatformTypes%2FnullabilityWarnings%2Fkt6829.kt&amp;actual=tests%2FplatformTypes%2FnullabilityWarnings%2Fkt6829.kt" target="_blank">tests/platformTypes/nullabilityWarnings/kt6829.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FplatformTypes%2FnullabilityWarnings%2Fconditions.kt&amp;actual=tests%2FplatformTypes%2FnullabilityWarnings%2Fconditions.fir.kt" target="_blank">tests/platformTypes/nullabilityWarnings/conditions.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FplatformTypes%2FnoAnnotationInClassPath.kt&amp;actual=tests%2FplatformTypes%2FnoAnnotationInClassPath.kt" target="_blank">tests/platformTypes/noAnnotationInClassPath.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Fvariables%2FwhileWithBreak.kt&amp;actual=tests%2FsmartCasts%2Fvariables%2FwhileWithBreak.fir.kt" target="_blank">tests/smartCasts/variables/whileWithBreak.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Fvariables%2FlambdaBetweenArguments.kt&amp;actual=tests%2FsmartCasts%2Fvariables%2FlambdaBetweenArguments.fir.kt" target="_blank">tests/smartCasts/variables/lambdaBetweenArguments.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2FsmartCastOnWhen.kt&amp;actual=tests%2FsmartCasts%2FsmartCastOnWhen.fir.kt" target="_blank">tests/smartCasts/smartCastOnWhen.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Fsafecalls%2Fargument.kt&amp;actual=tests%2FsmartCasts%2Fsafecalls%2Fargument.kt" target="_blank">tests/smartCasts/safecalls/argument.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Fsafecalls%2FinnerReceiver.kt&amp;actual=tests%2FsmartCasts%2Fsafecalls%2FinnerReceiver.fir.kt" target="_blank">tests/smartCasts/safecalls/innerReceiver.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Fsafecalls%2FtwoArgs.kt&amp;actual=tests%2FsmartCasts%2Fsafecalls%2FtwoArgs.fir.kt" target="_blank">tests/smartCasts/safecalls/twoArgs.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Fsafecalls%2Fsimple.kt&amp;actual=tests%2FsmartCasts%2Fsafecalls%2Fsimple.fir.kt" target="_blank">tests/smartCasts/safecalls/simple.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Fsafecalls%2FdoubleCall.kt&amp;actual=tests%2FsmartCasts%2Fsafecalls%2FdoubleCall.fir.kt" target="_blank">tests/smartCasts/safecalls/doubleCall.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Fsafecalls%2FnullableReceiverWithFlexible.kt&amp;actual=tests%2FsmartCasts%2Fsafecalls%2FnullableReceiverWithFlexible.kt" target="_blank">tests/smartCasts/safecalls/nullableReceiverWithFlexible.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2FsmartcastOnSameFieldOfDifferentInstances.kt&amp;actual=tests%2FsmartCasts%2FsmartcastOnSameFieldOfDifferentInstances.kt" target="_blank">tests/smartCasts/smartcastOnSameFieldOfDifferentInstances.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2FelvisExclExcl.kt&amp;actual=tests%2FsmartCasts%2FelvisExclExcl.kt" target="_blank">tests/smartCasts/elvisExclExcl.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2FenumEntryMembers_after.kt&amp;actual=tests%2FsmartCasts%2FenumEntryMembers_after.fir.kt" target="_blank">tests/smartCasts/enumEntryMembers_after.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2FfieldPlus.kt&amp;actual=tests%2FsmartCasts%2FfieldPlus.fir.kt" target="_blank">tests/smartCasts/fieldPlus.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Flevel_1_0.kt&amp;actual=tests%2FsmartCasts%2Flevel_1_0.fir.kt" target="_blank">tests/smartCasts/level_1_0.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2FalwaysNull.kt&amp;actual=tests%2FsmartCasts%2FalwaysNull.fir.kt" target="_blank">tests/smartCasts/alwaysNull.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2FextensionSafeCall.kt&amp;actual=tests%2FsmartCasts%2FextensionSafeCall.fir.kt" target="_blank">tests/smartCasts/extensionSafeCall.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Floops%2FleftElvisBreakInsideWhileTrue.kt&amp;actual=tests%2FsmartCasts%2Floops%2FleftElvisBreakInsideWhileTrue.fir.kt" target="_blank">tests/smartCasts/loops/leftElvisBreakInsideWhileTrue.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Floops%2FwhileTrueEarlyBreak.kt&amp;actual=tests%2FsmartCasts%2Floops%2FwhileTrueEarlyBreak.kt" target="_blank">tests/smartCasts/loops/whileTrueEarlyBreak.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Floops%2FifBreakExprInsideWhileTrue.kt&amp;actual=tests%2FsmartCasts%2Floops%2FifBreakExprInsideWhileTrue.fir.kt" target="_blank">tests/smartCasts/loops/ifBreakExprInsideWhileTrue.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Floops%2FdoWhileEarlyBreak.kt&amp;actual=tests%2FsmartCasts%2Floops%2FdoWhileEarlyBreak.kt" target="_blank">tests/smartCasts/loops/doWhileEarlyBreak.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Floops%2FdoWhileNullWithBreak.kt&amp;actual=tests%2FsmartCasts%2Floops%2FdoWhileNullWithBreak.kt" target="_blank">tests/smartCasts/loops/doWhileNullWithBreak.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Floops%2FwhileSimple.kt&amp;actual=tests%2FsmartCasts%2Floops%2FwhileSimple.kt" target="_blank">tests/smartCasts/loops/whileSimple.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Floops%2FwhileTrivial.kt&amp;actual=tests%2FsmartCasts%2Floops%2FwhileTrivial.kt" target="_blank">tests/smartCasts/loops/whileTrivial.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Floops%2FcallBreakThirdInsideDoWhile.kt&amp;actual=tests%2FsmartCasts%2Floops%2FcallBreakThirdInsideDoWhile.fir.kt" target="_blank">tests/smartCasts/loops/callBreakThirdInsideDoWhile.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Floops%2FplusAssignWhenInsideDoWhile.kt&amp;actual=tests%2FsmartCasts%2Floops%2FplusAssignWhenInsideDoWhile.fir.kt" target="_blank">tests/smartCasts/loops/plusAssignWhenInsideDoWhile.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Floops%2FdoWhileInConditionWithBreak.kt&amp;actual=tests%2FsmartCasts%2Floops%2FdoWhileInConditionWithBreak.kt" target="_blank">tests/smartCasts/loops/doWhileInConditionWithBreak.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Floops%2FifBreakAssignInsideDoWhile.kt&amp;actual=tests%2FsmartCasts%2Floops%2FifBreakAssignInsideDoWhile.fir.kt" target="_blank">tests/smartCasts/loops/ifBreakAssignInsideDoWhile.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Floops%2FcallBreakSecondInsideDoWhile.kt&amp;actual=tests%2FsmartCasts%2Floops%2FcallBreakSecondInsideDoWhile.fir.kt" target="_blank">tests/smartCasts/loops/callBreakSecondInsideDoWhile.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Floops%2FWhileTrueWithBreakInIfCondition.kt&amp;actual=tests%2FsmartCasts%2Floops%2FWhileTrueWithBreakInIfCondition.fir.kt" target="_blank">tests/smartCasts/loops/WhileTrueWithBreakInIfCondition.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Floops%2FdoWhileNotNullBreak.kt&amp;actual=tests%2FsmartCasts%2Floops%2FdoWhileNotNullBreak.kt" target="_blank">tests/smartCasts/loops/doWhileNotNullBreak.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Floops%2FwhenInsideWhileTrue.kt&amp;actual=tests%2FsmartCasts%2Floops%2FwhenInsideWhileTrue.fir.kt" target="_blank">tests/smartCasts/loops/whenInsideWhileTrue.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Floops%2FifBreakAssignInsideWhileTrue.kt&amp;actual=tests%2FsmartCasts%2Floops%2FifBreakAssignInsideWhileTrue.fir.kt" target="_blank">tests/smartCasts/loops/ifBreakAssignInsideWhileTrue.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Floops%2FwhileTrueBreakReturn.kt&amp;actual=tests%2FsmartCasts%2Floops%2FwhileTrueBreakReturn.fir.kt" target="_blank">tests/smartCasts/loops/whileTrueBreakReturn.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Floops%2FcallBreakInsideDoWhile.kt&amp;actual=tests%2FsmartCasts%2Floops%2FcallBreakInsideDoWhile.fir.kt" target="_blank">tests/smartCasts/loops/callBreakInsideDoWhile.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Floops%2FelvisBreakInsideDoWhile.kt&amp;actual=tests%2FsmartCasts%2Floops%2FelvisBreakInsideDoWhile.fir.kt" target="_blank">tests/smartCasts/loops/elvisBreakInsideDoWhile.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Floops%2FwhileNullWithBreak.kt&amp;actual=tests%2FsmartCasts%2Floops%2FwhileNullWithBreak.kt" target="_blank">tests/smartCasts/loops/whileNullWithBreak.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Floops%2FnestedLoopsWithLongBreak.kt&amp;actual=tests%2FsmartCasts%2Floops%2FnestedLoopsWithLongBreak.fir.kt" target="_blank">tests/smartCasts/loops/nestedLoopsWithLongBreak.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Floops%2FassignWhenInsideWhileTrue.kt&amp;actual=tests%2FsmartCasts%2Floops%2FassignWhenInsideWhileTrue.fir.kt" target="_blank">tests/smartCasts/loops/assignWhenInsideWhileTrue.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2FfieldExclExcl.kt&amp;actual=tests%2FsmartCasts%2FfieldExclExcl.kt" target="_blank">tests/smartCasts/fieldExclExcl.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2FelvisNothingRHS.kt&amp;actual=tests%2FsmartCasts%2FelvisNothingRHS.fir.kt" target="_blank">tests/smartCasts/elvisNothingRHS.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Fvarnotnull%2FsetNotNullInTry.kt&amp;actual=tests%2FsmartCasts%2Fvarnotnull%2FsetNotNullInTry.kt" target="_blank">tests/smartCasts/varnotnull/setNotNullInTry.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Fvarnotnull%2FwhileWithBreak.kt&amp;actual=tests%2FsmartCasts%2Fvarnotnull%2FwhileWithBreak.fir.kt" target="_blank">tests/smartCasts/varnotnull/whileWithBreak.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Fvarnotnull%2FinfiniteWhileWithBreak.kt&amp;actual=tests%2FsmartCasts%2Fvarnotnull%2FinfiniteWhileWithBreak.fir.kt" target="_blank">tests/smartCasts/varnotnull/infiniteWhileWithBreak.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Fvarnotnull%2FvarNull.kt&amp;actual=tests%2FsmartCasts%2Fvarnotnull%2FvarNull.fir.kt" target="_blank">tests/smartCasts/varnotnull/varNull.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Fvarnotnull%2FnestedWhile.kt&amp;actual=tests%2FsmartCasts%2Fvarnotnull%2FnestedWhile.fir.kt" target="_blank">tests/smartCasts/varnotnull/nestedWhile.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Fvarnotnull%2FplusplusMinusminus.kt&amp;actual=tests%2FsmartCasts%2Fvarnotnull%2FplusplusMinusminus.fir.kt" target="_blank">tests/smartCasts/varnotnull/plusplusMinusminus.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Fvarnotnull%2FsetNullInTryFinally.kt&amp;actual=tests%2FsmartCasts%2Fvarnotnull%2FsetNullInTryFinally.kt" target="_blank">tests/smartCasts/varnotnull/setNullInTryFinally.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Fvarnotnull%2FprefixNullableIncrement.kt&amp;actual=tests%2FsmartCasts%2Fvarnotnull%2FprefixNullableIncrement.kt" target="_blank">tests/smartCasts/varnotnull/prefixNullableIncrement.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Fvarnotnull%2FvarChangedInLoop.kt&amp;actual=tests%2FsmartCasts%2Fvarnotnull%2FvarChangedInLoop.kt" target="_blank">tests/smartCasts/varnotnull/varChangedInLoop.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Fvarnotnull%2FdoWhileWithMiddleBreak.kt&amp;actual=tests%2FsmartCasts%2Fvarnotnull%2FdoWhileWithMiddleBreak.kt" target="_blank">tests/smartCasts/varnotnull/doWhileWithMiddleBreak.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Fvarnotnull%2FsetNullInTry.kt&amp;actual=tests%2FsmartCasts%2Fvarnotnull%2FsetNullInTry.kt" target="_blank">tests/smartCasts/varnotnull/setNullInTry.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Fvarnotnull%2FassignNestedWhile.kt&amp;actual=tests%2FsmartCasts%2Fvarnotnull%2FassignNestedWhile.fir.kt" target="_blank">tests/smartCasts/varnotnull/assignNestedWhile.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Fvarnotnull%2FboundInitializerWrong.kt&amp;actual=tests%2FsmartCasts%2Fvarnotnull%2FboundInitializerWrong.fir.kt" target="_blank">tests/smartCasts/varnotnull/boundInitializerWrong.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Fvarnotnull%2FprefixNullableClassIncrement.kt&amp;actual=tests%2FsmartCasts%2Fvarnotnull%2FprefixNullableClassIncrement.kt" target="_blank">tests/smartCasts/varnotnull/prefixNullableClassIncrement.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsmartCasts%2Fvarnotnull%2FpostfixNullableIncrement.kt&amp;actual=tests%2FsmartCasts%2Fvarnotnull%2FpostfixNullableIncrement.kt" target="_blank">tests/smartCasts/varnotnull/postfixNullableIncrement.kt (1)</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

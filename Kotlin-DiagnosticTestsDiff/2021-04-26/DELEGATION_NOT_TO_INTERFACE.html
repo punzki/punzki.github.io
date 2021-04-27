@@ -1,0 +1,52 @@
+<html>
+  <head>
+    <title>Diagnostics diff: DELEGATION_NOT_TO_INTERFACE</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row" id="summary">
+        <h1>DELEGATION_NOT_TO_INTERFACE</h1>
+      </div>
+      <div class="row">
+        <ul>
+          <li><strong>Total: </strong>9</li>
+          <li><strong>Match %: </strong>0.00%</li>
+          <li><a href="#matched"><strong># Matched: </strong>0</a></li>
+          <li><strong># Non-matched: </strong>9</li>
+          <li><a href="#missing"><strong># Missing: </strong>7</a></li>
+          <li><a href="#unexpected"><strong># Unexpected: </strong>0</a></li>
+          <li><a href="#mismatched"><strong># Mismatched: </strong>2</a></li>
+          <li><strong># of Files: </strong>7</li>
+        </ul>
+      </div>
+      <div class="row" id="missing">
+        <h2>Missing (7)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?expected=tests%2Fscopes%2FclassHeader%2FcompanionObjectParents.kt&amp;actual=tests%2Fscopes%2FclassHeader%2FcompanionObjectParents.fir.kt" target="_blank">tests/scopes/classHeader/companionObjectParents.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Foverride%2FMissingDelegate.kt&amp;actual=tests%2Foverride%2FMissingDelegate.fir.kt" target="_blank">tests/override/MissingDelegate.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fscopes%2FclassHeader%2FclassParents.kt&amp;actual=tests%2Fscopes%2FclassHeader%2FclassParents.fir.kt" target="_blank">tests/scopes/classHeader/classParents.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fscopes%2FclassHeader%2FobjectParents.kt&amp;actual=tests%2Fscopes%2FclassHeader%2FobjectParents.fir.kt" target="_blank">tests/scopes/classHeader/objectParents.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fdelegation%2FDelegationToJavaIface.kt&amp;actual=tests%2Fdelegation%2FDelegationToJavaIface.fir.kt" target="_blank">tests/delegation/DelegationToJavaIface.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fdelegation%2FDelegationNotTotrait.kt&amp;actual=tests%2Fdelegation%2FDelegationNotTotrait.fir.kt" target="_blank">tests/delegation/DelegationNotTotrait.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row" id="mismatched">
+        <h2>Mismatched (2)</h2>
+      </div>
+      <div class="row">
+        <h3>DELEGATION_NOT_TO_INTERFACE -&gt; SUPERTYPE_NOT_INITIALIZED (2)</h3>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?expected=tests%2Fdelegation%2Fkt40510.kt&amp;actual=tests%2Fdelegation%2Fkt40510.fir.kt" target="_blank">tests/delegation/kt40510.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fdelegation%2FDelegationNotTotrait.kt&amp;actual=tests%2Fdelegation%2FDelegationNotTotrait.fir.kt" target="_blank">tests/delegation/DelegationNotTotrait.kt (1)</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

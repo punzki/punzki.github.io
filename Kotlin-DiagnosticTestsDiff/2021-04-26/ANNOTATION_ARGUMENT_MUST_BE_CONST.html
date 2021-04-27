@@ -1,0 +1,79 @@
+<html>
+  <head>
+    <title>Diagnostics diff: ANNOTATION_ARGUMENT_MUST_BE_CONST</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row" id="summary">
+        <h1>ANNOTATION_ARGUMENT_MUST_BE_CONST</h1>
+      </div>
+      <div class="row">
+        <ul>
+          <li><strong>Total: </strong>103</li>
+          <li><strong>Match %: </strong>64.08%</li>
+          <li><a href="#matched"><strong># Matched: </strong>66</a></li>
+          <li><strong># Non-matched: </strong>37</li>
+          <li><a href="#missing"><strong># Missing: </strong>26</a></li>
+          <li><a href="#unexpected"><strong># Unexpected: </strong>11</a></li>
+          <li><a href="#mismatched"><strong># Mismatched: </strong>0</a></li>
+          <li><strong># of Files: </strong>26</li>
+        </ul>
+      </div>
+      <div class="row" id="missing">
+        <h2>Missing (26)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?expected=tests%2Fvarargs%2FassignNonConstSingleArrayElementAsVarargInAnnotationError.kt&amp;actual=tests%2Fvarargs%2FassignNonConstSingleArrayElementAsVarargInAnnotationError.fir.kt" target="_blank">tests/varargs/assignNonConstSingleArrayElementAsVarargInAnnotationError.kt (6)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fscopes%2FclassHeader%2FannotationOnClass.kt&amp;actual=tests%2Fscopes%2FclassHeader%2FannotationOnClass.fir.kt" target="_blank">tests/scopes/classHeader/annotationOnClass.kt (6)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fannotations%2FannotationParameterMustBeConstant%2Fvararg.kt&amp;actual=testsWithStdLib%2Fannotations%2FannotationParameterMustBeConstant%2Fvararg.fir.kt" target="_blank">testsWithStdLib/annotations/annotationParameterMustBeConstant/vararg.kt (5)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fcoroutines%2FsuspendFunctionType%2FmodifierApplicability.kt&amp;actual=testsWithStdLib%2Fcoroutines%2FsuspendFunctionType%2FmodifierApplicability.fir.kt" target="_blank">testsWithStdLib/coroutines/suspendFunctionType/modifierApplicability.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fannotations%2FannotationParameterMustBeConstant%2Farray.kt&amp;actual=testsWithStdLib%2Fannotations%2FannotationParameterMustBeConstant%2Farray.fir.kt" target="_blank">testsWithStdLib/annotations/annotationParameterMustBeConstant/array.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fvarargs%2FassignNonConstSingleArrayElementAsVarargInAnnotation.kt&amp;actual=tests%2Fvarargs%2FassignNonConstSingleArrayElementAsVarargInAnnotation.fir.kt" target="_blank">tests/varargs/assignNonConstSingleArrayElementAsVarargInAnnotation.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FcollectionLiterals%2FcollectionLiteralsWithVarargs.kt&amp;actual=tests%2FcollectionLiterals%2FcollectionLiteralsWithVarargs.fir.kt" target="_blank">tests/collectionLiterals/collectionLiteralsWithVarargs.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fmodifiers%2Fconst%2FfromJava.kt&amp;actual=tests%2Fmodifiers%2Fconst%2FfromJava.fir.kt" target="_blank">tests/modifiers/const/fromJava.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fannotations%2FannotationParameterMustBeConstant%2FjavaProperties.kt&amp;actual=tests%2Fannotations%2FannotationParameterMustBeConstant%2FjavaProperties.fir.kt" target="_blank">tests/annotations/annotationParameterMustBeConstant/javaProperties.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row" id="unexpected">
+        <h2>Unexpected (11)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?expected=tests%2Fvarargs%2FassignNonConstSingleArrayElementAsVarargInAnnotationError.kt&amp;actual=tests%2Fvarargs%2FassignNonConstSingleArrayElementAsVarargInAnnotationError.fir.kt" target="_blank">tests/varargs/assignNonConstSingleArrayElementAsVarargInAnnotationError.kt (4)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fvarargs%2FassignNonConstSingleArrayElementAsVarargInAnnotation.kt&amp;actual=tests%2Fvarargs%2FassignNonConstSingleArrayElementAsVarargInAnnotation.fir.kt" target="_blank">tests/varargs/assignNonConstSingleArrayElementAsVarargInAnnotation.kt (4)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fannotations%2FdontReportWarningAboutChangingExecutionOrderForVararg.kt&amp;actual=tests%2Fannotations%2FdontReportWarningAboutChangingExecutionOrderForVararg.fir.kt" target="_blank">tests/annotations/dontReportWarningAboutChangingExecutionOrderForVararg.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fannotations%2FannotationParameterMustBeConstant%2FenumConst_before.kt&amp;actual=tests%2Fannotations%2FannotationParameterMustBeConstant%2FenumConst_before.fir.kt" target="_blank">tests/annotations/annotationParameterMustBeConstant/enumConst_before.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row" id="matched">
+        <h2>Matched (66)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?expected=nativeTests%2Fthrows.kt&amp;actual=nativeTests%2Fthrows.kt" target="_blank">nativeTests/throws.kt (14)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fannotations%2FannotationParameterMustBeConstant%2Fstrings.kt&amp;actual=tests%2Fannotations%2FannotationParameterMustBeConstant%2Fstrings.kt" target="_blank">tests/annotations/annotationParameterMustBeConstant/strings.kt (10)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fannotations%2FannotationParameterMustBeConstant%2Fsimple.kt&amp;actual=testsWithStdLib%2Fannotations%2FannotationParameterMustBeConstant%2Fsimple.kt" target="_blank">testsWithStdLib/annotations/annotationParameterMustBeConstant/simple.kt (6)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fannotations%2FannotationParameterMustBeConstant%2Farray.kt&amp;actual=testsWithStdLib%2Fannotations%2FannotationParameterMustBeConstant%2Farray.fir.kt" target="_blank">testsWithStdLib/annotations/annotationParameterMustBeConstant/array.kt (5)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fannotations%2FannotationParameterMustBeConstant%2FcompareAndEquals.kt&amp;actual=tests%2Fannotations%2FannotationParameterMustBeConstant%2FcompareAndEquals.kt" target="_blank">tests/annotations/annotationParameterMustBeConstant/compareAndEquals.kt (5)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fannotations%2FannotationParameterMustBeConstant%2Fvararg.kt&amp;actual=testsWithStdLib%2Fannotations%2FannotationParameterMustBeConstant%2Fvararg.fir.kt" target="_blank">testsWithStdLib/annotations/annotationParameterMustBeConstant/vararg.kt (4)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fannotations%2FannotationParameterMustBeConstant%2FkotlinProperties.kt&amp;actual=tests%2Fannotations%2FannotationParameterMustBeConstant%2FkotlinProperties.kt" target="_blank">tests/annotations/annotationParameterMustBeConstant/kotlinProperties.kt (4)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fannotations%2FannotationParameterMustBeConstant%2FjavaProperties.kt&amp;actual=tests%2Fannotations%2FannotationParameterMustBeConstant%2FjavaProperties.fir.kt" target="_blank">tests/annotations/annotationParameterMustBeConstant/javaProperties.kt (4)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fannotations%2FannotationParameterMustBeConstant%2FstandaloneInExpression.kt&amp;actual=tests%2Fannotations%2FannotationParameterMustBeConstant%2FstandaloneInExpression.kt" target="_blank">tests/annotations/annotationParameterMustBeConstant/standaloneInExpression.kt (4)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fannotations%2FMutuallyRecursivelyAnnotatedGlobalFunction.kt&amp;actual=tests%2Fannotations%2FMutuallyRecursivelyAnnotatedGlobalFunction.kt" target="_blank">tests/annotations/MutuallyRecursivelyAnnotatedGlobalFunction.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fannotations%2FkClass%2FkClassInAnnotation.kt&amp;actual=testsWithStdLib%2Fannotations%2FkClass%2FkClassInAnnotation.kt" target="_blank">testsWithStdLib/annotations/kClass/kClassInAnnotation.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fmodifiers%2Fconst%2FfromJava.kt&amp;actual=tests%2Fmodifiers%2Fconst%2FfromJava.fir.kt" target="_blank">tests/modifiers/const/fromJava.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fevaluate%2FdivisionByZero.kt&amp;actual=tests%2Fevaluate%2FdivisionByZero.fir.kt" target="_blank">tests/evaluate/divisionByZero.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fannotations%2FannotationParameterMustBeConstant%2FbooleanLocalVal.kt&amp;actual=tests%2Fannotations%2FannotationParameterMustBeConstant%2FbooleanLocalVal.kt" target="_blank">tests/annotations/annotationParameterMustBeConstant/booleanLocalVal.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fannotations%2FannotationParameterMustBeConstant%2FenumConst_after.kt&amp;actual=tests%2Fannotations%2FannotationParameterMustBeConstant%2FenumConst_after.fir.kt" target="_blank">tests/annotations/annotationParameterMustBeConstant/enumConst_after.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fannotations%2FRecursivelyAnnotatedProperty.kt&amp;actual=tests%2Fannotations%2FRecursivelyAnnotatedProperty.kt" target="_blank">tests/annotations/RecursivelyAnnotatedProperty.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fannotations%2FRecursivelyAnnotatedGlobalFunction.kt&amp;actual=tests%2Fannotations%2FRecursivelyAnnotatedGlobalFunction.kt" target="_blank">tests/annotations/RecursivelyAnnotatedGlobalFunction.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fannotations%2FRecursivelyAnnotatedFunctionParameter.kt&amp;actual=tests%2Fannotations%2FRecursivelyAnnotatedFunctionParameter.kt" target="_blank">tests/annotations/RecursivelyAnnotatedFunctionParameter.kt (1)</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

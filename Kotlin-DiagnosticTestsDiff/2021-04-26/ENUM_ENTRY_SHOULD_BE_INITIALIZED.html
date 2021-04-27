@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <title>Diagnostics diff: ENUM_ENTRY_SHOULD_BE_INITIALIZED</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row" id="summary">
+        <h1>ENUM_ENTRY_SHOULD_BE_INITIALIZED</h1>
+      </div>
+      <div class="row">
+        <ul>
+          <li><strong>Total: </strong>21</li>
+          <li><strong>Match %: </strong>0.00%</li>
+          <li><a href="#matched"><strong># Matched: </strong>0</a></li>
+          <li><strong># Non-matched: </strong>21</li>
+          <li><a href="#missing"><strong># Missing: </strong>19</a></li>
+          <li><a href="#unexpected"><strong># Unexpected: </strong>0</a></li>
+          <li><a href="#mismatched"><strong># Mismatched: </strong>2</a></li>
+          <li><strong># of Files: </strong>4</li>
+        </ul>
+      </div>
+      <div class="row" id="missing">
+        <h2>Missing (19)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?expected=tests%2Fenum%2FsecondaryConstructorWithoutDelegatingToPrimaryOneWithEnabledFeature.kt&amp;actual=tests%2Fenum%2FsecondaryConstructorWithoutDelegatingToPrimaryOneWithEnabledFeature.fir.kt" target="_blank">tests/enum/secondaryConstructorWithoutDelegatingToPrimaryOneWithEnabledFeature.kt (9)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fenum%2FsecondaryConstructorWithoutDelegatingToPrimaryOne.kt&amp;actual=tests%2Fenum%2FsecondaryConstructorWithoutDelegatingToPrimaryOne.fir.kt" target="_blank">tests/enum/secondaryConstructorWithoutDelegatingToPrimaryOne.kt (9)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fenum%2FconstructorWithDefaultParametersOnly.kt&amp;actual=tests%2Fenum%2FconstructorWithDefaultParametersOnly.fir.kt" target="_blank">tests/enum/constructorWithDefaultParametersOnly.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row" id="mismatched">
+        <h2>Mismatched (2)</h2>
+      </div>
+      <div class="row">
+        <h3>ENUM_ENTRY_SHOULD_BE_INITIALIZED -&gt; NO_VALUE_FOR_PARAMETER (2)</h3>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?expected=tests%2Fenum%2FconstructorWithDefaultParametersOnly.kt&amp;actual=tests%2Fenum%2FconstructorWithDefaultParametersOnly.fir.kt" target="_blank">tests/enum/constructorWithDefaultParametersOnly.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FdeclarationChecks%2Fkt1193.kt&amp;actual=tests%2FdeclarationChecks%2Fkt1193.fir.kt" target="_blank">tests/declarationChecks/kt1193.kt (1)</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

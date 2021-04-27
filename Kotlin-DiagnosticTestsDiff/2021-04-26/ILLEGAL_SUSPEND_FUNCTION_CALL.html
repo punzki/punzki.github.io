@@ -1,0 +1,51 @@
+<html>
+  <head>
+    <title>Diagnostics diff: ILLEGAL_SUSPEND_FUNCTION_CALL</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row" id="summary">
+        <h1>ILLEGAL_SUSPEND_FUNCTION_CALL</h1>
+      </div>
+      <div class="row">
+        <ul>
+          <li><strong>Total: </strong>31</li>
+          <li><strong>Match %: </strong>0.00%</li>
+          <li><a href="#matched"><strong># Matched: </strong>0</a></li>
+          <li><strong># Non-matched: </strong>31</li>
+          <li><a href="#missing"><strong># Missing: </strong>31</a></li>
+          <li><a href="#unexpected"><strong># Unexpected: </strong>0</a></li>
+          <li><a href="#mismatched"><strong># Mismatched: </strong>0</a></li>
+          <li><strong># of Files: </strong>17</li>
+        </ul>
+      </div>
+      <div class="row" id="missing">
+        <h2>Missing (31)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fcoroutines%2FillegalSuspendCalls.kt&amp;actual=testsWithStdLib%2Fcoroutines%2FillegalSuspendCalls.fir.kt" target="_blank">testsWithStdLib/coroutines/illegalSuspendCalls.kt (6)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fcoroutines%2FsuspendJavaImplementationFromDifferentClass.kt&amp;actual=testsWithStdLib%2Fcoroutines%2FsuspendJavaImplementationFromDifferentClass.fir.kt" target="_blank">testsWithStdLib/coroutines/suspendJavaImplementationFromDifferentClass.kt (3)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fcoroutines%2FsuspendJavaOverrides.kt&amp;actual=testsWithStdLib%2Fcoroutines%2FsuspendJavaOverrides.fir.kt" target="_blank">testsWithStdLib/coroutines/suspendJavaOverrides.kt (3)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fcoroutines%2FsuspendFunctionType%2FnullableSuspendFunction.kt&amp;actual=testsWithStdLib%2Fcoroutines%2FsuspendFunctionType%2FnullableSuspendFunction.fir.kt" target="_blank">testsWithStdLib/coroutines/suspendFunctionType/nullableSuspendFunction.kt (3)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fcoroutines%2FsuspendCovarianJavaOverride.kt&amp;actual=testsWithStdLib%2Fcoroutines%2FsuspendCovarianJavaOverride.fir.kt" target="_blank">testsWithStdLib/coroutines/suspendCovarianJavaOverride.kt (3)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fcoroutines%2FsuspendFunctionType%2FnoInvokeForSuspendFunction.kt&amp;actual=testsWithStdLib%2Fcoroutines%2FsuspendFunctionType%2FnoInvokeForSuspendFunction.fir.kt" target="_blank">testsWithStdLib/coroutines/suspendFunctionType/noInvokeForSuspendFunction.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fcoroutines%2Finference%2FinferCoroutineTypeInOldVersion.kt&amp;actual=testsWithStdLib%2Fcoroutines%2Finference%2FinferCoroutineTypeInOldVersion.fir.kt" target="_blank">testsWithStdLib/coroutines/inference/inferCoroutineTypeInOldVersion.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fcoroutines%2Finference%2Fkt33542.kt&amp;actual=testsWithStdLib%2Fcoroutines%2Finference%2Fkt33542.fir.kt" target="_blank">testsWithStdLib/coroutines/inference/kt33542.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fcoroutines%2FinlineCrossinline%2FinlineOrdinaryOfCrossinlineSuspend.kt&amp;actual=testsWithStdLib%2Fcoroutines%2FinlineCrossinline%2FinlineOrdinaryOfCrossinlineSuspend.fir.kt" target="_blank">testsWithStdLib/coroutines/inlineCrossinline/inlineOrdinaryOfCrossinlineSuspend.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fcoroutines%2FinlineCrossinline%2FinlineOrdinaryOfCrossinlineOrdinary.kt&amp;actual=testsWithStdLib%2Fcoroutines%2FinlineCrossinline%2FinlineOrdinaryOfCrossinlineOrdinary.fir.kt" target="_blank">testsWithStdLib/coroutines/inlineCrossinline/inlineOrdinaryOfCrossinlineOrdinary.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fcoroutines%2FinlineCrossinline%2FinlineOrdinaryOfNoinlineSuspend.kt&amp;actual=testsWithStdLib%2Fcoroutines%2FinlineCrossinline%2FinlineOrdinaryOfNoinlineSuspend.fir.kt" target="_blank">testsWithStdLib/coroutines/inlineCrossinline/inlineOrdinaryOfNoinlineSuspend.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fcoroutines%2FinlineCrossinline%2FinlineOrdinaryOfSuspend.kt&amp;actual=testsWithStdLib%2Fcoroutines%2FinlineCrossinline%2FinlineOrdinaryOfSuspend.fir.kt" target="_blank">testsWithStdLib/coroutines/inlineCrossinline/inlineOrdinaryOfSuspend.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fcoroutines%2FinlineCrossinline%2FinlineOrdinaryOfNoinlineOrdinary.kt&amp;actual=testsWithStdLib%2Fcoroutines%2FinlineCrossinline%2FinlineOrdinaryOfNoinlineOrdinary.fir.kt" target="_blank">testsWithStdLib/coroutines/inlineCrossinline/inlineOrdinaryOfNoinlineOrdinary.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fcoroutines%2FsuspendFunctionType%2Finvoke.kt&amp;actual=testsWithStdLib%2Fcoroutines%2FsuspendFunctionType%2Finvoke.fir.kt" target="_blank">testsWithStdLib/coroutines/suspendFunctionType/invoke.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=testsWithStdLib%2Fcoroutines%2FillegalSuspendCallsForDelegated.kt&amp;actual=testsWithStdLib%2Fcoroutines%2FillegalSuspendCallsForDelegated.fir.kt" target="_blank">testsWithStdLib/coroutines/illegalSuspendCallsForDelegated.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fcoroutines%2FcallableReference%2FinvokeOutideSuspend.kt&amp;actual=tests%2Fcoroutines%2FcallableReference%2FinvokeOutideSuspend.fir.kt" target="_blank">tests/coroutines/callableReference/invokeOutideSuspend.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FsuspendConversion%2FoverloadResolutionBySuspendModifier.kt&amp;actual=tests%2FsuspendConversion%2FoverloadResolutionBySuspendModifier.fir.kt" target="_blank">tests/suspendConversion/overloadResolutionBySuspendModifier.kt (1)</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

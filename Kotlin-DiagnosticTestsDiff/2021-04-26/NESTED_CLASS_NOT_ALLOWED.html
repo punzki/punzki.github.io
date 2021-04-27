@@ -1,0 +1,91 @@
+<html>
+  <head>
+    <title>Diagnostics diff: NESTED_CLASS_NOT_ALLOWED</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row" id="summary">
+        <h1>NESTED_CLASS_NOT_ALLOWED</h1>
+      </div>
+      <div class="row">
+        <ul>
+          <li><strong>Total: </strong>37</li>
+          <li><strong>Match %: </strong>72.97%</li>
+          <li><a href="#matched"><strong># Matched: </strong>27</a></li>
+          <li><strong># Non-matched: </strong>10</li>
+          <li><a href="#missing"><strong># Missing: </strong>5</a></li>
+          <li><a href="#unexpected"><strong># Unexpected: </strong>2</a></li>
+          <li><a href="#mismatched"><strong># Mismatched: </strong>3</a></li>
+          <li><strong># of Files: </strong>24</li>
+        </ul>
+      </div>
+      <div class="row" id="missing">
+        <h2>Missing (5)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?expected=tests%2Fobjects%2FnestedClassInAnonymousObject.kt&amp;actual=tests%2Fobjects%2FnestedClassInAnonymousObject.fir.kt" target="_blank">tests/objects/nestedClassInAnonymousObject.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fenum%2Finner%2FinsideEnumEntry_after.kt&amp;actual=tests%2Fenum%2Finner%2FinsideEnumEntry_after.fir.kt" target="_blank">tests/enum/inner/insideEnumEntry_after.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Finner%2FinnerClassInEnumEntryClass_lv13.kt&amp;actual=tests%2Finner%2FinnerClassInEnumEntryClass_lv13.fir.kt" target="_blank">tests/inner/innerClassInEnumEntryClass_lv13.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Finner%2Fkt6026.kt&amp;actual=tests%2Finner%2Fkt6026.fir.kt" target="_blank">tests/inner/kt6026.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row" id="unexpected">
+        <h2>Unexpected (2)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?expected=tests%2Finner%2FinnerClassInEnumEntryClass_lv12.kt&amp;actual=tests%2Finner%2FinnerClassInEnumEntryClass_lv12.fir.kt" target="_blank">tests/inner/innerClassInEnumEntryClass_lv12.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Finner%2FinnerClassInEnumEntryClass_lv11.kt&amp;actual=tests%2Finner%2FinnerClassInEnumEntryClass_lv11.fir.kt" target="_blank">tests/inner/innerClassInEnumEntryClass_lv11.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row" id="mismatched">
+        <h2>Mismatched (3)</h2>
+      </div>
+      <div class="row">
+        <h3>NESTED_CLASS_NOT_ALLOWED -&gt; LOCAL_OBJECT_NOT_ALLOWED (2)</h3>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?expected=tests%2Finner%2FinnerClassInEnumEntryClass_lv13.kt&amp;actual=tests%2Finner%2FinnerClassInEnumEntryClass_lv13.fir.kt" target="_blank">tests/inner/innerClassInEnumEntryClass_lv13.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FclassObjects%2FInnerClassAccessThroughEnum_after.kt&amp;actual=tests%2FclassObjects%2FInnerClassAccessThroughEnum_after.fir.kt" target="_blank">tests/classObjects/InnerClassAccessThroughEnum_after.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row">
+        <h3>NESTED_CLASS_NOT_ALLOWED -&gt; LOCAL_INTERFACE_NOT_ALLOWED (1)</h3>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?expected=tests%2FlocalInterfaces.kt&amp;actual=tests%2FlocalInterfaces.fir.kt" target="_blank">tests/localInterfaces.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row" id="matched">
+        <h2>Matched (27)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?expected=tests%2Finner%2FnestedClassNotAllowed_after.kt&amp;actual=tests%2Finner%2FnestedClassNotAllowed_after.kt" target="_blank">tests/inner/nestedClassNotAllowed_after.kt (4)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Finner%2FnestedClassNotAllowed_before.kt&amp;actual=tests%2Finner%2FnestedClassNotAllowed_before.fir.kt" target="_blank">tests/inner/nestedClassNotAllowed_before.kt (3)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Finner%2FnestedObject.kt&amp;actual=tests%2Finner%2FnestedObject.fir.kt" target="_blank">tests/inner/nestedObject.kt (3)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FclassObjects%2FmultipleDissallowedDefaultObjects.kt&amp;actual=tests%2FclassObjects%2FmultipleDissallowedDefaultObjects.fir.kt" target="_blank">tests/classObjects/multipleDissallowedDefaultObjects.kt (3)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Finner%2FinnerClassInEnumEntryClass_lv13.kt&amp;actual=tests%2Finner%2FinnerClassInEnumEntryClass_lv13.fir.kt" target="_blank">tests/inner/innerClassInEnumEntryClass_lv13.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fenum%2FdontCreatePackageTypeForEnumEntry_after.kt&amp;actual=tests%2Fenum%2FdontCreatePackageTypeForEnumEntry_after.kt" target="_blank">tests/enum/dontCreatePackageTypeForEnumEntry_after.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fenum%2Finner%2FinsideInnerClassNotAllowed.kt&amp;actual=tests%2Fenum%2Finner%2FinsideInnerClassNotAllowed.kt" target="_blank">tests/enum/inner/insideInnerClassNotAllowed.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fenum%2Finner%2FtwoEnumsInClassObjectAndInnerClass.kt&amp;actual=tests%2Fenum%2Finner%2FtwoEnumsInClassObjectAndInnerClass.kt" target="_blank">tests/enum/inner/twoEnumsInClassObjectAndInnerClass.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fmodifiers%2Fconst%2Fapplicability.kt&amp;actual=tests%2Fmodifiers%2Fconst%2Fapplicability.fir.kt" target="_blank">tests/modifiers/const/applicability.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Finner%2FenumInInnerClass.kt&amp;actual=tests%2Finner%2FenumInInnerClass.fir.kt" target="_blank">tests/inner/enumInInnerClass.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Finner%2FannotationInInnerClass.kt&amp;actual=tests%2Finner%2FannotationInInnerClass.fir.kt" target="_blank">tests/inner/annotationInInnerClass.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Finner%2FinterfaceInInnerClass.kt&amp;actual=tests%2Finner%2FinterfaceInInnerClass.fir.kt" target="_blank">tests/inner/interfaceInInnerClass.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FlocalClasses%2FlocalAnnotationClassError.kt&amp;actual=tests%2FlocalClasses%2FlocalAnnotationClassError.kt" target="_blank">tests/localClasses/localAnnotationClassError.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FlocalClasses%2FlocalAnnotationClass.kt&amp;actual=tests%2FlocalClasses%2FlocalAnnotationClass.fir.kt" target="_blank">tests/localClasses/localAnnotationClass.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FlocalInterfaces.kt&amp;actual=tests%2FlocalInterfaces.fir.kt" target="_blank">tests/localInterfaces.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FclassObjects%2FInnerClassAccessThroughEnum_after.kt&amp;actual=tests%2FclassObjects%2FInnerClassAccessThroughEnum_after.fir.kt" target="_blank">tests/classObjects/InnerClassAccessThroughEnum_after.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FclassObjects%2FInnerClassClassObject.kt&amp;actual=tests%2FclassObjects%2FInnerClassClassObject.fir.kt" target="_blank">tests/classObjects/InnerClassClassObject.kt (1)</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,88 @@
+<html>
+  <head>
+    <title>Diagnostics diff: FUNCTION_EXPECTED</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row" id="summary">
+        <h1>FUNCTION_EXPECTED</h1>
+      </div>
+      <div class="row">
+        <ul>
+          <li><strong>Total: </strong>37</li>
+          <li><strong>Match %: </strong>0.00%</li>
+          <li><a href="#matched"><strong># Matched: </strong>0</a></li>
+          <li><strong># Non-matched: </strong>37</li>
+          <li><a href="#missing"><strong># Missing: </strong>14</a></li>
+          <li><a href="#unexpected"><strong># Unexpected: </strong>0</a></li>
+          <li><a href="#mismatched"><strong># Mismatched: </strong>23</a></li>
+          <li><strong># of Files: </strong>21</li>
+        </ul>
+      </div>
+      <div class="row" id="missing">
+        <h2>Missing (14)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?expected=tests%2Fresolve%2Finvoke%2Ferrors%2FwrongReceiverForInvokeOnExpression.kt&amp;actual=tests%2Fresolve%2Finvoke%2Ferrors%2FwrongReceiverForInvokeOnExpression.fir.kt" target="_blank">tests/resolve/invoke/errors/wrongReceiverForInvokeOnExpression.kt (5)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fresolve%2Finvoke%2FinvokeOnVariableWithExtensionFunctionType.kt&amp;actual=tests%2Fresolve%2Finvoke%2FinvokeOnVariableWithExtensionFunctionType.fir.kt" target="_blank">tests/resolve/invoke/invokeOnVariableWithExtensionFunctionType.kt (3)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fresolve%2Finvoke%2FwrongInvokeExtension.kt&amp;actual=tests%2Fresolve%2Finvoke%2FwrongInvokeExtension.fir.kt" target="_blank">tests/resolve/invoke/wrongInvokeExtension.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fextensions%2FthrowOutCandidatesByReceiver.kt&amp;actual=tests%2Fextensions%2FthrowOutCandidatesByReceiver.fir.kt" target="_blank">tests/extensions/throwOutCandidatesByReceiver.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fresolve%2FdslMarker%2FthreeImplicitReceivers2.kt&amp;actual=tests%2Fresolve%2FdslMarker%2FthreeImplicitReceivers2.fir.kt" target="_blank">tests/resolve/dslMarker/threeImplicitReceivers2.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fresolve%2FdslMarker%2FthreeImplicitReceivers.kt&amp;actual=tests%2Fresolve%2FdslMarker%2FthreeImplicitReceivers.fir.kt" target="_blank">tests/resolve/dslMarker/threeImplicitReceivers.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FFunctionCalleeExpressions.kt&amp;actual=tests%2FFunctionCalleeExpressions.fir.kt" target="_blank">tests/FunctionCalleeExpressions.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row" id="mismatched">
+        <h2>Mismatched (23)</h2>
+      </div>
+      <div class="row">
+        <h3>FUNCTION_EXPECTED -&gt; UNRESOLVED_REFERENCE (14)</h3>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?expected=tests%2FFunctionCalleeExpressions.kt&amp;actual=tests%2FFunctionCalleeExpressions.fir.kt" target="_blank">tests/FunctionCalleeExpressions.kt (4)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fresolve%2Finvoke%2Ferrors%2FunresolvedInvoke.kt&amp;actual=tests%2Fresolve%2Finvoke%2Ferrors%2FunresolvedInvoke.fir.kt" target="_blank">tests/resolve/invoke/errors/unresolvedInvoke.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fresolve%2Finvoke%2FreportFunctionExpectedOnSimpleUnresolved.kt&amp;actual=tests%2Fresolve%2Finvoke%2FreportFunctionExpectedOnSimpleUnresolved.fir.kt" target="_blank">tests/resolve/invoke/reportFunctionExpectedOnSimpleUnresolved.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fextensions%2Fkt1875.kt&amp;actual=tests%2Fextensions%2Fkt1875.fir.kt" target="_blank">tests/extensions/kt1875.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FincompleteCode%2FsenselessComparisonWithNull.kt&amp;actual=tests%2FincompleteCode%2FsenselessComparisonWithNull.fir.kt" target="_blank">tests/incompleteCode/senselessComparisonWithNull.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FincompleteCode%2Fkt2014.kt&amp;actual=tests%2FincompleteCode%2Fkt2014.fir.kt" target="_blank">tests/incompleteCode/kt2014.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FInvokeAndRecursiveResolve.kt&amp;actual=tests%2FInvokeAndRecursiveResolve.fir.kt" target="_blank">tests/InvokeAndRecursiveResolve.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fresolve%2Finvoke%2Fkt30695_2.kt&amp;actual=tests%2Fresolve%2Finvoke%2Fkt30695_2.fir.kt" target="_blank">tests/resolve/invoke/kt30695_2.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fkt310.kt&amp;actual=tests%2Fkt310.fir.kt" target="_blank">tests/kt310.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row">
+        <h3>FUNCTION_EXPECTED -&gt; INVISIBLE_REFERENCE (6)</h3>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?expected=tests%2Ftypealias%2FtypeAliasConstructor.kt&amp;actual=tests%2Ftypealias%2FtypeAliasConstructor.fir.kt" target="_blank">tests/typealias/typeAliasConstructor.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fresolve%2FnoCandidates%2FresolvedToClassifierWithReceiver.kt&amp;actual=tests%2Fresolve%2FnoCandidates%2FresolvedToClassifierWithReceiver.fir.kt" target="_blank">tests/resolve/noCandidates/resolvedToClassifierWithReceiver.kt (2)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2FincompleteCode%2Fkt2014.kt&amp;actual=tests%2FincompleteCode%2Fkt2014.fir.kt" target="_blank">tests/incompleteCode/kt2014.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fresolve%2FnoCandidates%2FresolvedToClassifier.kt&amp;actual=tests%2Fresolve%2FnoCandidates%2FresolvedToClassifier.fir.kt" target="_blank">tests/resolve/noCandidates/resolvedToClassifier.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row">
+        <h3>FUNCTION_EXPECTED -&gt; INAPPLICABLE_CANDIDATE (2)</h3>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?expected=tests%2Fresolve%2Finvoke%2Ferrors%2FwrongReceiverTypeForInvoke.kt&amp;actual=tests%2Fresolve%2Finvoke%2Ferrors%2FwrongReceiverTypeForInvoke.fir.kt" target="_blank">tests/resolve/invoke/errors/wrongReceiverTypeForInvoke.kt (1)</a></li>
+          <li><a href="viewDiff.html?expected=tests%2Fresolve%2Finvoke%2FreportFunctionExpectedWhenOneInvokeExist.kt&amp;actual=tests%2Fresolve%2Finvoke%2FreportFunctionExpectedWhenOneInvokeExist.fir.kt" target="_blank">tests/resolve/invoke/reportFunctionExpectedWhenOneInvokeExist.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row">
+        <h3>FUNCTION_EXPECTED -&gt; NONE_APPLICABLE (1)</h3>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="viewDiff.html?expected=tests%2Fresolve%2Finvoke%2FfunctionExpectedWhenSeveralInvokesExist.kt&amp;actual=tests%2Fresolve%2Finvoke%2FfunctionExpectedWhenSeveralInvokesExist.fir.kt" target="_blank">tests/resolve/invoke/functionExpectedWhenSeveralInvokesExist.kt (1)</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
