@@ -1,0 +1,102 @@
+<html>
+  <head>
+    <title>Diagnostics diff: tests/multiplatform/modifierApplicability.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <ul>
+          <li><a id="expected" target="_blank"><strong>Expected file: </strong><span id="expected-path"></span></a></li>
+          <li><a id="actual" target="_blank"><strong>Actual file: </strong><span id="actual-path"></span></a></li>
+        </ul>
+      </div>
+      <div class="row">
+        <div id="diff" style="width: 100%"></div>
+      </div>
+    </div>
+    <script type="text/javascript">                        const linkPrefix = 'https://github.com/JetBrains/kotlin/blob/c14a890e7ebd135715e0385755bf1cc9f54bea98/compiler/testData/diagnostics';
+                        const expectedPath = 'tests/multiplatform/modifierApplicability.kt';
+                        const actualPath = 'tests/multiplatform/modifierApplicability.fir.kt';
+                        const expectedLinkUrl = linkPrefix + '/' + expectedPath;
+                        const actualLinkUrl = linkPrefix + '/' + actualPath;
+                        $('#expected').attr('href', expectedLinkUrl);
+                        $('#actual').attr('href', actualLinkUrl);
+                        $('#expected-path').text(expectedPath);
+                        $('#actual-path').text(actualPath);
+
+                        const diffString = `--- tests/multiplatform/modifierApplicability.kt
++++ tests/multiplatform/modifierApplicability.fir.kt
+@@ -1,35 +1,35 @@
+ // !LANGUAGE: +MultiPlatformProjects
+ // MODULE: m1-common
+ // FILE: common.kt
+ 
+-<!WRONG_MODIFIER_TARGET!>expect<!> typealias Foo = String
++expect typealias Foo = String
+ 
+-class Outer <!WRONG_MODIFIER_TARGET!>expect<!> constructor() {
+-    <!WRONG_MODIFIER_TARGET!>expect<!> class Nested
++class Outer expect constructor() {
++    expect class Nested
+ 
+-    <!WRONG_MODIFIER_TARGET!>expect<!> init {}
++    expect init {}
+ 
+-    <!NON_ABSTRACT_FUNCTION_WITH_NO_BODY!><!WRONG_MODIFIER_TARGET!>expect<!> fun foo()<!>
+-    <!MUST_BE_INITIALIZED_OR_BE_ABSTRACT!><!WRONG_MODIFIER_TARGET!>expect<!> val bar: Int<!>
++    <!NON_ABSTRACT_FUNCTION_WITH_NO_BODY!>expect fun foo()<!>
++    expect val bar: Int
+ }
+ 
+ fun foo() {
+-    <!NON_MEMBER_FUNCTION_NO_BODY!><!WRONG_MODIFIER_TARGET!>expect<!> fun localFun()<!>
+-    <!WRONG_MODIFIER_TARGET!>expect<!> var x = 42
+-    <!WRONG_MODIFIER_TARGET!>expect<!> class Bar
++    expect fun localFun()
++    expect var x = 42
++    expect class Bar
+ }
+ 
+ // MODULE: m2-jvm
+ // FILE: jvm.kt
+ 
+-class Outer <!ACTUAL_WITHOUT_EXPECT!>actual constructor()<!> {
+-    actual class <!ACTUAL_WITHOUT_EXPECT!>Nested<!>
++class Outer actual constructor() {
++    actual class Nested
+ 
+-    <!WRONG_MODIFIER_TARGET!>actual<!> init {}
++    actual init {}
+ }
+ 
+ fun foo() {
+-    <!WRONG_MODIFIER_TARGET!>actual<!> fun localFun() {}
+-    <!WRONG_MODIFIER_TARGET!>actual<!> var x = 42
+-    <!WRONG_MODIFIER_TARGET!>actual<!> class <!ACTUAL_WITHOUT_EXPECT!>Bar<!>
++    actual fun localFun() {}
++    actual var x = 42
++    actual class Bar
+ }`;
+                        const targetElement = $('#diff')[0];
+                        const configuration = {
+                            drawFileList: false,
+                            fileListToggle: false,
+                            fileListStartVisible: false,
+                            fileContentToggle: false,
+                            matching: 'lines',
+                            outputFormat: 'side-by-side',
+                            synchronisedScroll: true,
+                            highlight: true,
+                            renderNothingWhenEmpty: false,
+                        };
+                        const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                        diff2htmlUi.draw();
+                        diff2htmlUi.highlightCode();</script>
+  </body>
+</html>

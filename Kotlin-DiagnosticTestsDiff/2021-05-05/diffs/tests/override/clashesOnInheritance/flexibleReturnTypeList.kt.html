@@ -1,0 +1,96 @@
+<html>
+  <head>
+    <title>Diagnostics diff: tests/override/clashesOnInheritance/flexibleReturnTypeList.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <ul>
+          <li><a id="expected" target="_blank"><strong>Expected file: </strong><span id="expected-path"></span></a></li>
+          <li><a id="actual" target="_blank"><strong>Actual file: </strong><span id="actual-path"></span></a></li>
+        </ul>
+      </div>
+      <div class="row">
+        <div id="diff" style="width: 100%"></div>
+      </div>
+    </div>
+    <script type="text/javascript">                        const linkPrefix = 'https://github.com/JetBrains/kotlin/blob/c14a890e7ebd135715e0385755bf1cc9f54bea98/compiler/testData/diagnostics';
+                        const expectedPath = 'tests/override/clashesOnInheritance/flexibleReturnTypeList.kt';
+                        const actualPath = 'tests/override/clashesOnInheritance/flexibleReturnTypeList.fir.kt';
+                        const expectedLinkUrl = linkPrefix + '/' + expectedPath;
+                        const actualLinkUrl = linkPrefix + '/' + actualPath;
+                        $('#expected').attr('href', expectedLinkUrl);
+                        $('#actual').attr('href', actualLinkUrl);
+                        $('#expected-path').text(expectedPath);
+                        $('#actual-path').text(actualPath);
+
+                        const diffString = `--- tests/override/clashesOnInheritance/flexibleReturnTypeList.kt
++++ tests/override/clashesOnInheritance/flexibleReturnTypeList.fir.kt
+@@ -1,43 +1,43 @@
+ // FILE: J.java
+ public interface J {
+     java.util.List<String> foo();
+ }
+ 
+ // FILE: K.kt
+ interface ILNS {
+     fun foo(): List<String?>
+ }
+ 
+ interface IMLS {
+     fun foo(): MutableList<String>
+ }
+ 
+ interface IMLNS {
+     fun foo(): MutableList<String?>
+ }
+ 
+ interface ILS {
+     fun foo(): List<String>
+ }
+ 
+ interface Test1 : ILNS, J
+ interface Test2 : J, ILNS
+ 
+ interface Test3 : IMLS, J
+ interface Test4 : J, IMLS
+ 
+ interface Test5 : ILNS, IMLS, J
+ interface Test6 : ILNS, J, IMLS
+ interface Test7 : J, ILNS, IMLS
+ 
+ // Return types of ILS::foo and IMLNS::foo are incompatible themselves.
+ // However, return type of J::foo is (Mutable)List<String!>!,
+ // which is subtype of both List<String> and MutalbeList<String?>.
+ // Thus, inheriting from J, IMLNS, and ILS is Ok,
+ // but inheriting from IMLNS and ILS is not.
+ 
+ interface Test8 : J, IMLNS, ILS
+ interface Test9 : IMLNS, J, ILS
+ interface Test10 : IMLNS, ILS, J
+ 
+-<!RETURN_TYPE_MISMATCH_ON_INHERITANCE!>interface Test11<!> : IMLNS, ILS
++interface Test11 : IMLNS, ILS`;
+                        const targetElement = $('#diff')[0];
+                        const configuration = {
+                            drawFileList: false,
+                            fileListToggle: false,
+                            fileListStartVisible: false,
+                            fileContentToggle: false,
+                            matching: 'lines',
+                            outputFormat: 'side-by-side',
+                            synchronisedScroll: true,
+                            highlight: true,
+                            renderNothingWhenEmpty: false,
+                        };
+                        const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                        diff2htmlUi.draw();
+                        diff2htmlUi.highlightCode();</script>
+  </body>
+</html>

@@ -1,0 +1,89 @@
+<html>
+  <head>
+    <title>Diagnostics diff: FUNCTION_EXPECTED</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row sticky-top" style="background: white" id="summary">
+        <div class="d-inline-flex align-items-baseline">
+          <h1 class="mr-2">FUNCTION_EXPECTED</h1>
+<a href="index.html">(back to diagnostic list)</a></div>
+      </div>
+      <div class="row">
+        <ul>
+          <li><strong>Total: </strong>36</li>
+          <li><strong>Match %: </strong>0.00%</li>
+          <li><a href="#matched"><strong># Matched: </strong>0</a></li>
+          <li><strong># Non-matched: </strong>36</li>
+          <li><a href="#missing"><strong># Missing: </strong>14</a></li>
+          <li><a href="#unexpected"><strong># Unexpected: </strong>0</a></li>
+          <li><a href="#mismatched"><strong># Mismatched: </strong>22</a></li>
+          <li><strong># of Files: </strong>20</li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="missing">
+        <h2>Missing (14)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diffs/tests/resolve/invoke/errors/wrongReceiverForInvokeOnExpression.kt.html" target="_blank">tests/resolve/invoke/errors/wrongReceiverForInvokeOnExpression.kt (5)</a></li>
+          <li><a href="diffs/tests/resolve/invoke/invokeOnVariableWithExtensionFunctionType.kt.html" target="_blank">tests/resolve/invoke/invokeOnVariableWithExtensionFunctionType.kt (3)</a></li>
+          <li><a href="diffs/tests/resolve/invoke/wrongInvokeExtension.kt.html" target="_blank">tests/resolve/invoke/wrongInvokeExtension.kt (2)</a></li>
+          <li><a href="diffs/tests/FunctionCalleeExpressions.kt.html" target="_blank">tests/FunctionCalleeExpressions.kt (1)</a></li>
+          <li><a href="diffs/tests/extensions/throwOutCandidatesByReceiver.kt.html" target="_blank">tests/extensions/throwOutCandidatesByReceiver.kt (1)</a></li>
+          <li><a href="diffs/tests/resolve/dslMarker/threeImplicitReceivers.kt.html" target="_blank">tests/resolve/dslMarker/threeImplicitReceivers.kt (1)</a></li>
+          <li><a href="diffs/tests/resolve/dslMarker/threeImplicitReceivers2.kt.html" target="_blank">tests/resolve/dslMarker/threeImplicitReceivers2.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="mismatched">
+        <h2>Mismatched (22)</h2>
+      </div>
+      <div class="row sticky-top" style="top: 5.5em; background: white">
+        <h3>FUNCTION_EXPECTED -&gt; UNRESOLVED_REFERENCE (13)</h3>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diffs/tests/FunctionCalleeExpressions.kt.html" target="_blank">tests/FunctionCalleeExpressions.kt (4)</a></li>
+          <li><a href="diffs/tests/resolve/invoke/errors/unresolvedInvoke.kt.html" target="_blank">tests/resolve/invoke/errors/unresolvedInvoke.kt (2)</a></li>
+          <li><a href="diffs/tests/resolve/invoke/reportFunctionExpectedOnSimpleUnresolved.kt.html" target="_blank">tests/resolve/invoke/reportFunctionExpectedOnSimpleUnresolved.kt (2)</a></li>
+          <li><a href="diffs/tests/extensions/kt1875.kt.html" target="_blank">tests/extensions/kt1875.kt (1)</a></li>
+          <li><a href="diffs/tests/incompleteCode/kt2014.kt.html" target="_blank">tests/incompleteCode/kt2014.kt (1)</a></li>
+          <li><a href="diffs/tests/incompleteCode/senselessComparisonWithNull.kt.html" target="_blank">tests/incompleteCode/senselessComparisonWithNull.kt (1)</a></li>
+          <li><a href="diffs/tests/kt310.kt.html" target="_blank">tests/kt310.kt (1)</a></li>
+          <li><a href="diffs/tests/resolve/invoke/kt30695_2.kt.html" target="_blank">tests/resolve/invoke/kt30695_2.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 5.5em; background: white">
+        <h3>FUNCTION_EXPECTED -&gt; INVISIBLE_REFERENCE (6)</h3>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diffs/tests/resolve/noCandidates/resolvedToClassifierWithReceiver.kt.html" target="_blank">tests/resolve/noCandidates/resolvedToClassifierWithReceiver.kt (2)</a></li>
+          <li><a href="diffs/tests/typealias/typeAliasConstructor.kt.html" target="_blank">tests/typealias/typeAliasConstructor.kt (2)</a></li>
+          <li><a href="diffs/tests/incompleteCode/kt2014.kt.html" target="_blank">tests/incompleteCode/kt2014.kt (1)</a></li>
+          <li><a href="diffs/tests/resolve/noCandidates/resolvedToClassifier.kt.html" target="_blank">tests/resolve/noCandidates/resolvedToClassifier.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 5.5em; background: white">
+        <h3>FUNCTION_EXPECTED -&gt; INAPPLICABLE_CANDIDATE (2)</h3>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diffs/tests/resolve/invoke/errors/wrongReceiverTypeForInvoke.kt.html" target="_blank">tests/resolve/invoke/errors/wrongReceiverTypeForInvoke.kt (1)</a></li>
+          <li><a href="diffs/tests/resolve/invoke/reportFunctionExpectedWhenOneInvokeExist.kt.html" target="_blank">tests/resolve/invoke/reportFunctionExpectedWhenOneInvokeExist.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 5.5em; background: white">
+        <h3>FUNCTION_EXPECTED -&gt; NONE_APPLICABLE (1)</h3>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diffs/tests/resolve/invoke/functionExpectedWhenSeveralInvokesExist.kt.html" target="_blank">tests/resolve/invoke/functionExpectedWhenSeveralInvokesExist.kt (1)</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

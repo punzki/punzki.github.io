@@ -1,0 +1,112 @@
+<html>
+  <head>
+    <title>Diagnostics diff: VAL_REASSIGNMENT</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row sticky-top" style="background: white" id="summary">
+        <div class="d-inline-flex align-items-baseline">
+          <h1 class="mr-2">VAL_REASSIGNMENT</h1>
+<a href="index.html">(back to diagnostic list)</a></div>
+      </div>
+      <div class="row">
+        <ul>
+          <li><strong>Total: </strong>128</li>
+          <li><strong>Match %: </strong>46.88%</li>
+          <li><a href="#matched"><strong># Matched: </strong>60</a></li>
+          <li><strong># Non-matched: </strong>68</li>
+          <li><a href="#missing"><strong># Missing: </strong>55</a></li>
+          <li><a href="#unexpected"><strong># Unexpected: </strong>13</a></li>
+          <li><a href="#mismatched"><strong># Mismatched: </strong>0</a></li>
+          <li><strong># of Files: </strong>50</li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="missing">
+        <h2>Missing (55)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diffs/tests/controlFlowAnalysis/UninitializedOrReassignedVariables.kt.html" target="_blank">tests/controlFlowAnalysis/UninitializedOrReassignedVariables.kt (13)</a></li>
+          <li><a href="diffs/tests/LValueAssignment.kt.html" target="_blank">tests/LValueAssignment.kt (5)</a></li>
+          <li><a href="diffs/tests/syntheticExtensions/javaProperties/FalseSetters.kt.html" target="_blank">tests/syntheticExtensions/javaProperties/FalseSetters.kt (5)</a></li>
+          <li><a href="diffs/tests/controlFlowAnalysis/propertiesInitWithOtherInstanceInner.kt.html" target="_blank">tests/controlFlowAnalysis/propertiesInitWithOtherInstanceInner.kt (4)</a></li>
+          <li><a href="diffs/tests/controlFlowAnalysis/propertiesInitWithOtherInstance.kt.html" target="_blank">tests/controlFlowAnalysis/propertiesInitWithOtherInstance.kt (3)</a></li>
+          <li><a href="diffs/tests/controlFlowAnalysis/propertiesInitWithOtherInstanceThisLabel.kt.html" target="_blank">tests/controlFlowAnalysis/propertiesInitWithOtherInstanceThisLabel.kt (3)</a></li>
+          <li><a href="diffs/tests/controlFlowAnalysis/reassignmentInTryCatchWithJumps.kt.html" target="_blank">tests/controlFlowAnalysis/reassignmentInTryCatchWithJumps.kt (3)</a></li>
+          <li><a href="diffs/tests/controlFlowAnalysis/initializationInLocalClass.kt.html" target="_blank">tests/controlFlowAnalysis/initializationInLocalClass.kt (2)</a></li>
+          <li><a href="diffs/tests/controlFlowAnalysis/kt607.kt.html" target="_blank">tests/controlFlowAnalysis/kt607.kt (2)</a></li>
+          <li><a href="diffs/tests/secondaryConstructors/propertyInitializationWithPrimary.kt.html" target="_blank">tests/secondaryConstructors/propertyInitializationWithPrimary.kt (2)</a></li>
+          <li><a href="diffs/tests/secondaryConstructors/propertyInitializationWithoutPrimary.kt.html" target="_blank">tests/secondaryConstructors/propertyInitializationWithoutPrimary.kt (2)</a></li>
+          <li><a href="diffs/tests/controlFlowAnalysis/assignmentInLocalsInConstructor.kt.html" target="_blank">tests/controlFlowAnalysis/assignmentInLocalsInConstructor.kt (1)</a></li>
+          <li><a href="diffs/tests/controlFlowAnalysis/initializationInLocalViaExplicitThis_after.kt.html" target="_blank">tests/controlFlowAnalysis/initializationInLocalViaExplicitThis_after.kt (1)</a></li>
+          <li><a href="diffs/tests/controlFlowAnalysis/kt6788.kt.html" target="_blank">tests/controlFlowAnalysis/kt6788.kt (1)</a></li>
+          <li><a href="diffs/tests/regressions/kt443.kt.html" target="_blank">tests/regressions/kt443.kt (1)</a></li>
+          <li><a href="diffs/tests/suppress/allWarnings/suppressWarningsOnClass.kt.html" target="_blank">tests/suppress/allWarnings/suppressWarningsOnClass.kt (1)</a></li>
+          <li><a href="diffs/tests/syntheticExtensions/javaProperties/Getter.kt.html" target="_blank">tests/syntheticExtensions/javaProperties/Getter.kt (1)</a></li>
+          <li><a href="diffs/tests/syntheticExtensions/javaProperties/KotlinOverridesJava2.kt.html" target="_blank">tests/syntheticExtensions/javaProperties/KotlinOverridesJava2.kt (1)</a></li>
+          <li><a href="diffs/tests/visibility/invisibleSetterOfJavaClass.kt.html" target="_blank">tests/visibility/invisibleSetterOfJavaClass.kt (1)</a></li>
+          <li><a href="diffs/tests/visibility/invisibleSetterOfJavaClassWithDisabledFeature.kt.html" target="_blank">tests/visibility/invisibleSetterOfJavaClassWithDisabledFeature.kt (1)</a></li>
+          <li><a href="diffs/tests/visibility/lackOfInvisibleSetterOfJavaClassInSamePackage.kt.html" target="_blank">tests/visibility/lackOfInvisibleSetterOfJavaClassInSamePackage.kt (1)</a></li>
+          <li><a href="diffs/testsWithStdLib/contracts/controlflow/initialization/exactlyOnce/valIndefiniteInitialization.kt.html" target="_blank">testsWithStdLib/contracts/controlflow/initialization/exactlyOnce/valIndefiniteInitialization.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="unexpected">
+        <h2>Unexpected (13)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diffs/tests/controlFlowAnalysis/UninitializedOrReassignedVariables.kt.html" target="_blank">tests/controlFlowAnalysis/UninitializedOrReassignedVariables.kt (2)</a></li>
+          <li><a href="diffs/tests/controlFlowAnalysis/assignedInTryWithCatch.kt.html" target="_blank">tests/controlFlowAnalysis/assignedInTryWithCatch.kt (2)</a></li>
+          <li><a href="diffs/testsWithStdLib/contracts/controlflow/flowInlining/nestedTryCatchFinally.kt.html" target="_blank">testsWithStdLib/contracts/controlflow/flowInlining/nestedTryCatchFinally.kt (2)</a></li>
+          <li><a href="diffs/tests/LValueAssignment.kt.html" target="_blank">tests/LValueAssignment.kt (1)</a></li>
+          <li><a href="diffs/tests/reassignment/afterfor.kt.html" target="_blank">tests/reassignment/afterfor.kt (1)</a></li>
+          <li><a href="diffs/tests/when/ExhaustiveValOverConditionalInit.kt.html" target="_blank">tests/when/ExhaustiveValOverConditionalInit.kt (1)</a></li>
+          <li><a href="diffs/testsWithStdLib/contracts/controlflow/flowInlining/breakContinuesInInlinedLambda.kt.html" target="_blank">testsWithStdLib/contracts/controlflow/flowInlining/breakContinuesInInlinedLambda.kt (1)</a></li>
+          <li><a href="diffs/testsWithStdLib/contracts/controlflow/flowInlining/labeledReturns.kt.html" target="_blank">testsWithStdLib/contracts/controlflow/flowInlining/labeledReturns.kt (1)</a></li>
+          <li><a href="diffs/testsWithStdLib/contracts/controlflow/flowInlining/nestedTryCatchs.kt.html" target="_blank">testsWithStdLib/contracts/controlflow/flowInlining/nestedTryCatchs.kt (1)</a></li>
+          <li><a href="diffs/testsWithStdLib/contracts/controlflow/flowInlining/tryCatchFinally.kt.html" target="_blank">testsWithStdLib/contracts/controlflow/flowInlining/tryCatchFinally.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="matched">
+        <h2>Matched (60)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diffs/tests/controlFlowAnalysis/UninitializedOrReassignedVariables.kt.html" target="_blank">tests/controlFlowAnalysis/UninitializedOrReassignedVariables.kt (7)</a></li>
+          <li><a href="diffs/tests/controlFlowAnalysis/reassignmentInTryCatch.kt.html" target="_blank">tests/controlFlowAnalysis/reassignmentInTryCatch.kt (6)</a></li>
+          <li><a href="diffs/testsWithStdLib/contracts/controlflow/initialization/atLeastOnce/valDefiniteReassignment.kt.html" target="_blank">testsWithStdLib/contracts/controlflow/initialization/atLeastOnce/valDefiniteReassignment.kt (5)</a></li>
+          <li><a href="diffs/tests/controlFlowAnalysis/assignedInTryWithCatch.kt.html" target="_blank">tests/controlFlowAnalysis/assignedInTryWithCatch.kt (4)</a></li>
+          <li><a href="diffs/tests/controlFlowAnalysis/fieldInitialization.kt.html" target="_blank">tests/controlFlowAnalysis/fieldInitialization.kt (4)</a></li>
+          <li><a href="diffs/testsWithJsStdLib/dynamicTypes/extensionVals.kt.html" target="_blank">testsWithJsStdLib/dynamicTypes/extensionVals.kt (3)</a></li>
+          <li><a href="diffs/tests/LValueAssignment.kt.html" target="_blank">tests/LValueAssignment.kt (2)</a></li>
+          <li><a href="diffs/tests/controlFlowAnalysis/assignedInTryWithoutCatch.kt.html" target="_blank">tests/controlFlowAnalysis/assignedInTryWithoutCatch.kt (2)</a></li>
+          <li><a href="diffs/tests/controlFlowAnalysis/doWhileAssignment.kt.html" target="_blank">tests/controlFlowAnalysis/doWhileAssignment.kt (2)</a></li>
+          <li><a href="diffs/tests/when/ExhaustiveValOverConditionalInit.kt.html" target="_blank">tests/when/ExhaustiveValOverConditionalInit.kt (2)</a></li>
+          <li><a href="diffs/testsWithStdLib/contracts/controlflow/flowInlining/tryCatch.kt.html" target="_blank">testsWithStdLib/contracts/controlflow/flowInlining/tryCatch.kt (2)</a></li>
+          <li><a href="diffs/testsWithStdLib/contracts/controlflow/initialization/exactlyOnce/valDefiniteReassignment.kt.html" target="_blank">testsWithStdLib/contracts/controlflow/initialization/exactlyOnce/valDefiniteReassignment.kt (2)</a></li>
+          <li><a href="diffs/testsWithStdLib/contracts/controlflow/initialization/exactlyOnce/valIndefiniteInitialization.kt.html" target="_blank">testsWithStdLib/contracts/controlflow/initialization/exactlyOnce/valIndefiniteInitialization.kt (2)</a></li>
+          <li><a href="diffs/tests/controlFlowAnalysis/kt1571.kt.html" target="_blank">tests/controlFlowAnalysis/kt1571.kt (1)</a></li>
+          <li><a href="diffs/tests/declarationChecks/DataFlowInMultiDeclInFor.kt.html" target="_blank">tests/declarationChecks/DataFlowInMultiDeclInFor.kt (1)</a></li>
+          <li><a href="diffs/tests/reassignment/afterfor.kt.html" target="_blank">tests/reassignment/afterfor.kt (1)</a></li>
+          <li><a href="diffs/tests/reassignment/dowhile.kt.html" target="_blank">tests/reassignment/dowhile.kt (1)</a></li>
+          <li><a href="diffs/tests/reassignment/else.kt.html" target="_blank">tests/reassignment/else.kt (1)</a></li>
+          <li><a href="diffs/tests/reassignment/foronly.kt.html" target="_blank">tests/reassignment/foronly.kt (1)</a></li>
+          <li><a href="diffs/tests/reassignment/if.kt.html" target="_blank">tests/reassignment/if.kt (1)</a></li>
+          <li><a href="diffs/tests/reassignment/ifelse.kt.html" target="_blank">tests/reassignment/ifelse.kt (1)</a></li>
+          <li><a href="diffs/tests/reassignment/when.kt.html" target="_blank">tests/reassignment/when.kt (1)</a></li>
+          <li><a href="diffs/tests/reassignment/whiletrue.kt.html" target="_blank">tests/reassignment/whiletrue.kt (1)</a></li>
+          <li><a href="diffs/tests/when/withSubjectVariable/reassignmentToWhenSubjectVariable.kt.html" target="_blank">tests/when/withSubjectVariable/reassignmentToWhenSubjectVariable.kt (1)</a></li>
+          <li><a href="diffs/testsWithStdLib/contracts/controlflow/flowInlining/breakContinuesInInlinedLambda.kt.html" target="_blank">testsWithStdLib/contracts/controlflow/flowInlining/breakContinuesInInlinedLambda.kt (1)</a></li>
+          <li><a href="diffs/testsWithStdLib/contracts/controlflow/flowInlining/nestedTryCatchFinally.kt.html" target="_blank">testsWithStdLib/contracts/controlflow/flowInlining/nestedTryCatchFinally.kt (1)</a></li>
+          <li><a href="diffs/testsWithStdLib/contracts/controlflow/flowInlining/nestedTryCatchs.kt.html" target="_blank">testsWithStdLib/contracts/controlflow/flowInlining/nestedTryCatchs.kt (1)</a></li>
+          <li><a href="diffs/testsWithStdLib/contracts/controlflow/flowInlining/tryCatchFinally.kt.html" target="_blank">testsWithStdLib/contracts/controlflow/flowInlining/tryCatchFinally.kt (1)</a></li>
+          <li><a href="diffs/testsWithStdLib/contracts/controlflow/initialization/unknown/unknownInvocations.kt.html" target="_blank">testsWithStdLib/contracts/controlflow/initialization/unknown/unknownInvocations.kt (1)</a></li>
+          <li><a href="diffs/testsWithStdLib/contracts/fromStdlib/fromStandardKt.kt.html" target="_blank">testsWithStdLib/contracts/fromStdlib/fromStandardKt.kt (1)</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

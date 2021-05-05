@@ -1,0 +1,83 @@
+<html>
+  <head>
+    <title>Diagnostics diff: NO_COMPANION_OBJECT</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row sticky-top" style="background: white" id="summary">
+        <div class="d-inline-flex align-items-baseline">
+          <h1 class="mr-2">NO_COMPANION_OBJECT</h1>
+<a href="index.html">(back to diagnostic list)</a></div>
+      </div>
+      <div class="row">
+        <ul>
+          <li><strong>Total: </strong>52</li>
+          <li><strong>Match %: </strong>57.69%</li>
+          <li><a href="#matched"><strong># Matched: </strong>30</a></li>
+          <li><strong># Non-matched: </strong>22</li>
+          <li><a href="#missing"><strong># Missing: </strong>18</a></li>
+          <li><a href="#unexpected"><strong># Unexpected: </strong>3</a></li>
+          <li><a href="#mismatched"><strong># Mismatched: </strong>1</a></li>
+          <li><strong># of Files: </strong>20</li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="missing">
+        <h2>Missing (18)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diffs/tests/inner/nestedClassAccessedViaInstanceReference.kt.html" target="_blank">tests/inner/nestedClassAccessedViaInstanceReference.kt (9)</a></li>
+          <li><a href="diffs/tests/resolve/noCandidates/resolvedToClassifierWithReceiver.kt.html" target="_blank">tests/resolve/noCandidates/resolvedToClassifierWithReceiver.kt (2)</a></li>
+          <li><a href="diffs/tests/PackageInExpressionPosition.kt.html" target="_blank">tests/PackageInExpressionPosition.kt (1)</a></li>
+          <li><a href="diffs/tests/classObjects/InnerClassAccessThroughClassObject.kt.html" target="_blank">tests/classObjects/InnerClassAccessThroughClassObject.kt (1)</a></li>
+          <li><a href="diffs/tests/incompleteCode/diagnosticWithSyntaxError/arrayExpression.kt.html" target="_blank">tests/incompleteCode/diagnosticWithSyntaxError/arrayExpression.kt (1)</a></li>
+          <li><a href="diffs/tests/sourceCompatibility/apiVersion/typealiasesAsCompanionObjects.kt.html" target="_blank">tests/sourceCompatibility/apiVersion/typealiasesAsCompanionObjects.kt (1)</a></li>
+          <li><a href="diffs/tests/typealias/kt14641.kt.html" target="_blank">tests/typealias/kt14641.kt (1)</a></li>
+          <li><a href="diffs/tests/typealias/throwJLException.kt.html" target="_blank">tests/typealias/throwJLException.kt (1)</a></li>
+          <li><a href="diffs/tests/typealias/typeAliasConstructorForInterface.kt.html" target="_blank">tests/typealias/typeAliasConstructorForInterface.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="unexpected">
+        <h2>Unexpected (3)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diffs/tests/typealias/privateInFile.kt.html" target="_blank">tests/typealias/privateInFile.kt (2)</a></li>
+          <li><a href="diffs/testsWithStdLib/inference/kt1558.kt.html" target="_blank">testsWithStdLib/inference/kt1558.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="mismatched">
+        <h2>Mismatched (1)</h2>
+      </div>
+      <div class="row sticky-top" style="top: 5.5em; background: white">
+        <h3>RESOLUTION_TO_CLASSIFIER -&gt; NO_COMPANION_OBJECT (1)</h3>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diffs/tests/ResolveToJava.kt.html" target="_blank">tests/ResolveToJava.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="matched">
+        <h2>Matched (30)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diffs/tests/PackageInExpressionPosition.kt.html" target="_blank">tests/PackageInExpressionPosition.kt (13)</a></li>
+          <li><a href="diffs/tests/resolve/noCandidates/resolvedToClassifierWithReceiver.kt.html" target="_blank">tests/resolve/noCandidates/resolvedToClassifierWithReceiver.kt (4)</a></li>
+          <li><a href="diffs/tests/SafeCallOnFakePackage.kt.html" target="_blank">tests/SafeCallOnFakePackage.kt (2)</a></li>
+          <li><a href="diffs/tests/resolve/constructorVsCompanion.kt.html" target="_blank">tests/resolve/constructorVsCompanion.kt (2)</a></li>
+          <li><a href="diffs/tests/resolve/noCandidates/resolvedToClassifier.kt.html" target="_blank">tests/resolve/noCandidates/resolvedToClassifier.kt (2)</a></li>
+          <li><a href="diffs/testsWithStdLib/resolve/javaStaticMembers.kt.html" target="_blank">testsWithStdLib/resolve/javaStaticMembers.kt (2)</a></li>
+          <li><a href="diffs/tests/classObjects/ClassObjects.kt.html" target="_blank">tests/classObjects/ClassObjects.kt (1)</a></li>
+          <li><a href="diffs/tests/classObjects/InnerClassAccessThroughClassObject.kt.html" target="_blank">tests/classObjects/InnerClassAccessThroughClassObject.kt (1)</a></li>
+          <li><a href="diffs/tests/regressions/kt2956.kt.html" target="_blank">tests/regressions/kt2956.kt (1)</a></li>
+          <li><a href="diffs/tests/sealed/TreeWhenFunctionalNoIs.kt.html" target="_blank">tests/sealed/TreeWhenFunctionalNoIs.kt (1)</a></li>
+          <li><a href="diffs/testsWithStdLib/coroutines/inference/suspendCallsWithErrors.kt.html" target="_blank">testsWithStdLib/coroutines/inference/suspendCallsWithErrors.kt (1)</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

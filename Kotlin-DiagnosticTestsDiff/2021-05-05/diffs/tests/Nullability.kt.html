@@ -1,0 +1,407 @@
+<html>
+  <head>
+    <title>Diagnostics diff: tests/Nullability.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <ul>
+          <li><a id="expected" target="_blank"><strong>Expected file: </strong><span id="expected-path"></span></a></li>
+          <li><a id="actual" target="_blank"><strong>Actual file: </strong><span id="actual-path"></span></a></li>
+        </ul>
+      </div>
+      <div class="row">
+        <div id="diff" style="width: 100%"></div>
+      </div>
+    </div>
+    <script type="text/javascript">                        const linkPrefix = 'https://github.com/JetBrains/kotlin/blob/c14a890e7ebd135715e0385755bf1cc9f54bea98/compiler/testData/diagnostics';
+                        const expectedPath = 'tests/Nullability.kt';
+                        const actualPath = 'tests/Nullability.fir.kt';
+                        const expectedLinkUrl = linkPrefix + '/' + expectedPath;
+                        const actualLinkUrl = linkPrefix + '/' + actualPath;
+                        $('#expected').attr('href', expectedLinkUrl);
+                        $('#actual').attr('href', actualLinkUrl);
+                        $('#expected-path').text(expectedPath);
+                        $('#actual-path').text(actualPath);
+
+                        const diffString = `--- tests/Nullability.kt
++++ tests/Nullability.fir.kt
+@@ -1,296 +1,296 @@
+ // !WITH_NEW_INFERENCE
+ // FULL_JDK
+ 
+ fun test() {
+   val a : Int? = 0
+   if (a != null) {
+-    <!DEBUG_INFO_SMARTCAST!>a<!>.plus(1)
++    a.plus(1)
+   }
+   else {
+-    <!DEBUG_INFO_CONSTANT!>a<!>?.plus(1)
++    a?.plus(1)
+   }
+ 
+   val out : java.io.PrintStream? = null
+   val ins : java.io.InputStream? = null
+ 
+   out?.println()
+   ins?.read()
+ 
+   if (ins != null) {
+-    <!DEBUG_INFO_SMARTCAST!>ins<!>.read()
++    ins.read()
+     out?.println()
+     if (out != null) {
+-      <!DEBUG_INFO_SMARTCAST!>ins<!>.read();
+-      <!DEBUG_INFO_SMARTCAST!>out<!>.println();
++      ins.read();
++      out.println();
+     }
+   }
+ 
+   if (out != null && ins != null) {
+-    <!DEBUG_INFO_SMARTCAST!>ins<!>.read();
+-    <!DEBUG_INFO_SMARTCAST!>out<!>.println();
++    ins.read();
++    out.println();
+   }
+ 
+   if (out == null) {
+-    <!DEBUG_INFO_CONSTANT!>out<!>?.println()
++    out?.println()
+   } else {
+-    <!DEBUG_INFO_SMARTCAST!>out<!>.println()
++    out.println()
+   }
+ 
+   if (out != null && ins != null || out != null) {
+     ins?.read();
+     ins<!UNSAFE_CALL!>.<!>read();
+-    <!DEBUG_INFO_SMARTCAST!>out<!>.println();
++    out.println();
+   }
+ 
+-  if (out == null || <!DEBUG_INFO_SMARTCAST!>out<!>.println(0) == Unit) {
++  if (out == null || out.println(0) == Unit) {
+     out?.println(1)
+     out<!UNSAFE_CALL!>.<!>println(1)
+   }
+   else {
+-    <!DEBUG_INFO_SMARTCAST!>out<!>.println(2)
++    out.println(2)
+   }
+ 
+-  if (out != null && <!DEBUG_INFO_SMARTCAST!>out<!>.println() == Unit) {
+-    <!DEBUG_INFO_SMARTCAST!>out<!>.println();
++  if (out != null && out.println() == Unit) {
++    out.println();
+   }
+   else {
+     out?.println();
+   }
+ 
+-  if (out == null || <!DEBUG_INFO_SMARTCAST!>out<!>.println() == Unit) {
++  if (out == null || out.println() == Unit) {
+     out?.println();
+   }
+   else {
+-    <!DEBUG_INFO_SMARTCAST!>out<!>.println();
++    out.println();
+   }
+ 
+-  if (1 == 2 || out != null && <!DEBUG_INFO_SMARTCAST!>out<!>.println(1) == Unit) {
++  if (1 == 2 || out != null && out.println(1) == Unit) {
+     out?.println(2);
+     out<!UNSAFE_CALL!>.<!>println(2);
+   }
+   else {
+     out?.println(3)
+     out<!UNSAFE_CALL!>.<!>println(3)
+   }
+ 
+   out?.println()
+   ins?.read()
+ 
+   if (ins != null) {
+-    <!DEBUG_INFO_SMARTCAST!>ins<!>.read()
++    ins.read()
+     out?.println()
+     if (out != null) {
+-      <!DEBUG_INFO_SMARTCAST!>ins<!>.read();
+-      <!DEBUG_INFO_SMARTCAST!>out<!>.println();
++      ins.read();
++      out.println();
+     }
+   }
+ 
+   if (out != null && ins != null) {
+-    <!DEBUG_INFO_SMARTCAST!>ins<!>.read();
+-    <!DEBUG_INFO_SMARTCAST!>out<!>.println();
++    ins.read();
++    out.println();
+   }
+ 
+   if (out == null) {
+-    <!DEBUG_INFO_CONSTANT!>out<!>?.println()
++    out?.println()
+   } else {
+-    <!DEBUG_INFO_SMARTCAST!>out<!>.println()
++    out.println()
+   }
+ 
+   if (out != null && ins != null || out != null) {
+     ins?.read();
+-    <!DEBUG_INFO_SMARTCAST!>out<!>.println();
++    out.println();
+   }
+ 
+-  if (out == null || <!DEBUG_INFO_SMARTCAST!>out<!>.println(0) == Unit) {
++  if (out == null || out.println(0) == Unit) {
+     out?.println(1)
+     out<!UNSAFE_CALL!>.<!>println(1)
+   }
+   else {
+-    <!DEBUG_INFO_SMARTCAST!>out<!>.println(2)
++    out.println(2)
+   }
+ 
+-  if (out != null && <!DEBUG_INFO_SMARTCAST!>out<!>.println() == Unit) {
+-    <!DEBUG_INFO_SMARTCAST!>out<!>.println();
++  if (out != null && out.println() == Unit) {
++    out.println();
+   }
+   else {
+     out?.println();
+     out<!UNSAFE_CALL!>.<!>println();
+   }
+ 
+-  if (out == null || <!DEBUG_INFO_SMARTCAST!>out<!>.println() == Unit) {
++  if (out == null || out.println() == Unit) {
+     out?.println();
+     out<!UNSAFE_CALL!>.<!>println();
+   }
+   else {
+-    <!DEBUG_INFO_SMARTCAST!>out<!>.println();
++    out.println();
+   }
+ 
+-  if (1 == 2 || out != null && <!DEBUG_INFO_SMARTCAST!>out<!>.println(1) == Unit) {
++  if (1 == 2 || out != null && out.println(1) == Unit) {
+     out?.println(2);
+     out<!UNSAFE_CALL!>.<!>println(2);
+   }
+   else {
+     out?.println(3)
+     out<!UNSAFE_CALL!>.<!>println(3)
+   }
+ 
+   if (1 > 2) {
+     if (out == null) return;
+-    <!DEBUG_INFO_SMARTCAST!>out<!>.println();
++    out.println();
+   }
+   out?.println();
+ 
+   while (out != null) {
+-    <!DEBUG_INFO_SMARTCAST!>out<!>.println();
++    out.println();
+   }
+-  <!DEBUG_INFO_CONSTANT!>out<!>?.println();
++  out?.println();
+ 
+   val out2 : java.io.PrintStream? = null
+   
+   while (out2 == null) {
+-    <!DEBUG_INFO_CONSTANT!>out2<!>?.println();
+-    <!DEBUG_INFO_CONSTANT{OI}!>out2<!><!UNSAFE_CALL!>.<!>println();
++    out2?.println();
++    out2<!UNSAFE_CALL!>.<!>println();
+   }
+-  <!DEBUG_INFO_SMARTCAST!>out2<!>.println()
++  out2.println()
+ 
+ }
+ 
+ 
+ fun f(out : String?) {
+   out?.get(0)
+   out<!UNSAFE_CALL!>.<!>get(0)
+   if (out != null) else return;
+-  <!DEBUG_INFO_SMARTCAST!>out<!>.get(0)
++  out.get(0)
+ }
+ 
+ fun f1(out : String?) {
+   out?.get(0)
+   if (out != null) else {
+     1 + 2
+     return;
+   }
+-  <!DEBUG_INFO_SMARTCAST!>out<!>.get(0)
++  out.get(0)
+ }
+ 
+ fun f2(out : String?) {
+   out?.get(0)
+   if (out == null) {
+     1 + 2
+     return;
+   }
+-  <!DEBUG_INFO_SMARTCAST!>out<!>.get(0)
++  out.get(0)
+ }
+ 
+ fun f3(out : String?) {
+   out?.get(0)
+   if (out == null) {
+     1 + 2
+     return;
+   }
+   else {
+     1 + 2
+   }
+-  <!DEBUG_INFO_SMARTCAST!>out<!>.get(0)
++  out.get(0)
+ }
+ 
+ fun f4(s : String?) {
+   s?.get(0)
+   while (1 < 2 && s != null) {
+-    <!DEBUG_INFO_SMARTCAST!>s<!>.get(0)
++    s.get(0)
+   }
+   s?.get(0)
+   while (s == null || 1 < 2) {
+      s?.get(0)
+   }
+-  <!DEBUG_INFO_SMARTCAST!>s<!>.get(0)
++  s.get(0)
+ }
+ 
+ fun f5(s : String?) {
+   s?.get(0)
+   while (1 < 2 && s != null) {
+-    <!DEBUG_INFO_SMARTCAST!>s<!>.get(0)
++    s.get(0)
+   }
+   s?.get(0)
+   while (s == null || 1 < 2) {
+     if (1 > 2) break
+      s?.get(0)
+   }
+   s?.get(0);
+ }
+ 
+ fun f6(s : String?) {
+   s?.get(0)
+   do {
+     s?.get(0)
+     if (1 < 2) break;
+   } while (s == null)
+   s?.get(0)
+   do {
+     s?.get(0)
+   } while (s == null)
+-  <!DEBUG_INFO_SMARTCAST!>s<!>.get(0)
++  s.get(0)
+ }
+ 
+ fun f7(s : String?, t : String?) {
+   s?.get(0)
+   if (!(s == null)) {
+-    <!DEBUG_INFO_SMARTCAST!>s<!>.get(0)
++    s.get(0)
+   }
+   s?.get(0)
+   if (!(s != null)) {
+-    <!DEBUG_INFO_CONSTANT!>s<!>?.get(0)
++    s?.get(0)
+   }
+   else {
+-    <!DEBUG_INFO_SMARTCAST!>s<!>.get(0)
++    s.get(0)
+   }
+   s?.get(0)
+   if (!!(s != null)) {
+-    <!DEBUG_INFO_SMARTCAST!>s<!>.get(0)
++    s.get(0)
+   }
+   else {
+-    <!DEBUG_INFO_CONSTANT!>s<!>?.get(0)
++    s?.get(0)
+   }
+   s?.get(0)
+   t?.get(0)
+   if (!(s == null || t == null)) {
+-    <!DEBUG_INFO_SMARTCAST!>s<!>.get(0)
+-    <!DEBUG_INFO_SMARTCAST!>t<!>.get(0)
++    s.get(0)
++    t.get(0)
+   }
+   else {
+     s?.get(0)
+     t?.get(0)
+   }
+   s?.get(0)
+   t?.get(0)
+   if (!(s == null)) {
+-    <!DEBUG_INFO_SMARTCAST!>s<!>.get(0)
++    s.get(0)
+     t?.get(0)
+   }
+   else {
+-    <!DEBUG_INFO_CONSTANT!>s<!>?.get(0)
++    s?.get(0)
+     t?.get(0)
+   }
+ }
+ 
+ fun f8(b : String?, a : String) {
+   b?.get(0)
+   if (b == a) {
+-    <!DEBUG_INFO_SMARTCAST!>b<!>.get(0);
++    b.get(0);
+   }
+   b?.get(0)
+   if (a == b) {
+-    <!DEBUG_INFO_SMARTCAST!>b<!>.get(0)
++    b.get(0)
+   }
+   if (a != b) {
+     b?.get(0)
+   }
+   else {
+-    <!DEBUG_INFO_SMARTCAST!>b<!>.get(0)
++    b.get(0)
+   }
+ }
+ 
+ fun f9(a : Int?) : Int {
+   if (a != null)
+-    return <!DEBUG_INFO_SMARTCAST!>a<!>
++    return a
+   return 1
+ }`;
+                        const targetElement = $('#diff')[0];
+                        const configuration = {
+                            drawFileList: false,
+                            fileListToggle: false,
+                            fileListStartVisible: false,
+                            fileContentToggle: false,
+                            matching: 'lines',
+                            outputFormat: 'side-by-side',
+                            synchronisedScroll: true,
+                            highlight: true,
+                            renderNothingWhenEmpty: false,
+                        };
+                        const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                        diff2htmlUi.draw();
+                        diff2htmlUi.highlightCode();</script>
+  </body>
+</html>

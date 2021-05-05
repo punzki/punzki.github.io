@@ -1,0 +1,79 @@
+<html>
+  <head>
+    <title>Diagnostics diff: UNRESOLVED_LABEL</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row sticky-top" style="background: white" id="summary">
+        <div class="d-inline-flex align-items-baseline">
+          <h1 class="mr-2">UNRESOLVED_LABEL</h1>
+<a href="index.html">(back to diagnostic list)</a></div>
+      </div>
+      <div class="row">
+        <ul>
+          <li><strong>Total: </strong>27</li>
+          <li><strong>Match %: </strong>0.00%</li>
+          <li><a href="#matched"><strong># Matched: </strong>0</a></li>
+          <li><strong># Non-matched: </strong>27</li>
+          <li><a href="#missing"><strong># Missing: </strong>0</a></li>
+          <li><a href="#unexpected"><strong># Unexpected: </strong>12</a></li>
+          <li><a href="#mismatched"><strong># Mismatched: </strong>15</a></li>
+          <li><strong># of Files: </strong>17</li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="unexpected">
+        <h2>Unexpected (12)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diffs/tests/labels/labeledFunctionLiteral.kt.html" target="_blank">tests/labels/labeledFunctionLiteral.kt (4)</a></li>
+          <li><a href="diffs/tests/inner/innerThisSuper.kt.html" target="_blank">tests/inner/innerThisSuper.kt (2)</a></li>
+          <li><a href="diffs/tests/inner/nestedVsInnerAccessOuterMember.kt.html" target="_blank">tests/inner/nestedVsInnerAccessOuterMember.kt (2)</a></li>
+          <li><a href="diffs/tests/thisAndSuper/QualifiedThis.kt.html" target="_blank">tests/thisAndSuper/QualifiedThis.kt (1)</a></li>
+          <li><a href="diffs/tests/thisAndSuper/thisInPropertyInitializer.kt.html" target="_blank">tests/thisAndSuper/thisInPropertyInitializer.kt (1)</a></li>
+          <li><a href="diffs/tests/thisAndSuper/thisInToplevelFunction.kt.html" target="_blank">tests/thisAndSuper/thisInToplevelFunction.kt (1)</a></li>
+          <li><a href="diffs/testsWithStdLib/contracts/dsl/errors/accessToOuterThis.kt.html" target="_blank">testsWithStdLib/contracts/dsl/errors/accessToOuterThis.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="mismatched">
+        <h2>Mismatched (15)</h2>
+      </div>
+      <div class="row sticky-top" style="top: 5.5em; background: white">
+        <h3>INSTANCE_ACCESS_BEFORE_SUPER_CALL -&gt; UNRESOLVED_LABEL (9)</h3>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diffs/tests/secondaryConstructors/headerCallChecker/passingInstance.kt.html" target="_blank">tests/secondaryConstructors/headerCallChecker/passingInstance.kt (2)</a></li>
+          <li><a href="diffs/tests/secondaryConstructors/headerCallChecker/accessBaseGenericFromInnerExtendingSameBase2.kt.html" target="_blank">tests/secondaryConstructors/headerCallChecker/accessBaseGenericFromInnerExtendingSameBase2.kt (1)</a></li>
+          <li><a href="diffs/tests/secondaryConstructors/headerCallChecker/accessBaseWithSameExtension.kt.html" target="_blank">tests/secondaryConstructors/headerCallChecker/accessBaseWithSameExtension.kt (1)</a></li>
+          <li><a href="diffs/tests/secondaryConstructors/headerCallChecker/accessGenericBaseWithSameExtension.kt.html" target="_blank">tests/secondaryConstructors/headerCallChecker/accessGenericBaseWithSameExtension.kt (1)</a></li>
+          <li><a href="diffs/tests/secondaryConstructors/headerCallChecker/lambdaAsArgument.kt.html" target="_blank">tests/secondaryConstructors/headerCallChecker/lambdaAsArgument.kt (1)</a></li>
+          <li><a href="diffs/tests/secondaryConstructors/headerCallChecker/objectLiteralAsArgument.kt.html" target="_blank">tests/secondaryConstructors/headerCallChecker/objectLiteralAsArgument.kt (1)</a></li>
+          <li><a href="diffs/tests/secondaryConstructors/headerCallChecker/objectLiteralAsDefaultValueParameter.kt.html" target="_blank">tests/secondaryConstructors/headerCallChecker/objectLiteralAsDefaultValueParameter.kt (1)</a></li>
+          <li><a href="diffs/tests/secondaryConstructors/headerCallChecker/thisAsExtensionReceiver.kt.html" target="_blank">tests/secondaryConstructors/headerCallChecker/thisAsExtensionReceiver.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 5.5em; background: white">
+        <h3>NO_THIS -&gt; UNRESOLVED_LABEL (4)</h3>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diffs/tests/regressions/UnavaliableQualifiedThis.kt.html" target="_blank">tests/regressions/UnavaliableQualifiedThis.kt (2)</a></li>
+          <li><a href="diffs/tests/labels/labeledFunctionLiteral.kt.html" target="_blank">tests/labels/labeledFunctionLiteral.kt (1)</a></li>
+          <li><a href="diffs/tests/thisAndSuper/thisInFunctionLiterals.kt.html" target="_blank">tests/thisAndSuper/thisInFunctionLiterals.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 5.5em; background: white">
+        <h3>ERROR_IN_CONTRACT_DESCRIPTION -&gt; UNRESOLVED_LABEL (2)</h3>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diffs/testsWithStdLib/contracts/dsl/errors/accessToOuterThis.kt.html" target="_blank">testsWithStdLib/contracts/dsl/errors/accessToOuterThis.kt (2)</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,81 @@
+<html>
+  <head>
+    <title>Diagnostics diff: USELESS_CAST</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row sticky-top" style="background: white" id="summary">
+        <div class="d-inline-flex align-items-baseline">
+          <h1 class="mr-2">USELESS_CAST</h1>
+<a href="index.html">(back to diagnostic list)</a></div>
+      </div>
+      <div class="row">
+        <ul>
+          <li><strong>Total: </strong>94</li>
+          <li><strong>Match %: </strong>0.00%</li>
+          <li><a href="#matched"><strong># Matched: </strong>0</a></li>
+          <li><strong># Non-matched: </strong>94</li>
+          <li><a href="#missing"><strong># Missing: </strong>94</a></li>
+          <li><a href="#unexpected"><strong># Unexpected: </strong>0</a></li>
+          <li><a href="#mismatched"><strong># Mismatched: </strong>0</a></li>
+          <li><strong># of Files: </strong>45</li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="missing">
+        <h2>Missing (94)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diffs/tests/cast/AsInBlockWithReturnType.kt.html" target="_blank">tests/cast/AsInBlockWithReturnType.kt (15)</a></li>
+          <li><a href="diffs/tests/cast/UselessSafeCast.kt.html" target="_blank">tests/cast/UselessSafeCast.kt (7)</a></li>
+          <li><a href="diffs/tests/cast/constants.kt.html" target="_blank">tests/cast/constants.kt (6)</a></li>
+          <li><a href="diffs/tests/cast/nothingAs.kt.html" target="_blank">tests/cast/nothingAs.kt (6)</a></li>
+          <li><a href="diffs/tests/cast/AsInPropertyAndPropertyAccessor.kt.html" target="_blank">tests/cast/AsInPropertyAndPropertyAccessor.kt (5)</a></li>
+          <li><a href="diffs/tests/cast/FlexibleTargetType.kt.html" target="_blank">tests/cast/FlexibleTargetType.kt (4)</a></li>
+          <li><a href="diffs/tests/regressions/kt7804.kt.html" target="_blank">tests/regressions/kt7804.kt (4)</a></li>
+          <li><a href="diffs/tests/EnumEntryAsType.kt.html" target="_blank">tests/EnumEntryAsType.kt (2)</a></li>
+          <li><a href="diffs/tests/cast/AsInExpressionBody.kt.html" target="_blank">tests/cast/AsInExpressionBody.kt (2)</a></li>
+          <li><a href="diffs/tests/cast/IsErasedUpcastToNonReified.kt.html" target="_blank">tests/cast/IsErasedUpcastToNonReified.kt (2)</a></li>
+          <li><a href="diffs/tests/cast/kt15161.kt.html" target="_blank">tests/cast/kt15161.kt (2)</a></li>
+          <li><a href="diffs/tests/inference/findViewById.kt.html" target="_blank">tests/inference/findViewById.kt (2)</a></li>
+          <li><a href="diffs/tests/smartCasts/alwaysNull.kt.html" target="_blank">tests/smartCasts/alwaysNull.kt (2)</a></li>
+          <li><a href="diffs/tests/smartCasts/castchecks/basicOn.kt.html" target="_blank">tests/smartCasts/castchecks/basicOn.kt (2)</a></li>
+          <li><a href="diffs/tests/smartCasts/castchecks/impossible.kt.html" target="_blank">tests/smartCasts/castchecks/impossible.kt (2)</a></li>
+          <li><a href="diffs/tests/smartCasts/safeAs.kt.html" target="_blank">tests/smartCasts/safeAs.kt (2)</a></li>
+          <li><a href="diffs/tests/Casts.kt.html" target="_blank">tests/Casts.kt (1)</a></li>
+          <li><a href="diffs/tests/Constants.kt.html" target="_blank">tests/Constants.kt (1)</a></li>
+          <li><a href="diffs/tests/LValueAssignment.kt.html" target="_blank">tests/LValueAssignment.kt (1)</a></li>
+          <li><a href="diffs/tests/classObjects/kt3866.kt.html" target="_blank">tests/classObjects/kt3866.kt (1)</a></li>
+          <li><a href="diffs/tests/dataFlow/EmptyIf.kt.html" target="_blank">tests/dataFlow/EmptyIf.kt (1)</a></li>
+          <li><a href="diffs/tests/dataFlow/assignment/kt6118.kt.html" target="_blank">tests/dataFlow/assignment/kt6118.kt (1)</a></li>
+          <li><a href="diffs/tests/nullabilityAndSmartCasts/kt2176.kt.html" target="_blank">tests/nullabilityAndSmartCasts/kt2176.kt (1)</a></li>
+          <li><a href="diffs/tests/smartCasts/extensionSafeCall.kt.html" target="_blank">tests/smartCasts/extensionSafeCall.kt (1)</a></li>
+          <li><a href="diffs/tests/smartCasts/kt5455.kt.html" target="_blank">tests/smartCasts/kt5455.kt (1)</a></li>
+          <li><a href="diffs/tests/sourceCompatibility/noBoundCallableReferences/qualifiedJavaClassLiteralInKClassExtension.kt.html" target="_blank">tests/sourceCompatibility/noBoundCallableReferences/qualifiedJavaClassLiteralInKClassExtension.kt (1)</a></li>
+          <li><a href="diffs/tests/suppress/manyWarnings/mixed.kt.html" target="_blank">tests/suppress/manyWarnings/mixed.kt (1)</a></li>
+          <li><a href="diffs/tests/suppress/manyWarnings/onClass.kt.html" target="_blank">tests/suppress/manyWarnings/onClass.kt (1)</a></li>
+          <li><a href="diffs/tests/suppress/manyWarnings/onClassObject.kt.html" target="_blank">tests/suppress/manyWarnings/onClassObject.kt (1)</a></li>
+          <li><a href="diffs/tests/suppress/manyWarnings/onExpression.kt.html" target="_blank">tests/suppress/manyWarnings/onExpression.kt (1)</a></li>
+          <li><a href="diffs/tests/suppress/manyWarnings/onFunction.kt.html" target="_blank">tests/suppress/manyWarnings/onFunction.kt (1)</a></li>
+          <li><a href="diffs/tests/suppress/manyWarnings/onObject.kt.html" target="_blank">tests/suppress/manyWarnings/onObject.kt (1)</a></li>
+          <li><a href="diffs/tests/suppress/manyWarnings/onParameter.kt.html" target="_blank">tests/suppress/manyWarnings/onParameter.kt (1)</a></li>
+          <li><a href="diffs/tests/suppress/manyWarnings/onProperty.kt.html" target="_blank">tests/suppress/manyWarnings/onProperty.kt (1)</a></li>
+          <li><a href="diffs/tests/suppress/manyWarnings/onPropertyAccessor.kt.html" target="_blank">tests/suppress/manyWarnings/onPropertyAccessor.kt (1)</a></li>
+          <li><a href="diffs/tests/suppress/oneWarning/onClass.kt.html" target="_blank">tests/suppress/oneWarning/onClass.kt (1)</a></li>
+          <li><a href="diffs/tests/suppress/oneWarning/onClassObject.kt.html" target="_blank">tests/suppress/oneWarning/onClassObject.kt (1)</a></li>
+          <li><a href="diffs/tests/suppress/oneWarning/onExpression.kt.html" target="_blank">tests/suppress/oneWarning/onExpression.kt (1)</a></li>
+          <li><a href="diffs/tests/suppress/oneWarning/onFunction.kt.html" target="_blank">tests/suppress/oneWarning/onFunction.kt (1)</a></li>
+          <li><a href="diffs/tests/suppress/oneWarning/onLocalVariable.kt.html" target="_blank">tests/suppress/oneWarning/onLocalVariable.kt (1)</a></li>
+          <li><a href="diffs/tests/suppress/oneWarning/onObject.kt.html" target="_blank">tests/suppress/oneWarning/onObject.kt (1)</a></li>
+          <li><a href="diffs/tests/suppress/oneWarning/onParameter.kt.html" target="_blank">tests/suppress/oneWarning/onParameter.kt (1)</a></li>
+          <li><a href="diffs/tests/suppress/oneWarning/onProperty.kt.html" target="_blank">tests/suppress/oneWarning/onProperty.kt (1)</a></li>
+          <li><a href="diffs/tests/suppress/oneWarning/onPropertyAccessor.kt.html" target="_blank">tests/suppress/oneWarning/onPropertyAccessor.kt (1)</a></li>
+          <li><a href="diffs/tests/when/WhenTypeDisjunctions.kt.html" target="_blank">tests/when/WhenTypeDisjunctions.kt (1)</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,121 @@
+<html>
+  <head>
+    <title>Diagnostics diff: tests/when/When.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <ul>
+          <li><a id="expected" target="_blank"><strong>Expected file: </strong><span id="expected-path"></span></a></li>
+          <li><a id="actual" target="_blank"><strong>Actual file: </strong><span id="actual-path"></span></a></li>
+        </ul>
+      </div>
+      <div class="row">
+        <div id="diff" style="width: 100%"></div>
+      </div>
+    </div>
+    <script type="text/javascript">                        const linkPrefix = 'https://github.com/JetBrains/kotlin/blob/c14a890e7ebd135715e0385755bf1cc9f54bea98/compiler/testData/diagnostics';
+                        const expectedPath = 'tests/when/When.kt';
+                        const actualPath = 'tests/when/When.fir.kt';
+                        const expectedLinkUrl = linkPrefix + '/' + expectedPath;
+                        const actualLinkUrl = linkPrefix + '/' + actualPath;
+                        $('#expected').attr('href', expectedLinkUrl);
+                        $('#actual').attr('href', actualLinkUrl);
+                        $('#expected-path').text(expectedPath);
+                        $('#actual-path').text(actualPath);
+
+                        const diffString = `--- tests/when/When.kt
++++ tests/when/When.fir.kt
+@@ -1,60 +1,60 @@
+ // !WITH_NEW_INFERENCE
+ /*
+  * KOTLIN DIAGNOSTICS SPEC TEST (NEGATIVE)
+  *
+  * SPEC VERSION: 0.1-152
+  * PRIMARY LINKS: expressions, when-expression -> paragraph 2 -> sentence 5
+  * expressions, when-expression -> paragraph 5 -> sentence 1
+  * expressions, when-expression -> paragraph 6 -> sentence 1
+  * expressions, when-expression -> paragraph 6 -> sentence 3
+  * expressions, when-expression -> paragraph 6 -> sentence 5
+  * expressions, when-expression -> paragraph 6 -> sentence 9
+  * expressions, when-expression -> paragraph 6 -> sentence 10
+  * expressions, when-expression -> paragraph 6 -> sentence 11
+  */
+ 
+ fun Int.foo() : Boolean = true
+ 
+ fun foo() : Int {
+     val s = ""
+     val x = 1
+     when (x) {
+-      is <!INCOMPATIBLE_TYPES!>String<!> -> 1
+-      <!USELESS_IS_CHECK!>!is Int<!> -> 1
+-      <!USELESS_IS_CHECK!>is Any<!USELESS_NULLABLE_CHECK!>?<!><!> -> 1
+-      <!USELESS_IS_CHECK!>is Any<!> -> 1
+-      <!INCOMPATIBLE_TYPES!>s<!> -> 1
++      is String -> 1
++      !is Int -> 1
++      is Any? -> 1
++      is Any -> 1
++      s -> 1
+       1 -> 1
+-      1 + <!UNRESOLVED_REFERENCE!>a<!> -> 1
++      1 <!OVERLOAD_RESOLUTION_AMBIGUITY!>+<!> <!UNRESOLVED_REFERENCE!>a<!> -> 1
+       in 1..<!UNRESOLVED_REFERENCE!>a<!> -> 1
+       !in 1..<!UNRESOLVED_REFERENCE!>a<!> -> 1
+       else -> 1
+     }
+ 
+     return 0
+ }
+ 
+ val _type_test : Int = foo() // this is needed to ensure the inferred return type of foo()
+ 
+ fun test() {
+   val x = 1;
+   val s = "";
+ 
+   when (x) {
+-    <!INCOMPATIBLE_TYPES!>s<!> -> 1
+-    <!DUPLICATE_LABEL_IN_WHEN, INCOMPATIBLE_TYPES!>""<!> -> 1
++    s -> 1
++    "" -> 1
+     x -> 1
+     1 -> 1
+   }
+ 
+   val z = 1
+ 
+   when (z) {
+     <!ELSE_MISPLACED_IN_WHEN!>else<!> -> 1
+-    <!UNREACHABLE_CODE!>1 -> 2<!>
++    1 -> 2
+   }
+ 
+   when (z) {
+     else -> 1
+   }
+ }`;
+                        const targetElement = $('#diff')[0];
+                        const configuration = {
+                            drawFileList: false,
+                            fileListToggle: false,
+                            fileListStartVisible: false,
+                            fileContentToggle: false,
+                            matching: 'lines',
+                            outputFormat: 'side-by-side',
+                            synchronisedScroll: true,
+                            highlight: true,
+                            renderNothingWhenEmpty: false,
+                        };
+                        const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                        diff2htmlUi.draw();
+                        diff2htmlUi.highlightCode();</script>
+  </body>
+</html>

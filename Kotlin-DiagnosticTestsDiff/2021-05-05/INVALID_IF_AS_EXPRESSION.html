@@ -1,0 +1,73 @@
+<html>
+  <head>
+    <title>Diagnostics diff: INVALID_IF_AS_EXPRESSION</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row sticky-top" style="background: white" id="summary">
+        <div class="d-inline-flex align-items-baseline">
+          <h1 class="mr-2">INVALID_IF_AS_EXPRESSION</h1>
+<a href="index.html">(back to diagnostic list)</a></div>
+      </div>
+      <div class="row">
+        <ul>
+          <li><strong>Total: </strong>46</li>
+          <li><strong>Match %: </strong>56.52%</li>
+          <li><a href="#matched"><strong># Matched: </strong>26</a></li>
+          <li><strong># Non-matched: </strong>20</li>
+          <li><a href="#missing"><strong># Missing: </strong>17</a></li>
+          <li><a href="#unexpected"><strong># Unexpected: </strong>3</a></li>
+          <li><a href="#mismatched"><strong># Mismatched: </strong>0</a></li>
+          <li><strong># of Files: </strong>19</li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="missing">
+        <h2>Missing (17)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diffs/tests/controlStructures/improperElseInExpression.kt.html" target="_blank">tests/controlStructures/improperElseInExpression.kt (2)</a></li>
+          <li><a href="diffs/tests/declarationChecks/namedFunAsLastExpressionInBlock.kt.html" target="_blank">tests/declarationChecks/namedFunAsLastExpressionInBlock.kt (2)</a></li>
+          <li><a href="diffs/tests/functionLiterals/return/IfWithoutElseWithExplicitType.kt.html" target="_blank">tests/functionLiterals/return/IfWithoutElseWithExplicitType.kt (2)</a></li>
+          <li><a href="diffs/tests/inference/coercionToUnit/nonPropagationOfCoercionToUnitInsideNestedLambda.kt.html" target="_blank">tests/inference/coercionToUnit/nonPropagationOfCoercionToUnitInsideNestedLambda.kt (2)</a></li>
+          <li><a href="diffs/tests/FunctionReturnTypes.kt.html" target="_blank">tests/FunctionReturnTypes.kt (1)</a></li>
+          <li><a href="diffs/tests/controlStructures/ifWhenToAnyComplexExpressions.kt.html" target="_blank">tests/controlStructures/ifWhenToAnyComplexExpressions.kt (1)</a></li>
+          <li><a href="diffs/tests/controlStructures/kt10322.kt.html" target="_blank">tests/controlStructures/kt10322.kt (1)</a></li>
+          <li><a href="diffs/tests/controlStructures/kt4310.kt.html" target="_blank">tests/controlStructures/kt4310.kt (1)</a></li>
+          <li><a href="diffs/tests/functionLiterals/return/IfWithoutElse.kt.html" target="_blank">tests/functionLiterals/return/IfWithoutElse.kt (1)</a></li>
+          <li><a href="diffs/tests/inference/coercionToUnit/coercionToUnitForIfAsLastExpressionInLambda.kt.html" target="_blank">tests/inference/coercionToUnit/coercionToUnitForIfAsLastExpressionInLambda.kt (1)</a></li>
+          <li><a href="diffs/tests/inference/coercionToUnit/kt30242.kt.html" target="_blank">tests/inference/coercionToUnit/kt30242.kt (1)</a></li>
+          <li><a href="diffs/tests/inference/coercionToUnit/noCoercion.kt.html" target="_blank">tests/inference/coercionToUnit/noCoercion.kt (1)</a></li>
+          <li><a href="diffs/testsWithStdLib/implicitCastToAny.kt.html" target="_blank">testsWithStdLib/implicitCastToAny.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="unexpected">
+        <h2>Unexpected (3)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diffs/tests/FunctionCalleeExpressions.kt.html" target="_blank">tests/FunctionCalleeExpressions.kt (1)</a></li>
+          <li><a href="diffs/tests/controlStructures/ifWhenWithoutElse.kt.html" target="_blank">tests/controlStructures/ifWhenWithoutElse.kt (1)</a></li>
+          <li><a href="diffs/tests/smartCasts/loops/elvisIfBreakInsideWhileTrue.kt.html" target="_blank">tests/smartCasts/loops/elvisIfBreakInsideWhileTrue.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="matched">
+        <h2>Matched (26)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diffs/tests/controlStructures/ifWhenWithoutElse.kt.html" target="_blank">tests/controlStructures/ifWhenWithoutElse.kt (14)</a></li>
+          <li><a href="diffs/tests/controlStructures/emptyIf.kt.html" target="_blank">tests/controlStructures/emptyIf.kt (3)</a></li>
+          <li><a href="diffs/tests/FunctionReturnTypes.kt.html" target="_blank">tests/FunctionReturnTypes.kt (2)</a></li>
+          <li><a href="diffs/tests/controlStructures/improperElseInExpression.kt.html" target="_blank">tests/controlStructures/improperElseInExpression.kt (2)</a></li>
+          <li><a href="diffs/tests/controlStructures/kt770.kt351.kt735_StatementType.kt.html" target="_blank">tests/controlStructures/kt770.kt351.kt735_StatementType.kt (2)</a></li>
+          <li><a href="diffs/tests/dataFlow/EmptyIf.kt.html" target="_blank">tests/dataFlow/EmptyIf.kt (2)</a></li>
+          <li><a href="diffs/tests/controlStructures/ifWhenToAnyComplexExpressions.kt.html" target="_blank">tests/controlStructures/ifWhenToAnyComplexExpressions.kt (1)</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

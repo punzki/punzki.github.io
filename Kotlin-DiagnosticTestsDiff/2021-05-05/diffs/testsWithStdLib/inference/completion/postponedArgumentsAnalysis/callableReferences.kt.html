@@ -1,0 +1,114 @@
+<html>
+  <head>
+    <title>Diagnostics diff: testsWithStdLib/inference/completion/postponedArgumentsAnalysis/callableReferences.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <ul>
+          <li><a id="expected" target="_blank"><strong>Expected file: </strong><span id="expected-path"></span></a></li>
+          <li><a id="actual" target="_blank"><strong>Actual file: </strong><span id="actual-path"></span></a></li>
+        </ul>
+      </div>
+      <div class="row">
+        <div id="diff" style="width: 100%"></div>
+      </div>
+    </div>
+    <script type="text/javascript">                        const linkPrefix = 'https://github.com/JetBrains/kotlin/blob/c14a890e7ebd135715e0385755bf1cc9f54bea98/compiler/testData/diagnostics';
+                        const expectedPath = 'testsWithStdLib/inference/completion/postponedArgumentsAnalysis/callableReferences.kt';
+                        const actualPath = 'testsWithStdLib/inference/completion/postponedArgumentsAnalysis/callableReferences.fir.kt';
+                        const expectedLinkUrl = linkPrefix + '/' + expectedPath;
+                        const actualLinkUrl = linkPrefix + '/' + actualPath;
+                        $('#expected').attr('href', expectedLinkUrl);
+                        $('#actual').attr('href', actualLinkUrl);
+                        $('#expected-path').text(expectedPath);
+                        $('#actual-path').text(actualPath);
+
+                        const diffString = `--- testsWithStdLib/inference/completion/postponedArgumentsAnalysis/callableReferences.kt
++++ testsWithStdLib/inference/completion/postponedArgumentsAnalysis/callableReferences.fir.kt
+@@ -1,57 +1,57 @@
+ // !DIAGNOSTICS: -UNUSED_VARIABLE -UNUSED_EXPRESSION -UNUSED_PARAMETER -UNUSED_ANONYMOUS_PARAMETER
+ 
+ import kotlin.reflect.*
+ 
+ fun <T>id(x: T) = x
+ 
+ fun <T> select(vararg x: T) = x[0]
+ 
+ fun foo(x: Int) {}
+ fun foo2(x: Number) {}
+ 
+ fun foo3(x: Int) {}
+ fun foo3(x: Number) {}
+ 
+ interface A
+ interface B
+ 
+ fun foo4(x: A) {}
+ fun foo4(x: B) {}
+ 
+ interface C: A, B
+ 
+ fun foo5(x: A) {}
+ fun foo5(x: B) {}
+ fun foo5(x: C) {}
+ 
+ fun <T: (Float) -> Unit> selectNumber(vararg x: T) = x[0]
+ 
+ fun foo6(x: Int) {}
+ fun foo6(x: Float) {}
+ fun foo6(x: Number) {}
+ 
+ fun main() {
+     select(::foo, { <!DEBUG_INFO_EXPRESSION_TYPE("kotlin.Int")!>it<!> })
+     select(id(::foo), { x: Number -> }, { <!DEBUG_INFO_EXPRESSION_TYPE("kotlin.Int")!>it<!> })
+ 
+-    val x1 = select(<!DEBUG_INFO_EXPRESSION_TYPE("kotlin.reflect.KFunction1<kotlin.Int, kotlin.Unit>")!>id(::foo)<!>, <!DEBUG_INFO_EXPRESSION_TYPE("(kotlin.Number) -> kotlin.Number")!>id { x: Number -> <!DEBUG_INFO_EXPRESSION_TYPE("kotlin.Number")!>x<!> }<!>)
+-    <!DEBUG_INFO_EXPRESSION_TYPE("(kotlin.Int) -> kotlin.Any")!>x1<!>
++    val x1 = select(<!DEBUG_INFO_EXPRESSION_TYPE("kotlin.reflect.KFunction1<kotlin.Int, kotlin.Unit>")!>id(::foo)<!>, <!DEBUG_INFO_EXPRESSION_TYPE("kotlin.Function1<kotlin.Number, kotlin.Number>")!>id { x: Number -> <!DEBUG_INFO_EXPRESSION_TYPE("kotlin.Number")!>x<!> }<!>)
++    <!DEBUG_INFO_EXPRESSION_TYPE("kotlin.Function1<kotlin.Int, kotlin.Any>")!>x1<!>
+ 
+     val x11 = select(id(::foo), id { x: Number -> }, id { <!DEBUG_INFO_EXPRESSION_TYPE("kotlin.Int")!>it<!> })
+-    <!DEBUG_INFO_EXPRESSION_TYPE("(kotlin.Int) -> kotlin.Any")!>x11<!>
++    <!DEBUG_INFO_EXPRESSION_TYPE("kotlin.Function1<kotlin.Int, kotlin.Any>")!>x11<!>
+ 
+     select(id(::foo2), id { x: Int -> }, id { <!DEBUG_INFO_EXPRESSION_TYPE("kotlin.Int")!>it<!> })
+ 
+     select(id(<!DEBUG_INFO_EXPRESSION_TYPE("kotlin.reflect.KFunction1<kotlin.Int, kotlin.Unit>")!>::foo3<!>), id { x: Int -> }, id { <!DEBUG_INFO_EXPRESSION_TYPE("kotlin.Int")!>it<!> })
+     select(id(<!DEBUG_INFO_EXPRESSION_TYPE("kotlin.reflect.KFunction1<kotlin.Int, kotlin.Unit>")!>::foo3<!>), id { x: Number -> }, id { <!DEBUG_INFO_EXPRESSION_TYPE("kotlin.Int")!>it<!> })
+     select(id(<!DEBUG_INFO_EXPRESSION_TYPE("kotlin.reflect.KFunction1<kotlin.Int, kotlin.Unit>")!>::foo3<!>), id { x: Number -> }, id { x: Int -> }, id { <!DEBUG_INFO_EXPRESSION_TYPE("kotlin.Int")!>it<!> })
+ 
+     select(id(<!DEBUG_INFO_EXPRESSION_TYPE("kotlin.reflect.KFunction1<A, kotlin.Unit>")!>::foo4<!>), id { x: A -> }, id { <!DEBUG_INFO_EXPRESSION_TYPE("A")!>it<!> })
+     select(id(<!DEBUG_INFO_EXPRESSION_TYPE("kotlin.reflect.KFunction1<B, kotlin.Unit>")!>::foo4<!>), id { x: B -> }, id { <!DEBUG_INFO_EXPRESSION_TYPE("B")!>it<!> })
+     // Expected ambiguity
+-    select(id(::<!CALLABLE_REFERENCE_RESOLUTION_AMBIGUITY!>foo4<!>), id { x: A -> }, id { x: B -> }, id { <!DEBUG_INFO_EXPRESSION_TYPE("{A & B}")!>it<!> })
++    select(id(::<!OVERLOAD_RESOLUTION_AMBIGUITY!>foo4<!>), id { x: A -> }, id { x: B -> }, id { <!DEBUG_INFO_EXPRESSION_TYPE("A & B")!>it<!> })
+ 
+     select(id(::foo5), id { x: A -> }, id { x: B -> }, id { <!DEBUG_INFO_EXPRESSION_TYPE("C")!>it<!> })
+ 
+-    val x2: (Int) -> Unit = selectNumber(id(<!DEBUG_INFO_EXPRESSION_TYPE("kotlin.reflect.KFunction1<kotlin.Number, kotlin.Unit>")!>::foo6<!>), id { x -> <!DEBUG_INFO_EXPRESSION_TYPE("{Comparable<*> & Number}")!>x<!> }, id { <!DEBUG_INFO_EXPRESSION_TYPE("{Comparable<*> & Number}")!>it<!> })
++    val x2: (Int) -> Unit = selectNumber(id(<!DEBUG_INFO_EXPRESSION_TYPE("kotlin.reflect.KFunction1<kotlin.Number, kotlin.Unit>")!>::foo6<!>), id { x -> <!DEBUG_INFO_EXPRESSION_TYPE("kotlin.Number & kotlin.Comparable<*>")!>x<!> }, id { <!DEBUG_INFO_EXPRESSION_TYPE("kotlin.Number & kotlin.Comparable<*>")!>it<!> })
+ }`;
+                        const targetElement = $('#diff')[0];
+                        const configuration = {
+                            drawFileList: false,
+                            fileListToggle: false,
+                            fileListStartVisible: false,
+                            fileContentToggle: false,
+                            matching: 'lines',
+                            outputFormat: 'side-by-side',
+                            synchronisedScroll: true,
+                            highlight: true,
+                            renderNothingWhenEmpty: false,
+                        };
+                        const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                        diff2htmlUi.draw();
+                        diff2htmlUi.highlightCode();</script>
+  </body>
+</html>

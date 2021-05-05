@@ -1,0 +1,171 @@
+<html>
+  <head>
+    <title>Diagnostics diff: INVISIBLE_REFERENCE</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row sticky-top" style="background: white" id="summary">
+        <div class="d-inline-flex align-items-baseline">
+          <h1 class="mr-2">INVISIBLE_REFERENCE</h1>
+<a href="index.html">(back to diagnostic list)</a></div>
+      </div>
+      <div class="row">
+        <ul>
+          <li><strong>Total: </strong>234</li>
+          <li><strong>Match %: </strong>5.98%</li>
+          <li><a href="#matched"><strong># Matched: </strong>14</a></li>
+          <li><strong># Non-matched: </strong>220</li>
+          <li><a href="#missing"><strong># Missing: </strong>61</a></li>
+          <li><a href="#unexpected"><strong># Unexpected: </strong>14</a></li>
+          <li><a href="#mismatched"><strong># Mismatched: </strong>145</a></li>
+          <li><strong># of Files: </strong>75</li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="missing">
+        <h2>Missing (61)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diffs/tests/imports/CheckJavaVisibility.kt.html" target="_blank">tests/imports/CheckJavaVisibility.kt (10)</a></li>
+          <li><a href="diffs/tests/javac/imports/PackagePrivateAndPublicNested.kt.html" target="_blank">tests/javac/imports/PackagePrivateAndPublicNested.kt (6)</a></li>
+          <li><a href="diffs/tests/classObjects/nestedClassInPrivateClassObject.kt.html" target="_blank">tests/classObjects/nestedClassInPrivateClassObject.kt (5)</a></li>
+          <li><a href="diffs/tests/scopes/visibility2.kt.html" target="_blank">tests/scopes/visibility2.kt (5)</a></li>
+          <li><a href="diffs/tests/j+k/packageVisibility.kt.html" target="_blank">tests/j+k/packageVisibility.kt (4)</a></li>
+          <li><a href="diffs/tests/typealias/privateInFile.kt.html" target="_blank">tests/typealias/privateInFile.kt (4)</a></li>
+          <li><a href="diffs/tests/imports/CheckVisibility.kt.html" target="_blank">tests/imports/CheckVisibility.kt (3)</a></li>
+          <li><a href="diffs/tests/privateInFile/topLevelAnnotationCall.kt.html" target="_blank">tests/privateInFile/topLevelAnnotationCall.kt (3)</a></li>
+          <li><a href="diffs/tests/PrivateFromOuterPackage.kt.html" target="_blank">tests/PrivateFromOuterPackage.kt (2)</a></li>
+          <li><a href="diffs/tests/classObjects/invisibleClassObjects.kt.html" target="_blank">tests/classObjects/invisibleClassObjects.kt (2)</a></li>
+          <li><a href="diffs/tests/imports/ImportPrivateMemberFromOtherFile.kt.html" target="_blank">tests/imports/ImportPrivateMemberFromOtherFile.kt (2)</a></li>
+          <li><a href="diffs/tests/imports/ImportProtectedClass.kt.html" target="_blank">tests/imports/ImportProtectedClass.kt (2)</a></li>
+          <li><a href="diffs/tests/j+k/innerNestedClassFromJava.kt.html" target="_blank">tests/j+k/innerNestedClassFromJava.kt (2)</a></li>
+          <li><a href="diffs/tests/javac/imports/ImportProtectedClass.kt.html" target="_blank">tests/javac/imports/ImportProtectedClass.kt (2)</a></li>
+          <li><a href="diffs/tests/imports/ImportOverloadFunctions.kt.html" target="_blank">tests/imports/ImportOverloadFunctions.kt (1)</a></li>
+          <li><a href="diffs/tests/imports/InaccessiblePrivateClass.kt.html" target="_blank">tests/imports/InaccessiblePrivateClass.kt (1)</a></li>
+          <li><a href="diffs/tests/imports/invisibleFakeReferenceInImport.kt.html" target="_blank">tests/imports/invisibleFakeReferenceInImport.kt (1)</a></li>
+          <li><a href="diffs/tests/inference/upperBounds/typeParameterAsUpperBound.kt.html" target="_blank">tests/inference/upperBounds/typeParameterAsUpperBound.kt (1)</a></li>
+          <li><a href="diffs/tests/j+k/privateNestedClassStaticMember.kt.html" target="_blank">tests/j+k/privateNestedClassStaticMember.kt (1)</a></li>
+          <li><a href="diffs/tests/privateInFile/visibility.kt.html" target="_blank">tests/privateInFile/visibility.kt (1)</a></li>
+          <li><a href="diffs/tests/scopes/visibility3.kt.html" target="_blank">tests/scopes/visibility3.kt (1)</a></li>
+          <li><a href="diffs/tests/typealias/constructorCallThroughPrivateAlias.kt.html" target="_blank">tests/typealias/constructorCallThroughPrivateAlias.kt (1)</a></li>
+          <li><a href="diffs/testsWithStdLib/InaccessibleInternalClass.kt.html" target="_blank">testsWithStdLib/InaccessibleInternalClass.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="unexpected">
+        <h2>Unexpected (14)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diffs/tests/privateInFile/topLevelAnnotationCall.kt.html" target="_blank">tests/privateInFile/topLevelAnnotationCall.kt (3)</a></li>
+          <li><a href="diffs/tests/dynamicTypes/withInvisibleSynthesized.kt.html" target="_blank">tests/dynamicTypes/withInvisibleSynthesized.kt (2)</a></li>
+          <li><a href="diffs/tests/scopes/kt1738.kt.html" target="_blank">tests/scopes/kt1738.kt (2)</a></li>
+          <li><a href="diffs/tests/scopes/visibility.kt.html" target="_blank">tests/scopes/visibility.kt (2)</a></li>
+          <li><a href="diffs/tests/syntheticExtensions/javaProperties/SetterHasHigherAccess.kt.html" target="_blank">tests/syntheticExtensions/javaProperties/SetterHasHigherAccess.kt (2)</a></li>
+          <li><a href="diffs/tests/enum/inheritanceFromEnum.kt.html" target="_blank">tests/enum/inheritanceFromEnum.kt (1)</a></li>
+          <li><a href="diffs/tests/inference/upperBounds/typeParameterAsUpperBound.kt.html" target="_blank">tests/inference/upperBounds/typeParameterAsUpperBound.kt (1)</a></li>
+          <li><a href="diffs/tests/typealias/privateInFile.kt.html" target="_blank">tests/typealias/privateInFile.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="mismatched">
+        <h2>Mismatched (145)</h2>
+      </div>
+      <div class="row sticky-top" style="top: 5.5em; background: white">
+        <h3>INVISIBLE_MEMBER -&gt; INVISIBLE_REFERENCE (138)</h3>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diffs/tests/multimodule/publishedApiInternal.kt.html" target="_blank">tests/multimodule/publishedApiInternal.kt (16)</a></li>
+          <li><a href="diffs/tests/j+k/packageVisibility.kt.html" target="_blank">tests/j+k/packageVisibility.kt (8)</a></li>
+          <li><a href="diffs/tests/multimodule/internal.kt.html" target="_blank">tests/multimodule/internal.kt (8)</a></li>
+          <li><a href="diffs/tests/imports/CheckJavaVisibility2.kt.html" target="_blank">tests/imports/CheckJavaVisibility2.kt (7)</a></li>
+          <li><a href="diffs/tests/scopes/protectedVisibility/javaInheritedInKotlin.kt.html" target="_blank">tests/scopes/protectedVisibility/javaInheritedInKotlin.kt (7)</a></li>
+          <li><a href="diffs/tests/inner/visibility.kt.html" target="_blank">tests/inner/visibility.kt (6)</a></li>
+          <li><a href="diffs/tests/privateInFile/visibility.kt.html" target="_blank">tests/privateInFile/visibility.kt (5)</a></li>
+          <li><a href="diffs/tests/scopes/visibility3.kt.html" target="_blank">tests/scopes/visibility3.kt (5)</a></li>
+          <li><a href="diffs/tests/PrivateFromOuterPackage.kt.html" target="_blank">tests/PrivateFromOuterPackage.kt (4)</a></li>
+          <li><a href="diffs/tests/nullabilityAndSmartCasts/kt362.kt.html" target="_blank">tests/nullabilityAndSmartCasts/kt362.kt (4)</a></li>
+          <li><a href="diffs/tests/scopes/visibility.kt.html" target="_blank">tests/scopes/visibility.kt (4)</a></li>
+          <li><a href="diffs/tests/typealias/typeAliasConstructorWrongClass.kt.html" target="_blank">tests/typealias/typeAliasConstructorWrongClass.kt (4)</a></li>
+          <li><a href="diffs/testsWithStdLib/CallCompanionProtectedNonStatic.kt.html" target="_blank">testsWithStdLib/CallCompanionProtectedNonStatic.kt (4)</a></li>
+          <li><a href="diffs/tests/privateInFile/topLevelAnnotationCall.kt.html" target="_blank">tests/privateInFile/topLevelAnnotationCall.kt (3)</a></li>
+          <li><a href="diffs/tests/scopes/VisibilityInClassObject.kt.html" target="_blank">tests/scopes/VisibilityInClassObject.kt (3)</a></li>
+          <li><a href="diffs/tests/scopes/kt1805.kt.html" target="_blank">tests/scopes/kt1805.kt (3)</a></li>
+          <li><a href="diffs/tests/scopes/visibility2.kt.html" target="_blank">tests/scopes/visibility2.kt (3)</a></li>
+          <li><a href="diffs/tests/classObjects/invisibleClassObjects.kt.html" target="_blank">tests/classObjects/invisibleClassObjects.kt (2)</a></li>
+          <li><a href="diffs/tests/multimodule/packagePrivate.kt.html" target="_blank">tests/multimodule/packagePrivate.kt (2)</a></li>
+          <li><a href="diffs/tests/resolve/invoke/errors/invisibleInvoke.kt.html" target="_blank">tests/resolve/invoke/errors/invisibleInvoke.kt (2)</a></li>
+          <li><a href="diffs/tests/scopes/inheritance/statics/hidePrivateByPublic.kt.html" target="_blank">tests/scopes/inheritance/statics/hidePrivateByPublic.kt (2)</a></li>
+          <li><a href="diffs/tests/scopes/kt1806.kt.html" target="_blank">tests/scopes/kt1806.kt (2)</a></li>
+          <li><a href="diffs/tests/scopes/protectedVisibility/protectedCallOnSubClass.kt.html" target="_blank">tests/scopes/protectedVisibility/protectedCallOnSubClass.kt (2)</a></li>
+          <li><a href="diffs/tests/syntheticExtensions/javaProperties/OnlyPublic.kt.html" target="_blank">tests/syntheticExtensions/javaProperties/OnlyPublic.kt (2)</a></li>
+          <li><a href="diffs/tests/syntheticExtensions/javaProperties/SetterHasHigherAccess.kt.html" target="_blank">tests/syntheticExtensions/javaProperties/SetterHasHigherAccess.kt (2)</a></li>
+          <li><a href="diffs/tests/ConstructorsOfPrimitives.kt.html" target="_blank">tests/ConstructorsOfPrimitives.kt (1)</a></li>
+          <li><a href="diffs/tests/PackageInExpressionPosition.kt.html" target="_blank">tests/PackageInExpressionPosition.kt (1)</a></li>
+          <li><a href="diffs/tests/classObjects/ClassObjectVisibility.kt.html" target="_blank">tests/classObjects/ClassObjectVisibility.kt (1)</a></li>
+          <li><a href="diffs/tests/dynamicTypes/withInvisibleSynthesized.kt.html" target="_blank">tests/dynamicTypes/withInvisibleSynthesized.kt (1)</a></li>
+          <li><a href="diffs/tests/enum/ConstructorCallFromOutside.kt.html" target="_blank">tests/enum/ConstructorCallFromOutside.kt (1)</a></li>
+          <li><a href="diffs/tests/exposed/exceptionOnFakeInvisible.kt.html" target="_blank">tests/exposed/exceptionOnFakeInvisible.kt (1)</a></li>
+          <li><a href="diffs/tests/imports/ImportPrivateMember.kt.html" target="_blank">tests/imports/ImportPrivateMember.kt (1)</a></li>
+          <li><a href="diffs/tests/imports/InaccessiblePrivateClass.kt.html" target="_blank">tests/imports/InaccessiblePrivateClass.kt (1)</a></li>
+          <li><a href="diffs/tests/imports/invisibleFakeReferenceInImport.kt.html" target="_blank">tests/imports/invisibleFakeReferenceInImport.kt (1)</a></li>
+          <li><a href="diffs/tests/j+k/invisiblePackagePrivateInheritedMember.kt.html" target="_blank">tests/j+k/invisiblePackagePrivateInheritedMember.kt (1)</a></li>
+          <li><a href="diffs/tests/j+k/sam/privateCandidatesWithWrongArguments.kt.html" target="_blank">tests/j+k/sam/privateCandidatesWithWrongArguments.kt (1)</a></li>
+          <li><a href="diffs/tests/scopes/VisibilityInheritModifier.kt.html" target="_blank">tests/scopes/VisibilityInheritModifier.kt (1)</a></li>
+          <li><a href="diffs/tests/scopes/kt1244.kt.html" target="_blank">tests/scopes/kt1244.kt (1)</a></li>
+          <li><a href="diffs/tests/scopes/kt151.kt.html" target="_blank">tests/scopes/kt151.kt (1)</a></li>
+          <li><a href="diffs/tests/scopes/kt1942.kt.html" target="_blank">tests/scopes/kt1942.kt (1)</a></li>
+          <li><a href="diffs/tests/scopes/kt37.kt.html" target="_blank">tests/scopes/kt37.kt (1)</a></li>
+          <li><a href="diffs/tests/scopes/kt9430.kt.html" target="_blank">tests/scopes/kt9430.kt (1)</a></li>
+          <li><a href="diffs/tests/scopes/protectedVisibility/innerProtectedClass.kt.html" target="_blank">tests/scopes/protectedVisibility/innerProtectedClass.kt (1)</a></li>
+          <li><a href="diffs/tests/scopes/protectedVisibility/syntheticPropertyExtensions.kt.html" target="_blank">tests/scopes/protectedVisibility/syntheticPropertyExtensions.kt (1)</a></li>
+          <li><a href="diffs/tests/scopes/protectedVisibility/syntheticSAMExtensions.kt.html" target="_blank">tests/scopes/protectedVisibility/syntheticSAMExtensions.kt (1)</a></li>
+          <li><a href="diffs/tests/secondaryConstructors/errorsOnEmptyDelegationCall.kt.html" target="_blank">tests/secondaryConstructors/errorsOnEmptyDelegationCall.kt (1)</a></li>
+          <li><a href="diffs/tests/syntheticExtensions/samAdapters/PackageLocal.kt.html" target="_blank">tests/syntheticExtensions/samAdapters/PackageLocal.kt (1)</a></li>
+          <li><a href="diffs/tests/syntheticExtensions/samAdapters/Private.kt.html" target="_blank">tests/syntheticExtensions/samAdapters/Private.kt (1)</a></li>
+          <li><a href="diffs/tests/syntheticExtensions/samAdapters/Protected.kt.html" target="_blank">tests/syntheticExtensions/samAdapters/Protected.kt (1)</a></li>
+          <li><a href="diffs/tests/unsignedTypes/callDefaultConstructorOfUnsignedType.kt.html" target="_blank">tests/unsignedTypes/callDefaultConstructorOfUnsignedType.kt (1)</a></li>
+          <li><a href="diffs/tests/variance/privateToThis/FunctionCall.kt.html" target="_blank">tests/variance/privateToThis/FunctionCall.kt (1)</a></li>
+          <li><a href="diffs/tests/variance/privateToThis/GetVal.kt.html" target="_blank">tests/variance/privateToThis/GetVal.kt (1)</a></li>
+          <li><a href="diffs/tests/variance/privateToThis/SetVar.kt.html" target="_blank">tests/variance/privateToThis/SetVar.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 5.5em; background: white">
+        <h3>FUNCTION_EXPECTED -&gt; INVISIBLE_REFERENCE (6)</h3>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diffs/tests/resolve/noCandidates/resolvedToClassifierWithReceiver.kt.html" target="_blank">tests/resolve/noCandidates/resolvedToClassifierWithReceiver.kt (2)</a></li>
+          <li><a href="diffs/tests/typealias/typeAliasConstructor.kt.html" target="_blank">tests/typealias/typeAliasConstructor.kt (2)</a></li>
+          <li><a href="diffs/tests/incompleteCode/kt2014.kt.html" target="_blank">tests/incompleteCode/kt2014.kt (1)</a></li>
+          <li><a href="diffs/tests/resolve/noCandidates/resolvedToClassifier.kt.html" target="_blank">tests/resolve/noCandidates/resolvedToClassifier.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 5.5em; background: white">
+        <h3>UNRESOLVED_REFERENCE -&gt; INVISIBLE_REFERENCE (1)</h3>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diffs/tests/syntheticExtensions/javaProperties/OnlyPublic.kt.html" target="_blank">tests/syntheticExtensions/javaProperties/OnlyPublic.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="matched">
+        <h2>Matched (14)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diffs/tests/j+k/packageVisibility.kt.html" target="_blank">tests/j+k/packageVisibility.kt (6)</a></li>
+          <li><a href="diffs/tests/classObjects/invisibleClassObjects.kt.html" target="_blank">tests/classObjects/invisibleClassObjects.kt (2)</a></li>
+          <li><a href="diffs/tests/imports/PackageLocalClassReferencedError.kt.html" target="_blank">tests/imports/PackageLocalClassReferencedError.kt (1)</a></li>
+          <li><a href="diffs/tests/imports/PrivateClassReferencedError.kt.html" target="_blank">tests/imports/PrivateClassReferencedError.kt (1)</a></li>
+          <li><a href="diffs/tests/javac/imports/PackagePrivateAndPublicNested.kt.html" target="_blank">tests/javac/imports/PackagePrivateAndPublicNested.kt (1)</a></li>
+          <li><a href="diffs/tests/privateInFile/visibility.kt.html" target="_blank">tests/privateInFile/visibility.kt (1)</a></li>
+          <li><a href="diffs/tests/scopes/visibility2.kt.html" target="_blank">tests/scopes/visibility2.kt (1)</a></li>
+          <li><a href="diffs/tests/scopes/visibility3.kt.html" target="_blank">tests/scopes/visibility3.kt (1)</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

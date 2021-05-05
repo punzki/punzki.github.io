@@ -1,0 +1,84 @@
+<html>
+  <head>
+    <title>Diagnostics diff: UPPER_BOUND_VIOLATED</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row sticky-top" style="background: white" id="summary">
+        <div class="d-inline-flex align-items-baseline">
+          <h1 class="mr-2">UPPER_BOUND_VIOLATED</h1>
+<a href="index.html">(back to diagnostic list)</a></div>
+      </div>
+      <div class="row">
+        <ul>
+          <li><strong>Total: </strong>99</li>
+          <li><strong>Match %: </strong>23.23%</li>
+          <li><a href="#matched"><strong># Matched: </strong>23</a></li>
+          <li><strong># Non-matched: </strong>76</li>
+          <li><a href="#missing"><strong># Missing: </strong>73</a></li>
+          <li><a href="#unexpected"><strong># Unexpected: </strong>3</a></li>
+          <li><a href="#mismatched"><strong># Mismatched: </strong>0</a></li>
+          <li><strong># of Files: </strong>30</li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="missing">
+        <h2>Missing (73)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diffs/tests/generics/nullability/tpBoundsViolationVariance.kt.html" target="_blank">tests/generics/nullability/tpBoundsViolationVariance.kt (10)</a></li>
+          <li><a href="diffs/tests/Bounds.kt.html" target="_blank">tests/Bounds.kt (8)</a></li>
+          <li><a href="diffs/tests/typealias/boundViolationInTypeAliasConstructor.kt.html" target="_blank">tests/typealias/boundViolationInTypeAliasConstructor.kt (8)</a></li>
+          <li><a href="diffs/testsWithStdLib/java/checkEnhancedUpperBoundsWithEnabledImprovements.kt.html" target="_blank">testsWithStdLib/java/checkEnhancedUpperBoundsWithEnabledImprovements.kt (7)</a></li>
+          <li><a href="diffs/tests/generics/nullability/declarationsBoundsViolation.kt.html" target="_blank">tests/generics/nullability/declarationsBoundsViolation.kt (5)</a></li>
+          <li><a href="diffs/tests/typealias/boundsViolationInTypeAliasExpansion.kt.html" target="_blank">tests/typealias/boundsViolationInTypeAliasExpansion.kt (5)</a></li>
+          <li><a href="diffs/tests/generics/projectionsScope/typeParameterBounds.kt.html" target="_blank">tests/generics/projectionsScope/typeParameterBounds.kt (4)</a></li>
+          <li><a href="diffs/tests/MultipleBounds.kt.html" target="_blank">tests/MultipleBounds.kt (3)</a></li>
+          <li><a href="diffs/tests/generics/nullability/expressionsBoundsViolation.kt.html" target="_blank">tests/generics/nullability/expressionsBoundsViolation.kt (3)</a></li>
+          <li><a href="diffs/tests/generics/nullability/tpBoundsViolation.kt.html" target="_blank">tests/generics/nullability/tpBoundsViolation.kt (3)</a></li>
+          <li><a href="diffs/tests/generics/RecursiveUpperBoundCheck.kt.html" target="_blank">tests/generics/RecursiveUpperBoundCheck.kt (2)</a></li>
+          <li><a href="diffs/tests/objects/upperBoundViolated.kt.html" target="_blank">tests/objects/upperBoundViolated.kt (2)</a></li>
+          <li><a href="diffs/tests/typealias/wrongNumberOfArgumentsInTypeAliasConstructor.kt.html" target="_blank">tests/typealias/wrongNumberOfArgumentsInTypeAliasConstructor.kt (2)</a></li>
+          <li><a href="diffs/tests/declarationChecks/kClassInSignature.kt.html" target="_blank">tests/declarationChecks/kClassInSignature.kt (1)</a></li>
+          <li><a href="diffs/tests/generics/RecursiveUpperBoundWithTwoArguments.kt.html" target="_blank">tests/generics/RecursiveUpperBoundWithTwoArguments.kt (1)</a></li>
+          <li><a href="diffs/tests/generics/argumentsForT.kt.html" target="_blank">tests/generics/argumentsForT.kt (1)</a></li>
+          <li><a href="diffs/tests/generics/innerClasses/checkBoundsOuter.kt.html" target="_blank">tests/generics/innerClasses/checkBoundsOuter.kt (1)</a></li>
+          <li><a href="diffs/tests/regressions/WrongTraceInCallResolver.kt.html" target="_blank">tests/regressions/WrongTraceInCallResolver.kt (1)</a></li>
+          <li><a href="diffs/tests/regressions/kt7585/base.kt.html" target="_blank">tests/regressions/kt7585/base.kt (1)</a></li>
+          <li><a href="diffs/tests/regressions/kt7585/java.kt.html" target="_blank">tests/regressions/kt7585/java.kt (1)</a></li>
+          <li><a href="diffs/tests/substitutions/starProjections.kt.html" target="_blank">tests/substitutions/starProjections.kt (1)</a></li>
+          <li><a href="diffs/tests/typealias/boundsViolationInDeepTypeAliasExpansion.kt.html" target="_blank">tests/typealias/boundsViolationInDeepTypeAliasExpansion.kt (1)</a></li>
+          <li><a href="diffs/tests/typealias/boundsViolationInTypeAliasRHS.kt.html" target="_blank">tests/typealias/boundsViolationInTypeAliasRHS.kt (1)</a></li>
+          <li><a href="diffs/tests/typealias/kt19601.kt.html" target="_blank">tests/typealias/kt19601.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="unexpected">
+        <h2>Unexpected (3)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diffs/tests/Bounds.kt.html" target="_blank">tests/Bounds.kt (1)</a></li>
+          <li><a href="diffs/tests/typeParameters/kt42042.kt.html" target="_blank">tests/typeParameters/kt42042.kt (1)</a></li>
+          <li><a href="diffs/tests/typeParameters/kt42042Error.kt.html" target="_blank">tests/typeParameters/kt42042Error.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="matched">
+        <h2>Matched (23)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diffs/foreignAnnotationsTests/java8Tests/jspecify/strictMode/TypeParameterBounds.kt.html" target="_blank">foreignAnnotationsTests/java8Tests/jspecify/strictMode/TypeParameterBounds.kt (6)</a></li>
+          <li><a href="diffs/tests/Bounds.kt.html" target="_blank">tests/Bounds.kt (6)</a></li>
+          <li><a href="diffs/tests/nullableTypes/takingNullabilityFromExplicitTypeArgmentsInsteadOfUsingFlexibleTypes.kt.html" target="_blank">tests/nullableTypes/takingNullabilityFromExplicitTypeArgmentsInsteadOfUsingFlexibleTypes.kt (4)</a></li>
+          <li><a href="diffs/foreignAnnotationsTests/java8Tests/typeEnhancement/onCompiled/classTypeParameterBound.kt.html" target="_blank">foreignAnnotationsTests/java8Tests/typeEnhancement/onCompiled/classTypeParameterBound.kt (3)</a></li>
+          <li><a href="diffs/tests/MultipleBounds.kt.html" target="_blank">tests/MultipleBounds.kt (2)</a></li>
+          <li><a href="diffs/foreignAnnotationsTests/java8Tests/jspecify/strictMode/NullnessUnspecifiedTypeParameter.kt.html" target="_blank">foreignAnnotationsTests/java8Tests/jspecify/strictMode/NullnessUnspecifiedTypeParameter.kt (1)</a></li>
+          <li><a href="diffs/tests/typealias/boundViolationInTypeAliasConstructor.kt.html" target="_blank">tests/typealias/boundViolationInTypeAliasConstructor.kt (1)</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

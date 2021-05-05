@@ -1,0 +1,146 @@
+<html>
+  <head>
+    <title>Diagnostics diff: tests/imports/WrongImport.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <ul>
+          <li><a id="expected" target="_blank"><strong>Expected file: </strong><span id="expected-path"></span></a></li>
+          <li><a id="actual" target="_blank"><strong>Actual file: </strong><span id="actual-path"></span></a></li>
+        </ul>
+      </div>
+      <div class="row">
+        <div id="diff" style="width: 100%"></div>
+      </div>
+    </div>
+    <script type="text/javascript">                        const linkPrefix = 'https://github.com/JetBrains/kotlin/blob/c14a890e7ebd135715e0385755bf1cc9f54bea98/compiler/testData/diagnostics';
+                        const expectedPath = 'tests/imports/WrongImport.kt';
+                        const actualPath = 'tests/imports/WrongImport.fir.kt';
+                        const expectedLinkUrl = linkPrefix + '/' + expectedPath;
+                        const actualLinkUrl = linkPrefix + '/' + actualPath;
+                        $('#expected').attr('href', expectedLinkUrl);
+                        $('#actual').attr('href', actualLinkUrl);
+                        $('#expected-path').text(expectedPath);
+                        $('#actual-path').text(actualPath);
+
+                        const diffString = `--- tests/imports/WrongImport.kt
++++ tests/imports/WrongImport.fir.kt
+@@ -1,78 +1,78 @@
+ // FILE:a.kt
+ package a.b
+ 
+ // FILE:b.kt
+ package a
+ 
+ val foo = object {
+     fun bar() {}
+ }
+ 
+ fun bar() = object {
+     val foo = 239
+ }
+ 
+ class B {
+     val foo = object {
+         fun bar() {}
+     }
+ 
+     fun bar() = object {
+         val foo = 239
+     }
+ }
+ 
+ object C {
+     val foo = object {
+         fun bar() {}
+     }
+ 
+     fun bar() = object {
+         val foo = 239
+     }
+ 
+     class Nested
+ }
+ 
+ class D {
+     companion object {
+         val foo = object {
+             fun bar() {}
+         }
+ 
+         fun bar() = object {
+             val foo = 239
+         }
+     }
+ }
+ 
+ 
+ // FILE:c.kt
+-import <!PACKAGE_CANNOT_BE_IMPORTED!>a<!>
+-import a.<!PACKAGE_CANNOT_BE_IMPORTED!>b<!>
++import a
++import a.b
+ 
+ import a.foo
+-import a.<!UNRESOLVED_REFERENCE!>foo<!>.<!DEBUG_INFO_MISSING_UNRESOLVED!>bar<!>
++import a.foo.bar
+ import a.bar
+-import a.<!UNRESOLVED_REFERENCE!>bar<!>.<!DEBUG_INFO_MISSING_UNRESOLVED!>foo<!>
++import a.bar.foo
+ 
+-import a.B.<!CANNOT_BE_IMPORTED!>foo<!>
+-import a.B.<!UNRESOLVED_REFERENCE!>foo<!>.<!DEBUG_INFO_MISSING_UNRESOLVED!>bar<!>
+-import a.B.<!CANNOT_BE_IMPORTED!>bar<!>
+-import a.B.<!UNRESOLVED_REFERENCE!>bar<!>.<!DEBUG_INFO_MISSING_UNRESOLVED!>foo<!>
++import a.B.foo
++import a.B.foo.bar
++import a.B.bar
++import a.B.bar.foo
+ 
+ import a.C.foo
+-import a.C.<!UNRESOLVED_REFERENCE!>foo<!>.<!DEBUG_INFO_MISSING_UNRESOLVED!>bar<!>
++import a.C.foo.bar
+ import a.C.bar
+-import a.C.<!UNRESOLVED_REFERENCE!>bar<!>.<!DEBUG_INFO_MISSING_UNRESOLVED!>foo<!>
++import a.C.bar.foo
+ import a.C.Nested
+ 
+-import a.D.<!UNRESOLVED_REFERENCE!>foo<!>
+-import a.D.<!UNRESOLVED_REFERENCE!>foo<!>.<!DEBUG_INFO_MISSING_UNRESOLVED!>bar<!>
+-import a.D.<!UNRESOLVED_REFERENCE!>bar<!>
+-import a.D.<!UNRESOLVED_REFERENCE!>bar<!>.<!DEBUG_INFO_MISSING_UNRESOLVED!>foo<!>
++import a.D.foo
++import a.D.foo.bar
++import a.D.bar
++import a.D.bar.foo
+ 
+ import a.D.Companion.foo
+-import a.D.Companion.<!UNRESOLVED_REFERENCE!>foo<!>.<!DEBUG_INFO_MISSING_UNRESOLVED!>bar<!>
++import a.D.Companion.foo.bar
+ import a.D.Companion.bar
+-import a.D.Companion.<!UNRESOLVED_REFERENCE!>bar<!>.<!DEBUG_INFO_MISSING_UNRESOLVED!>foo<!>
++import a.D.Companion.bar.foo`;
+                        const targetElement = $('#diff')[0];
+                        const configuration = {
+                            drawFileList: false,
+                            fileListToggle: false,
+                            fileListStartVisible: false,
+                            fileContentToggle: false,
+                            matching: 'lines',
+                            outputFormat: 'side-by-side',
+                            synchronisedScroll: true,
+                            highlight: true,
+                            renderNothingWhenEmpty: false,
+                        };
+                        const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                        diff2htmlUi.draw();
+                        diff2htmlUi.highlightCode();</script>
+  </body>
+</html>

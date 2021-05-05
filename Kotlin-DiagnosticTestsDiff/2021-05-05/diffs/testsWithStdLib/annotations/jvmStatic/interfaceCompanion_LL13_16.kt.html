@@ -1,0 +1,130 @@
+<html>
+  <head>
+    <title>Diagnostics diff: testsWithStdLib/annotations/jvmStatic/interfaceCompanion_LL13_16.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <ul>
+          <li><a id="expected" target="_blank"><strong>Expected file: </strong><span id="expected-path"></span></a></li>
+          <li><a id="actual" target="_blank"><strong>Actual file: </strong><span id="actual-path"></span></a></li>
+        </ul>
+      </div>
+      <div class="row">
+        <div id="diff" style="width: 100%"></div>
+      </div>
+    </div>
+    <script type="text/javascript">                        const linkPrefix = 'https://github.com/JetBrains/kotlin/blob/c14a890e7ebd135715e0385755bf1cc9f54bea98/compiler/testData/diagnostics';
+                        const expectedPath = 'testsWithStdLib/annotations/jvmStatic/interfaceCompanion_LL13_16.kt';
+                        const actualPath = 'testsWithStdLib/annotations/jvmStatic/interfaceCompanion_LL13_16.fir.kt';
+                        const expectedLinkUrl = linkPrefix + '/' + expectedPath;
+                        const actualLinkUrl = linkPrefix + '/' + actualPath;
+                        $('#expected').attr('href', expectedLinkUrl);
+                        $('#actual').attr('href', actualLinkUrl);
+                        $('#expected-path').text(expectedPath);
+                        $('#actual-path').text(actualPath);
+
+                        const diffString = `--- testsWithStdLib/annotations/jvmStatic/interfaceCompanion_LL13_16.kt
++++ testsWithStdLib/annotations/jvmStatic/interfaceCompanion_LL13_16.fir.kt
+@@ -1,57 +1,57 @@
+ // !DIAGNOSTICS: -UNUSED_VARIABLE
+ // !LANGUAGE: +JvmStaticInInterface
+ // !JVM_TARGET: 1.6
+ 
+ interface B {
+     companion object {
+-        <!JVM_STATIC_IN_INTERFACE_1_6!>@JvmStatic fun a1()<!> {
++        @JvmStatic fun a1() {
+ 
+         }
+ 
+-        <!JVM_STATIC_IN_INTERFACE_1_6, JVM_STATIC_ON_NON_PUBLIC_MEMBER!>@JvmStatic private fun a2()<!> {
++        @JvmStatic private fun a2() {
+ 
+         }
+ 
+-        <!JVM_STATIC_IN_INTERFACE_1_6, JVM_STATIC_ON_NON_PUBLIC_MEMBER!>@JvmStatic protected fun a3()<!> {
++        @JvmStatic protected fun a3() {
+ 
+         }
+ 
+-        <!JVM_STATIC_IN_INTERFACE_1_6, JVM_STATIC_ON_NON_PUBLIC_MEMBER!>@JvmStatic internal fun a4()<!> {
++        @JvmStatic internal fun a4() {
+ 
+         }
+ 
+-        <!JVM_STATIC_IN_INTERFACE_1_6!>@JvmStatic
+-        var foo<!> = 1
++        @JvmStatic
++        var foo = 1
+ 
+-        <!JVM_STATIC_IN_INTERFACE_1_6, JVM_STATIC_ON_NON_PUBLIC_MEMBER!>@JvmStatic
+-        var foo1<!> = 1
++        @JvmStatic
++        var foo1 = 1
+             protected set
+ 
+-        <!JVM_STATIC_IN_INTERFACE_1_6, JVM_STATIC_ON_NON_PUBLIC_MEMBER!>@JvmStatic
+-        var foo2<!> = 1
++        @JvmStatic
++        var foo2 = 1
+             private set
+ 
+-        <!JVM_STATIC_IN_INTERFACE_1_6, JVM_STATIC_ON_NON_PUBLIC_MEMBER!>@JvmStatic
+-        private var foo3<!> = 1
++        @JvmStatic
++        private var foo3 = 1
+ 
+-        <!JVM_STATIC_IN_INTERFACE_1_6, JVM_STATIC_ON_NON_PUBLIC_MEMBER!>@JvmStatic
+-        protected var foo4<!> = 1
++        @JvmStatic
++        protected var foo4 = 1
+ 
+-        <!JVM_STATIC_IN_INTERFACE_1_6, JVM_STATIC_ON_NON_PUBLIC_MEMBER!>@JvmStatic
+-        protected var foo5<!> = 1
++        @JvmStatic
++        protected var foo5 = 1
+ 
+-        <!JVM_STATIC_IN_INTERFACE_1_6!>@JvmStatic
+-        val foo6<!> = 1
++        @JvmStatic
++        val foo6 = 1
+ 
+         val foo7 = 1
+-        <!JVM_STATIC_IN_INTERFACE_1_6!>@JvmStatic get<!>
++        @JvmStatic get
+ 
+         private var foo8 = 1
+-        <!JVM_STATIC_IN_INTERFACE_1_6!><!ANNOTATION_TARGETS_NON_EXISTENT_ACCESSOR!>@JvmStatic<!> <!SETTER_VISIBILITY_INCONSISTENT_WITH_PROPERTY_VISIBILITY!>public<!> set<!>
++        @JvmStatic public set
+ 
+         public var foo9 = 1
+-        <!JVM_STATIC_IN_INTERFACE_1_6, JVM_STATIC_ON_NON_PUBLIC_MEMBER!>@JvmStatic private set<!>
++        @JvmStatic private set
+ 
+     }
+ 
+ }`;
+                        const targetElement = $('#diff')[0];
+                        const configuration = {
+                            drawFileList: false,
+                            fileListToggle: false,
+                            fileListStartVisible: false,
+                            fileContentToggle: false,
+                            matching: 'lines',
+                            outputFormat: 'side-by-side',
+                            synchronisedScroll: true,
+                            highlight: true,
+                            renderNothingWhenEmpty: false,
+                        };
+                        const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                        diff2htmlUi.draw();
+                        diff2htmlUi.highlightCode();</script>
+  </body>
+</html>

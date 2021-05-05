@@ -1,0 +1,78 @@
+<html>
+  <head>
+    <title>Diagnostics diff: tests/typealias/boundsViolationInTypeAliasRHS.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <ul>
+          <li><a id="expected" target="_blank"><strong>Expected file: </strong><span id="expected-path"></span></a></li>
+          <li><a id="actual" target="_blank"><strong>Actual file: </strong><span id="actual-path"></span></a></li>
+        </ul>
+      </div>
+      <div class="row">
+        <div id="diff" style="width: 100%"></div>
+      </div>
+    </div>
+    <script type="text/javascript">                        const linkPrefix = 'https://github.com/JetBrains/kotlin/blob/c14a890e7ebd135715e0385755bf1cc9f54bea98/compiler/testData/diagnostics';
+                        const expectedPath = 'tests/typealias/boundsViolationInTypeAliasRHS.kt';
+                        const actualPath = 'tests/typealias/boundsViolationInTypeAliasRHS.fir.kt';
+                        const expectedLinkUrl = linkPrefix + '/' + expectedPath;
+                        const actualLinkUrl = linkPrefix + '/' + actualPath;
+                        $('#expected').attr('href', expectedLinkUrl);
+                        $('#actual').attr('href', actualLinkUrl);
+                        $('#expected-path').text(expectedPath);
+                        $('#actual-path').text(actualPath);
+
+                        const diffString = `--- tests/typealias/boundsViolationInTypeAliasRHS.kt
++++ tests/typealias/boundsViolationInTypeAliasRHS.fir.kt
+@@ -1,20 +1,20 @@
+ // !DIAGNOSTICS: -UNUSED_VARIABLE -UNUSED_PARAMETER
+ 
+ class TC<T, C : Collection<T>>
+ 
+ typealias TCAlias<T, C> = TC<T, C>
+ typealias TCAliasT<T> = TC<T, Any>
+ typealias TCAliasC<C> = TC<Any, C>
+ typealias TCAliasT1<T> = TCAlias<T, Any>
+ typealias TCAliasC1<C> = TCAlias<Any, C>
+ 
+-typealias Test1 = TC<Any, <!UPPER_BOUND_VIOLATED!>Any<!>>
++typealias Test1 = TC<Any, Any>
+ typealias Test2 = TC<Any, Collection<Any>>
+-typealias Test3 = <!UPPER_BOUND_VIOLATED_IN_TYPEALIAS_EXPANSION!>TCAlias<Any, Any><!>
++typealias Test3 = TCAlias<Any, Any>
+ typealias Test4 = TCAlias<Any, Collection<Any>>
+-typealias Test5 = <!UPPER_BOUND_VIOLATED_IN_TYPEALIAS_EXPANSION!>TCAliasT<Any><!>
+-typealias Test6 = <!UPPER_BOUND_VIOLATED_IN_TYPEALIAS_EXPANSION!>TCAliasC<Any><!>
++typealias Test5 = TCAliasT<Any>
++typealias Test6 = TCAliasC<Any>
+ typealias Test7 = TCAliasC<Collection<Any>>
+-typealias Test8 = <!UPPER_BOUND_VIOLATED_IN_TYPEALIAS_EXPANSION!>TCAliasT1<Any><!>
+-typealias Test9 = <!UPPER_BOUND_VIOLATED_IN_TYPEALIAS_EXPANSION!>TCAliasC1<Any><!>
++typealias Test8 = TCAliasT1<Any>
++typealias Test9 = TCAliasC1<Any>
+ typealias Test10 = TCAliasC1<Collection<Any>>`;
+                        const targetElement = $('#diff')[0];
+                        const configuration = {
+                            drawFileList: false,
+                            fileListToggle: false,
+                            fileListStartVisible: false,
+                            fileContentToggle: false,
+                            matching: 'lines',
+                            outputFormat: 'side-by-side',
+                            synchronisedScroll: true,
+                            highlight: true,
+                            renderNothingWhenEmpty: false,
+                        };
+                        const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                        diff2htmlUi.draw();
+                        diff2htmlUi.highlightCode();</script>
+  </body>
+</html>

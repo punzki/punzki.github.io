@@ -1,0 +1,110 @@
+<html>
+  <head>
+    <title>Diagnostics diff: tests/inline/approximateReturnedAnonymousObjects.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <ul>
+          <li><a id="expected" target="_blank"><strong>Expected file: </strong><span id="expected-path"></span></a></li>
+          <li><a id="actual" target="_blank"><strong>Actual file: </strong><span id="actual-path"></span></a></li>
+        </ul>
+      </div>
+      <div class="row">
+        <div id="diff" style="width: 100%"></div>
+      </div>
+    </div>
+    <script type="text/javascript">                        const linkPrefix = 'https://github.com/JetBrains/kotlin/blob/c14a890e7ebd135715e0385755bf1cc9f54bea98/compiler/testData/diagnostics';
+                        const expectedPath = 'tests/inline/approximateReturnedAnonymousObjects.kt';
+                        const actualPath = 'tests/inline/approximateReturnedAnonymousObjects.fir.kt';
+                        const expectedLinkUrl = linkPrefix + '/' + expectedPath;
+                        const actualLinkUrl = linkPrefix + '/' + actualPath;
+                        $('#expected').attr('href', expectedLinkUrl);
+                        $('#actual').attr('href', actualLinkUrl);
+                        $('#expected-path').text(expectedPath);
+                        $('#actual-path').text(actualPath);
+
+                        const diffString = `--- tests/inline/approximateReturnedAnonymousObjects.kt
++++ tests/inline/approximateReturnedAnonymousObjects.fir.kt
+@@ -1,52 +1,52 @@
+ // !LANGUAGE: +ApproximateAnonymousReturnTypesInPrivateInlineFunctions
+ 
+ private inline fun foo1(crossinline f: () -> Int) = object {
+     fun bar(): Int = f()
+ }
+ 
+ interface I1
+ interface I2
+ 
+ private inline fun foo2(crossinline f: () -> Int) = object : I1 {
+     fun bar(): Int = f()
+ }
+ 
+-<!AMBIGUOUS_ANONYMOUS_TYPE_INFERRED!>private inline fun foo3(crossinline f: () -> Int)<!> = object : I1, I2 {
++private inline fun foo3(crossinline f: () -> Int) = object : I1, I2 {
+     fun bar(): Int = f()
+ }
+ 
+ private fun foo4(f: () -> Int) = object {
+     fun bar(): Int = f()
+ }
+ 
+ fun test1(b: Boolean) {
+     var x = <!DEBUG_INFO_EXPRESSION_TYPE("kotlin.Any")!>foo1 { 1 }<!>
+     if (b) {
+         x = <!DEBUG_INFO_EXPRESSION_TYPE("kotlin.Any")!>foo1 { 2 }<!>
+     }
+     x.<!UNRESOLVED_REFERENCE!>bar<!>()
+ }
+ 
+ fun test2(b: Boolean) {
+     var x = <!DEBUG_INFO_EXPRESSION_TYPE("I1")!>foo2 { 1 }<!>
+     if (b) {
+         x = <!DEBUG_INFO_EXPRESSION_TYPE("I1")!>foo2 { 2 }<!>
+     }
+     x.<!UNRESOLVED_REFERENCE!>bar<!>()
+ }
+ 
+ fun test3(b: Boolean) {
+-    var x = <!DEBUG_INFO_EXPRESSION_TYPE("foo3.<no name provided>")!>foo3 { 1 }<!>
++    var x = <!DEBUG_INFO_EXPRESSION_TYPE("ERROR CLASS: Cannot hide local type object : R|I1|, R|I2| {    private constructor(): R|<anonymous>| {        super<R|kotlin/Any|>()    }    public final fun bar(): R|kotlin/Int| {        ^bar R|<local>/f|.R|SubstitutionOverride<kotlin/Function0.invoke: R|kotlin/Int|>|()    }}")!>foo3 { 1 }<!>
+     if (b) {
+-        x = <!DEBUG_INFO_EXPRESSION_TYPE("foo3.<no name provided>")!>foo3 { 2 }<!>
++        x = <!DEBUG_INFO_EXPRESSION_TYPE("ERROR CLASS: Cannot hide local type object : R|I1|, R|I2| {    private constructor(): R|<anonymous>| {        super<R|kotlin/Any|>()    }    public final fun bar(): R|kotlin/Int| {        ^bar R|<local>/f|.R|SubstitutionOverride<kotlin/Function0.invoke: R|kotlin/Int|>|()    }}")!>foo3 { 2 }<!>
+     }
+-    x.bar()
++    x.<!UNRESOLVED_REFERENCE!>bar<!>()
+ }
+ 
+ fun test4(b: Boolean) {
+-    var x = <!DEBUG_INFO_EXPRESSION_TYPE("foo4.<no name provided>")!>foo4 { 1 }<!>
++    var x = <!DEBUG_INFO_EXPRESSION_TYPE("<anonymous>")!>foo4 { 1 }<!>
+     if (b) {
+-        x = <!DEBUG_INFO_EXPRESSION_TYPE("foo4.<no name provided>")!>foo4 { 2 }<!>
++        x = <!DEBUG_INFO_EXPRESSION_TYPE("<anonymous>")!>foo4 { 2 }<!>
+     }
+     x.bar()
+ }`;
+                        const targetElement = $('#diff')[0];
+                        const configuration = {
+                            drawFileList: false,
+                            fileListToggle: false,
+                            fileListStartVisible: false,
+                            fileContentToggle: false,
+                            matching: 'lines',
+                            outputFormat: 'side-by-side',
+                            synchronisedScroll: true,
+                            highlight: true,
+                            renderNothingWhenEmpty: false,
+                        };
+                        const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                        diff2htmlUi.draw();
+                        diff2htmlUi.highlightCode();</script>
+  </body>
+</html>

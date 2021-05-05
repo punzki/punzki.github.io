@@ -1,0 +1,76 @@
+<html>
+  <head>
+    <title>Diagnostics diff: MUST_BE_INITIALIZED_OR_BE_ABSTRACT</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row sticky-top" style="background: white" id="summary">
+        <div class="d-inline-flex align-items-baseline">
+          <h1 class="mr-2">MUST_BE_INITIALIZED_OR_BE_ABSTRACT</h1>
+<a href="index.html">(back to diagnostic list)</a></div>
+      </div>
+      <div class="row">
+        <ul>
+          <li><strong>Total: </strong>44</li>
+          <li><strong>Match %: </strong>88.64%</li>
+          <li><a href="#matched"><strong># Matched: </strong>39</a></li>
+          <li><strong># Non-matched: </strong>5</li>
+          <li><a href="#missing"><strong># Missing: </strong>4</a></li>
+          <li><a href="#unexpected"><strong># Unexpected: </strong>1</a></li>
+          <li><a href="#mismatched"><strong># Mismatched: </strong>0</a></li>
+          <li><strong># of Files: </strong>23</li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="missing">
+        <h2>Missing (4)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diffs/tests/controlFlowAnalysis/UninitializedOrReassignedVariables.kt.html" target="_blank">tests/controlFlowAnalysis/UninitializedOrReassignedVariables.kt (2)</a></li>
+          <li><a href="diffs/tests/backingField/InitOpenSetter.kt.html" target="_blank">tests/backingField/InitOpenSetter.kt (1)</a></li>
+          <li><a href="diffs/tests/multiplatform/modifierApplicability.kt.html" target="_blank">tests/multiplatform/modifierApplicability.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="unexpected">
+        <h2>Unexpected (1)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diffs/tests/initializedAfterRethrow.kt.html" target="_blank">tests/initializedAfterRethrow.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="matched">
+        <h2>Matched (39)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diffs/tests/infos/PropertiesWithBackingFields.kt.html" target="_blank">tests/infos/PropertiesWithBackingFields.kt (7)</a></li>
+          <li><a href="diffs/tests/controlFlowAnalysis/UninitializedOrReassignedVariables.kt.html" target="_blank">tests/controlFlowAnalysis/UninitializedOrReassignedVariables.kt (4)</a></li>
+          <li><a href="diffs/tests/AbstractInAbstractClass.kt.html" target="_blank">tests/AbstractInAbstractClass.kt (3)</a></li>
+          <li><a href="diffs/tests/AbstractInClass.kt.html" target="_blank">tests/AbstractInClass.kt (3)</a></li>
+          <li><a href="diffs/tests/enum/AbstractInEnum.kt.html" target="_blank">tests/enum/AbstractInEnum.kt (3)</a></li>
+          <li><a href="diffs/tests/ExternalAccessors.kt.html" target="_blank">tests/ExternalAccessors.kt (2)</a></li>
+          <li><a href="diffs/tests/secondaryConstructors/unreachableCode.kt.html" target="_blank">tests/secondaryConstructors/unreachableCode.kt (2)</a></li>
+          <li><a href="diffs/tests/Constructors.kt.html" target="_blank">tests/Constructors.kt (1)</a></li>
+          <li><a href="diffs/tests/PrimaryConstructors.kt.html" target="_blank">tests/PrimaryConstructors.kt (1)</a></li>
+          <li><a href="diffs/tests/backingField/InitOpenSetter.kt.html" target="_blank">tests/backingField/InitOpenSetter.kt (1)</a></li>
+          <li><a href="diffs/tests/controlFlowAnalysis/kt6788.kt.html" target="_blank">tests/controlFlowAnalysis/kt6788.kt (1)</a></li>
+          <li><a href="diffs/tests/controlFlowAnalysis/propertiesInitWithOtherInstanceInner.kt.html" target="_blank">tests/controlFlowAnalysis/propertiesInitWithOtherInstanceInner.kt (1)</a></li>
+          <li><a href="diffs/tests/incompleteCode/diagnosticWithSyntaxError/checkBackingFieldException.kt.html" target="_blank">tests/incompleteCode/diagnosticWithSyntaxError/checkBackingFieldException.kt (1)</a></li>
+          <li><a href="diffs/tests/initializedAfterRethrow.kt.html" target="_blank">tests/initializedAfterRethrow.kt (1)</a></li>
+          <li><a href="diffs/tests/modifiers/IllegalModifiers.kt.html" target="_blank">tests/modifiers/IllegalModifiers.kt (1)</a></li>
+          <li><a href="diffs/tests/override/NonGenerics.kt.html" target="_blank">tests/override/NonGenerics.kt (1)</a></li>
+          <li><a href="diffs/tests/secondaryConstructors/propertyInitializationWithPrimary.kt.html" target="_blank">tests/secondaryConstructors/propertyInitializationWithPrimary.kt (1)</a></li>
+          <li><a href="diffs/tests/secondaryConstructors/propertyInitializationWithoutPrimary.kt.html" target="_blank">tests/secondaryConstructors/propertyInitializationWithoutPrimary.kt (1)</a></li>
+          <li><a href="diffs/tests/secondaryConstructors/useOfPropertiesWithPrimary.kt.html" target="_blank">tests/secondaryConstructors/useOfPropertiesWithPrimary.kt (1)</a></li>
+          <li><a href="diffs/tests/secondaryConstructors/useOfPropertiesWithoutPrimary.kt.html" target="_blank">tests/secondaryConstructors/useOfPropertiesWithoutPrimary.kt (1)</a></li>
+          <li><a href="diffs/testsWithStdLib/contracts/controlflow/initialization/exactlyOnce/valDefiniteInitialization.kt.html" target="_blank">testsWithStdLib/contracts/controlflow/initialization/exactlyOnce/valDefiniteInitialization.kt (1)</a></li>
+          <li><a href="diffs/testsWithStdLib/contracts/controlflow/initialization/exactlyOnce/valIndefiniteInitialization.kt.html" target="_blank">testsWithStdLib/contracts/controlflow/initialization/exactlyOnce/valIndefiniteInitialization.kt (1)</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

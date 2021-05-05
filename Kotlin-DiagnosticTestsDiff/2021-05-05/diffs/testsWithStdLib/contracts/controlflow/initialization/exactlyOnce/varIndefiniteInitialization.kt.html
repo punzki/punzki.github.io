@@ -1,0 +1,105 @@
+<html>
+  <head>
+    <title>Diagnostics diff: testsWithStdLib/contracts/controlflow/initialization/exactlyOnce/varIndefiniteInitialization.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <ul>
+          <li><a id="expected" target="_blank"><strong>Expected file: </strong><span id="expected-path"></span></a></li>
+          <li><a id="actual" target="_blank"><strong>Actual file: </strong><span id="actual-path"></span></a></li>
+        </ul>
+      </div>
+      <div class="row">
+        <div id="diff" style="width: 100%"></div>
+      </div>
+    </div>
+    <script type="text/javascript">                        const linkPrefix = 'https://github.com/JetBrains/kotlin/blob/c14a890e7ebd135715e0385755bf1cc9f54bea98/compiler/testData/diagnostics';
+                        const expectedPath = 'testsWithStdLib/contracts/controlflow/initialization/exactlyOnce/varIndefiniteInitialization.kt';
+                        const actualPath = 'testsWithStdLib/contracts/controlflow/initialization/exactlyOnce/varIndefiniteInitialization.fir.kt';
+                        const expectedLinkUrl = linkPrefix + '/' + expectedPath;
+                        const actualLinkUrl = linkPrefix + '/' + actualPath;
+                        $('#expected').attr('href', expectedLinkUrl);
+                        $('#actual').attr('href', actualLinkUrl);
+                        $('#expected-path').text(expectedPath);
+                        $('#actual-path').text(actualPath);
+
+                        const diffString = `--- testsWithStdLib/contracts/controlflow/initialization/exactlyOnce/varIndefiniteInitialization.kt
++++ testsWithStdLib/contracts/controlflow/initialization/exactlyOnce/varIndefiniteInitialization.fir.kt
+@@ -1,51 +1,51 @@
+ // !LANGUAGE: +AllowContractsForCustomFunctions +UseCallsInPlaceEffect
+ // !USE_EXPERIMENTAL: kotlin.contracts.ExperimentalContracts
+ // !DIAGNOSTICS: -INVISIBLE_REFERENCE -INVISIBLE_MEMBER
+ 
+ import kotlin.contracts.*
+ 
+ fun <T> myRun(block: () -> T): T {
+     contract {
+         callsInPlace(block, InvocationKind.EXACTLY_ONCE)
+     }
+     return block()
+ }
+ 
+ fun indefiniteVarReassignment(n: Int) {
+     var x: Int
+     repeat(n) {
+         myRun { x = 42 }
+     }
+     <!UNINITIALIZED_VARIABLE!>x<!>.inc()
+ }
+ 
+ fun nonAnonymousLambdas() {
+     // Named lambdas are not inlined, even in theory it could be done for some simple cases as this one
+     var x: Int
+     val initializer = { x = 42 }
+     myRun(initializer)
+     <!UNINITIALIZED_VARIABLE!>x<!>.inc()
+ }
+ 
+ fun branchingIndetermineFlow(a: Any) {
+     var x: Int
+ 
+     if (a is String) {
+-        repeat(<!DEBUG_INFO_SMARTCAST!>a<!>.length) {
++        repeat(a.length) {
+             myRun { x = 42 }
+         }
+     }
+     else {
+         myRun { x = 43 }
+     }
+ 
+     <!UNINITIALIZED_VARIABLE!>x<!>.inc()
+ }
+ 
+ fun funWithUnknownInvocations(block: () -> Unit) = block()
+ 
+ fun nestedIndefiniteAssignment() {
+     val x: Int
+-    funWithUnknownInvocations { myRun { <!CAPTURED_VAL_INITIALIZATION!>x<!> = 42 } }
++    funWithUnknownInvocations { myRun { x = 42 } }
+     <!UNINITIALIZED_VARIABLE!>x<!>.inc()
+ }`;
+                        const targetElement = $('#diff')[0];
+                        const configuration = {
+                            drawFileList: false,
+                            fileListToggle: false,
+                            fileListStartVisible: false,
+                            fileContentToggle: false,
+                            matching: 'lines',
+                            outputFormat: 'side-by-side',
+                            synchronisedScroll: true,
+                            highlight: true,
+                            renderNothingWhenEmpty: false,
+                        };
+                        const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                        diff2htmlUi.draw();
+                        diff2htmlUi.highlightCode();</script>
+  </body>
+</html>

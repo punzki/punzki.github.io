@@ -1,0 +1,79 @@
+<html>
+  <head>
+    <title>Diagnostics diff: RESOLUTION_TO_CLASSIFIER</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row sticky-top" style="background: white" id="summary">
+        <div class="d-inline-flex align-items-baseline">
+          <h1 class="mr-2">RESOLUTION_TO_CLASSIFIER</h1>
+<a href="index.html">(back to diagnostic list)</a></div>
+      </div>
+      <div class="row">
+        <ul>
+          <li><strong>Total: </strong>48</li>
+          <li><strong>Match %: </strong>0.00%</li>
+          <li><a href="#matched"><strong># Matched: </strong>0</a></li>
+          <li><strong># Non-matched: </strong>48</li>
+          <li><a href="#missing"><strong># Missing: </strong>19</a></li>
+          <li><a href="#unexpected"><strong># Unexpected: </strong>0</a></li>
+          <li><a href="#mismatched"><strong># Mismatched: </strong>29</a></li>
+          <li><strong># of Files: </strong>24</li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="missing">
+        <h2>Missing (19)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diffs/tests/inner/innerConstructorsFromQualifiers.kt.html" target="_blank">tests/inner/innerConstructorsFromQualifiers.kt (4)</a></li>
+          <li><a href="diffs/tests/scopes/inheritance/innerClasses.kt.html" target="_blank">tests/scopes/inheritance/innerClasses.kt (4)</a></li>
+          <li><a href="diffs/tests/inner/constructorAccess.kt.html" target="_blank">tests/inner/constructorAccess.kt (3)</a></li>
+          <li><a href="diffs/tests/scopes/inheritance/nestedFromJava.kt.html" target="_blank">tests/scopes/inheritance/nestedFromJava.kt (2)</a></li>
+          <li><a href="diffs/tests/inner/innerErrorForClassObjects.kt.html" target="_blank">tests/inner/innerErrorForClassObjects.kt (1)</a></li>
+          <li><a href="diffs/tests/inner/innerErrorForObjects.kt.html" target="_blank">tests/inner/innerErrorForObjects.kt (1)</a></li>
+          <li><a href="diffs/tests/multiplatform/headerClass/expectClassWithoutConstructor.kt.html" target="_blank">tests/multiplatform/headerClass/expectClassWithoutConstructor.kt (1)</a></li>
+          <li><a href="diffs/tests/scopes/classHeader/constructors.kt.html" target="_blank">tests/scopes/classHeader/constructors.kt (1)</a></li>
+          <li><a href="diffs/tests/scopes/classHeader/delegation.kt.html" target="_blank">tests/scopes/classHeader/delegation.kt (1)</a></li>
+          <li><a href="diffs/tests/scopes/classHeader/superConstructorArguments.kt.html" target="_blank">tests/scopes/classHeader/superConstructorArguments.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="mismatched">
+        <h2>Mismatched (29)</h2>
+      </div>
+      <div class="row sticky-top" style="top: 5.5em; background: white">
+        <h3>RESOLUTION_TO_CLASSIFIER -&gt; UNRESOLVED_REFERENCE (28)</h3>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diffs/tests/resolve/noCandidates/resolvedToClassifierWithReceiver.kt.html" target="_blank">tests/resolve/noCandidates/resolvedToClassifierWithReceiver.kt (4)</a></li>
+          <li><a href="diffs/tests/inner/nestedClassAccessedViaInstanceReference.kt.html" target="_blank">tests/inner/nestedClassAccessedViaInstanceReference.kt (3)</a></li>
+          <li><a href="diffs/tests/typealias/typeAliasConstructorWrongClass.kt.html" target="_blank">tests/typealias/typeAliasConstructorWrongClass.kt (3)</a></li>
+          <li><a href="diffs/tests/funInterface/resolveFunInterfaceWithoutMainMethod.kt.html" target="_blank">tests/funInterface/resolveFunInterfaceWithoutMainMethod.kt (2)</a></li>
+          <li><a href="diffs/tests/inner/innerConstructorsFromQualifiers.kt.html" target="_blank">tests/inner/innerConstructorsFromQualifiers.kt (2)</a></li>
+          <li><a href="diffs/tests/inner/qualifiedExpression/constructNestedClass.kt.html" target="_blank">tests/inner/qualifiedExpression/constructNestedClass.kt (2)</a></li>
+          <li><a href="diffs/tests/regressions/kt4827.kt.html" target="_blank">tests/regressions/kt4827.kt (2)</a></li>
+          <li><a href="diffs/tests/resolve/noCandidates/resolvedToClassifier.kt.html" target="_blank">tests/resolve/noCandidates/resolvedToClassifier.kt (2)</a></li>
+          <li><a href="diffs/tests/typealias/typeAliasConstructor.kt.html" target="_blank">tests/typealias/typeAliasConstructor.kt (2)</a></li>
+          <li><a href="diffs/tests/classObjects/InnerClassAccessThroughEnum_after.kt.html" target="_blank">tests/classObjects/InnerClassAccessThroughEnum_after.kt (1)</a></li>
+          <li><a href="diffs/tests/classObjects/InnerClassAccessThroughEnum_before.kt.html" target="_blank">tests/classObjects/InnerClassAccessThroughEnum_before.kt (1)</a></li>
+          <li><a href="diffs/tests/resolve/noCandidates/kt2787.kt.html" target="_blank">tests/resolve/noCandidates/kt2787.kt (1)</a></li>
+          <li><a href="diffs/tests/scopes/inheritance/nestedFromJava.kt.html" target="_blank">tests/scopes/inheritance/nestedFromJava.kt (1)</a></li>
+          <li><a href="diffs/tests/scopes/inheritance/nestedFromJavaAfterKotlin.kt.html" target="_blank">tests/scopes/inheritance/nestedFromJavaAfterKotlin.kt (1)</a></li>
+          <li><a href="diffs/tests/typealias/typeAliasConstructorForInterface.kt.html" target="_blank">tests/typealias/typeAliasConstructorForInterface.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 5.5em; background: white">
+        <h3>RESOLUTION_TO_CLASSIFIER -&gt; NO_COMPANION_OBJECT (1)</h3>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diffs/tests/ResolveToJava.kt.html" target="_blank">tests/ResolveToJava.kt (1)</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,181 @@
+<html>
+  <head>
+    <title>Diagnostics diff: CONFLICTING_JVM_DECLARATIONS</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row sticky-top" style="background: white" id="summary">
+        <div class="d-inline-flex align-items-baseline">
+          <h1 class="mr-2">CONFLICTING_JVM_DECLARATIONS</h1>
+<a href="index.html">(back to diagnostic list)</a></div>
+      </div>
+      <div class="row">
+        <ul>
+          <li><strong>Total: </strong>325</li>
+          <li><strong>Match %: </strong>43.08%</li>
+          <li><a href="#matched"><strong># Matched: </strong>140</a></li>
+          <li><strong># Non-matched: </strong>185</li>
+          <li><a href="#missing"><strong># Missing: </strong>185</a></li>
+          <li><a href="#unexpected"><strong># Unexpected: </strong>0</a></li>
+          <li><a href="#mismatched"><strong># Mismatched: </strong>0</a></li>
+          <li><strong># of Files: </strong>138</li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="missing">
+        <h2>Missing (185)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diffs/tests/overload/ConflictingOlverloadsGenericFunctions.kt.html" target="_blank">tests/overload/ConflictingOlverloadsGenericFunctions.kt (12)</a></li>
+          <li><a href="diffs/tests/inlineClasses/functionsJvmSignaturesClash.kt.html" target="_blank">tests/inlineClasses/functionsJvmSignaturesClash.kt (7)</a></li>
+          <li><a href="diffs/tests/valueClasses/functionsJvmSignaturesClash.kt.html" target="_blank">tests/valueClasses/functionsJvmSignaturesClash.kt (7)</a></li>
+          <li><a href="diffs/tests/duplicateJvmSignature/vararg.kt.html" target="_blank">tests/duplicateJvmSignature/vararg.kt (6)</a></li>
+          <li><a href="diffs/testsWithStdLib/duplicateJvmSignature/jvmNamesDuplicate.kt.html" target="_blank">testsWithStdLib/duplicateJvmSignature/jvmNamesDuplicate.kt (6)</a></li>
+          <li><a href="diffs/tests/duplicateJvmSignature/specialNames/enum.kt.html" target="_blank">tests/duplicateJvmSignature/specialNames/enum.kt (4)</a></li>
+          <li><a href="diffs/tests/duplicateJvmSignature/synthesized/enumValuesValueOf.kt.html" target="_blank">tests/duplicateJvmSignature/synthesized/enumValuesValueOf.kt (4)</a></li>
+          <li><a href="diffs/tests/inlineClasses/constructorsJvmSignaturesClash.kt.html" target="_blank">tests/inlineClasses/constructorsJvmSignaturesClash.kt (4)</a></li>
+          <li><a href="diffs/tests/valueClasses/constructorsJvmSignaturesClash.kt.html" target="_blank">tests/valueClasses/constructorsJvmSignaturesClash.kt (4)</a></li>
+          <li><a href="diffs/testsWithStdLib/RedeclarationMainInMultiFileClass.kt.html" target="_blank">testsWithStdLib/RedeclarationMainInMultiFileClass.kt (4)</a></li>
+          <li><a href="diffs/tests/dataClasses/dataClassExplicitlyOverridingCopyWithDefaults.kt.html" target="_blank">tests/dataClasses/dataClassExplicitlyOverridingCopyWithDefaults.kt (3)</a></li>
+          <li><a href="diffs/tests/duplicateJvmSignature/specialNames/propertyMetadataCache.kt.html" target="_blank">tests/duplicateJvmSignature/specialNames/propertyMetadataCache.kt (3)</a></li>
+          <li><a href="diffs/tests/inlineClasses/inlineClassDeclarationCheck.kt.html" target="_blank">tests/inlineClasses/inlineClassDeclarationCheck.kt (3)</a></li>
+          <li><a href="diffs/tests/thisAndSuper/unqualifiedSuper/ambiguousSuperWithGenerics.kt.html" target="_blank">tests/thisAndSuper/unqualifiedSuper/ambiguousSuperWithGenerics.kt (3)</a></li>
+          <li><a href="diffs/tests/valueClasses/valueClassDeclarationCheck.kt.html" target="_blank">tests/valueClasses/valueClassDeclarationCheck.kt (3)</a></li>
+          <li><a href="diffs/tests/dataClasses/dataClassExplicitlyOverridingCopyNoDefaults.kt.html" target="_blank">tests/dataClasses/dataClassExplicitlyOverridingCopyNoDefaults.kt (2)</a></li>
+          <li><a href="diffs/tests/duplicateJvmSignature/accidentalOverrides/traitFunctionOverriddenByProperty.kt.html" target="_blank">tests/duplicateJvmSignature/accidentalOverrides/traitFunctionOverriddenByProperty.kt (2)</a></li>
+          <li><a href="diffs/tests/duplicateJvmSignature/accidentalOverrides/traitPropertyOverriddenByFunction.kt.html" target="_blank">tests/duplicateJvmSignature/accidentalOverrides/traitPropertyOverriddenByFunction.kt (2)</a></li>
+          <li><a href="diffs/tests/duplicateJvmSignature/bridges/class.kt.html" target="_blank">tests/duplicateJvmSignature/bridges/class.kt (2)</a></li>
+          <li><a href="diffs/tests/duplicateJvmSignature/bridges/fakeOverrideTrait.kt.html" target="_blank">tests/duplicateJvmSignature/bridges/fakeOverrideTrait.kt (2)</a></li>
+          <li><a href="diffs/tests/duplicateJvmSignature/bridges/trait.kt.html" target="_blank">tests/duplicateJvmSignature/bridges/trait.kt (2)</a></li>
+          <li><a href="diffs/tests/duplicateJvmSignature/caseInProperties.kt.html" target="_blank">tests/duplicateJvmSignature/caseInProperties.kt (2)</a></li>
+          <li><a href="diffs/tests/duplicateJvmSignature/erasure/collections.kt.html" target="_blank">tests/duplicateJvmSignature/erasure/collections.kt (2)</a></li>
+          <li><a href="diffs/tests/duplicateJvmSignature/erasure/delegationAndOwnMethod.kt.html" target="_blank">tests/duplicateJvmSignature/erasure/delegationAndOwnMethod.kt (2)</a></li>
+          <li><a href="diffs/tests/duplicateJvmSignature/erasure/delegationToTraitImplAndOwnMethod.kt.html" target="_blank">tests/duplicateJvmSignature/erasure/delegationToTraitImplAndOwnMethod.kt (2)</a></li>
+          <li><a href="diffs/tests/duplicateJvmSignature/erasure/extensionProperties.kt.html" target="_blank">tests/duplicateJvmSignature/erasure/extensionProperties.kt (2)</a></li>
+          <li><a href="diffs/tests/duplicateJvmSignature/erasure/genericType.kt.html" target="_blank">tests/duplicateJvmSignature/erasure/genericType.kt (2)</a></li>
+          <li><a href="diffs/tests/duplicateJvmSignature/erasure/kotlinAndJavaCollections.kt.html" target="_blank">tests/duplicateJvmSignature/erasure/kotlinAndJavaCollections.kt (2)</a></li>
+          <li><a href="diffs/tests/duplicateJvmSignature/erasure/nullableType.kt.html" target="_blank">tests/duplicateJvmSignature/erasure/nullableType.kt (2)</a></li>
+          <li><a href="diffs/tests/duplicateJvmSignature/erasure/twoTraitsAndOwnFunction.kt.html" target="_blank">tests/duplicateJvmSignature/erasure/twoTraitsAndOwnFunction.kt (2)</a></li>
+          <li><a href="diffs/tests/duplicateJvmSignature/erasure/typeMappedToJava.kt.html" target="_blank">tests/duplicateJvmSignature/erasure/typeMappedToJava.kt (2)</a></li>
+          <li><a href="diffs/tests/duplicateJvmSignature/erasure/typeParameter.kt.html" target="_blank">tests/duplicateJvmSignature/erasure/typeParameter.kt (2)</a></li>
+          <li><a href="diffs/tests/duplicateJvmSignature/erasure/typeParameterWithBound.kt.html" target="_blank">tests/duplicateJvmSignature/erasure/typeParameterWithBound.kt (2)</a></li>
+          <li><a href="diffs/tests/duplicateJvmSignature/erasure/typeParameterWithTwoBounds.kt.html" target="_blank">tests/duplicateJvmSignature/erasure/typeParameterWithTwoBounds.kt (2)</a></li>
+          <li><a href="diffs/tests/duplicateJvmSignature/erasure/typeParameterWithTwoBoundsInWhere.kt.html" target="_blank">tests/duplicateJvmSignature/erasure/typeParameterWithTwoBoundsInWhere.kt (2)</a></li>
+          <li><a href="diffs/tests/duplicateJvmSignature/functionAndProperty/class.kt.html" target="_blank">tests/duplicateJvmSignature/functionAndProperty/class.kt (2)</a></li>
+          <li><a href="diffs/tests/duplicateJvmSignature/functionAndProperty/classObject.kt.html" target="_blank">tests/duplicateJvmSignature/functionAndProperty/classObject.kt (2)</a></li>
+          <li><a href="diffs/tests/duplicateJvmSignature/functionAndProperty/classPropertyInConstructor.kt.html" target="_blank">tests/duplicateJvmSignature/functionAndProperty/classPropertyInConstructor.kt (2)</a></li>
+          <li><a href="diffs/tests/duplicateJvmSignature/functionAndProperty/extensionFunctionAndNormalFunction.kt.html" target="_blank">tests/duplicateJvmSignature/functionAndProperty/extensionFunctionAndNormalFunction.kt (2)</a></li>
+          <li><a href="diffs/tests/duplicateJvmSignature/functionAndProperty/extensionPropertyAndFunction.kt.html" target="_blank">tests/duplicateJvmSignature/functionAndProperty/extensionPropertyAndFunction.kt (2)</a></li>
+          <li><a href="diffs/tests/duplicateJvmSignature/functionAndProperty/functionAndSetter.kt.html" target="_blank">tests/duplicateJvmSignature/functionAndProperty/functionAndSetter.kt (2)</a></li>
+          <li><a href="diffs/tests/duplicateJvmSignature/functionAndProperty/functionAndVar.kt.html" target="_blank">tests/duplicateJvmSignature/functionAndProperty/functionAndVar.kt (2)</a></li>
+          <li><a href="diffs/tests/duplicateJvmSignature/functionAndProperty/localClass.kt.html" target="_blank">tests/duplicateJvmSignature/functionAndProperty/localClass.kt (2)</a></li>
+          <li><a href="diffs/tests/duplicateJvmSignature/functionAndProperty/localClassInClass.kt.html" target="_blank">tests/duplicateJvmSignature/functionAndProperty/localClassInClass.kt (2)</a></li>
+          <li><a href="diffs/tests/duplicateJvmSignature/functionAndProperty/nestedClass.kt.html" target="_blank">tests/duplicateJvmSignature/functionAndProperty/nestedClass.kt (2)</a></li>
+          <li><a href="diffs/tests/duplicateJvmSignature/functionAndProperty/object.kt.html" target="_blank">tests/duplicateJvmSignature/functionAndProperty/object.kt (2)</a></li>
+          <li><a href="diffs/tests/duplicateJvmSignature/functionAndProperty/objectExpression.kt.html" target="_blank">tests/duplicateJvmSignature/functionAndProperty/objectExpression.kt (2)</a></li>
+          <li><a href="diffs/tests/duplicateJvmSignature/functionAndProperty/objectExpressionInConstructor.kt.html" target="_blank">tests/duplicateJvmSignature/functionAndProperty/objectExpressionInConstructor.kt (2)</a></li>
+          <li><a href="diffs/tests/duplicateJvmSignature/functionAndProperty/topLevel.kt.html" target="_blank">tests/duplicateJvmSignature/functionAndProperty/topLevel.kt (2)</a></li>
+          <li><a href="diffs/tests/duplicateJvmSignature/functionAndProperty/topLevelGetter.kt.html" target="_blank">tests/duplicateJvmSignature/functionAndProperty/topLevelGetter.kt (2)</a></li>
+          <li><a href="diffs/tests/duplicateJvmSignature/functionAndProperty/trait.kt.html" target="_blank">tests/duplicateJvmSignature/functionAndProperty/trait.kt (2)</a></li>
+          <li><a href="diffs/tests/duplicateJvmSignature/functionAndProperty/withErrorTypes.kt.html" target="_blank">tests/duplicateJvmSignature/functionAndProperty/withErrorTypes.kt (2)</a></li>
+          <li><a href="diffs/tests/duplicateJvmSignature/specialNames/classObjectCopiedField.kt.html" target="_blank">tests/duplicateJvmSignature/specialNames/classObjectCopiedField.kt (2)</a></li>
+          <li><a href="diffs/tests/duplicateJvmSignature/specialNames/classObjectCopiedFieldObject.kt.html" target="_blank">tests/duplicateJvmSignature/specialNames/classObjectCopiedFieldObject.kt (2)</a></li>
+          <li><a href="diffs/tests/duplicateJvmSignature/specialNames/dataClassCopy.kt.html" target="_blank">tests/duplicateJvmSignature/specialNames/dataClassCopy.kt (2)</a></li>
+          <li><a href="diffs/tests/duplicateJvmSignature/specialNames/delegationBy.kt.html" target="_blank">tests/duplicateJvmSignature/specialNames/delegationBy.kt (2)</a></li>
+          <li><a href="diffs/tests/duplicateJvmSignature/specialNames/innerClassField.kt.html" target="_blank">tests/duplicateJvmSignature/specialNames/innerClassField.kt (2)</a></li>
+          <li><a href="diffs/tests/duplicateJvmSignature/specialNames/instance.kt.html" target="_blank">tests/duplicateJvmSignature/specialNames/instance.kt (2)</a></li>
+          <li><a href="diffs/tests/duplicateJvmSignature/traitImpl/oneTrait.kt.html" target="_blank">tests/duplicateJvmSignature/traitImpl/oneTrait.kt (2)</a></li>
+          <li><a href="diffs/tests/inlineClasses/changingNullabilityOfOrdinaryClassIsBinaryCompatibleChange.kt.html" target="_blank">tests/inlineClasses/changingNullabilityOfOrdinaryClassIsBinaryCompatibleChange.kt (2)</a></li>
+          <li><a href="diffs/tests/j+k/collectionOverrides/containsAndOverload.kt.html" target="_blank">tests/j+k/collectionOverrides/containsAndOverload.kt (2)</a></li>
+          <li><a href="diffs/tests/j+k/collectionOverrides/overridesBuiltinNoMagic.kt.html" target="_blank">tests/j+k/collectionOverrides/overridesBuiltinNoMagic.kt (2)</a></li>
+          <li><a href="diffs/tests/overload/ConflictingOverloadsIdenticalFunsTPInClass.kt.html" target="_blank">tests/overload/ConflictingOverloadsIdenticalFunsTPInClass.kt (2)</a></li>
+          <li><a href="diffs/tests/redeclarations/typeParameterWithTwoBounds.kt.html" target="_blank">tests/redeclarations/typeParameterWithTwoBounds.kt (2)</a></li>
+          <li><a href="diffs/testsWithStdLib/annotations/jvmField/clashWithCompanionObjectField.kt.html" target="_blank">testsWithStdLib/annotations/jvmField/clashWithCompanionObjectField.kt (2)</a></li>
+          <li><a href="diffs/testsWithStdLib/duplicateJvmSignature/jvmOverloads.kt.html" target="_blank">testsWithStdLib/duplicateJvmSignature/jvmOverloads.kt (2)</a></li>
+          <li><a href="diffs/tests/dataClasses/conflictingCopyOverloads.kt.html" target="_blank">tests/dataClasses/conflictingCopyOverloads.kt (1)</a></li>
+          <li><a href="diffs/tests/dataClasses/conflictingOverloads.kt.html" target="_blank">tests/dataClasses/conflictingOverloads.kt (1)</a></li>
+          <li><a href="diffs/tests/duplicateJvmSignature/accidentalOverrides/delegatedFunctionOverriddenByProperty.kt.html" target="_blank">tests/duplicateJvmSignature/accidentalOverrides/delegatedFunctionOverriddenByProperty.kt (1)</a></li>
+          <li><a href="diffs/tests/duplicateJvmSignature/accidentalOverrides/overridesNothing.kt.html" target="_blank">tests/duplicateJvmSignature/accidentalOverrides/overridesNothing.kt (1)</a></li>
+          <li><a href="diffs/tests/duplicateJvmSignature/erasure/delegateToTwoTraits.kt.html" target="_blank">tests/duplicateJvmSignature/erasure/delegateToTwoTraits.kt (1)</a></li>
+          <li><a href="diffs/tests/duplicateJvmSignature/erasure/inheritFromTwoTraits.kt.html" target="_blank">tests/duplicateJvmSignature/erasure/inheritFromTwoTraits.kt (1)</a></li>
+          <li><a href="diffs/tests/duplicateJvmSignature/erasure/superTraitAndDelegationToTraitImpl.kt.html" target="_blank">tests/duplicateJvmSignature/erasure/superTraitAndDelegationToTraitImpl.kt (1)</a></li>
+          <li><a href="diffs/tests/duplicateJvmSignature/traitImpl/traitFunctionOverriddenByPropertyInTrait.kt.html" target="_blank">tests/duplicateJvmSignature/traitImpl/traitFunctionOverriddenByPropertyInTrait.kt (1)</a></li>
+          <li><a href="diffs/tests/duplicateJvmSignature/traitImpl/traitPropertyOverriddenByFunctionInTrait.kt.html" target="_blank">tests/duplicateJvmSignature/traitImpl/traitPropertyOverriddenByFunctionInTrait.kt (1)</a></li>
+          <li><a href="diffs/tests/duplicateJvmSignature/traitImpl/twoTraits.kt.html" target="_blank">tests/duplicateJvmSignature/traitImpl/twoTraits.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="matched">
+        <h2>Matched (140)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diffs/testsWithJvmBackend/duplicateJvmSignature/specialNames/classObjectCopiedFieldObject_old.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/specialNames/classObjectCopiedFieldObject_old.kt (6)</a></li>
+          <li><a href="diffs/testsWithJvmBackend/duplicateJvmSignature/specialNames/propertyMetadataCache_old.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/specialNames/propertyMetadataCache_old.kt (6)</a></li>
+          <li><a href="diffs/testsWithJvmBackend/duplicateJvmSignature/vararg.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/vararg.kt (6)</a></li>
+          <li><a href="diffs/testsWithJvmBackend/duplicateJvmSignature/functionAndProperty/trait_old.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/functionAndProperty/trait_old.kt (4)</a></li>
+          <li><a href="diffs/testsWithJvmBackend/duplicateJvmSignature/specialNames/delegationBy_old.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/specialNames/delegationBy_old.kt (4)</a></li>
+          <li><a href="diffs/testsWithJvmBackend/duplicateJvmSignature/specialNames/enum.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/specialNames/enum.kt (4)</a></li>
+          <li><a href="diffs/testsWithJvmBackend/duplicateJvmSignature/specialNames/instance_old.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/specialNames/instance_old.kt (4)</a></li>
+          <li><a href="diffs/testsWithJvmBackend/duplicateJvmSignature/synthesized/enumValuesValueOf.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/synthesized/enumValuesValueOf.kt (4)</a></li>
+          <li><a href="diffs/testsWithJvmBackend/duplicateJvmSignature/accidentalOverrides/traitFunctionOverriddenByProperty_old.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/accidentalOverrides/traitFunctionOverriddenByProperty_old.kt (2)</a></li>
+          <li><a href="diffs/testsWithJvmBackend/duplicateJvmSignature/accidentalOverrides/traitPropertyOverriddenByFunction_old.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/accidentalOverrides/traitPropertyOverriddenByFunction_old.kt (2)</a></li>
+          <li><a href="diffs/testsWithJvmBackend/duplicateJvmSignature/bridges/class_old.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/bridges/class_old.kt (2)</a></li>
+          <li><a href="diffs/testsWithJvmBackend/duplicateJvmSignature/bridges/fakeOverrideTrait_old.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/bridges/fakeOverrideTrait_old.kt (2)</a></li>
+          <li><a href="diffs/testsWithJvmBackend/duplicateJvmSignature/bridges/trait_old.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/bridges/trait_old.kt (2)</a></li>
+          <li><a href="diffs/testsWithJvmBackend/duplicateJvmSignature/caseInProperties.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/caseInProperties.kt (2)</a></li>
+          <li><a href="diffs/testsWithJvmBackend/duplicateJvmSignature/changingNullabilityOfOrdinaryClassIsBinaryCompatibleChange.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/changingNullabilityOfOrdinaryClassIsBinaryCompatibleChange.kt (2)</a></li>
+          <li><a href="diffs/testsWithJvmBackend/duplicateJvmSignature/erasure/collections.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/erasure/collections.kt (2)</a></li>
+          <li><a href="diffs/testsWithJvmBackend/duplicateJvmSignature/erasure/delegationAndOwnMethod.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/erasure/delegationAndOwnMethod.kt (2)</a></li>
+          <li><a href="diffs/testsWithJvmBackend/duplicateJvmSignature/erasure/delegationToTraitImplAndOwnMethod.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/erasure/delegationToTraitImplAndOwnMethod.kt (2)</a></li>
+          <li><a href="diffs/testsWithJvmBackend/duplicateJvmSignature/erasure/extensionProperties.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/erasure/extensionProperties.kt (2)</a></li>
+          <li><a href="diffs/testsWithJvmBackend/duplicateJvmSignature/erasure/genericType.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/erasure/genericType.kt (2)</a></li>
+          <li><a href="diffs/testsWithJvmBackend/duplicateJvmSignature/erasure/kotlinAndJavaCollections.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/erasure/kotlinAndJavaCollections.kt (2)</a></li>
+          <li><a href="diffs/testsWithJvmBackend/duplicateJvmSignature/erasure/nullableType.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/erasure/nullableType.kt (2)</a></li>
+          <li><a href="diffs/testsWithJvmBackend/duplicateJvmSignature/erasure/twoTraitsAndOwnFunction_old.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/erasure/twoTraitsAndOwnFunction_old.kt (2)</a></li>
+          <li><a href="diffs/testsWithJvmBackend/duplicateJvmSignature/erasure/typeMappedToJava.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/erasure/typeMappedToJava.kt (2)</a></li>
+          <li><a href="diffs/testsWithJvmBackend/duplicateJvmSignature/erasure/typeParameter.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/erasure/typeParameter.kt (2)</a></li>
+          <li><a href="diffs/testsWithJvmBackend/duplicateJvmSignature/erasure/typeParameterWithBound.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/erasure/typeParameterWithBound.kt (2)</a></li>
+          <li><a href="diffs/testsWithJvmBackend/duplicateJvmSignature/erasure/typeParameterWithTwoBounds.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/erasure/typeParameterWithTwoBounds.kt (2)</a></li>
+          <li><a href="diffs/testsWithJvmBackend/duplicateJvmSignature/erasure/typeParameterWithTwoBoundsInWhere.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/erasure/typeParameterWithTwoBoundsInWhere.kt (2)</a></li>
+          <li><a href="diffs/testsWithJvmBackend/duplicateJvmSignature/functionAndProperty/class.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/functionAndProperty/class.kt (2)</a></li>
+          <li><a href="diffs/testsWithJvmBackend/duplicateJvmSignature/functionAndProperty/classObject.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/functionAndProperty/classObject.kt (2)</a></li>
+          <li><a href="diffs/testsWithJvmBackend/duplicateJvmSignature/functionAndProperty/classPropertyInConstructor.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/functionAndProperty/classPropertyInConstructor.kt (2)</a></li>
+          <li><a href="diffs/testsWithJvmBackend/duplicateJvmSignature/functionAndProperty/extensionFunctionAndNormalFunction.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/functionAndProperty/extensionFunctionAndNormalFunction.kt (2)</a></li>
+          <li><a href="diffs/testsWithJvmBackend/duplicateJvmSignature/functionAndProperty/extensionPropertyAndFunction.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/functionAndProperty/extensionPropertyAndFunction.kt (2)</a></li>
+          <li><a href="diffs/testsWithJvmBackend/duplicateJvmSignature/functionAndProperty/functionAndSetter.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/functionAndProperty/functionAndSetter.kt (2)</a></li>
+          <li><a href="diffs/testsWithJvmBackend/duplicateJvmSignature/functionAndProperty/functionAndVar.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/functionAndProperty/functionAndVar.kt (2)</a></li>
+          <li><a href="diffs/testsWithJvmBackend/duplicateJvmSignature/functionAndProperty/localClass.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/functionAndProperty/localClass.kt (2)</a></li>
+          <li><a href="diffs/testsWithJvmBackend/duplicateJvmSignature/functionAndProperty/localClassInClass.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/functionAndProperty/localClassInClass.kt (2)</a></li>
+          <li><a href="diffs/testsWithJvmBackend/duplicateJvmSignature/functionAndProperty/nestedClass.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/functionAndProperty/nestedClass.kt (2)</a></li>
+          <li><a href="diffs/testsWithJvmBackend/duplicateJvmSignature/functionAndProperty/object.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/functionAndProperty/object.kt (2)</a></li>
+          <li><a href="diffs/testsWithJvmBackend/duplicateJvmSignature/functionAndProperty/objectExpression.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/functionAndProperty/objectExpression.kt (2)</a></li>
+          <li><a href="diffs/testsWithJvmBackend/duplicateJvmSignature/functionAndProperty/objectExpressionInConstructor.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/functionAndProperty/objectExpressionInConstructor.kt (2)</a></li>
+          <li><a href="diffs/testsWithJvmBackend/duplicateJvmSignature/functionAndProperty/topLevel.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/functionAndProperty/topLevel.kt (2)</a></li>
+          <li><a href="diffs/testsWithJvmBackend/duplicateJvmSignature/functionAndProperty/topLevelGetter.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/functionAndProperty/topLevelGetter.kt (2)</a></li>
+          <li><a href="diffs/testsWithJvmBackend/duplicateJvmSignature/functionAndProperty/trait_ir.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/functionAndProperty/trait_ir.kt (2)</a></li>
+          <li><a href="diffs/testsWithJvmBackend/duplicateJvmSignature/specialNames/classObjectCopiedField.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/specialNames/classObjectCopiedField.kt (2)</a></li>
+          <li><a href="diffs/testsWithJvmBackend/duplicateJvmSignature/specialNames/classObjectCopiedFieldObject_ir.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/specialNames/classObjectCopiedFieldObject_ir.kt (2)</a></li>
+          <li><a href="diffs/testsWithJvmBackend/duplicateJvmSignature/specialNames/classObject_old.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/specialNames/classObject_old.kt (2)</a></li>
+          <li><a href="diffs/testsWithJvmBackend/duplicateJvmSignature/specialNames/dataClassCopy.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/specialNames/dataClassCopy.kt (2)</a></li>
+          <li><a href="diffs/testsWithJvmBackend/duplicateJvmSignature/specialNames/defaults_ir.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/specialNames/defaults_ir.kt (2)</a></li>
+          <li><a href="diffs/testsWithJvmBackend/duplicateJvmSignature/specialNames/defaults_old.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/specialNames/defaults_old.kt (2)</a></li>
+          <li><a href="diffs/testsWithJvmBackend/duplicateJvmSignature/specialNames/innerClassField_old.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/specialNames/innerClassField_old.kt (2)</a></li>
+          <li><a href="diffs/testsWithJvmBackend/duplicateJvmSignature/specialNames/instance_ir.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/specialNames/instance_ir.kt (2)</a></li>
+          <li><a href="diffs/testsWithJvmBackend/duplicateJvmSignature/traitImpl/kt43611.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/traitImpl/kt43611.kt (2)</a></li>
+          <li><a href="diffs/testsWithJvmBackend/duplicateJvmSignature/traitImpl/oneTrait_old.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/traitImpl/oneTrait_old.kt (2)</a></li>
+          <li><a href="diffs/testsWithJvmBackend/duplicateJvmSignature/traitImpl/traitFunctionOverriddenByPropertyInTrait_old.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/traitImpl/traitFunctionOverriddenByPropertyInTrait_old.kt (2)</a></li>
+          <li><a href="diffs/testsWithJvmBackend/duplicateJvmSignature/traitImpl/traitPropertyOverriddenByFunctionInTrait_old.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/traitImpl/traitPropertyOverriddenByFunctionInTrait_old.kt (2)</a></li>
+          <li><a href="diffs/testsWithJvmBackend/duplicateJvmSignature/accidentalOverrides/delegatedFunctionOverriddenByProperty_old.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/accidentalOverrides/delegatedFunctionOverriddenByProperty_old.kt (1)</a></li>
+          <li><a href="diffs/testsWithJvmBackend/duplicateJvmSignature/erasure/delegateToTwoTraits.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/erasure/delegateToTwoTraits.kt (1)</a></li>
+          <li><a href="diffs/testsWithJvmBackend/duplicateJvmSignature/erasure/inheritFromTwoTraits_old.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/erasure/inheritFromTwoTraits_old.kt (1)</a></li>
+          <li><a href="diffs/testsWithJvmBackend/duplicateJvmSignature/erasure/superTraitAndDelegationToTraitImpl_old.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/erasure/superTraitAndDelegationToTraitImpl_old.kt (1)</a></li>
+          <li><a href="diffs/testsWithJvmBackend/duplicateJvmSignature/traitImpl/twoTraits_old.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/traitImpl/twoTraits_old.kt (1)</a></li>
+          <li><a href="diffs/testsWithJvmBackend/multipleBigArityFunsImplemented.kt.html" target="_blank">testsWithJvmBackend/multipleBigArityFunsImplemented.kt (1)</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

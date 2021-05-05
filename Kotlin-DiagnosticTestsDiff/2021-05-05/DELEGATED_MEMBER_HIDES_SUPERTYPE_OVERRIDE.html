@@ -1,0 +1,69 @@
+<html>
+  <head>
+    <title>Diagnostics diff: DELEGATED_MEMBER_HIDES_SUPERTYPE_OVERRIDE</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row sticky-top" style="background: white" id="summary">
+        <div class="d-inline-flex align-items-baseline">
+          <h1 class="mr-2">DELEGATED_MEMBER_HIDES_SUPERTYPE_OVERRIDE</h1>
+<a href="index.html">(back to diagnostic list)</a></div>
+      </div>
+      <div class="row">
+        <ul>
+          <li><strong>Total: </strong>21</li>
+          <li><strong>Match %: </strong>66.67%</li>
+          <li><a href="#matched"><strong># Matched: </strong>14</a></li>
+          <li><strong># Non-matched: </strong>7</li>
+          <li><a href="#missing"><strong># Missing: </strong>6</a></li>
+          <li><a href="#unexpected"><strong># Unexpected: </strong>0</a></li>
+          <li><a href="#mismatched"><strong># Mismatched: </strong>1</a></li>
+          <li><strong># of Files: </strong>14</li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="missing">
+        <h2>Missing (6)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diffs/tests/delegation/memberHidesSupertypeOverride/diamond.kt.html" target="_blank">tests/delegation/memberHidesSupertypeOverride/diamond.kt (3)</a></li>
+          <li><a href="diffs/tests/delegation/memberHidesSupertypeOverride/sameDelegationInHierarchy2.kt.html" target="_blank">tests/delegation/memberHidesSupertypeOverride/sameDelegationInHierarchy2.kt (1)</a></li>
+          <li><a href="diffs/tests/delegation/memberHidesSupertypeOverride/severalDelegates.kt.html" target="_blank">tests/delegation/memberHidesSupertypeOverride/severalDelegates.kt (1)</a></li>
+          <li><a href="diffs/tests/override/ObjectDelegationManyImpl.kt.html" target="_blank">tests/override/ObjectDelegationManyImpl.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="mismatched">
+        <h2>Mismatched (1)</h2>
+      </div>
+      <div class="row sticky-top" style="top: 5.5em; background: white">
+        <h3>DELEGATED_MEMBER_HIDES_SUPERTYPE_OVERRIDE -&gt; MANY_IMPL_MEMBER_NOT_IMPLEMENTED (1)</h3>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diffs/tests/delegation/memberHidesSupertypeOverride/sameDelegationInHierarchy.kt.html" target="_blank">tests/delegation/memberHidesSupertypeOverride/sameDelegationInHierarchy.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="matched">
+        <h2>Matched (14)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diffs/tests/delegation/memberHidesSupertypeOverride/diamond.kt.html" target="_blank">tests/delegation/memberHidesSupertypeOverride/diamond.kt (3)</a></li>
+          <li><a href="diffs/tests/delegation/covariantOverrides/fromClass.kt.html" target="_blank">tests/delegation/covariantOverrides/fromClass.kt (2)</a></li>
+          <li><a href="diffs/tests/delegation/memberHidesSupertypeOverride/delegationToSubTypeWithOverride.kt.html" target="_blank">tests/delegation/memberHidesSupertypeOverride/delegationToSubTypeWithOverride.kt (1)</a></li>
+          <li><a href="diffs/tests/delegation/memberHidesSupertypeOverride/delegationToSubTypeWithOverrideProperty.kt.html" target="_blank">tests/delegation/memberHidesSupertypeOverride/delegationToSubTypeWithOverrideProperty.kt (1)</a></li>
+          <li><a href="diffs/tests/delegation/memberHidesSupertypeOverride/fakeOverrideInTheMiddle.kt.html" target="_blank">tests/delegation/memberHidesSupertypeOverride/fakeOverrideInTheMiddle.kt (1)</a></li>
+          <li><a href="diffs/tests/delegation/memberHidesSupertypeOverride/severalDelegates.kt.html" target="_blank">tests/delegation/memberHidesSupertypeOverride/severalDelegates.kt (1)</a></li>
+          <li><a href="diffs/tests/delegation/memberHidesSupertypeOverride/simple.kt.html" target="_blank">tests/delegation/memberHidesSupertypeOverride/simple.kt (1)</a></li>
+          <li><a href="diffs/tests/delegation/memberHidesSupertypeOverride/simpleProp.kt.html" target="_blank">tests/delegation/memberHidesSupertypeOverride/simpleProp.kt (1)</a></li>
+          <li><a href="diffs/tests/duplicateJvmSignature/erasure/superTraitAndDelegationToTraitImpl.kt.html" target="_blank">tests/duplicateJvmSignature/erasure/superTraitAndDelegationToTraitImpl.kt (1)</a></li>
+          <li><a href="diffs/testsWithJvmBackend/duplicateJvmSignature/erasure/superTraitAndDelegationToTraitImpl_ir.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/erasure/superTraitAndDelegationToTraitImpl_ir.kt (1)</a></li>
+          <li><a href="diffs/testsWithJvmBackend/duplicateJvmSignature/erasure/superTraitAndDelegationToTraitImpl_old.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/erasure/superTraitAndDelegationToTraitImpl_old.kt (1)</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

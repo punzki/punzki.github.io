@@ -1,0 +1,126 @@
+<html>
+  <head>
+    <title>Diagnostics diff: UNNECESSARY_NOT_NULL_ASSERTION</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row sticky-top" style="background: white" id="summary">
+        <div class="d-inline-flex align-items-baseline">
+          <h1 class="mr-2">UNNECESSARY_NOT_NULL_ASSERTION</h1>
+<a href="index.html">(back to diagnostic list)</a></div>
+      </div>
+      <div class="row">
+        <ul>
+          <li><strong>Total: </strong>144</li>
+          <li><strong>Match %: </strong>93.75%</li>
+          <li><a href="#matched"><strong># Matched: </strong>135</a></li>
+          <li><strong># Non-matched: </strong>9</li>
+          <li><a href="#missing"><strong># Missing: </strong>8</a></li>
+          <li><a href="#unexpected"><strong># Unexpected: </strong>1</a></li>
+          <li><a href="#mismatched"><strong># Mismatched: </strong>0</a></li>
+          <li><strong># of Files: </strong>74</li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="missing">
+        <h2>Missing (8)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diffs/tests/inference/nestedCalls/makeNullableIfSafeCall.kt.html" target="_blank">tests/inference/nestedCalls/makeNullableIfSafeCall.kt (4)</a></li>
+          <li><a href="diffs/tests/inference/regressions/kt36342.kt.html" target="_blank">tests/inference/regressions/kt36342.kt (2)</a></li>
+          <li><a href="diffs/tests/nullabilityAndSmartCasts/unnecessaryNotNullAssertion.kt.html" target="_blank">tests/nullabilityAndSmartCasts/unnecessaryNotNullAssertion.kt (1)</a></li>
+          <li><a href="diffs/tests/smartCasts/enumEntryMembers_before.kt.html" target="_blank">tests/smartCasts/enumEntryMembers_before.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="unexpected">
+        <h2>Unexpected (1)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diffs/testsWithStdLib/regression/kt10001.kt.html" target="_blank">testsWithStdLib/regression/kt10001.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="matched">
+        <h2>Matched (135)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diffs/tests/inference/nestedCalls/makeNullableIfSafeCall.kt.html" target="_blank">tests/inference/nestedCalls/makeNullableIfSafeCall.kt (12)</a></li>
+          <li><a href="diffs/tests/nullabilityAndSmartCasts/AssertNotNull.kt.html" target="_blank">tests/nullabilityAndSmartCasts/AssertNotNull.kt (12)</a></li>
+          <li><a href="diffs/tests/nullabilityAndSmartCasts/QualifiedExpressionNullability.kt.html" target="_blank">tests/nullabilityAndSmartCasts/QualifiedExpressionNullability.kt (12)</a></li>
+          <li><a href="diffs/tests/nullabilityAndSmartCasts/kt2164.kt.html" target="_blank">tests/nullabilityAndSmartCasts/kt2164.kt (5)</a></li>
+          <li><a href="diffs/tests/dataFlowInfoTraversal/ExclExcl.kt.html" target="_blank">tests/dataFlowInfoTraversal/ExclExcl.kt (4)</a></li>
+          <li><a href="diffs/tests/platformTypes/nullabilityWarnings/notNullAssertion.kt.html" target="_blank">tests/platformTypes/nullabilityWarnings/notNullAssertion.kt (4)</a></li>
+          <li><a href="diffs/foreignAnnotationsTests/tests/androidRecently.kt.html" target="_blank">foreignAnnotationsTests/tests/androidRecently.kt (3)</a></li>
+          <li><a href="diffs/tests/nullabilityAndSmartCasts/unnecessaryNotNullAssertion.kt.html" target="_blank">tests/nullabilityAndSmartCasts/unnecessaryNotNullAssertion.kt (3)</a></li>
+          <li><a href="diffs/foreignAnnotationsTests/java8Tests/jsr305/defaultAnnotationAppliedToType.kt.html" target="_blank">foreignAnnotationsTests/java8Tests/jsr305/defaultAnnotationAppliedToType.kt (2)</a></li>
+          <li><a href="diffs/foreignAnnotationsTests/java8Tests/jsr305/typeUseVsMethodConflict.kt.html" target="_blank">foreignAnnotationsTests/java8Tests/jsr305/typeUseVsMethodConflict.kt (2)</a></li>
+          <li><a href="diffs/foreignAnnotationsTests/tests/jsr305/nullabilityWarnings/typeQualifierDefault/overridingDefaultQualifier.kt.html" target="_blank">foreignAnnotationsTests/tests/jsr305/nullabilityWarnings/typeQualifierDefault/overridingDefaultQualifier.kt (2)</a></li>
+          <li><a href="diffs/foreignAnnotationsTests/tests/jsr305/nullabilityWarnings/typeQualifierDefault/parametersAreNonnullByDefaultPackage.kt.html" target="_blank">foreignAnnotationsTests/tests/jsr305/nullabilityWarnings/typeQualifierDefault/parametersAreNonnullByDefaultPackage.kt (2)</a></li>
+          <li><a href="diffs/foreignAnnotationsTests/tests/jsr305/typeQualifierDefault/overridingDefaultQualifier.kt.html" target="_blank">foreignAnnotationsTests/tests/jsr305/typeQualifierDefault/overridingDefaultQualifier.kt (2)</a></li>
+          <li><a href="diffs/foreignAnnotationsTests/tests/jsr305/typeQualifierDefault/parametersAreNonnullByDefaultPackage.kt.html" target="_blank">foreignAnnotationsTests/tests/jsr305/typeQualifierDefault/parametersAreNonnullByDefaultPackage.kt (2)</a></li>
+          <li><a href="diffs/foreignAnnotationsTests/tests/jsr305NullabilityWarnings/migration/globalIgnore.kt.html" target="_blank">foreignAnnotationsTests/tests/jsr305NullabilityWarnings/migration/globalIgnore.kt (2)</a></li>
+          <li><a href="diffs/foreignAnnotationsTests/tests/jsr305NullabilityWarnings/migration/globalWarningMigrationIgnore.kt.html" target="_blank">foreignAnnotationsTests/tests/jsr305NullabilityWarnings/migration/globalWarningMigrationIgnore.kt (2)</a></li>
+          <li><a href="diffs/foreignAnnotationsTests/tests/jsr305NullabilityWarnings/migration/migrationIgnore.kt.html" target="_blank">foreignAnnotationsTests/tests/jsr305NullabilityWarnings/migration/migrationIgnore.kt (2)</a></li>
+          <li><a href="diffs/foreignAnnotationsTests/tests/jsr305NullabilityWarnings/migration/migrationWarning.kt.html" target="_blank">foreignAnnotationsTests/tests/jsr305NullabilityWarnings/migration/migrationWarning.kt (2)</a></li>
+          <li><a href="diffs/foreignAnnotationsTests/tests/jsr305NullabilityWarnings/migration/stateRefinement.kt.html" target="_blank">foreignAnnotationsTests/tests/jsr305NullabilityWarnings/migration/stateRefinement.kt (2)</a></li>
+          <li><a href="diffs/tests/nullabilityAndSmartCasts/kt2234.kt.html" target="_blank">tests/nullabilityAndSmartCasts/kt2234.kt (2)</a></li>
+          <li><a href="diffs/tests/nullableTypes/nullAssertOnTypeWithNullableUpperBound.kt.html" target="_blank">tests/nullableTypes/nullAssertOnTypeWithNullableUpperBound.kt (2)</a></li>
+          <li><a href="diffs/tests/platformTypes/nullabilityWarnings/notNullAssertionInCall.kt.html" target="_blank">tests/platformTypes/nullabilityWarnings/notNullAssertionInCall.kt (2)</a></li>
+          <li><a href="diffs/tests/smartCasts/elvis/basicOn.kt.html" target="_blank">tests/smartCasts/elvis/basicOn.kt (2)</a></li>
+          <li><a href="diffs/tests/smartCasts/kt2865.kt.html" target="_blank">tests/smartCasts/kt2865.kt (2)</a></li>
+          <li><a href="diffs/testsWithStdLib/assert/safeCall.kt.html" target="_blank">testsWithStdLib/assert/safeCall.kt (2)</a></li>
+          <li><a href="diffs/foreignAnnotationsTests/java8Tests/checkerFramework.kt.html" target="_blank">foreignAnnotationsTests/java8Tests/checkerFramework.kt (1)</a></li>
+          <li><a href="diffs/foreignAnnotationsTests/java8Tests/eclipse.kt.html" target="_blank">foreignAnnotationsTests/java8Tests/eclipse.kt (1)</a></li>
+          <li><a href="diffs/foreignAnnotationsTests/java8Tests/jsr305/springNullableWithTypeUse.kt.html" target="_blank">foreignAnnotationsTests/java8Tests/jsr305/springNullableWithTypeUse.kt (1)</a></li>
+          <li><a href="diffs/foreignAnnotationsTests/tests/androidSdk.kt.html" target="_blank">foreignAnnotationsTests/tests/androidSdk.kt (1)</a></li>
+          <li><a href="diffs/foreignAnnotationsTests/tests/android_support.kt.html" target="_blank">foreignAnnotationsTests/tests/android_support.kt (1)</a></li>
+          <li><a href="diffs/foreignAnnotationsTests/tests/androidx.kt.html" target="_blank">foreignAnnotationsTests/tests/androidx.kt (1)</a></li>
+          <li><a href="diffs/foreignAnnotationsTests/tests/aosp.kt.html" target="_blank">foreignAnnotationsTests/tests/aosp.kt (1)</a></li>
+          <li><a href="diffs/foreignAnnotationsTests/tests/checkerFramework.kt.html" target="_blank">foreignAnnotationsTests/tests/checkerFramework.kt (1)</a></li>
+          <li><a href="diffs/foreignAnnotationsTests/tests/eclipse.kt.html" target="_blank">foreignAnnotationsTests/tests/eclipse.kt (1)</a></li>
+          <li><a href="diffs/foreignAnnotationsTests/tests/findBugsSimple.kt.html" target="_blank">foreignAnnotationsTests/tests/findBugsSimple.kt (1)</a></li>
+          <li><a href="diffs/foreignAnnotationsTests/tests/jsr305/ignore/parametersAreNonnullByDefault.kt.html" target="_blank">foreignAnnotationsTests/tests/jsr305/ignore/parametersAreNonnullByDefault.kt (1)</a></li>
+          <li><a href="diffs/foreignAnnotationsTests/tests/jsr305/nullabilityNicknames.kt.html" target="_blank">foreignAnnotationsTests/tests/jsr305/nullabilityNicknames.kt (1)</a></li>
+          <li><a href="diffs/foreignAnnotationsTests/tests/jsr305/nullabilityWarnings/nullabilityNicknames.kt.html" target="_blank">foreignAnnotationsTests/tests/jsr305/nullabilityWarnings/nullabilityNicknames.kt (1)</a></li>
+          <li><a href="diffs/foreignAnnotationsTests/tests/jsr305/nullabilityWarnings/simple.kt.html" target="_blank">foreignAnnotationsTests/tests/jsr305/nullabilityWarnings/simple.kt (1)</a></li>
+          <li><a href="diffs/foreignAnnotationsTests/tests/jsr305/nullabilityWarnings/strange.kt.html" target="_blank">foreignAnnotationsTests/tests/jsr305/nullabilityWarnings/strange.kt (1)</a></li>
+          <li><a href="diffs/foreignAnnotationsTests/tests/jsr305/nullabilityWarnings/typeQualifierDefault/fieldsAreNullable.kt.html" target="_blank">foreignAnnotationsTests/tests/jsr305/nullabilityWarnings/typeQualifierDefault/fieldsAreNullable.kt (1)</a></li>
+          <li><a href="diffs/foreignAnnotationsTests/tests/jsr305/nullabilityWarnings/typeQualifierDefault/parametersAreNonnullByDefault.kt.html" target="_blank">foreignAnnotationsTests/tests/jsr305/nullabilityWarnings/typeQualifierDefault/parametersAreNonnullByDefault.kt (1)</a></li>
+          <li><a href="diffs/foreignAnnotationsTests/tests/jsr305/nullabilityWarnings/typeQualifierDefault/springNullable.kt.html" target="_blank">foreignAnnotationsTests/tests/jsr305/nullabilityWarnings/typeQualifierDefault/springNullable.kt (1)</a></li>
+          <li><a href="diffs/foreignAnnotationsTests/tests/jsr305/nullabilityWarnings/typeQualifierDefault/springNullablePackage.kt.html" target="_blank">foreignAnnotationsTests/tests/jsr305/nullabilityWarnings/typeQualifierDefault/springNullablePackage.kt (1)</a></li>
+          <li><a href="diffs/foreignAnnotationsTests/tests/jsr305/simple.kt.html" target="_blank">foreignAnnotationsTests/tests/jsr305/simple.kt (1)</a></li>
+          <li><a href="diffs/foreignAnnotationsTests/tests/jsr305/strange.kt.html" target="_blank">foreignAnnotationsTests/tests/jsr305/strange.kt (1)</a></li>
+          <li><a href="diffs/foreignAnnotationsTests/tests/jsr305/typeQualifierDefault/fieldsAreNullable.kt.html" target="_blank">foreignAnnotationsTests/tests/jsr305/typeQualifierDefault/fieldsAreNullable.kt (1)</a></li>
+          <li><a href="diffs/foreignAnnotationsTests/tests/jsr305/typeQualifierDefault/parametersAreNonnullByDefault.kt.html" target="_blank">foreignAnnotationsTests/tests/jsr305/typeQualifierDefault/parametersAreNonnullByDefault.kt (1)</a></li>
+          <li><a href="diffs/foreignAnnotationsTests/tests/jsr305/typeQualifierDefault/springNullable.kt.html" target="_blank">foreignAnnotationsTests/tests/jsr305/typeQualifierDefault/springNullable.kt (1)</a></li>
+          <li><a href="diffs/foreignAnnotationsTests/tests/jsr305/typeQualifierDefault/springNullablePackage.kt.html" target="_blank">foreignAnnotationsTests/tests/jsr305/typeQualifierDefault/springNullablePackage.kt (1)</a></li>
+          <li><a href="diffs/foreignAnnotationsTests/tests/jsr305NullabilityWarnings/migration/migrationError.kt.html" target="_blank">foreignAnnotationsTests/tests/jsr305NullabilityWarnings/migration/migrationError.kt (1)</a></li>
+          <li><a href="diffs/foreignAnnotationsTests/tests/jsr305NullabilityWarnings/migration/specialCollision.kt.html" target="_blank">foreignAnnotationsTests/tests/jsr305NullabilityWarnings/migration/specialCollision.kt (1)</a></li>
+          <li><a href="diffs/foreignAnnotationsTests/tests/rxjava.kt.html" target="_blank">foreignAnnotationsTests/tests/rxjava.kt (1)</a></li>
+          <li><a href="diffs/tests/controlFlowAnalysis/deadCode/deadCodeInInnerExpressions.kt.html" target="_blank">tests/controlFlowAnalysis/deadCode/deadCodeInInnerExpressions.kt (1)</a></li>
+          <li><a href="diffs/tests/controlFlowAnalysis/deadCode/deadCodeInUnaryExpr.kt.html" target="_blank">tests/controlFlowAnalysis/deadCode/deadCodeInUnaryExpr.kt (1)</a></li>
+          <li><a href="diffs/tests/dataFlowInfoTraversal/ArrayGetSetConvention.kt.html" target="_blank">tests/dataFlowInfoTraversal/ArrayGetSetConvention.kt (1)</a></li>
+          <li><a href="diffs/tests/dataFlowInfoTraversal/ArrayIndices.kt.html" target="_blank">tests/dataFlowInfoTraversal/ArrayIndices.kt (1)</a></li>
+          <li><a href="diffs/tests/dataFlowInfoTraversal/IfThenElse.kt.html" target="_blank">tests/dataFlowInfoTraversal/IfThenElse.kt (1)</a></li>
+          <li><a href="diffs/tests/functionLiterals/LabeledFunctionLiterals.kt.html" target="_blank">tests/functionLiterals/LabeledFunctionLiterals.kt (1)</a></li>
+          <li><a href="diffs/tests/nullabilityAndSmartCasts/kt2176.kt.html" target="_blank">tests/nullabilityAndSmartCasts/kt2176.kt (1)</a></li>
+          <li><a href="diffs/tests/nullabilityAndSmartCasts/kt2212.kt.html" target="_blank">tests/nullabilityAndSmartCasts/kt2212.kt (1)</a></li>
+          <li><a href="diffs/tests/nullabilityAndSmartCasts/kt2216.kt.html" target="_blank">tests/nullabilityAndSmartCasts/kt2216.kt (1)</a></li>
+          <li><a href="diffs/tests/nullabilityAndSmartCasts/kt2336.kt.html" target="_blank">tests/nullabilityAndSmartCasts/kt2336.kt (1)</a></li>
+          <li><a href="diffs/tests/nullableTypes/definitelyNotNullWithNullableBound.kt.html" target="_blank">tests/nullableTypes/definitelyNotNullWithNullableBound.kt (1)</a></li>
+          <li><a href="diffs/tests/platformTypes/nullabilityWarnings/notNullTypeMarkedWithNullableAnnotation.kt.html" target="_blank">tests/platformTypes/nullabilityWarnings/notNullTypeMarkedWithNullableAnnotation.kt (1)</a></li>
+          <li><a href="diffs/tests/resolve/invoke/kt4204-completeNestedCallsForInvoke.kt.html" target="_blank">tests/resolve/invoke/kt4204-completeNestedCallsForInvoke.kt (1)</a></li>
+          <li><a href="diffs/tests/resolve/specialConstructions/exclExclAsCall.kt.html" target="_blank">tests/resolve/specialConstructions/exclExclAsCall.kt (1)</a></li>
+          <li><a href="diffs/tests/smartCasts/inference/kt1355.kt.html" target="_blank">tests/smartCasts/inference/kt1355.kt (1)</a></li>
+          <li><a href="diffs/tests/smartCasts/inference/kt2851.kt.html" target="_blank">tests/smartCasts/inference/kt2851.kt (1)</a></li>
+          <li><a href="diffs/tests/smartCasts/safecalls/argument.kt.html" target="_blank">tests/smartCasts/safecalls/argument.kt (1)</a></li>
+          <li><a href="diffs/tests/smartCasts/safecalls/propertyChain.kt.html" target="_blank">tests/smartCasts/safecalls/propertyChain.kt (1)</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
