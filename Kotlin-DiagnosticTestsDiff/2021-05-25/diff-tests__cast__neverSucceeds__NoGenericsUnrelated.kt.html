@@ -1,0 +1,87 @@
+<html>
+  <head>
+    <title>Diagnostics diff: tests/cast/neverSucceeds/NoGenericsUnrelated.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <ul>
+          <li><a id="expected" target="_blank"><strong>Expected file: </strong><span id="expected-path"></span></a></li>
+          <li><a id="actual" target="_blank"><strong>Actual file: </strong><span id="actual-path"></span></a></li>
+        </ul>
+      </div>
+      <div class="row">
+        <div id="diff" style="width: 100%"></div>
+      </div>
+    </div>
+    <script type="text/javascript">                        $('#expected').attr('href', 'https://github.com/JetBrains/Kotlin/blob/b18d4af37b58d7baa264523d3d78be7485c4884e/compiler/testData/diagnostics/tests/cast/neverSucceeds/NoGenericsUnrelated.kt');
+                        $('#actual').attr('href', 'https://github.com/JetBrains/Kotlin/blob/b18d4af37b58d7baa264523d3d78be7485c4884e/compiler/testData/diagnostics/tests/cast/neverSucceeds/NoGenericsUnrelated.fir.kt');
+                        $('#expected-path').text('tests/cast/neverSucceeds/NoGenericsUnrelated.kt');
+                        $('#actual-path').text('tests/cast/neverSucceeds/NoGenericsUnrelated.fir.kt');
+
+                        const diffString = `--- tests/cast/neverSucceeds/NoGenericsUnrelated.kt
++++ tests/cast/neverSucceeds/NoGenericsUnrelated.fir.kt
+@@ -1,34 +1,34 @@
+ // !DIAGNOSTICS: -UNCHECKED_CAST
+ interface Trait1
+ interface Trait2
+ open class OClass1
+ open class OClass2
+ class FClass1
+ class FClass2
+ 
+ fun <TP1: OClass1, TP2: OClass2> test(
+   t1: Trait1,
+   oc1: OClass1,
+   fc1: FClass1,
+   tp1: TP1
+ ) {
+   t1 as Trait2
+   t1 as OClass2
+-  t1 <!CAST_NEVER_SUCCEEDS!>as<!> FClass2
++  t1 as FClass2
+   t1 as TP2
+ 
+   oc1 as Trait2
+-  oc1 <!CAST_NEVER_SUCCEEDS!>as<!> OClass2
+-  oc1 <!CAST_NEVER_SUCCEEDS!>as<!> FClass2
++  oc1 as OClass2
++  oc1 as FClass2
+   oc1 as TP2
+ 
+-  fc1 <!CAST_NEVER_SUCCEEDS!>as<!> Trait2
+-  fc1 <!CAST_NEVER_SUCCEEDS!>as<!> OClass2
+-  fc1 <!CAST_NEVER_SUCCEEDS!>as<!> FClass2
++  fc1 as Trait2
++  fc1 as OClass2
++  fc1 as FClass2
+   fc1 as TP2
+ 
+   tp1 as Trait2
+   tp1 as OClass2
+   tp1 as FClass2
+   tp1 as TP2
+ }`;
+                        const targetElement = $('#diff')[0];
+                        const configuration = {
+                            drawFileList: false,
+                            fileListToggle: false,
+                            fileListStartVisible: false,
+                            fileContentToggle: false,
+                            matching: 'lines',
+                            outputFormat: 'side-by-side',
+                            synchronisedScroll: true,
+                            highlight: true,
+                            renderNothingWhenEmpty: false,
+                        };
+                        const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                        diff2htmlUi.draw();
+                        diff2htmlUi.highlightCode();</script>
+  </body>
+</html>

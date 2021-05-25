@@ -1,0 +1,143 @@
+<html>
+  <head>
+    <title>Diagnostics diff: tests/ForRangeConventions.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <ul>
+          <li><a id="expected" target="_blank"><strong>Expected file: </strong><span id="expected-path"></span></a></li>
+          <li><a id="actual" target="_blank"><strong>Actual file: </strong><span id="actual-path"></span></a></li>
+        </ul>
+      </div>
+      <div class="row">
+        <div id="diff" style="width: 100%"></div>
+      </div>
+    </div>
+    <script type="text/javascript">                        $('#expected').attr('href', 'https://github.com/JetBrains/Kotlin/blob/b18d4af37b58d7baa264523d3d78be7485c4884e/compiler/testData/diagnostics/tests/ForRangeConventions.kt');
+                        $('#actual').attr('href', 'https://github.com/JetBrains/Kotlin/blob/b18d4af37b58d7baa264523d3d78be7485c4884e/compiler/testData/diagnostics/tests/ForRangeConventions.fir.kt');
+                        $('#expected-path').text('tests/ForRangeConventions.kt');
+                        $('#actual-path').text('tests/ForRangeConventions.fir.kt');
+
+                        const diffString = `--- tests/ForRangeConventions.kt
++++ tests/ForRangeConventions.fir.kt
+@@ -1,93 +1,93 @@
+ // !CHECK_TYPE
+ 
+ import java.util.*;
+ 
+ class NotRange1() {
+ 
+ }
+ 
+ abstract class NotRange2() {
+   abstract operator fun iterator() : Unit
+ }
+ 
+ abstract class ImproperIterator1 {
+   abstract operator fun hasNext() : Boolean
+ }
+ 
+ abstract class NotRange3() {
+   abstract operator fun iterator() : ImproperIterator1
+ }
+ 
+ abstract class ImproperIterator2 {
+   abstract operator fun next() : Boolean
+ }
+ 
+ abstract class NotRange4() {
+   abstract operator fun iterator() : ImproperIterator2
+ }
+ 
+ abstract class ImproperIterator3 {
+-  abstract <!INAPPLICABLE_OPERATOR_MODIFIER!>operator<!> fun hasNext() : Int
++  abstract operator fun hasNext() : Int
+   abstract operator fun next() : Int
+ }
+ 
+ abstract class NotRange5() {
+   abstract operator fun iterator() : ImproperIterator3
+ }
+ 
+ abstract class AmbiguousHasNextIterator {
+   abstract operator fun hasNext() : Boolean
+   val hasNext : Boolean get() = false
+   abstract operator fun next() : Int
+ }
+ 
+ abstract class NotRange6() {
+   abstract operator fun iterator() : AmbiguousHasNextIterator
+ }
+ 
+ abstract class ImproperIterator4 {
+   val hasNext : Int get() = 1
+   abstract operator fun next() : Int
+ }
+ 
+ abstract class NotRange7() {
+   abstract operator fun iterator() : ImproperIterator3
+ }
+ 
+ abstract class GoodIterator {
+   abstract operator fun hasNext() : Boolean
+   abstract operator fun next() : Int
+ }
+ 
+ abstract class Range0() {
+   abstract operator fun iterator() : GoodIterator
+ }
+ 
+ abstract class Range1() {
+   abstract operator fun iterator() : Iterator<Int>
+ }
+ 
+ abstract class ImproperIterator5 {
+     abstract val String.hasNext : Boolean
+     abstract operator fun next() : Int
+ }
+ 
+ abstract class NotRange8() {
+     abstract operator fun iterator() : ImproperIterator5
+ }
+ 
+ 
+ fun test(notRange1: NotRange1, notRange2: NotRange2, notRange3: NotRange3, notRange4: NotRange4, notRange5: NotRange5, notRange6: NotRange6, notRange7: NotRange7, notRange8: NotRange8, range0: Range0, range1: Range1) {
+   for (i in <!ITERATOR_MISSING!>notRange1<!>);
+   for (i in <!HAS_NEXT_MISSING, NEXT_MISSING!>notRange2<!>);
+   for (i in <!NEXT_MISSING!>notRange3<!>);
+   for (i in <!HAS_NEXT_MISSING!>notRange4<!>);
+-  for (i in <!HAS_NEXT_FUNCTION_TYPE_MISMATCH!>notRange5<!>);
++  <!CONDITION_TYPE_MISMATCH!>for (i in notRange5)<!>;
+   for (i in notRange6);
+-  for (i in <!HAS_NEXT_FUNCTION_TYPE_MISMATCH!>notRange7<!>);
++  <!CONDITION_TYPE_MISMATCH!>for (i in notRange7)<!>;
+   for (i in <!HAS_NEXT_MISSING!>notRange8<!>);
+   for (i in range0);
+   for (i in range1);
+ 
+   for (i in (checkSubtype<List<Int>>(ArrayList<Int>())));
+ }`;
+                        const targetElement = $('#diff')[0];
+                        const configuration = {
+                            drawFileList: false,
+                            fileListToggle: false,
+                            fileListStartVisible: false,
+                            fileContentToggle: false,
+                            matching: 'lines',
+                            outputFormat: 'side-by-side',
+                            synchronisedScroll: true,
+                            highlight: true,
+                            renderNothingWhenEmpty: false,
+                        };
+                        const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                        diff2htmlUi.draw();
+                        diff2htmlUi.highlightCode();</script>
+  </body>
+</html>

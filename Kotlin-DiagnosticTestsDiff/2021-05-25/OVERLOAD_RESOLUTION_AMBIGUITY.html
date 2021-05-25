@@ -1,0 +1,182 @@
+<html>
+  <head>
+    <title>Diagnostics diff: OVERLOAD_RESOLUTION_AMBIGUITY</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row sticky-top" style="background: white" id="summary">
+        <div class="d-inline-flex align-items-baseline">
+          <h1 class="mr-2">OVERLOAD_RESOLUTION_AMBIGUITY</h1>
+<a href="index.html">(back to diagnostic list)</a></div>
+      </div>
+      <div class="row">
+        <ul>
+          <li><strong>Total: </strong>187</li>
+          <li><strong>Match %: </strong>40.11%</li>
+          <li><a href="#matched"><strong># Matched: </strong>75</a></li>
+          <li><strong># Non-matched: </strong>112</li>
+          <li><a href="#missing"><strong># Missing: </strong>36</a></li>
+          <li><a href="#unexpected"><strong># Unexpected: </strong>63</a></li>
+          <li><a href="#mismatched"><strong># Mismatched: </strong>13</a></li>
+          <li><strong># Files: </strong>111</li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="missing">
+        <h2>Missing (36)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-testsWithStdLib__factoryPattern__overloadByLambdaReturnType_disabled.kt.html" target="_blank">testsWithStdLib/factoryPattern/overloadByLambdaReturnType_disabled.kt (5)</a></li>
+          <li><a href="diff-tests__generics__multipleBoundsMemberScope__propertiesConflict.kt.html" target="_blank">tests/generics/multipleBoundsMemberScope/propertiesConflict.kt (3)</a></li>
+          <li><a href="diff-tests__smartCasts__intersectionScope__propertiesConflict.kt.html" target="_blank">tests/smartCasts/intersectionScope/propertiesConflict.kt (3)</a></li>
+          <li><a href="diff-tests__j+k__primitiveOverrides__notNullAnnotated.kt.html" target="_blank">tests/j+k/primitiveOverrides/notNullAnnotated.kt (2)</a></li>
+          <li><a href="diff-tests__redeclarations__RedeclaringPrivateToFile.kt.html" target="_blank">tests/redeclarations/RedeclaringPrivateToFile.kt (2)</a></li>
+          <li><a href="diff-tests__resolve__overloadConflicts__varargsMixed.kt.html" target="_blank">tests/resolve/overloadConflicts/varargsMixed.kt (2)</a></li>
+          <li><a href="diff-testsWithStdLib__resolve__hidesMembers.kt.html" target="_blank">testsWithStdLib/resolve/hidesMembers.kt (2)</a></li>
+          <li><a href="diff-testsWithStdLib__resolve__hidesMembers2.kt.html" target="_blank">testsWithStdLib/resolve/hidesMembers2.kt (2)</a></li>
+          <li><a href="diff-tests__callableReference__ea81649_errorPropertyLHS.kt.html" target="_blank">tests/callableReference/ea81649_errorPropertyLHS.kt (1)</a></li>
+          <li><a href="diff-tests__generics__multipleBoundsMemberScope__conflictingReturnType.kt.html" target="_blank">tests/generics/multipleBoundsMemberScope/conflictingReturnType.kt (1)</a></li>
+          <li><a href="diff-tests__multimodule__duplicateMethod__differentReturnTypes.kt.html" target="_blank">tests/multimodule/duplicateMethod/differentReturnTypes.kt (1)</a></li>
+          <li><a href="diff-tests__multiplatform__defaultArguments__expectedVsNonExpectedWithDefaults.kt.html" target="_blank">tests/multiplatform/defaultArguments/expectedVsNonExpectedWithDefaults.kt (1)</a></li>
+          <li><a href="diff-tests__regressions__kt9682.kt.html" target="_blank">tests/regressions/kt9682.kt (1)</a></li>
+          <li><a href="diff-tests__resolve__overloadConflicts__allLambdas.kt.html" target="_blank">tests/resolve/overloadConflicts/allLambdas.kt (1)</a></li>
+          <li><a href="diff-tests__resolve__overloadConflicts__overloadResolutionOnNullableContravariantParameter_compat.kt.html" target="_blank">tests/resolve/overloadConflicts/overloadResolutionOnNullableContravariantParameter_compat.kt (1)</a></li>
+          <li><a href="diff-tests__samConversions__OverloadPriority.kt.html" target="_blank">tests/samConversions/OverloadPriority.kt (1)</a></li>
+          <li><a href="diff-tests__samConversions__OverloadPriorityKT.kt.html" target="_blank">tests/samConversions/OverloadPriorityKT.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__intersectionScope__conflictTypeParameters.kt.html" target="_blank">tests/smartCasts/intersectionScope/conflictTypeParameters.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__intersectionScope__conflictingReturnType.kt.html" target="_blank">tests/smartCasts/intersectionScope/conflictingReturnType.kt (1)</a></li>
+          <li><a href="diff-tests__sourceCompatibility__noBoundCallableReferences__qualifiedJavaClassReferenceInKClassExtension.kt.html" target="_blank">tests/sourceCompatibility/noBoundCallableReferences/qualifiedJavaClassReferenceInKClassExtension.kt (1)</a></li>
+          <li><a href="diff-tests__substitutions__upperBoundsSubstitutionForOverloadResolutionWithErrorTypes.kt.html" target="_blank">tests/substitutions/upperBoundsSubstitutionForOverloadResolutionWithErrorTypes.kt (1)</a></li>
+          <li><a href="diff-tests__varargs__AmbiguousVararg.kt.html" target="_blank">tests/varargs/AmbiguousVararg.kt (1)</a></li>
+          <li><a href="diff-testsWithStdLib__CallToMainRedeclaredInMultiFile.kt.html" target="_blank">testsWithStdLib/CallToMainRedeclaredInMultiFile.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="unexpected">
+        <h2>Unexpected (63)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__callableReference__resolve__withPlaceholderTypes.kt.html" target="_blank">tests/callableReference/resolve/withPlaceholderTypes.kt (3)</a></li>
+          <li><a href="diff-tests__j+k__collectionOverrides__overridesBuiltinNoMagic.kt.html" target="_blank">tests/j+k/collectionOverrides/overridesBuiltinNoMagic.kt (3)</a></li>
+          <li><a href="diff-tests__regressions__kt30245.kt.html" target="_blank">tests/regressions/kt30245.kt (3)</a></li>
+          <li><a href="diff-testsWithStdLib__typealias__typeAliasSamAdapterConstructors2.kt.html" target="_blank">testsWithStdLib/typealias/typeAliasSamAdapterConstructors2.kt (3)</a></li>
+          <li><a href="diff-tests__incompleteCode__unresolvedArguments.kt.html" target="_blank">tests/incompleteCode/unresolvedArguments.kt (2)</a></li>
+          <li><a href="diff-tests__j+k__collectionOverrides__containsAndOverload.kt.html" target="_blank">tests/j+k/collectionOverrides/containsAndOverload.kt (2)</a></li>
+          <li><a href="diff-tests__j+k__primitiveOverrides__specializedMap.kt.html" target="_blank">tests/j+k/primitiveOverrides/specializedMap.kt (2)</a></li>
+          <li><a href="diff-tests__j+k__selectMoreSpecific.kt.html" target="_blank">tests/j+k/selectMoreSpecific.kt (2)</a></li>
+          <li><a href="diff-tests__samConversions__OverloadPriority.kt.html" target="_blank">tests/samConversions/OverloadPriority.kt (2)</a></li>
+          <li><a href="diff-tests__samConversions__OverloadPriorityKT.kt.html" target="_blank">tests/samConversions/OverloadPriorityKT.kt (2)</a></li>
+          <li><a href="diff-tests__secondaryConstructors__headerCallChecker__innerInstanceCreation.kt.html" target="_blank">tests/secondaryConstructors/headerCallChecker/innerInstanceCreation.kt (2)</a></li>
+          <li><a href="diff-tests__secondaryConstructors__headerCallChecker__memberFunAccess.kt.html" target="_blank">tests/secondaryConstructors/headerCallChecker/memberFunAccess.kt (2)</a></li>
+          <li><a href="diff-tests__secondaryConstructors__headerCallChecker__propertyAccess.kt.html" target="_blank">tests/secondaryConstructors/headerCallChecker/propertyAccess.kt (2)</a></li>
+          <li><a href="diff-tests__secondaryConstructors__headerCallChecker__propertyAccessUnitialized.kt.html" target="_blank">tests/secondaryConstructors/headerCallChecker/propertyAccessUnitialized.kt (2)</a></li>
+          <li><a href="diff-tests__secondaryConstructors__headerCallChecker__superFunAccess.kt.html" target="_blank">tests/secondaryConstructors/headerCallChecker/superFunAccess.kt (2)</a></li>
+          <li><a href="diff-tests__secondaryConstructors__headerCallChecker__superFunAccessOverriden.kt.html" target="_blank">tests/secondaryConstructors/headerCallChecker/superFunAccessOverriden.kt (2)</a></li>
+          <li><a href="diff-tests__secondaryConstructors__headerCallChecker__superPropertyAccess.kt.html" target="_blank">tests/secondaryConstructors/headerCallChecker/superPropertyAccess.kt (2)</a></li>
+          <li><a href="diff-testsWithStdLib__resolve__samAgainstFunctionalType.kt.html" target="_blank">testsWithStdLib/resolve/samAgainstFunctionalType.kt (2)</a></li>
+          <li><a href="diff-testsWithStdLib__resolve__samOverloadsWithGenerics.kt.html" target="_blank">testsWithStdLib/resolve/samOverloadsWithGenerics.kt (2)</a></li>
+          <li><a href="diff-testsWithStdLib__resolve__samOverloadsWithGenericsWithoutRefinedSams.kt.html" target="_blank">testsWithStdLib/resolve/samOverloadsWithGenericsWithoutRefinedSams.kt (2)</a></li>
+          <li><a href="diff-tests__callableReference__generic__kt11075.kt.html" target="_blank">tests/callableReference/generic/kt11075.kt (1)</a></li>
+          <li><a href="diff-tests__callableReference__referenceToCompanionObjectMemberViaClassNameCompatibility.kt.html" target="_blank">tests/callableReference/referenceToCompanionObjectMemberViaClassNameCompatibility.kt (1)</a></li>
+          <li><a href="diff-tests__callableReference__resolve__ambiguityWithBoundExtensionReceiver.kt.html" target="_blank">tests/callableReference/resolve/ambiguityWithBoundExtensionReceiver.kt (1)</a></li>
+          <li><a href="diff-tests__imports__RenameOnImport.kt.html" target="_blank">tests/imports/RenameOnImport.kt (1)</a></li>
+          <li><a href="diff-tests__inference__intersectionTypesWithContravariantTypes.kt.html" target="_blank">tests/inference/intersectionTypesWithContravariantTypes.kt (1)</a></li>
+          <li><a href="diff-tests__inference__recursiveLocalFuns__selfCall.kt.html" target="_blank">tests/inference/recursiveLocalFuns/selfCall.kt (1)</a></li>
+          <li><a href="diff-tests__j+k__brokenCode__fieldDuplicates.kt.html" target="_blank">tests/j+k/brokenCode/fieldDuplicates.kt (1)</a></li>
+          <li><a href="diff-tests__j+k__collectionOverrides__collectionStringImpl.kt.html" target="_blank">tests/j+k/collectionOverrides/collectionStringImpl.kt (1)</a></li>
+          <li><a href="diff-tests__j+k__collectionOverrides__removeAtInt.kt.html" target="_blank">tests/j+k/collectionOverrides/removeAtInt.kt (1)</a></li>
+          <li><a href="diff-tests__multimodule__duplicateMethod__classVsFunctionGenericsInParamsMismatch.kt.html" target="_blank">tests/multimodule/duplicateMethod/classVsFunctionGenericsInParamsMismatch.kt (1)</a></li>
+          <li><a href="diff-tests__multimodule__duplicateMethod__sinceKotlin.kt.html" target="_blank">tests/multimodule/duplicateMethod/sinceKotlin.kt (1)</a></li>
+          <li><a href="diff-tests__overload__EmptyArgumentListInLambda.kt.html" target="_blank">tests/overload/EmptyArgumentListInLambda.kt (1)</a></li>
+          <li><a href="diff-tests__recovery__absentLeftHandSide.kt.html" target="_blank">tests/recovery/absentLeftHandSide.kt (1)</a></li>
+          <li><a href="diff-tests__resolve__overloadConflicts__kt31670_compat.kt.html" target="_blank">tests/resolve/overloadConflicts/kt31670_compat.kt (1)</a></li>
+          <li><a href="diff-tests__resolve__overloadConflicts__kt31758_compat.kt.html" target="_blank">tests/resolve/overloadConflicts/kt31758_compat.kt (1)</a></li>
+          <li><a href="diff-tests__resolve__overloadConflicts__kt37692.kt.html" target="_blank">tests/resolve/overloadConflicts/kt37692.kt (1)</a></li>
+          <li><a href="diff-tests__when__When.kt.html" target="_blank">tests/when/When.kt (1)</a></li>
+          <li><a href="diff-testsWithStdLib__resolve__samOverloadsWithKtFunction.kt.html" target="_blank">testsWithStdLib/resolve/samOverloadsWithKtFunction.kt (1)</a></li>
+          <li><a href="diff-testsWithStdLib__resolve__samOverloadsWithKtFunctionWithoutRefinedSams.kt.html" target="_blank">testsWithStdLib/resolve/samOverloadsWithKtFunctionWithoutRefinedSams.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="mismatched">
+        <h2>Mismatched (13)</h2>
+      </div>
+      <div class="row sticky-top" style="top: 5.5em; background: white">
+        <h5>CALLABLE_REFERENCE_RESOLUTION_AMBIGUITY → OVERLOAD_RESOLUTION_AMBIGUITY (12)</h5>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__inference__kt39220.kt.html" target="_blank">tests/inference/kt39220.kt (6)</a></li>
+          <li><a href="diff-tests__callableReference__resolve__eagerAndPostponedCallableReferences.kt.html" target="_blank">tests/callableReference/resolve/eagerAndPostponedCallableReferences.kt (2)</a></li>
+          <li><a href="diff-tests__callableReference__resolve__ambiguityWhenNoApplicableCallableReferenceCandidate.kt.html" target="_blank">tests/callableReference/resolve/ambiguityWhenNoApplicableCallableReferenceCandidate.kt (1)</a></li>
+          <li><a href="diff-tests__callableReference__resolve__chooseCallableReferenceDependingOnInferredReceiver.kt.html" target="_blank">tests/callableReference/resolve/chooseCallableReferenceDependingOnInferredReceiver.kt (1)</a></li>
+          <li><a href="diff-tests__inference__regressions__kt32862_both.kt.html" target="_blank">tests/inference/regressions/kt32862_both.kt (1)</a></li>
+          <li><a href="diff-testsWithStdLib__inference__completion__postponedArgumentsAnalysis__callableReferences.kt.html" target="_blank">testsWithStdLib/inference/completion/postponedArgumentsAnalysis/callableReferences.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 5.5em; background: white">
+        <h5>ASSIGN_OPERATOR_AMBIGUITY → OVERLOAD_RESOLUTION_AMBIGUITY (1)</h5>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__operatorsOverloading__plusAssignOnArray.kt.html" target="_blank">tests/operatorsOverloading/plusAssignOnArray.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="matched">
+        <h2>Matched (75)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__secondaryConstructors__redeclarations.kt.html" target="_blank">tests/secondaryConstructors/redeclarations.kt (6)</a></li>
+          <li><a href="diff-testsWithStdLib__factoryPattern__overloadByLambdaReturnType_enabled_no_annotation.kt.html" target="_blank">testsWithStdLib/factoryPattern/overloadByLambdaReturnType_enabled_no_annotation.kt (5)</a></li>
+          <li><a href="diff-tests__j+k__properties__fieldPropertyOverloadsDisabled.kt.html" target="_blank">tests/j+k/properties/fieldPropertyOverloadsDisabled.kt (4)</a></li>
+          <li><a href="diff-tests__callableReference__resolve__ambiguousWithVararg.kt.html" target="_blank">tests/callableReference/resolve/ambiguousWithVararg.kt (3)</a></li>
+          <li><a href="diff-tests__callableReference__resolve__overloadAmbiguityForSimpleLastExpressionOfBlock.kt.html" target="_blank">tests/callableReference/resolve/overloadAmbiguityForSimpleLastExpressionOfBlock.kt (3)</a></li>
+          <li><a href="diff-tests__resolve__overloadConflicts__genericClash.kt.html" target="_blank">tests/resolve/overloadConflicts/genericClash.kt (3)</a></li>
+          <li><a href="diff-tests__callableReference__resolve__moreSpecificAmbiguousExtensions.kt.html" target="_blank">tests/callableReference/resolve/moreSpecificAmbiguousExtensions.kt (2)</a></li>
+          <li><a href="diff-tests__callableReference__resolve__overloads.kt.html" target="_blank">tests/callableReference/resolve/overloads.kt (2)</a></li>
+          <li><a href="diff-tests__callableReference__resolve__withAs.kt.html" target="_blank">tests/callableReference/resolve/withAs.kt (2)</a></li>
+          <li><a href="diff-tests__callableReference__resolve__withExtFun.kt.html" target="_blank">tests/callableReference/resolve/withExtFun.kt (2)</a></li>
+          <li><a href="diff-tests__callableReference__resolve__withPlaceholderTypes.kt.html" target="_blank">tests/callableReference/resolve/withPlaceholderTypes.kt (2)</a></li>
+          <li><a href="diff-tests__dataFlowInfoTraversal__IfThenElseBothInvalid.kt.html" target="_blank">tests/dataFlowInfoTraversal/IfThenElseBothInvalid.kt (2)</a></li>
+          <li><a href="diff-tests__overload__disambiguateByFailedAbstractClassCheck.kt.html" target="_blank">tests/overload/disambiguateByFailedAbstractClassCheck.kt (2)</a></li>
+          <li><a href="diff-tests__scopes__AmbiguousNonExtensions.kt.html" target="_blank">tests/scopes/AmbiguousNonExtensions.kt (2)</a></li>
+          <li><a href="diff-tests__scopes__inheritance__statics__nameClash2.kt.html" target="_blank">tests/scopes/inheritance/statics/nameClash2.kt (2)</a></li>
+          <li><a href="diff-tests__suspendConversion__overloadResolutionBySuspendModifier.kt.html" target="_blank">tests/suspendConversion/overloadResolutionBySuspendModifier.kt (2)</a></li>
+          <li><a href="diff-tests__varargs__MostSepcificVarargsWithJava.kt.html" target="_blank">tests/varargs/MostSepcificVarargsWithJava.kt (2)</a></li>
+          <li><a href="diff-tests__callableReference__function__ambiguityTopLevelVsTopLevel.kt.html" target="_blank">tests/callableReference/function/ambiguityTopLevelVsTopLevel.kt (1)</a></li>
+          <li><a href="diff-tests__callableReference__resolve__byValType.kt.html" target="_blank">tests/callableReference/resolve/byValType.kt (1)</a></li>
+          <li><a href="diff-tests__functionLiterals__LabeledFunctionLiterals.kt.html" target="_blank">tests/functionLiterals/LabeledFunctionLiterals.kt (1)</a></li>
+          <li><a href="diff-tests__inference__cannotCompleteResolveAmbiguity.kt.html" target="_blank">tests/inference/cannotCompleteResolveAmbiguity.kt (1)</a></li>
+          <li><a href="diff-tests__inference__cannotCompleteResolveFunctionLiteralsNoUse.kt.html" target="_blank">tests/inference/cannotCompleteResolveFunctionLiteralsNoUse.kt (1)</a></li>
+          <li><a href="diff-tests__inference__cannotCompleteResolveNoInfoForParameter.kt.html" target="_blank">tests/inference/cannotCompleteResolveNoInfoForParameter.kt (1)</a></li>
+          <li><a href="diff-tests__inference__cannotCompleteResolveWithFunctionLiterals.kt.html" target="_blank">tests/inference/cannotCompleteResolveWithFunctionLiterals.kt (1)</a></li>
+          <li><a href="diff-tests__j+k__ambiguousSamAdapters.kt.html" target="_blank">tests/j+k/ambiguousSamAdapters.kt (1)</a></li>
+          <li><a href="diff-tests__j+k__properties__staticFieldPropertyOverloads.kt.html" target="_blank">tests/j+k/properties/staticFieldPropertyOverloads.kt (1)</a></li>
+          <li><a href="diff-tests__multimodule__duplicateMethod__classGenericsInParamsIndexMismatch.kt.html" target="_blank">tests/multimodule/duplicateMethod/classGenericsInParamsIndexMismatch.kt (1)</a></li>
+          <li><a href="diff-tests__multimodule__duplicateMethod__classVsFunctionGenericsInParamsMismatch.kt.html" target="_blank">tests/multimodule/duplicateMethod/classVsFunctionGenericsInParamsMismatch.kt (1)</a></li>
+          <li><a href="diff-tests__multimodule__duplicateMethod__differentGenericsInParams.kt.html" target="_blank">tests/multimodule/duplicateMethod/differentGenericsInParams.kt (1)</a></li>
+          <li><a href="diff-tests__nullabilityAndSmartCasts__funcLiteralArgsInsideAmbiguity.kt.html" target="_blank">tests/nullabilityAndSmartCasts/funcLiteralArgsInsideAmbiguity.kt (1)</a></li>
+          <li><a href="diff-tests__operatorsOverloading__IteratorAmbiguity.kt.html" target="_blank">tests/operatorsOverloading/IteratorAmbiguity.kt (1)</a></li>
+          <li><a href="diff-tests__overload__defaultParameters.kt.html" target="_blank">tests/overload/defaultParameters.kt (1)</a></li>
+          <li><a href="diff-tests__overload__kt2493.kt.html" target="_blank">tests/overload/kt2493.kt (1)</a></li>
+          <li><a href="diff-tests__resolve__ambiguityOnPropertiesWithTheSamePackageName.kt.html" target="_blank">tests/resolve/ambiguityOnPropertiesWithTheSamePackageName.kt (1)</a></li>
+          <li><a href="diff-tests__resolve__ambiguityWithTwoCorrespondingFunctionTypes.kt.html" target="_blank">tests/resolve/ambiguityWithTwoCorrespondingFunctionTypes.kt (1)</a></li>
+          <li><a href="diff-tests__resolve__overloadConflicts__kt31670.kt.html" target="_blank">tests/resolve/overloadConflicts/kt31670.kt (1)</a></li>
+          <li><a href="diff-tests__resolve__overloadConflicts__kt31758.kt.html" target="_blank">tests/resolve/overloadConflicts/kt31758.kt (1)</a></li>
+          <li><a href="diff-tests__resolve__overloadConflicts__withVariance.kt.html" target="_blank">tests/resolve/overloadConflicts/withVariance.kt (1)</a></li>
+          <li><a href="diff-tests__scopes__inheritance__statics__nameClash0.kt.html" target="_blank">tests/scopes/inheritance/statics/nameClash0.kt (1)</a></li>
+          <li><a href="diff-tests__scopes__inheritance__statics__nameClash1.kt.html" target="_blank">tests/scopes/inheritance/statics/nameClash1.kt (1)</a></li>
+          <li><a href="diff-tests__substitutions__upperBoundsSubstitutionForOverloadResolutionWithAmbiguity.kt.html" target="_blank">tests/substitutions/upperBoundsSubstitutionForOverloadResolutionWithAmbiguity.kt (1)</a></li>
+          <li><a href="diff-tests__syntheticExtensions__samAdapters__overloadResolution.kt.html" target="_blank">tests/syntheticExtensions/samAdapters/overloadResolution.kt (1)</a></li>
+          <li><a href="diff-tests__syntheticExtensions__samAdapters__overloadResolutionStatic.kt.html" target="_blank">tests/syntheticExtensions/samAdapters/overloadResolutionStatic.kt (1)</a></li>
+          <li><a href="diff-tests__syntheticExtensions__samAdapters__overloadResolutionStaticWithoutRefinedSams.kt.html" target="_blank">tests/syntheticExtensions/samAdapters/overloadResolutionStaticWithoutRefinedSams.kt (1)</a></li>
+          <li><a href="diff-tests__syntheticExtensions__samAdapters__overloadResolutionWithoutRefinedSams.kt.html" target="_blank">tests/syntheticExtensions/samAdapters/overloadResolutionWithoutRefinedSams.kt (1)</a></li>
+          <li><a href="diff-testsWithStdLib__coroutines__suspendFunctionType__functionVsSuspendFunction.kt.html" target="_blank">testsWithStdLib/coroutines/suspendFunctionType/functionVsSuspendFunction.kt (1)</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

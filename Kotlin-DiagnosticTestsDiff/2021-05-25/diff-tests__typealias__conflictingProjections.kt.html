@@ -1,0 +1,69 @@
+<html>
+  <head>
+    <title>Diagnostics diff: tests/typealias/conflictingProjections.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <ul>
+          <li><a id="expected" target="_blank"><strong>Expected file: </strong><span id="expected-path"></span></a></li>
+          <li><a id="actual" target="_blank"><strong>Actual file: </strong><span id="actual-path"></span></a></li>
+        </ul>
+      </div>
+      <div class="row">
+        <div id="diff" style="width: 100%"></div>
+      </div>
+    </div>
+    <script type="text/javascript">                        $('#expected').attr('href', 'https://github.com/JetBrains/Kotlin/blob/b18d4af37b58d7baa264523d3d78be7485c4884e/compiler/testData/diagnostics/tests/typealias/conflictingProjections.kt');
+                        $('#actual').attr('href', 'https://github.com/JetBrains/Kotlin/blob/b18d4af37b58d7baa264523d3d78be7485c4884e/compiler/testData/diagnostics/tests/typealias/conflictingProjections.fir.kt');
+                        $('#expected-path').text('tests/typealias/conflictingProjections.kt');
+                        $('#actual-path').text('tests/typealias/conflictingProjections.fir.kt');
+
+                        const diffString = `--- tests/typealias/conflictingProjections.kt
++++ tests/typealias/conflictingProjections.fir.kt
+@@ -1,16 +1,16 @@
+ // !DIAGNOSTICS: -UNUSED_VARIABLE -UNUSED_PARAMETER
+ 
+ interface In<in T>
+ interface Out<out T>
+ 
+ typealias InAlias<T> = In<T>
+ typealias OutAlias<T> = Out<T>
+ 
+-typealias TestOutForIn<T> = In<<!CONFLICTING_PROJECTION!>out<!> T>
+-typealias TestInForOut<T> = Out<<!CONFLICTING_PROJECTION!>in<!> T>
++typealias TestOutForIn<T> = <!CONFLICTING_PROJECTION!>In<out T><!>
++typealias TestInForOut<T> = <!CONFLICTING_PROJECTION!>Out<in T><!>
+ 
+-typealias TestOutForInWithinAlias<T> = <!CONFLICTING_PROJECTION_IN_TYPEALIAS_EXPANSION!>InAlias<out T><!>
+-typealias TestInForOutWithinAlias<T> = <!CONFLICTING_PROJECTION_IN_TYPEALIAS_EXPANSION!>OutAlias<in T><!>
++typealias TestOutForInWithinAlias<T> = InAlias<out T>
++typealias TestInForOutWithinAlias<T> = OutAlias<in T>
+ 
+-fun <T> testOutForInWithinResolvedType(x: <!CONFLICTING_PROJECTION_IN_TYPEALIAS_EXPANSION!>InAlias<out T><!>) {}
+-fun <T> testInForOutWithinResolvedType(x: <!CONFLICTING_PROJECTION_IN_TYPEALIAS_EXPANSION!>OutAlias<in T><!>) {}
++fun <T> testOutForInWithinResolvedType(x: InAlias<out T>) {}
++fun <T> testInForOutWithinResolvedType(x: OutAlias<in T>) {}`;
+                        const targetElement = $('#diff')[0];
+                        const configuration = {
+                            drawFileList: false,
+                            fileListToggle: false,
+                            fileListStartVisible: false,
+                            fileContentToggle: false,
+                            matching: 'lines',
+                            outputFormat: 'side-by-side',
+                            synchronisedScroll: true,
+                            highlight: true,
+                            renderNothingWhenEmpty: false,
+                        };
+                        const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                        diff2htmlUi.draw();
+                        diff2htmlUi.highlightCode();</script>
+  </body>
+</html>

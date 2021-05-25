@@ -1,0 +1,73 @@
+<html>
+  <head>
+    <title>Diagnostics diff: tests/callableReference/property/memberFromTopLevel.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <ul>
+          <li><a id="expected" target="_blank"><strong>Expected file: </strong><span id="expected-path"></span></a></li>
+          <li><a id="actual" target="_blank"><strong>Actual file: </strong><span id="actual-path"></span></a></li>
+        </ul>
+      </div>
+      <div class="row">
+        <div id="diff" style="width: 100%"></div>
+      </div>
+    </div>
+    <script type="text/javascript">                        $('#expected').attr('href', 'https://github.com/JetBrains/Kotlin/blob/b18d4af37b58d7baa264523d3d78be7485c4884e/compiler/testData/diagnostics/tests/callableReference/property/memberFromTopLevel.kt');
+                        $('#actual').attr('href', 'https://github.com/JetBrains/Kotlin/blob/b18d4af37b58d7baa264523d3d78be7485c4884e/compiler/testData/diagnostics/tests/callableReference/property/memberFromTopLevel.fir.kt');
+                        $('#expected-path').text('tests/callableReference/property/memberFromTopLevel.kt');
+                        $('#actual-path').text('tests/callableReference/property/memberFromTopLevel.fir.kt');
+
+                        const diffString = `--- tests/callableReference/property/memberFromTopLevel.kt
++++ tests/callableReference/property/memberFromTopLevel.fir.kt
+@@ -1,25 +1,25 @@
+ // !CHECK_TYPE
+ 
+ import kotlin.reflect.*
+ 
+ class A {
+     val foo: Int = 42
+     var bar: String = ""
+ }
+ 
+ fun test() {
+     val p = A::foo
+ 
+     checkSubtype<KProperty1<A, Int>>(p)
+-    checkSubtype<KMutableProperty1<A, Int>>(<!TYPE_MISMATCH!>p<!>)
++    checkSubtype<KMutableProperty1<A, Int>>(<!ARGUMENT_TYPE_MISMATCH!>p<!>)
+     checkSubtype<Int>(p.get(A()))
+     p.get(<!NO_VALUE_FOR_PARAMETER!>)<!>
+     p.<!UNRESOLVED_REFERENCE!>set<!>(A(), 239)
+ 
+     val q = A::bar
+ 
+     checkSubtype<KProperty1<A, String>>(q)
+     checkSubtype<KMutableProperty1<A, String>>(q)
+     checkSubtype<String>(q.get(A()))
+     q.set(A(), "q")
+ }`;
+                        const targetElement = $('#diff')[0];
+                        const configuration = {
+                            drawFileList: false,
+                            fileListToggle: false,
+                            fileListStartVisible: false,
+                            fileContentToggle: false,
+                            matching: 'lines',
+                            outputFormat: 'side-by-side',
+                            synchronisedScroll: true,
+                            highlight: true,
+                            renderNothingWhenEmpty: false,
+                        };
+                        const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                        diff2htmlUi.draw();
+                        diff2htmlUi.highlightCode();</script>
+  </body>
+</html>

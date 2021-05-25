@@ -1,0 +1,213 @@
+<html>
+  <head>
+    <title>Diagnostics diff: testsWithStdLib/annotations/throws.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <ul>
+          <li><a id="expected" target="_blank"><strong>Expected file: </strong><span id="expected-path"></span></a></li>
+          <li><a id="actual" target="_blank"><strong>Actual file: </strong><span id="actual-path"></span></a></li>
+        </ul>
+      </div>
+      <div class="row">
+        <div id="diff" style="width: 100%"></div>
+      </div>
+    </div>
+    <script type="text/javascript">                        $('#expected').attr('href', 'https://github.com/JetBrains/Kotlin/blob/b18d4af37b58d7baa264523d3d78be7485c4884e/compiler/testData/diagnostics/testsWithStdLib/annotations/throws.kt');
+                        $('#actual').attr('href', 'https://github.com/JetBrains/Kotlin/blob/b18d4af37b58d7baa264523d3d78be7485c4884e/compiler/testData/diagnostics/testsWithStdLib/annotations/throws.fir.kt');
+                        $('#expected-path').text('testsWithStdLib/annotations/throws.kt');
+                        $('#actual-path').text('testsWithStdLib/annotations/throws.fir.kt');
+
+                        const diffString = `--- testsWithStdLib/annotations/throws.kt
++++ testsWithStdLib/annotations/throws.fir.kt
+@@ -1,164 +1,164 @@
+ // !DIAGNOSTICS: -UNUSED_PARAMETER
+ // FILE: main1.kt
+ package abc1
+ 
+ @Throws(Exception::class)
+ fun foo1() {}
+ 
+ @kotlin.Throws(Exception::class)
+ fun foo2() {}
+ 
+ @kotlin.jvm.Throws(Exception::class)
+ fun foo3() {}
+ 
+ fun foo5(x: Throws) {}
+ fun foo6(x: kotlin.Throws) {}
+ fun foo7(x: kotlin.jvm.Throws) {}
+ 
+ // FILE: main2.kt
+ package abc2
+ 
+ import kotlin.jvm.Throws
+ 
+ @Throws(Exception::class)
+ fun foo1() {}
+ 
+ @kotlin.Throws(Exception::class)
+ fun foo2() {}
+ 
+ @kotlin.jvm.Throws(Exception::class)
+ fun foo3() {}
+ 
+ fun foo5(x: Throws) {}
+ fun foo6(x: kotlin.Throws) {}
+ fun foo7(x: kotlin.jvm.Throws) {}
+ 
+ // FILE: main3.kt
+ package abc3
+ 
+ import kotlin.Throws
+ 
+ @Throws(Exception::class)
+ fun foo1() {}
+ 
+ @kotlin.Throws(Exception::class)
+ fun foo2() {}
+ 
+ @kotlin.jvm.Throws(Exception::class)
+ fun foo3() {}
+ 
+ fun foo5(x: Throws) {}
+ fun foo6(x: kotlin.Throws) {}
+ fun foo7(x: kotlin.jvm.Throws) {}
+ 
+ // FILE: main4.kt
+ package abc4
+ 
+-import kotlin.<!CONFLICTING_IMPORT!>Throws<!>
+-import kotlin.jvm.<!CONFLICTING_IMPORT!>Throws<!>
++import kotlin.Throws
++import kotlin.jvm.Throws
+ 
+ @Throws(Exception::class)
+ fun foo1() {}
+ 
+ @kotlin.Throws(Exception::class)
+ fun foo2() {}
+ 
+ @kotlin.jvm.Throws(Exception::class)
+ fun foo3() {}
+ 
+ fun foo5(x: Throws) {}
+ fun foo6(x: kotlin.Throws) {}
+ fun foo7(x: kotlin.jvm.Throws) {}
+ 
+ // FILE: main5.kt
+ package abc5
+ 
+ import kotlin.jvm.*
+ 
+ @Throws(Exception::class)
+ fun foo1() {}
+ 
+ @kotlin.Throws(Exception::class)
+ fun foo2() {}
+ 
+ @kotlin.jvm.Throws(Exception::class)
+ fun foo3() {}
+ 
+ fun foo5(x: Throws) {}
+ fun foo6(x: kotlin.Throws) {}
+ fun foo7(x: kotlin.jvm.Throws) {}
+ 
+ // FILE: main6.kt
+ package abc6
+ 
+ import kotlin.*
+ 
+ @Throws(Exception::class)
+ fun foo1() {}
+ 
+ @kotlin.Throws(Exception::class)
+ fun foo2() {}
+ 
+ @kotlin.jvm.Throws(Exception::class)
+ fun foo3() {}
+ 
+ fun foo5(x: Throws) {}
+ fun foo6(x: kotlin.Throws) {}
+ fun foo7(x: kotlin.jvm.Throws) {}
+ 
+ // FILE: main7.kt
+ package abc7
+ 
+ import kotlin.*
+ import kotlin.jvm.*
+ 
+ @Throws(Exception::class)
+ fun foo1() {}
+ 
+ @kotlin.Throws(Exception::class)
+ fun foo2() {}
+ 
+ @kotlin.jvm.Throws(Exception::class)
+ fun foo3() {}
+ 
+ fun foo5(x: Throws) {}
+ fun foo6(x: kotlin.Throws) {}
+ fun foo7(x: kotlin.jvm.Throws) {}
+ 
+ // FILE: main8.kt
+ package abc8
+ 
+ import kotlin.*
+ import kotlin.jvm.Throws
+ 
+ @Throws(Exception::class)
+ fun foo1() {}
+ 
+ @kotlin.Throws(Exception::class)
+ fun foo2() {}
+ 
+ @kotlin.jvm.Throws(Exception::class)
+ fun foo3() {}
+ 
+ fun foo5(x: Throws) {}
+ fun foo6(x: kotlin.Throws) {}
+ fun foo7(x: kotlin.jvm.Throws) {}
+ 
+ // FILE: main9.kt
+ package abc9
+ 
+ import kotlin.jvm.*
+ import kotlin.Throws
+ 
+ @Throws(Exception::class)
+ fun foo1() {}
+ 
+ @kotlin.Throws(Exception::class)
+ fun foo2() {}
+ 
+ @kotlin.jvm.Throws(Exception::class)
+ fun foo3() {}
+ 
+ fun foo5(x: Throws) {}
+ fun foo6(x: kotlin.Throws) {}
+ fun foo7(x: kotlin.jvm.Throws) {}`;
+                        const targetElement = $('#diff')[0];
+                        const configuration = {
+                            drawFileList: false,
+                            fileListToggle: false,
+                            fileListStartVisible: false,
+                            fileContentToggle: false,
+                            matching: 'lines',
+                            outputFormat: 'side-by-side',
+                            synchronisedScroll: true,
+                            highlight: true,
+                            renderNothingWhenEmpty: false,
+                        };
+                        const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                        diff2htmlUi.draw();
+                        diff2htmlUi.highlightCode();</script>
+  </body>
+</html>

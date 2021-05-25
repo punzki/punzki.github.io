@@ -1,0 +1,201 @@
+<html>
+  <head>
+    <title>Diagnostics diff: tests/deprecated/deprecatedPropertyInheritance.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <ul>
+          <li><a id="expected" target="_blank"><strong>Expected file: </strong><span id="expected-path"></span></a></li>
+          <li><a id="actual" target="_blank"><strong>Actual file: </strong><span id="actual-path"></span></a></li>
+        </ul>
+      </div>
+      <div class="row">
+        <div id="diff" style="width: 100%"></div>
+      </div>
+    </div>
+    <script type="text/javascript">                        $('#expected').attr('href', 'https://github.com/JetBrains/Kotlin/blob/b18d4af37b58d7baa264523d3d78be7485c4884e/compiler/testData/diagnostics/tests/deprecated/deprecatedPropertyInheritance.kt');
+                        $('#actual').attr('href', 'https://github.com/JetBrains/Kotlin/blob/b18d4af37b58d7baa264523d3d78be7485c4884e/compiler/testData/diagnostics/tests/deprecated/deprecatedPropertyInheritance.fir.kt');
+                        $('#expected-path').text('tests/deprecated/deprecatedPropertyInheritance.kt');
+                        $('#actual-path').text('tests/deprecated/deprecatedPropertyInheritance.fir.kt');
+
+                        const diffString = `--- tests/deprecated/deprecatedPropertyInheritance.kt
++++ tests/deprecated/deprecatedPropertyInheritance.fir.kt
+@@ -1,135 +1,135 @@
+ package foo
+ 
+ interface HiddenDeprecated {
+     @Deprecated("", level = DeprecationLevel.HIDDEN)
+     var p: Int
+ }
+ 
+ interface NoDeprecation {
+     var p: Int
+ }
+ 
+ 
+ open class WarningDeprecated {
+     @Deprecated("", level = DeprecationLevel.WARNING)
+     open var p: Int = 3
+ }
+ 
+ open class ErrorDeprecated {
+     @Deprecated("", level = DeprecationLevel.ERROR)
+     open var p: Int = 3
+ }
+ 
+ open class GetterDeprecated {
+     open var p: Int = 3
+         @Deprecated("") get
+ }
+ 
+ open class SetterDeprecated {
+     open var p: Int = 3
+         @Deprecated("") set
+ }
+ 
+ class WD: WarningDeprecated() {
+     override var p: Int
+         get() = 3
+         set(value) {}
+ }
+ 
+ class ED: ErrorDeprecated() {
+     override var p: Int
+         get() = 3
+         set(value) {
+         }
+ }
+ 
+ class GD: GetterDeprecated() {
+     override var p: Int
+         get() = 3
+         set(value) {
+         }
+ }
+ 
+ class SD: SetterDeprecated() {
+     override var p: Int
+         get() = 3
+         set(value) {
+         }
+ }
+ 
+ class SDH: SetterDeprecated(), HiddenDeprecated {
+     override var p: Int
+         get() = 3
+         set(value) {
+         }
+ }
+ 
+ class EDH: ErrorDeprecated(), HiddenDeprecated {
+     override var p: Int
+         get() = 3
+         set(value) {
+         }
+ }
+ 
+ class NED: ErrorDeprecated(), NoDeprecation {
+     override var p: Int
+         get() = 3
+         set(value) {
+         }
+ }
+ 
+ class Diff {
+     @Deprecated("", level = DeprecationLevel.WARNING)
+     var p: Int
+         @Deprecated("", level = DeprecationLevel.ERROR) get() = 3
+         @Deprecated("", level = DeprecationLevel.HIDDEN) set(value) {
+ 
+         }
+ }
+ 
+ fun use(
+         warningDeprecated: WarningDeprecated, errorDeprecated: ErrorDeprecated, setterDeprecated: SetterDeprecated,
+         getterDeprecated: GetterDeprecated, hiddenDeprecated: HiddenDeprecated,
+         wd: WD, ed: ED, gd: GD, sd: SD,
+         sdh: SDH, edh: EDH, ned: NED,
+         diff: Diff
+ ) {
+-    warningDeprecated.<!DEPRECATION!>p<!>
+-    warningDeprecated.<!DEPRECATION!>p<!> = 1
++    warningDeprecated.p
++    warningDeprecated.p = 1
+ 
+-    errorDeprecated.<!DEPRECATION_ERROR!>p<!>
+-    errorDeprecated.<!DEPRECATION_ERROR!>p<!> = 1
++    errorDeprecated.p
++    errorDeprecated.p = 1
+ 
+-    getterDeprecated.<!DEPRECATION!>p<!>
++    getterDeprecated.p
+     getterDeprecated.p = 1
+ 
+     setterDeprecated.p
+-    setterDeprecated.<!DEPRECATION!>p<!> = 1
++    setterDeprecated.p = 1
+ 
+-    hiddenDeprecated.<!UNRESOLVED_REFERENCE!>p<!>
+-    hiddenDeprecated.<!UNRESOLVED_REFERENCE!>p<!> = 1
++    hiddenDeprecated.p
++    hiddenDeprecated.p = 1
+ 
+-    wd.<!DEPRECATION!>p<!>
+-    wd.<!DEPRECATION!>p<!> = 1
++    wd.p
++    wd.p = 1
+ 
+-    ed.<!DEPRECATION_ERROR!>p<!>
+-    ed.<!DEPRECATION_ERROR!>p<!> = 1
++    ed.p
++    ed.p = 1
+ 
+-    gd.<!DEPRECATION!>p<!>
++    gd.p
+     gd.p = 1
+ 
+     sd.p
+-    sd.<!DEPRECATION!>p<!> = 1
++    sd.p = 1
+ 
+     sdh.p
+-    sdh.<!DEPRECATION!>p<!> = 1
++    sdh.p = 1
+ 
+-    edh.<!DEPRECATION_ERROR!>p<!>
+-    edh.<!DEPRECATION_ERROR!>p<!> = 1
++    edh.p
++    edh.p = 1
+ 
+     ned.p
+     ned.p = 1
+ 
+-    diff.<!DEPRECATION!>p<!>
+-    diff.<!DEPRECATION, DEPRECATION_ERROR!>p<!> = 1
++    diff.p
++    diff.p = 1
+ }`;
+                        const targetElement = $('#diff')[0];
+                        const configuration = {
+                            drawFileList: false,
+                            fileListToggle: false,
+                            fileListStartVisible: false,
+                            fileContentToggle: false,
+                            matching: 'lines',
+                            outputFormat: 'side-by-side',
+                            synchronisedScroll: true,
+                            highlight: true,
+                            renderNothingWhenEmpty: false,
+                        };
+                        const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                        diff2htmlUi.draw();
+                        diff2htmlUi.highlightCode();</script>
+  </body>
+</html>

@@ -1,0 +1,113 @@
+<html>
+  <head>
+    <title>Diagnostics diff: TOO_MANY_ARGUMENTS</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row sticky-top" style="background: white" id="summary">
+        <div class="d-inline-flex align-items-baseline">
+          <h1 class="mr-2">TOO_MANY_ARGUMENTS</h1>
+<a href="index.html">(back to diagnostic list)</a></div>
+      </div>
+      <div class="row">
+        <ul>
+          <li><strong>Total: </strong>96</li>
+          <li><strong>Match %: </strong>51.04%</li>
+          <li><a href="#matched"><strong># Matched: </strong>49</a></li>
+          <li><strong># Non-matched: </strong>47</li>
+          <li><a href="#missing"><strong># Missing: </strong>29</a></li>
+          <li><a href="#unexpected"><strong># Unexpected: </strong>14</a></li>
+          <li><a href="#mismatched"><strong># Mismatched: </strong>4</a></li>
+          <li><strong># Files: </strong>44</li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="missing">
+        <h2>Missing (29)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-testsWithStdLib__coroutines__suspendCovarianJavaOverride.kt.html" target="_blank">testsWithStdLib/coroutines/suspendCovarianJavaOverride.kt (6)</a></li>
+          <li><a href="diff-testsWithStdLib__coroutines__suspendJavaImplementationFromDifferentClass.kt.html" target="_blank">testsWithStdLib/coroutines/suspendJavaImplementationFromDifferentClass.kt (6)</a></li>
+          <li><a href="diff-testsWithStdLib__coroutines__suspendJavaOverrides.kt.html" target="_blank">testsWithStdLib/coroutines/suspendJavaOverrides.kt (6)</a></li>
+          <li><a href="diff-testsWithStdLib__targetedBuiltIns__unsupportedFeature.kt.html" target="_blank">testsWithStdLib/targetedBuiltIns/unsupportedFeature.kt (4)</a></li>
+          <li><a href="diff-tests__annotations__DanglingMixed.kt.html" target="_blank">tests/annotations/DanglingMixed.kt (3)</a></li>
+          <li><a href="diff-tests__annotations__AmbigiousAnnotationConstructor.kt.html" target="_blank">tests/annotations/AmbigiousAnnotationConstructor.kt (2)</a></li>
+          <li><a href="diff-tests__checkArguments__overloadedFunction.kt.html" target="_blank">tests/checkArguments/overloadedFunction.kt (1)</a></li>
+          <li><a href="diff-tests__scopes__visibility.kt.html" target="_blank">tests/scopes/visibility.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="unexpected">
+        <h2>Unexpected (14)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__annotations__AnnotationForClassTypeParameter.kt.html" target="_blank">tests/annotations/AnnotationForClassTypeParameter.kt (3)</a></li>
+          <li><a href="diff-tests__resolve__invoke__reportFunctionExpectedWhenOneInvokeExist.kt.html" target="_blank">tests/resolve/invoke/reportFunctionExpectedWhenOneInvokeExist.kt (3)</a></li>
+          <li><a href="diff-tests__extensions__throwOutCandidatesByReceiver.kt.html" target="_blank">tests/extensions/throwOutCandidatesByReceiver.kt (2)</a></li>
+          <li><a href="diff-tests__testsWithJava15__jvmRecord__disabledFeature.kt.html" target="_blank">tests/testsWithJava15/jvmRecord/disabledFeature.kt (2)</a></li>
+          <li><a href="diff-tests__testsWithJava15__jvmRecord__simpleRecords.kt.html" target="_blank">tests/testsWithJava15/jvmRecord/simpleRecords.kt (2)</a></li>
+          <li><a href="diff-tests__resolve__invoke__functionExpectedWhenSeveralInvokesExist.kt.html" target="_blank">tests/resolve/invoke/functionExpectedWhenSeveralInvokesExist.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__intersectionScope__unstableSmartCast.kt.html" target="_blank">tests/smartCasts/intersectionScope/unstableSmartCast.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="mismatched">
+        <h2>Mismatched (4)</h2>
+      </div>
+      <div class="row sticky-top" style="top: 5.5em; background: white">
+        <h5>UNEXPECTED_TRAILING_LAMBDA_ON_A_NEW_LINE → TOO_MANY_ARGUMENTS (3)</h5>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__resolve__newLineLambda.kt.html" target="_blank">tests/resolve/newLineLambda.kt (3)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 5.5em; background: white">
+        <h5>NEW_INFERENCE_NO_INFORMATION_FOR_PARAMETER → TOO_MANY_ARGUMENTS (1)</h5>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__incompleteCode__diagnosticWithSyntaxError__noTypeParamsInReturnType.kt.html" target="_blank">tests/incompleteCode/diagnosticWithSyntaxError/noTypeParamsInReturnType.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="matched">
+        <h2>Matched (49)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__resolve__newLineLambda.kt.html" target="_blank">tests/resolve/newLineLambda.kt (7)</a></li>
+          <li><a href="diff-tests__checkArguments__kt1897_diagnostic_part.kt.html" target="_blank">tests/checkArguments/kt1897_diagnostic_part.kt (6)</a></li>
+          <li><a href="diff-tests__annotations__AnnotationForFunctionTypeParameter.kt.html" target="_blank">tests/annotations/AnnotationForFunctionTypeParameter.kt (3)</a></li>
+          <li><a href="diff-tests__annotations__typeUse__kt25876.kt.html" target="_blank">tests/annotations/typeUse/kt25876.kt (3)</a></li>
+          <li><a href="diff-tests__annotations__AnnotationsForPropertyTypeParameter.kt.html" target="_blank">tests/annotations/AnnotationsForPropertyTypeParameter.kt (2)</a></li>
+          <li><a href="diff-tests__checkArguments__arrayAccessSet.kt.html" target="_blank">tests/checkArguments/arrayAccessSet.kt (2)</a></li>
+          <li><a href="diff-tests__imports__ImportOverloadFunctions.kt.html" target="_blank">tests/imports/ImportOverloadFunctions.kt (2)</a></li>
+          <li><a href="diff-testsWithStdLib__annotations__prohibitPositionedArgument__tooManyArgs.kt.html" target="_blank">testsWithStdLib/annotations/prohibitPositionedArgument/tooManyArgs.kt (2)</a></li>
+          <li><a href="diff-testsWithStdLib__coroutines__suspendFunctions.kt.html" target="_blank">testsWithStdLib/coroutines/suspendFunctions.kt (2)</a></li>
+          <li><a href="diff-tests__Basic.kt.html" target="_blank">tests/Basic.kt (1)</a></li>
+          <li><a href="diff-tests__CharacterLiterals.kt.html" target="_blank">tests/CharacterLiterals.kt (1)</a></li>
+          <li><a href="diff-tests__FunctionCalleeExpressions.kt.html" target="_blank">tests/FunctionCalleeExpressions.kt (1)</a></li>
+          <li><a href="diff-tests__annotations__AmbigiousAnnotationConstructor.kt.html" target="_blank">tests/annotations/AmbigiousAnnotationConstructor.kt (1)</a></li>
+          <li><a href="diff-tests__annotations__rendering__tooManyArguments.kt.html" target="_blank">tests/annotations/rendering/tooManyArguments.kt (1)</a></li>
+          <li><a href="diff-tests__checkArguments__arrayAccessSetTooManyArgs.kt.html" target="_blank">tests/checkArguments/arrayAccessSetTooManyArgs.kt (1)</a></li>
+          <li><a href="diff-tests__controlFlowAnalysis__unmappedArgs.kt.html" target="_blank">tests/controlFlowAnalysis/unmappedArgs.kt (1)</a></li>
+          <li><a href="diff-tests__controlStructures__kt799.kt.html" target="_blank">tests/controlStructures/kt799.kt (1)</a></li>
+          <li><a href="diff-tests__functionLiterals__kt6541_extensionForExtensionFunction.kt.html" target="_blank">tests/functionLiterals/kt6541_extensionForExtensionFunction.kt (1)</a></li>
+          <li><a href="diff-tests__generics__Projections.kt.html" target="_blank">tests/generics/Projections.kt (1)</a></li>
+          <li><a href="diff-tests__inference__completion__postponedArgumentsAnalysis__basic.kt.html" target="_blank">tests/inference/completion/postponedArgumentsAnalysis/basic.kt (1)</a></li>
+          <li><a href="diff-tests__inner__kt5854.kt.html" target="_blank">tests/inner/kt5854.kt (1)</a></li>
+          <li><a href="diff-tests__inner__kt6026.kt.html" target="_blank">tests/inner/kt6026.kt (1)</a></li>
+          <li><a href="diff-tests__namedArguments__namedArgumentsAndDefaultValues.kt.html" target="_blank">tests/namedArguments/namedArgumentsAndDefaultValues.kt (1)</a></li>
+          <li><a href="diff-tests__regressions__kt1736.kt.html" target="_blank">tests/regressions/kt1736.kt (1)</a></li>
+          <li><a href="diff-tests__secondaryConstructors__superAnyNonEmpty.kt.html" target="_blank">tests/secondaryConstructors/superAnyNonEmpty.kt (1)</a></li>
+          <li><a href="diff-tests__typealias__typeAliasObjectWithInvoke.kt.html" target="_blank">tests/typealias/typeAliasObjectWithInvoke.kt (1)</a></li>
+          <li><a href="diff-testsWithJsStdLib__platformDependent.kt.html" target="_blank">testsWithJsStdLib/platformDependent.kt (1)</a></li>
+          <li><a href="diff-testsWithStdLib__coroutines__suspendExternalFunctions.kt.html" target="_blank">testsWithStdLib/coroutines/suspendExternalFunctions.kt (1)</a></li>
+          <li><a href="diff-testsWithStdLib__regression__ea70880_illegalJvmName.kt.html" target="_blank">testsWithStdLib/regression/ea70880_illegalJvmName.kt (1)</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,93 @@
+<html>
+  <head>
+    <title>Diagnostics diff: tests/Bounds.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <ul>
+          <li><a id="expected" target="_blank"><strong>Expected file: </strong><span id="expected-path"></span></a></li>
+          <li><a id="actual" target="_blank"><strong>Actual file: </strong><span id="actual-path"></span></a></li>
+        </ul>
+      </div>
+      <div class="row">
+        <div id="diff" style="width: 100%"></div>
+      </div>
+    </div>
+    <script type="text/javascript">                        $('#expected').attr('href', 'https://github.com/JetBrains/Kotlin/blob/b18d4af37b58d7baa264523d3d78be7485c4884e/compiler/testData/diagnostics/tests/Bounds.kt');
+                        $('#actual').attr('href', 'https://github.com/JetBrains/Kotlin/blob/b18d4af37b58d7baa264523d3d78be7485c4884e/compiler/testData/diagnostics/tests/Bounds.fir.kt');
+                        $('#expected-path').text('tests/Bounds.kt');
+                        $('#actual-path').text('tests/Bounds.fir.kt');
+
+                        const diffString = `--- tests/Bounds.kt
++++ tests/Bounds.fir.kt
+@@ -1,42 +1,42 @@
+ // FILE: a.kt
+ package boundsWithSubstitutors
+     open class A<T>
+     class B<X : A<X>>()
+ 
+     class C : A<C>()
+ 
+     val a = B<C>()
+     val a1 = B<<!UPPER_BOUND_VIOLATED!>Int<!>>()
+ 
+     class X<A, B : A>()
+ 
+     val b = X<Any, X<A<C>, C>>()
+     val b0 = X<Any, <!UPPER_BOUND_VIOLATED!>Any?<!>>()
+-    val b1 = X<Any, X<A<C>, <!UPPER_BOUND_VIOLATED!>String<!>>>()
++    val b1 = X<Any, <!UPPER_BOUND_VIOLATED!>X<A<C>, String><!>>()
+ 
+ // FILE: b.kt
+   open class A {}
+   open class B<T : A>()
+ 
+   class Pair<A, B>
+ 
+-  abstract class C<T : B<<!UPPER_BOUND_VIOLATED!>Int<!>>, X :  (B<<!UPPER_BOUND_VIOLATED!>Char<!>>) -> Pair<B<<!UPPER_BOUND_VIOLATED!>Any<!>>, B<A>>>() : B<<!UPPER_BOUND_VIOLATED!>Any<!>>() { // 2 errors
++  abstract class C<T : B<Int>, X :  (B<Char>) -> Pair<B<Any>, B<A>>>() : <!UPPER_BOUND_VIOLATED!>B<Any><!>() { // 2 errors
+     val a = B<<!UPPER_BOUND_VIOLATED!>Char<!>>() // error
+ 
+-    abstract val x :  (B<<!UPPER_BOUND_VIOLATED!>Char<!>>) -> B<<!UPPER_BOUND_VIOLATED!>Any<!>>
++    abstract val x :  (B<Char>) -> B<Any>
+   }
+ 
+ 
+ fun test() {
+     foo<<!UPPER_BOUND_VIOLATED!>Int?<!>>()
+     foo<Int>()
+     bar<Int?>()
+     bar<Int>()
+     bar<<!UPPER_BOUND_VIOLATED!>Double?<!>>()
+     bar<<!UPPER_BOUND_VIOLATED!>Double<!>>()
+-    1.buzz<<!UPPER_BOUND_VIOLATED!>Double<!>>()
++    1.<!INAPPLICABLE_CANDIDATE!>buzz<!><Double>()
+ }
+ 
+ fun <T : Any> foo() {}
+ fun <T : Int?> bar() {}
+ fun <T : <!FINAL_UPPER_BOUND!>Int<!>> Int.buzz() : Unit {}`;
+                        const targetElement = $('#diff')[0];
+                        const configuration = {
+                            drawFileList: false,
+                            fileListToggle: false,
+                            fileListStartVisible: false,
+                            fileContentToggle: false,
+                            matching: 'lines',
+                            outputFormat: 'side-by-side',
+                            synchronisedScroll: true,
+                            highlight: true,
+                            renderNothingWhenEmpty: false,
+                        };
+                        const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                        diff2htmlUi.draw();
+                        diff2htmlUi.highlightCode();</script>
+  </body>
+</html>

@@ -1,0 +1,177 @@
+<html>
+  <head>
+    <title>Diagnostics diff: tests/inline/superCallDepecation.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <ul>
+          <li><a id="expected" target="_blank"><strong>Expected file: </strong><span id="expected-path"></span></a></li>
+          <li><a id="actual" target="_blank"><strong>Actual file: </strong><span id="actual-path"></span></a></li>
+        </ul>
+      </div>
+      <div class="row">
+        <div id="diff" style="width: 100%"></div>
+      </div>
+    </div>
+    <script type="text/javascript">                        $('#expected').attr('href', 'https://github.com/JetBrains/Kotlin/blob/b18d4af37b58d7baa264523d3d78be7485c4884e/compiler/testData/diagnostics/tests/inline/superCallDepecation.kt');
+                        $('#actual').attr('href', 'https://github.com/JetBrains/Kotlin/blob/b18d4af37b58d7baa264523d3d78be7485c4884e/compiler/testData/diagnostics/tests/inline/superCallDepecation.fir.kt');
+                        $('#expected-path').text('tests/inline/superCallDepecation.kt');
+                        $('#actual-path').text('tests/inline/superCallDepecation.fir.kt');
+
+                        const diffString = `--- tests/inline/superCallDepecation.kt
++++ tests/inline/superCallDepecation.fir.kt
+@@ -1,122 +1,122 @@
+ // !DIAGNOSTICS: -EXPOSED_PARAMETER_TYPE -NOTHING_TO_INLINE
+ 
+ // FILE: main.kt
+ open class AndroidTargetConfigurator :
+     Base(),
+     ModuleConfiguratorWithTests,
+     AndroidModuleConfigurator {
+ 
+     public inline fun inlineFun(): String {
+-        return <!SUPER_CALL_FROM_PUBLIC_INLINE!>super.classFun()<!> + <!SUPER_CALL_FROM_PUBLIC_INLINE!>super<ModuleConfiguratorWithTests>.getConfiguratorSettings()<!> + <!SUPER_CALL_FROM_PUBLIC_INLINE!>super<AndroidModuleConfigurator>.getConfiguratorSettings()<!>
++        return <!SUPER_CALL_FROM_PUBLIC_INLINE!>super<!>.classFun() + <!SUPER_CALL_FROM_PUBLIC_INLINE!>super<ModuleConfiguratorWithTests><!>.getConfiguratorSettings() + <!SUPER_CALL_FROM_PUBLIC_INLINE!>super<AndroidModuleConfigurator><!>.getConfiguratorSettings()
+     }
+ 
+     @PublishedApi
+     internal inline fun inlineFunPublished(): String {
+-        return <!SUPER_CALL_FROM_PUBLIC_INLINE!>super.classFun()<!> + <!SUPER_CALL_FROM_PUBLIC_INLINE!>super<ModuleConfiguratorWithTests>.getConfiguratorSettings()<!> + <!SUPER_CALL_FROM_PUBLIC_INLINE!>super<AndroidModuleConfigurator>.getConfiguratorSettings()<!>
++        return super.classFun() + super<ModuleConfiguratorWithTests>.getConfiguratorSettings() + super<AndroidModuleConfigurator>.getConfiguratorSettings()
+     }
+ 
+     public inline fun inlineFunAnonymousObjects(): String {
+         {
+-            <!SUPER_CALL_FROM_PUBLIC_INLINE!>super.classFun()<!> + <!SUPER_CALL_FROM_PUBLIC_INLINE!>super<ModuleConfiguratorWithTests>.getConfiguratorSettings()<!> + <!SUPER_CALL_FROM_PUBLIC_INLINE!>super<AndroidModuleConfigurator>.getConfiguratorSettings()<!>
++            <!SUPER_CALL_FROM_PUBLIC_INLINE!>super<!>.classFun() + <!SUPER_CALL_FROM_PUBLIC_INLINE!>super<ModuleConfiguratorWithTests><!>.getConfiguratorSettings() + <!SUPER_CALL_FROM_PUBLIC_INLINE!>super<AndroidModuleConfigurator><!>.getConfiguratorSettings()
+         }()
+ 
+         return object {
+-            fun run() = <!SUPER_CALL_FROM_PUBLIC_INLINE!>super@AndroidTargetConfigurator.classFun()<!> + <!SUPER_CALL_FROM_PUBLIC_INLINE!>super<ModuleConfiguratorWithTests>@AndroidTargetConfigurator.getConfiguratorSettings()<!> + <!SUPER_CALL_FROM_PUBLIC_INLINE!>super<AndroidModuleConfigurator>@AndroidTargetConfigurator.getConfiguratorSettings()<!>
++            fun run() = <!SUPER_CALL_FROM_PUBLIC_INLINE!>super@AndroidTargetConfigurator<!>.classFun() + <!SUPER_CALL_FROM_PUBLIC_INLINE!>super<ModuleConfiguratorWithTests>@AndroidTargetConfigurator<!>.getConfiguratorSettings() + <!SUPER_CALL_FROM_PUBLIC_INLINE!>super<AndroidModuleConfigurator>@AndroidTargetConfigurator<!>.getConfiguratorSettings()
+         }.run()
+     }
+ 
+     public inline fun inlineFunAnonymousNoDiagnostics(): String {
+         return object: AndroidTargetConfigurator(), ModuleConfiguratorWithTests, AndroidModuleConfigurator {
+ 
+             override fun getConfiguratorSettings(): String {
+                 return super<AndroidTargetConfigurator>.getConfiguratorSettings()
+             }
+ 
+             inline fun anonymousInline() {
+                 super.classFun() + super<<!QUALIFIED_SUPERTYPE_EXTENDED_BY_OTHER_SUPERTYPE!>ModuleConfiguratorWithTests<!>>.getConfiguratorSettings() + super<<!QUALIFIED_SUPERTYPE_EXTENDED_BY_OTHER_SUPERTYPE!>AndroidModuleConfigurator<!>>.getConfiguratorSettings()
+             }
+ 
+             fun run() = super.classFun() + super<<!QUALIFIED_SUPERTYPE_EXTENDED_BY_OTHER_SUPERTYPE!>ModuleConfiguratorWithTests<!>>.getConfiguratorSettings() + super<<!QUALIFIED_SUPERTYPE_EXTENDED_BY_OTHER_SUPERTYPE!>AndroidModuleConfigurator<!>>.getConfiguratorSettings()
+         }.run()
+     }
+ 
+ 
+ 
+     internal inline fun inlineInternal(): String {
+         return super.classFun() + super<ModuleConfiguratorWithTests>.getConfiguratorSettings() + super<AndroidModuleConfigurator>.getConfiguratorSettings()
+     }
+ 
+     private inline fun inlinePrivate(): String {
+         return super.classFun() + super<ModuleConfiguratorWithTests>.getConfiguratorSettings() + super<AndroidModuleConfigurator>.getConfiguratorSettings()
+     }
+ 
+ 
+     //non-inline
+     override fun getConfiguratorSettings() =
+         super.classFun() + super<ModuleConfiguratorWithTests>.getConfiguratorSettings() + super<AndroidModuleConfigurator>.getConfiguratorSettings()
+ 
+     fun noInline() {
+         {
+             super.classFun() + super<ModuleConfiguratorWithTests>.getConfiguratorSettings() + super<AndroidModuleConfigurator>.getConfiguratorSettings()
+         }()
+ 
+         object {
+             fun run() = super@AndroidTargetConfigurator.classFun() + super<ModuleConfiguratorWithTests>@AndroidTargetConfigurator.getConfiguratorSettings() + super<AndroidModuleConfigurator>@AndroidTargetConfigurator.getConfiguratorSettings()
+         }.run()
+     }
+ 
+ }
+ 
+ open class Base {
+     fun classFun(): String = "Class"
+ }
+ 
+ interface ModuleConfiguratorWithTests : ModuleConfiguratorWithSettings {
+     override fun getConfiguratorSettings() = "K"
+ }
+ 
+ interface ModuleConfiguratorWithSettings  {
+     fun getConfiguratorSettings(): String = ""
+ }
+ 
+ 
+ interface AndroidModuleConfigurator :
+     ModuleConfiguratorWithSettings {
+     override fun getConfiguratorSettings(): String {
+         return "O"
+     }
+ }
+ 
+ 
+ sealed class FooSealed : Base() {
+     class A : FooSealed()
+ 
+     class B: FooSealed()
+ 
+     inline fun test() {
+-        <!SUPER_CALL_FROM_PUBLIC_INLINE!>super.classFun()<!>
++        <!SUPER_CALL_FROM_PUBLIC_INLINE!>super<!>.classFun()
+     }
+ 
+ }
+ 
+ enum class FooEmum {
+     A, B {
+ 
+         inline fun test() {
+-            <!SUPER_CALL_FROM_PUBLIC_INLINE!>super.classFun()<!>
++            super.classFun()
+         }
+     };
+ 
+     fun classFun(): String = "Class"
+ }
+ 
+ class FooOuter : Base() {
+ 
+     inner class FooInner: Base() {
+         inline fun test() {
+-            <!SUPER_CALL_FROM_PUBLIC_INLINE!>super@FooOuter.classFun()<!>
+-            <!SUPER_CALL_FROM_PUBLIC_INLINE!>super.classFun()<!>
++            <!SUPER_CALL_FROM_PUBLIC_INLINE!>super@FooOuter<!>.classFun()
++            <!SUPER_CALL_FROM_PUBLIC_INLINE!>super<!>.classFun()
+         }
+     }
+ 
+ }`;
+                        const targetElement = $('#diff')[0];
+                        const configuration = {
+                            drawFileList: false,
+                            fileListToggle: false,
+                            fileListStartVisible: false,
+                            fileContentToggle: false,
+                            matching: 'lines',
+                            outputFormat: 'side-by-side',
+                            synchronisedScroll: true,
+                            highlight: true,
+                            renderNothingWhenEmpty: false,
+                        };
+                        const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                        diff2htmlUi.draw();
+                        diff2htmlUi.highlightCode();</script>
+  </body>
+</html>

@@ -1,0 +1,133 @@
+<html>
+  <head>
+    <title>Diagnostics diff: tests/declarationChecks/namedFunAsLastExpressionInBlock.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <ul>
+          <li><a id="expected" target="_blank"><strong>Expected file: </strong><span id="expected-path"></span></a></li>
+          <li><a id="actual" target="_blank"><strong>Actual file: </strong><span id="actual-path"></span></a></li>
+        </ul>
+      </div>
+      <div class="row">
+        <div id="diff" style="width: 100%"></div>
+      </div>
+    </div>
+    <script type="text/javascript">                        $('#expected').attr('href', 'https://github.com/JetBrains/Kotlin/blob/b18d4af37b58d7baa264523d3d78be7485c4884e/compiler/testData/diagnostics/tests/declarationChecks/namedFunAsLastExpressionInBlock.kt');
+                        $('#actual').attr('href', 'https://github.com/JetBrains/Kotlin/blob/b18d4af37b58d7baa264523d3d78be7485c4884e/compiler/testData/diagnostics/tests/declarationChecks/namedFunAsLastExpressionInBlock.fir.kt');
+                        $('#expected-path').text('tests/declarationChecks/namedFunAsLastExpressionInBlock.kt');
+                        $('#actual-path').text('tests/declarationChecks/namedFunAsLastExpressionInBlock.fir.kt');
+
+                        const diffString = `--- tests/declarationChecks/namedFunAsLastExpressionInBlock.kt
++++ tests/declarationChecks/namedFunAsLastExpressionInBlock.fir.kt
+@@ -1,74 +1,74 @@
+ // !DIAGNOSTICS: -UNUSED_PARAMETER -UNUSED_ANONYMOUS_PARAMETER -UNUSED_VARIABLE
+ // !CHECK_TYPE
+ fun foo(block: () -> (() -> Int)) {}
+ 
+ fun test() {
+-    val x = fun <!ANONYMOUS_FUNCTION_WITH_NAME!>named1<!>(x: Int): Int { return 1 }
+-    x checkType { _<Function1<Int, Int>>() }
++    val x = <!ANONYMOUS_FUNCTION_WITH_NAME!>fun named1(x: Int): Int { return 1 }<!>
++    x <!INAPPLICABLE_CANDIDATE!>checkType<!> { <!INAPPLICABLE_CANDIDATE!>_<!><Function1<Int, Int>>() }
+ 
+-    foo <!TYPE_MISMATCH!>{ <!EXPECTED_TYPE_MISMATCH("() -> Int")!>fun named2(): Int {return 1}<!> }<!>
+-    foo(<!TYPE_MISMATCH!>{ <!EXPECTED_TYPE_MISMATCH!>fun named3() = 1<!> }<!>)
++    foo { fun named2(): Int {return 1} }
++    foo({ fun named3() = 1 })
+ 
+     val x1 =
+-    <!INVALID_IF_AS_EXPRESSION!>if<!> (1 == 1)
++    if (1 == 1)
+     // TODO: Diagnostic content could be better
+     <!SYNTAX!><!>fun named4(): Int {return 1}
+     <!SYNTAX!>else<!>
+     fun named5() = 1
+ 
+     val x2 =
+-    <!INVALID_IF_AS_EXPRESSION!>if<!> (1 == 1) {
++    if (1 == 1) {
+         fun named6(): Int {
+             return 1
+         }
+     }
+     else
+     <!SYNTAX!><!>fun named7() = 1
+ 
+     val x3 = when (1) {
+-        0 -> fun <!ANONYMOUS_FUNCTION_WITH_NAME!>named8<!>(): Int {return 1}
+-        else -> fun <!ANONYMOUS_FUNCTION_WITH_NAME!>named9<!>() = 1
++        0 -> fun named8(): Int {return 1}
++        else -> fun named9() = 1
+     }
+ 
+     val x31 = when (1) {
+         0 -> {
+             fun named10(): Int {return 1}
+         }
+-        else -> fun <!ANONYMOUS_FUNCTION_WITH_NAME!>named11<!>() = 1
++        else -> fun named11() = 1
+     }
+ 
+     val x4 = {
+         y: Int -> fun named12(): Int {return 1}
+     }
+ 
+     x4 checkType { _<Function1<Int, Unit>>() }
+ 
+     { y: Int -> fun named14(): Int {return 1} }
+-    val b = (fun <!ANONYMOUS_FUNCTION_WITH_NAME!>named15<!>(): Boolean { return true })()
++    val b = (<!ANONYMOUS_FUNCTION_WITH_NAME, UNRESOLVED_REFERENCE!>fun named15(): Boolean { return true }<!>)()
+ 
+-    baz(fun <!ANONYMOUS_FUNCTION_WITH_NAME!>named16<!>(){})
++    baz(<!ANONYMOUS_FUNCTION_WITH_NAME!>fun named16(){}<!>)
+ }
+ 
+-fun bar() = fun <!ANONYMOUS_FUNCTION_WITH_NAME!>named<!>() {}
++fun bar() = <!ANONYMOUS_FUNCTION_WITH_NAME!>fun named() {}<!>
+ 
+ fun <T> run(block: () -> T): T = null!!
+ fun run2(block: () -> Unit): Unit = null!!
+ fun baz(obj: Any?) {}
+ 
+ fun success() {
+     run { fun named1() = 1 }
+     run2 { fun named2() = 1 }
+ 
+     val x = run { fun named3() = 1 }
+     x checkType { _<Unit>() }
+ 
+     val y = when (1) {
+         0 -> {
+             fun named4(): Int {return 1}
+         }
+         else -> {
+             fun named5(): Int {return 1}
+         }
+     }
+     y checkType { _<Unit>() }
+ }`;
+                        const targetElement = $('#diff')[0];
+                        const configuration = {
+                            drawFileList: false,
+                            fileListToggle: false,
+                            fileListStartVisible: false,
+                            fileContentToggle: false,
+                            matching: 'lines',
+                            outputFormat: 'side-by-side',
+                            synchronisedScroll: true,
+                            highlight: true,
+                            renderNothingWhenEmpty: false,
+                        };
+                        const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                        diff2htmlUi.draw();
+                        diff2htmlUi.highlightCode();</script>
+  </body>
+</html>

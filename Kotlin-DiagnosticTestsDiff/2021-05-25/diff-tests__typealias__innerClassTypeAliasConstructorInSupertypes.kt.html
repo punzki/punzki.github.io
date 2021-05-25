@@ -1,0 +1,91 @@
+<html>
+  <head>
+    <title>Diagnostics diff: tests/typealias/innerClassTypeAliasConstructorInSupertypes.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <ul>
+          <li><a id="expected" target="_blank"><strong>Expected file: </strong><span id="expected-path"></span></a></li>
+          <li><a id="actual" target="_blank"><strong>Actual file: </strong><span id="actual-path"></span></a></li>
+        </ul>
+      </div>
+      <div class="row">
+        <div id="diff" style="width: 100%"></div>
+      </div>
+    </div>
+    <script type="text/javascript">                        $('#expected').attr('href', 'https://github.com/JetBrains/Kotlin/blob/b18d4af37b58d7baa264523d3d78be7485c4884e/compiler/testData/diagnostics/tests/typealias/innerClassTypeAliasConstructorInSupertypes.kt');
+                        $('#actual').attr('href', 'https://github.com/JetBrains/Kotlin/blob/b18d4af37b58d7baa264523d3d78be7485c4884e/compiler/testData/diagnostics/tests/typealias/innerClassTypeAliasConstructorInSupertypes.fir.kt');
+                        $('#expected-path').text('tests/typealias/innerClassTypeAliasConstructorInSupertypes.kt');
+                        $('#actual-path').text('tests/typealias/innerClassTypeAliasConstructorInSupertypes.fir.kt');
+
+                        const diffString = `--- tests/typealias/innerClassTypeAliasConstructorInSupertypes.kt
++++ tests/typealias/innerClassTypeAliasConstructorInSupertypes.fir.kt
+@@ -1,39 +1,39 @@
+ package test
+ 
+ typealias OI = Outer.Inner
+ 
+ class Outer {
+     open inner class Inner
+ 
+     inner class Test : OI()
+ }
+ 
+ 
+ typealias GI<T> = Generic<T>.Inner
+ typealias GIInt = Generic<Int>.Inner
+ typealias GIStar = Generic<*>.Inner
+ typealias GG<T1, T2> = Generic<T1>.Generic<T2>
+ typealias GIntG<T2> = Generic<Int>.Generic<T2>
+ typealias GGInt<T1> = Generic<T1>.Generic<Int>
+ 
+ class Generic<T1> {
+     open inner class Inner
+     open inner class Generic<T2>
+ 
+     inner class Test1 : GI<T1>()
+-    inner class Test2 : <!DEBUG_INFO_UNRESOLVED_WITH_TARGET, UNRESOLVED_REFERENCE_WRONG_RECEIVER!>GIInt<!>()
++    inner class Test2 : <!UNRESOLVED_REFERENCE!>GIInt<!>()
+     inner class Test3 : GIStar()
+     inner class Test3a : test.Generic<*>.Inner()
+ 
+     inner class Test4<T2> : GG<T1, T2>()
+     inner class Test5 : GG<T1, Int>()
+-    inner class Test6 : <!DEBUG_INFO_UNRESOLVED_WITH_TARGET, UNRESOLVED_REFERENCE_WRONG_RECEIVER!>GG<!><Int, T1>()
+-    inner class Test7 : <!DEBUG_INFO_UNRESOLVED_WITH_TARGET, UNRESOLVED_REFERENCE_WRONG_RECEIVER!>GG<!><Int, Int>()
+-    inner class Test8 : <!DEBUG_INFO_UNRESOLVED_WITH_TARGET, UNRESOLVED_REFERENCE_WRONG_RECEIVER!>GIntG<!><Int>()
+-    inner class Test9 : <!DEBUG_INFO_UNRESOLVED_WITH_TARGET, UNRESOLVED_REFERENCE_WRONG_RECEIVER!>GGInt<!><Int>()
++    inner class Test6 : <!UNRESOLVED_REFERENCE!>GG<Int, T1><!>()
++    inner class Test7 : <!UNRESOLVED_REFERENCE!>GG<Int, Int><!>()
++    inner class Test8 : <!UNRESOLVED_REFERENCE!>GIntG<Int><!>()
++    inner class Test9 : <!UNRESOLVED_REFERENCE!>GGInt<Int><!>()
+     inner class Test10 : GGInt<T1>()
+ 
+     inner class Test11 : GG<T1, Int> {
+         constructor() : super()
+     }
+ }`;
+                        const targetElement = $('#diff')[0];
+                        const configuration = {
+                            drawFileList: false,
+                            fileListToggle: false,
+                            fileListStartVisible: false,
+                            fileContentToggle: false,
+                            matching: 'lines',
+                            outputFormat: 'side-by-side',
+                            synchronisedScroll: true,
+                            highlight: true,
+                            renderNothingWhenEmpty: false,
+                        };
+                        const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                        diff2htmlUi.draw();
+                        diff2htmlUi.highlightCode();</script>
+  </body>
+</html>

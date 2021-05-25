@@ -1,0 +1,88 @@
+<html>
+  <head>
+    <title>Diagnostics diff: tests/secondaryConstructors/enums.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <ul>
+          <li><a id="expected" target="_blank"><strong>Expected file: </strong><span id="expected-path"></span></a></li>
+          <li><a id="actual" target="_blank"><strong>Actual file: </strong><span id="actual-path"></span></a></li>
+        </ul>
+      </div>
+      <div class="row">
+        <div id="diff" style="width: 100%"></div>
+      </div>
+    </div>
+    <script type="text/javascript">                        $('#expected').attr('href', 'https://github.com/JetBrains/Kotlin/blob/b18d4af37b58d7baa264523d3d78be7485c4884e/compiler/testData/diagnostics/tests/secondaryConstructors/enums.kt');
+                        $('#actual').attr('href', 'https://github.com/JetBrains/Kotlin/blob/b18d4af37b58d7baa264523d3d78be7485c4884e/compiler/testData/diagnostics/tests/secondaryConstructors/enums.fir.kt');
+                        $('#expected-path').text('tests/secondaryConstructors/enums.kt');
+                        $('#actual-path').text('tests/secondaryConstructors/enums.fir.kt');
+
+                        const diffString = `--- tests/secondaryConstructors/enums.kt
++++ tests/secondaryConstructors/enums.fir.kt
+@@ -1,40 +1,40 @@
+ // !DIAGNOSTICS: -UNUSED_PARAMETER
+ enum class A {
+     W(1), X(1, 2), Y(3.0), Z(""), E();
+ 
+     constructor()
+     constructor(x: Int)
+     constructor(x: Int, y: Int): this(x+y)
+     constructor(x: Double): this(x.toInt(), 1)
+     constructor(x: String): <!DELEGATION_SUPER_CALL_IN_ENUM_CONSTRUCTOR!>super<!>(x, 1)
+ }
+ 
+ enum class B(x: Int) {
+     W(1), X(1, 2), Y(3.0), Z("");
+ 
+     constructor(x: Int, y: Int): this(x+y)
+     constructor(x: Double): this(x.toInt(), 1)
+-    constructor(x: String): <!DELEGATION_SUPER_CALL_IN_ENUM_CONSTRUCTOR!>super<!>(x, 1)
++    constructor(x: String): <!DELEGATION_SUPER_CALL_IN_ENUM_CONSTRUCTOR, PRIMARY_CONSTRUCTOR_DELEGATION_CALL_EXPECTED!>super<!>(x, 1)
+ }
+ 
+ enum class C {
+     EMPTY(); // may be we should avoid explicit call here
+     constructor()
+ }
+ 
+ enum class D(val prop: Int) {
+     X(123) {
+         override fun f() = 1
+     },
+     Y() {
+         override fun f() = prop
+     },
+     Z("abc") {
+         override fun f() = prop
+     };
+ 
+     constructor(): this(1)
+     constructor(x: String): this(x.length)
+ 
+     abstract fun f(): Int
+ }`;
+                        const targetElement = $('#diff')[0];
+                        const configuration = {
+                            drawFileList: false,
+                            fileListToggle: false,
+                            fileListStartVisible: false,
+                            fileContentToggle: false,
+                            matching: 'lines',
+                            outputFormat: 'side-by-side',
+                            synchronisedScroll: true,
+                            highlight: true,
+                            renderNothingWhenEmpty: false,
+                        };
+                        const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                        diff2htmlUi.draw();
+                        diff2htmlUi.highlightCode();</script>
+  </body>
+</html>

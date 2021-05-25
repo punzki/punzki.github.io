@@ -1,0 +1,109 @@
+<html>
+  <head>
+    <title>Diagnostics diff: tests/ReserveYield2.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <ul>
+          <li><a id="expected" target="_blank"><strong>Expected file: </strong><span id="expected-path"></span></a></li>
+          <li><a id="actual" target="_blank"><strong>Actual file: </strong><span id="actual-path"></span></a></li>
+        </ul>
+      </div>
+      <div class="row">
+        <div id="diff" style="width: 100%"></div>
+      </div>
+    </div>
+    <script type="text/javascript">                        $('#expected').attr('href', 'https://github.com/JetBrains/Kotlin/blob/b18d4af37b58d7baa264523d3d78be7485c4884e/compiler/testData/diagnostics/tests/ReserveYield2.kt');
+                        $('#actual').attr('href', 'https://github.com/JetBrains/Kotlin/blob/b18d4af37b58d7baa264523d3d78be7485c4884e/compiler/testData/diagnostics/tests/ReserveYield2.fir.kt');
+                        $('#expected-path').text('tests/ReserveYield2.kt');
+                        $('#actual-path').text('tests/ReserveYield2.fir.kt');
+
+                        const diffString = `--- tests/ReserveYield2.kt
++++ tests/ReserveYield2.fir.kt
+@@ -1,54 +1,54 @@
+ // !DIAGNOSTICS: -UNUSED_PARAMETER -UNUSED_ANONYMOUS_PARAMETER -UNUSED_EXPRESSION -UNREACHABLE_CODE -UNUSED_VARIABLE -WRONG_ANNOTATION_TARGET -UNUSED_LAMBDA_EXPRESSION
+ 
+ // FILE: 1.kt
+ 
+ annotation class yield
+ 
+ fun bar(p: Int) {
+-    <!REDUNDANT_LABEL_WARNING!><!YIELD_IS_RESERVED!>yield<!>@<!> p
+-    <!REDUNDANT_LABEL_WARNING!>\`yield\`@<!> p
++    yield@ p
++    \`yield\`@ p
+ 
+-    @<!YIELD_IS_RESERVED!>yield<!>() p
++    @yield() p
+     @\`yield\`() p
+ 
+     for (yield in 1..5) {
+ 
+     }
+     { yield: Int -> }
+ 
+     val (yield) = listOf(4)
+ 
+ }
+ 
+ fun <T> listOf(vararg e: T): List<T> = null!!
+ operator fun <T> List<T>.component1() = get(0)
+ 
+ // FILE: 2.kt
+ package p3
+ 
+ enum class yield {
+     yield
+ }
+ 
+-fun f1(yield: Int, foo: Int = <!YIELD_IS_RESERVED!>yield<!>) {}
++fun f1(yield: Int, foo: Int = yield) {}
+ 
+-fun f2(foo: <!YIELD_IS_RESERVED!>yield<!>) {}
++fun f2(foo: yield) {}
+ 
+ // FILE: 3.kt
+ package p4
+ 
+ typealias yield = Number
+ 
+ fun <yield: Number> f1() {}
+-fun <y: <!YIELD_IS_RESERVED!>yield<!>> f2() {}
++fun <y: yield> f2() {}
+ 
+ // FILE: 4.kt
+ object X {
+     fun yield() {}
+ 
+     fun test3(yield: Int) {
+-        X::<!YIELD_IS_RESERVED!>yield<!>
++        X::yield
+ 
+-        <!YIELD_IS_RESERVED!>yield<!>::toInt
++        yield::toInt
+     }
+ }`;
+                        const targetElement = $('#diff')[0];
+                        const configuration = {
+                            drawFileList: false,
+                            fileListToggle: false,
+                            fileListStartVisible: false,
+                            fileContentToggle: false,
+                            matching: 'lines',
+                            outputFormat: 'side-by-side',
+                            synchronisedScroll: true,
+                            highlight: true,
+                            renderNothingWhenEmpty: false,
+                        };
+                        const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                        diff2htmlUi.draw();
+                        diff2htmlUi.highlightCode();</script>
+  </body>
+</html>

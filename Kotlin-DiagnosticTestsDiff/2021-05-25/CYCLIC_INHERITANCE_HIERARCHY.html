@@ -1,0 +1,81 @@
+<html>
+  <head>
+    <title>Diagnostics diff: CYCLIC_INHERITANCE_HIERARCHY</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row sticky-top" style="background: white" id="summary">
+        <div class="d-inline-flex align-items-baseline">
+          <h1 class="mr-2">CYCLIC_INHERITANCE_HIERARCHY</h1>
+<a href="index.html">(back to diagnostic list)</a></div>
+      </div>
+      <div class="row">
+        <ul>
+          <li><strong>Total: </strong>33</li>
+          <li><strong>Match %: </strong>0.00%</li>
+          <li><a href="#matched"><strong># Matched: </strong>0</a></li>
+          <li><strong># Non-matched: </strong>33</li>
+          <li><a href="#missing"><strong># Missing: </strong>22</a></li>
+          <li><a href="#unexpected"><strong># Unexpected: </strong>0</a></li>
+          <li><a href="#mismatched"><strong># Mismatched: </strong>11</a></li>
+          <li><strong># Files: </strong>14</li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="missing">
+        <h2>Missing (22)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__cyclicHierarchy__objectInheritsNested.kt.html" target="_blank">tests/cyclicHierarchy/objectInheritsNested.kt (5)</a></li>
+          <li><a href="diff-tests__cyclicHierarchy__cyclicHierarchy.kt.html" target="_blank">tests/cyclicHierarchy/cyclicHierarchy.kt (4)</a></li>
+          <li><a href="diff-tests__cyclicHierarchy__classIndirectlyInheritsNested.kt.html" target="_blank">tests/cyclicHierarchy/classIndirectlyInheritsNested.kt (2)</a></li>
+          <li><a href="diff-tests__cyclicHierarchy__twoClassesWithNestedCycle.kt.html" target="_blank">tests/cyclicHierarchy/twoClassesWithNestedCycle.kt (2)</a></li>
+          <li><a href="diff-tests__typealias__cyclicInheritanceViaTypeAlias.kt.html" target="_blank">tests/typealias/cyclicInheritanceViaTypeAlias.kt (2)</a></li>
+          <li><a href="diff-tests__cast__IsRecursionSustainable.kt.html" target="_blank">tests/cast/IsRecursionSustainable.kt (1)</a></li>
+          <li><a href="diff-tests__cyclicHierarchy__classInheritsNested.kt.html" target="_blank">tests/cyclicHierarchy/classInheritsNested.kt (1)</a></li>
+          <li><a href="diff-tests__cyclicHierarchy__commonSupertypeForCyclicAndUsualTypes.kt.html" target="_blank">tests/cyclicHierarchy/commonSupertypeForCyclicAndUsualTypes.kt (1)</a></li>
+          <li><a href="diff-tests__cyclicHierarchy__commonSupertypeForCyclicTypes.kt.html" target="_blank">tests/cyclicHierarchy/commonSupertypeForCyclicTypes.kt (1)</a></li>
+          <li><a href="diff-tests__cyclicHierarchy__kotlinJavaKotlinCycle.kt.html" target="_blank">tests/cyclicHierarchy/kotlinJavaKotlinCycle.kt (1)</a></li>
+          <li><a href="diff-tests__cyclicHierarchy__kotlinJavaNestedCycle.kt.html" target="_blank">tests/cyclicHierarchy/kotlinJavaNestedCycle.kt (1)</a></li>
+          <li><a href="diff-tests__cyclicHierarchy__kt303.kt.html" target="_blank">tests/cyclicHierarchy/kt303.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="mismatched">
+        <h2>Mismatched (11)</h2>
+      </div>
+      <div class="row sticky-top" style="top: 5.5em; background: white">
+        <h5>CYCLIC_INHERITANCE_HIERARCHY → OTHER_ERROR (7)</h5>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__cast__IsRecursionSustainable.kt.html" target="_blank">tests/cast/IsRecursionSustainable.kt (2)</a></li>
+          <li><a href="diff-tests__cyclicHierarchy__cyclicHierarchy.kt.html" target="_blank">tests/cyclicHierarchy/cyclicHierarchy.kt (2)</a></li>
+          <li><a href="diff-tests__cyclicHierarchy__commonSupertypeForCyclicAndUsualTypes.kt.html" target="_blank">tests/cyclicHierarchy/commonSupertypeForCyclicAndUsualTypes.kt (1)</a></li>
+          <li><a href="diff-tests__cyclicHierarchy__commonSupertypeForCyclicTypes.kt.html" target="_blank">tests/cyclicHierarchy/commonSupertypeForCyclicTypes.kt (1)</a></li>
+          <li><a href="diff-tests__cyclicHierarchy__kt303.kt.html" target="_blank">tests/cyclicHierarchy/kt303.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 5.5em; background: white">
+        <h5>CYCLIC_INHERITANCE_HIERARCHY → EXPOSED_SUPER_INTERFACE (2)</h5>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__cyclicHierarchy__javaKotlinJavaCycle.kt.html" target="_blank">tests/cyclicHierarchy/javaKotlinJavaCycle.kt (1)</a></li>
+          <li><a href="diff-tests__cyclicHierarchy__kotlinJavaNestedCycle.kt.html" target="_blank">tests/cyclicHierarchy/kotlinJavaNestedCycle.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 5.5em; background: white">
+        <h5>CYCLIC_INHERITANCE_HIERARCHY → EXPOSED_SUPER_CLASS (2)</h5>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__cyclicHierarchy__kotlinJavaCycle.kt.html" target="_blank">tests/cyclicHierarchy/kotlinJavaCycle.kt (1)</a></li>
+          <li><a href="diff-tests__cyclicHierarchy__kotlinJavaKotlinCycle.kt.html" target="_blank">tests/cyclicHierarchy/kotlinJavaKotlinCycle.kt (1)</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
