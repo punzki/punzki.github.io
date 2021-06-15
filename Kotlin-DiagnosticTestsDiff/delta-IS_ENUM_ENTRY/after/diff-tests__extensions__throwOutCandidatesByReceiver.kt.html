@@ -1,0 +1,114 @@
+<html>
+  <head>
+    <title>Diagnostics diff: tests/extensions/throwOutCandidatesByReceiver.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <ul>
+          <li><a id="expected" target="_blank"><strong>Expected file: </strong><span id="expected-path"></span></a></li>
+          <li><a id="actual" target="_blank"><strong>Actual file: </strong><span id="actual-path"></span></a></li>
+        </ul>
+      </div>
+      <div class="row">
+        <div id="diff" style="width: 100%"></div>
+      </div>
+    </div>
+    <script type="text/javascript">                        $('#expected').attr('href', 'https://github.com/google/kotlin/blob/32f121098819164d8b17d2d2dc3d96f0e9346c9f/compiler/testData/diagnostics/tests/extensions/throwOutCandidatesByReceiver.kt');
+                        $('#actual').attr('href', 'https://github.com/google/kotlin/blob/32f121098819164d8b17d2d2dc3d96f0e9346c9f/compiler/testData/diagnostics/tests/extensions/throwOutCandidatesByReceiver.fir.kt');
+                        $('#expected-path').text('tests/extensions/throwOutCandidatesByReceiver.kt');
+                        $('#actual-path').text('tests/extensions/throwOutCandidatesByReceiver.fir.kt');
+
+                        const diffString = `--- tests/extensions/throwOutCandidatesByReceiver.kt
++++ tests/extensions/throwOutCandidatesByReceiver.fir.kt
+@@ -1,55 +1,55 @@
+ package bar
+ 
+ 
+ // should be thrown away
+ 
+ fun <R> List<R>.a() {}
+ 
+ fun test1(i: Int?) {
+-    1.<!UNRESOLVED_REFERENCE_WRONG_RECEIVER!>a<!>()
+-    i.<!UNRESOLVED_REFERENCE_WRONG_RECEIVER!>a<!>()
++    1.<!INAPPLICABLE_CANDIDATE!>a<!>()
++    i.<!INAPPLICABLE_CANDIDATE!>a<!>()
+ }
+ 
+ fun <R> test2(c: Collection<R>) {
+-    c.<!UNRESOLVED_REFERENCE_WRONG_RECEIVER!>a<!>()
++    c.<!INAPPLICABLE_CANDIDATE!>a<!>()
+ }
+ 
+ fun Int.foo() {}
+ 
+ fun test3(s: String?) {
+-    "".<!UNRESOLVED_REFERENCE_WRONG_RECEIVER!>foo<!>()
+-    s.<!UNRESOLVED_REFERENCE_WRONG_RECEIVER!>foo<!>()
+-    "".<!UNRESOLVED_REFERENCE_WRONG_RECEIVER!>foo<!>(1)
+-    s.<!UNRESOLVED_REFERENCE_WRONG_RECEIVER!>foo<!>("a")
++    "".<!INAPPLICABLE_CANDIDATE!>foo<!>()
++    s.<!INAPPLICABLE_CANDIDATE!>foo<!>()
++    "".foo(<!TOO_MANY_ARGUMENTS!>1<!>)
++    s.foo(<!TOO_MANY_ARGUMENTS!>"a"<!>)
+ }
+ 
+ interface A
+ fun <T: A> T.c() {}
+ 
+ fun test4() {
+-    1.<!UNRESOLVED_REFERENCE_WRONG_RECEIVER!>c<!>()
++    1.<!INAPPLICABLE_CANDIDATE!>c<!>()
+ }
+ 
+ 
+ // should be an error on receiver, shouldn't be thrown away
+ 
+ fun test5() {
+-    1.<!FUNCTION_EXPECTED!>(fun String.()=1)<!>()
++    1.(<!UNRESOLVED_REFERENCE!>fun String.()=1<!>)()
+ }
+ 
+ fun <R: Any> R?.sure() : R = this!!
+ 
+ fun <T> test6(l: List<T>?) {
+-    l.<!UNRESOLVED_REFERENCE_WRONG_RECEIVER!>sure<!><T>()
++    l.<!INAPPLICABLE_CANDIDATE!>sure<!><T>()
+ }
+ 
+ 
+ fun List<String>.b() {}
+ 
+ fun test7(l: List<String?>) {
+-    l.<!UNRESOLVED_REFERENCE_WRONG_RECEIVER!>b<!>()
++    l.<!INAPPLICABLE_CANDIDATE!>b<!>()
+ }
+ 
+ fun test8(l: List<Any>?) {
+-    l.<!UNRESOLVED_REFERENCE_WRONG_RECEIVER!>b<!>()
++    l.<!INAPPLICABLE_CANDIDATE!>b<!>()
+ }`;
+                        const targetElement = $('#diff')[0];
+                        const configuration = {
+                            drawFileList: false,
+                            fileListToggle: false,
+                            fileListStartVisible: false,
+                            fileContentToggle: false,
+                            matching: 'lines',
+                            outputFormat: 'side-by-side',
+                            synchronisedScroll: true,
+                            highlight: true,
+                            renderNothingWhenEmpty: false,
+                        };
+                        const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                        diff2htmlUi.draw();
+                        diff2htmlUi.highlightCode();</script>
+  </body>
+</html>

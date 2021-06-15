@@ -1,0 +1,136 @@
+<html>
+  <head>
+    <title>Diagnostics diff: tests/NumberPrefixAndSuffix.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <ul>
+          <li><a id="expected" target="_blank"><strong>Expected file: </strong><span id="expected-path"></span></a></li>
+          <li><a id="actual" target="_blank"><strong>Actual file: </strong><span id="actual-path"></span></a></li>
+        </ul>
+      </div>
+      <div class="row">
+        <div id="diff" style="width: 100%"></div>
+      </div>
+    </div>
+    <script type="text/javascript">                        $('#expected').attr('href', 'https://github.com/google/kotlin/blob/32f121098819164d8b17d2d2dc3d96f0e9346c9f/compiler/testData/diagnostics/tests/NumberPrefixAndSuffix.kt');
+                        $('#actual').attr('href', 'https://github.com/google/kotlin/blob/32f121098819164d8b17d2d2dc3d96f0e9346c9f/compiler/testData/diagnostics/tests/NumberPrefixAndSuffix.fir.kt');
+                        $('#expected-path').text('tests/NumberPrefixAndSuffix.kt');
+                        $('#actual-path').text('tests/NumberPrefixAndSuffix.fir.kt');
+
+                        const diffString = `--- tests/NumberPrefixAndSuffix.kt
++++ tests/NumberPrefixAndSuffix.fir.kt
+@@ -1,54 +1,54 @@
+ // !DIAGNOSTICS: -UNUSED_PARAMETER -USELESS_CAST
+ 
+ infix fun Any?.foo(a: Any) {}
+ infix fun Any?.zoo(a: Any) {}
+ infix fun Any?.Loo(a: Any) {}
+ infix fun Any?.doo(a: Any) {}
+ infix fun Any?.ddoo(a: Any) {}
+ operator fun Any?.contains(a: Any): Boolean = true
+ 
+ fun test(a: Any) {
+-    1f<!UNRESOLVED_REFERENCE, UNSUPPORTED!>oo<!> a
+-    1f<!UNSUPPORTED!>foo<!> a
+-    1<!UNSUPPORTED!>doo<!> a
+-    1<!UNSUPPORTED!>ddoo<!> a
+-    1<!INFIX_MODIFIER_REQUIRED, UNSUPPORTED!>contains<!> a
++    1f<!UNRESOLVED_REFERENCE!>oo<!> a
++    1ffoo a
++    1doo a
++    1ddoo a
++    1<!INFIX_MODIFIER_REQUIRED!>contains<!> a
+ 
+-    1L<!UNSUPPORTED!>foo<!> a
+-    1L<!UNRESOLVED_REFERENCE, UNSUPPORTED!>oo<!> a
+-    1L<!UNSUPPORTED!>Loo<!> a
++    1Lfoo a
++    1L<!UNRESOLVED_REFERENCE!>oo<!> a
++    1LLoo a
+ 
+-    0b1<!UNSUPPORTED!>foo<!> a
+-    0b1L<!UNSUPPORTED!>foo<!> a
+-    0b1L<!UNRESOLVED_REFERENCE, UNSUPPORTED!>oo<!> a
+-    0b1L<!UNSUPPORTED!>Loo<!> a
++    0b1foo a
++    0b1Lfoo a
++    0b1L<!UNRESOLVED_REFERENCE!>oo<!> a
++    0b1LLoo a
+ 
+-    0xf<!UNRESOLVED_REFERENCE, UNSUPPORTED!>oo<!> a
+-    0xff<!UNRESOLVED_REFERENCE, UNSUPPORTED!>oo<!> a
+-    0xfL<!UNSUPPORTED!>Loo<!> a
++    0xf<!UNRESOLVED_REFERENCE!>oo<!> a
++    0xff<!UNRESOLVED_REFERENCE!>oo<!> a
++    0xfLLoo a
+ 
+-    1.0f<!UNRESOLVED_REFERENCE, UNSUPPORTED!>oo<!> a
+-    1.0f<!UNSUPPORTED!>foo<!> a
+-    1.0<!UNSUPPORTED!>doo<!> a
+-    1.0<!UNSUPPORTED!>ddoo<!> a
++    1.0f<!UNRESOLVED_REFERENCE!>oo<!> a
++    1.0ffoo a
++    1.0doo a
++    1.0ddoo a
+ 
+-    .0f<!UNRESOLVED_REFERENCE, UNSUPPORTED!>oo<!> a
+-    .0f<!UNSUPPORTED!>foo<!> a
+-    .0<!UNSUPPORTED!>doo<!> a
+-    .0<!UNSUPPORTED!>ddoo<!> a
++    .0f<!UNRESOLVED_REFERENCE!>oo<!> a
++    .0ffoo a
++    .0doo a
++    .0ddoo a
+ 
+-    1<!UNSUPPORTED!>in<!> a
+-    1.0<!UNSUPPORTED!>in<!> a
+-    1.0f<!UNSUPPORTED!>in<!> a
+-    1.0<!UNRESOLVED_REFERENCE, UNSUPPORTED!>din<!> a
+-    .0<!UNSUPPORTED!>in<!> a
+-    .0f<!UNSUPPORTED!>in<!> a
+-    .0<!UNRESOLVED_REFERENCE, UNSUPPORTED!>din<!> a
++    1in a
++    1.0in a
++    1.0fin a
++    1.0<!UNRESOLVED_REFERENCE!>din<!> a
++    .0in a
++    .0fin a
++    .0<!UNRESOLVED_REFERENCE!>din<!> a
+ 
+-    <!USELESS_IS_CHECK!>1<!UNSUPPORTED!>is<!> Any<!>
+-    1<!UNSUPPORTED!>as<!> Any
+-    1<!UNSUPPORTED!>as?<!> Any
++    <!USELESS_IS_CHECK!>1is Any<!>
++    1as Any
++    1as? Any
+ 
+-    <!USELESS_IS_CHECK!>1<!UNSUPPORTED!>!is<!> Any<!>
+-    1<!UNSUPPORTED!>!in<!> a
++    <!USELESS_IS_CHECK!>1!is Any<!>
++    1!in a
+ }`;
+                        const targetElement = $('#diff')[0];
+                        const configuration = {
+                            drawFileList: false,
+                            fileListToggle: false,
+                            fileListStartVisible: false,
+                            fileContentToggle: false,
+                            matching: 'lines',
+                            outputFormat: 'side-by-side',
+                            synchronisedScroll: true,
+                            highlight: true,
+                            renderNothingWhenEmpty: false,
+                        };
+                        const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                        diff2htmlUi.draw();
+                        diff2htmlUi.highlightCode();</script>
+  </body>
+</html>

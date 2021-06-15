@@ -1,0 +1,103 @@
+<html>
+  <head>
+    <title>Diagnostics diff: tests/typealias/javaStaticMembersViaTypeAlias.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <ul>
+          <li><a id="expected" target="_blank"><strong>Expected file: </strong><span id="expected-path"></span></a></li>
+          <li><a id="actual" target="_blank"><strong>Actual file: </strong><span id="actual-path"></span></a></li>
+        </ul>
+      </div>
+      <div class="row">
+        <div id="diff" style="width: 100%"></div>
+      </div>
+    </div>
+    <script type="text/javascript">                        $('#expected').attr('href', 'https://github.com/google/kotlin/blob/32f121098819164d8b17d2d2dc3d96f0e9346c9f/compiler/testData/diagnostics/tests/typealias/javaStaticMembersViaTypeAlias.kt');
+                        $('#actual').attr('href', 'https://github.com/google/kotlin/blob/32f121098819164d8b17d2d2dc3d96f0e9346c9f/compiler/testData/diagnostics/tests/typealias/javaStaticMembersViaTypeAlias.fir.kt');
+                        $('#expected-path').text('tests/typealias/javaStaticMembersViaTypeAlias.kt');
+                        $('#actual-path').text('tests/typealias/javaStaticMembersViaTypeAlias.fir.kt');
+
+                        const diffString = `--- tests/typealias/javaStaticMembersViaTypeAlias.kt
++++ tests/typealias/javaStaticMembersViaTypeAlias.fir.kt
+@@ -1,46 +1,46 @@
+ // !DIAGNOSTICS: -UNUSED_PARAMETER
+ // FILE: JTest.java
+ public class JTest {
+     public static String foo() { return ""; }
+     public static class Nested {}
+ }
+ 
+ // FILE: JDerived.java
+ public class JDerived extends JTest {
+ }
+ 
+ // FILE: test.kt
+ class KTest {
+     class Nested
+     inner class Inner
+ }
+ 
+ interface ITest {
+     class Nested
+ }
+ 
+ typealias JT = JTest
+ typealias JD = JDerived
+ typealias KT = KTest
+ typealias IT = ITest
+ 
+ // Referencing Java class static members via type alias should be ok
+ val testFoo: String = JT.foo()
+ val seeAlsoFoo: String = JTest.foo()
+ // Referencing base Java class static members via type alias for derived Java class should be ok
+ val testDerivedFoo: String = JD.foo()
+ val seeAlsoDerivedFoo: String = JDerived.foo()
+ 
+ // Referencing nested classes via type alias should be prohibited
+ // (in type position and in expression position)
+-val testNested1: JT.<!UNRESOLVED_REFERENCE!>Nested<!> = JT.<!UNRESOLVED_REFERENCE!>Nested<!>()
+-val testNested2: KT.<!UNRESOLVED_REFERENCE!>Nested<!> = KT.<!UNRESOLVED_REFERENCE!>Nested<!>()
+-val testNested3: IT.<!UNRESOLVED_REFERENCE!>Nested<!> = IT.<!UNRESOLVED_REFERENCE!>Nested<!>()
+-val testInner1: JT.<!UNRESOLVED_REFERENCE!>Inner<!> = JT.<!UNRESOLVED_REFERENCE!>Inner<!>()
+-val testInner2: KT.<!UNRESOLVED_REFERENCE!>Inner<!> = KT.<!UNRESOLVED_REFERENCE!>Inner<!>()
+-fun testNestedAsTypeArgument1(x: List<JT.<!UNRESOLVED_REFERENCE!>Nested<!>>) {}
+-fun testNestedAsTypeArgument2(x: List<KT.<!UNRESOLVED_REFERENCE!>Nested<!>>) {}
+-fun testNestedAsTypeArgument3(x: List<IT.<!UNRESOLVED_REFERENCE!>Nested<!>>) {}
+-fun testInnerAsTypeArgument1(x: List<JT.<!UNRESOLVED_REFERENCE!>Inner<!>>) {}
+-fun testInnerAsTypeArgument2(x: List<KT.<!UNRESOLVED_REFERENCE!>Inner<!>>) {}
++val testNested1: <!UNRESOLVED_REFERENCE!>JT.Nested<!> = JT.<!UNRESOLVED_REFERENCE!>Nested<!>()
++val testNested2: <!UNRESOLVED_REFERENCE!>KT.Nested<!> = KT.<!UNRESOLVED_REFERENCE!>Nested<!>()
++val testNested3: <!UNRESOLVED_REFERENCE!>IT.Nested<!> = IT.<!UNRESOLVED_REFERENCE!>Nested<!>()
++val testInner1: <!UNRESOLVED_REFERENCE!>JT.Inner<!> = JT.<!UNRESOLVED_REFERENCE!>Inner<!>()
++val testInner2: <!UNRESOLVED_REFERENCE!>KT.Inner<!> = KT.<!UNRESOLVED_REFERENCE!>Inner<!>()
++fun testNestedAsTypeArgument1(x: List<<!UNRESOLVED_REFERENCE!>JT.Nested<!>>) {}
++fun testNestedAsTypeArgument2(x: List<<!UNRESOLVED_REFERENCE!>KT.Nested<!>>) {}
++fun testNestedAsTypeArgument3(x: List<<!UNRESOLVED_REFERENCE!>IT.Nested<!>>) {}
++fun testInnerAsTypeArgument1(x: List<<!UNRESOLVED_REFERENCE!>JT.Inner<!>>) {}
++fun testInnerAsTypeArgument2(x: List<<!UNRESOLVED_REFERENCE!>KT.Inner<!>>) {}
+ `;
+                        const targetElement = $('#diff')[0];
+                        const configuration = {
+                            drawFileList: false,
+                            fileListToggle: false,
+                            fileListStartVisible: false,
+                            fileContentToggle: false,
+                            matching: 'lines',
+                            outputFormat: 'side-by-side',
+                            synchronisedScroll: true,
+                            highlight: true,
+                            renderNothingWhenEmpty: false,
+                        };
+                        const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                        diff2htmlUi.draw();
+                        diff2htmlUi.highlightCode();</script>
+  </body>
+</html>

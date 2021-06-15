@@ -1,0 +1,93 @@
+<html>
+  <head>
+    <title>Diagnostics diff: tests/inference/completion/kt33166.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <ul>
+          <li><a id="expected" target="_blank"><strong>Expected file: </strong><span id="expected-path"></span></a></li>
+          <li><a id="actual" target="_blank"><strong>Actual file: </strong><span id="actual-path"></span></a></li>
+        </ul>
+      </div>
+      <div class="row">
+        <div id="diff" style="width: 100%"></div>
+      </div>
+    </div>
+    <script type="text/javascript">                        $('#expected').attr('href', 'https://github.com/google/kotlin/blob/32f121098819164d8b17d2d2dc3d96f0e9346c9f/compiler/testData/diagnostics/tests/inference/completion/kt33166.kt');
+                        $('#actual').attr('href', 'https://github.com/google/kotlin/blob/32f121098819164d8b17d2d2dc3d96f0e9346c9f/compiler/testData/diagnostics/tests/inference/completion/kt33166.fir.kt');
+                        $('#expected-path').text('tests/inference/completion/kt33166.kt');
+                        $('#actual-path').text('tests/inference/completion/kt33166.fir.kt');
+
+                        const diffString = `--- tests/inference/completion/kt33166.kt
++++ tests/inference/completion/kt33166.fir.kt
+@@ -1,45 +1,45 @@
+ // !LANGUAGE: +NewInference
+ // !DIAGNOSTICS: -UNUSED_VARIABLE -UNUSED_PARAMETER
+ 
+ // FILE: GenericRunnable.java
+ 
+ public interface GenericRunnable<T> {
+     T invoke();
+ }
+ 
+ // FILE: OurFuture.java
+ 
+ public class OurFuture<T> {
+     static <T> OurFuture<T> createOurFuture(T result) {
+         return null;
+     }
+ 
+     public <U> OurFuture<U> compose(GenericRunnable<OurFuture<U>> mapper) {
+         return null;
+     }
+ }
+ 
+ // FILE: test.kt
+ 
+ open class Either<out L> {
+     class Left<out L>(val a: L) : Either<L>()
+ }
+ 
+ fun f1(future: OurFuture<String>, e: Either.Left<String>) {
+     future.compose<Either<String>> {
+         val x = when {
+             true -> OurFuture.createOurFuture(e)
+             else -> throw Exception()
+         }
+-        <!TYPE_MISMATCH, TYPE_MISMATCH!>x<!>
++        <!ARGUMENT_TYPE_MISMATCH!>x<!>
+     }
+ }
+ 
+ fun f2(future: OurFuture<String>, e: Either.Left<String>) {
+     future.compose<Either<String>> {
+         when {
+             true -> OurFuture.createOurFuture(e)
+             else -> throw Exception()
+         }
+     }
+ }`;
+                        const targetElement = $('#diff')[0];
+                        const configuration = {
+                            drawFileList: false,
+                            fileListToggle: false,
+                            fileListStartVisible: false,
+                            fileContentToggle: false,
+                            matching: 'lines',
+                            outputFormat: 'side-by-side',
+                            synchronisedScroll: true,
+                            highlight: true,
+                            renderNothingWhenEmpty: false,
+                        };
+                        const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                        diff2htmlUi.draw();
+                        diff2htmlUi.highlightCode();</script>
+  </body>
+</html>

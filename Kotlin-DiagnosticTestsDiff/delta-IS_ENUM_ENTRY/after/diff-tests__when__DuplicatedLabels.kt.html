@@ -1,0 +1,117 @@
+<html>
+  <head>
+    <title>Diagnostics diff: tests/when/DuplicatedLabels.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <ul>
+          <li><a id="expected" target="_blank"><strong>Expected file: </strong><span id="expected-path"></span></a></li>
+          <li><a id="actual" target="_blank"><strong>Actual file: </strong><span id="actual-path"></span></a></li>
+        </ul>
+      </div>
+      <div class="row">
+        <div id="diff" style="width: 100%"></div>
+      </div>
+    </div>
+    <script type="text/javascript">                        $('#expected').attr('href', 'https://github.com/google/kotlin/blob/32f121098819164d8b17d2d2dc3d96f0e9346c9f/compiler/testData/diagnostics/tests/when/DuplicatedLabels.kt');
+                        $('#actual').attr('href', 'https://github.com/google/kotlin/blob/32f121098819164d8b17d2d2dc3d96f0e9346c9f/compiler/testData/diagnostics/tests/when/DuplicatedLabels.fir.kt');
+                        $('#expected-path').text('tests/when/DuplicatedLabels.kt');
+                        $('#actual-path').text('tests/when/DuplicatedLabels.fir.kt');
+
+                        const diffString = `--- tests/when/DuplicatedLabels.kt
++++ tests/when/DuplicatedLabels.fir.kt
+@@ -1,61 +1,61 @@
+ /*
+  * KOTLIN DIAGNOSTICS SPEC TEST (POSITIVE)
+  *
+  * SPEC VERSION: 0.1-313
+  * PRIMARY LINKS: expressions, when-expression -> paragraph 5 -> sentence 1
+  * expressions, when-expression -> paragraph 9 -> sentence 1
+  * expressions, when-expression -> paragraph 2 -> sentence 4
+  * expressions, when-expression -> paragraph 2 -> sentence 5
+  */
+ 
+ package test
+ 
+ const val four = 4
+ 
+ fun first(arg: Int) = when (arg) {
+     1 -> 2
+     2 -> 3
+-    <!DUPLICATE_LABEL_IN_WHEN!>1<!> -> 4
++    1 -> 4
+     4 -> 5
+-    <!DUPLICATE_LABEL_IN_WHEN!>1<!> -> 6
+-    <!DUPLICATE_LABEL_IN_WHEN!>2<!> -> 7
++    1 -> 6
++    2 -> 7
+     // Error should be here: see KT-11971
+     four -> 8
+     else -> 0
+ }
+ 
+ fun second(arg: String): Int {
+     when (arg) {
+         "ABC" -> return 0
+         "DEF" -> return 1
+-        <!DUPLICATE_LABEL_IN_WHEN!>"ABC"<!> -> return -1
+-        <!DUPLICATE_LABEL_IN_WHEN!>"DEF"<!> -> return -2
++        "ABC" -> return -1
++        "DEF" -> return -2
+     }
+     return 42
+ }
+ 
+ fun third(arg: Any?): Int {
+     when (arg) {
+         null -> return -1
+         is String -> return 0
+         is Double -> return 1
+-        is <!DUPLICATE_LABEL_IN_WHEN!>Double<!> -> return 2
+-        <!DUPLICATE_LABEL_IN_WHEN!>null<!> -> return 3
++        is Double -> return 2
++        null -> return 3
+         else -> return 5
+     }
+ }
+ 
+ enum class Color { RED, GREEN, BLUE }
+ 
+ fun fourth(arg: Color) = when (arg) {
+     Color.RED -> "RED"
+     Color.GREEN -> "GREEN"
+-    <!DUPLICATE_LABEL_IN_WHEN!>Color.RED<!> -> "BLUE"
++    Color.RED -> "BLUE"
+     Color.BLUE -> "BLUE"
+ }
+ 
+ fun fifth(arg: Any?) = when (arg) {
+     is Any -> "Any"
+     <!ELSE_MISPLACED_IN_WHEN!>else<!> -> ""
+-    <!UNREACHABLE_CODE!>else -> null<!>
++    else -> null
+ }`;
+                        const targetElement = $('#diff')[0];
+                        const configuration = {
+                            drawFileList: false,
+                            fileListToggle: false,
+                            fileListStartVisible: false,
+                            fileContentToggle: false,
+                            matching: 'lines',
+                            outputFormat: 'side-by-side',
+                            synchronisedScroll: true,
+                            highlight: true,
+                            renderNothingWhenEmpty: false,
+                        };
+                        const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                        diff2htmlUi.draw();
+                        diff2htmlUi.highlightCode();</script>
+  </body>
+</html>

@@ -1,0 +1,173 @@
+<html>
+  <head>
+    <title>Diagnostics diff: tests/library/Collections.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <ul>
+          <li><a id="expected" target="_blank"><strong>Expected file: </strong><span id="expected-path"></span></a></li>
+          <li><a id="actual" target="_blank"><strong>Actual file: </strong><span id="actual-path"></span></a></li>
+        </ul>
+      </div>
+      <div class="row">
+        <div id="diff" style="width: 100%"></div>
+      </div>
+    </div>
+    <script type="text/javascript">                        $('#expected').attr('href', 'https://github.com/google/kotlin/blob/32f121098819164d8b17d2d2dc3d96f0e9346c9f/compiler/testData/diagnostics/tests/library/Collections.kt');
+                        $('#actual').attr('href', 'https://github.com/google/kotlin/blob/32f121098819164d8b17d2d2dc3d96f0e9346c9f/compiler/testData/diagnostics/tests/library/Collections.fir.kt');
+                        $('#expected-path').text('tests/library/Collections.kt');
+                        $('#actual-path').text('tests/library/Collections.fir.kt');
+
+                        const diffString = `--- tests/library/Collections.kt
++++ tests/library/Collections.fir.kt
+@@ -1,110 +1,110 @@
+ package collections
+ 
+ fun <T> testCollection(c: Collection<T>, t: T) {
+     c.size
+     c.isEmpty()
+-    c.contains(<!CONSTANT_EXPECTED_TYPE_MISMATCH!>1<!>)
++    c.contains(<!ARGUMENT_TYPE_MISMATCH!>1<!>)
+     val iterator: Iterator<T> = c.iterator()
+     c.containsAll(c)
+ 
+-    val mutableIterator: MutableIterator<T> = <!TYPE_MISMATCH!>c.iterator()<!>
++    val mutableIterator: MutableIterator<T> = <!INITIALIZER_TYPE_MISMATCH, TYPE_MISMATCH!>c.iterator()<!>
+     c.<!UNRESOLVED_REFERENCE!>add<!>(t)
+     c.<!UNRESOLVED_REFERENCE!>remove<!>(1)
+     c.<!UNRESOLVED_REFERENCE!>addAll<!>(c)
+     c.<!UNRESOLVED_REFERENCE!>removeAll<!>(c)
+     c.<!UNRESOLVED_REFERENCE!>retainAll<!>(c)
+     c.<!UNRESOLVED_REFERENCE!>clear<!>()
+ 
+ }
+ fun <T> testMutableCollection(c: MutableCollection<T>, t: T) {
+     c.size
+     c.isEmpty()
+-    c.contains(<!CONSTANT_EXPECTED_TYPE_MISMATCH!>1<!>)
++    c.contains(<!ARGUMENT_TYPE_MISMATCH!>1<!>)
+     val iterator: Iterator<T> = c.iterator()
+     c.containsAll(c)
+ 
+ 
+     val mutableIterator: MutableIterator<T> = c.iterator()
+     c.add(t)
+-    c.remove(1 <!UNCHECKED_CAST!>as T<!>)
++    c.remove(1 as T)
+     c.addAll(c)
+     c.removeAll(c)
+     c.retainAll(c)
+     c.clear()
+ }
+ 
+ fun <T> testList(l: List<T>, t: T) {
+-    val <!NAME_SHADOWING!>t<!>: T = l.get(1)
++    val t: T = l.get(1)
+     val i: Int = l.indexOf(t)
+     val i1: Int = l.lastIndexOf(t)
+     val listIterator: ListIterator<T> = l.listIterator()
+     val listIterator1: ListIterator<T> = l.listIterator(1)
+     val list: List<T> = l.subList(1, 2)
+ 
+     val value: T = l.<!UNRESOLVED_REFERENCE!>set<!>(1, t)
+     l.<!UNRESOLVED_REFERENCE!>add<!>(1, t)
+     l.<!UNRESOLVED_REFERENCE!>remove<!>(1)
+-    val mutableListIterator: MutableListIterator<T> = <!TYPE_MISMATCH!>l.listIterator()<!>
+-    val mutableListIterator1: MutableListIterator<T> = <!TYPE_MISMATCH!>l.listIterator(1)<!>
+-    val mutableList: MutableList<T> = <!TYPE_MISMATCH!>l.subList(1, 2)<!>
++    val mutableListIterator: MutableListIterator<T> = <!INITIALIZER_TYPE_MISMATCH, TYPE_MISMATCH!>l.listIterator()<!>
++    val mutableListIterator1: MutableListIterator<T> = <!INITIALIZER_TYPE_MISMATCH, TYPE_MISMATCH!>l.listIterator(1)<!>
++    val mutableList: MutableList<T> = <!INITIALIZER_TYPE_MISMATCH, TYPE_MISMATCH!>l.subList(1, 2)<!>
+ }
+ 
+ fun <T> testMutableList(l: MutableList<T>, t: T) {
+     val value: T = l.set(1, t)
+     l.add(1, t)
+     l.removeAt(1)
+     val mutableListIterator: MutableListIterator<T> = l.listIterator()
+     val mutableListIterator1: MutableListIterator<T> = l.listIterator(1)
+     val mutableList: MutableList<T> = l.subList(1, 2)
+ }
+ 
+ fun <T> testSet(s: Set<T>, t: T) {
+     s.size
+     s.isEmpty()
+-    s.contains(<!CONSTANT_EXPECTED_TYPE_MISMATCH!>1<!>)
++    s.contains(<!ARGUMENT_TYPE_MISMATCH!>1<!>)
+     val iterator: Iterator<T> = s.iterator()
+     s.containsAll(s)
+ 
+-    val mutableIterator: MutableIterator<T> = <!TYPE_MISMATCH!>s.iterator()<!>
++    val mutableIterator: MutableIterator<T> = <!INITIALIZER_TYPE_MISMATCH, TYPE_MISMATCH!>s.iterator()<!>
+     s.<!UNRESOLVED_REFERENCE!>add<!>(t)
+     s.<!UNRESOLVED_REFERENCE!>remove<!>(1)
+     s.<!UNRESOLVED_REFERENCE!>addAll<!>(s)
+     s.<!UNRESOLVED_REFERENCE!>removeAll<!>(s)
+     s.<!UNRESOLVED_REFERENCE!>retainAll<!>(s)
+     s.<!UNRESOLVED_REFERENCE!>clear<!>()
+ 
+ }
+ fun <T> testMutableSet(s: MutableSet<T>, t: T) {
+     s.size
+     s.isEmpty()
+-    s.contains(<!CONSTANT_EXPECTED_TYPE_MISMATCH!>1<!>)
++    s.contains(<!ARGUMENT_TYPE_MISMATCH!>1<!>)
+     val iterator: Iterator<T> = s.iterator()
+     s.containsAll(s)
+ 
+ 
+     val mutableIterator: MutableIterator<T> = s.iterator()
+     s.add(t)
+-    s.remove(1 <!UNCHECKED_CAST!>as T<!>)
++    s.remove(1 as T)
+     s.addAll(s)
+     s.removeAll(s)
+     s.retainAll(s)
+     s.clear()
+ }
+ 
+ fun <K, V> testMap(m: Map<K, V>) {
+     val set: Set<K> = m.keys
+     val collection: Collection<V> = m.values
+     val set1: Set<Map.Entry<K, V>> = m.entries
+ 
+-    val mutableSet: MutableSet<K> = <!TYPE_MISMATCH!>m.keys<!>
+-    val mutableCollection: MutableCollection<V> = <!TYPE_MISMATCH!>m.values<!>
+-    val mutableSet1: MutableSet<MutableMap.MutableEntry<K, V>> = <!TYPE_MISMATCH!>m.entries<!>
++    val mutableSet: MutableSet<K> = <!INITIALIZER_TYPE_MISMATCH!>m.keys<!>
++    val mutableCollection: MutableCollection<V> = <!INITIALIZER_TYPE_MISMATCH!>m.values<!>
++    val mutableSet1: MutableSet<MutableMap.MutableEntry<K, V>> = <!INITIALIZER_TYPE_MISMATCH!>m.entries<!>
+ }
+ 
+ fun <K, V> testMutableMap(m: MutableMap<K, V>) {
+     val mutableSet: MutableSet<K> = m.keys
+     val mutableCollection: MutableCollection<V> = m.values
+     val mutableSet1: MutableSet<MutableMap.MutableEntry<K, V>> = m.entries
+ }
+ 
+-fun <T> array(vararg t: T): Array<T> {<!NO_RETURN_IN_FUNCTION_WITH_BLOCK_BODY!>}<!>
++fun <T> array(vararg t: T): Array<T> {}`;
+                        const targetElement = $('#diff')[0];
+                        const configuration = {
+                            drawFileList: false,
+                            fileListToggle: false,
+                            fileListStartVisible: false,
+                            fileContentToggle: false,
+                            matching: 'lines',
+                            outputFormat: 'side-by-side',
+                            synchronisedScroll: true,
+                            highlight: true,
+                            renderNothingWhenEmpty: false,
+                        };
+                        const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                        diff2htmlUi.draw();
+                        diff2htmlUi.highlightCode();</script>
+  </body>
+</html>

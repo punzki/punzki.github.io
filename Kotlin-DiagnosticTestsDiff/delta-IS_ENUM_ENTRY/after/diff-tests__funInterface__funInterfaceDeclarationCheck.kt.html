@@ -1,0 +1,152 @@
+<html>
+  <head>
+    <title>Diagnostics diff: tests/funInterface/funInterfaceDeclarationCheck.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <ul>
+          <li><a id="expected" target="_blank"><strong>Expected file: </strong><span id="expected-path"></span></a></li>
+          <li><a id="actual" target="_blank"><strong>Actual file: </strong><span id="actual-path"></span></a></li>
+        </ul>
+      </div>
+      <div class="row">
+        <div id="diff" style="width: 100%"></div>
+      </div>
+    </div>
+    <script type="text/javascript">                        $('#expected').attr('href', 'https://github.com/google/kotlin/blob/32f121098819164d8b17d2d2dc3d96f0e9346c9f/compiler/testData/diagnostics/tests/funInterface/funInterfaceDeclarationCheck.kt');
+                        $('#actual').attr('href', 'https://github.com/google/kotlin/blob/32f121098819164d8b17d2d2dc3d96f0e9346c9f/compiler/testData/diagnostics/tests/funInterface/funInterfaceDeclarationCheck.fir.kt');
+                        $('#expected-path').text('tests/funInterface/funInterfaceDeclarationCheck.kt');
+                        $('#actual-path').text('tests/funInterface/funInterfaceDeclarationCheck.fir.kt');
+
+                        const diffString = `--- tests/funInterface/funInterfaceDeclarationCheck.kt
++++ tests/funInterface/funInterfaceDeclarationCheck.fir.kt
+@@ -1,104 +1,104 @@
+ // !LANGUAGE: +FunctionalInterfaceConversion
+ 
+ fun interface Good {
+     fun invoke()
+ }
+ 
+ <!FUN_INTERFACE_WRONG_COUNT_OF_ABSTRACT_MEMBERS!>fun<!> interface Foo1
+ 
+ <!FUN_INTERFACE_WRONG_COUNT_OF_ABSTRACT_MEMBERS!>fun<!> interface Foo2 {
+ 
+ }
+ 
+ <!FUN_INTERFACE_WRONG_COUNT_OF_ABSTRACT_MEMBERS!>fun<!> interface Foo3 {
+     fun foo()
+     fun bar()
+ }
+ 
+ interface BaseWithSAM {
+     fun base()
+ }
+ 
+ <!FUN_INTERFACE_WRONG_COUNT_OF_ABSTRACT_MEMBERS!>fun<!> interface Foo4 : BaseWithSAM {
+     fun oneMore()
+ }
+ 
+ fun interface Foo4WithDefault : BaseWithSAM {
+     fun oneMore() {}
+ }
+ 
+ interface BaseWithDefault {
+     fun def() {}
+ }
+ 
+ fun interface Foo4WithBaseDefault : BaseWithDefault {
+     fun oneMore()
+ }
+ 
+ fun interface GoodWithBase : BaseWithSAM
+ 
+ <!FUN_INTERFACE_WRONG_COUNT_OF_ABSTRACT_MEMBERS!>fun<!> interface Foo5 {
+     <!FUN_INTERFACE_CANNOT_HAVE_ABSTRACT_PROPERTIES!>val<!> prop: Int
+ }
+ 
+ fun interface Foo6 {
+     fun foo()
+     <!FUN_INTERFACE_CANNOT_HAVE_ABSTRACT_PROPERTIES!>val<!> prop: Int
+ }
+ 
+ fun interface Foo7 : BaseWithSAM {
+     <!FUN_INTERFACE_CANNOT_HAVE_ABSTRACT_PROPERTIES!>val<!> prop: Int
+ }
+ 
+ fun interface GoodWithPropAndBase : BaseWithSAM {
+     val prop: Int get() = 42
+ }
+ 
+ fun interface Foo8 {
+     fun <!FUN_INTERFACE_ABSTRACT_METHOD_WITH_TYPE_PARAMETERS!><T><!> invoke(x: T)
+ }
+ 
+ fun interface GoodGeneric<T> {
+     fun invoke(x: T)
+ }
+ 
+ interface BaseWithGeneric {
+     fun <T> invoke(x: T)
+ }
+ 
+ <!FUN_INTERFACE_ABSTRACT_METHOD_WITH_TYPE_PARAMETERS!>fun<!> interface Foo9 : BaseWithGeneric
+ 
+ fun interface GoodExtensionGeneric : GoodGeneric<String>
+ 
+ fun interface GoodSuspend {
+     suspend fun invoke()
+ }
+ 
+ class WithNestedFun<K> {
+     <!FUN_INTERFACE_WRONG_COUNT_OF_ABSTRACT_MEMBERS!>fun<!> interface NestedSimple
+ 
+     fun interface GoodFun {
+         fun invoke()
+     }
+ 
+     fun interface NestedFun {
+-        fun inovke(element: <!UNRESOLVED_REFERENCE!>K<!>)
++        fun inovke(element: K)
+     }
+ }
+ 
+ fun <T> local() {
+     <!LOCAL_INTERFACE_NOT_ALLOWED!>fun interface LocalFun<!> {
+         fun invoke(element: T)
+     }
+ }
+ 
+ fun interface WithDefaultValue {
+     fun invoke(<!FUN_INTERFACE_ABSTRACT_METHOD_WITH_DEFAULT_VALUE!>s: String = ""<!>)
+ }
+ 
+ interface BaseWithDefaultValue {
+     fun invoke(s: String = "")
+ }
+ 
+ <!FUN_INTERFACE_ABSTRACT_METHOD_WITH_DEFAULT_VALUE!>fun<!> interface DeriveDefault : BaseWithDefaultValue
+ `;
+                        const targetElement = $('#diff')[0];
+                        const configuration = {
+                            drawFileList: false,
+                            fileListToggle: false,
+                            fileListStartVisible: false,
+                            fileContentToggle: false,
+                            matching: 'lines',
+                            outputFormat: 'side-by-side',
+                            synchronisedScroll: true,
+                            highlight: true,
+                            renderNothingWhenEmpty: false,
+                        };
+                        const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                        diff2htmlUi.draw();
+                        diff2htmlUi.highlightCode();</script>
+  </body>
+</html>

@@ -1,0 +1,224 @@
+<html>
+  <head>
+    <title>Diagnostics diff: tests/declarationChecks/unambiguousObjectExpressionType.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <ul>
+          <li><a id="expected" target="_blank"><strong>Expected file: </strong><span id="expected-path"></span></a></li>
+          <li><a id="actual" target="_blank"><strong>Actual file: </strong><span id="actual-path"></span></a></li>
+        </ul>
+      </div>
+      <div class="row">
+        <div id="diff" style="width: 100%"></div>
+      </div>
+    </div>
+    <script type="text/javascript">                        $('#expected').attr('href', 'https://github.com/google/kotlin/blob/02a56a3077fb08ab0eb642acfdba56a30fe7ccaa/compiler/testData/diagnostics/tests/declarationChecks/unambiguousObjectExpressionType.kt');
+                        $('#actual').attr('href', 'https://github.com/google/kotlin/blob/02a56a3077fb08ab0eb642acfdba56a30fe7ccaa/compiler/testData/diagnostics/tests/declarationChecks/unambiguousObjectExpressionType.fir.kt');
+                        $('#expected-path').text('tests/declarationChecks/unambiguousObjectExpressionType.kt');
+                        $('#actual-path').text('tests/declarationChecks/unambiguousObjectExpressionType.fir.kt');
+
+                        const diffString = `--- tests/declarationChecks/unambiguousObjectExpressionType.kt
++++ tests/declarationChecks/unambiguousObjectExpressionType.fir.kt
+@@ -1,175 +1,175 @@
+ open class MyClass {
+     fun f1() {}
+ }
+ 
+ 
+ class Foo {
+ 
+     protected val protectedProperty = object : MyClass() {}
+ 
+     public val publicProperty = object : MyClass() {}
+ 
+     protected val protected2Property : MyClass = object : MyClass() {fun invisible() {}}
+ 
+     public val public2Property : MyClass = object : MyClass() {fun invisible() {}}
+ 
+     private val privateProperty = object : MyClass() {fun visible() {}}
+ 
+     internal val internalProperty = object : MyClass() { fun invisible() {}}
+ 
+ 
+     fun testProperties() {
+         privateProperty.f1()
+         internalProperty.f1()
+         protected2Property.f1()
+         public2Property.f1()
+ 
+         privateProperty.visible()
+         protected2Property.<!UNRESOLVED_REFERENCE!>invisible<!>()
+         public2Property.<!UNRESOLVED_REFERENCE!>invisible<!>()
+         internalProperty.<!UNRESOLVED_REFERENCE!>invisible<!>()
+     }
+ 
+ 
+     protected fun protectedFunction() = object : MyClass() {}
+ 
+     public fun publicFunction() = object : MyClass() {}
+ 
+     protected fun protected2Function(): MyClass = object : MyClass() {fun visible() {}}
+ 
+     public fun public2Function(): MyClass = object : MyClass() {fun visible() {}}
+ 
+     private fun privateFunction() = object : MyClass() {fun visible() {}}
+ 
+     internal fun internalFunction() = object : MyClass() {fun invisible() {}}
+ 
+ 
+     fun testFunctions() {
+         privateFunction().f1()
+         internalFunction().f1()
+         public2Function().f1()
+         protected2Function().f1()
+ 
+         privateFunction().visible()
+         internalFunction().<!UNRESOLVED_REFERENCE!>invisible<!>()
+         public2Function().<!UNRESOLVED_REFERENCE!>invisible<!>()
+         protected2Function().<!UNRESOLVED_REFERENCE!>invisible<!>()
+     }
+ 
+ 
+     class FooInner {
+ 
+         public val publicProperty = object : MyClass() {}
+ 
+         protected val protectedProperty = object : MyClass() {}
+ 
+         protected val protected2Property : MyClass = object : MyClass() {fun invisible() {}}
+ 
+         public val public2Property : MyClass = object : MyClass() {fun invisible() {}}
+ 
+         private val privateProperty = object : MyClass() {fun visible() {}}
+ 
+         internal val internalProperty = object : MyClass() { fun invisible() {}}
+ 
+ 
+         fun testProperties() {
+             privateProperty.f1()
+             internalProperty.f1()
+             protected2Property.f1()
+             public2Property.f1()
+ 
+             privateProperty.visible()
+             protected2Property.<!UNRESOLVED_REFERENCE!>invisible<!>()
+             public2Property.<!UNRESOLVED_REFERENCE!>invisible<!>()
+             internalProperty.<!UNRESOLVED_REFERENCE!>invisible<!>()
+         }
+ 
+ 
+         protected fun protectedFunction() = object : MyClass() {}
+ 
+         public fun publicFunction() = object : MyClass() {}
+ 
+         protected fun protected2Function(): MyClass = object : MyClass() {fun visible() {}}
+ 
+         public fun public2Function(): MyClass = object : MyClass() {fun visible() {}}
+ 
+         private fun privateFunction() = object : MyClass() {fun visible() {}}
+ 
+         internal fun internalFunction() = object : MyClass() {fun invisible() {}}
+ 
+ 
+         fun testFunctions() {
+             privateFunction().f1()
+             internalFunction().f1()
+             public2Function().f1()
+             protected2Function().f1()
+ 
+             privateFunction().visible()
+             internalFunction().<!UNRESOLVED_REFERENCE!>invisible<!>()
+             public2Function().<!UNRESOLVED_REFERENCE!>invisible<!>()
+             protected2Function().<!UNRESOLVED_REFERENCE!>invisible<!>()
+         }
+     }
+ 
+     fun foo() {
+         val localVar = object : MyClass() {}
+         localVar.f1()
+         fun foo2() = object : MyClass() {}
+         foo2().f1()
+     }
+ 
+ }
+ 
+-<!WRONG_MODIFIER_TARGET!>protected<!> val packageProtectedProperty = object : MyClass() {}
++protected val packageProtectedProperty = object : MyClass() {}
+ 
+ public val packagePublicProperty = object : MyClass() {}
+ 
+ public val packagePublic2Property : MyClass = object : MyClass() {fun invisible() {}}
+ 
+ private val packagePrivateProperty = object : MyClass() {fun invisible() {}}
+ 
+ internal val packageInternalProperty = object : MyClass() {fun invisible() {}}
+ 
+ 
+ fun testProperties() {
+     packagePrivateProperty.f1()
+     packageInternalProperty.f1()
+     packagePublic2Property.f1()
+ 
+     packagePrivateProperty.invisible()
+     packageInternalProperty.<!UNRESOLVED_REFERENCE!>invisible<!>()
+     packagePublic2Property.<!UNRESOLVED_REFERENCE!>invisible<!>()
+ }
+ 
+ 
+ private fun privateFunction() = object : MyClass() {fun invisible() {}}
+ 
+-<!WRONG_MODIFIER_TARGET!>protected<!> fun protectedFunction() = object : MyClass() {}
++protected fun protectedFunction() = object : MyClass() {}
+ 
+ public fun publicFunction() = object : MyClass() {}
+ 
+ public fun public2Function() : MyClass = object : MyClass() {fun invisible() {}}
+ 
+ internal fun internalFunction() = object : MyClass() {fun invisible() {}}
+ 
+ 
+ 
+ fun testFunctions() {
+     privateFunction().f1()
+     internalFunction().f1()
+     public2Function().f1()
+ 
+     privateFunction().invisible()
+     internalFunction().<!UNRESOLVED_REFERENCE!>invisible<!>()
+     public2Function().<!UNRESOLVED_REFERENCE!>invisible<!>()
+ }
+ 
+ fun fooPackage() {
+     val packageLocalVar = object : MyClass() {fun visible() {}}
+     packageLocalVar.f1()
+     packageLocalVar.visible()
+ 
+     fun fooPackageLocal() = object : MyClass() {fun visible() {}}
+     fooPackageLocal().f1()
+     fooPackageLocal().visible()
+ }`;
+                        const targetElement = $('#diff')[0];
+                        const configuration = {
+                            drawFileList: false,
+                            fileListToggle: false,
+                            fileListStartVisible: false,
+                            fileContentToggle: false,
+                            matching: 'lines',
+                            outputFormat: 'side-by-side',
+                            synchronisedScroll: true,
+                            highlight: true,
+                            renderNothingWhenEmpty: false,
+                        };
+                        const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                        diff2htmlUi.draw();
+                        diff2htmlUi.highlightCode();</script>
+  </body>
+</html>

@@ -1,0 +1,154 @@
+<html>
+  <head>
+    <title>Diagnostics diff: testsWithStdLib/contracts/controlflow/initialization/exactlyOnce/valDefiniteInitialization.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <ul>
+          <li><a id="expected" target="_blank"><strong>Expected file: </strong><span id="expected-path"></span></a></li>
+          <li><a id="actual" target="_blank"><strong>Actual file: </strong><span id="actual-path"></span></a></li>
+        </ul>
+      </div>
+      <div class="row">
+        <div id="diff" style="width: 100%"></div>
+      </div>
+    </div>
+    <script type="text/javascript">                        $('#expected').attr('href', 'https://github.com/google/kotlin/blob/32f121098819164d8b17d2d2dc3d96f0e9346c9f/compiler/testData/diagnostics/testsWithStdLib/contracts/controlflow/initialization/exactlyOnce/valDefiniteInitialization.kt');
+                        $('#actual').attr('href', 'https://github.com/google/kotlin/blob/32f121098819164d8b17d2d2dc3d96f0e9346c9f/compiler/testData/diagnostics/testsWithStdLib/contracts/controlflow/initialization/exactlyOnce/valDefiniteInitialization.fir.kt');
+                        $('#expected-path').text('testsWithStdLib/contracts/controlflow/initialization/exactlyOnce/valDefiniteInitialization.kt');
+                        $('#actual-path').text('testsWithStdLib/contracts/controlflow/initialization/exactlyOnce/valDefiniteInitialization.fir.kt');
+
+                        const diffString = `--- testsWithStdLib/contracts/controlflow/initialization/exactlyOnce/valDefiniteInitialization.kt
++++ testsWithStdLib/contracts/controlflow/initialization/exactlyOnce/valDefiniteInitialization.fir.kt
+@@ -1,104 +1,104 @@
+ // !LANGUAGE: +AllowContractsForCustomFunctions +UseCallsInPlaceEffect
+ // !USE_EXPERIMENTAL: kotlin.contracts.ExperimentalContracts
+ // !DIAGNOSTICS: -INVISIBLE_REFERENCE -INVISIBLE_MEMBER
+ 
+ import kotlin.contracts.*
+ 
+ fun <T> myRun(block: () -> T): T {
+     contract {
+         callsInPlace(block, InvocationKind.EXACTLY_ONCE)
+     }
+     return block()
+ }
+ 
+ fun initialization() {
+     val x: Int
+     myRun {
+         x = 42
+         42
+     }
+     x.inc()
+ }
+ 
+ fun shadowing() {
+     val x = 42
+     myRun {
+-        val <!NAME_SHADOWING!>x<!> = 43
++        val x = 43
+         x.inc()
+     }
+     x.inc()
+ }
+ 
+ fun nestedDefiniteAssignment() {
+     val x: Int
+     myRun {
+         val y = "Hello"
+         myRun {
+             x = 42
+         }
+         y.length
+     }
+     x.inc()
+ }
+ 
+ fun deeplyNestedDefiniteAssignment() {
+     val x: Int
+     myRun {
+         val y: String
+         myRun {
+             val z: String
+             myRun {
+                 z = "Hello"
+                 y = "World"
+                 x = 42
+             }
+             z.length
+         }
+         y.length
+     }
+     x.inc()
+ }
+ 
+ fun branchingFlow(a: Any?) {
+     val x: Int
+ 
+     if (a is String) {
+         myRun { x = 42 }
+     }
+     else {
+         myRun { x = 43 }
+     }
+ 
+     x.inc()
+ }
+ 
+ fun returningValue() {
+     val x: Int
+     val hello = myRun { x = 42; "hello" }
+     x.inc()
+     hello.length
+ }
+ 
+ fun unknownRun(block: () -> Unit) = block()
+ 
+ class DefiniteInitializationInInitSection {
+     val x: Int
+     <!MUST_BE_INITIALIZED_OR_BE_ABSTRACT!>val y: Int<!>
+ 
+     init {
+-        myRun { <!CAPTURED_VAL_INITIALIZATION!>x<!> = 42 }
+-        unknownRun { <!CAPTURED_MEMBER_VAL_INITIALIZATION!>y<!> = 239 }
++        myRun { x = 42 }
++        unknownRun { y = 239 }
+     }
+ }
+ 
+ class DefiniteInitializationAfterThrow {
+     fun test() {
+         val a: Int
+         myRun {
+             if (bar()) throw RuntimeException()
+             a = 42
+         }
+         a.hashCode()
+     }
+     fun bar() = false
+ }`;
+                        const targetElement = $('#diff')[0];
+                        const configuration = {
+                            drawFileList: false,
+                            fileListToggle: false,
+                            fileListStartVisible: false,
+                            fileContentToggle: false,
+                            matching: 'lines',
+                            outputFormat: 'side-by-side',
+                            synchronisedScroll: true,
+                            highlight: true,
+                            renderNothingWhenEmpty: false,
+                        };
+                        const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                        diff2htmlUi.draw();
+                        diff2htmlUi.highlightCode();</script>
+  </body>
+</html>

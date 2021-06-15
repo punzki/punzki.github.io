@@ -1,0 +1,74 @@
+<html>
+  <head>
+    <title>Diagnostics diff: tests/modifiers/incompatibleVarianceModifiers.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <ul>
+          <li><a id="expected" target="_blank"><strong>Expected file: </strong><span id="expected-path"></span></a></li>
+          <li><a id="actual" target="_blank"><strong>Actual file: </strong><span id="actual-path"></span></a></li>
+        </ul>
+      </div>
+      <div class="row">
+        <div id="diff" style="width: 100%"></div>
+      </div>
+    </div>
+    <script type="text/javascript">                        $('#expected').attr('href', 'https://github.com/google/kotlin/blob/02a56a3077fb08ab0eb642acfdba56a30fe7ccaa/compiler/testData/diagnostics/tests/modifiers/incompatibleVarianceModifiers.kt');
+                        $('#actual').attr('href', 'https://github.com/google/kotlin/blob/02a56a3077fb08ab0eb642acfdba56a30fe7ccaa/compiler/testData/diagnostics/tests/modifiers/incompatibleVarianceModifiers.fir.kt');
+                        $('#expected-path').text('tests/modifiers/incompatibleVarianceModifiers.kt');
+                        $('#actual-path').text('tests/modifiers/incompatibleVarianceModifiers.fir.kt');
+
+                        const diffString = `--- tests/modifiers/incompatibleVarianceModifiers.kt
++++ tests/modifiers/incompatibleVarianceModifiers.fir.kt
+@@ -1,23 +1,23 @@
+ // !DIAGNOSTICS: -UNUSED_VARIABLE
+ 
+ interface Foo<T>
+ interface Foo1<<!INCOMPATIBLE_MODIFIERS!>in<!> <!INCOMPATIBLE_MODIFIERS!>out<!> T>
+ interface Foo2<in <!REPEATED_MODIFIER!>in<!> T>
+ 
+-fun test1(foo: Foo<<!INCOMPATIBLE_MODIFIERS!>in<!> <!INCOMPATIBLE_MODIFIERS!>out<!> Int>) = foo
+-fun test2(): Foo<in <!REPEATED_MODIFIER!>in<!> Int> = throw Exception()
++fun test1(foo: Foo<in out Int>) = foo
++fun test2(): Foo<in in Int> = throw Exception()
+ 
+ fun test3() {
+-    val f: Foo<out <!REPEATED_MODIFIER!>out<!> <!REPEATED_MODIFIER!>out<!> <!REPEATED_MODIFIER!>out<!> Int>
++    val f: Foo<out out out out Int>
+ 
+     class Bzz<in <!REPEATED_MODIFIER!>in<!> T>
+ }
+ 
+ class A {
+     fun <<!VARIANCE_ON_TYPE_PARAMETER_NOT_ALLOWED!>out<!> <!REPEATED_MODIFIER!>out<!> T> bar() {
+     }
+ }
+ 
+ fun test4(a: A) {
+-    a.bar<<!PROJECTION_ON_NON_CLASS_TYPE_ARGUMENT!>out<!> <!REPEATED_MODIFIER!>out<!> Int>()
++    a.bar<<!PROJECTION_ON_NON_CLASS_TYPE_ARGUMENT!>out out Int<!>>()
+ }`;
+                        const targetElement = $('#diff')[0];
+                        const configuration = {
+                            drawFileList: false,
+                            fileListToggle: false,
+                            fileListStartVisible: false,
+                            fileContentToggle: false,
+                            matching: 'lines',
+                            outputFormat: 'side-by-side',
+                            synchronisedScroll: true,
+                            highlight: true,
+                            renderNothingWhenEmpty: false,
+                        };
+                        const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                        diff2htmlUi.draw();
+                        diff2htmlUi.highlightCode();</script>
+  </body>
+</html>

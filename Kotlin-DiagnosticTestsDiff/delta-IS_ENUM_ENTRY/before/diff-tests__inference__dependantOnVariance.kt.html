@@ -1,0 +1,126 @@
+<html>
+  <head>
+    <title>Diagnostics diff: tests/inference/dependantOnVariance.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <ul>
+          <li><a id="expected" target="_blank"><strong>Expected file: </strong><span id="expected-path"></span></a></li>
+          <li><a id="actual" target="_blank"><strong>Actual file: </strong><span id="actual-path"></span></a></li>
+        </ul>
+      </div>
+      <div class="row">
+        <div id="diff" style="width: 100%"></div>
+      </div>
+    </div>
+    <script type="text/javascript">                        $('#expected').attr('href', 'https://github.com/google/kotlin/blob/02a56a3077fb08ab0eb642acfdba56a30fe7ccaa/compiler/testData/diagnostics/tests/inference/dependantOnVariance.kt');
+                        $('#actual').attr('href', 'https://github.com/google/kotlin/blob/02a56a3077fb08ab0eb642acfdba56a30fe7ccaa/compiler/testData/diagnostics/tests/inference/dependantOnVariance.fir.kt');
+                        $('#expected-path').text('tests/inference/dependantOnVariance.kt');
+                        $('#actual-path').text('tests/inference/dependantOnVariance.fir.kt');
+
+                        const diffString = `--- tests/inference/dependantOnVariance.kt
++++ tests/inference/dependantOnVariance.fir.kt
+@@ -1,68 +1,68 @@
+ package a
+ 
+ class MyList<T>(t: T) {}
+ 
+ fun <T> getMyList(t: T)           : MyList<    T> = MyList(t)
+ fun <T> getMyListToWriteTo(t: T)  : MyList< in T> = MyList(t)
+ fun <T> getMyListToReadFrom(t: T) : MyList<out T> = MyList(t)
+ 
+ fun <T> useMyList     (l: MyList<    T>, t: T) {}
+ fun <T> writeToMyList (l: MyList< in T>, t: T) {}
+ fun <T> readFromMyList(l: MyList<out T>, t: T) {}
+ 
+ fun test1(int: Int, any: Any) {
+     val a0 : MyList<Any> = getMyList(int)
+ 
+-    val a1 : MyList<Int> = <!TYPE_MISMATCH!>getMyList(any)<!>
++    val a1 : MyList<Int> = <!TYPE_MISMATCH, TYPE_MISMATCH!>getMyList(any)<!>
+ 
+     val a2 : MyList<out Any> = getMyList(int)
+ 
+     val a3 : MyList<out Any> = getMyListToReadFrom(int)
+ 
+     val a4 : MyList<in Int> = getMyList(any)
+ 
+     val a5 : MyList<in Int> = getMyListToWriteTo(any)
+ 
+ 
+-    val a6 : MyList<in Any> = <!TYPE_MISMATCH, TYPE_MISMATCH!>getMyList<Int>(int)<!>
++    val a6 : MyList<in Any> = <!INITIALIZER_TYPE_MISMATCH, TYPE_MISMATCH!>getMyList<Int>(int)<!>
+     val a7 : MyList<in Any> = getMyList(int)
+ 
+-    val a8 : MyList<in Any> = <!TYPE_MISMATCH, TYPE_MISMATCH!>getMyListToReadFrom<Int>(int)<!>
+-    val a9 : MyList<in Any> = <!TYPE_MISMATCH, TYPE_MISMATCH!>getMyListToReadFrom(int)<!>
++    val a8 : MyList<in Any> = <!INITIALIZER_TYPE_MISMATCH, TYPE_MISMATCH!>getMyListToReadFrom<Int>(int)<!>
++    val a9 : MyList<in Any> = <!INITIALIZER_TYPE_MISMATCH, TYPE_MISMATCH!>getMyListToReadFrom(int)<!>
+ 
+-    val a10 : MyList<out Int> = <!TYPE_MISMATCH, TYPE_MISMATCH!>getMyList<Any>(any)<!>
+-    val a11 : MyList<out Int> = <!TYPE_MISMATCH, TYPE_MISMATCH!>getMyList(any)<!>
++    val a10 : MyList<out Int> = <!INITIALIZER_TYPE_MISMATCH, TYPE_MISMATCH!>getMyList<Any>(any)<!>
++    val a11 : MyList<out Int> = <!INITIALIZER_TYPE_MISMATCH, TYPE_MISMATCH!>getMyList(any)<!>
+ 
+-    val a12 : MyList<out Int> = <!TYPE_MISMATCH, TYPE_MISMATCH!>getMyListToWriteTo<Any>(any)<!>
+-    val a13 : MyList<out Int> = <!TYPE_MISMATCH, TYPE_MISMATCH!>getMyListToWriteTo(any)<!>
++    val a12 : MyList<out Int> = <!INITIALIZER_TYPE_MISMATCH, TYPE_MISMATCH!>getMyListToWriteTo<Any>(any)<!>
++    val a13 : MyList<out Int> = <!INITIALIZER_TYPE_MISMATCH, TYPE_MISMATCH!>getMyListToWriteTo(any)<!>
+ 
+     useMyList(getMyList(int), int)
+     useMyList(getMyList(any), int)
+     useMyList(getMyList(int), any)
+ 
+     readFromMyList(getMyList(int), any)
+     readFromMyList(getMyList(any), int)
+-    readFromMyList<Int>(<!TYPE_MISMATCH!>getMyList(any)<!>, int)
++    readFromMyList<Int>(<!ARGUMENT_TYPE_MISMATCH!>getMyList(any)<!>, int)
+ 
+-    readFromMyList<Int>(<!TYPE_MISMATCH!>getMyListToReadFrom(any)<!>, int)
++    readFromMyList<Int>(<!ARGUMENT_TYPE_MISMATCH!>getMyListToReadFrom(any)<!>, int)
+     readFromMyList(getMyListToReadFrom(any), int)
+ 
+     readFromMyList(getMyListToReadFrom(int), any)
+ 
+ 
+     writeToMyList(getMyList(any), int)
+     writeToMyList<Any>(getMyList(int), any)
+     writeToMyList(getMyList<Any>(int), any)
+     writeToMyList(getMyList(int), any)
+ 
+     writeToMyList(getMyListToWriteTo(any), int)
+     writeToMyList(getMyListToWriteTo(int), any)
+ 
+     readFromMyList(getMyListToWriteTo(any), any)
+ 
+-    writeToMyList(getMyListToReadFrom(any), <!TYPE_MISMATCH!>any<!>)
++    writeToMyList(getMyListToReadFrom(any), <!ARGUMENT_TYPE_MISMATCH!>any<!>)
+ 
+     use(a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13)
+ }
+ 
+ fun use(vararg a: Any) = a`;
+                        const targetElement = $('#diff')[0];
+                        const configuration = {
+                            drawFileList: false,
+                            fileListToggle: false,
+                            fileListStartVisible: false,
+                            fileContentToggle: false,
+                            matching: 'lines',
+                            outputFormat: 'side-by-side',
+                            synchronisedScroll: true,
+                            highlight: true,
+                            renderNothingWhenEmpty: false,
+                        };
+                        const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                        diff2htmlUi.draw();
+                        diff2htmlUi.highlightCode();</script>
+  </body>
+</html>

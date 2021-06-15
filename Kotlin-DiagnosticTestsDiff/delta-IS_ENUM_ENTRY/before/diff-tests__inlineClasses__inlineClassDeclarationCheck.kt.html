@@ -1,0 +1,91 @@
+<html>
+  <head>
+    <title>Diagnostics diff: tests/inlineClasses/inlineClassDeclarationCheck.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <ul>
+          <li><a id="expected" target="_blank"><strong>Expected file: </strong><span id="expected-path"></span></a></li>
+          <li><a id="actual" target="_blank"><strong>Actual file: </strong><span id="actual-path"></span></a></li>
+        </ul>
+      </div>
+      <div class="row">
+        <div id="diff" style="width: 100%"></div>
+      </div>
+    </div>
+    <script type="text/javascript">                        $('#expected').attr('href', 'https://github.com/google/kotlin/blob/02a56a3077fb08ab0eb642acfdba56a30fe7ccaa/compiler/testData/diagnostics/tests/inlineClasses/inlineClassDeclarationCheck.kt');
+                        $('#actual').attr('href', 'https://github.com/google/kotlin/blob/02a56a3077fb08ab0eb642acfdba56a30fe7ccaa/compiler/testData/diagnostics/tests/inlineClasses/inlineClassDeclarationCheck.fir.kt');
+                        $('#expected-path').text('tests/inlineClasses/inlineClassDeclarationCheck.kt');
+                        $('#actual-path').text('tests/inlineClasses/inlineClassDeclarationCheck.fir.kt');
+
+                        const diffString = `--- tests/inlineClasses/inlineClassDeclarationCheck.kt
++++ tests/inlineClasses/inlineClassDeclarationCheck.fir.kt
+@@ -1,40 +1,40 @@
+ // !LANGUAGE: +InlineClasses, -JvmInlineValueClasses
+ // !DIAGNOSTICS: -UNUSED_PARAMETER
+ 
+ inline class A0(val x: Int)
+ 
+ <!ABSENCE_OF_PRIMARY_CONSTRUCTOR_FOR_INLINE_CLASS!>inline<!> class A1
+ inline class A2<!INLINE_CLASS_CONSTRUCTOR_WRONG_PARAMETERS_SIZE!>()<!>
+ inline class A3(<!INLINE_CLASS_CONSTRUCTOR_NOT_FINAL_READ_ONLY_PARAMETER!>x: Int<!>)
+ inline class A4(<!INLINE_CLASS_CONSTRUCTOR_NOT_FINAL_READ_ONLY_PARAMETER!>var x: Int<!>)
+ inline class A5<!INLINE_CLASS_CONSTRUCTOR_WRONG_PARAMETERS_SIZE!>(val x: Int, val y: Int)<!>
+ inline class A6<!INLINE_CLASS_CONSTRUCTOR_WRONG_PARAMETERS_SIZE!>(x: Int, val y: Int)<!>
+ inline class A7(<!INLINE_CLASS_CONSTRUCTOR_NOT_FINAL_READ_ONLY_PARAMETER!>vararg val x: Int<!>)
+ inline class A8(<!INLINE_CLASS_CONSTRUCTOR_NOT_FINAL_READ_ONLY_PARAMETER!><!NON_FINAL_MEMBER_IN_FINAL_CLASS!>open<!> val x: Int<!>)
+ inline class A9(final val x: Int)
+ 
+ class B1 {
+     companion object {
+         inline class C1(val x: Int)
+-        <!WRONG_MODIFIER_CONTAINING_DECLARATION!>inner<!> inline class C11(val x: Int)
++        inner <!INLINE_CLASS_NOT_TOP_LEVEL!>inline<!> class C11(val x: Int)
+     }
+ 
+     inline class C2(val x: Int)
+     inner <!INLINE_CLASS_NOT_TOP_LEVEL!>inline<!> class C21(val x: Int)
+ }
+ 
+ object B2 {
+     inline class C3(val x: Int)
+-    <!WRONG_MODIFIER_CONTAINING_DECLARATION!>inner<!> inline class C31(val x: Int)
++    inner <!INLINE_CLASS_NOT_TOP_LEVEL!>inline<!> class C31(val x: Int)
+ }
+ 
+ fun foo() {
+-    <!INLINE_CLASS_NOT_TOP_LEVEL, WRONG_MODIFIER_TARGET!>inline<!> class C4(val x: Int)
++    <!INLINE_CLASS_NOT_TOP_LEVEL!>inline<!> class C4(val x: Int)
+ }
+ 
+ final inline class D0(val x: Int)
+ <!INLINE_CLASS_NOT_FINAL!>open<!> inline class D1(val x: Int)
+ <!INLINE_CLASS_NOT_FINAL!>abstract<!> inline class D2(val x: Int)
+ <!INLINE_CLASS_NOT_FINAL!>sealed<!> inline class D3(val x: Int)
+ 
+-<!INCOMPATIBLE_MODIFIERS!>inline<!> <!INCOMPATIBLE_MODIFIERS!>data<!> class <!CONFLICTING_JVM_DECLARATIONS, CONFLICTING_JVM_DECLARATIONS, CONFLICTING_JVM_DECLARATIONS!>D4(val x: String)<!>
++<!INCOMPATIBLE_MODIFIERS!>inline<!> <!INCOMPATIBLE_MODIFIERS!>data<!> class D4(val x: String)`;
+                        const targetElement = $('#diff')[0];
+                        const configuration = {
+                            drawFileList: false,
+                            fileListToggle: false,
+                            fileListStartVisible: false,
+                            fileContentToggle: false,
+                            matching: 'lines',
+                            outputFormat: 'side-by-side',
+                            synchronisedScroll: true,
+                            highlight: true,
+                            renderNothingWhenEmpty: false,
+                        };
+                        const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                        diff2htmlUi.draw();
+                        diff2htmlUi.highlightCode();</script>
+  </body>
+</html>

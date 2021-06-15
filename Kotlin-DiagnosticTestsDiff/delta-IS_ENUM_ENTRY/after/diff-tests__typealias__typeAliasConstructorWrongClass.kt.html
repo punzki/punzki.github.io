@@ -1,0 +1,88 @@
+<html>
+  <head>
+    <title>Diagnostics diff: tests/typealias/typeAliasConstructorWrongClass.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <ul>
+          <li><a id="expected" target="_blank"><strong>Expected file: </strong><span id="expected-path"></span></a></li>
+          <li><a id="actual" target="_blank"><strong>Actual file: </strong><span id="actual-path"></span></a></li>
+        </ul>
+      </div>
+      <div class="row">
+        <div id="diff" style="width: 100%"></div>
+      </div>
+    </div>
+    <script type="text/javascript">                        $('#expected').attr('href', 'https://github.com/google/kotlin/blob/32f121098819164d8b17d2d2dc3d96f0e9346c9f/compiler/testData/diagnostics/tests/typealias/typeAliasConstructorWrongClass.kt');
+                        $('#actual').attr('href', 'https://github.com/google/kotlin/blob/32f121098819164d8b17d2d2dc3d96f0e9346c9f/compiler/testData/diagnostics/tests/typealias/typeAliasConstructorWrongClass.fir.kt');
+                        $('#expected-path').text('tests/typealias/typeAliasConstructorWrongClass.kt');
+                        $('#actual-path').text('tests/typealias/typeAliasConstructorWrongClass.fir.kt');
+
+                        const diffString = `--- tests/typealias/typeAliasConstructorWrongClass.kt
++++ tests/typealias/typeAliasConstructorWrongClass.fir.kt
+@@ -1,34 +1,34 @@
+ // !DIAGNOSTICS: -UNUSED_VARIABLE -UNUSED_PARAMETER -TOPLEVEL_TYPEALIASES_ONLY
+ 
+ abstract class AbstractClass
+ typealias Test1 = AbstractClass
+ val test1 = <!CREATING_AN_INSTANCE_OF_ABSTRACT_CLASS!>Test1()<!>
+ val test1a = <!CREATING_AN_INSTANCE_OF_ABSTRACT_CLASS!>AbstractClass()<!>
+ 
+ annotation class AnnotationClass
+ typealias Test2 = AnnotationClass
+ val test2 = <!ANNOTATION_CLASS_CONSTRUCTOR_CALL!>Test2()<!>
+ val test2a = <!ANNOTATION_CLASS_CONSTRUCTOR_CALL!>AnnotationClass()<!>
+ 
+ enum class EnumClass { VALUE1, VALUE2 }
+ typealias Test3 = EnumClass
+-val test3 = <!ENUM_CLASS_CONSTRUCTOR_CALL!><!INVISIBLE_MEMBER!>Test3<!>()<!>
+-val test3a = <!ENUM_CLASS_CONSTRUCTOR_CALL!><!INVISIBLE_MEMBER!>EnumClass<!>()<!>
++val test3 = <!INVISIBLE_REFERENCE!>Test3<!>()
++val test3a = <!INVISIBLE_REFERENCE!>EnumClass<!>()
+ 
+ sealed class SealedClass
+ typealias Test4 = SealedClass
+-val test4 = <!SEALED_CLASS_CONSTRUCTOR_CALL!><!INVISIBLE_MEMBER!>Test4<!>()<!>
+-val test4a = <!SEALED_CLASS_CONSTRUCTOR_CALL!><!INVISIBLE_MEMBER!>SealedClass<!>()<!>
++val test4 = <!INVISIBLE_REFERENCE!>Test4<!>()
++val test4a = <!INVISIBLE_REFERENCE!>SealedClass<!>()
+ 
+ class Outer {
+     inner class Inner
+     typealias TestInner = Inner
+ }
+ typealias Test5 = Outer.Inner
+ 
+-val test5 = <!RESOLUTION_TO_CLASSIFIER!>Test5<!>()
+-val test5a = Outer.<!RESOLUTION_TO_CLASSIFIER!>Inner<!>()
+-val test5b = Outer.<!RESOLUTION_TO_CLASSIFIER!>TestInner<!>()
++val test5 = <!UNRESOLVED_REFERENCE!>Test5<!>()
++val test5a = Outer.<!UNRESOLVED_REFERENCE!>Inner<!>()
++val test5b = Outer.<!UNRESOLVED_REFERENCE!>TestInner<!>()
+ val test5c = Outer().<!UNRESOLVED_REFERENCE!>TestInner<!>()
+ val test5d = Outer().Inner()
+ val test5e = Outer().Test5()`;
+                        const targetElement = $('#diff')[0];
+                        const configuration = {
+                            drawFileList: false,
+                            fileListToggle: false,
+                            fileListStartVisible: false,
+                            fileContentToggle: false,
+                            matching: 'lines',
+                            outputFormat: 'side-by-side',
+                            synchronisedScroll: true,
+                            highlight: true,
+                            renderNothingWhenEmpty: false,
+                        };
+                        const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                        diff2htmlUi.draw();
+                        diff2htmlUi.highlightCode();</script>
+  </body>
+</html>

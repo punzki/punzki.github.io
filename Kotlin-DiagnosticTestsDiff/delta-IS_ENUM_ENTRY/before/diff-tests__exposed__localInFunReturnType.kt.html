@@ -1,0 +1,109 @@
+<html>
+  <head>
+    <title>Diagnostics diff: tests/exposed/localInFunReturnType.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <ul>
+          <li><a id="expected" target="_blank"><strong>Expected file: </strong><span id="expected-path"></span></a></li>
+          <li><a id="actual" target="_blank"><strong>Actual file: </strong><span id="actual-path"></span></a></li>
+        </ul>
+      </div>
+      <div class="row">
+        <div id="diff" style="width: 100%"></div>
+      </div>
+    </div>
+    <script type="text/javascript">                        $('#expected').attr('href', 'https://github.com/google/kotlin/blob/02a56a3077fb08ab0eb642acfdba56a30fe7ccaa/compiler/testData/diagnostics/tests/exposed/localInFunReturnType.kt');
+                        $('#actual').attr('href', 'https://github.com/google/kotlin/blob/02a56a3077fb08ab0eb642acfdba56a30fe7ccaa/compiler/testData/diagnostics/tests/exposed/localInFunReturnType.fir.kt');
+                        $('#expected-path').text('tests/exposed/localInFunReturnType.kt');
+                        $('#actual-path').text('tests/exposed/localInFunReturnType.fir.kt');
+
+                        const diffString = `--- tests/exposed/localInFunReturnType.kt
++++ tests/exposed/localInFunReturnType.fir.kt
+@@ -1,60 +1,60 @@
+ class My<T>(val value: T)
+ 
+ open class Base
+ 
+ fun <!EXPOSED_FUNCTION_RETURN_TYPE!>invalid1<!>() = run {
+     class Local
+     My(Local())
+ }
+ 
+-fun <!EXPOSED_FUNCTION_RETURN_TYPE!>invalid2<!>() = My(object {})
++fun invalid2() = My(object {})
+ 
+-fun <!EXPOSED_FUNCTION_RETURN_TYPE!>invalid3<!>() = My(object : Base() {})
++fun invalid3() = My(object : Base() {})
+ 
+ fun <!EXPOSED_FUNCTION_RETURN_TYPE!>invalid4<!>() = run {
+     class Local
+     My(My(Local()))
+ }
+ 
+ fun <!EXPOSED_FUNCTION_RETURN_TYPE!>invalid5<!>() = run {
+     fun invalid5a() = run {
+         class Local
+         Local()
+     }
+     My(invalid5a())
+ }
+ 
+ // Valid: effectively Any
+ fun valid1() = object {}
+ 
+ // Valid: effectively Base
+ fun valid2() = object : Base() {}
+ 
+ // Valid: explicit type argument
+ fun valid3() = My<Base>(object : Base() {})
+ 
+ // Valid: explicit type specified
+ fun valid4() : My<Base> = My(object : Base() {})
+ 
+ // Valid: local class denotable in local scope
+ fun valid5() = run {
+     class Local
+     fun valid5a() = My(Local())
+     My<Any>(valid5a())
+ }
+ 
+ // Valid: local class denotable in local scope
+ fun valid6() = run {
+     class Local
+     fun valid6a() = run {
+         fun valid6b() = My(Local())
+         valid6b()
+     }
+     My<Any>(valid6a())
+ }
+ 
+ // Valid: effectively My<Any>
+ fun valid7() = run {
+     class Local
+     My<My<*>>(My(Local()))
+ }`;
+                        const targetElement = $('#diff')[0];
+                        const configuration = {
+                            drawFileList: false,
+                            fileListToggle: false,
+                            fileListStartVisible: false,
+                            fileContentToggle: false,
+                            matching: 'lines',
+                            outputFormat: 'side-by-side',
+                            synchronisedScroll: true,
+                            highlight: true,
+                            renderNothingWhenEmpty: false,
+                        };
+                        const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                        diff2htmlUi.draw();
+                        diff2htmlUi.highlightCode();</script>
+  </body>
+</html>

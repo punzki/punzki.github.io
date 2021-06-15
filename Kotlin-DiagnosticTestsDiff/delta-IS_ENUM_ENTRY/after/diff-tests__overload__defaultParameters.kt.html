@@ -1,0 +1,106 @@
+<html>
+  <head>
+    <title>Diagnostics diff: tests/overload/defaultParameters.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <ul>
+          <li><a id="expected" target="_blank"><strong>Expected file: </strong><span id="expected-path"></span></a></li>
+          <li><a id="actual" target="_blank"><strong>Actual file: </strong><span id="actual-path"></span></a></li>
+        </ul>
+      </div>
+      <div class="row">
+        <div id="diff" style="width: 100%"></div>
+      </div>
+    </div>
+    <script type="text/javascript">                        $('#expected').attr('href', 'https://github.com/google/kotlin/blob/32f121098819164d8b17d2d2dc3d96f0e9346c9f/compiler/testData/diagnostics/tests/overload/defaultParameters.kt');
+                        $('#actual').attr('href', 'https://github.com/google/kotlin/blob/32f121098819164d8b17d2d2dc3d96f0e9346c9f/compiler/testData/diagnostics/tests/overload/defaultParameters.fir.kt');
+                        $('#expected-path').text('tests/overload/defaultParameters.kt');
+                        $('#actual-path').text('tests/overload/defaultParameters.fir.kt');
+
+                        const diffString = `--- tests/overload/defaultParameters.kt
++++ tests/overload/defaultParameters.fir.kt
+@@ -1,58 +1,58 @@
+ // !CHECK_TYPE
+ // !DIAGNOSTICS: -UNUSED_EXPRESSION -UNUSED_PARAMETER -UNUSED_VARIABLE
+ 
+ fun simple() = 1
+ fun simple(a: Int = 3) = ""
+ 
+ fun twoDefault(a: Int = 2) = 1
+ fun twoDefault(a: Any = 2, b: String = "") = ""
+ 
+ fun <T> withGeneric(a: T) = 1
+ fun <T> withGeneric(a: T, b: Int = 4) = ""
+ 
+ fun <T> discriminateGeneric(a: T) = 1
+ fun discriminateGeneric(a: Int, b: String = "") = ""
+ 
+ fun <T: CharSequence> withDefaultGeneric(t: T, d: T? = null) = 1
+ fun <T: Any> withDefaultGeneric(t: T, d: T? = null, a: Int = 1) = ""
+ 
+ fun withDefaults(a: Any = 2) = 1
+ fun withDefaults(a: Int = 2, b: String = "") = ""
+ 
+ fun <T: Any> withGenericDefaults(t: T, d: T? = null) = 1
+ fun <T: CharSequence> withGenericDefaults(t: T, d: T? = null, a: Int = 1) = ""
+ 
+ fun wrong(a: Int = 1) {}
+ fun wrong(a: String = "", b: Int = 1) {}
+ 
+ fun test() {
+     val a = simple()
+     a checkType { _<Int>() }
+ 
+     val b = simple(1)
+     b checkType { _<String>() }
+ 
+     val c = twoDefault()
+     c checkType { _<Int>() }
+ 
+     val d = twoDefault(1)
+     d checkType { _<Int>() }
+ 
+     val e = twoDefault(1, "")
+     e checkType { _<String>() }
+ 
+     val f = withGeneric(3)
+     f checkType { _<Int>() }
+ 
+     val g = discriminateGeneric(1)
+     g checkType { _<String>() }
+ 
+     val h = withDefaultGeneric("")
+     h checkType { _<Int>() }
+ 
+     withDefaults(1)
+ 
+     withGenericDefaults("")
+ 
+-    <!UNREACHABLE_CODE!><!OVERLOAD_RESOLUTION_AMBIGUITY!>wrong<!>(<!>null!!<!UNREACHABLE_CODE!>)<!>
++    <!OVERLOAD_RESOLUTION_AMBIGUITY!>wrong<!>(null!!)
+ }`;
+                        const targetElement = $('#diff')[0];
+                        const configuration = {
+                            drawFileList: false,
+                            fileListToggle: false,
+                            fileListStartVisible: false,
+                            fileContentToggle: false,
+                            matching: 'lines',
+                            outputFormat: 'side-by-side',
+                            synchronisedScroll: true,
+                            highlight: true,
+                            renderNothingWhenEmpty: false,
+                        };
+                        const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                        diff2htmlUi.draw();
+                        diff2htmlUi.highlightCode();</script>
+  </body>
+</html>

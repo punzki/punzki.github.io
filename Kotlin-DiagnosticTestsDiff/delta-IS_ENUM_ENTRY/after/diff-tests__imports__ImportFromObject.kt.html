@@ -1,0 +1,180 @@
+<html>
+  <head>
+    <title>Diagnostics diff: tests/imports/ImportFromObject.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <ul>
+          <li><a id="expected" target="_blank"><strong>Expected file: </strong><span id="expected-path"></span></a></li>
+          <li><a id="actual" target="_blank"><strong>Actual file: </strong><span id="actual-path"></span></a></li>
+        </ul>
+      </div>
+      <div class="row">
+        <div id="diff" style="width: 100%"></div>
+      </div>
+    </div>
+    <script type="text/javascript">                        $('#expected').attr('href', 'https://github.com/google/kotlin/blob/32f121098819164d8b17d2d2dc3d96f0e9346c9f/compiler/testData/diagnostics/tests/imports/ImportFromObject.kt');
+                        $('#actual').attr('href', 'https://github.com/google/kotlin/blob/32f121098819164d8b17d2d2dc3d96f0e9346c9f/compiler/testData/diagnostics/tests/imports/ImportFromObject.fir.kt');
+                        $('#expected-path').text('tests/imports/ImportFromObject.kt');
+                        $('#actual-path').text('tests/imports/ImportFromObject.fir.kt');
+
+                        const diffString = `--- tests/imports/ImportFromObject.kt
++++ tests/imports/ImportFromObject.fir.kt
+@@ -1,132 +1,132 @@
+ // FILE: a.kt
+ package a
+ 
+ object O {
+     class A
+     object B
+ 
+     fun bar() {}
+ }
+ 
+ 
+ object S {
+ 
+     val prop: String = ""
+ 
+     fun o(s: String) = Unit
+     fun o(i: Int) = Unit
+ 
+     fun Int.ext() = Unit
+     var String.ext: Int
+         get() = 3
+         set(i) {
+         }
+ 
+     fun A(c: Int) = A()
+ 
+     class A()
+ 
+     fun <T> genericFun(t: T, t2: T): T = t
+ }
+ 
+ open class Base {
+     fun f() {
+     }
+ 
+     fun <T> g(t: T) {
+     }
+ 
+     val p = 1
+     val Int.ext: Int
+         get() = 4
+ }
+ 
+ interface BaseI<T> {
+     fun fromI(): Int = 3
+ 
+     fun genericFromI(t: T) = t
+ }
+ 
+ object K: Base(), BaseI<Int> {
+     val own: String = ""
+ }
+ 
+ // FILE: b.kt
+ package b
+ 
+ import a.<!CANNOT_ALL_UNDER_IMPORT_FROM_SINGLETON!>O<!>.*
+ 
+ fun testErroneusAllUnderImportFromObject() {
+     <!UNRESOLVED_REFERENCE!>A<!>()
+     <!UNRESOLVED_REFERENCE!>B<!>
+     <!UNRESOLVED_REFERENCE!>bar<!>()
+ }
+ 
+ // FILE: c.kt
+ package c
+ 
+ import a.S.prop
+ import a.S.o
+ import a.S.ext
+ import a.S.A
+ import a.S.genericFun
+ import a.S.ext as extRenamed
+ 
+ fun testImportFromObjectByName() {
+     prop
+     o("a")
+     o(3)
+     3.ext()
+     "".ext = 3
+     val c: Int = "".ext
+ 
+     3.extRenamed()
+     "".extRenamed = 3
+     val c2: Int = "".extRenamed
+ 
+     A()
+     A(3)
+ 
+     val a: Int = genericFun(3, 3)
+     val s: String = genericFun("A", "b")
+     val b: Boolean = genericFun(true, false)
+ }
+ 
+ fun <T> t(t: T): T {
+     return genericFun(t, t)
+ }
+ 
+ // FILE: d.kt
+ package d
+ 
+ import a.S.prop as renamed
+ 
+ fun testFunImportedFromObjectHasNoDispatchReceiver(l: a.S) {
+     l.<!UNRESOLVED_REFERENCE!>renamed<!>
+     l.prop
+     renamed
+ }
+ 
+ // FILE: e.kt
+ 
+ package e
+ 
+ import a.K.f
+ import a.K.g
+ import a.K.p
+ import a.K.own
+ import a.K.fromI
+ import a.K.genericFromI
+ import a.K.ext
+ 
+ fun testMembersFromSupertypes() {
+     f()
+     g("")
+     p
+     fromI()
+ 
+     genericFromI(3)
+-    genericFromI(<!TYPE_MISMATCH!>"a"<!>)
++    genericFromI(<!ARGUMENT_TYPE_MISMATCH!>"a"<!>)
+ 
+     own
+ }`;
+                        const targetElement = $('#diff')[0];
+                        const configuration = {
+                            drawFileList: false,
+                            fileListToggle: false,
+                            fileListStartVisible: false,
+                            fileContentToggle: false,
+                            matching: 'lines',
+                            outputFormat: 'side-by-side',
+                            synchronisedScroll: true,
+                            highlight: true,
+                            renderNothingWhenEmpty: false,
+                        };
+                        const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                        diff2htmlUi.draw();
+                        diff2htmlUi.highlightCode();</script>
+  </body>
+</html>

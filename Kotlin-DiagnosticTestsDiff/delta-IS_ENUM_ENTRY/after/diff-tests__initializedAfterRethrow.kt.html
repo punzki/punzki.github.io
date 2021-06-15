@@ -1,0 +1,270 @@
+<html>
+  <head>
+    <title>Diagnostics diff: tests/initializedAfterRethrow.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <ul>
+          <li><a id="expected" target="_blank"><strong>Expected file: </strong><span id="expected-path"></span></a></li>
+          <li><a id="actual" target="_blank"><strong>Actual file: </strong><span id="actual-path"></span></a></li>
+        </ul>
+      </div>
+      <div class="row">
+        <div id="diff" style="width: 100%"></div>
+      </div>
+    </div>
+    <script type="text/javascript">                        $('#expected').attr('href', 'https://github.com/google/kotlin/blob/32f121098819164d8b17d2d2dc3d96f0e9346c9f/compiler/testData/diagnostics/tests/initializedAfterRethrow.kt');
+                        $('#actual').attr('href', 'https://github.com/google/kotlin/blob/32f121098819164d8b17d2d2dc3d96f0e9346c9f/compiler/testData/diagnostics/tests/initializedAfterRethrow.fir.kt');
+                        $('#expected-path').text('tests/initializedAfterRethrow.kt');
+                        $('#actual-path').text('tests/initializedAfterRethrow.fir.kt');
+
+                        const diffString = `--- tests/initializedAfterRethrow.kt
++++ tests/initializedAfterRethrow.fir.kt
+@@ -1,222 +1,222 @@
+ fun foo(): Int = 42
+ 
+ object ThrowInTryWithCatch {
+     private val p: String
+ 
+     init {
+         try {
+             throw Exception()
+         } catch (e: Exception) {
+         }
+         p = "OK"
+     }
+ }
+ 
+ object ThrowInTryWithCatchAndFinally {
+     private val p: String
+ 
+     init {
+         try {
+             throw Exception()
+         } catch (e: Exception) {
+         } finally {
+         }
+         p = "OK"
+     }
+ }
+ 
+ object ThrowInFinally {
+     <!MUST_BE_INITIALIZED_OR_BE_ABSTRACT!>private val p: String<!>
+ 
+     init {
+         try {
+             foo()
+         } catch (e: Exception) {
+         } finally {
+             throw Exception()
+         }
+         p = "OK"
+     }
+ }
+ 
+ object RethrowInCatch {
+     private val p: String
+ 
+     init {
+         try {
+             foo()
+         } catch (e: Exception) {
+             throw e
+         }
+         p = "OK"
+     }
+ }
+ 
+ object RethrowInCatchWithFinally {
+     private val p: String
+ 
+     init {
+         try {
+             foo()
+         } catch (e: Exception) {
+             throw e
+         } finally {
+         }
+         p = "OK"
+     }
+ }
+ 
+ object InnerTryWithCatch {
+-    private val p: String
++    <!MUST_BE_INITIALIZED_OR_BE_ABSTRACT!>private val p: String<!>
+ 
+     init {
+         try {
+             foo()
+         } catch (e: Exception) {
+             try {
+                 throw e
+             } catch (ee: Exception) {
+             }
+         }
+         p = "OK"
+     }
+ }
+ 
+ object InnerTryWithFinally {
+     private val p: String
+ 
+     init {
+         try {
+             foo()
+         } catch (e: Exception) {
+             try {
+                 throw e
+             } finally {
+             }
+         }
+         p = "OK"
+     }
+ }
+ 
+ 
+ object InnerTryWithCatchAndFinally {
+     private val p: String
+ 
+     init {
+         try {
+             foo()
+         } catch (e: Exception) {
+             try {
+                 throw e
+             } catch (ee: Exception) {
+             } finally {
+             }
+         }
+         p = "OK"
+     }
+ }
+ 
+ object InnerCatch {
+     private val p: String
+ 
+     init {
+         try {
+             foo()
+         } catch (e: Exception) {
+             try {
+                 foo()
+             } catch (ee: Exception) {
+                 throw ee
+             }
+         }
+         p = "OK"
+     }
+ }
+ 
+ object InnerCatchWithFinally {
+     private val p: String
+ 
+     init {
+         try {
+             foo()
+         } catch (e: Exception) {
+             try {
+                 foo()
+             } catch (ee: Exception) {
+                 throw ee
+             } finally {
+             }
+         }
+         p = "OK"
+     }
+ }
+ 
+ object InnerCatchOuterRethrow {
+     private val p: String
+ 
+     init {
+         try {
+             foo()
+         } catch (e: Exception) {
+             try {
+                 foo()
+             } catch (ee: Exception) {
+                 throw e
+             }
+         }
+         p = "OK"
+     }
+ }
+ 
+ object InnerCatchOuterRethrowWithFinally {
+     private val p: String
+ 
+     init {
+         try {
+             foo()
+         } catch (e: Exception) {
+             try {
+                 foo()
+             } catch (ee: Exception) {
+                 throw e
+             } finally {
+             }
+         }
+         p = "OK"
+     }
+ }
+ 
+ object InnerFinally {
+     private val p: String
+ 
+     init {
+         try {
+             foo()
+         } catch (e: Exception) {
+             try {
+                 foo()
+             } finally {
+                 throw e
+             }
+         }
+         p = "OK"
+     }
+ }
+ 
+ object InnerFinallyWithCatch {
+     private val p: String
+ 
+     init {
+         try {
+             foo()
+         } catch (e: Exception) {
+             try {
+                 foo()
+             } catch (ee: Exception) {
+             } finally {
+                 throw e
+             }
+         }
+         p = "OK"
+     }
+ }`;
+                        const targetElement = $('#diff')[0];
+                        const configuration = {
+                            drawFileList: false,
+                            fileListToggle: false,
+                            fileListStartVisible: false,
+                            fileContentToggle: false,
+                            matching: 'lines',
+                            outputFormat: 'side-by-side',
+                            synchronisedScroll: true,
+                            highlight: true,
+                            renderNothingWhenEmpty: false,
+                        };
+                        const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                        diff2htmlUi.draw();
+                        diff2htmlUi.highlightCode();</script>
+  </body>
+</html>

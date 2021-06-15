@@ -1,0 +1,108 @@
+<html>
+  <head>
+    <title>Diagnostics diff: tests/infos/PropertiesWithBackingFields.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <ul>
+          <li><a id="expected" target="_blank"><strong>Expected file: </strong><span id="expected-path"></span></a></li>
+          <li><a id="actual" target="_blank"><strong>Actual file: </strong><span id="actual-path"></span></a></li>
+        </ul>
+      </div>
+      <div class="row">
+        <div id="diff" style="width: 100%"></div>
+      </div>
+    </div>
+    <script type="text/javascript">                        $('#expected').attr('href', 'https://github.com/google/kotlin/blob/02a56a3077fb08ab0eb642acfdba56a30fe7ccaa/compiler/testData/diagnostics/tests/infos/PropertiesWithBackingFields.kt');
+                        $('#actual').attr('href', 'https://github.com/google/kotlin/blob/02a56a3077fb08ab0eb642acfdba56a30fe7ccaa/compiler/testData/diagnostics/tests/infos/PropertiesWithBackingFields.fir.kt');
+                        $('#expected-path').text('tests/infos/PropertiesWithBackingFields.kt');
+                        $('#actual-path').text('tests/infos/PropertiesWithBackingFields.fir.kt');
+
+                        const diffString = `--- tests/infos/PropertiesWithBackingFields.kt
++++ tests/infos/PropertiesWithBackingFields.fir.kt
+@@ -1,59 +1,59 @@
+ abstract class Test() {
+     abstract val x : Int
+     abstract val x1 : Int get
+     abstract val x2 : Int <!ABSTRACT_PROPERTY_WITH_GETTER!>get() = 1<!>
+ 
+     <!MUST_BE_INITIALIZED_OR_BE_ABSTRACT!>val a : Int<!>
+     <!MUST_BE_INITIALIZED_OR_BE_ABSTRACT!>val b : Int<!> get
+     val c = 1
+ 
+     val c1 = 1
+       get
+     val c2 : Int
+         get() = 1
+     val c3 : Int
+         get() { return 1 }
+     val c4 : Int
+         get() = 1
+     <!MUST_BE_INITIALIZED!>val c5 : Int<!>
+         get() = field + 1
+ 
+     abstract var y : Int
+     abstract var y1 : Int get
+     abstract var y2 : Int set
+     abstract var y3 : Int set get
+     abstract var y4 : Int set <!ABSTRACT_PROPERTY_WITH_GETTER!>get() = 1<!>
+     abstract var y5 : Int <!ABSTRACT_PROPERTY_WITH_SETTER!>set(x) {}<!> <!ABSTRACT_PROPERTY_WITH_GETTER!>get() = 1<!>
+     abstract var y6 : Int <!ABSTRACT_PROPERTY_WITH_SETTER!>set(x) {}<!>
+ 
+     <!MUST_BE_INITIALIZED_OR_BE_ABSTRACT!>var v : Int<!>
+     <!MUST_BE_INITIALIZED_OR_BE_ABSTRACT!>var v1 : Int<!> get
+     <!MUST_BE_INITIALIZED_OR_BE_ABSTRACT!>var v2 : Int<!> get set
+     <!MUST_BE_INITIALIZED!>var v3 : Int<!> get() = 1; set
+     var v4 : Int get() = 1; set(x){}
+ 
+     <!MUST_BE_INITIALIZED!>var v5 : Int<!> get() = 1; set(x){field = x}
+     <!MUST_BE_INITIALIZED!>var v6 : Int<!> get() = field + 1; set(x){}
+ 
+   abstract val v7 : Int get
+   abstract var v8 : Int get set
+   <!MUST_BE_INITIALIZED_OR_BE_ABSTRACT!>var v9 : Int<!> set
+   <!MUST_BE_INITIALIZED_OR_BE_ABSTRACT!>var v10 : Int<!>  get
+-  abstract val v11 : Int <!WRONG_MODIFIER_TARGET!>abstract<!> get
+-  abstract var v12 : Int <!WRONG_MODIFIER_TARGET!>abstract<!> get <!WRONG_MODIFIER_TARGET!>abstract<!> set
++  abstract val v11 : Int abstract get
++  abstract var v12 : Int abstract get abstract set
+ 
+ }
+ 
+ open class Super(i : Int)
+ 
+ class TestPCParameters(w : Int, x : Int, val y : Int, var z : Int) : Super(w) {
+ 
+   val xx = w
+ 
+   init {
+     w + 1
+   }
+ 
+   fun foo() = <!UNRESOLVED_REFERENCE!>x<!>
+ 
+ }`;
+                        const targetElement = $('#diff')[0];
+                        const configuration = {
+                            drawFileList: false,
+                            fileListToggle: false,
+                            fileListStartVisible: false,
+                            fileContentToggle: false,
+                            matching: 'lines',
+                            outputFormat: 'side-by-side',
+                            synchronisedScroll: true,
+                            highlight: true,
+                            renderNothingWhenEmpty: false,
+                        };
+                        const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                        diff2htmlUi.draw();
+                        diff2htmlUi.highlightCode();</script>
+  </body>
+</html>

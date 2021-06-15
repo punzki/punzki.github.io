@@ -1,0 +1,88 @@
+<html>
+  <head>
+    <title>Diagnostics diff: tests/varargs/assignArrayToVararagInNamedForm_1_4.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <ul>
+          <li><a id="expected" target="_blank"><strong>Expected file: </strong><span id="expected-path"></span></a></li>
+          <li><a id="actual" target="_blank"><strong>Actual file: </strong><span id="actual-path"></span></a></li>
+        </ul>
+      </div>
+      <div class="row">
+        <div id="diff" style="width: 100%"></div>
+      </div>
+    </div>
+    <script type="text/javascript">                        $('#expected').attr('href', 'https://github.com/google/kotlin/blob/02a56a3077fb08ab0eb642acfdba56a30fe7ccaa/compiler/testData/diagnostics/tests/varargs/assignArrayToVararagInNamedForm_1_4.kt');
+                        $('#actual').attr('href', 'https://github.com/google/kotlin/blob/02a56a3077fb08ab0eb642acfdba56a30fe7ccaa/compiler/testData/diagnostics/tests/varargs/assignArrayToVararagInNamedForm_1_4.fir.kt');
+                        $('#expected-path').text('tests/varargs/assignArrayToVararagInNamedForm_1_4.kt');
+                        $('#actual-path').text('tests/varargs/assignArrayToVararagInNamedForm_1_4.fir.kt');
+
+                        const diffString = `--- tests/varargs/assignArrayToVararagInNamedForm_1_4.kt
++++ tests/varargs/assignArrayToVararagInNamedForm_1_4.fir.kt
+@@ -1,35 +1,35 @@
+ // !LANGUAGE: +AllowAssigningArrayElementsToVarargsInNamedFormForFunctions
+ // !DIAGNOSTICS: -UNUSED_PARAMETER
+ 
+ @Retention(AnnotationRetention.SOURCE)
+ @Target(AnnotationTarget.EXPRESSION)
+ annotation class Ann(vararg val s: String, val x: Int)
+ 
+ fun withVararg(vararg s: String) {}
+ fun foo() {}
+ 
+ fun test_fun(s: String, arr: Array<String>) {
+-    withVararg(<!TYPE_MISMATCH!>arr<!>) // Error
++    withVararg(<!ARGUMENT_TYPE_MISMATCH!>arr<!>) // Error
+     withVararg(*arr) // OK
+     withVararg(s = arr) // OK
+-    withVararg(s = *<!REDUNDANT_SPREAD_OPERATOR_IN_NAMED_FORM_IN_FUNCTION!>arr<!>) // Warning
++    withVararg(s = *arr) // Warning
+ 
+     withVararg(s) // OK
+-    withVararg(s = <!ASSIGNING_SINGLE_ELEMENT_TO_VARARG_IN_NAMED_FORM_FUNCTION_ERROR, TYPE_MISMATCH!>s<!>) // Error
++    withVararg(s = <!ARGUMENT_TYPE_MISMATCH!>s<!>) // Error
+ }
+ 
+ fun test_ann(s: String, arr: Array<String>) {
+-    @Ann(<!TYPE_MISMATCH, TYPE_MISMATCH!>[""]<!>, x = 1)
++    @Ann([""], x = 1)
+     foo()
+     @Ann(*[""], x = 1)
+     foo()
+     @Ann(s = [""], x = 1)
+     foo()
+-    @Ann(s = *<!REDUNDANT_SPREAD_OPERATOR_IN_NAMED_FORM_IN_ANNOTATION!>[""]<!>, x = 1)
++    @Ann(s = *[""], x = 1)
+     foo()
+ 
+     @Ann("", x = 1)
+     foo()
+-    @Ann(s = <!ASSIGNING_SINGLE_ELEMENT_TO_VARARG_IN_NAMED_FORM_ANNOTATION_ERROR, TYPE_MISMATCH!>""<!>, x = 1)
++    @Ann(s = "", x = 1)
+     foo()
+ }`;
+                        const targetElement = $('#diff')[0];
+                        const configuration = {
+                            drawFileList: false,
+                            fileListToggle: false,
+                            fileListStartVisible: false,
+                            fileContentToggle: false,
+                            matching: 'lines',
+                            outputFormat: 'side-by-side',
+                            synchronisedScroll: true,
+                            highlight: true,
+                            renderNothingWhenEmpty: false,
+                        };
+                        const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                        diff2htmlUi.draw();
+                        diff2htmlUi.highlightCode();</script>
+  </body>
+</html>

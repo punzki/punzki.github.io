@@ -1,0 +1,81 @@
+<html>
+  <head>
+    <title>Diagnostics diff: tests/dataFlowInfoTraversal/ManyIfs.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <ul>
+          <li><a id="expected" target="_blank"><strong>Expected file: </strong><span id="expected-path"></span></a></li>
+          <li><a id="actual" target="_blank"><strong>Actual file: </strong><span id="actual-path"></span></a></li>
+        </ul>
+      </div>
+      <div class="row">
+        <div id="diff" style="width: 100%"></div>
+      </div>
+    </div>
+    <script type="text/javascript">                        $('#expected').attr('href', 'https://github.com/google/kotlin/blob/02a56a3077fb08ab0eb642acfdba56a30fe7ccaa/compiler/testData/diagnostics/tests/dataFlowInfoTraversal/ManyIfs.kt');
+                        $('#actual').attr('href', 'https://github.com/google/kotlin/blob/02a56a3077fb08ab0eb642acfdba56a30fe7ccaa/compiler/testData/diagnostics/tests/dataFlowInfoTraversal/ManyIfs.fir.kt');
+                        $('#expected-path').text('tests/dataFlowInfoTraversal/ManyIfs.kt');
+                        $('#actual-path').text('tests/dataFlowInfoTraversal/ManyIfs.fir.kt');
+
+                        const diffString = `--- tests/dataFlowInfoTraversal/ManyIfs.kt
++++ tests/dataFlowInfoTraversal/ManyIfs.fir.kt
+@@ -1,32 +1,32 @@
+ // !CHECK_TYPE
+ 
+ fun noUselessDataFlowInfoCreation(x: Number) {
+     if (x is Int) { if (<!USELESS_IS_CHECK!>x is Int<!>) { if (<!USELESS_IS_CHECK!>x is Int<!>) { if (<!USELESS_IS_CHECK!>x is Int<!>) { if (<!USELESS_IS_CHECK!>x is Int<!>) {
+     if (<!USELESS_IS_CHECK!>x is Int<!>) { if (<!USELESS_IS_CHECK!>x is Int<!>) { if (<!USELESS_IS_CHECK!>x is Int<!>) { if (<!USELESS_IS_CHECK!>x is Int<!>) { if (<!USELESS_IS_CHECK!>x is Int<!>) {
+     if (<!USELESS_IS_CHECK!>x is Int<!>) { if (<!USELESS_IS_CHECK!>x is Int<!>) { if (<!USELESS_IS_CHECK!>x is Int<!>) { if (<!USELESS_IS_CHECK!>x is Int<!>) { if (<!USELESS_IS_CHECK!>x is Int<!>) {
+     if (<!USELESS_IS_CHECK!>x is Int<!>) { if (<!USELESS_IS_CHECK!>x is Int<!>) { if (<!USELESS_IS_CHECK!>x is Int<!>) { if (<!USELESS_IS_CHECK!>x is Int<!>) { if (<!USELESS_IS_CHECK!>x is Int<!>) {
+     if (<!USELESS_IS_CHECK!>x is Int<!>) { if (<!USELESS_IS_CHECK!>x is Int<!>) { if (<!USELESS_IS_CHECK!>x is Int<!>) { if (<!USELESS_IS_CHECK!>x is Int<!>) { if (<!USELESS_IS_CHECK!>x is Int<!>) {
+     } } } } } } } } } } } } } } } } } } } } } } } } }
+ }
+ 
+ fun dataFlowInfoAnd(a: Array<Number>) {
+     if (a[0] is Int) { if (a[1] is Int) { if (a[2] is Int) { if (a[3] is Int) { if (a[4] is Int) {
+     if (a[5] is Int) { if (a[6] is Int) { if (a[7] is Int) { if (a[8] is Int) { if (a[9] is Int) {
+     if (a[10] is Int) { if (a[11] is Int) { if (a[12] is Int) { if (a[13] is Int) { if (a[14] is Int) {
+     if (a[15] is Int) { if (a[16] is Int) { if (a[17] is Int) { if (a[18] is Int) { if (a[19] is Int) {
+     if (a[20] is Int) { if (a[21] is Int) { if (a[22] is Int) { if (a[23] is Int) { if (a[24] is Int) {
+     if (a[25] is Int) { if (a[26] is Int) { if (a[27] is Int) { if (a[28] is Int) { if (a[29] is Int) {
+-        checkSubtype<Int>(<!TYPE_MISMATCH!>a[0]<!>)
++        checkSubtype<Int>(<!ARGUMENT_TYPE_MISMATCH!>a[0]<!>)
+     } } } } } } } } } } } } } } } } } } } } } } } } } } } } } }
+ }
+ 
+ fun dataFlowInfoOr(a: Array<Number>) {
+     if (a[0] is Int || a[1] is Int || a[2] is Int || a[3] is Int || a[4] is Int || a[5] is Int || a[6] is Int || a[7] is Int || a[8] is Int || a[9] is Int ||
+         a[10] is Int || a[11] is Int || a[12] is Int || a[13] is Int || a[14] is Int || a[15] is Int || a[16] is Int || a[17] is Int || a[18] is Int || a[19] is Int ||
+         a[20] is Int || a[21] is Int || a[22] is Int || a[23] is Int || a[24] is Int || a[25] is Int || a[26] is Int || a[27] is Int || a[28] is Int || a[29] is Int ||
+         a[30] is Int || a[31] is Int || a[32] is Int || a[33] is Int || a[34] is Int || a[35] is Int || a[36] is Int || a[37] is Int || a[38] is Int || a[39] is Int ||
+         a[40] is Int || a[41] is Int || a[42] is Int || a[43] is Int || a[44] is Int || a[45] is Int || a[46] is Int || a[47] is Int || a[48] is Int || a[49] is Int ||
+         a[50] is Int || a[51] is Int || a[52] is Int || a[53] is Int || a[54] is Int || a[55] is Int || a[56] is Int || a[57] is Int || a[58] is Int || a[59] is Int) {
+-        checkSubtype<Int>(<!TYPE_MISMATCH!>a[0]<!>)
++        checkSubtype<Int>(<!ARGUMENT_TYPE_MISMATCH!>a[0]<!>)
+     }
+ }`;
+                        const targetElement = $('#diff')[0];
+                        const configuration = {
+                            drawFileList: false,
+                            fileListToggle: false,
+                            fileListStartVisible: false,
+                            fileContentToggle: false,
+                            matching: 'lines',
+                            outputFormat: 'side-by-side',
+                            synchronisedScroll: true,
+                            highlight: true,
+                            renderNothingWhenEmpty: false,
+                        };
+                        const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                        diff2htmlUi.draw();
+                        diff2htmlUi.highlightCode();</script>
+  </body>
+</html>

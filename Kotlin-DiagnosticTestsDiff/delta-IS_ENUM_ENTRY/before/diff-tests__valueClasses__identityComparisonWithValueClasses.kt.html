@@ -1,0 +1,86 @@
+<html>
+  <head>
+    <title>Diagnostics diff: tests/valueClasses/identityComparisonWithValueClasses.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <ul>
+          <li><a id="expected" target="_blank"><strong>Expected file: </strong><span id="expected-path"></span></a></li>
+          <li><a id="actual" target="_blank"><strong>Actual file: </strong><span id="actual-path"></span></a></li>
+        </ul>
+      </div>
+      <div class="row">
+        <div id="diff" style="width: 100%"></div>
+      </div>
+    </div>
+    <script type="text/javascript">                        $('#expected').attr('href', 'https://github.com/google/kotlin/blob/02a56a3077fb08ab0eb642acfdba56a30fe7ccaa/compiler/testData/diagnostics/tests/valueClasses/identityComparisonWithValueClasses.kt');
+                        $('#actual').attr('href', 'https://github.com/google/kotlin/blob/02a56a3077fb08ab0eb642acfdba56a30fe7ccaa/compiler/testData/diagnostics/tests/valueClasses/identityComparisonWithValueClasses.fir.kt');
+                        $('#expected-path').text('tests/valueClasses/identityComparisonWithValueClasses.kt');
+                        $('#actual-path').text('tests/valueClasses/identityComparisonWithValueClasses.fir.kt');
+
+                        const diffString = `--- tests/valueClasses/identityComparisonWithValueClasses.kt
++++ tests/valueClasses/identityComparisonWithValueClasses.fir.kt
+@@ -1,29 +1,29 @@
+ // !SKIP_JAVAC
+ // !LANGUAGE: +InlineClasses
+ // !DIAGNOSTICS: -UNUSED_VARIABLE
+ 
+ package kotlin.jvm
+ 
+ annotation class JvmInline
+ 
+ @JvmInline
+ value class Foo(val x: Int)
+ @JvmInline
+ value class Bar(val y: String)
+ 
+ fun test(f1: Foo, f2: Foo, b1: Bar, fn1: Foo?, fn2: Foo?) {
+-    val a1 = <!FORBIDDEN_IDENTITY_EQUALS!>f1 === f2<!> || <!FORBIDDEN_IDENTITY_EQUALS!>f1 !== f2<!>
+-    val a2 = <!FORBIDDEN_IDENTITY_EQUALS!>f1 === f1<!>
+-    val a3 = <!EQUALITY_NOT_APPLICABLE, FORBIDDEN_IDENTITY_EQUALS!>f1 === b1<!> || <!EQUALITY_NOT_APPLICABLE, FORBIDDEN_IDENTITY_EQUALS!>f1 !== b1<!>
++    val a1 = f1 === f2 || f1 !== f2
++    val a2 = f1 === f1
++    val a3 = <!EQUALITY_NOT_APPLICABLE_WARNING!>f1 === b1<!> || <!EQUALITY_NOT_APPLICABLE_WARNING!>f1 !== b1<!>
+ 
+-    val c1 = <!FORBIDDEN_IDENTITY_EQUALS!>fn1 === fn2<!> || <!FORBIDDEN_IDENTITY_EQUALS!>fn1 !== fn2<!>
+-    val c2 = <!FORBIDDEN_IDENTITY_EQUALS!>f1 === fn1<!> || <!FORBIDDEN_IDENTITY_EQUALS!>f1 !== fn1<!>
+-    val c3 = <!EQUALITY_NOT_APPLICABLE, FORBIDDEN_IDENTITY_EQUALS!>b1 === fn1<!> || <!EQUALITY_NOT_APPLICABLE, FORBIDDEN_IDENTITY_EQUALS!>b1 !== fn1<!>
++    val c1 = fn1 === fn2 || fn1 !== fn2
++    val c2 = f1 === fn1 || f1 !== fn1
++    val c3 = <!EQUALITY_NOT_APPLICABLE_WARNING!>b1 === fn1<!> || <!EQUALITY_NOT_APPLICABLE_WARNING!>b1 !== fn1<!>
+ 
+     val any = Any()
+ 
+-    val d1 = <!FORBIDDEN_IDENTITY_EQUALS!>any === f1<!> || <!FORBIDDEN_IDENTITY_EQUALS!>any !== f1<!>
+-    val d2 = <!FORBIDDEN_IDENTITY_EQUALS!>f1 === any<!> || <!FORBIDDEN_IDENTITY_EQUALS!>f1 !== any<!>
+-    val d3 = <!FORBIDDEN_IDENTITY_EQUALS!>any === fn1<!> || <!FORBIDDEN_IDENTITY_EQUALS!>any !== fn1<!>
+-    val d4 = <!FORBIDDEN_IDENTITY_EQUALS!>fn1 === any<!> || <!FORBIDDEN_IDENTITY_EQUALS!>fn1 !== any<!>
++    val d1 = any === f1 || any !== f1
++    val d2 = f1 === any || f1 !== any
++    val d3 = any === fn1 || any !== fn1
++    val d4 = fn1 === any || fn1 !== any
+ }`;
+                        const targetElement = $('#diff')[0];
+                        const configuration = {
+                            drawFileList: false,
+                            fileListToggle: false,
+                            fileListStartVisible: false,
+                            fileContentToggle: false,
+                            matching: 'lines',
+                            outputFormat: 'side-by-side',
+                            synchronisedScroll: true,
+                            highlight: true,
+                            renderNothingWhenEmpty: false,
+                        };
+                        const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                        diff2htmlUi.draw();
+                        diff2htmlUi.highlightCode();</script>
+  </body>
+</html>

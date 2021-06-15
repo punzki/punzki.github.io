@@ -1,0 +1,90 @@
+<html>
+  <head>
+    <title>Diagnostics diff: tests/qualifiedExpression/TypeWithError.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <ul>
+          <li><a id="expected" target="_blank"><strong>Expected file: </strong><span id="expected-path"></span></a></li>
+          <li><a id="actual" target="_blank"><strong>Actual file: </strong><span id="actual-path"></span></a></li>
+        </ul>
+      </div>
+      <div class="row">
+        <div id="diff" style="width: 100%"></div>
+      </div>
+    </div>
+    <script type="text/javascript">                        $('#expected').attr('href', 'https://github.com/google/kotlin/blob/02a56a3077fb08ab0eb642acfdba56a30fe7ccaa/compiler/testData/diagnostics/tests/qualifiedExpression/TypeWithError.kt');
+                        $('#actual').attr('href', 'https://github.com/google/kotlin/blob/02a56a3077fb08ab0eb642acfdba56a30fe7ccaa/compiler/testData/diagnostics/tests/qualifiedExpression/TypeWithError.fir.kt');
+                        $('#expected-path').text('tests/qualifiedExpression/TypeWithError.kt');
+                        $('#actual-path').text('tests/qualifiedExpression/TypeWithError.fir.kt');
+
+                        const diffString = `--- tests/qualifiedExpression/TypeWithError.kt
++++ tests/qualifiedExpression/TypeWithError.fir.kt
+@@ -1,31 +1,31 @@
+ // !DIAGNOSTICS: -UNUSED_EXPRESSION -UNUSED_PARAMETER -UNUSED_VARIABLE -UNREACHABLE_CODE
+ 
+ class A {
+     class B {
+         class C
+     }
+ }
+ 
+ fun test(a: A.<!SYNTAX!><!>): A.<!SYNTAX!><!> {
+     val aa: A. <!SYNTAX!>=<!><!SYNTAX!><!> null!!
+ }
+ 
+ fun test1(a: A.B.<!SYNTAX!><!>): A.B.<!SYNTAX!><!> {
+     val aa: A.B. <!SYNTAX!>=<!><!SYNTAX!><!> null!!
+ }
+ 
+-fun test2(a: A.<!UNRESOLVED_REFERENCE!>e<!>.<!DEBUG_INFO_MISSING_UNRESOLVED!>C<!>): A.<!UNRESOLVED_REFERENCE!>e<!>.<!DEBUG_INFO_MISSING_UNRESOLVED!>C<!> {
+-    val aa: A.<!UNRESOLVED_REFERENCE!>e<!>.<!DEBUG_INFO_MISSING_UNRESOLVED!>C<!> = null!!
+-<!NO_RETURN_IN_FUNCTION_WITH_BLOCK_BODY!>}<!>
++fun test2(a: <!UNRESOLVED_REFERENCE!>A.e.C<!>): <!UNRESOLVED_REFERENCE!>A.e.C<!> {
++    val aa: <!UNRESOLVED_REFERENCE!>A.e.C<!> = null!!
++}
+ 
+-fun test3(a: <!UNRESOLVED_REFERENCE!>a<!>.<!DEBUG_INFO_MISSING_UNRESOLVED!>A<!>.<!DEBUG_INFO_MISSING_UNRESOLVED!>C<!>): <!UNRESOLVED_REFERENCE!>a<!>.<!DEBUG_INFO_MISSING_UNRESOLVED!>A<!>.<!DEBUG_INFO_MISSING_UNRESOLVED!>C<!> {
+-    val aa: <!UNRESOLVED_REFERENCE!>a<!>.<!DEBUG_INFO_MISSING_UNRESOLVED!>A<!>.<!DEBUG_INFO_MISSING_UNRESOLVED!>C<!> = null!!
+-<!NO_RETURN_IN_FUNCTION_WITH_BLOCK_BODY!>}<!>
++fun test3(a: <!UNRESOLVED_REFERENCE!>a.A.C<!>): <!UNRESOLVED_REFERENCE!>a.A.C<!> {
++    val aa: <!UNRESOLVED_REFERENCE!>a.A.C<!> = null!!
++}
+ 
+-fun test4(a: A.B.<!UNRESOLVED_REFERENCE!>ee<!>): A.B.<!UNRESOLVED_REFERENCE!>ee<!> {
+-    val aa: A.B.<!UNRESOLVED_REFERENCE!>ee<!> = null!!
+-<!NO_RETURN_IN_FUNCTION_WITH_BLOCK_BODY!>}<!>
++fun test4(a: <!UNRESOLVED_REFERENCE!>A.B.ee<!>): <!UNRESOLVED_REFERENCE!>A.B.ee<!> {
++    val aa: <!UNRESOLVED_REFERENCE!>A.B.ee<!> = null!!
++}
+ 
+-fun test5(a: A.<!UNRESOLVED_REFERENCE!>ee<!>): A.<!UNRESOLVED_REFERENCE!>ee<!> {
+-    val aa: A.<!UNRESOLVED_REFERENCE!>ee<!> = null!!
+-<!NO_RETURN_IN_FUNCTION_WITH_BLOCK_BODY!>}<!>
++fun test5(a: <!UNRESOLVED_REFERENCE!>A.ee<!>): <!UNRESOLVED_REFERENCE!>A.ee<!> {
++    val aa: <!UNRESOLVED_REFERENCE!>A.ee<!> = null!!
++}`;
+                        const targetElement = $('#diff')[0];
+                        const configuration = {
+                            drawFileList: false,
+                            fileListToggle: false,
+                            fileListStartVisible: false,
+                            fileContentToggle: false,
+                            matching: 'lines',
+                            outputFormat: 'side-by-side',
+                            synchronisedScroll: true,
+                            highlight: true,
+                            renderNothingWhenEmpty: false,
+                        };
+                        const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                        diff2htmlUi.draw();
+                        diff2htmlUi.highlightCode();</script>
+  </body>
+</html>

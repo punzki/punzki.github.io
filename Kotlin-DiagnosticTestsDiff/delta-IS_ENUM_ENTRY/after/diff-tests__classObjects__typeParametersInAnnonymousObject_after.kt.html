@@ -1,0 +1,109 @@
+<html>
+  <head>
+    <title>Diagnostics diff: tests/classObjects/typeParametersInAnnonymousObject_after.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <ul>
+          <li><a id="expected" target="_blank"><strong>Expected file: </strong><span id="expected-path"></span></a></li>
+          <li><a id="actual" target="_blank"><strong>Actual file: </strong><span id="actual-path"></span></a></li>
+        </ul>
+      </div>
+      <div class="row">
+        <div id="diff" style="width: 100%"></div>
+      </div>
+    </div>
+    <script type="text/javascript">                        $('#expected').attr('href', 'https://github.com/google/kotlin/blob/32f121098819164d8b17d2d2dc3d96f0e9346c9f/compiler/testData/diagnostics/tests/classObjects/typeParametersInAnnonymousObject_after.kt');
+                        $('#actual').attr('href', 'https://github.com/google/kotlin/blob/32f121098819164d8b17d2d2dc3d96f0e9346c9f/compiler/testData/diagnostics/tests/classObjects/typeParametersInAnnonymousObject_after.fir.kt');
+                        $('#expected-path').text('tests/classObjects/typeParametersInAnnonymousObject_after.kt');
+                        $('#actual-path').text('tests/classObjects/typeParametersInAnnonymousObject_after.fir.kt');
+
+                        const diffString = `--- tests/classObjects/typeParametersInAnnonymousObject_after.kt
++++ tests/classObjects/typeParametersInAnnonymousObject_after.fir.kt
+@@ -1,50 +1,50 @@
+ // !LANGUAGE: +ProhibitTypeParametersInAnonymousObjects
+ // !DIAGNOSTICS: -UNUSED_VARIABLE
+ // ISSUE: KT-28999
+ 
+ fun case_1() {
+-    val x = object<!TYPE_PARAMETERS_IN_OBJECT!><T><!> { } // type of x is <anonymous object><T>
++    val x = object<T> { } // type of x is <anonymous object><T>
+ }
+ 
+ fun case_2() {
+-    val x = object<!TYPE_PARAMETERS_IN_OBJECT!><T : Number, K: Comparable<K>><!> { }
++    val x = object<T : Number, K: Comparable<K>> { }
+ }
+ 
+ fun case_3() {
+-    val x = object<!TYPE_PARAMETERS_IN_OBJECT!><T><!> <!SYNTAX!>where <!DEBUG_INFO_MISSING_UNRESOLVED!>T<!> : <!DEBUG_INFO_MISSING_UNRESOLVED!>Comparable<!><<!DEBUG_INFO_MISSING_UNRESOLVED!>T<!>><!> { } // ERROR: Where clause is not allowed for objects
++    val x = object<T> <!SYNTAX!>where T : Comparable<T><!> { } // ERROR: Where clause is not allowed for objects
+ }
+ 
+-val x = object<!TYPE_PARAMETERS_IN_OBJECT!><T, K: Comparable<K>><!> {
+-    fun test() = 10 <!UNCHECKED_CAST!>as T<!> // OK
++val x = object<T, K: Comparable<K>> {
++    fun test() = 10 as <!UNRESOLVED_REFERENCE!>T<!> // OK
+ }
+ 
+ fun case_4() {
+-    val x = object<!TYPE_PARAMETERS_IN_OBJECT!><T><!> {
+-        fun test() = 10 <!UNCHECKED_CAST!>as T<!>
++    val x = object<T> {
++        fun test() = 10 as <!UNRESOLVED_REFERENCE!>T<!>
+     }
+ 
+     val y = x.test() // type y is T
+ }
+ 
+ inline fun <reified T> case_5() {
+-    val x = object<!TYPE_PARAMETERS_IN_OBJECT!><T><!> {
+-        fun test() = 10 <!UNCHECKED_CAST!>as T<!>
++    val x = object<T> {
++        fun test() = 10 as T
+     }
+ 
+     val z = x.test()
+ 
+-    if (z is T) {
++    if (<!USELESS_IS_CHECK!>z is T<!>) {
+         // z is {T!! & T!!} (smart cast from T)
+         <!UNRESOLVED_REFERENCE!>println<!>(z)
+     }
+ 
+-    val a = object<!TYPE_PARAMETERS_IN_OBJECT!><A><!> {
+-        fun test() = 42 <!UNCHECKED_CAST!>as A<!>
++    val a = object<A> {
++        fun test() = 42 as <!UNRESOLVED_REFERENCE!>A<!>
+     }
+ 
+     val b = a.test()
+ 
+     if (a is T) {
+         <!UNRESOLVED_REFERENCE!>println<!>(a)
+     }
+ }`;
+                        const targetElement = $('#diff')[0];
+                        const configuration = {
+                            drawFileList: false,
+                            fileListToggle: false,
+                            fileListStartVisible: false,
+                            fileContentToggle: false,
+                            matching: 'lines',
+                            outputFormat: 'side-by-side',
+                            synchronisedScroll: true,
+                            highlight: true,
+                            renderNothingWhenEmpty: false,
+                        };
+                        const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                        diff2htmlUi.draw();
+                        diff2htmlUi.highlightCode();</script>
+  </body>
+</html>

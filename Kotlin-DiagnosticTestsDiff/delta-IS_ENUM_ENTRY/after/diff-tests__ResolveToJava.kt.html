@@ -1,0 +1,118 @@
+<html>
+  <head>
+    <title>Diagnostics diff: tests/ResolveToJava.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <ul>
+          <li><a id="expected" target="_blank"><strong>Expected file: </strong><span id="expected-path"></span></a></li>
+          <li><a id="actual" target="_blank"><strong>Actual file: </strong><span id="actual-path"></span></a></li>
+        </ul>
+      </div>
+      <div class="row">
+        <div id="diff" style="width: 100%"></div>
+      </div>
+    </div>
+    <script type="text/javascript">                        $('#expected').attr('href', 'https://github.com/google/kotlin/blob/32f121098819164d8b17d2d2dc3d96f0e9346c9f/compiler/testData/diagnostics/tests/ResolveToJava.kt');
+                        $('#actual').attr('href', 'https://github.com/google/kotlin/blob/32f121098819164d8b17d2d2dc3d96f0e9346c9f/compiler/testData/diagnostics/tests/ResolveToJava.fir.kt');
+                        $('#expected-path').text('tests/ResolveToJava.kt');
+                        $('#actual-path').text('tests/ResolveToJava.fir.kt');
+
+                        const diffString = `--- tests/ResolveToJava.kt
++++ tests/ResolveToJava.fir.kt
+@@ -1,57 +1,57 @@
+ // !CHECK_TYPE
+ // SKIP_JAVAC
+ // FULL_JDK
+ 
+ // FILE: a.kt
+ 
+ import java.*
+ import java.util.*
+-import <!UNRESOLVED_REFERENCE!>utils<!>.*
++import utils.*
+ 
+ import java.io.PrintStream
+-import <!PLATFORM_CLASS_MAPPED_TO_KOTLIN!>java.lang.Comparable<!> as Com
++import java.lang.Comparable as Com
+ 
+ val l : MutableList<in Int> = ArrayList<Int>()
+ 
+-fun test(l : <!PLATFORM_CLASS_MAPPED_TO_KOTLIN!>java.util.List<Int><!>) {
+-  val x : java.<!UNRESOLVED_REFERENCE!>List<!>
+-  val y : <!PLATFORM_CLASS_MAPPED_TO_KOTLIN!>java.util.List<Int><!>
+-  val b : <!PLATFORM_CLASS_MAPPED_TO_KOTLIN!>java.lang.Object<!>
+-  val z : java.<!UNRESOLVED_REFERENCE!>utils<!>.<!DEBUG_INFO_MISSING_UNRESOLVED!>List<!><Int>
++fun test(l : java.util.List<Int>) {
++  val x : <!UNRESOLVED_REFERENCE!>java.List<!>
++  val y : java.util.List<Int>
++  val b : java.lang.Object
++  val z : <!UNRESOLVED_REFERENCE!>java.utils.List<Int><!>
+ 
+   val f : java.io.File? = null
+ 
+-  Collections.<!FUNCTION_CALL_EXPECTED, NEW_INFERENCE_NO_INFORMATION_FOR_PARAMETER!>emptyList<!>
+-  Collections.<!FUNCTION_CALL_EXPECTED!>emptyList<Int><!>
++  Collections.<!UNRESOLVED_REFERENCE!>emptyList<!>
++  Collections.<!UNRESOLVED_REFERENCE!>emptyList<!><Int>
+   Collections.emptyList<Int>()
+   Collections.<!NEW_INFERENCE_NO_INFORMATION_FOR_PARAMETER!>emptyList<!>()
+ 
+   checkSubtype<Set<Int>?>(Collections.singleton<Int>(1))
+-  Collections.singleton<Int>(<!CONSTANT_EXPECTED_TYPE_MISMATCH!>1.0<!>)
++  Collections.singleton<Int>(<!ARGUMENT_TYPE_MISMATCH!>1.0<!>)
+ 
+-  <!RESOLUTION_TO_CLASSIFIER!>List<!><Int>
++  <!NO_COMPANION_OBJECT!>List<!><Int>
+ 
+ 
+-  val o = "sdf" as <!PLATFORM_CLASS_MAPPED_TO_KOTLIN!>Object<!>
++  val o = "sdf" as Object
+ 
+   try {
+     // ...
+   }
+   catch(e: Exception) {
+     System.out.println(e.message)
+   }
+ 
+   PrintStream("sdf")
+ 
+-  val c : <!PLATFORM_CLASS_MAPPED_TO_KOTLIN!>Com<Int><!>? = null
++  val c : Com<Int>? = null
+ 
+-  checkSubtype<<!PLATFORM_CLASS_MAPPED_TO_KOTLIN!>java.lang.Comparable<Int><!>?>(c)
++  checkSubtype<java.lang.Comparable<Int>?>(c)
+ 
+ //  Collections.sort<Integer>(ArrayList<Integer>())
+   xxx.<!UNRESOLVED_REFERENCE!>Class<!>()
+ }
+ 
+ 
+ // FILE: b.kt
+ package xxx
+   import java.lang.Class;`;
+                        const targetElement = $('#diff')[0];
+                        const configuration = {
+                            drawFileList: false,
+                            fileListToggle: false,
+                            fileListStartVisible: false,
+                            fileContentToggle: false,
+                            matching: 'lines',
+                            outputFormat: 'side-by-side',
+                            synchronisedScroll: true,
+                            highlight: true,
+                            renderNothingWhenEmpty: false,
+                        };
+                        const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                        diff2htmlUi.draw();
+                        diff2htmlUi.highlightCode();</script>
+  </body>
+</html>

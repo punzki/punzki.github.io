@@ -1,0 +1,109 @@
+<html>
+  <head>
+    <title>Diagnostics diff: tests/j+k/serializable.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <ul>
+          <li><a id="expected" target="_blank"><strong>Expected file: </strong><span id="expected-path"></span></a></li>
+          <li><a id="actual" target="_blank"><strong>Actual file: </strong><span id="actual-path"></span></a></li>
+        </ul>
+      </div>
+      <div class="row">
+        <div id="diff" style="width: 100%"></div>
+      </div>
+    </div>
+    <script type="text/javascript">                        $('#expected').attr('href', 'https://github.com/google/kotlin/blob/32f121098819164d8b17d2d2dc3d96f0e9346c9f/compiler/testData/diagnostics/tests/j+k/serializable.kt');
+                        $('#actual').attr('href', 'https://github.com/google/kotlin/blob/32f121098819164d8b17d2d2dc3d96f0e9346c9f/compiler/testData/diagnostics/tests/j+k/serializable.fir.kt');
+                        $('#expected-path').text('tests/j+k/serializable.kt');
+                        $('#actual-path').text('tests/j+k/serializable.fir.kt');
+
+                        const diffString = `--- tests/j+k/serializable.kt
++++ tests/j+k/serializable.fir.kt
+@@ -1,60 +1,60 @@
+ // FILE: B.kt
+ 
+ import aa.A.use
+ import aa.A.useList
+ 
+ fun testPrimitives(b: Byte, ss: Short, i: Int, l: Long, d: Double, s: String, f: Float, bool: Boolean) {
+     use(b)
+     use(ss)
+     use(i)
+     use(l)
+     use(s)
+     use(f)
+     use(d)
+     use(bool)
+ }
+ 
+ class N
+ class S: java.io.Serializable
+ 
+ fun testArrays(ia: IntArray, ai: Array<Int>, an: Array<N>, a: Array<S>) {
+     use(ia)
+     use(ai)
+     use(an)
+     use(a)
+ }
+ 
+ fun testLiterals() {
+     use(1)
+     use(1.0)
+     use(11111111111111)
+     use("Asdsd")
+     use(true)
+ }
+ 
+ fun testNotSerializable(l: List<Int>) {
+-    use(<!TYPE_MISMATCH!>l<!>)
+-    use(<!TYPE_MISMATCH!>N()<!>)
++    use(<!ARGUMENT_TYPE_MISMATCH!>l<!>)
++    use(<!ARGUMENT_TYPE_MISMATCH!>N()<!>)
+ }
+ 
+ enum class C {
+     E, E2
+ }
+ 
+ fun testEnums(a: Enum<*>) {
+     use(C.E)
+     use(C.E2)
+     use(a)
+ }
+ 
+ fun testLists(a: List<Int>) {
+     useList(a)
+ }
+ 
+ // FILE: aa/A.java
+ package aa;
+ 
+ public class A {
+     public static void use(java.io.Serializable s) { }
+     public static void useList(java.util.List<? extends java.io.Serializable> s) { }
+ }`;
+                        const targetElement = $('#diff')[0];
+                        const configuration = {
+                            drawFileList: false,
+                            fileListToggle: false,
+                            fileListStartVisible: false,
+                            fileContentToggle: false,
+                            matching: 'lines',
+                            outputFormat: 'side-by-side',
+                            synchronisedScroll: true,
+                            highlight: true,
+                            renderNothingWhenEmpty: false,
+                        };
+                        const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                        diff2htmlUi.draw();
+                        diff2htmlUi.highlightCode();</script>
+  </body>
+</html>

@@ -1,0 +1,86 @@
+<html>
+  <head>
+    <title>Diagnostics diff: tests/typealias/typeAliasConstructorTypeArgumentsInference.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <ul>
+          <li><a id="expected" target="_blank"><strong>Expected file: </strong><span id="expected-path"></span></a></li>
+          <li><a id="actual" target="_blank"><strong>Actual file: </strong><span id="actual-path"></span></a></li>
+        </ul>
+      </div>
+      <div class="row">
+        <div id="diff" style="width: 100%"></div>
+      </div>
+    </div>
+    <script type="text/javascript">                        $('#expected').attr('href', 'https://github.com/google/kotlin/blob/32f121098819164d8b17d2d2dc3d96f0e9346c9f/compiler/testData/diagnostics/tests/typealias/typeAliasConstructorTypeArgumentsInference.kt');
+                        $('#actual').attr('href', 'https://github.com/google/kotlin/blob/32f121098819164d8b17d2d2dc3d96f0e9346c9f/compiler/testData/diagnostics/tests/typealias/typeAliasConstructorTypeArgumentsInference.fir.kt');
+                        $('#expected-path').text('tests/typealias/typeAliasConstructorTypeArgumentsInference.kt');
+                        $('#actual-path').text('tests/typealias/typeAliasConstructorTypeArgumentsInference.fir.kt');
+
+                        const diffString = `--- tests/typealias/typeAliasConstructorTypeArgumentsInference.kt
++++ tests/typealias/typeAliasConstructorTypeArgumentsInference.fir.kt
+@@ -1,32 +1,32 @@
+ // NI_EXPECTED_FILE
+ 
+ class Num<Tn : Number>(val x: Tn)
+ typealias N<T> = Num<T>
+ 
+ val test0 = N(1)
+-val test1 = N(<!TYPE_MISMATCH!>"1"<!>)
++val test1 = N("1")
+ 
+ 
+ class Cons<T>(val head: T, val tail: Cons<T>?)
+ typealias C<T> = Cons<T>
+ typealias CC<T> = C<C<T>>
+ 
+-val test2 = C(1, <!CONSTANT_EXPECTED_TYPE_MISMATCH!>2<!>)
+-val test3 = CC(<!CONSTANT_EXPECTED_TYPE_MISMATCH!>1<!>, <!CONSTANT_EXPECTED_TYPE_MISMATCH!>2<!>)
++val test2 = C(1, <!ARGUMENT_TYPE_MISMATCH!>2<!>)
++val test3 = CC(<!ARGUMENT_TYPE_MISMATCH!>1<!>, <!ARGUMENT_TYPE_MISMATCH!>2<!>)
+ val test4 = CC(C(1, null), null)
+ 
+ 
+ class Pair<X, Y>(val x: X, val y: Y)
+ typealias PL<T> = Pair<T, List<T>>
+ typealias PN<T> = Pair<T, Num<T>>
+ 
+ val test5 = PL(1, <!NULL_FOR_NONNULL_TYPE!>null<!>)
+ 
+ 
+ class Foo<T>(val p: Pair<T, T>)
+ typealias F<T> = Foo<T>
+ 
+-fun testProjections1(x: Pair<in Int, out String>) = F(<!TYPE_MISMATCH, TYPE_MISMATCH!>x<!>)
+-fun testProjections2(x: Pair<in Int, out Number>) = F(<!TYPE_MISMATCH, TYPE_MISMATCH!>x<!>)
+-fun testProjections3(x: Pair<in Number, out Int>) = F(<!TYPE_MISMATCH!>x<!>)
+-fun testProjections4(x: Pair<in Int, in Int>) = F(<!TYPE_MISMATCH, TYPE_MISMATCH!>x<!>)
++fun testProjections1(x: Pair<in Int, out String>) = F(<!ARGUMENT_TYPE_MISMATCH!>x<!>)
++fun testProjections2(x: Pair<in Int, out Number>) = F(<!ARGUMENT_TYPE_MISMATCH!>x<!>)
++fun testProjections3(x: Pair<in Number, out Int>) = F(<!ARGUMENT_TYPE_MISMATCH!>x<!>)
++fun testProjections4(x: Pair<in Int, in Int>) = F(<!ARGUMENT_TYPE_MISMATCH!>x<!>)`;
+                        const targetElement = $('#diff')[0];
+                        const configuration = {
+                            drawFileList: false,
+                            fileListToggle: false,
+                            fileListStartVisible: false,
+                            fileContentToggle: false,
+                            matching: 'lines',
+                            outputFormat: 'side-by-side',
+                            synchronisedScroll: true,
+                            highlight: true,
+                            renderNothingWhenEmpty: false,
+                        };
+                        const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                        diff2htmlUi.draw();
+                        diff2htmlUi.highlightCode();</script>
+  </body>
+</html>

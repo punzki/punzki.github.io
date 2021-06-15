@@ -1,0 +1,79 @@
+<html>
+  <head>
+    <title>Diagnostics diff: tests/declarationChecks/nonExpansiveInheritanceRestriction/PureKotlin.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <ul>
+          <li><a id="expected" target="_blank"><strong>Expected file: </strong><span id="expected-path"></span></a></li>
+          <li><a id="actual" target="_blank"><strong>Actual file: </strong><span id="actual-path"></span></a></li>
+        </ul>
+      </div>
+      <div class="row">
+        <div id="diff" style="width: 100%"></div>
+      </div>
+    </div>
+    <script type="text/javascript">                        $('#expected').attr('href', 'https://github.com/google/kotlin/blob/02a56a3077fb08ab0eb642acfdba56a30fe7ccaa/compiler/testData/diagnostics/tests/declarationChecks/nonExpansiveInheritanceRestriction/PureKotlin.kt');
+                        $('#actual').attr('href', 'https://github.com/google/kotlin/blob/02a56a3077fb08ab0eb642acfdba56a30fe7ccaa/compiler/testData/diagnostics/tests/declarationChecks/nonExpansiveInheritanceRestriction/PureKotlin.fir.kt');
+                        $('#expected-path').text('tests/declarationChecks/nonExpansiveInheritanceRestriction/PureKotlin.kt');
+                        $('#actual-path').text('tests/declarationChecks/nonExpansiveInheritanceRestriction/PureKotlin.fir.kt');
+
+                        const diffString = `--- tests/declarationChecks/nonExpansiveInheritanceRestriction/PureKotlin.kt
++++ tests/declarationChecks/nonExpansiveInheritanceRestriction/PureKotlin.fir.kt
+@@ -1,28 +1,28 @@
+ // !DIAGNOSTICS: -UPPER_BOUND_VIOLATED
+ 
+ interface A<T>
+ interface B<T> : A<A<*>>
+ 
+ interface N0<in T>
+-interface C0<<!EXPANSIVE_INHERITANCE!>X<!>> : N0<N0<C0<C0<X>>>>
++interface C0<X> : N0<N0<C0<C0<X>>>>
+ 
+ interface N1<in T>
+-interface C1<<!EXPANSIVE_INHERITANCE!>X<!>> : N1<N1<C1<C1<X?>>>>
++interface C1<X> : N1<N1<C1<C1<X?>>>>
+ interface C2<T> : C1<C1<T>>
+ 
+-interface C<<!EXPANSIVE_INHERITANCE!>X<!>> : D<P<X, X>>
+-interface P<Y1, <!EXPANSIVE_INHERITANCE!>Y2<!>> : Q<C<Y1>, C<D<Y2>>>
++interface C<X> : D<P<X, X>>
++interface P<Y1, Y2> : Q<C<Y1>, C<D<Y2>>>
+ interface Q<Z1, Z2>
+ interface D<W>
+ 
+ interface E0<T>
+ interface E1<T : E2>
+ interface E2 : E0<E1<out E2>>
+ 
+ interface F0<T>
+ interface F1<T : F2<*>, U : F2<*>>
+ interface F2<T> : F0<F1<out F2<*>, T>>
+ 
+ interface G0<T>
+ interface G1<T : U, U : G2<*>>
+ interface G2<T> : G0<G1<out G2<*>, T>>`;
+                        const targetElement = $('#diff')[0];
+                        const configuration = {
+                            drawFileList: false,
+                            fileListToggle: false,
+                            fileListStartVisible: false,
+                            fileContentToggle: false,
+                            matching: 'lines',
+                            outputFormat: 'side-by-side',
+                            synchronisedScroll: true,
+                            highlight: true,
+                            renderNothingWhenEmpty: false,
+                        };
+                        const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                        diff2htmlUi.draw();
+                        diff2htmlUi.highlightCode();</script>
+  </body>
+</html>

@@ -1,0 +1,159 @@
+<html>
+  <head>
+    <title>Diagnostics diff: testsWithStdLib/tryCatch/falsePositiveSmartcasts_after.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <ul>
+          <li><a id="expected" target="_blank"><strong>Expected file: </strong><span id="expected-path"></span></a></li>
+          <li><a id="actual" target="_blank"><strong>Actual file: </strong><span id="actual-path"></span></a></li>
+        </ul>
+      </div>
+      <div class="row">
+        <div id="diff" style="width: 100%"></div>
+      </div>
+    </div>
+    <script type="text/javascript">                        $('#expected').attr('href', 'https://github.com/google/kotlin/blob/02a56a3077fb08ab0eb642acfdba56a30fe7ccaa/compiler/testData/diagnostics/testsWithStdLib/tryCatch/falsePositiveSmartcasts_after.kt');
+                        $('#actual').attr('href', 'https://github.com/google/kotlin/blob/02a56a3077fb08ab0eb642acfdba56a30fe7ccaa/compiler/testData/diagnostics/testsWithStdLib/tryCatch/falsePositiveSmartcasts_after.fir.kt');
+                        $('#expected-path').text('testsWithStdLib/tryCatch/falsePositiveSmartcasts_after.kt');
+                        $('#actual-path').text('testsWithStdLib/tryCatch/falsePositiveSmartcasts_after.fir.kt');
+
+                        const diffString = `--- testsWithStdLib/tryCatch/falsePositiveSmartcasts_after.kt
++++ testsWithStdLib/tryCatch/falsePositiveSmartcasts_after.fir.kt
+@@ -1,107 +1,107 @@
+ // !LANGUAGE: +NewDataFlowForTryExpressions
+ // !DIAGNOSTICS: -UNUSED_VARIABLE -UNUSED_VALUE -VARIABLE_WITH_REDUNDANT_INITIALIZER
+ // SKIP_TXT
+ // Related issue: KT-28370
+ 
+ class ExcA : Exception()
+ class ExcB : Exception()
+ 
+ fun test1() {
+     var x: String? = null
+     x = ""
+ 
+     try {
+         x = null
+     } catch (e: Exception) {
+         x<!UNSAFE_CALL!>.<!>length // smartcast shouldn't be allowed (OOME could happen after \`x = null\`)
+         throw e
+     }
+     finally {
+         // smartcast shouldn't be allowed, \`x = null\` could've happened
+         x<!UNSAFE_CALL!>.<!>length
+     }
+     // smartcast shouldn't be allowed, \`x = null\` could've happened
+     x<!UNSAFE_CALL!>.<!>length
+ }
+ 
+ // With old DFA of try/catch info about unsound smartcasts after try
+ //  removes only if there is at least one catch branch that not returns Nothing
+ fun test2() {
+     var x: String? = null
+     x = ""
+ 
+     try {
+         x = null
+     } catch (e: Exception) {
+         // BAD
+         x<!UNSAFE_CALL!>.<!>length
+     }
+     finally {
+         x<!UNSAFE_CALL!>.<!>length
+     }
+     x<!UNSAFE_CALL!>.<!>length
+ }
+ 
+ fun test3() {
+     var t2: Boolean? = true
+     if (t2 != null) { // or \`t2 is Boolean\`
+         try {
+             throw Exception()
+         } catch (e: Exception) {
+             t2 = null
+         }
+         t2<!UNSAFE_CALL!>.<!>not() // wrong smartcast, NPE
+     }
+ }
+ 
+ fun test4() {
+     var t2: Boolean? = true
+     if (t2 != null) { // or \`t2 is Boolean\`
+         try {
+             t2 = null
+         } finally { }
+         t2<!UNSAFE_CALL!>.<!>not() // wrong smartcast, NPE
+     }
+ }
+ 
+ fun test5() {
+     var s1: String? = null
+     var s2: String? = null
+     s1 = ""
+     s2 = ""
+     try {
+         TODO()
+     }
+     catch (e: ExcA) {
+         s1 = ""
+     }
+     catch (e: ExcB) {
+         s2 = null
+         return
+     }
+     finally {
+-        s1<!UNSAFE_CALL!>.<!>length
++        s1.length
+         s2<!UNSAFE_CALL!>.<!>length
+     }
+-    s1<!UNSAFE_CALL!>.<!>length
+-    <!DEBUG_INFO_SMARTCAST!>s2<!>.length
++    s1.length
++    s2<!UNSAFE_CALL!>.<!>length
+ }
+ 
+ fun test6(s1: String?, s2: String?) {
+     var s: String? = null
+     s = ""
+     try {
+         s = null
+         requireNotNull(s1)
+     }
+     catch (e: Exception) {
+         return
+     }
+     finally {
+         s<!UNSAFE_CALL!>.<!>length
+         requireNotNull(s2)
+     }
+     s<!UNSAFE_CALL!>.<!>length
+-    <!DEBUG_INFO_SMARTCAST!>s1<!>.length
+-    <!DEBUG_INFO_SMARTCAST!>s2<!>.length
++    s1<!UNSAFE_CALL!>.<!>length
++    s2.length
+ }`;
+                        const targetElement = $('#diff')[0];
+                        const configuration = {
+                            drawFileList: false,
+                            fileListToggle: false,
+                            fileListStartVisible: false,
+                            fileContentToggle: false,
+                            matching: 'lines',
+                            outputFormat: 'side-by-side',
+                            synchronisedScroll: true,
+                            highlight: true,
+                            renderNothingWhenEmpty: false,
+                        };
+                        const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                        diff2htmlUi.draw();
+                        diff2htmlUi.highlightCode();</script>
+  </body>
+</html>

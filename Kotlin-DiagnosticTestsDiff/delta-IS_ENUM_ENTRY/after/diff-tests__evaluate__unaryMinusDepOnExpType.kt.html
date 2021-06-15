@@ -1,0 +1,98 @@
+<html>
+  <head>
+    <title>Diagnostics diff: tests/evaluate/unaryMinusDepOnExpType.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <ul>
+          <li><a id="expected" target="_blank"><strong>Expected file: </strong><span id="expected-path"></span></a></li>
+          <li><a id="actual" target="_blank"><strong>Actual file: </strong><span id="actual-path"></span></a></li>
+        </ul>
+      </div>
+      <div class="row">
+        <div id="diff" style="width: 100%"></div>
+      </div>
+    </div>
+    <script type="text/javascript">                        $('#expected').attr('href', 'https://github.com/google/kotlin/blob/32f121098819164d8b17d2d2dc3d96f0e9346c9f/compiler/testData/diagnostics/tests/evaluate/unaryMinusDepOnExpType.kt');
+                        $('#actual').attr('href', 'https://github.com/google/kotlin/blob/32f121098819164d8b17d2d2dc3d96f0e9346c9f/compiler/testData/diagnostics/tests/evaluate/unaryMinusDepOnExpType.fir.kt');
+                        $('#expected-path').text('tests/evaluate/unaryMinusDepOnExpType.kt');
+                        $('#actual-path').text('tests/evaluate/unaryMinusDepOnExpType.fir.kt');
+
+                        const diffString = `--- tests/evaluate/unaryMinusDepOnExpType.kt
++++ tests/evaluate/unaryMinusDepOnExpType.fir.kt
+@@ -1,36 +1,36 @@
+ fun fooInt(p: Int) = p
+ fun fooLong(p: Long) = p
+ fun fooByte(p: Byte) = p
+ fun fooShort(p: Short) = p
+ 
+ fun test() {
+     fooInt(-1)
+-    fooInt(<!TYPE_MISMATCH!>-1111111111111111111<!>)
++    fooInt(<!ARGUMENT_TYPE_MISMATCH!>-1111111111111111111<!>)
+     fooInt(-1.toInt())
+     fooInt(-1.toByte())
+-    fooInt(<!TYPE_MISMATCH!>-1.toLong()<!>)
++    fooInt(<!ARGUMENT_TYPE_MISMATCH!>-1.toLong()<!>)
+     fooInt(-1.toShort())
+ 
+     fooByte(-1)
+-    fooByte(<!TYPE_MISMATCH!>-1111111111111111111<!>)
+-    fooByte(<!TYPE_MISMATCH!>-1.toInt()<!>)
+-    fooByte(<!TYPE_MISMATCH!>-1.toByte()<!>)
++    fooByte(<!ARGUMENT_TYPE_MISMATCH!>-1111111111111111111<!>)
++    fooByte(<!ARGUMENT_TYPE_MISMATCH!>-1.toInt()<!>)
++    fooByte(<!ARGUMENT_TYPE_MISMATCH!>-1.toByte()<!>)
+     fooByte((-1).toByte())
+-    fooByte(<!TYPE_MISMATCH!>-1.toLong()<!>)
+-    fooByte(<!TYPE_MISMATCH!>-1.toShort()<!>)
++    fooByte(<!ARGUMENT_TYPE_MISMATCH!>-1.toLong()<!>)
++    fooByte(<!ARGUMENT_TYPE_MISMATCH!>-1.toShort()<!>)
+ 
+     fooLong(-1)
+     fooLong(-1111111111111111111)
+-    fooLong(<!TYPE_MISMATCH!>-1.toInt()<!>)
+-    fooLong(<!TYPE_MISMATCH!>-1.toByte()<!>)
++    fooLong(<!ARGUMENT_TYPE_MISMATCH!>-1.toInt()<!>)
++    fooLong(<!ARGUMENT_TYPE_MISMATCH!>-1.toByte()<!>)
+     fooLong(-1.toLong())
+-    fooLong(<!TYPE_MISMATCH!>-1.toShort()<!>)
++    fooLong(<!ARGUMENT_TYPE_MISMATCH!>-1.toShort()<!>)
+ 
+     fooShort(-1)
+-    fooShort(<!TYPE_MISMATCH!>-1111111111111111111<!>)
+-    fooShort(<!TYPE_MISMATCH!>-1.toInt()<!>)
+-    fooShort(<!TYPE_MISMATCH!>-1.toByte()<!>)
+-    fooShort(<!TYPE_MISMATCH!>-1.toLong()<!>)
+-    fooShort(<!TYPE_MISMATCH!>-1.toShort()<!>)
++    fooShort(<!ARGUMENT_TYPE_MISMATCH!>-1111111111111111111<!>)
++    fooShort(<!ARGUMENT_TYPE_MISMATCH!>-1.toInt()<!>)
++    fooShort(<!ARGUMENT_TYPE_MISMATCH!>-1.toByte()<!>)
++    fooShort(<!ARGUMENT_TYPE_MISMATCH!>-1.toLong()<!>)
++    fooShort(<!ARGUMENT_TYPE_MISMATCH!>-1.toShort()<!>)
+     fooShort((-1).toShort())
+ }`;
+                        const targetElement = $('#diff')[0];
+                        const configuration = {
+                            drawFileList: false,
+                            fileListToggle: false,
+                            fileListStartVisible: false,
+                            fileContentToggle: false,
+                            matching: 'lines',
+                            outputFormat: 'side-by-side',
+                            synchronisedScroll: true,
+                            highlight: true,
+                            renderNothingWhenEmpty: false,
+                        };
+                        const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                        diff2htmlUi.draw();
+                        diff2htmlUi.highlightCode();</script>
+  </body>
+</html>

@@ -1,0 +1,99 @@
+<html>
+  <head>
+    <title>Diagnostics diff: tests/inner/accessingToKotlinNestedClass.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <ul>
+          <li><a id="expected" target="_blank"><strong>Expected file: </strong><span id="expected-path"></span></a></li>
+          <li><a id="actual" target="_blank"><strong>Actual file: </strong><span id="actual-path"></span></a></li>
+        </ul>
+      </div>
+      <div class="row">
+        <div id="diff" style="width: 100%"></div>
+      </div>
+    </div>
+    <script type="text/javascript">                        $('#expected').attr('href', 'https://github.com/google/kotlin/blob/02a56a3077fb08ab0eb642acfdba56a30fe7ccaa/compiler/testData/diagnostics/tests/inner/accessingToKotlinNestedClass.kt');
+                        $('#actual').attr('href', 'https://github.com/google/kotlin/blob/02a56a3077fb08ab0eb642acfdba56a30fe7ccaa/compiler/testData/diagnostics/tests/inner/accessingToKotlinNestedClass.fir.kt');
+                        $('#expected-path').text('tests/inner/accessingToKotlinNestedClass.kt');
+                        $('#actual-path').text('tests/inner/accessingToKotlinNestedClass.fir.kt');
+
+                        const diffString = `--- tests/inner/accessingToKotlinNestedClass.kt
++++ tests/inner/accessingToKotlinNestedClass.fir.kt
+@@ -1,44 +1,44 @@
+ // !DIAGNOSTICS: -UNUSED_VARIABLE
+ 
+ open class A {
+     class NC {}
+     inner class IC {}
+     interface NI {}
+ }
+ 
+ interface I {
+     class NC {}
+     interface NI {}
+ }
+ 
+ class B : A() {
+ 
+ }
+ 
+ class C : I {
+ 
+ }
+ 
+ class D : A(), I {
+ 
+ }
+ 
+ fun test() {
+     val ac: A.NC = A.NC()
+     val aic: A.IC = A().IC()
+     val ai: A.NI? = null
+ 
+     val ic: I.NC = I.NC()
+     val ii: I.NI? = null
+ 
+-    val bc: B.<!UNRESOLVED_REFERENCE!>NC<!> = B.<!UNRESOLVED_REFERENCE!>NC<!>()
+-    val bic: B.<!UNRESOLVED_REFERENCE!>IC<!> = B().IC()
+-    val bi: B.<!UNRESOLVED_REFERENCE!>NI<!>? = null
++    val bc: <!UNRESOLVED_REFERENCE!>B.NC<!> = B.<!UNRESOLVED_REFERENCE!>NC<!>()
++    val bic: <!UNRESOLVED_REFERENCE!>B.IC<!> = B().IC()
++    val bi: <!UNRESOLVED_REFERENCE!>B.NI?<!> = null
+ 
+-    val cc: C.<!UNRESOLVED_REFERENCE!>NC<!> = C.<!UNRESOLVED_REFERENCE!>NC<!>()
+-    val ci: C.<!UNRESOLVED_REFERENCE!>NI<!>? = null
++    val cc: <!UNRESOLVED_REFERENCE!>C.NC<!> = C.<!UNRESOLVED_REFERENCE!>NC<!>()
++    val ci: <!UNRESOLVED_REFERENCE!>C.NI?<!> = null
+ 
+-    val dc: D.<!UNRESOLVED_REFERENCE!>NC<!> = D.<!UNRESOLVED_REFERENCE!>NC<!>()
+-    val dic: D.<!UNRESOLVED_REFERENCE!>IC<!> = D().IC()
+-    val di: D.<!UNRESOLVED_REFERENCE!>NI<!>? = null
++    val dc: <!UNRESOLVED_REFERENCE!>D.NC<!> = D.<!UNRESOLVED_REFERENCE!>NC<!>()
++    val dic: <!UNRESOLVED_REFERENCE!>D.IC<!> = D().IC()
++    val di: <!UNRESOLVED_REFERENCE!>D.NI?<!> = null
+ }`;
+                        const targetElement = $('#diff')[0];
+                        const configuration = {
+                            drawFileList: false,
+                            fileListToggle: false,
+                            fileListStartVisible: false,
+                            fileContentToggle: false,
+                            matching: 'lines',
+                            outputFormat: 'side-by-side',
+                            synchronisedScroll: true,
+                            highlight: true,
+                            renderNothingWhenEmpty: false,
+                        };
+                        const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                        diff2htmlUi.draw();
+                        diff2htmlUi.highlightCode();</script>
+  </body>
+</html>

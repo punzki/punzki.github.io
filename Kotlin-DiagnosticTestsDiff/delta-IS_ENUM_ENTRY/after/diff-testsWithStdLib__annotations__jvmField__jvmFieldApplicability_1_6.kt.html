@@ -1,0 +1,221 @@
+<html>
+  <head>
+    <title>Diagnostics diff: testsWithStdLib/annotations/jvmField/jvmFieldApplicability_1_6.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <ul>
+          <li><a id="expected" target="_blank"><strong>Expected file: </strong><span id="expected-path"></span></a></li>
+          <li><a id="actual" target="_blank"><strong>Actual file: </strong><span id="actual-path"></span></a></li>
+        </ul>
+      </div>
+      <div class="row">
+        <div id="diff" style="width: 100%"></div>
+      </div>
+    </div>
+    <script type="text/javascript">                        $('#expected').attr('href', 'https://github.com/google/kotlin/blob/32f121098819164d8b17d2d2dc3d96f0e9346c9f/compiler/testData/diagnostics/testsWithStdLib/annotations/jvmField/jvmFieldApplicability_1_6.kt');
+                        $('#actual').attr('href', 'https://github.com/google/kotlin/blob/32f121098819164d8b17d2d2dc3d96f0e9346c9f/compiler/testData/diagnostics/testsWithStdLib/annotations/jvmField/jvmFieldApplicability_1_6.fir.kt');
+                        $('#expected-path').text('testsWithStdLib/annotations/jvmField/jvmFieldApplicability_1_6.kt');
+                        $('#actual-path').text('testsWithStdLib/annotations/jvmField/jvmFieldApplicability_1_6.fir.kt');
+
+                        const diffString = `--- testsWithStdLib/annotations/jvmField/jvmFieldApplicability_1_6.kt
++++ testsWithStdLib/annotations/jvmField/jvmFieldApplicability_1_6.fir.kt
+@@ -1,148 +1,148 @@
+ // !LANGUAGE: +NestedClassesInAnnotations +InlineClasses -JvmInlineValueClasses +ProhibitJvmFieldOnOverrideFromInterfaceInPrimaryConstructor
+ // !DIAGNOSTICS: -UNUSED_PARAMETER -UNUSED_VARIABLE
+ 
+ <!WRONG_ANNOTATION_TARGET!>@kotlin.jvm.JvmField<!>
+ fun foo() {
+     <!WRONG_ANNOTATION_TARGET!>@kotlin.jvm.JvmField<!> val x = "A"
+ }
+ 
+ annotation class DemoAnnotation
+ 
+ <!WRONG_ANNOTATION_TARGET!>@JvmField<!>
+ abstract class C : I{
+ 
+     <!WRONG_ANNOTATION_TARGET!>@kotlin.jvm.JvmField<!> constructor(s: String) {
+     }
+ 
+     <!WRONG_ANNOTATION_TARGET!>@kotlin.jvm.JvmField<!> private fun foo(s: String = "OK") {
+     }
+ 
+-    <!INAPPLICABLE_JVM_FIELD, WRONG_ANNOTATION_TARGET!>@JvmField<!> val a: String by lazy { "A" }
++    <!WRONG_ANNOTATION_TARGET!>@JvmField<!> val a: String by lazy { "A" }
+ 
+-    <!INAPPLICABLE_JVM_FIELD!>@JvmField<!> open val b: Int = 3
++    @JvmField open val b: Int = 3
+ 
+     <!WRONG_ANNOTATION_TARGET!>@JvmField<!> abstract val c: Int
+ 
+-    <!INAPPLICABLE_JVM_FIELD!>@JvmField<!>
++    @JvmField
+     val customGetter: String = ""
+         get() = field
+ 
+-    <!INAPPLICABLE_JVM_FIELD!>@JvmField<!>
++    @JvmField
+     val explicitDefaultGetter: String = ""
+         get
+ 
+-    <!INAPPLICABLE_JVM_FIELD!>@JvmField<!>
++    @JvmField
+     var explicitDefaultSetter: String = ""
+         set
+ 
+-    <!INAPPLICABLE_JVM_FIELD!>@JvmField<!>
++    @JvmField
+     val explicitDefaultAnnotatedGetter: String = ""
+-        <!ANNOTATION_TARGETS_NON_EXISTENT_ACCESSOR!>@DemoAnnotation<!> get
++        @DemoAnnotation get
+ 
+-    <!INAPPLICABLE_JVM_FIELD!>@JvmField<!>
++    @JvmField
+     var explicitDefaultAnnotatedSetter: String = ""
+-        <!ANNOTATION_TARGETS_NON_EXISTENT_ACCESSOR!>@DemoAnnotation<!> set
++        @DemoAnnotation set
+ 
+-    <!INAPPLICABLE_JVM_FIELD!>@JvmField<!>
++    @JvmField
+     var customSetter: String = ""
+         set(s) {
+             field = s
+         }
+ 
+     <!WRONG_ANNOTATION_TARGET!>@JvmField<!>
+     val noBackingField: String
+         get() = "a"
+ 
+-    <!INAPPLICABLE_JVM_FIELD!>@JvmField<!>
++    @JvmField
+     final override val ai = 3
+ 
+-    <!INAPPLICABLE_JVM_FIELD!>@JvmField<!>
++    @JvmField
+     private val private = 3
+ }
+ 
+ interface I {
+     <!WRONG_ANNOTATION_TARGET!>@JvmField<!> val ai: Int
+     <!WRONG_ANNOTATION_TARGET!>@JvmField<!> val bi: Int
+         get() = 5
+ }
+ 
+ class G {
+-    <!INAPPLICABLE_JVM_FIELD!>@JvmField<!>
++    @JvmField
+     lateinit var lateInit: String
+ 
+-    <!INAPPLICABLE_JVM_FIELD!>@delegate:JvmField<!>
++    @delegate:JvmField
+     val s: String by lazy { "s" }
+ }
+ 
+-<!INAPPLICABLE_JVM_FIELD!>@JvmField<!>
++@JvmField
+ const val Const = 4
+ 
+ @JvmField
+ var i = 5
+ 
+ class H {
+     companion object {
+         @JvmField
+         var c = 3
+     }
+ }
+ 
+ interface K {
+ 
+     val i: Int
+     val j: Int
+ 
+     companion object {
+-        <!INAPPLICABLE_JVM_FIELD!>@JvmField<!>
++        @JvmField
+         var c = 3
+ 
+         var x = 3
+     }
+ }
+ 
+ class KK : K {
+-    <!INAPPLICABLE_JVM_FIELD!>@JvmField<!>
++    @JvmField
+     override val i: Int = 0
+-    <!INAPPLICABLE_JVM_FIELD!>@JvmField<!>
++    @JvmField
+     override final val j: Int = 0
+ }
+ 
+ open class KKK : K {
+-    <!INAPPLICABLE_JVM_FIELD!>@JvmField<!>
++    @JvmField
+     override val i: Int = 0
+-    <!INAPPLICABLE_JVM_FIELD!>@JvmField<!>
++    @JvmField
+     override final val j: Int = 0
+ }
+ 
+ class JK(
+     override val i: Int,
+-    <!INAPPLICABLE_JVM_FIELD!>@JvmField<!> override val j: Int,
++    @JvmField override val j: Int,
+ ) : K
+ 
+ annotation class L {
+     companion object {
+-        <!INAPPLICABLE_JVM_FIELD!>@JvmField<!>
++        @JvmField
+         var c = 3
+     }
+ }
+ 
+ object O {
+     @JvmField
+     val c = 3
+ }
+ 
+-<!INAPPLICABLE_JVM_FIELD!>@JvmField<!>
++@JvmField
+ private val private = 3
+ 
+ inline class Foo(val x: Int)
+ 
+ object IObject {
+-    <!INAPPLICABLE_JVM_FIELD!>@JvmField<!>
++    @JvmField
+     val c: Foo = Foo(42)
+ 
+-    <!INAPPLICABLE_JVM_FIELD!>@JvmField<!>
++    @JvmField
+     val u = 42u
+ 
+-    <!INAPPLICABLE_JVM_FIELD!>@JvmField<!>
++    @JvmField
+     private val r: Result<Int> = TODO()
+ }`;
+                        const targetElement = $('#diff')[0];
+                        const configuration = {
+                            drawFileList: false,
+                            fileListToggle: false,
+                            fileListStartVisible: false,
+                            fileContentToggle: false,
+                            matching: 'lines',
+                            outputFormat: 'side-by-side',
+                            synchronisedScroll: true,
+                            highlight: true,
+                            renderNothingWhenEmpty: false,
+                        };
+                        const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                        diff2htmlUi.draw();
+                        diff2htmlUi.highlightCode();</script>
+  </body>
+</html>

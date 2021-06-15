@@ -1,0 +1,148 @@
+<html>
+  <head>
+    <title>Diagnostics diff: tests/nullableTypes/safeCallOperators.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <ul>
+          <li><a id="expected" target="_blank"><strong>Expected file: </strong><span id="expected-path"></span></a></li>
+          <li><a id="actual" target="_blank"><strong>Actual file: </strong><span id="actual-path"></span></a></li>
+        </ul>
+      </div>
+      <div class="row">
+        <div id="diff" style="width: 100%"></div>
+      </div>
+    </div>
+    <script type="text/javascript">                        $('#expected').attr('href', 'https://github.com/google/kotlin/blob/32f121098819164d8b17d2d2dc3d96f0e9346c9f/compiler/testData/diagnostics/tests/nullableTypes/safeCallOperators.kt');
+                        $('#actual').attr('href', 'https://github.com/google/kotlin/blob/32f121098819164d8b17d2d2dc3d96f0e9346c9f/compiler/testData/diagnostics/tests/nullableTypes/safeCallOperators.fir.kt');
+                        $('#expected-path').text('tests/nullableTypes/safeCallOperators.kt');
+                        $('#actual-path').text('tests/nullableTypes/safeCallOperators.fir.kt');
+
+                        const diffString = `--- tests/nullableTypes/safeCallOperators.kt
++++ tests/nullableTypes/safeCallOperators.fir.kt
+@@ -1,91 +1,91 @@
+ // SKIP_TXT
+ // !DIAGNOSTICS: -UNUSED_PARAMETER
+ 
+ class A(
+     val l: MutableList<Int>,
+     val ll: MutableList<MutableList<Int>>,
+     var w: Int,
+     val q: () -> Unit
+ )
+ 
+ operator fun <T> MutableList<in T>?.plusAssign(t: Any?) {}
+ operator fun <T> MutableList<T>?.set(t: Int, w: Any?) {}
+ operator fun <T> List<T>?.get(t: Int): T? = this?.get(t)
+ operator fun Int?.inc(): Int = 1
+ operator fun (() -> Unit)?.invoke() {}
+ 
+ fun foo(a: A?) {
+-    a?.l <!NULLABLE_EXTENSION_OPERATOR_WITH_SAFE_CALL_RECEIVER!>+=<!> 1
+-    <!NULLABLE_EXTENSION_OPERATOR_WITH_SAFE_CALL_RECEIVER!>a?.l[0]<!>
+-    <!NULLABLE_EXTENSION_OPERATOR_WITH_SAFE_CALL_RECEIVER, NULLABLE_EXTENSION_OPERATOR_WITH_SAFE_CALL_RECEIVER!>a?.l[0]<!>++
+-    <!NULLABLE_EXTENSION_OPERATOR_WITH_SAFE_CALL_RECEIVER!>a?.l[0]<!> = 1
++    a?.l += 1
++    a?.l[0]
++    a?.l[0]++
++    a?.l[0] = 1
+ 
+-    <!NULLABLE_EXTENSION_OPERATOR_WITH_SAFE_CALL_RECEIVER!>a?.ll[0]<!>[0]
+-    <!NULLABLE_EXTENSION_OPERATOR_WITH_SAFE_CALL_RECEIVER!>a?.ll[0]<!>[0]++
+-    <!NULLABLE_EXTENSION_OPERATOR_WITH_SAFE_CALL_RECEIVER!>a?.ll[0]<!>[0] = 1
++    a?.ll[0][0]
++    a?.ll[0][0]++
++    a?.ll[0][0] = 1
+     // No warning is reported because
+     // 1. All kinds of green code with safe+call + invoke we identified fails with CCE if \`a != null\`, anyway
+     // 2. In case of null value, the behavior is intended (no call performed)
+     a?.q()
+-    a?.w<!NULLABLE_EXTENSION_OPERATOR_WITH_SAFE_CALL_RECEIVER!>++<!>
++    a?.w++
+ 
+     (a?.l) += 1
+     (a?.l)[0]
+     (a?.l)[0]++
+     (a?.l)[0] = 1
+ 
+     (a?.ll)[0][0]
+     (a?.ll)[0][0]++
+     (a?.ll)[0][0] = 1
+     (a?.q)()
+     (a?.w)++
+ 
+     a?.l.plusAssign(1)
+     a?.l.get(0)
+     a?.l.get(0).inc()
+     a?.l.set(0, 1)
+ 
+     a?.ll.get(0).get(0)
+     a?.ll.get(0).get(0).inc()
+     a?.ll.get(0).set(0, 1)
+     a?.q.invoke()
+     a?.w.inc()
+ 
+     if (a != null) {
+         a<!UNNECESSARY_SAFE_CALL!>?.<!>l += 1
+         a<!UNNECESSARY_SAFE_CALL!>?.<!>l[0]
+         a<!UNNECESSARY_SAFE_CALL!>?.<!>l[0]++
+         a<!UNNECESSARY_SAFE_CALL!>?.<!>l[0] = 1
+ 
+         a<!UNNECESSARY_SAFE_CALL!>?.<!>ll[0][0]
+         a<!UNNECESSARY_SAFE_CALL!>?.<!>ll[0][0]++
+         a<!UNNECESSARY_SAFE_CALL!>?.<!>ll[0][0] = 1
+         // No warning is reported because
+         // 1. All kinds of green code with safe+call + invoke we identified fails with CCE if \`a != null\`, anyway
+         // 2. In case of null value, the behavior is intended (no call performed)
+         a<!UNNECESSARY_SAFE_CALL!>?.<!>q()
+-        a<!UNNECESSARY_SAFE_CALL!>?.<!>w++
++        a<!UNNECESSARY_SAFE_CALL, UNNECESSARY_SAFE_CALL!>?.<!>w++
+ 
+         (a<!UNNECESSARY_SAFE_CALL!>?.<!>l) += 1
+         (a<!UNNECESSARY_SAFE_CALL!>?.<!>l)[0]
+         (a<!UNNECESSARY_SAFE_CALL!>?.<!>l)[0]++
+         (a<!UNNECESSARY_SAFE_CALL!>?.<!>l)[0] = 1
+ 
+         (a<!UNNECESSARY_SAFE_CALL!>?.<!>ll)[0][0]
+         (a<!UNNECESSARY_SAFE_CALL!>?.<!>ll)[0][0]++
+         (a<!UNNECESSARY_SAFE_CALL!>?.<!>ll)[0][0] = 1
+         (a<!UNNECESSARY_SAFE_CALL!>?.<!>q)()
+-        (a<!UNNECESSARY_SAFE_CALL!>?.<!>w)++
++        (a<!UNNECESSARY_SAFE_CALL, UNNECESSARY_SAFE_CALL!>?.<!>w)++
+ 
+         a<!UNNECESSARY_SAFE_CALL!>?.<!>l.plusAssign(1)
+         a<!UNNECESSARY_SAFE_CALL!>?.<!>l.get(0)
+         a<!UNNECESSARY_SAFE_CALL!>?.<!>l.get(0).inc()
+         a<!UNNECESSARY_SAFE_CALL!>?.<!>l.set(0, 1)
+ 
+         a<!UNNECESSARY_SAFE_CALL!>?.<!>ll.get(0).get(0)
+         a<!UNNECESSARY_SAFE_CALL!>?.<!>ll.get(0).get(0).inc()
+         a<!UNNECESSARY_SAFE_CALL!>?.<!>ll.get(0).set(0, 1)
+         a<!UNNECESSARY_SAFE_CALL!>?.<!>q.invoke()
+         a<!UNNECESSARY_SAFE_CALL!>?.<!>w.inc()
+     }
+ }`;
+                        const targetElement = $('#diff')[0];
+                        const configuration = {
+                            drawFileList: false,
+                            fileListToggle: false,
+                            fileListStartVisible: false,
+                            fileContentToggle: false,
+                            matching: 'lines',
+                            outputFormat: 'side-by-side',
+                            synchronisedScroll: true,
+                            highlight: true,
+                            renderNothingWhenEmpty: false,
+                        };
+                        const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                        diff2htmlUi.draw();
+                        diff2htmlUi.highlightCode();</script>
+  </body>
+</html>

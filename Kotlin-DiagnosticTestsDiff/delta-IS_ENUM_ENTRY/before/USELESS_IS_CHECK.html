@@ -1,0 +1,86 @@
+<html>
+  <head>
+    <title>Diagnostics diff: USELESS_IS_CHECK</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row sticky-top" style="background: white" id="summary">
+        <div class="d-inline-flex align-items-baseline">
+          <h1 class="mr-2">USELESS_IS_CHECK</h1>
+<a href="index.html">(back to diagnostic list)</a></div>
+      </div>
+      <div class="row">
+        <ul>
+          <li><strong>Total: </strong>96</li>
+          <li><strong>Match %: </strong>90.63%</li>
+          <li><a href="#matched"><strong># Matched: </strong>87</a></li>
+          <li><strong># Non-matched: </strong>9</li>
+          <li><a href="#missing"><strong># Missing: </strong>4</a></li>
+          <li><a href="#unexpected"><strong># Unexpected: </strong>5</a></li>
+          <li><a href="#mismatched"><strong># Mismatched: </strong>0</a></li>
+          <li><strong># Files: </strong>36</li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="missing">
+        <h2>Missing (4)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__EnumEntryAsType.kt.html" target="_blank">tests/EnumEntryAsType.kt (2)</a></li>
+          <li><a href="diff-tests__LValueAssignment.kt.html" target="_blank">tests/LValueAssignment.kt (1)</a></li>
+          <li><a href="diff-tests__generics__innerClasses__bareTypesComplex.kt.html" target="_blank">tests/generics/innerClasses/bareTypesComplex.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="unexpected">
+        <h2>Unexpected (5)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__enum__enumSubjectTypeCheck.kt.html" target="_blank">tests/enum/enumSubjectTypeCheck.kt (2)</a></li>
+          <li><a href="diff-tests__classObjects__typeParametersInAnnonymousObject.kt.html" target="_blank">tests/classObjects/typeParametersInAnnonymousObject.kt (1)</a></li>
+          <li><a href="diff-tests__classObjects__typeParametersInAnnonymousObject_after.kt.html" target="_blank">tests/classObjects/typeParametersInAnnonymousObject_after.kt (1)</a></li>
+          <li><a href="diff-testsWithStdLib__contracts__smartcasts__deeplyNested.kt.html" target="_blank">testsWithStdLib/contracts/smartcasts/deeplyNested.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="matched">
+        <h2>Matched (87)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__dataFlowInfoTraversal__ManyIfs.kt.html" target="_blank">tests/dataFlowInfoTraversal/ManyIfs.kt (24)</a></li>
+          <li><a href="diff-testsWithJsStdLib__dynamicTypes__dynamicCastTarget.kt.html" target="_blank">testsWithJsStdLib/dynamicTypes/dynamicCastTarget.kt (10)</a></li>
+          <li><a href="diff-tests__cast__IsErasedUpcastToNonReified.kt.html" target="_blank">tests/cast/IsErasedUpcastToNonReified.kt (8)</a></li>
+          <li><a href="diff-tests__cast__checkCastToNullableType.kt.html" target="_blank">tests/cast/checkCastToNullableType.kt (7)</a></li>
+          <li><a href="diff-tests__infos__SmartCasts.kt.html" target="_blank">tests/infos/SmartCasts.kt (5)</a></li>
+          <li><a href="diff-tests__IsExpressions.kt.html" target="_blank">tests/IsExpressions.kt (3)</a></li>
+          <li><a href="diff-tests__when__When.kt.html" target="_blank">tests/when/When.kt (3)</a></li>
+          <li><a href="diff-tests__NumberPrefixAndSuffix.kt.html" target="_blank">tests/NumberPrefixAndSuffix.kt (2)</a></li>
+          <li><a href="diff-tests__StringPrefixAndSuffix.kt.html" target="_blank">tests/StringPrefixAndSuffix.kt (2)</a></li>
+          <li><a href="diff-tests__inline__isCheck.kt.html" target="_blank">tests/inline/isCheck.kt (2)</a></li>
+          <li><a href="diff-tests__sealed__ExhaustiveOnRoot.kt.html" target="_blank">tests/sealed/ExhaustiveOnRoot.kt (2)</a></li>
+          <li><a href="diff-tests__smartCasts__kt27221_2.kt.html" target="_blank">tests/smartCasts/kt27221_2.kt (2)</a></li>
+          <li><a href="diff-tests__annotations__ConstructorCall.kt.html" target="_blank">tests/annotations/ConstructorCall.kt (1)</a></li>
+          <li><a href="diff-tests__cast__IsErasedAllowForExactSupertypeCheck.kt.html" target="_blank">tests/cast/IsErasedAllowForExactSupertypeCheck.kt (1)</a></li>
+          <li><a href="diff-tests__cast__IsErasedAllowForSupertypeCheckWithContrvariance.kt.html" target="_blank">tests/cast/IsErasedAllowForSupertypeCheckWithContrvariance.kt (1)</a></li>
+          <li><a href="diff-tests__cast__IsErasedAllowForSupertypeCheckWithCovariance.kt.html" target="_blank">tests/cast/IsErasedAllowForSupertypeCheckWithCovariance.kt (1)</a></li>
+          <li><a href="diff-tests__cast__IsErasedAllowFromOut.kt.html" target="_blank">tests/cast/IsErasedAllowFromOut.kt (1)</a></li>
+          <li><a href="diff-tests__cast__IsErasedAllowFromOut2.kt.html" target="_blank">tests/cast/IsErasedAllowFromOut2.kt (1)</a></li>
+          <li><a href="diff-tests__cast__IsErasedAllowFromOutAtClass.kt.html" target="_blank">tests/cast/IsErasedAllowFromOutAtClass.kt (1)</a></li>
+          <li><a href="diff-tests__cast__IsErasedTasT.kt.html" target="_blank">tests/cast/IsErasedTasT.kt (1)</a></li>
+          <li><a href="diff-tests__controlFlowAnalysis__UninitializedOrReassignedVariables.kt.html" target="_blank">tests/controlFlowAnalysis/UninitializedOrReassignedVariables.kt (1)</a></li>
+          <li><a href="diff-tests__controlStructures__when.kt234.kt973.kt.html" target="_blank">tests/controlStructures/when.kt234.kt973.kt (1)</a></li>
+          <li><a href="diff-tests__dataFlowInfoTraversal__IsExpression.kt.html" target="_blank">tests/dataFlowInfoTraversal/IsExpression.kt (1)</a></li>
+          <li><a href="diff-tests__inline__when.kt.html" target="_blank">tests/inline/when.kt (1)</a></li>
+          <li><a href="diff-tests__sealed__NonExhaustiveWhenWithAnyCase.kt.html" target="_blank">tests/sealed/NonExhaustiveWhenWithAnyCase.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__kt10232.kt.html" target="_blank">tests/smartCasts/kt10232.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__kt27221.kt.html" target="_blank">tests/smartCasts/kt27221.kt (1)</a></li>
+          <li><a href="diff-testsWithStdLib__cast__IsArray.kt.html" target="_blank">testsWithStdLib/cast/IsArray.kt (1)</a></li>
+          <li><a href="diff-testsWithStdLib__contracts__smartcasts__valueOfContractedFunctionIngored.kt.html" target="_blank">testsWithStdLib/contracts/smartcasts/valueOfContractedFunctionIngored.kt (1)</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

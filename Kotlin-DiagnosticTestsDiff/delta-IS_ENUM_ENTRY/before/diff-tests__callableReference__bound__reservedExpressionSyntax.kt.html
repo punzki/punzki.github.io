@@ -1,0 +1,90 @@
+<html>
+  <head>
+    <title>Diagnostics diff: tests/callableReference/bound/reservedExpressionSyntax.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <ul>
+          <li><a id="expected" target="_blank"><strong>Expected file: </strong><span id="expected-path"></span></a></li>
+          <li><a id="actual" target="_blank"><strong>Actual file: </strong><span id="actual-path"></span></a></li>
+        </ul>
+      </div>
+      <div class="row">
+        <div id="diff" style="width: 100%"></div>
+      </div>
+    </div>
+    <script type="text/javascript">                        $('#expected').attr('href', 'https://github.com/google/kotlin/blob/02a56a3077fb08ab0eb642acfdba56a30fe7ccaa/compiler/testData/diagnostics/tests/callableReference/bound/reservedExpressionSyntax.kt');
+                        $('#actual').attr('href', 'https://github.com/google/kotlin/blob/02a56a3077fb08ab0eb642acfdba56a30fe7ccaa/compiler/testData/diagnostics/tests/callableReference/bound/reservedExpressionSyntax.fir.kt');
+                        $('#expected-path').text('tests/callableReference/bound/reservedExpressionSyntax.kt');
+                        $('#actual-path').text('tests/callableReference/bound/reservedExpressionSyntax.fir.kt');
+
+                        const diffString = `--- tests/callableReference/bound/reservedExpressionSyntax.kt
++++ tests/callableReference/bound/reservedExpressionSyntax.fir.kt
+@@ -1,33 +1,33 @@
+ // !DIAGNOSTICS: -UNUSED_VARIABLE
+ package test
+ 
+ object ClassMemberMarker
+ 
+ class a<T> {
+     fun foo() = ClassMemberMarker
+ }
+ 
+ class b<T1, T2> {
+     fun foo() = ClassMemberMarker
+ }
+ 
+ fun Int.foo() {}
+ 
+ class Test {
+     val <T> List<T>.a: Int get() = size
+     val <T> List<T>.b: Int? get() = size
+ 
+-    fun <T> List<T>.testCallable1(): () -> Unit = <!RESERVED_SYNTAX_IN_CALLABLE_REFERENCE_LHS!>a<T><!>::foo
+-    fun <T> List<T>.testCallable2(): () -> Unit = <!RESERVED_SYNTAX_IN_CALLABLE_REFERENCE_LHS!>b<!>?::<!UNSAFE_CALL!>foo<!>
+-    fun <T> List<T>.testCallable3(): () -> Unit = <!RESERVED_SYNTAX_IN_CALLABLE_REFERENCE_LHS!>b<T, Any><!>::<!UNSAFE_CALL!>foo<!>
+-    fun <T> List<T>.testCallable4(): () -> Unit = <!RESERVED_SYNTAX_IN_CALLABLE_REFERENCE_LHS!>b<T><!>?::<!UNSAFE_CALL!>foo<!>
++    fun <T> List<T>.testCallable1(): () -> Unit = a<T>::foo
++    fun <T> List<T>.testCallable2(): () -> Unit = b?::<!UNRESOLVED_REFERENCE!>foo<!>
++    fun <T> List<T>.testCallable3(): () -> Unit = b<T, Any>::<!UNRESOLVED_REFERENCE!>foo<!>
++    fun <T> List<T>.testCallable4(): () -> Unit = b<T>?::<!UNRESOLVED_REFERENCE!>foo<!>
+ 
+-    fun <T> List<T>.testClassLiteral1() = <!RESERVED_SYNTAX_IN_CALLABLE_REFERENCE_LHS!>a<T><!>::class
+-    fun <T> List<T>.testClassLiteral2() = <!EXPRESSION_OF_NULLABLE_TYPE_IN_CLASS_LITERAL_LHS, RESERVED_SYNTAX_IN_CALLABLE_REFERENCE_LHS!>b<!>?::class
+-    fun <T> List<T>.testClassLiteral3() = <!EXPRESSION_OF_NULLABLE_TYPE_IN_CLASS_LITERAL_LHS, RESERVED_SYNTAX_IN_CALLABLE_REFERENCE_LHS!>b<T, Any><!>::class
++    fun <T> List<T>.testClassLiteral1() = a<T>::class
++    fun <T> List<T>.testClassLiteral2() = <!EXPRESSION_OF_NULLABLE_TYPE_IN_CLASS_LITERAL_LHS!>b<!>?::class
++    fun <T> List<T>.testClassLiteral3() = <!EXPRESSION_OF_NULLABLE_TYPE_IN_CLASS_LITERAL_LHS!>b<T, Any><!>::class
+ 
+-    fun <T> List<T>.testUnresolved1() = <!UNRESOLVED_REFERENCE!>unresolved<!><T>::<!DEBUG_INFO_MISSING_UNRESOLVED!>foo<!>
+-    fun <T> List<T>.testUnresolved2() = <!RESERVED_SYNTAX_IN_CALLABLE_REFERENCE_LHS!>a<<!UNRESOLVED_REFERENCE!>unresolved<!>><!>::foo
++    fun <T> List<T>.testUnresolved1() = <!UNRESOLVED_REFERENCE!>unresolved<!><T>::foo
++    fun <T> List<T>.testUnresolved2() = a<<!UNRESOLVED_REFERENCE!>unresolved<!>>::foo
+     fun <T> List<T>.testUnresolved3() = a<<!SYNTAX!><!>>::foo
+-    fun <T> List<T>.testUnresolved4() = <!UNRESOLVED_REFERENCE!>unresolved<!>?::<!DEBUG_INFO_MISSING_UNRESOLVED!>foo<!>
++    fun <T> List<T>.testUnresolved4() = <!UNRESOLVED_REFERENCE!>unresolved<!>?::foo
+ }`;
+                        const targetElement = $('#diff')[0];
+                        const configuration = {
+                            drawFileList: false,
+                            fileListToggle: false,
+                            fileListStartVisible: false,
+                            fileContentToggle: false,
+                            matching: 'lines',
+                            outputFormat: 'side-by-side',
+                            synchronisedScroll: true,
+                            highlight: true,
+                            renderNothingWhenEmpty: false,
+                        };
+                        const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                        diff2htmlUi.draw();
+                        diff2htmlUi.highlightCode();</script>
+  </body>
+</html>

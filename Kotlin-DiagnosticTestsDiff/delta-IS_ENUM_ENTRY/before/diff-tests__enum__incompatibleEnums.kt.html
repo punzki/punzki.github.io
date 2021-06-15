@@ -1,0 +1,231 @@
+<html>
+  <head>
+    <title>Diagnostics diff: tests/enum/incompatibleEnums.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <ul>
+          <li><a id="expected" target="_blank"><strong>Expected file: </strong><span id="expected-path"></span></a></li>
+          <li><a id="actual" target="_blank"><strong>Actual file: </strong><span id="actual-path"></span></a></li>
+        </ul>
+      </div>
+      <div class="row">
+        <div id="diff" style="width: 100%"></div>
+      </div>
+    </div>
+    <script type="text/javascript">                        $('#expected').attr('href', 'https://github.com/google/kotlin/blob/02a56a3077fb08ab0eb642acfdba56a30fe7ccaa/compiler/testData/diagnostics/tests/enum/incompatibleEnums.kt');
+                        $('#actual').attr('href', 'https://github.com/google/kotlin/blob/02a56a3077fb08ab0eb642acfdba56a30fe7ccaa/compiler/testData/diagnostics/tests/enum/incompatibleEnums.fir.kt');
+                        $('#expected-path').text('tests/enum/incompatibleEnums.kt');
+                        $('#actual-path').text('tests/enum/incompatibleEnums.fir.kt');
+
+                        const diffString = `--- tests/enum/incompatibleEnums.kt
++++ tests/enum/incompatibleEnums.fir.kt
+@@ -1,145 +1,145 @@
+ // !LANGUAGE: -ProhibitComparisonOfIncompatibleEnums
+ 
+ enum class E1 {
+     A, B
+ }
+ 
+ enum class E2 {
+     A, B
+ }
+ 
+ fun foo1(e1: E1, e2: E2) {
+-    <!INCOMPATIBLE_ENUM_COMPARISON!>e1 == e2<!>
+-    <!INCOMPATIBLE_ENUM_COMPARISON!>e1 != e2<!>
++    <!EQUALITY_NOT_APPLICABLE_WARNING!>e1 == e2<!>
++    <!EQUALITY_NOT_APPLICABLE_WARNING!>e1 != e2<!>
+ 
+-    <!INCOMPATIBLE_ENUM_COMPARISON!>e1 == E2.A<!>
+-    <!INCOMPATIBLE_ENUM_COMPARISON!>E1.B == e2<!>
++    <!EQUALITY_NOT_APPLICABLE_WARNING!>e1 == E2.A<!>
++    <!EQUALITY_NOT_APPLICABLE_WARNING!>E1.B == e2<!>
+ 
+-    <!INCOMPATIBLE_ENUM_COMPARISON!>E1.A == E2.B<!>
++    <!EQUALITY_NOT_APPLICABLE_WARNING!>E1.A == E2.B<!>
+ 
+     e1 == E1.A
+     E1.A == e1
+     e2 == E2.B
+     E2.B == e2
+ }
+ 
+ fun foo2(e1: E1, e2: E2) {
+     when (e1) {
+         E1.A -> {}
+-        <!INCOMPATIBLE_ENUM_COMPARISON!>E2.A<!> -> {}
+-        <!INCOMPATIBLE_ENUM_COMPARISON!>E2.B<!> -> {}
++        <!INCOMPATIBLE_TYPES_WARNING!>E2.A<!> -> {}
++        <!INCOMPATIBLE_TYPES_WARNING!>E2.B<!> -> {}
+         e1 -> {}
+-        <!INCOMPATIBLE_ENUM_COMPARISON!>e2<!> -> {}
++        <!INCOMPATIBLE_TYPES_WARNING!>e2<!> -> {}
+         else -> {}
+     }
+ }
+ 
+ fun foo3(e1: Enum<E1>, e2: Enum<E2>, e: Enum<*>) {
+     e1 == e
+-    e1 == e2
++    <!EQUALITY_NOT_APPLICABLE_WARNING!>e1 == e2<!>
+ 
+     e1 == E1.A
+-    e1 == E2.A
++    <!EQUALITY_NOT_APPLICABLE_WARNING!>e1 == E2.A<!>
+ 
+     when (e1) {
+         e1 -> {}
+-        e2 -> {}
++        <!INCOMPATIBLE_TYPES_WARNING!>e2<!> -> {}
+         e -> {}
+         E1.A -> {}
+-        E2.A -> {}
++        <!INCOMPATIBLE_TYPES_WARNING!>E2.A<!> -> {}
+         else -> {}
+     }
+ 
+     when (e) {
+         e -> {}
+         e2 -> {}
+         E1.A -> {}
+         E2.A -> {}
+         else -> {}
+     }
+ }
+ 
+ interface MyInterface
+ open class MyOpenClass
+ 
+ fun foo4(e1: E1, i: MyInterface, c: MyOpenClass) {
+-    <!INCOMPATIBLE_ENUM_COMPARISON!>e1 == i<!>
+-    <!INCOMPATIBLE_ENUM_COMPARISON!>i == e1<!>
++    <!EQUALITY_NOT_APPLICABLE_WARNING!>e1 == i<!>
++    <!EQUALITY_NOT_APPLICABLE_WARNING!>i == e1<!>
+ 
+-    <!INCOMPATIBLE_ENUM_COMPARISON!>e1 == c<!>
+-    <!INCOMPATIBLE_ENUM_COMPARISON!>c == e1<!>
++    <!EQUALITY_NOT_APPLICABLE_WARNING!>e1 == c<!>
++    <!EQUALITY_NOT_APPLICABLE_WARNING!>c == e1<!>
+ 
+     when (e1) {
+-        <!INCOMPATIBLE_ENUM_COMPARISON!>i<!> -> {}
+-        <!INCOMPATIBLE_ENUM_COMPARISON!>c<!> -> {}
++        <!INCOMPATIBLE_TYPES_WARNING!>i<!> -> {}
++        <!INCOMPATIBLE_TYPES_WARNING!>c<!> -> {}
+         else -> {}
+     }
+ }
+ 
+ enum class E3 : MyInterface { X, Y }
+ 
+ fun foo5(i: MyInterface, a: Any) {
+     E3.X == E3.Y
+     E3.X == i
+     E3.X == a
+ }
+ 
+ fun foo6(e1: E1?, e2: E2) {
+-    <!SENSELESS_COMPARISON!>E1.A == null<!>
+-    <!SENSELESS_COMPARISON!>null == E1.A<!>
++    E1.A == null
++    null == E1.A
+     e1 == null
+     null == e1
+ 
+-    <!INCOMPATIBLE_ENUM_COMPARISON!>e1 == E2.A<!>
+-    <!INCOMPATIBLE_ENUM_COMPARISON!>E2.A == e1<!>
+-    <!INCOMPATIBLE_ENUM_COMPARISON!>e1 == e2<!>
+-    <!INCOMPATIBLE_ENUM_COMPARISON!>e2 == e1<!>
++    <!EQUALITY_NOT_APPLICABLE_WARNING!>e1 == E2.A<!>
++    <!EQUALITY_NOT_APPLICABLE_WARNING!>E2.A == e1<!>
++    <!EQUALITY_NOT_APPLICABLE_WARNING!>e1 == e2<!>
++    <!EQUALITY_NOT_APPLICABLE_WARNING!>e2 == e1<!>
+ 
+-    <!SENSELESS_COMPARISON!>e2 == null<!>
+-    <!SENSELESS_COMPARISON!>null == e2<!>
+-    <!SENSELESS_COMPARISON!>E1.A == null<!>
+-    <!SENSELESS_COMPARISON!>null == E1.A<!>
++    e2 == null
++    null == e2
++    E1.A == null
++    null == E1.A
+ }
+ 
+ fun foo7(e1: E1?, e2: E2?) {
+     e1 == e2 // There should be an IDE-inspection for such cases
+ }
+ 
+ fun <T> foo8(e1: E1?, e2: E2, t: T) {
+     e1 == t
+     t == e1
+ 
+     e2 == t
+     t == e2
+ 
+     E1.A == t
+     t == E1.A
+ }
+ 
+ fun <T, K> foo9(e1: E1?, e2: E2, t: T, k: K) where T : MyInterface, T : MyOpenClass, K : MyInterface {
+-    <!INCOMPATIBLE_ENUM_COMPARISON!>e1 == t<!>
+-    <!INCOMPATIBLE_ENUM_COMPARISON!>t == e1<!>
++    <!EQUALITY_NOT_APPLICABLE_WARNING!>e1 == t<!>
++    <!EQUALITY_NOT_APPLICABLE_WARNING!>t == e1<!>
+ 
+-    <!INCOMPATIBLE_ENUM_COMPARISON!>e2 == t<!>
+-    <!INCOMPATIBLE_ENUM_COMPARISON!>t == e2<!>
++    <!EQUALITY_NOT_APPLICABLE_WARNING!>e2 == t<!>
++    <!EQUALITY_NOT_APPLICABLE_WARNING!>t == e2<!>
+ 
+-    <!INCOMPATIBLE_ENUM_COMPARISON!>E1.A == t<!>
+-    <!INCOMPATIBLE_ENUM_COMPARISON!>t == E1.A<!>
++    <!EQUALITY_NOT_APPLICABLE_WARNING!>E1.A == t<!>
++    <!EQUALITY_NOT_APPLICABLE_WARNING!>t == E1.A<!>
+ 
+-    <!INCOMPATIBLE_ENUM_COMPARISON!>E3.X == t<!>
++    <!EQUALITY_NOT_APPLICABLE_WARNING!>E3.X == t<!>
+ 
+     E3.X == k
+     k == E3.X
+ }
+ 
+ interface Inv<T>
+ 
+ enum class E4 : Inv<Int> { A }
+ 
+ fun foo10(e4: E4, invString: Inv<String>) {
+-    e4 == invString
+-    invString == e4
++    <!EQUALITY_NOT_APPLICABLE_WARNING!>e4 == invString<!>
++    <!EQUALITY_NOT_APPLICABLE_WARNING!>invString == e4<!>
+ 
+-    E4.A == invString
+-    invString == E4.A
++    <!EQUALITY_NOT_APPLICABLE_WARNING!>E4.A == invString<!>
++    <!EQUALITY_NOT_APPLICABLE_WARNING!>invString == E4.A<!>
+ }`;
+                        const targetElement = $('#diff')[0];
+                        const configuration = {
+                            drawFileList: false,
+                            fileListToggle: false,
+                            fileListStartVisible: false,
+                            fileContentToggle: false,
+                            matching: 'lines',
+                            outputFormat: 'side-by-side',
+                            synchronisedScroll: true,
+                            highlight: true,
+                            renderNothingWhenEmpty: false,
+                        };
+                        const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                        diff2htmlUi.draw();
+                        diff2htmlUi.highlightCode();</script>
+  </body>
+</html>

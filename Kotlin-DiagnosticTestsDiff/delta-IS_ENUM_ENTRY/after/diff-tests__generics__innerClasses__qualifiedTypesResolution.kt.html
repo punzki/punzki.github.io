@@ -1,0 +1,106 @@
+<html>
+  <head>
+    <title>Diagnostics diff: tests/generics/innerClasses/qualifiedTypesResolution.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <ul>
+          <li><a id="expected" target="_blank"><strong>Expected file: </strong><span id="expected-path"></span></a></li>
+          <li><a id="actual" target="_blank"><strong>Actual file: </strong><span id="actual-path"></span></a></li>
+        </ul>
+      </div>
+      <div class="row">
+        <div id="diff" style="width: 100%"></div>
+      </div>
+    </div>
+    <script type="text/javascript">                        $('#expected').attr('href', 'https://github.com/google/kotlin/blob/32f121098819164d8b17d2d2dc3d96f0e9346c9f/compiler/testData/diagnostics/tests/generics/innerClasses/qualifiedTypesResolution.kt');
+                        $('#actual').attr('href', 'https://github.com/google/kotlin/blob/32f121098819164d8b17d2d2dc3d96f0e9346c9f/compiler/testData/diagnostics/tests/generics/innerClasses/qualifiedTypesResolution.fir.kt');
+                        $('#expected-path').text('tests/generics/innerClasses/qualifiedTypesResolution.kt');
+                        $('#actual-path').text('tests/generics/innerClasses/qualifiedTypesResolution.fir.kt');
+
+                        const diffString = `--- tests/generics/innerClasses/qualifiedTypesResolution.kt
++++ tests/generics/innerClasses/qualifiedTypesResolution.fir.kt
+@@ -1,51 +1,51 @@
+ // !CHECK_TYPE
+ // !DIAGNOSTICS: -UNUSED_EXPRESSION -UNUSED_PARAMETER
+ // FILE: test.kt
+ 
+ package test
+ 
+ class Outer<E> {
+     inner class Inner<F, G> {
+         inner class Inner2
+         inner class Inner3<H>
+     }
+ 
+     class Nested<I> {
+         inner class Inner4<K>
+     }
+ 
+     object Obj {
+         class Nested2<J> {
+             inner class Inner5<L>
+         }
+     }
+ }
+ 
+ // FILE: main.kt
+ 
+ import test.*;
+ 
+ class A
+ class B
+ class C
+ class D
+ 
+ fun ok1(): Outer<A>.Inner<B, C>.Inner2 = null!!
+ fun ok2(): Outer<A>.Inner<B, C>.Inner2 = null!!
+ fun ok22(): test.Outer<A>.Inner<B, C>.Inner3<D> = null!!
+ fun ok3(): Outer.Nested<A>.Inner4<B> = null!!
+ fun ok4(): Outer.Obj.Nested2<A>.Inner5<B> = null!!
+ fun ok5(): test.Outer.Obj.Nested2<A>.Inner5<B> = null!!
+ 
+ // All arguments are resolved
+-fun errorTypeWithArguments(): <!UNRESOLVED_REFERENCE!>Q<!><A>.<!DEBUG_INFO_MISSING_UNRESOLVED!>W<!><B, C, D>.<!DEBUG_INFO_MISSING_UNRESOLVED!>R<!>.<!DEBUG_INFO_MISSING_UNRESOLVED!>M<!> = null!!
++fun errorTypeWithArguments(): <!UNRESOLVED_REFERENCE!>Q<A>.W<B, C, D>.R.M<!> = null!!
+ 
+-fun error1(): Outer<A>.Inner<B>.Inner3<!WRONG_NUMBER_OF_TYPE_ARGUMENTS!><C, D><!> = null!!
+-fun error2(): Outer<A>.Inner<!WRONG_NUMBER_OF_TYPE_ARGUMENTS!><B, C, D><!>.Inner2 = null!!
+-fun error3(): <!WRONG_NUMBER_OF_TYPE_ARGUMENTS!>Outer<!>.Inner<A, B>.Inner3<C> = null!!
++fun error1(): Outer<A>.Inner<B>.Inner3<C, D> = null!!
++fun error2(): <!WRONG_NUMBER_OF_TYPE_ARGUMENTS!>Outer<A>.Inner<B, C, D>.Inner2<!> = null!!
++fun error3(): <!WRONG_NUMBER_OF_TYPE_ARGUMENTS!>Outer.Inner<A, B>.Inner3<C><!> = null!!
+ 
+-fun error4(): Outer<!TYPE_ARGUMENTS_FOR_OUTER_CLASS_WHEN_NESTED_REFERENCED!><A><!>.Nested<B>.Inner4<C> = null!!
+-fun error5(): Outer<!TYPE_ARGUMENTS_FOR_OUTER_CLASS_WHEN_NESTED_REFERENCED!><A><!>.Obj.Nested2<B>.Inner5<C> = null!!
+-fun error6(): Outer.Obj<!WRONG_NUMBER_OF_TYPE_ARGUMENTS!><A><!>.Nested2<B>.Inner5<C> = null!!
++fun error4(): <!WRONG_NUMBER_OF_TYPE_ARGUMENTS!>Outer<A>.Nested<B>.Inner4<C><!> = null!!
++fun error5(): <!WRONG_NUMBER_OF_TYPE_ARGUMENTS!>Outer<A>.Obj.Nested2<B>.Inner5<C><!> = null!!
++fun error6(): <!WRONG_NUMBER_OF_TYPE_ARGUMENTS!>Outer.Obj<A>.Nested2<B>.Inner5<C><!> = null!!
+ 
+-fun error7(): test<!TYPE_ARGUMENTS_NOT_ALLOWED!><String><!>.Outer.Obj.Nested2<A>.Inner5<B> = null!!
++fun error7(): <!WRONG_NUMBER_OF_TYPE_ARGUMENTS!>test<String>.Outer.Obj.Nested2<A>.Inner5<B><!> = null!!`;
+                        const targetElement = $('#diff')[0];
+                        const configuration = {
+                            drawFileList: false,
+                            fileListToggle: false,
+                            fileListStartVisible: false,
+                            fileContentToggle: false,
+                            matching: 'lines',
+                            outputFormat: 'side-by-side',
+                            synchronisedScroll: true,
+                            highlight: true,
+                            renderNothingWhenEmpty: false,
+                        };
+                        const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                        diff2htmlUi.draw();
+                        diff2htmlUi.highlightCode();</script>
+  </body>
+</html>

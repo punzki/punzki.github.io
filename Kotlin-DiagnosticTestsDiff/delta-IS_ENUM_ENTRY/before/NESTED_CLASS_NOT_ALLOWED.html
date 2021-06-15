@@ -1,0 +1,105 @@
+<html>
+  <head>
+    <title>Diagnostics diff: NESTED_CLASS_NOT_ALLOWED</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row sticky-top" style="background: white" id="summary">
+        <div class="d-inline-flex align-items-baseline">
+          <h1 class="mr-2">NESTED_CLASS_NOT_ALLOWED</h1>
+<a href="index.html">(back to diagnostic list)</a></div>
+      </div>
+      <div class="row">
+        <ul>
+          <li><strong>Total: </strong>42</li>
+          <li><strong>Match %: </strong>64.29%</li>
+          <li><a href="#matched"><strong># Matched: </strong>27</a></li>
+          <li><strong># Non-matched: </strong>15</li>
+          <li><a href="#missing"><strong># Missing: </strong>5</a></li>
+          <li><a href="#unexpected"><strong># Unexpected: </strong>2</a></li>
+          <li><a href="#mismatched"><strong># Mismatched: </strong>8</a></li>
+          <li><strong># Files: </strong>24</li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="missing">
+        <h2>Missing (5)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__objects__nestedClassInAnonymousObject.kt.html" target="_blank">tests/objects/nestedClassInAnonymousObject.kt (2)</a></li>
+          <li><a href="diff-tests__enum__inner__insideEnumEntry_after.kt.html" target="_blank">tests/enum/inner/insideEnumEntry_after.kt (1)</a></li>
+          <li><a href="diff-tests__inner__innerClassInEnumEntryClass_lv13.kt.html" target="_blank">tests/inner/innerClassInEnumEntryClass_lv13.kt (1)</a></li>
+          <li><a href="diff-tests__inner__kt6026.kt.html" target="_blank">tests/inner/kt6026.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="unexpected">
+        <h2>Unexpected (2)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__inner__innerClassInEnumEntryClass_lv11.kt.html" target="_blank">tests/inner/innerClassInEnumEntryClass_lv11.kt (1)</a></li>
+          <li><a href="diff-tests__inner__innerClassInEnumEntryClass_lv12.kt.html" target="_blank">tests/inner/innerClassInEnumEntryClass_lv12.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="mismatched">
+        <h2>Mismatched (8)</h2>
+      </div>
+      <div class="row sticky-top" style="top: 5.5em; background: white">
+        <h5>NESTED_CLASS_DEPRECATED → NESTED_CLASS_NOT_ALLOWED (5)</h5>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__classObjects__InnerClassAccessThroughEnum_before.kt.html" target="_blank">tests/classObjects/InnerClassAccessThroughEnum_before.kt (1)</a></li>
+          <li><a href="diff-tests__enum__dontCreatePackageTypeForEnumEntry_before.kt.html" target="_blank">tests/enum/dontCreatePackageTypeForEnumEntry_before.kt (1)</a></li>
+          <li><a href="diff-tests__inner__innerClassInEnumEntryClass_lv11.kt.html" target="_blank">tests/inner/innerClassInEnumEntryClass_lv11.kt (1)</a></li>
+          <li><a href="diff-tests__inner__innerClassInEnumEntryClass_lv12.kt.html" target="_blank">tests/inner/innerClassInEnumEntryClass_lv12.kt (1)</a></li>
+          <li><a href="diff-tests__inner__nestedClassNotAllowed_before.kt.html" target="_blank">tests/inner/nestedClassNotAllowed_before.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 5.5em; background: white">
+        <h5>NESTED_CLASS_NOT_ALLOWED → LOCAL_OBJECT_NOT_ALLOWED (2)</h5>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__classObjects__InnerClassAccessThroughEnum_after.kt.html" target="_blank">tests/classObjects/InnerClassAccessThroughEnum_after.kt (1)</a></li>
+          <li><a href="diff-tests__inner__innerClassInEnumEntryClass_lv13.kt.html" target="_blank">tests/inner/innerClassInEnumEntryClass_lv13.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 5.5em; background: white">
+        <h5>NESTED_CLASS_NOT_ALLOWED → LOCAL_INTERFACE_NOT_ALLOWED (1)</h5>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__localInterfaces.kt.html" target="_blank">tests/localInterfaces.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="matched">
+        <h2>Matched (27)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__inner__nestedClassNotAllowed_after.kt.html" target="_blank">tests/inner/nestedClassNotAllowed_after.kt (4)</a></li>
+          <li><a href="diff-tests__classObjects__multipleDissallowedDefaultObjects.kt.html" target="_blank">tests/classObjects/multipleDissallowedDefaultObjects.kt (3)</a></li>
+          <li><a href="diff-tests__inner__nestedClassNotAllowed_before.kt.html" target="_blank">tests/inner/nestedClassNotAllowed_before.kt (3)</a></li>
+          <li><a href="diff-tests__inner__nestedObject.kt.html" target="_blank">tests/inner/nestedObject.kt (3)</a></li>
+          <li><a href="diff-tests__inner__innerClassInEnumEntryClass_lv13.kt.html" target="_blank">tests/inner/innerClassInEnumEntryClass_lv13.kt (2)</a></li>
+          <li><a href="diff-tests__classObjects__InnerClassAccessThroughEnum_after.kt.html" target="_blank">tests/classObjects/InnerClassAccessThroughEnum_after.kt (1)</a></li>
+          <li><a href="diff-tests__classObjects__InnerClassClassObject.kt.html" target="_blank">tests/classObjects/InnerClassClassObject.kt (1)</a></li>
+          <li><a href="diff-tests__enum__dontCreatePackageTypeForEnumEntry_after.kt.html" target="_blank">tests/enum/dontCreatePackageTypeForEnumEntry_after.kt (1)</a></li>
+          <li><a href="diff-tests__enum__inner__insideInnerClassNotAllowed.kt.html" target="_blank">tests/enum/inner/insideInnerClassNotAllowed.kt (1)</a></li>
+          <li><a href="diff-tests__enum__inner__twoEnumsInClassObjectAndInnerClass.kt.html" target="_blank">tests/enum/inner/twoEnumsInClassObjectAndInnerClass.kt (1)</a></li>
+          <li><a href="diff-tests__inner__annotationInInnerClass.kt.html" target="_blank">tests/inner/annotationInInnerClass.kt (1)</a></li>
+          <li><a href="diff-tests__inner__enumInInnerClass.kt.html" target="_blank">tests/inner/enumInInnerClass.kt (1)</a></li>
+          <li><a href="diff-tests__inner__interfaceInInnerClass.kt.html" target="_blank">tests/inner/interfaceInInnerClass.kt (1)</a></li>
+          <li><a href="diff-tests__localClasses__localAnnotationClass.kt.html" target="_blank">tests/localClasses/localAnnotationClass.kt (1)</a></li>
+          <li><a href="diff-tests__localClasses__localAnnotationClassError.kt.html" target="_blank">tests/localClasses/localAnnotationClassError.kt (1)</a></li>
+          <li><a href="diff-tests__localInterfaces.kt.html" target="_blank">tests/localInterfaces.kt (1)</a></li>
+          <li><a href="diff-tests__modifiers__const__applicability.kt.html" target="_blank">tests/modifiers/const/applicability.kt (1)</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
