@@ -1,0 +1,91 @@
+<html>
+  <head>
+    <title>Diagnostics diff: tests/j+k/collectionOverrides/removeAtInt.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="card-header p-0" id="heading0"><button class="btn btn-link btn-block text-left" data-toggle="collapse" data-target="#collapse0">
+          <h5>Diff between FE 1.0 vs FIR</h5>
+        </button></div>
+      <div class="collapse show" id="collapse0">
+        <div class="card-body p-1">
+          <div id="diff0" style="width: 100%"></div>
+        </div>
+      </div>
+      <script type="text/javascript">                (function() {
+                    const diffString = `--- tests/j+k/collectionOverrides/removeAtInt.kt
++++ tests/j+k/collectionOverrides/removeAtInt.fir.kt
+@@ -1,32 +1,32 @@
+ // JAVAC_EXPECTED_FILE
+ // FILE: A.java
+ abstract public class A extends B {
+     public Integer removeAt(int x) { }
+     public boolean remove(Integer x) { }
+ }
+ 
+ // FILE: main.kt
+ import java.util.*;
+ 
+ abstract class B : MutableList<Int>, AbstractList<Int>() {
+     override fun removeAt(index: Int): Int = null!!
+     override fun remove(element: Int): Boolean = null!!
+ }
+ 
+ abstract class D : AbstractList<Int>() {
+     // removeAt() doesn't exist in java/util/AbstractList, it's a
+     // fake override of the method from kotlin/collections/MutableList
+     override fun removeAt(index: Int): Int = null!!
+     // AbstractList::remove() should return Int here. No fake overrides created.
+     // This may be a bug because the old compiler doesn't report a diagnostic here.
+     override fun remove(element: Int): Boolean = null!!
+ }
+ 
+ fun main(a: A, b: B, c: ArrayList<Int>) {
+     a.remove(1)
+-    a.removeAt(0)
++    a.<!OVERLOAD_RESOLUTION_AMBIGUITY!>removeAt<!>(0)
+     b.remove(1)
+     b.removeAt(0)
+     c.remove(1)
+     c.removeAt(0)
+ }`;
+                    const targetElement = $('#diff0')[0];
+                    const configuration = {
+                        drawFileList: false,
+                        fileListToggle: false,
+                        fileListStartVisible: false,
+                        fileContentToggle: false,
+                        matching: 'lines',
+                        outputFormat: 'side-by-side',
+                        synchronisedScroll: true,
+                        highlight: true,
+                        renderNothingWhenEmpty: false,
+                        rawTemplates: {
+                            'generic-file-path': `
+                                <div class="col">
+                                    <a href="https://github.com/JetBrains/kotlin/blob/d048bccfa23dd1c04c55a06a3167872c279067fd/compiler/testData/diagnostics/tests/j+k/collectionOverrides/removeAtInt.kt" target="_blank">
+                                        <strong>FE 1.0:</strong> tests/j+k/collectionOverrides/removeAtInt.kt
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="https://github.com/JetBrains/kotlin/blob/d048bccfa23dd1c04c55a06a3167872c279067fd/compiler/testData/diagnostics/tests/j+k/collectionOverrides/removeAtInt.fir.kt" target="_blank">
+                                        <strong>FIR:</strong> tests/j+k/collectionOverrides/removeAtInt.fir.kt
+                                    </a>
+                                </div>
+                            `
+                        }
+                    };
+                    const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                    diff2htmlUi.draw();
+                    diff2htmlUi.highlightCode();
+                })();</script>
+    </div>
+  </body>
+</html>

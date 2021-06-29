@@ -1,0 +1,172 @@
+<html>
+  <head>
+    <title>Diagnostics diff: testsWithStdLib/contracts/smartcasts/deeplyNested.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="card-header p-0" id="heading0"><button class="btn btn-link btn-block text-left" data-toggle="collapse" data-target="#collapse0">
+          <h5>Diff between FE 1.0 vs FIR</h5>
+        </button></div>
+      <div class="collapse show" id="collapse0">
+        <div class="card-body p-1">
+          <div id="diff0" style="width: 100%"></div>
+        </div>
+      </div>
+      <script type="text/javascript">                (function() {
+                    const diffString = `--- testsWithStdLib/contracts/smartcasts/deeplyNested.kt
++++ testsWithStdLib/contracts/smartcasts/deeplyNested.fir.kt
+@@ -1,103 +1,103 @@
+ // !LANGUAGE: +AllowContractsForCustomFunctions +UseReturnsEffect
+ // !USE_EXPERIMENTAL: kotlin.contracts.ExperimentalContracts
+ // !DIAGNOSTICS: -INVISIBLE_REFERENCE -INVISIBLE_MEMBER
+ 
+ import kotlin.contracts.*
+ 
+ fun myAssert(condition: Boolean) {
+     contract {
+         returns() implies (condition)
+     }
+     if (!condition) throw kotlin.IllegalArgumentException("Assertion failed")
+ }
+ 
+ fun isString(x: Any?): Boolean {
+     contract {
+         returns(true) implies (x is String)
+     }
+     return x is String
+ }
+ 
+ fun isInt(x: Any?): Boolean {
+     contract {
+         returns(true) implies (x is Int)
+     }
+     return x is Int
+ }
+ 
+ fun notEqualsNull(x: Any?): Boolean {
+     contract {
+         returns(true) implies (x != null)
+     }
+     return x != null
+ }
+ 
+ fun equalsTrue(x: Boolean): Boolean {
+     contract {
+         returns(true) implies x
+     }
+     return x == true
+ }
+ 
+ fun nullWhenNotString(x: Any?): String? {
+     contract {
+         returnsNotNull() implies (x is String)
+     }
+     return x as? String
+ }
+ 
+ 
+ 
+ 
+ // ========== Actual tests ============
+ 
+ fun nested1(x: Any?) {
+     if (equalsTrue(isString(x))) {
+-        <!DEBUG_INFO_SMARTCAST!>x<!>.length
++        x.length
+     }
+     else {
+         x.<!UNRESOLVED_REFERENCE!>length<!>
+     }
+ }
+ 
+ fun nested2(x: Any?) {
+     myAssert(equalsTrue(isString(x)))
+-    <!DEBUG_INFO_SMARTCAST!>x<!>.length
++    x.length
+ }
+ 
+ fun nested3(x: Any?) {
+     myAssert(equalsTrue(notEqualsNull(nullWhenNotString(x))))
+-    <!DEBUG_INFO_SMARTCAST!>x<!>.length
++    x.length
+ }
+ 
+ fun branchedAndNested(x: Any?, y: Any?) {
+     myAssert(equalsTrue(notEqualsNull(nullWhenNotString(x))) && equalsTrue(isString(y)))
+-    <!DEBUG_INFO_SMARTCAST!>x<!>.length
+-    <!DEBUG_INFO_SMARTCAST!>y<!>.length
++    x.length
++    y.length
+ }
+ 
+ 
+ fun br(y: Any?) {
+     if (myAssert(y is Int) == Unit && myAssert(y is String) == Unit) {
+-        <!DEBUG_INFO_SMARTCAST!>y<!>.length
+-        <!DEBUG_INFO_SMARTCAST!>y<!>.inc()
++        y.length
++        y.inc()
+     }
+ }
+ 
+ fun branchedAndNestedWithNativeOperators(x: Any?, y: Any?) {
+     myAssert(
+             equalsTrue(notEqualsNull(nullWhenNotString(x)))   // x is String
+             &&
+             (
+                     (myAssert(y is Int) == Unit && myAssert(y is String) == Unit)  // y is Int, String
+                     ||
+                     equalsTrue(isInt(y) && isString(y))                          // y is Int, String
+             )
+             &&
+-            (1 == 2 || y is Int || isString(y))
++            (1 == 2 || <!USELESS_IS_CHECK!>y is Int<!> || isString(y))
+     )
+-    <!DEBUG_INFO_SMARTCAST!>x<!>.length
+-    y.<!UNRESOLVED_REFERENCE!>length<!>
+-    y.<!UNRESOLVED_REFERENCE_WRONG_RECEIVER!>inc<!>()
++    x.length
++    y.length
++    y.inc()
+ }
+ `;
+                    const targetElement = $('#diff0')[0];
+                    const configuration = {
+                        drawFileList: false,
+                        fileListToggle: false,
+                        fileListStartVisible: false,
+                        fileContentToggle: false,
+                        matching: 'lines',
+                        outputFormat: 'side-by-side',
+                        synchronisedScroll: true,
+                        highlight: true,
+                        renderNothingWhenEmpty: false,
+                        rawTemplates: {
+                            'generic-file-path': `
+                                <div class="col">
+                                    <a href="https://github.com/JetBrains/kotlin/blob/d048bccfa23dd1c04c55a06a3167872c279067fd/compiler/testData/diagnostics/testsWithStdLib/contracts/smartcasts/deeplyNested.kt" target="_blank">
+                                        <strong>FE 1.0:</strong> testsWithStdLib/contracts/smartcasts/deeplyNested.kt
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="https://github.com/JetBrains/kotlin/blob/d048bccfa23dd1c04c55a06a3167872c279067fd/compiler/testData/diagnostics/testsWithStdLib/contracts/smartcasts/deeplyNested.fir.kt" target="_blank">
+                                        <strong>FIR:</strong> testsWithStdLib/contracts/smartcasts/deeplyNested.fir.kt
+                                    </a>
+                                </div>
+                            `
+                        }
+                    };
+                    const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                    diff2htmlUi.draw();
+                    diff2htmlUi.highlightCode();
+                })();</script>
+    </div>
+  </body>
+</html>

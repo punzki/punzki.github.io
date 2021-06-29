@@ -1,0 +1,122 @@
+<html>
+  <head>
+    <title>Diagnostics diff: tests/samConversions/samConversionToGeneric.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="card-header p-0" id="heading0"><button class="btn btn-link btn-block text-left" data-toggle="collapse" data-target="#collapse0">
+          <h5>Diff between FE 1.0 vs FIR</h5>
+        </button></div>
+      <div class="collapse show" id="collapse0">
+        <div class="card-body p-1">
+          <div id="diff0" style="width: 100%"></div>
+        </div>
+      </div>
+      <script type="text/javascript">                (function() {
+                    const diffString = `--- tests/samConversions/samConversionToGeneric.kt
++++ tests/samConversions/samConversionToGeneric.fir.kt
+@@ -1,58 +1,58 @@
+ // !LANGUAGE: +NewInference
+ 
+ // FILE: samConversionToGeneric.kt
+ 
+ fun test1() = J<String> { x -> x }
+ 
+ fun test2() = J { x: String -> x }
+ 
+ fun test3() = H.bar { x: String  -> x }
+ 
+ fun test4(a: Any) {
+-    a <!UNCHECKED_CAST!>as J<String><!>
+-    H.bar(<!DEBUG_INFO_SMARTCAST!>a<!>)
++    a as J<String>
++    H.bar(a)
+ }
+ 
+ fun test5(a: Any) {
+-    a <!UNCHECKED_CAST!>as (String) -> String<!>
+-    H.bar(<!DEBUG_INFO_SMARTCAST!>a<!>)
++    a as (String) -> String
++    H.bar(a)
+ }
+ 
+ fun <T> test6(a: (T) -> T) {
+     H.bar(a)
+ }
+ 
+ fun <T> test7(a: Any) {
+-    a <!UNCHECKED_CAST!>as (T) -> T<!>
+-    H.bar(<!DEBUG_INFO_SMARTCAST!>a<!>)
++    a as (T) -> T
++    H.bar(a)
+ }
+ 
+ fun test8(efn: String.() -> String) = J(efn)
+ 
+ fun test9(efn: String.() -> String) {
+     H.bar(efn)
+ }
+ 
+ fun test10(fn: (Int) -> String) {
+     H.bar2x(fn)
+ }
+ 
+ // FILE: J.java
+ public interface J<T> {
+     T foo(T x);
+ }
+ 
+ // FILE: J2.java
+ public interface J2<T1, T2> {
+     T1 foo(T2 x);
+ }
+ 
+ // FILE: J2X.java
+ public interface J2X<T3> extends J2<String, T3> {
+ }
+ 
+ // FILE: H.java
+ public class H {
+     public static <X> void bar(J<X> j) {}
+     public static <Y> void bar2x(J2X<Y> j2x) {}
+ }`;
+                    const targetElement = $('#diff0')[0];
+                    const configuration = {
+                        drawFileList: false,
+                        fileListToggle: false,
+                        fileListStartVisible: false,
+                        fileContentToggle: false,
+                        matching: 'lines',
+                        outputFormat: 'side-by-side',
+                        synchronisedScroll: true,
+                        highlight: true,
+                        renderNothingWhenEmpty: false,
+                        rawTemplates: {
+                            'generic-file-path': `
+                                <div class="col">
+                                    <a href="https://github.com/JetBrains/kotlin/blob/d048bccfa23dd1c04c55a06a3167872c279067fd/compiler/testData/diagnostics/tests/samConversions/samConversionToGeneric.kt" target="_blank">
+                                        <strong>FE 1.0:</strong> tests/samConversions/samConversionToGeneric.kt
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="https://github.com/JetBrains/kotlin/blob/d048bccfa23dd1c04c55a06a3167872c279067fd/compiler/testData/diagnostics/tests/samConversions/samConversionToGeneric.fir.kt" target="_blank">
+                                        <strong>FIR:</strong> tests/samConversions/samConversionToGeneric.fir.kt
+                                    </a>
+                                </div>
+                            `
+                        }
+                    };
+                    const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                    diff2htmlUi.draw();
+                    diff2htmlUi.highlightCode();
+                })();</script>
+    </div>
+  </body>
+</html>

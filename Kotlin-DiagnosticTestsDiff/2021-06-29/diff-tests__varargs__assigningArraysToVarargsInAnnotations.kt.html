@@ -1,0 +1,105 @@
+<html>
+  <head>
+    <title>Diagnostics diff: tests/varargs/assigningArraysToVarargsInAnnotations.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="card-header p-0" id="heading0"><button class="btn btn-link btn-block text-left" data-toggle="collapse" data-target="#collapse0">
+          <h5>Diff between FE 1.0 vs FIR</h5>
+        </button></div>
+      <div class="collapse show" id="collapse0">
+        <div class="card-body p-1">
+          <div id="diff0" style="width: 100%"></div>
+        </div>
+      </div>
+      <script type="text/javascript">                (function() {
+                    const diffString = `--- tests/varargs/assigningArraysToVarargsInAnnotations.kt
++++ tests/varargs/assigningArraysToVarargsInAnnotations.fir.kt
+@@ -1,45 +1,45 @@
+ // !LANGUAGE: +ArrayLiteralsInAnnotations, +AssigningArraysToVarargsInNamedFormInAnnotations
+ 
+ // FILE: JavaAnn.java
+ 
+ @interface JavaAnn {
+     String[] value() default {};
+     String[] path() default {};
+ }
+ 
+ // FILE: test.kt
+ 
+ annotation class Ann(vararg val s: String)
+ 
+ @Ann(s = arrayOf())
+ fun test1() {}
+ 
+-@Ann(s = <!TYPE_MISMATCH!>intArrayOf()<!>)
++@Ann(s = <!ARGUMENT_TYPE_MISMATCH!>intArrayOf()<!>)
+ fun test2() {}
+ 
+-@Ann(s = <!TYPE_MISMATCH!>arrayOf(1)<!>)
++@Ann(s = <!ARGUMENT_TYPE_MISMATCH!>arrayOf(1)<!>)
+ fun test3() {}
+ 
+ @Ann("value1", "value2")
+ fun test4() {}
+ 
+ @Ann(s = ["value"])
+ fun test5() {}
+ 
+ @JavaAnn(value = arrayOf("value"))
+ fun jTest1() {}
+ 
+ @JavaAnn(value = ["value"])
+ fun jTest2() {}
+ 
+ @JavaAnn(value = ["value"], path = ["path"])
+ fun jTest3() {}
+ 
+ 
+ annotation class IntAnn(vararg val i: Int)
+ 
+ @IntAnn(i = [1, 2])
+ fun foo1() {}
+ 
+ @IntAnn(i = intArrayOf(0))
+ fun foo2() {}`;
+                    const targetElement = $('#diff0')[0];
+                    const configuration = {
+                        drawFileList: false,
+                        fileListToggle: false,
+                        fileListStartVisible: false,
+                        fileContentToggle: false,
+                        matching: 'lines',
+                        outputFormat: 'side-by-side',
+                        synchronisedScroll: true,
+                        highlight: true,
+                        renderNothingWhenEmpty: false,
+                        rawTemplates: {
+                            'generic-file-path': `
+                                <div class="col">
+                                    <a href="https://github.com/JetBrains/kotlin/blob/d048bccfa23dd1c04c55a06a3167872c279067fd/compiler/testData/diagnostics/tests/varargs/assigningArraysToVarargsInAnnotations.kt" target="_blank">
+                                        <strong>FE 1.0:</strong> tests/varargs/assigningArraysToVarargsInAnnotations.kt
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="https://github.com/JetBrains/kotlin/blob/d048bccfa23dd1c04c55a06a3167872c279067fd/compiler/testData/diagnostics/tests/varargs/assigningArraysToVarargsInAnnotations.fir.kt" target="_blank">
+                                        <strong>FIR:</strong> tests/varargs/assigningArraysToVarargsInAnnotations.fir.kt
+                                    </a>
+                                </div>
+                            `
+                        }
+                    };
+                    const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                    diff2htmlUi.draw();
+                    diff2htmlUi.highlightCode();
+                })();</script>
+    </div>
+  </body>
+</html>

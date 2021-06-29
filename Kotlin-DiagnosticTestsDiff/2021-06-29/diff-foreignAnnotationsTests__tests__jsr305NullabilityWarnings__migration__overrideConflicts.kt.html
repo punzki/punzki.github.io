@@ -1,0 +1,143 @@
+<html>
+  <head>
+    <title>Diagnostics diff: foreignAnnotationsTests/tests/jsr305NullabilityWarnings/migration/overrideConflicts.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="card-header p-0" id="heading0"><button class="btn btn-link btn-block text-left" data-toggle="collapse" data-target="#collapse0">
+          <h5>Diff between FE 1.0 vs FIR</h5>
+        </button></div>
+      <div class="collapse show" id="collapse0">
+        <div class="card-body p-1">
+          <div id="diff0" style="width: 100%"></div>
+        </div>
+      </div>
+      <script type="text/javascript">                (function() {
+                    const diffString = `--- foreignAnnotationsTests/tests/jsr305NullabilityWarnings/migration/overrideConflicts.kt
++++ foreignAnnotationsTests/tests/jsr305NullabilityWarnings/migration/overrideConflicts.kt
+@@ -1,85 +1,85 @@
+ // !DIAGNOSTICS: -UNUSED_VARIABLE -UNUSED_PARAMETER
+ // JSR305_GLOBAL_REPORT: warn
+ // JSR305_MIGRATION_REPORT: strict
+ 
+ // FILE: A.java
+ import javax.annotation.Nullable;
+ import javax.annotation.Nonnull;
+ 
+ public class A {
+     @MyNullable
+     public String foo() { return ""; }
+ 
+     @MyMigrationNullable
+     public String foo2() { return ""; }
+ 
+     @Nullable
+     public String foo3() { return ""; }
+ 
+     public String foo4() { return ""; }
+ 
+     public void bar(@MyNonnull String baz) { }
+ 
+     public void bar2(@MyMigrationNonnull String baz) { }
+ 
+     public void bar3(@Nonnull String baz) {}
+ 
+     public void bar4(String baz) {}
+ }
+ 
+ // FILE: B.java
+ public class B extends A {
+     @MyMigrationNullable
+     public String foo() { return ""; }
+ 
+     @MyNullable
+     public String foo2() { return ""; }
+ 
+     @MyNullable
+     public String foo3() { return ""; }
+ 
+     @MyNullable
+     public String foo4() { return ""; }
+ 
+     public void bar(@MyMigrationNonnull String baz) { }
+ 
+     public void bar2(@MyNonnull String baz) { }
+ 
+     public void bar3(@MyNonnull String baz) {}
+ 
+     public void bar4(@MyNonnull String baz) {}
+ }
+ 
+ // FILE: C.java
+ public class C extends A {
+     @MyMigrationNullable
+     public String foo4() { return ""; }
+ 
+     public void bar4(@MyMigrationNonnull String baz) {}
+ }
+ 
+ // FILE: main.kt
+ fun main(b: B, c: C) {
+     b.foo()<!UNSAFE_CALL!>.<!>length
+     b.foo()?.length
+     b.foo2()<!UNSAFE_CALL!>.<!>length
+     b.foo2()?.length
+     b.foo3()<!UNSAFE_CALL!>.<!>length
+     b.foo3()?.length
+     <!RECEIVER_NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS!>b.foo4()<!>.length
+     b.foo4()?.length
+ 
+     b.bar(<!NULL_FOR_NONNULL_TYPE!>null<!>)
+     b.bar("")
+     b.bar2(<!NULL_FOR_NONNULL_TYPE!>null<!>)
+     b.bar2("")
+     b.bar3(<!NULL_FOR_NONNULL_TYPE!>null<!>)
+     b.bar3("")
+     b.bar4(<!NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS!>null<!>)
+     b.bar4("")
+ 
+     c.foo4()<!UNSAFE_CALL!>.<!>length
+     c.foo4()?.length
+     c.bar4(<!NULL_FOR_NONNULL_TYPE!>null<!>)
+     c.bar4("")
+ }`;
+                    const targetElement = $('#diff0')[0];
+                    const configuration = {
+                        drawFileList: false,
+                        fileListToggle: false,
+                        fileListStartVisible: false,
+                        fileContentToggle: false,
+                        matching: 'lines',
+                        outputFormat: 'side-by-side',
+                        synchronisedScroll: true,
+                        highlight: true,
+                        renderNothingWhenEmpty: false,
+                        rawTemplates: {
+                            'generic-file-path': `
+                                <div class="col">
+                                    <a href="https://github.com/JetBrains/kotlin/blob/d048bccfa23dd1c04c55a06a3167872c279067fd/compiler/testData/diagnostics/foreignAnnotationsTests/tests/jsr305NullabilityWarnings/migration/overrideConflicts.kt" target="_blank">
+                                        <strong>FE 1.0:</strong> foreignAnnotationsTests/tests/jsr305NullabilityWarnings/migration/overrideConflicts.kt
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="https://github.com/JetBrains/kotlin/blob/d048bccfa23dd1c04c55a06a3167872c279067fd/compiler/testData/diagnostics/foreignAnnotationsTests/tests/jsr305NullabilityWarnings/migration/overrideConflicts.kt" target="_blank">
+                                        <strong>FIR:</strong> foreignAnnotationsTests/tests/jsr305NullabilityWarnings/migration/overrideConflicts.kt
+                                    </a>
+                                </div>
+                            `
+                        }
+                    };
+                    const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                    diff2htmlUi.draw();
+                    diff2htmlUi.highlightCode();
+                })();</script>
+    </div>
+  </body>
+</html>

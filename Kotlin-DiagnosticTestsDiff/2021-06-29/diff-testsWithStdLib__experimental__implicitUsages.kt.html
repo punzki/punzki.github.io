@@ -1,0 +1,203 @@
+<html>
+  <head>
+    <title>Diagnostics diff: testsWithStdLib/experimental/implicitUsages.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="card-header p-0" id="heading0"><button class="btn btn-link btn-block text-left" data-toggle="collapse" data-target="#collapse0">
+          <h5>Diff between FE 1.0 vs FIR</h5>
+        </button></div>
+      <div class="collapse show" id="collapse0">
+        <div class="card-body p-1">
+          <div id="diff0" style="width: 100%"></div>
+        </div>
+      </div>
+      <script type="text/javascript">                (function() {
+                    const diffString = `--- testsWithStdLib/experimental/implicitUsages.kt
++++ testsWithStdLib/experimental/implicitUsages.fir.kt
+@@ -1,123 +1,123 @@
+ // !USE_EXPERIMENTAL: kotlin.RequiresOptIn
+ 
+ @RequiresOptIn
+ @Retention(AnnotationRetention.BINARY)
+ @Target(AnnotationTarget.CLASS, AnnotationTarget.PROPERTY, AnnotationTarget.TYPEALIAS)
+ annotation class Marker
+ 
+ @Marker
+ interface Some
+ 
+ abstract class User {
+-    abstract fun createSome(): <!EXPERIMENTAL_API_USAGE_ERROR!>Some<!>
+-    fun <!EXPERIMENTAL_API_USAGE_ERROR!>Some<!>?.onSome() {}
+-    fun withSome(some: <!EXPERIMENTAL_API_USAGE_ERROR!>Some<!>? = null) {}
++    abstract fun createSome(): Some
++    fun Some?.onSome() {}
++    fun withSome(some: Some? = null) {}
+ 
+     fun use() {
+-        val something = <!EXPERIMENTAL_API_USAGE_ERROR!>createSome<!>()
+-        val somethingOther: <!EXPERIMENTAL_API_USAGE_ERROR!>Some<!> = <!EXPERIMENTAL_API_USAGE_ERROR!>createSome<!>()
+-        null.<!EXPERIMENTAL_API_USAGE_ERROR!>onSome<!>()
+-        <!EXPERIMENTAL_API_USAGE_ERROR!>withSome<!>()
++        val something = createSome()
++        val somethingOther: Some = createSome()
++        null.onSome()
++        withSome()
+     }
+ }
+ 
+ data class DataClass(@property:Marker val x: Int)
+ 
+ fun useDataClass(d: DataClass) {
+     // Should have error in both
+-    d.<!EXPERIMENTAL_API_USAGE_ERROR!>x<!>
+-    val (<!EXPERIMENTAL_API_USAGE_ERROR!>x<!>) = d
++    d.x
++    val (x) = d
+ }
+ 
+-typealias My = <!EXPERIMENTAL_API_USAGE_ERROR!>Some<!>
++typealias My = Some
+ 
+-fun my(my: <!EXPERIMENTAL_API_USAGE_ERROR!>My<!>) {}
++fun my(my: My) {}
+ 
+-fun your(my: <!EXPERIMENTAL_API_USAGE_ERROR!>Some<!>) {}
++fun your(my: Some) {}
+ 
+ @Marker
+ interface ExperimentalType {
+     fun foo() {}
+     fun bar() {}
+ }
+ 
+ @OptIn(Marker::class)
+ interface NotExperimentalExtension : ExperimentalType {
+     override fun foo() {}
+ }
+ 
+ fun use(arg: NotExperimentalExtension) {
+     arg.foo()
+-    arg.<!EXPERIMENTAL_API_USAGE_ERROR!>bar<!>()
++    arg.bar()
+ }
+ 
+ @Marker
+ interface I
+ 
+ @OptIn(Marker::class)
+ class A : I
+ 
+ @OptIn(Marker::class)
+ class B : I
+ 
+ @OptIn(Marker::class)
+ typealias MyList = ArrayList<I>
+ 
+ @Marker
+ typealias YourList = ArrayList<String>
+ 
+ fun main() {
+-    val x = <!EXPERIMENTAL_API_USAGE_ERROR!>listOf<!>(A(), B())
+-    val y = <!EXPERIMENTAL_API_USAGE_ERROR!>MyList<!>()
+-    val z = <!EXPERIMENTAL_API_USAGE_ERROR!>YourList<!>()
+-    <!EXPERIMENTAL_API_USAGE_ERROR!>YourList<!>().add("")
++    val x = listOf(A(), B())
++    val y = MyList()
++    val z = YourList()
++    YourList().add("")
+ }
+ 
+ @Marker
+ class C {
+     operator fun getValue(x: Any?, y: Any?): String = ""
+ }
+ 
+ object O {
+     @OptIn(Marker::class)
+     operator fun provideDelegate(x: Any?, y: Any?): C = C()
+ }
+ 
+-val x: String by <!EXPERIMENTAL_API_USAGE_ERROR!>O<!>
++val x: String by O
+ 
+ @Marker
+ class OperatorContainer : Comparable<OperatorContainer> {
+     @OptIn(Marker::class)
+     override fun compareTo(other: OperatorContainer): Int {
+         return 0
+     }
+ }
+ 
+ @OptIn(Marker::class)
+ class AnotherContainer : Iterable<C> {
+     @OptIn(Marker::class)
+     override fun iterator(): Iterator<C> {
+         return object : Iterator<C> {
+             override fun hasNext(): Boolean {
+                 return false
+             }
+ 
+             override fun next(): C {
+                 throw java.util.NoSuchElementException()
+             }
+         }
+     }
+ }
+ 
+ @OptIn(Marker::class)
+ operator fun String.minus(s: String) = OperatorContainer()
+ 
+ @OptIn(Marker::class)
+ operator fun String.invoke() = OperatorContainer()
+ 
+ fun operatorContainerUsage(s: String, a: AnotherContainer) {
+-    val res1 = s <!EXPERIMENTAL_API_USAGE_ERROR!>-<!> s
+-    val res2 = <!EXPERIMENTAL_API_USAGE_ERROR!>s<!>()
+-    val res3 = <!EXPERIMENTAL_API_USAGE_ERROR!>res1<!> <!EXPERIMENTAL_API_USAGE_ERROR!>><!> <!EXPERIMENTAL_API_USAGE_ERROR!>res2<!>
+-    for (c in <!EXPERIMENTAL_API_USAGE_ERROR!>a<!>) {}
++    val res1 = s - s
++    val res2 = s()
++    val res3 = res1 > res2
++    for (c in a) {}
+ }`;
+                    const targetElement = $('#diff0')[0];
+                    const configuration = {
+                        drawFileList: false,
+                        fileListToggle: false,
+                        fileListStartVisible: false,
+                        fileContentToggle: false,
+                        matching: 'lines',
+                        outputFormat: 'side-by-side',
+                        synchronisedScroll: true,
+                        highlight: true,
+                        renderNothingWhenEmpty: false,
+                        rawTemplates: {
+                            'generic-file-path': `
+                                <div class="col">
+                                    <a href="https://github.com/JetBrains/kotlin/blob/d048bccfa23dd1c04c55a06a3167872c279067fd/compiler/testData/diagnostics/testsWithStdLib/experimental/implicitUsages.kt" target="_blank">
+                                        <strong>FE 1.0:</strong> testsWithStdLib/experimental/implicitUsages.kt
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="https://github.com/JetBrains/kotlin/blob/d048bccfa23dd1c04c55a06a3167872c279067fd/compiler/testData/diagnostics/testsWithStdLib/experimental/implicitUsages.fir.kt" target="_blank">
+                                        <strong>FIR:</strong> testsWithStdLib/experimental/implicitUsages.fir.kt
+                                    </a>
+                                </div>
+                            `
+                        }
+                    };
+                    const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                    diff2htmlUi.draw();
+                    diff2htmlUi.highlightCode();
+                })();</script>
+    </div>
+  </body>
+</html>
