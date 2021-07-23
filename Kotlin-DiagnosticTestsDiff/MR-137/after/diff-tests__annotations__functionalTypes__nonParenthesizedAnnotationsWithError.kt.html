@@ -1,0 +1,151 @@
+<html>
+  <head>
+    <title>Diagnostics diff: tests/annotations/functionalTypes/nonParenthesizedAnnotationsWithError.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="card-header p-0" id="heading0"><button class="btn btn-link btn-block text-left" data-toggle="collapse" data-target="#collapse0">
+          <h5>Diff between FE 1.0 vs FIR</h5>
+        </button></div>
+      <div class="collapse show" id="collapse0">
+        <div class="card-body p-1">
+          <div id="diff0" style="width: 100%"></div>
+        </div>
+      </div>
+      <script type="text/javascript">                (function() {
+                    const diffString = `--- tests/annotations/functionalTypes/nonParenthesizedAnnotationsWithError.kt
++++ tests/annotations/functionalTypes/nonParenthesizedAnnotationsWithError.fir.kt
+@@ -1,71 +1,71 @@
+ // !LANGUAGE: -NonParenthesizedAnnotationsOnFunctionalTypes
+ // !DIAGNOSTICS: -UNUSED_VARIABLE -CAST_NEVER_SUCCEEDS -CANNOT_CHECK_FOR_ERASED -UNCHECKED_CAST -UNUSED_ANONYMOUS_PARAMETER
+ // SKIP_TXT
+ // Issue: KT-31734
+ 
+ @Target(AnnotationTarget.TYPE, AnnotationTarget.CLASS)
+ @Retention(AnnotationRetention.SOURCE)
+ @Repeatable
+ annotation class Foo
+ 
+-fun foo1(x: <!NON_PARENTHESIZED_ANNOTATIONS_ON_FUNCTIONAL_TYPES!>@Foo<!> () -> Unit) = x as Iterable<<!NON_PARENTHESIZED_ANNOTATIONS_ON_FUNCTIONAL_TYPES!>@Foo<!> () -> Unit>?
++fun foo1(x: @Foo () -> Unit) = x as Iterable<@Foo () -> Unit>?
+ 
+-fun foo2() = null as <!NON_PARENTHESIZED_ANNOTATIONS_ON_FUNCTIONAL_TYPES!>@Foo<!> () -> Unit
++fun foo2() = null as @Foo () -> Unit
+ 
+ fun foo3(x: Any?) {
+-    if (x is (<!NON_PARENTHESIZED_ANNOTATIONS_ON_FUNCTIONAL_TYPES!>@<!DEBUG_INFO_MISSING_UNRESOLVED!>Foo<!><!> () -> Unit)?) {
++    if (x is (@Foo () -> Unit)?) {
+ 
+     }
+ }
+ 
+-fun foo4(x: Any) = x is <!NON_PARENTHESIZED_ANNOTATIONS_ON_FUNCTIONAL_TYPES!>@Foo<!> () -> (() -> Unit?)
++fun foo4(x: Any) = x is @Foo () -> (() -> Unit?)
+ 
+-fun foo5(x: Any): <!NON_PARENTHESIZED_ANNOTATIONS_ON_FUNCTIONAL_TYPES!>@Foo<!> () -> Unit = x as @Foo() @[Foo Foo()] <!NON_PARENTHESIZED_ANNOTATIONS_ON_FUNCTIONAL_TYPES!>@Foo<!> () -> Unit
++fun foo5(x: Any): @Foo () -> Unit = x as @Foo() @[Foo Foo()] @Foo () -> Unit
+ 
+ fun foo6() {
+-    val x: @Foo() @[Foo Foo()] <!NON_PARENTHESIZED_ANNOTATIONS_ON_FUNCTIONAL_TYPES!>@Foo<!> () -> Unit = {}
++    val x: @Foo() @[Foo Foo()] @Foo () -> Unit = {}
+ }
+ 
+ fun foo7() {
+-    val x: <!NON_PARENTHESIZED_ANNOTATIONS_ON_FUNCTIONAL_TYPES!>@Foo<!> (<!NON_PARENTHESIZED_ANNOTATIONS_ON_FUNCTIONAL_TYPES!>@Foo<!> () -> Unit) -> Unit = { x: <!NON_PARENTHESIZED_ANNOTATIONS_ON_FUNCTIONAL_TYPES!>@Foo<!> () -> Unit -> }
++    val x: @Foo (@Foo () -> Unit) -> Unit = { x: @Foo () -> Unit -> }
+ }
+ 
+ fun foo8(x: Any?) {
+-    val <!NAME_SHADOWING!>x<!>: (<!NON_PARENTHESIZED_ANNOTATIONS_ON_FUNCTIONAL_TYPES!>@Foo<!> () -> Unit)? = {}
++    val x: (@Foo () -> Unit)? = {}
+ }
+ 
+-fun foo9(x: (<!NON_PARENTHESIZED_ANNOTATIONS_ON_FUNCTIONAL_TYPES!>@Foo<!> () -> Unit)?) = x as Iterable<(<!NON_PARENTHESIZED_ANNOTATIONS_ON_FUNCTIONAL_TYPES!>@Foo<!> () -> Unit?)?>?
++fun foo9(x: (@Foo () -> Unit)?) = x as Iterable<(@Foo () -> Unit?)?>?
+ 
+ fun foo10(x: @[Foo] () -> Unit) = x as Iterable<@Foo() () -> Unit>?
+ 
+ fun foo11(x: @[Foo ] () -> Unit) = x as Iterable<@Foo() () -> Unit>?
+ 
+ fun foo12(x: @[Foo/**/] () -> Unit) = x as Iterable<@Foo() () -> Unit>?
+ 
+-val foo13: <!NON_PARENTHESIZED_ANNOTATIONS_ON_FUNCTIONAL_TYPES!>@Foo<!> (x: @Foo Any) -> Unit get() = {}
++val foo13: @Foo (x: @Foo Any) -> Unit get() = {}
+ 
+-val foo14: <!NON_PARENTHESIZED_ANNOTATIONS_ON_FUNCTIONAL_TYPES!>@Foo<!> (x: <!NON_PARENTHESIZED_ANNOTATIONS_ON_FUNCTIONAL_TYPES!>@Foo<!> () -> Unit) -> Unit get() = {}
++val foo14: @Foo (x: @Foo () -> Unit) -> Unit get() = {}
+ 
+-val foo15: @Foo () <!NON_PARENTHESIZED_ANNOTATIONS_ON_FUNCTIONAL_TYPES!>@Foo<!> () -> Unit get() = {}
++val foo15: @Foo () @Foo () -> Unit get() = {}
+ 
+-val foo16: @Foo @Foo () <!NON_PARENTHESIZED_ANNOTATIONS_ON_FUNCTIONAL_TYPES!>@Foo<!> () -> Unit get() = {}
++val foo16: @Foo @Foo () @Foo () -> Unit get() = {}
+ 
+-val foo17: @Foo() @Foo () <!NON_PARENTHESIZED_ANNOTATIONS_ON_FUNCTIONAL_TYPES!>@Foo<!> () -> Unit get() = {}
++val foo17: @Foo() @Foo () @Foo () -> Unit get() = {}
+ 
+-val foo18: @Foo()@Foo () <!NON_PARENTHESIZED_ANNOTATIONS_ON_FUNCTIONAL_TYPES!>@Foo<!> () -> Unit get() = {}
++val foo18: @Foo()@Foo () @Foo () -> Unit get() = {}
+ 
+-val foo19: @Foo@Foo () <!NON_PARENTHESIZED_ANNOTATIONS_ON_FUNCTIONAL_TYPES!>@Foo<!> () -> Unit get() = {}
++val foo19: @Foo@Foo () @Foo () -> Unit get() = {}
+ 
+-val foo20: @Foo<!NON_PARENTHESIZED_ANNOTATIONS_ON_FUNCTIONAL_TYPES!>@Foo<!> () -> Unit get() = {}
++val foo20: @Foo@Foo () -> Unit get() = {}
+ 
+-val foo21: @Foo()<!NON_PARENTHESIZED_ANNOTATIONS_ON_FUNCTIONAL_TYPES!>@Foo<!> () -> Unit get() = {}
++val foo21: @Foo()@Foo () -> Unit get() = {}
+ 
+-val foo22: <!NON_PARENTHESIZED_ANNOTATIONS_ON_FUNCTIONAL_TYPES!>@Foo<!> (x: <!NON_PARENTHESIZED_ANNOTATIONS_ON_FUNCTIONAL_TYPES!>@Foo<!> () -> Unit) -> Unit get() = {}
++val foo22: @Foo (x: @Foo () -> Unit) -> Unit get() = {}
+ 
+-val foo23: <!NON_PARENTHESIZED_ANNOTATIONS_ON_FUNCTIONAL_TYPES!>@Foo<!> (<!NON_PARENTHESIZED_ANNOTATIONS_ON_FUNCTIONAL_TYPES!>@Foo<!> () -> Unit) -> Unit get() = {}
++val foo23: @Foo (@Foo () -> Unit) -> Unit get() = {}
+ 
+-val foo24: <!NON_PARENTHESIZED_ANNOTATIONS_ON_FUNCTIONAL_TYPES!>@Foo<!> (<!NON_PARENTHESIZED_ANNOTATIONS_ON_FUNCTIONAL_TYPES!>@Foo<!> () -> Unit, <!NON_PARENTHESIZED_ANNOTATIONS_ON_FUNCTIONAL_TYPES!>@Foo<!> () -> Unit) -> Unit get() = {x, y -> }
++val foo24: @Foo (@Foo () -> Unit, @Foo () -> Unit) -> Unit get() = {x, y -> }
+ 
+-val foo25: <!NON_PARENTHESIZED_ANNOTATIONS_ON_FUNCTIONAL_TYPES!>@Foo<!> (x: @Foo Any, @Foo Any) -> Unit get() = {x, y -> }
++val foo25: @Foo (x: @Foo Any, @Foo Any) -> Unit get() = {x, y -> }
+ 
+ val foo26: @Foo suspend () -> Unit = {}`;
+                    const targetElement = $('#diff0')[0];
+                    const configuration = {
+                        drawFileList: false,
+                        fileListToggle: false,
+                        fileListStartVisible: false,
+                        fileContentToggle: false,
+                        matching: 'lines',
+                        outputFormat: 'side-by-side',
+                        synchronisedScroll: true,
+                        highlight: true,
+                        renderNothingWhenEmpty: false,
+                        rawTemplates: {
+                            'generic-file-path': `
+                                <div class="col">
+                                    <a href="https://github.com/google/kotlin/blob/39c1204b931b46faf1cf0333b8f22c5eba13fd8e/compiler/testData/diagnostics/tests/annotations/functionalTypes/nonParenthesizedAnnotationsWithError.kt" target="_blank">
+                                        <strong>FE 1.0:</strong> tests/annotations/functionalTypes/nonParenthesizedAnnotationsWithError.kt
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="https://github.com/google/kotlin/blob/39c1204b931b46faf1cf0333b8f22c5eba13fd8e/compiler/testData/diagnostics/tests/annotations/functionalTypes/nonParenthesizedAnnotationsWithError.fir.kt" target="_blank">
+                                        <strong>FIR:</strong> tests/annotations/functionalTypes/nonParenthesizedAnnotationsWithError.fir.kt
+                                    </a>
+                                </div>
+                            `
+                        }
+                    };
+                    const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                    diff2htmlUi.draw();
+                    diff2htmlUi.highlightCode();
+                })();</script>
+    </div>
+  </body>
+</html>

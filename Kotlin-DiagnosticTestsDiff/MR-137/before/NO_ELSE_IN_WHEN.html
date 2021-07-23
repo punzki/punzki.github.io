@@ -1,0 +1,103 @@
+<html>
+  <head>
+    <title>Diagnostics diff: NO_ELSE_IN_WHEN</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row sticky-top" style="background: white" id="summary">
+        <div class="d-inline-flex align-items-baseline">
+          <h1 class="mr-2">NO_ELSE_IN_WHEN</h1>
+<a href="index.html">(back to diagnostic list)</a></div>
+      </div>
+      <div class="row">
+        <ul>
+          <li><strong>Total: </strong>98</li>
+          <li><strong>Match %: </strong>68.37%</li>
+          <li><a href="#matched"><strong># Matched: </strong>67</a></li>
+          <li><strong># Non-matched: </strong>31</li>
+          <li><a href="#missing"><strong># Missing: </strong>27</a></li>
+          <li><a href="#unexpected"><strong># Unexpected: </strong>4</a></li>
+          <li><a href="#mismatched"><strong># Mismatched: </strong>0</a></li>
+          <li><strong># Files: </strong>44</li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="missing">
+        <h2>Missing (27)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__testsWithJava15__sealedClasses__javaSealedInterfaceExhaustiveness.kt.html" target="_blank">tests/testsWithJava15/sealedClasses/javaSealedInterfaceExhaustiveness.kt (5)</a></li>
+          <li><a href="diff-tests__testsWithJava15__sealedClasses__javaSealedClassExhaustiveness.kt.html" target="_blank">tests/testsWithJava15/sealedClasses/javaSealedClassExhaustiveness.kt (4)</a></li>
+          <li><a href="diff-tests__when__intersectionExhaustivenessComplex.kt.html" target="_blank">tests/when/intersectionExhaustivenessComplex.kt (4)</a></li>
+          <li><a href="diff-tests__controlStructures__ifWhenWithoutElse.kt.html" target="_blank">tests/controlStructures/ifWhenWithoutElse.kt (2)</a></li>
+          <li><a href="diff-tests__multiplatform__exhaustiveness__commonSealedWithPlatformInheritor.kt.html" target="_blank">tests/multiplatform/exhaustiveness/commonSealedWithPlatformInheritor.kt (2)</a></li>
+          <li><a href="diff-tests__multiplatform__exhaustiveness__expectEnum.kt.html" target="_blank">tests/multiplatform/exhaustiveness/expectEnum.kt (2)</a></li>
+          <li><a href="diff-tests__multiplatform__exhaustiveness__expectSealedClass.kt.html" target="_blank">tests/multiplatform/exhaustiveness/expectSealedClass.kt (2)</a></li>
+          <li><a href="diff-tests__multiplatform__exhaustiveness__expectSealedInterface.kt.html" target="_blank">tests/multiplatform/exhaustiveness/expectSealedInterface.kt (2)</a></li>
+          <li><a href="diff-tests__multiplatform__exhaustiveness__kt45796.kt.html" target="_blank">tests/multiplatform/exhaustiveness/kt45796.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__kt27221_irrelevantClasses.kt.html" target="_blank">tests/smartCasts/kt27221_irrelevantClasses.kt (1)</a></li>
+          <li><a href="diff-tests__when__NoElseReturnedFromLambdaExpectedInt.kt.html" target="_blank">tests/when/NoElseReturnedFromLambdaExpectedInt.kt (1)</a></li>
+          <li><a href="diff-tests__when__kt4434.kt.html" target="_blank">tests/when/kt4434.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="unexpected">
+        <h2>Unexpected (4)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__controlStructures__ifWhenWithoutElse.kt.html" target="_blank">tests/controlStructures/ifWhenWithoutElse.kt (1)</a></li>
+          <li><a href="diff-tests__when__ExhaustiveEnumIs.kt.html" target="_blank">tests/when/ExhaustiveEnumIs.kt (1)</a></li>
+          <li><a href="diff-tests__when__ExhaustiveEnumMixed.kt.html" target="_blank">tests/when/ExhaustiveEnumMixed.kt (1)</a></li>
+          <li><a href="diff-tests__when__exhaustiveBooleanWhenWithUntrivialConst_warning.kt.html" target="_blank">tests/when/exhaustiveBooleanWhenWithUntrivialConst_warning.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="matched">
+        <h2>Matched (67)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__controlStructures__ifWhenWithoutElse.kt.html" target="_blank">tests/controlStructures/ifWhenWithoutElse.kt (13)</a></li>
+          <li><a href="diff-tests__when__nonExhaustiveWhenStatement_1_7.kt.html" target="_blank">tests/when/nonExhaustiveWhenStatement_1_7.kt (12)</a></li>
+          <li><a href="diff-tests__sealed__ExhaustiveWithFreedom.kt.html" target="_blank">tests/sealed/ExhaustiveWithFreedom.kt (4)</a></li>
+          <li><a href="diff-tests__when__exhaustiveBooleanWhenWithUntrivialConst_error.kt.html" target="_blank">tests/when/exhaustiveBooleanWhenWithUntrivialConst_error.kt (3)</a></li>
+          <li><a href="diff-tests__controlFlowAnalysis__kt1185enums.kt.html" target="_blank">tests/controlFlowAnalysis/kt1185enums.kt (2)</a></li>
+          <li><a href="diff-tests__sealed__ExhaustiveWhenMultipleInner.kt.html" target="_blank">tests/sealed/ExhaustiveWhenMultipleInner.kt (2)</a></li>
+          <li><a href="diff-tests__when__exhaustiveBooleanWhenWithUntrivialConst_warning.kt.html" target="_blank">tests/when/exhaustiveBooleanWhenWithUntrivialConst_warning.kt (2)</a></li>
+          <li><a href="diff-tests__controlStructures__when.kt234.kt973.kt.html" target="_blank">tests/controlStructures/when.kt234.kt973.kt (1)</a></li>
+          <li><a href="diff-tests__infos__SmartCasts.kt.html" target="_blank">tests/infos/SmartCasts.kt (1)</a></li>
+          <li><a href="diff-tests__multiplatform__exhaustiveness__expectEnum.kt.html" target="_blank">tests/multiplatform/exhaustiveness/expectEnum.kt (1)</a></li>
+          <li><a href="diff-tests__multiplatform__exhaustiveness__expectSealedClass.kt.html" target="_blank">tests/multiplatform/exhaustiveness/expectSealedClass.kt (1)</a></li>
+          <li><a href="diff-tests__multiplatform__exhaustiveness__expectSealedInterface.kt.html" target="_blank">tests/multiplatform/exhaustiveness/expectSealedInterface.kt (1)</a></li>
+          <li><a href="diff-tests__sealed__ExhaustiveOnRoot.kt.html" target="_blank">tests/sealed/ExhaustiveOnRoot.kt (1)</a></li>
+          <li><a href="diff-tests__sealed__ExhaustiveOnTree.kt.html" target="_blank">tests/sealed/ExhaustiveOnTree.kt (1)</a></li>
+          <li><a href="diff-tests__sealed__ExhaustiveOnTriangleStar.kt.html" target="_blank">tests/sealed/ExhaustiveOnTriangleStar.kt (1)</a></li>
+          <li><a href="diff-tests__sealed__NonExhaustiveWhen.kt.html" target="_blank">tests/sealed/NonExhaustiveWhen.kt (1)</a></li>
+          <li><a href="diff-tests__sealed__NonExhaustiveWhenNegated.kt.html" target="_blank">tests/sealed/NonExhaustiveWhenNegated.kt (1)</a></li>
+          <li><a href="diff-tests__sealed__NonExhaustiveWhenWithAdditionalCase.kt.html" target="_blank">tests/sealed/NonExhaustiveWhenWithAdditionalCase.kt (1)</a></li>
+          <li><a href="diff-tests__sealed__NonExhaustiveWhenWithAnyCase.kt.html" target="_blank">tests/sealed/NonExhaustiveWhenWithAnyCase.kt (1)</a></li>
+          <li><a href="diff-tests__sealed__TreeWhenFunctionalNoIs.kt.html" target="_blank">tests/sealed/TreeWhenFunctionalNoIs.kt (1)</a></li>
+          <li><a href="diff-tests__sealed__WhenOnEmptySealed.kt.html" target="_blank">tests/sealed/WhenOnEmptySealed.kt (1)</a></li>
+          <li><a href="diff-tests__unit__nullableUnit.kt.html" target="_blank">tests/unit/nullableUnit.kt (1)</a></li>
+          <li><a href="diff-tests__when__ElseOnNullableEnum.kt.html" target="_blank">tests/when/ElseOnNullableEnum.kt (1)</a></li>
+          <li><a href="diff-tests__when__ExhaustiveBooleanComplex.kt.html" target="_blank">tests/when/ExhaustiveBooleanComplex.kt (1)</a></li>
+          <li><a href="diff-tests__when__NoElseExpectedUnit.kt.html" target="_blank">tests/when/NoElseExpectedUnit.kt (1)</a></li>
+          <li><a href="diff-tests__when__NoElseNoExpectedType.kt.html" target="_blank">tests/when/NoElseNoExpectedType.kt (1)</a></li>
+          <li><a href="diff-tests__when__NoElseReturnedNonUnit.kt.html" target="_blank">tests/when/NoElseReturnedNonUnit.kt (1)</a></li>
+          <li><a href="diff-tests__when__NoElseReturnedUnit.kt.html" target="_blank">tests/when/NoElseReturnedUnit.kt (1)</a></li>
+          <li><a href="diff-tests__when__NonExhaustiveBooleanNullable.kt.html" target="_blank">tests/when/NonExhaustiveBooleanNullable.kt (1)</a></li>
+          <li><a href="diff-tests__when__NonExhaustivePlatformEnum.kt.html" target="_blank">tests/when/NonExhaustivePlatformEnum.kt (1)</a></li>
+          <li><a href="diff-tests__when__NonExhaustiveWithNullabilityCheck.kt.html" target="_blank">tests/when/NonExhaustiveWithNullabilityCheck.kt (1)</a></li>
+          <li><a href="diff-tests__when__TopLevelSealed.kt.html" target="_blank">tests/when/TopLevelSealed.kt (1)</a></li>
+          <li><a href="diff-tests__when__intersectionExhaustivenessComplex.kt.html" target="_blank">tests/when/intersectionExhaustivenessComplex.kt (1)</a></li>
+          <li><a href="diff-tests__when__kt4434.kt.html" target="_blank">tests/when/kt4434.kt (1)</a></li>
+          <li><a href="diff-tests__when__withSubjectVariable__smartcastToEnum.kt.html" target="_blank">tests/when/withSubjectVariable/smartcastToEnum.kt (1)</a></li>
+          <li><a href="diff-tests__when__withSubjectVariable__smartcastToSealed.kt.html" target="_blank">tests/when/withSubjectVariable/smartcastToSealed.kt (1)</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

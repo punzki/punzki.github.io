@@ -1,0 +1,204 @@
+<html>
+  <head>
+    <title>Diagnostics diff: tests/declarationChecks/ambiguousObjectExpressionType.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="card-header p-0" id="heading0"><button class="btn btn-link btn-block text-left" data-toggle="collapse" data-target="#collapse0">
+          <h5>Diff between FE 1.0 vs FIR</h5>
+        </button></div>
+      <div class="collapse show" id="collapse0">
+        <div class="card-body p-1">
+          <div id="diff0" style="width: 100%"></div>
+        </div>
+      </div>
+      <script type="text/javascript">                (function() {
+                    const diffString = `--- tests/declarationChecks/ambiguousObjectExpressionType.kt
++++ tests/declarationChecks/ambiguousObjectExpressionType.fir.kt
+@@ -1,120 +1,120 @@
+ interface MyTrait {
+     fun f1() {}
+ }
+ 
+ open class MyClass {
+     fun f2() {}
+ }
+ 
+ 
+ class Foo {
+ 
+     private val privateProperty = object : MyClass(), MyTrait {}
+ 
+     init {
+         privateProperty.f1()
+         privateProperty.f2()
+     }
+ 
+-    <!AMBIGUOUS_ANONYMOUS_TYPE_INFERRED!>protected val <!EXPOSED_PROPERTY_TYPE!>protectedProperty<!><!> = object : MyClass(), MyTrait {}
++    protected val protectedProperty = object : MyClass(), MyTrait {}
+ 
+-    <!AMBIGUOUS_ANONYMOUS_TYPE_INFERRED!>val <!EXPOSED_PROPERTY_TYPE!>internalProperty<!><!> = object : MyClass(), MyTrait {}
++    val internalProperty = object : MyClass(), MyTrait {}
+ 
+-    <!AMBIGUOUS_ANONYMOUS_TYPE_INFERRED!>internal val <!EXPOSED_PROPERTY_TYPE!>internal2Property<!><!> = object : MyClass(), MyTrait {}
++    internal val internal2Property = object : MyClass(), MyTrait {}
+ 
+-    <!AMBIGUOUS_ANONYMOUS_TYPE_INFERRED!>public val <!EXPOSED_PROPERTY_TYPE!>publicProperty<!><!> = object : MyClass(), MyTrait {}
++    public val publicProperty = object : MyClass(), MyTrait {}
+ 
+-    val <!EXPOSED_PROPERTY_TYPE!>propertyWithGetter<!>
+-    <!AMBIGUOUS_ANONYMOUS_TYPE_INFERRED!>get()<!> = object: MyClass(), MyTrait {}
++    val propertyWithGetter
++    get() = object: MyClass(), MyTrait {}
+ 
+ 
+     private fun privateFunction() = object : MyClass(), MyTrait {}
+ 
+     init {
+         privateFunction().f1()
+         privateFunction().f2()
+     }
+ 
+-    <!AMBIGUOUS_ANONYMOUS_TYPE_INFERRED!>protected fun <!EXPOSED_FUNCTION_RETURN_TYPE!>protectedFunction<!>()<!> = object : MyClass(), MyTrait {}
++    protected fun protectedFunction() = object : MyClass(), MyTrait {}
+ 
+-    <!AMBIGUOUS_ANONYMOUS_TYPE_INFERRED!>fun <!EXPOSED_FUNCTION_RETURN_TYPE!>internalFunction<!>()<!> = object : MyClass(), MyTrait {}
++    fun internalFunction() = object : MyClass(), MyTrait {}
+ 
+-    <!AMBIGUOUS_ANONYMOUS_TYPE_INFERRED!>internal fun <!EXPOSED_FUNCTION_RETURN_TYPE!>internal2Function<!>()<!> = object : MyClass(), MyTrait {}
++    internal fun internal2Function() = object : MyClass(), MyTrait {}
+ 
+-    <!AMBIGUOUS_ANONYMOUS_TYPE_INFERRED!>public fun <!EXPOSED_FUNCTION_RETURN_TYPE!>publicFunction<!>()<!> = object : MyClass(), MyTrait {}
++    public fun publicFunction() = object : MyClass(), MyTrait {}
+ 
+ 
+ 
+     class FooInner {
+         private val privatePropertyInner = object : MyClass(), MyTrait {}
+ 
+         init {
+             privatePropertyInner.f1()
+             privatePropertyInner.f2()
+         }
+ 
+-        <!AMBIGUOUS_ANONYMOUS_TYPE_INFERRED!>protected val <!EXPOSED_PROPERTY_TYPE!>protectedProperty<!><!> = object : MyClass(), MyTrait {}
++        protected val protectedProperty = object : MyClass(), MyTrait {}
+ 
+-        <!AMBIGUOUS_ANONYMOUS_TYPE_INFERRED!>val <!EXPOSED_PROPERTY_TYPE!>internalProperty<!><!> = object : MyClass(), MyTrait {}
++        val internalProperty = object : MyClass(), MyTrait {}
+ 
+-        <!AMBIGUOUS_ANONYMOUS_TYPE_INFERRED!>internal val <!EXPOSED_PROPERTY_TYPE!>internal2Property<!><!> = object : MyClass(), MyTrait {}
++        internal val internal2Property = object : MyClass(), MyTrait {}
+ 
+-        <!AMBIGUOUS_ANONYMOUS_TYPE_INFERRED!>public val <!EXPOSED_PROPERTY_TYPE!>publicProperty<!><!> = object : MyClass(), MyTrait {}
++        public val publicProperty = object : MyClass(), MyTrait {}
+ 
+ 
+         private fun privateFunctionInner() = object : MyClass(), MyTrait {}
+ 
+         init {
+             privateFunctionInner().f1()
+             privateFunctionInner().f2()
+         }
+ 
+-        <!AMBIGUOUS_ANONYMOUS_TYPE_INFERRED!>protected fun <!EXPOSED_FUNCTION_RETURN_TYPE!>protectedFunction<!>()<!> = object : MyClass(), MyTrait {}
++        protected fun protectedFunction() = object : MyClass(), MyTrait {}
+ 
+-        <!AMBIGUOUS_ANONYMOUS_TYPE_INFERRED!>fun <!EXPOSED_FUNCTION_RETURN_TYPE!>internalFunction<!>()<!> = object : MyClass(), MyTrait {}
++        fun internalFunction() = object : MyClass(), MyTrait {}
+ 
+-        <!AMBIGUOUS_ANONYMOUS_TYPE_INFERRED!>internal fun <!EXPOSED_FUNCTION_RETURN_TYPE!>internal2Function<!>()<!> = object : MyClass(), MyTrait {}
++        internal fun internal2Function() = object : MyClass(), MyTrait {}
+ 
+-        <!AMBIGUOUS_ANONYMOUS_TYPE_INFERRED!>public fun <!EXPOSED_FUNCTION_RETURN_TYPE!>publicFunction<!>()<!> = object : MyClass(), MyTrait {}
++        public fun publicFunction() = object : MyClass(), MyTrait {}
+ 
+     }
+ 
+     fun foo() {
+         val localVar = object : MyClass(), MyTrait {}
+         localVar.f1()
+         localVar.f2()
+ 
+         fun foo2() = object : MyClass(), MyTrait {}
+         foo2().f1()
+         foo2().f2()
+     }
+ 
+ }
+ 
+ private val packagePrivateProperty = object : MyClass(), MyTrait {}
+ 
+-<!AMBIGUOUS_ANONYMOUS_TYPE_INFERRED!><!WRONG_MODIFIER_TARGET!>protected<!> val <!EXPOSED_PROPERTY_TYPE!>packageProtectedProperty<!><!> = object : MyClass(), MyTrait {}
++protected val packageProtectedProperty = object : MyClass(), MyTrait {}
+ 
+-<!AMBIGUOUS_ANONYMOUS_TYPE_INFERRED!>val <!EXPOSED_PROPERTY_TYPE!>packageInternalProperty<!><!> = object : MyClass(), MyTrait {}
++val packageInternalProperty = object : MyClass(), MyTrait {}
+ 
+-<!AMBIGUOUS_ANONYMOUS_TYPE_INFERRED!>internal val <!EXPOSED_PROPERTY_TYPE!>packageInternal2Property<!><!> = object : MyClass(), MyTrait {}
++internal val packageInternal2Property = object : MyClass(), MyTrait {}
+ 
+-<!AMBIGUOUS_ANONYMOUS_TYPE_INFERRED!>public val <!EXPOSED_PROPERTY_TYPE!>packagePublicProperty<!><!> = object : MyClass(), MyTrait {}
++public val packagePublicProperty = object : MyClass(), MyTrait {}
+ 
+-<!AMBIGUOUS_ANONYMOUS_TYPE_INFERRED!><!WRONG_MODIFIER_TARGET!>protected<!> fun <!EXPOSED_FUNCTION_RETURN_TYPE!>packageProtectedFunction<!>()<!> = object : MyClass(), MyTrait {}
++protected fun packageProtectedFunction() = object : MyClass(), MyTrait {}
+ 
+-<!AMBIGUOUS_ANONYMOUS_TYPE_INFERRED!>fun <!EXPOSED_FUNCTION_RETURN_TYPE!>packageInternalFunction<!>()<!> = object : MyClass(), MyTrait {}
++fun packageInternalFunction() = object : MyClass(), MyTrait {}
+ 
+-<!AMBIGUOUS_ANONYMOUS_TYPE_INFERRED!>internal fun <!EXPOSED_FUNCTION_RETURN_TYPE!>packageInternal2Function<!>()<!> = object : MyClass(), MyTrait {}
++internal fun packageInternal2Function() = object : MyClass(), MyTrait {}
+ 
+-<!AMBIGUOUS_ANONYMOUS_TYPE_INFERRED!>public fun <!EXPOSED_FUNCTION_RETURN_TYPE!>packagePublicFunction<!>()<!> = object : MyClass(), MyTrait {}
++public fun packagePublicFunction() = object : MyClass(), MyTrait {}
+ 
+ fun fooPackage() {
+     val packageLocalVar = object : MyClass(), MyTrait {}
+     packageLocalVar.f1()
+     packageLocalVar.f2()
+ 
+     fun fooPackageLocal() = object : MyClass(), MyTrait {}
+     fooPackageLocal().f1()
+     fooPackageLocal().f2()
+ }`;
+                    const targetElement = $('#diff0')[0];
+                    const configuration = {
+                        drawFileList: false,
+                        fileListToggle: false,
+                        fileListStartVisible: false,
+                        fileContentToggle: false,
+                        matching: 'lines',
+                        outputFormat: 'side-by-side',
+                        synchronisedScroll: true,
+                        highlight: true,
+                        renderNothingWhenEmpty: false,
+                        rawTemplates: {
+                            'generic-file-path': `
+                                <div class="col">
+                                    <a href="https://github.com/google/kotlin/blob/39c1204b931b46faf1cf0333b8f22c5eba13fd8e/compiler/testData/diagnostics/tests/declarationChecks/ambiguousObjectExpressionType.kt" target="_blank">
+                                        <strong>FE 1.0:</strong> tests/declarationChecks/ambiguousObjectExpressionType.kt
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="https://github.com/google/kotlin/blob/39c1204b931b46faf1cf0333b8f22c5eba13fd8e/compiler/testData/diagnostics/tests/declarationChecks/ambiguousObjectExpressionType.fir.kt" target="_blank">
+                                        <strong>FIR:</strong> tests/declarationChecks/ambiguousObjectExpressionType.fir.kt
+                                    </a>
+                                </div>
+                            `
+                        }
+                    };
+                    const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                    diff2htmlUi.draw();
+                    diff2htmlUi.highlightCode();
+                })();</script>
+    </div>
+  </body>
+</html>

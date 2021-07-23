@@ -1,0 +1,106 @@
+<html>
+  <head>
+    <title>Diagnostics diff: UNSUPPORTED</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row sticky-top" style="background: white" id="summary">
+        <div class="d-inline-flex align-items-baseline">
+          <h1 class="mr-2">UNSUPPORTED</h1>
+<a href="index.html">(back to diagnostic list)</a></div>
+      </div>
+      <div class="row">
+        <ul>
+          <li><strong>Total: </strong>279</li>
+          <li><strong>Match %: </strong>5.02%</li>
+          <li><a href="#matched"><strong># Matched: </strong>14</a></li>
+          <li><strong># Non-matched: </strong>265</li>
+          <li><a href="#missing"><strong># Missing: </strong>235</a></li>
+          <li><a href="#unexpected"><strong># Unexpected: </strong>0</a></li>
+          <li><a href="#mismatched"><strong># Mismatched: </strong>30</a></li>
+          <li><strong># Files: </strong>44</li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="missing">
+        <h2>Missing (235)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__StringPrefixAndSuffix.kt.html" target="_blank">tests/StringPrefixAndSuffix.kt (36)</a></li>
+          <li><a href="diff-tests__NumberPrefixAndSuffix.kt.html" target="_blank">tests/NumberPrefixAndSuffix.kt (35)</a></li>
+          <li><a href="diff-tests__annotations__AnnotationForClassTypeParameter_typeUseFlag.kt.html" target="_blank">tests/annotations/AnnotationForClassTypeParameter_typeUseFlag.kt (30)</a></li>
+          <li><a href="diff-testsWithStdLib__ArrayOfNothing.kt.html" target="_blank">testsWithStdLib/ArrayOfNothing.kt (22)</a></li>
+          <li><a href="diff-tests__modifiers__modifierOnParameterInFunctionType.kt.html" target="_blank">tests/modifiers/modifierOnParameterInFunctionType.kt (21)</a></li>
+          <li><a href="diff-testsWithStdLib__coroutines__operators.kt.html" target="_blank">testsWithStdLib/coroutines/operators.kt (12)</a></li>
+          <li><a href="diff-tests__collectionLiterals__collectionLiteralsOutsideOfAnnotations.kt.html" target="_blank">tests/collectionLiterals/collectionLiteralsOutsideOfAnnotations.kt (10)</a></li>
+          <li><a href="diff-tests__annotations__annotationOnParameterInFunctionType.kt.html" target="_blank">tests/annotations/annotationOnParameterInFunctionType.kt (8)</a></li>
+          <li><a href="diff-tests__collectionLiterals__noCollectionLiterals.kt.html" target="_blank">tests/collectionLiterals/noCollectionLiterals.kt (8)</a></li>
+          <li><a href="diff-tests__DefaultValueForParameterInFunctionType.kt.html" target="_blank">tests/DefaultValueForParameterInFunctionType.kt (7)</a></li>
+          <li><a href="diff-tests__inference__capturedTypes__captureForNullableTypes.kt.html" target="_blank">tests/inference/capturedTypes/captureForNullableTypes.kt (6)</a></li>
+          <li><a href="diff-tests__when__ReservedExhaustiveWhen.kt.html" target="_blank">tests/when/ReservedExhaustiveWhen.kt (6)</a></li>
+          <li><a href="diff-testsWithStdLib__contracts__newSyntax__simpleFunctionsContractDescription.kt.html" target="_blank">testsWithStdLib/contracts/newSyntax/simpleFunctionsContractDescription.kt (3)</a></li>
+          <li><a href="diff-tests__incompleteCode__diagnosticWithSyntaxError__typeReferenceError.kt.html" target="_blank">tests/incompleteCode/diagnosticWithSyntaxError/typeReferenceError.kt (2)</a></li>
+          <li><a href="diff-tests__regressions__resolveCollectionLiteralInsideLambda.kt.html" target="_blank">tests/regressions/resolveCollectionLiteralInsideLambda.kt (2)</a></li>
+          <li><a href="diff-tests__sealed__interfaces__sealedFunInterface.kt.html" target="_blank">tests/sealed/interfaces/sealedFunInterface.kt (2)</a></li>
+          <li><a href="diff-tests__syntheticExtensions__javaProperties__SyntheticJavaPropertyReference.kt.html" target="_blank">tests/syntheticExtensions/javaProperties/SyntheticJavaPropertyReference.kt (2)</a></li>
+          <li><a href="diff-testsWithStdLib__contracts__newSyntax__complexContractDescription.kt.html" target="_blank">testsWithStdLib/contracts/newSyntax/complexContractDescription.kt (2)</a></li>
+          <li><a href="diff-testsWithStdLib__contracts__newSyntax__onelineFunctionsContractDescription.kt.html" target="_blank">testsWithStdLib/contracts/newSyntax/onelineFunctionsContractDescription.kt (2)</a></li>
+          <li><a href="diff-testsWithStdLib__contracts__newSyntax__propertyAccessorsContractDescription.kt.html" target="_blank">testsWithStdLib/contracts/newSyntax/propertyAccessorsContractDescription.kt (2)</a></li>
+          <li><a href="diff-testsWithStdLib__coroutines__suspendTest.kt.html" target="_blank">testsWithStdLib/coroutines/suspendTest.kt (2)</a></li>
+          <li><a href="diff-testsWithStdLib__coroutines__suspesionInDefaultValue.kt.html" target="_blank">testsWithStdLib/coroutines/suspesionInDefaultValue.kt (2)</a></li>
+          <li><a href="diff-testsWithStdLib__java__inheritedFunctionN.kt.html" target="_blank">testsWithStdLib/java/inheritedFunctionN.kt (2)</a></li>
+          <li><a href="diff-testsWithStdLib__reified__reifiedNothingSubstitution.kt.html" target="_blank">testsWithStdLib/reified/reifiedNothingSubstitution.kt (2)</a></li>
+          <li><a href="diff-tests__NamedFunctionTypeParameterInSupertype.kt.html" target="_blank">tests/NamedFunctionTypeParameterInSupertype.kt (1)</a></li>
+          <li><a href="diff-tests__callableReference__unsupported__syntheticProperties.kt.html" target="_blank">tests/callableReference/unsupported/syntheticProperties.kt (1)</a></li>
+          <li><a href="diff-tests__collectionLiterals__noArrayLiteralsInAnnotationsFeature.kt.html" target="_blank">tests/collectionLiterals/noArrayLiteralsInAnnotationsFeature.kt (1)</a></li>
+          <li><a href="diff-tests__incompleteCode__diagnosticWithSyntaxError__funcitonTypes.kt.html" target="_blank">tests/incompleteCode/diagnosticWithSyntaxError/funcitonTypes.kt (1)</a></li>
+          <li><a href="diff-tests__secondaryConstructors__delegationByWithoutPrimary.kt.html" target="_blank">tests/secondaryConstructors/delegationByWithoutPrimary.kt (1)</a></li>
+          <li><a href="diff-tests__typealias__illegalTypeInTypeAliasExpansion.kt.html" target="_blank">tests/typealias/illegalTypeInTypeAliasExpansion.kt (1)</a></li>
+          <li><a href="diff-testsWithStdLib__coroutines__callableReference__property.kt.html" target="_blank">testsWithStdLib/coroutines/callableReference/property.kt (1)</a></li>
+          <li><a href="diff-testsWithStdLib__coroutines__illegalSuspendCallsForDelegated.kt.html" target="_blank">testsWithStdLib/coroutines/illegalSuspendCallsForDelegated.kt (1)</a></li>
+          <li><a href="diff-testsWithStdLib__inference__callableReferenceOnParameter.kt.html" target="_blank">testsWithStdLib/inference/callableReferenceOnParameter.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="mismatched">
+        <h2>Mismatched (30)</h2>
+      </div>
+      <div class="row sticky-top" style="top: 5.5em; background: white">
+        <h5>UNSUPPORTED → INCOMPATIBLE_MODIFIERS (15)</h5>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__modifiers__modifierOnParameterInFunctionType.kt.html" target="_blank">tests/modifiers/modifierOnParameterInFunctionType.kt (15)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 5.5em; background: white">
+        <h5>UNSUPPORTED → WRONG_ANNOTATION_TARGET (15)</h5>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__annotations__AnnotationForClassTypeParameter_15.kt.html" target="_blank">tests/annotations/AnnotationForClassTypeParameter_15.kt (15)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="matched">
+        <h2>Matched (14)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__callableReference__unsupported__localVariable.kt.html" target="_blank">tests/callableReference/unsupported/localVariable.kt (4)</a></li>
+          <li><a href="diff-tests__dynamicTypes__unsupported.kt.html" target="_blank">tests/dynamicTypes/unsupported.kt (2)</a></li>
+          <li><a href="diff-tests__callableReference__property__backingField.kt.html" target="_blank">tests/callableReference/property/backingField.kt (1)</a></li>
+          <li><a href="diff-tests__callableReference__unsupported__callableReferenceToLocalVariable.kt.html" target="_blank">tests/callableReference/unsupported/callableReferenceToLocalVariable.kt (1)</a></li>
+          <li><a href="diff-tests__callableReference__unsupported__localVariableWithSubstitution.kt.html" target="_blank">tests/callableReference/unsupported/localVariableWithSubstitution.kt (1)</a></li>
+          <li><a href="diff-tests__callableReference__unsupported__parameterWithSubstitution.kt.html" target="_blank">tests/callableReference/unsupported/parameterWithSubstitution.kt (1)</a></li>
+          <li><a href="diff-tests__dynamicTypes__delegationBy.kt.html" target="_blank">tests/dynamicTypes/delegationBy.kt (1)</a></li>
+          <li><a href="diff-tests__dynamicTypes__withInvisibleSynthesized.kt.html" target="_blank">tests/dynamicTypes/withInvisibleSynthesized.kt (1)</a></li>
+          <li><a href="diff-tests__typealias__typeAliasShouldExpandToClass.kt.html" target="_blank">tests/typealias/typeAliasShouldExpandToClass.kt (1)</a></li>
+          <li><a href="diff-testsWithJsStdLib__reflection__reflectionApi.kt.html" target="_blank">testsWithJsStdLib/reflection/reflectionApi.kt (1)</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

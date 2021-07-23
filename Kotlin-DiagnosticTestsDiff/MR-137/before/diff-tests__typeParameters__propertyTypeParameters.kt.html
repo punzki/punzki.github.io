@@ -1,0 +1,103 @@
+<html>
+  <head>
+    <title>Diagnostics diff: tests/typeParameters/propertyTypeParameters.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="card-header p-0" id="heading0"><button class="btn btn-link btn-block text-left" data-toggle="collapse" data-target="#collapse0">
+          <h5>Diff between FE 1.0 vs FIR</h5>
+        </button></div>
+      <div class="collapse show" id="collapse0">
+        <div class="card-body p-1">
+          <div id="diff0" style="width: 100%"></div>
+        </div>
+      </div>
+      <script type="text/javascript">                (function() {
+                    const diffString = `--- tests/typeParameters/propertyTypeParameters.kt
++++ tests/typeParameters/propertyTypeParameters.kt
+@@ -1,45 +1,45 @@
+ // FIR_IDENTICAL
+ // !DIAGNOSTICS: -REDUNDANT_PROJECTION -CONFLICTING_PROJECTION
+ 
+ interface G
+ 
+ val <T> T.a: Int
+     get() = 3
+ 
+ val <T1, T2> Map<T1, T2>.b: String
+     get() = "asds"
+ 
+ val <<!TYPE_PARAMETER_OF_PROPERTY_NOT_USED_IN_RECEIVER!>T : G<!>> G.c: Int get() = 5
+ 
+ val <<!TYPE_PARAMETER_OF_PROPERTY_NOT_USED_IN_RECEIVER!>T1<!>, T2, T3> List<Map<T2, T3>>.d: Int get() = 6
+ 
+ val <<!TYPE_PARAMETER_OF_PROPERTY_NOT_USED_IN_RECEIVER!>T: Any<!>> G.e: T?
+     get() = null
+ 
+ val <T> List<Map<Int, Map<String, T>>>.f: Int get() = 7
+ 
+ val <T> List<Map<Int, Map<String, out T>>>.g: Int get() = 7
+ val <T> List<Map<Int, Map<String, in T>>>.h: Int get() = 7
+ 
+ val <T> List<Map<T, Map<T, T>>>.i: Int get() = 7
+ 
+ var <<!TYPE_PARAMETER_OF_PROPERTY_NOT_USED_IN_RECEIVER!>T1<!>, <!TYPE_PARAMETER_OF_PROPERTY_NOT_USED_IN_RECEIVER!>T2<!>, <!TYPE_PARAMETER_OF_PROPERTY_NOT_USED_IN_RECEIVER!>T3<!>, <!TYPE_PARAMETER_OF_PROPERTY_NOT_USED_IN_RECEIVER!>T4<!>> p = 1
+ 
+ class C<T1, T2> {
+     val <<!TYPE_PARAMETER_OF_PROPERTY_NOT_USED_IN_RECEIVER!>E<!>> T1.a: Int get() = 3
+     val <<!TYPE_PARAMETER_OF_PROPERTY_NOT_USED_IN_RECEIVER!>E<!>> T2.b: Int get() = 3
+     val <E> E.c: Int get() = 3
+     val <<!TYPE_PARAMETER_OF_PROPERTY_NOT_USED_IN_RECEIVER!>E<!>> Map<T1, T2>.d: Int get() = 3
+     val <E> Map<T1, E>.e: Int get() = 3
+ }
+ 
+ val <T : Enum<T>> T.z1: Int
+     get() = 4
+ 
+ interface D<T : Enum<T>>
+ 
+ val <X: D<*>> X.z2: Int
+     get() = 4
+ 
+ val <<!TYPE_PARAMETER_OF_PROPERTY_NOT_USED_IN_RECEIVER!>Y<!>> D<*>.z3: Int
+     get() = 4`;
+                    const targetElement = $('#diff0')[0];
+                    const configuration = {
+                        drawFileList: false,
+                        fileListToggle: false,
+                        fileListStartVisible: false,
+                        fileContentToggle: false,
+                        matching: 'lines',
+                        outputFormat: 'side-by-side',
+                        synchronisedScroll: true,
+                        highlight: true,
+                        renderNothingWhenEmpty: false,
+                        rawTemplates: {
+                            'generic-file-path': `
+                                <div class="col">
+                                    <a href="https://github.com/google/kotlin/blob/60458214a559306869c773e09a903e99c3f0d23a/compiler/testData/diagnostics/tests/typeParameters/propertyTypeParameters.kt" target="_blank">
+                                        <strong>FE 1.0:</strong> tests/typeParameters/propertyTypeParameters.kt
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="https://github.com/google/kotlin/blob/60458214a559306869c773e09a903e99c3f0d23a/compiler/testData/diagnostics/tests/typeParameters/propertyTypeParameters.kt" target="_blank">
+                                        <strong>FIR:</strong> tests/typeParameters/propertyTypeParameters.kt
+                                    </a>
+                                </div>
+                            `
+                        }
+                    };
+                    const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                    diff2htmlUi.draw();
+                    diff2htmlUi.highlightCode();
+                })();</script>
+    </div>
+  </body>
+</html>

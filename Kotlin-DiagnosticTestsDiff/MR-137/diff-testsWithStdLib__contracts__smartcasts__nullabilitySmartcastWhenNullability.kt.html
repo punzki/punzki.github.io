@@ -1,0 +1,320 @@
+<html>
+  <head>
+    <title>Diagnostics diff: testsWithStdLib/contracts/smartcasts/nullabilitySmartcastWhenNullability.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="card-header p-0" id="heading0"><button class="btn btn-link btn-block text-left" data-toggle="collapse" data-target="#collapse0">
+          <h5>Diff between FIR before vs FIR after</h5>
+        </button></div>
+      <div class="collapse show" id="collapse0">
+        <div class="card-body p-1">
+          <div id="diff0" style="width: 100%"></div>
+        </div>
+      </div>
+      <script type="text/javascript">                (function() {
+                    const diffString = `--- before/testData/testsWithStdLib/contracts/smartcasts/nullabilitySmartcastWhenNullability.fir.kt
++++ after/testData/testsWithStdLib/contracts/smartcasts/nullabilitySmartcastWhenNullability.fir.kt
+@@ -1,56 +1,56 @@
+ // !LANGUAGE: +AllowContractsForCustomFunctions +UseReturnsEffect
+ // !USE_EXPERIMENTAL: kotlin.contracts.ExperimentalContracts
+ // !DIAGNOSTICS: -INVISIBLE_REFERENCE -INVISIBLE_MEMBER
+ 
+ import kotlin.contracts.*
+ 
+ fun nullWhenNull(x: Int?): Int? {
+     contract {
+         returnsNotNull() implies (x != null)
+     }
+     return x?.inc()
+ }
+ 
+ fun testNullWhenNull(x: Int?) {
+     if (nullWhenNull(x) == null) {
+         x<!UNSAFE_CALL!>.<!>dec()
+     }
+     else {
+         x.dec()
+     }
+ 
+     if (nullWhenNull(x) != null) {
+         x.dec()
+     }
+     else {
+         x<!UNSAFE_CALL!>.<!>dec()
+     }
+ 
+     x<!UNSAFE_CALL!>.<!>dec()
+ }
+ 
+ // NB. it is the same function as \`nullWhenNull\`, but annotations specifies other facet of the function behaviour
+ fun notNullWhenNotNull (x: Int?): Int? {
+     contract {
+         returns(null) implies (x == null)
+     }
+     return x?.inc()
+ }
+ 
+ fun testNotNullWhenNotNull (x: Int?) {
+     if (notNullWhenNotNull(x) == null) {
+-        x == null
++        <!SENSELESS_COMPARISON!>x == null<!>
+     }
+     else {
+         x<!UNSAFE_CALL!>.<!>dec()
+     }
+ 
+     if (notNullWhenNotNull(x) != null) {
+         x<!UNSAFE_CALL!>.<!>dec()
+     }
+     else {
+-        x == null
++        <!SENSELESS_COMPARISON!>x == null<!>
+     }
+ 
+     x<!UNSAFE_CALL!>.<!>dec()
+ }`;
+                    const targetElement = $('#diff0')[0];
+                    const configuration = {
+                        drawFileList: false,
+                        fileListToggle: false,
+                        fileListStartVisible: false,
+                        fileContentToggle: false,
+                        matching: 'lines',
+                        outputFormat: 'side-by-side',
+                        synchronisedScroll: true,
+                        highlight: true,
+                        renderNothingWhenEmpty: false,
+                        rawTemplates: {
+                            'generic-file-path': `
+                                <div class="col">
+                                    <a href="https://github.com/google/kotlin/blob/60458214a559306869c773e09a903e99c3f0d23a/compiler/testData/diagnostics/testsWithStdLib/contracts/smartcasts/nullabilitySmartcastWhenNullability.fir.kt" target="_blank">
+                                        <strong>FIR before:</strong> before/testData/testsWithStdLib/contracts/smartcasts/nullabilitySmartcastWhenNullability.fir.kt
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="https://github.com/google/kotlin/blob/39c1204b931b46faf1cf0333b8f22c5eba13fd8e/compiler/testData/diagnostics/testsWithStdLib/contracts/smartcasts/nullabilitySmartcastWhenNullability.fir.kt" target="_blank">
+                                        <strong>FIR after:</strong> after/testData/testsWithStdLib/contracts/smartcasts/nullabilitySmartcastWhenNullability.fir.kt
+                                    </a>
+                                </div>
+                            `
+                        }
+                    };
+                    const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                    diff2htmlUi.draw();
+                    diff2htmlUi.highlightCode();
+                })();</script>
+      <div class="card-header p-0" id="heading1"><button class="btn btn-link btn-block text-left" data-toggle="collapse" data-target="#collapse1">
+          <h5>Diff between FE 1.0 after vs FIR after</h5>
+        </button></div>
+      <div class="collapse" id="collapse1">
+        <div class="card-body p-1">
+          <div id="diff1" style="width: 100%"></div>
+        </div>
+      </div>
+      <script type="text/javascript">                (function() {
+                    const diffString = `--- after/testData/testsWithStdLib/contracts/smartcasts/nullabilitySmartcastWhenNullability.kt
++++ after/testData/testsWithStdLib/contracts/smartcasts/nullabilitySmartcastWhenNullability.fir.kt
+@@ -1,56 +1,56 @@
+ // !LANGUAGE: +AllowContractsForCustomFunctions +UseReturnsEffect
+ // !USE_EXPERIMENTAL: kotlin.contracts.ExperimentalContracts
+ // !DIAGNOSTICS: -INVISIBLE_REFERENCE -INVISIBLE_MEMBER
+ 
+ import kotlin.contracts.*
+ 
+ fun nullWhenNull(x: Int?): Int? {
+     contract {
+         returnsNotNull() implies (x != null)
+     }
+     return x?.inc()
+ }
+ 
+ fun testNullWhenNull(x: Int?) {
+     if (nullWhenNull(x) == null) {
+         x<!UNSAFE_CALL!>.<!>dec()
+     }
+     else {
+-        <!DEBUG_INFO_SMARTCAST!>x<!>.dec()
++        x.dec()
+     }
+ 
+     if (nullWhenNull(x) != null) {
+-        <!DEBUG_INFO_SMARTCAST!>x<!>.dec()
++        x.dec()
+     }
+     else {
+         x<!UNSAFE_CALL!>.<!>dec()
+     }
+ 
+     x<!UNSAFE_CALL!>.<!>dec()
+ }
+ 
+ // NB. it is the same function as \`nullWhenNull\`, but annotations specifies other facet of the function behaviour
+ fun notNullWhenNotNull (x: Int?): Int? {
+     contract {
+         returns(null) implies (x == null)
+     }
+     return x?.inc()
+ }
+ 
+ fun testNotNullWhenNotNull (x: Int?) {
+     if (notNullWhenNotNull(x) == null) {
+-        <!SENSELESS_COMPARISON!><!DEBUG_INFO_CONSTANT!>x<!> == null<!>
++        <!SENSELESS_COMPARISON!>x == null<!>
+     }
+     else {
+         x<!UNSAFE_CALL!>.<!>dec()
+     }
+ 
+     if (notNullWhenNotNull(x) != null) {
+         x<!UNSAFE_CALL!>.<!>dec()
+     }
+     else {
+-        <!SENSELESS_COMPARISON!><!DEBUG_INFO_CONSTANT!>x<!> == null<!>
++        <!SENSELESS_COMPARISON!>x == null<!>
+     }
+ 
+     x<!UNSAFE_CALL!>.<!>dec()
+ }`;
+                    const targetElement = $('#diff1')[0];
+                    const configuration = {
+                        drawFileList: false,
+                        fileListToggle: false,
+                        fileListStartVisible: false,
+                        fileContentToggle: false,
+                        matching: 'lines',
+                        outputFormat: 'side-by-side',
+                        synchronisedScroll: true,
+                        highlight: true,
+                        renderNothingWhenEmpty: false,
+                        rawTemplates: {
+                            'generic-file-path': `
+                                <div class="col">
+                                    <a href="https://github.com/google/kotlin/blob/39c1204b931b46faf1cf0333b8f22c5eba13fd8e/compiler/testData/diagnostics/testsWithStdLib/contracts/smartcasts/nullabilitySmartcastWhenNullability.kt" target="_blank">
+                                        <strong>FE 1.0 after:</strong> after/testData/testsWithStdLib/contracts/smartcasts/nullabilitySmartcastWhenNullability.kt
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="https://github.com/google/kotlin/blob/39c1204b931b46faf1cf0333b8f22c5eba13fd8e/compiler/testData/diagnostics/testsWithStdLib/contracts/smartcasts/nullabilitySmartcastWhenNullability.fir.kt" target="_blank">
+                                        <strong>FIR after:</strong> after/testData/testsWithStdLib/contracts/smartcasts/nullabilitySmartcastWhenNullability.fir.kt
+                                    </a>
+                                </div>
+                            `
+                        }
+                    };
+                    const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                    diff2htmlUi.draw();
+                    diff2htmlUi.highlightCode();
+                })();</script>
+      <div class="card-header p-0" id="heading2"><button class="btn btn-link btn-block text-left" data-toggle="collapse" data-target="#collapse2">
+          <h5>Diff between FE 1.0 before vs FIR before</h5>
+        </button></div>
+      <div class="collapse" id="collapse2">
+        <div class="card-body p-1">
+          <div id="diff2" style="width: 100%"></div>
+        </div>
+      </div>
+      <script type="text/javascript">                (function() {
+                    const diffString = `--- before/testData/testsWithStdLib/contracts/smartcasts/nullabilitySmartcastWhenNullability.kt
++++ before/testData/testsWithStdLib/contracts/smartcasts/nullabilitySmartcastWhenNullability.fir.kt
+@@ -1,56 +1,56 @@
+ // !LANGUAGE: +AllowContractsForCustomFunctions +UseReturnsEffect
+ // !USE_EXPERIMENTAL: kotlin.contracts.ExperimentalContracts
+ // !DIAGNOSTICS: -INVISIBLE_REFERENCE -INVISIBLE_MEMBER
+ 
+ import kotlin.contracts.*
+ 
+ fun nullWhenNull(x: Int?): Int? {
+     contract {
+         returnsNotNull() implies (x != null)
+     }
+     return x?.inc()
+ }
+ 
+ fun testNullWhenNull(x: Int?) {
+     if (nullWhenNull(x) == null) {
+         x<!UNSAFE_CALL!>.<!>dec()
+     }
+     else {
+-        <!DEBUG_INFO_SMARTCAST!>x<!>.dec()
++        x.dec()
+     }
+ 
+     if (nullWhenNull(x) != null) {
+-        <!DEBUG_INFO_SMARTCAST!>x<!>.dec()
++        x.dec()
+     }
+     else {
+         x<!UNSAFE_CALL!>.<!>dec()
+     }
+ 
+     x<!UNSAFE_CALL!>.<!>dec()
+ }
+ 
+ // NB. it is the same function as \`nullWhenNull\`, but annotations specifies other facet of the function behaviour
+ fun notNullWhenNotNull (x: Int?): Int? {
+     contract {
+         returns(null) implies (x == null)
+     }
+     return x?.inc()
+ }
+ 
+ fun testNotNullWhenNotNull (x: Int?) {
+     if (notNullWhenNotNull(x) == null) {
+-        <!SENSELESS_COMPARISON!><!DEBUG_INFO_CONSTANT!>x<!> == null<!>
++        x == null
+     }
+     else {
+         x<!UNSAFE_CALL!>.<!>dec()
+     }
+ 
+     if (notNullWhenNotNull(x) != null) {
+         x<!UNSAFE_CALL!>.<!>dec()
+     }
+     else {
+-        <!SENSELESS_COMPARISON!><!DEBUG_INFO_CONSTANT!>x<!> == null<!>
++        x == null
+     }
+ 
+     x<!UNSAFE_CALL!>.<!>dec()
+ }`;
+                    const targetElement = $('#diff2')[0];
+                    const configuration = {
+                        drawFileList: false,
+                        fileListToggle: false,
+                        fileListStartVisible: false,
+                        fileContentToggle: false,
+                        matching: 'lines',
+                        outputFormat: 'side-by-side',
+                        synchronisedScroll: true,
+                        highlight: true,
+                        renderNothingWhenEmpty: false,
+                        rawTemplates: {
+                            'generic-file-path': `
+                                <div class="col">
+                                    <a href="https://github.com/google/kotlin/blob/60458214a559306869c773e09a903e99c3f0d23a/compiler/testData/diagnostics/testsWithStdLib/contracts/smartcasts/nullabilitySmartcastWhenNullability.kt" target="_blank">
+                                        <strong>FE 1.0 before:</strong> before/testData/testsWithStdLib/contracts/smartcasts/nullabilitySmartcastWhenNullability.kt
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="https://github.com/google/kotlin/blob/60458214a559306869c773e09a903e99c3f0d23a/compiler/testData/diagnostics/testsWithStdLib/contracts/smartcasts/nullabilitySmartcastWhenNullability.fir.kt" target="_blank">
+                                        <strong>FIR before:</strong> before/testData/testsWithStdLib/contracts/smartcasts/nullabilitySmartcastWhenNullability.fir.kt
+                                    </a>
+                                </div>
+                            `
+                        }
+                    };
+                    const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                    diff2htmlUi.draw();
+                    diff2htmlUi.highlightCode();
+                })();</script>
+    </div>
+  </body>
+</html>

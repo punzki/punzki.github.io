@@ -1,0 +1,129 @@
+<html>
+  <head>
+    <title>Diagnostics diff: nativeTests/threadLocal.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="card-header p-0" id="heading0"><button class="btn btn-link btn-block text-left" data-toggle="collapse" data-target="#collapse0">
+          <h5>Diff between FE 1.0 vs FIR</h5>
+        </button></div>
+      <div class="collapse show" id="collapse0">
+        <div class="card-body p-1">
+          <div id="diff0" style="width: 100%"></div>
+        </div>
+      </div>
+      <script type="text/javascript">                (function() {
+                    const diffString = `--- nativeTests/threadLocal.kt
++++ nativeTests/threadLocal.kt
+@@ -1,71 +1,71 @@
+ // FILE: annotation.kt
+ package kotlin.native.concurrent
+ 
+ @Target(AnnotationTarget.PROPERTY, AnnotationTarget.CLASS)
+ @Retention(AnnotationRetention.BINARY)
+ annotation class ThreadLocal
+ 
+ // FILE: test.kt
+ import kotlin.native.concurrent.ThreadLocal
+ import kotlin.reflect.KProperty
+ 
+ data class Point(val x: Double, val y: Double)
+ 
+ class Person(val name: String) {
+     <!INAPPLICABLE_THREAD_LOCAL_TOP_LEVEL!>@ThreadLocal<!>
+     var surname: String? = null
+ }
+ 
+ abstract class Information {
+     abstract var field: String
+ }
+ 
+ <!INAPPLICABLE_THREAD_LOCAL!>@ThreadLocal<!>
+ class Person1(val name: String) {
+     var surname: String? = null
+     <!INAPPLICABLE_THREAD_LOCAL_TOP_LEVEL!>@ThreadLocal<!>
+     val extraInfo: Information = object : Information() {
+         override var field: String = "extra info"
+     }
+ }
+ 
+ @ThreadLocal
+ val extraInfo: Information = object : Information() {
+     override var field: String = "extra info"
+ }
+ 
+ @ThreadLocal
+ val point1 = Point(1.0, 1.0)
+ 
+ <!INAPPLICABLE_THREAD_LOCAL!>@ThreadLocal<!>
+ val cornerPoint: Point
+     get() = point1
+ 
+ @ThreadLocal
+ val person = Person1("aaaaa")
+ 
+ class Delegate {
+     val value: Int = 10
+     operator fun getValue(thisRef: Any?, property: KProperty<*>): Int {
+         return value
+     }
+ 
+     operator fun setValue(thisRef: Any?, property: KProperty<*>, value: Int) {
+     }
+ }
+ 
+ @ThreadLocal
+ var field1: Int by Delegate()
+ 
+ @ThreadLocal
+ object WithDelegate {
+     var field1: Int by Delegate()
+ }
+ 
+ class Bar {
+     @ThreadLocal
+     object SomeObject {
+         var field1: Int = 10
+         var field2: String? = null
+     }
+ }`;
+                    const targetElement = $('#diff0')[0];
+                    const configuration = {
+                        drawFileList: false,
+                        fileListToggle: false,
+                        fileListStartVisible: false,
+                        fileContentToggle: false,
+                        matching: 'lines',
+                        outputFormat: 'side-by-side',
+                        synchronisedScroll: true,
+                        highlight: true,
+                        renderNothingWhenEmpty: false,
+                        rawTemplates: {
+                            'generic-file-path': `
+                                <div class="col">
+                                    <a href="https://github.com/google/kotlin/blob/60458214a559306869c773e09a903e99c3f0d23a/compiler/testData/diagnostics/nativeTests/threadLocal.kt" target="_blank">
+                                        <strong>FE 1.0:</strong> nativeTests/threadLocal.kt
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="https://github.com/google/kotlin/blob/60458214a559306869c773e09a903e99c3f0d23a/compiler/testData/diagnostics/nativeTests/threadLocal.kt" target="_blank">
+                                        <strong>FIR:</strong> nativeTests/threadLocal.kt
+                                    </a>
+                                </div>
+                            `
+                        }
+                    };
+                    const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                    diff2htmlUi.draw();
+                    diff2htmlUi.highlightCode();
+                })();</script>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,207 @@
+<html>
+  <head>
+    <title>Diagnostics diff: tests/inference/kt39220.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="card-header p-0" id="heading0"><button class="btn btn-link btn-block text-left" data-toggle="collapse" data-target="#collapse0">
+          <h5>Diff between FE 1.0 vs FIR</h5>
+        </button></div>
+      <div class="collapse show" id="collapse0">
+        <div class="card-body p-1">
+          <div id="diff0" style="width: 100%"></div>
+        </div>
+      </div>
+      <script type="text/javascript">                (function() {
+                    const diffString = `--- tests/inference/kt39220.kt
++++ tests/inference/kt39220.fir.kt
+@@ -1,127 +1,127 @@
+ // !DIAGNOSTICS: -UNUSED_PARAMETER -FINAL_UPPER_BOUND
+ 
+ import kotlin.reflect.*
+ 
+ interface Foo {
+     fun resolve(var1: Int): String
+     fun resolve(var1: String): String
+ 
+     suspend fun resolve2(var1: Int): String
+     suspend fun resolve2(var1: String): String
+ 
+     val Int.x1 get() = ""
+     val String.x1 get() = ""
+ 
+     var Int.x2
+         get() = ""
+         set(value) {}
+     var String.x2
+         get() = ""
+         set(value) {}
+ 
+     val Int.x3 get() = ""
+     var String.x3
+         get() = ""
+         set(value) {}
+ 
+     // CR on property with to receivers are forbidden
+     fun <T: Foo> test() {
+         // with LHS and property
+-        bar8<T>(<!TYPE_MISMATCH!>Foo::<!CALLABLE_REFERENCE_RESOLUTION_AMBIGUITY!>x1<!><!>)
+-        bar8<Foo>(Foo::<!CALLABLE_REFERENCE_RESOLUTION_AMBIGUITY!>x1<!>)
+-        bar8(Foo::<!CALLABLE_REFERENCE_RESOLUTION_AMBIGUITY!>x1<!>)
++        <!INAPPLICABLE_CANDIDATE!>bar8<!><T>(Foo::<!UNRESOLVED_REFERENCE!>x1<!>)
++        <!INAPPLICABLE_CANDIDATE!>bar8<!><Foo>(Foo::<!UNRESOLVED_REFERENCE!>x1<!>)
++        <!INAPPLICABLE_CANDIDATE!>bar8<!>(Foo::<!UNRESOLVED_REFERENCE!>x1<!>)
+ 
+         // with LHS and mutable property
+-        bar8<T>(<!TYPE_MISMATCH!>Foo::<!CALLABLE_REFERENCE_RESOLUTION_AMBIGUITY!>x2<!><!>)
+-        bar8<Foo>(Foo::<!CALLABLE_REFERENCE_RESOLUTION_AMBIGUITY!>x2<!>)
+-        bar8(Foo::<!CALLABLE_REFERENCE_RESOLUTION_AMBIGUITY!>x2<!>)
++        <!INAPPLICABLE_CANDIDATE!>bar8<!><T>(Foo::<!UNRESOLVED_REFERENCE!>x2<!>)
++        <!INAPPLICABLE_CANDIDATE!>bar8<!><Foo>(Foo::<!UNRESOLVED_REFERENCE!>x2<!>)
++        <!INAPPLICABLE_CANDIDATE!>bar8<!>(Foo::<!UNRESOLVED_REFERENCE!>x2<!>)
+ 
+         // with LHS and propery + mutable property (mixed)
+-        bar8<T>(<!TYPE_MISMATCH!>Foo::<!CALLABLE_REFERENCE_RESOLUTION_AMBIGUITY!>x3<!><!>)
+-        bar8<Foo>(Foo::<!CALLABLE_REFERENCE_RESOLUTION_AMBIGUITY!>x3<!>)
+-        bar8(Foo::<!CALLABLE_REFERENCE_RESOLUTION_AMBIGUITY!>x3<!>)
+-        bar9<T>(<!TYPE_MISMATCH!>Foo::<!CALLABLE_REFERENCE_RESOLUTION_AMBIGUITY!>x3<!><!>)
+-        bar9<Foo>(Foo::<!CALLABLE_REFERENCE_RESOLUTION_AMBIGUITY!>x3<!>)
+-        bar9(Foo::<!CALLABLE_REFERENCE_RESOLUTION_AMBIGUITY!>x3<!>)
++        <!INAPPLICABLE_CANDIDATE!>bar8<!><T>(Foo::<!UNRESOLVED_REFERENCE!>x3<!>)
++        <!INAPPLICABLE_CANDIDATE!>bar8<!><Foo>(Foo::<!UNRESOLVED_REFERENCE!>x3<!>)
++        <!INAPPLICABLE_CANDIDATE!>bar8<!>(Foo::<!UNRESOLVED_REFERENCE!>x3<!>)
++        <!INAPPLICABLE_CANDIDATE!>bar9<!><T>(Foo::<!UNRESOLVED_REFERENCE!>x3<!>)
++        <!INAPPLICABLE_CANDIDATE!>bar9<!><Foo>(Foo::<!UNRESOLVED_REFERENCE!>x3<!>)
++        <!INAPPLICABLE_CANDIDATE!>bar9<!>(Foo::<!UNRESOLVED_REFERENCE!>x3<!>)
+     }
+ }
+ 
+ val Int.x1 get() = ""
+ val String.x1 get() = ""
+ 
+ fun <K> bar1(f: KFunction2<K, String, String>) {}
+ 
+ fun <K> bar2(f: KFunction2<<!CONFLICTING_PROJECTION!>out<!> K, String, String>) {}
+ 
+ fun <K> bar3(f: Any?) {}
+ 
+ fun <K> bar4(f: Function2<K, String, String>) {}
+ 
+ fun <K> bar5(f: suspend (K, String) -> String) {}
+ 
+ fun <K> bar6(f: KSuspendFunction2<K, String, String>) {}
+ 
+ fun <K> bar7(f: K.(String) -> String) {}
+ 
+ fun <K> bar8(f: KProperty2<K, Int, String>) {}
+ 
+ fun <K> bar9(f: KMutableProperty2<K, Int, String>) {}
+ 
+ fun <K> bar10(f: KProperty1<K, String>) {}
+ 
+ fun resolve(var2: Number, var1: Int) = ""
+ fun resolve(var2: Number, var1: String) = ""
+ 
+ fun <T : Foo, R: Number, D: Int> main() {
+     // with LHS
+     bar1<T>(Foo::resolve) // ERROR before the fix in NI
+     bar1<Foo>(Foo::resolve) // OK
+     bar1(Foo::resolve) // OK
+ 
+     // without LHS
+     bar1<R>(::resolve) // OK
+     bar1<Number>(::resolve) // OK
+     bar1(::resolve) // OK
+ 
+     // with LHS and conflicting projection
+-    bar2<T>(<!TYPE_MISMATCH!>Foo::<!CALLABLE_REFERENCE_RESOLUTION_AMBIGUITY!>resolve<!><!>)
+-    bar2<Foo>(Foo::<!CALLABLE_REFERENCE_RESOLUTION_AMBIGUITY!>resolve<!>)
+-    bar2(Foo::<!CALLABLE_REFERENCE_RESOLUTION_AMBIGUITY!>resolve<!>)
++    bar2<T>(Foo::<!OVERLOAD_RESOLUTION_AMBIGUITY!>resolve<!>)
++    bar2<Foo>(Foo::<!OVERLOAD_RESOLUTION_AMBIGUITY!>resolve<!>)
++    <!NEW_INFERENCE_NO_INFORMATION_FOR_PARAMETER!>bar2<!>(Foo::<!OVERLOAD_RESOLUTION_AMBIGUITY!>resolve<!>)
+ 
+     // with LHS and Any? expected type
+-    bar3<T>(Foo::<!CALLABLE_REFERENCE_RESOLUTION_AMBIGUITY!>resolve<!>)
+-    bar3<Foo>(Foo::<!CALLABLE_REFERENCE_RESOLUTION_AMBIGUITY!>resolve<!>)
+-    <!NEW_INFERENCE_NO_INFORMATION_FOR_PARAMETER!>bar3<!>(Foo::<!CALLABLE_REFERENCE_RESOLUTION_AMBIGUITY!>resolve<!>)
++    bar3<T>(Foo::<!OVERLOAD_RESOLUTION_AMBIGUITY!>resolve<!>)
++    bar3<Foo>(Foo::<!OVERLOAD_RESOLUTION_AMBIGUITY!>resolve<!>)
++    <!NEW_INFERENCE_NO_INFORMATION_FOR_PARAMETER!>bar3<!>(Foo::<!OVERLOAD_RESOLUTION_AMBIGUITY!>resolve<!>)
+ 
+     // with LHS and \`Function\` expected type
+     bar4<T>(Foo::resolve) // ERROR before the fix in NI
+     bar4<Foo>(Foo::resolve) // OK
+     bar4(Foo::resolve) // OK
+ 
+     // with LHS and \`SuspendFunction\` expected type
+     bar5<T>(Foo::resolve2) // ERROR before the fix in NI
+     bar5<Foo>(Foo::resolve2) // OK
+     bar5(Foo::resolve2) // OK
+ 
+     // with LHS and \`KSuspendFunction\` expected type
+     bar6<T>(Foo::resolve2) // ERROR before the fix in NI
+     bar6<Foo>(Foo::resolve2) // OK
+     bar6(Foo::resolve2) // OK
+ 
+     // with LHS and sentension function expected type
+     bar7<T>(Foo::resolve) // ERROR before the fix in NI
+     bar7<Foo>(Foo::resolve) // OK
+     bar7(Foo::resolve) // OK
+ 
+     // with LHS and sentension function expected type
+-    bar10<D>(<!TYPE_MISMATCH!>Int::<!CALLABLE_REFERENCE_RESOLUTION_AMBIGUITY!>x1<!><!>) // ERROR before the fix in NI
++    <!INAPPLICABLE_CANDIDATE!>bar10<!><D>(Int::<!UNRESOLVED_REFERENCE!>x1<!>) // ERROR before the fix in NI
+     bar10<Int>(Int::x1) // OK
+     bar10(Int::x1) // OK
+ 
+     fun Int.ext() {
+         // with LHS and sentension function expected type
+-        bar10<D>(::<!CALLABLE_REFERENCE_RESOLUTION_AMBIGUITY!>x1<!>) // ERROR before the fix in NI
+-        bar10<Int>(::<!CALLABLE_REFERENCE_RESOLUTION_AMBIGUITY!>x1<!>) // OK
+-        <!NEW_INFERENCE_NO_INFORMATION_FOR_PARAMETER!>bar10<!>(::<!CALLABLE_REFERENCE_RESOLUTION_AMBIGUITY!>x1<!>) // OK
++        <!INAPPLICABLE_CANDIDATE!>bar10<!><D>(::<!UNRESOLVED_REFERENCE!>x1<!>) // ERROR before the fix in NI
++        <!INAPPLICABLE_CANDIDATE!>bar10<!><Int>(::<!UNRESOLVED_REFERENCE!>x1<!>) // OK
++        <!INAPPLICABLE_CANDIDATE!>bar10<!>(::<!UNRESOLVED_REFERENCE!>x1<!>) // OK
+     }
+ }`;
+                    const targetElement = $('#diff0')[0];
+                    const configuration = {
+                        drawFileList: false,
+                        fileListToggle: false,
+                        fileListStartVisible: false,
+                        fileContentToggle: false,
+                        matching: 'lines',
+                        outputFormat: 'side-by-side',
+                        synchronisedScroll: true,
+                        highlight: true,
+                        renderNothingWhenEmpty: false,
+                        rawTemplates: {
+                            'generic-file-path': `
+                                <div class="col">
+                                    <a href="https://github.com/google/kotlin/blob/60458214a559306869c773e09a903e99c3f0d23a/compiler/testData/diagnostics/tests/inference/kt39220.kt" target="_blank">
+                                        <strong>FE 1.0:</strong> tests/inference/kt39220.kt
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="https://github.com/google/kotlin/blob/60458214a559306869c773e09a903e99c3f0d23a/compiler/testData/diagnostics/tests/inference/kt39220.fir.kt" target="_blank">
+                                        <strong>FIR:</strong> tests/inference/kt39220.fir.kt
+                                    </a>
+                                </div>
+                            `
+                        }
+                    };
+                    const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                    diff2htmlUi.draw();
+                    diff2htmlUi.highlightCode();
+                })();</script>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,111 @@
+<html>
+  <head>
+    <title>Diagnostics diff: tests/Underscore.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="card-header p-0" id="heading0"><button class="btn btn-link btn-block text-left" data-toggle="collapse" data-target="#collapse0">
+          <h5>Diff between FE 1.0 vs FIR</h5>
+        </button></div>
+      <div class="collapse show" id="collapse0">
+        <div class="card-body p-1">
+          <div id="diff0" style="width: 100%"></div>
+        </div>
+      </div>
+      <script type="text/javascript">                (function() {
+                    const diffString = `--- tests/Underscore.kt
++++ tests/Underscore.fir.kt
+@@ -1,50 +1,50 @@
+ // !DIAGNOSTICS: -DEPRECATION -TOPLEVEL_TYPEALIASES_ONLY
+ 
+-<!UNDERSCORE_IS_RESERVED!>import kotlin.Deprecated as ___<!>
++import kotlin.Deprecated as <!UNDERSCORE_IS_RESERVED!>___<!>
+ 
+ @___("") data class Pair(val x: Int, val y: Int)
+ 
+-class <!UNDERSCORE_IS_RESERVED!>_<!><<!UNDERSCORE_IS_RESERVED!>________<!>>
++class <!UNDERSCORE_IS_RESERVED, UNDERSCORE_IS_RESERVED!>_<!><<!UNDERSCORE_IS_RESERVED!>________<!>>
+ val <!UNDERSCORE_IS_RESERVED!>______<!> = <!UNDERSCORE_USAGE_WITHOUT_BACKTICKS!>_<!><Int>()
+ 
+ fun <!UNDERSCORE_IS_RESERVED!>__<!>(<!UNDERSCORE_IS_RESERVED!>___<!>: Int, y: <!UNDERSCORE_USAGE_WITHOUT_BACKTICKS!>_<!><Int>?): Int {
+     val (_, z) = Pair(<!UNDERSCORE_USAGE_WITHOUT_BACKTICKS!>___<!> - 1, 42)
+     val (x, <!UNDERSCORE_IS_RESERVED!>__________<!>) = Pair(<!UNDERSCORE_USAGE_WITHOUT_BACKTICKS!>___<!> - 1, 42)
+     val <!UNDERSCORE_IS_RESERVED!>____<!> = x
+     // in backquotes: allowed
+     val \`_\` = <!UNDERSCORE_USAGE_WITHOUT_BACKTICKS!>__________<!>
+ 
+     val q = fun(_: Int, <!UNDERSCORE_IS_RESERVED!>__<!>: Int) {}
+     q(1, 2)
+ 
+     val <!UNDERSCORE_IS_RESERVED!>_<!> = 56
+ 
+     fun localFun(<!UNDERSCORE_IS_RESERVED!>_<!>: String) = 1
+ 
+-    <!REDUNDANT_LABEL_WARNING!><!UNDERSCORE_IS_RESERVED!>__<!>@<!> return if (y != null) <!UNDERSCORE_USAGE_WITHOUT_BACKTICKS!>__<!>(<!UNDERSCORE_USAGE_WITHOUT_BACKTICKS!>____<!>, y) else <!UNDERSCORE_USAGE_WITHOUT_BACKTICKS!>__<!>(\`_\`, <!UNDERSCORE_USAGE_WITHOUT_BACKTICKS!>______<!>)
++    <!UNDERSCORE_IS_RESERVED!>__<!>@ return if (y != null) <!UNDERSCORE_USAGE_WITHOUT_BACKTICKS!>__<!>(<!UNDERSCORE_USAGE_WITHOUT_BACKTICKS!>____<!>, y) else <!UNDERSCORE_USAGE_WITHOUT_BACKTICKS!>__<!>(\`_\`, <!UNDERSCORE_USAGE_WITHOUT_BACKTICKS!>______<!>)
+ }
+ 
+ 
+ class A1(val <!UNDERSCORE_IS_RESERVED, UNDERSCORE_IS_RESERVED!>_<!>: String)
+ class A2(<!UNDERSCORE_IS_RESERVED!>_<!>: String) {
+     class B {
+         typealias <!UNDERSCORE_IS_RESERVED!>_<!> = CharSequence
+     }
+     val <!UNDERSCORE_IS_RESERVED!>_<!>: Int = 1
+ 
+     fun <!UNDERSCORE_IS_RESERVED!>_<!>() {}
+ 
+     fun foo(<!UNDERSCORE_IS_RESERVED!>_<!>: Double) {}
+ }
+ 
+ // one underscore parameters for named function are still prohibited
+ fun oneUnderscore(<!UNDERSCORE_IS_RESERVED!>_<!>: Int) {}
+ 
+ fun doIt(f: (Any?) -> Any?) = f(null)
+ 
+ val something = doIt { <!UNDERSCORE_IS_RESERVED!>__<!> -> <!UNDERSCORE_USAGE_WITHOUT_BACKTICKS!>__<!> }
+ val something2 = doIt { _ -> 1 }
+ 
+ var p: Int?
+     get() = null
+     set(_) {}`;
+                    const targetElement = $('#diff0')[0];
+                    const configuration = {
+                        drawFileList: false,
+                        fileListToggle: false,
+                        fileListStartVisible: false,
+                        fileContentToggle: false,
+                        matching: 'lines',
+                        outputFormat: 'side-by-side',
+                        synchronisedScroll: true,
+                        highlight: true,
+                        renderNothingWhenEmpty: false,
+                        rawTemplates: {
+                            'generic-file-path': `
+                                <div class="col">
+                                    <a href="https://github.com/google/kotlin/blob/39c1204b931b46faf1cf0333b8f22c5eba13fd8e/compiler/testData/diagnostics/tests/Underscore.kt" target="_blank">
+                                        <strong>FE 1.0:</strong> tests/Underscore.kt
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="https://github.com/google/kotlin/blob/39c1204b931b46faf1cf0333b8f22c5eba13fd8e/compiler/testData/diagnostics/tests/Underscore.fir.kt" target="_blank">
+                                        <strong>FIR:</strong> tests/Underscore.fir.kt
+                                    </a>
+                                </div>
+                            `
+                        }
+                    };
+                    const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                    diff2htmlUi.draw();
+                    diff2htmlUi.highlightCode();
+                })();</script>
+    </div>
+  </body>
+</html>

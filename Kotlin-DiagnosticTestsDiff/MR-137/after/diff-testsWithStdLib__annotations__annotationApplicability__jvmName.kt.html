@@ -1,0 +1,160 @@
+<html>
+  <head>
+    <title>Diagnostics diff: testsWithStdLib/annotations/annotationApplicability/jvmName.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="card-header p-0" id="heading0"><button class="btn btn-link btn-block text-left" data-toggle="collapse" data-target="#collapse0">
+          <h5>Diff between FE 1.0 vs FIR</h5>
+        </button></div>
+      <div class="collapse show" id="collapse0">
+        <div class="card-body p-1">
+          <div id="diff0" style="width: 100%"></div>
+        </div>
+      </div>
+      <script type="text/javascript">                (function() {
+                    const diffString = `--- testsWithStdLib/annotations/annotationApplicability/jvmName.kt
++++ testsWithStdLib/annotations/annotationApplicability/jvmName.fir.kt
+@@ -1,95 +1,95 @@
+ // !DIAGNOSTICS: -UNUSED_VARIABLE -UNUSED_PARAMETER
+ 
+ @JvmName("a")
+ fun foo() {}
+ 
+ @JvmName("b")
+ fun Any.foo() {}
+ 
+ <!WRONG_ANNOTATION_TARGET!>@JvmName("c")<!>
+ val px = 1
+ 
+ <!WRONG_ANNOTATION_TARGET!>@JvmName("d")<!>
+ val Any.px : Int
+     get() = 1
+ 
+ val valx: Int
+     @JvmName("e")
+     get() = 1
+ 
+ var varx: Int
+     @JvmName("f")
+     get() = 1
+     @JvmName("g")
+     set(v) {}
+ 
+ var vardef: Int = 1
+     @JvmName("h")
+     get
+     @JvmName("i")
+     set
+ 
+ <!WRONG_ANNOTATION_TARGET!>@JvmName("C")<!>
+ class C <!WRONG_ANNOTATION_TARGET!>@JvmName("primary")<!> constructor() {
+     <!WRONG_ANNOTATION_TARGET!>@JvmName("ctr")<!> constructor(x: Int): this() {}
+ 
+     @JvmName("a")
+     fun foo() {}
+ 
+     @JvmName("b")
+     fun Any.foo() {}
+ 
+     <!WRONG_ANNOTATION_TARGET!>@JvmName("c")<!>
+     val px = 1
+ 
+     <!WRONG_ANNOTATION_TARGET!>@JvmName("d")<!>
+     val Any.px : Int
+     get() = 1
+ 
+     val valx: Int
+     @JvmName("e")
+     get() = 1
+ 
+     var varx: Int
+     @JvmName("f")
+     get() = 1
+     @JvmName("g")
+     set(v) {}
+ }
+ 
+ fun foo1() {
+-    <!INAPPLICABLE_JVM_NAME!>@JvmName("a")<!>
++    @JvmName("a")
+     fun foo() {}
+ 
+     <!WRONG_ANNOTATION_TARGET!>@JvmName("a")<!>
+     val x = 1
+ }
+ 
+ abstract class AB {
+-    <!INAPPLICABLE_JVM_NAME!>@JvmName("AB_absFun1")<!>
++    @JvmName("AB_absFun1")
+     abstract fun absFun1()
+ 
+     abstract fun absFun2()
+ 
+-    <!INAPPLICABLE_JVM_NAME!>@JvmName("AB_openFun")<!>
++    @JvmName("AB_openFun")
+     open fun openFun() {}
+ }
+ 
+ class D: AB() {
+     override fun absFun1() {}
+ 
+-    <!INAPPLICABLE_JVM_NAME!>@JvmName("D_absFun2")<!>
++    @JvmName("D_absFun2")
+     override fun absFun2() {}
+ 
+-    <!INAPPLICABLE_JVM_NAME!>@JvmName("D_openFun")<!>
++    @JvmName("D_openFun")
+     final override fun openFun() {}
+ 
+     @JvmName("D_finalFun")
+     fun finalFun() {}
+ }
+ 
+ interface Intf {
+-    <!INAPPLICABLE_JVM_NAME!>@get:JvmName("getBar")<!> // no error in IDE
+-    <!INAPPLICABLE_JVM_NAME!>@set:JvmName("setBar")<!> // no error in IDE
++    @get:JvmName("getBar") // no error in IDE
++    @set:JvmName("setBar") // no error in IDE
+     var foo: Int
+ }`;
+                    const targetElement = $('#diff0')[0];
+                    const configuration = {
+                        drawFileList: false,
+                        fileListToggle: false,
+                        fileListStartVisible: false,
+                        fileContentToggle: false,
+                        matching: 'lines',
+                        outputFormat: 'side-by-side',
+                        synchronisedScroll: true,
+                        highlight: true,
+                        renderNothingWhenEmpty: false,
+                        rawTemplates: {
+                            'generic-file-path': `
+                                <div class="col">
+                                    <a href="https://github.com/google/kotlin/blob/39c1204b931b46faf1cf0333b8f22c5eba13fd8e/compiler/testData/diagnostics/testsWithStdLib/annotations/annotationApplicability/jvmName.kt" target="_blank">
+                                        <strong>FE 1.0:</strong> testsWithStdLib/annotations/annotationApplicability/jvmName.kt
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="https://github.com/google/kotlin/blob/39c1204b931b46faf1cf0333b8f22c5eba13fd8e/compiler/testData/diagnostics/testsWithStdLib/annotations/annotationApplicability/jvmName.fir.kt" target="_blank">
+                                        <strong>FIR:</strong> testsWithStdLib/annotations/annotationApplicability/jvmName.fir.kt
+                                    </a>
+                                </div>
+                            `
+                        }
+                    };
+                    const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                    diff2htmlUi.draw();
+                    diff2htmlUi.highlightCode();
+                })();</script>
+    </div>
+  </body>
+</html>

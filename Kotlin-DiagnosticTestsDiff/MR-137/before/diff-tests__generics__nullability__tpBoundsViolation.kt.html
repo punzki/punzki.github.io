@@ -1,0 +1,113 @@
+<html>
+  <head>
+    <title>Diagnostics diff: tests/generics/nullability/tpBoundsViolation.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="card-header p-0" id="heading0"><button class="btn btn-link btn-block text-left" data-toggle="collapse" data-target="#collapse0">
+          <h5>Diff between FE 1.0 vs FIR</h5>
+        </button></div>
+      <div class="collapse show" id="collapse0">
+        <div class="card-body p-1">
+          <div id="diff0" style="width: 100%"></div>
+        </div>
+      </div>
+      <script type="text/javascript">                (function() {
+                    const diffString = `--- tests/generics/nullability/tpBoundsViolation.kt
++++ tests/generics/nullability/tpBoundsViolation.fir.kt
+@@ -1,48 +1,48 @@
+ // !CHECK_TYPE
+ // !DIAGNOSTICS: -UNUSED_PARAMETER -UNUSED_VARIABLE
+ 
+ class A<F> {
+     fun <E : F> foo1(x: E) = x
+     fun <E : F?> foo2(x: E) = x
+ 
+     fun <Z : F, W : Z?> bar(x: F, y: F?, z: Z, w: W) {
+         foo1<F>(x)
+ 
+         val x1 = foo1(x)
+         x1.checkType { _<F>() }
+ 
+         foo2<F>(x)
+ 
+         val x2 = foo2(x)
+         x2.checkType { _<F>() }
+ 
+-        foo1<<!UPPER_BOUND_VIOLATED!>F?<!>>(y)
+-        foo1(<!TYPE_MISMATCH!>y<!>)
++        foo1<<!UPPER_BOUND_VIOLATED!>F?<!>>(<!ARGUMENT_TYPE_MISMATCH!>y<!>)
++        foo1(<!ARGUMENT_TYPE_MISMATCH!>y<!>)
+         foo2<F?>(y)
+ 
+         val x3 = foo2(y)
+         x3.checkType { _<F?>() }
+ 
+-        foo1<F>(<!TYPE_MISMATCH!>y<!>)
+-        foo2<F>(<!TYPE_MISMATCH!>y<!>)
++        foo1<F>(<!ARGUMENT_TYPE_MISMATCH!>y<!>)
++        foo2<F>(<!ARGUMENT_TYPE_MISMATCH!>y<!>)
+ 
+         foo1<Z>(z)
+ 
+         val x4 = foo1(z)
+         x4.checkType { _<Z>() }
+ 
+         foo2<Z>(z)
+ 
+         val x5 = foo2(z)
+         x4.checkType { _<Z>() }
+ 
+-        foo1<<!UPPER_BOUND_VIOLATED!>W<!>>(w)
+-        foo1(<!TYPE_MISMATCH!>w<!>)
++        foo1<<!UPPER_BOUND_VIOLATED!>W<!>>(<!ARGUMENT_TYPE_MISMATCH!>w<!>)
++        foo1(<!ARGUMENT_TYPE_MISMATCH!>w<!>)
+         foo2<W>(w)
+ 
+         val x6 = foo2(w)
+         x6.checkType { _<W>() }
+ 
+-        foo1<<!UPPER_BOUND_VIOLATED!>W<!>>(w)
++        foo1<<!UPPER_BOUND_VIOLATED!>W<!>>(<!ARGUMENT_TYPE_MISMATCH!>w<!>)
+     }
+ }`;
+                    const targetElement = $('#diff0')[0];
+                    const configuration = {
+                        drawFileList: false,
+                        fileListToggle: false,
+                        fileListStartVisible: false,
+                        fileContentToggle: false,
+                        matching: 'lines',
+                        outputFormat: 'side-by-side',
+                        synchronisedScroll: true,
+                        highlight: true,
+                        renderNothingWhenEmpty: false,
+                        rawTemplates: {
+                            'generic-file-path': `
+                                <div class="col">
+                                    <a href="https://github.com/google/kotlin/blob/60458214a559306869c773e09a903e99c3f0d23a/compiler/testData/diagnostics/tests/generics/nullability/tpBoundsViolation.kt" target="_blank">
+                                        <strong>FE 1.0:</strong> tests/generics/nullability/tpBoundsViolation.kt
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="https://github.com/google/kotlin/blob/60458214a559306869c773e09a903e99c3f0d23a/compiler/testData/diagnostics/tests/generics/nullability/tpBoundsViolation.fir.kt" target="_blank">
+                                        <strong>FIR:</strong> tests/generics/nullability/tpBoundsViolation.fir.kt
+                                    </a>
+                                </div>
+                            `
+                        }
+                    };
+                    const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                    diff2htmlUi.draw();
+                    diff2htmlUi.highlightCode();
+                })();</script>
+    </div>
+  </body>
+</html>

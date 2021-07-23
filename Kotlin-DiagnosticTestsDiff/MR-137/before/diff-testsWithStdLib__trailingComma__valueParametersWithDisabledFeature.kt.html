@@ -1,0 +1,212 @@
+<html>
+  <head>
+    <title>Diagnostics diff: testsWithStdLib/trailingComma/valueParametersWithDisabledFeature.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="card-header p-0" id="heading0"><button class="btn btn-link btn-block text-left" data-toggle="collapse" data-target="#collapse0">
+          <h5>Diff between FE 1.0 vs FIR</h5>
+        </button></div>
+      <div class="collapse show" id="collapse0">
+        <div class="card-body p-1">
+          <div id="diff0" style="width: 100%"></div>
+        </div>
+      </div>
+      <script type="text/javascript">                (function() {
+                    const diffString = `--- testsWithStdLib/trailingComma/valueParametersWithDisabledFeature.kt
++++ testsWithStdLib/trailingComma/valueParametersWithDisabledFeature.fir.kt
+@@ -1,121 +1,121 @@
+ // !DIAGNOSTICS: -UNUSED_PARAMETER, -UNUSED_ANONYMOUS_PARAMETER -UNUSED_VARIABLE
+ // !LANGUAGE: -TrailingCommas
+ 
+-open class Foo1(x: Int = 10, y: Float = 0f<!UNSUPPORTED_FEATURE!>,<!>)
++open class Foo1(x: Int = 10, y: Float = 0f,)
+ 
+ class Foo2(
+     val x: Int = 10,
+-    var y: Float<!UNSUPPORTED_FEATURE!>,<!>
+-): Foo1(x, y<!UNSUPPORTED_FEATURE!>,<!>) {
++    var y: Float,
++): Foo1(x, y,) {
+     constructor(
+         x: Float,
+-        y: Int = 10<!UNSUPPORTED_FEATURE!>,<!>
+-    ): this(1, 1f<!UNSUPPORTED_FEATURE!>,<!>) {}
++        y: Int = 10,
++    ): this(1, 1f,) {}
+ 
+     var x1: Int
+         get() = 10
+-        set(value<!UNSUPPORTED_FEATURE!>,<!>) {
++        set(value,) {
+ 
+         }
+ 
+     var x2: Int
+         get() = 10
+         set(
+-            x2<!UNSUPPORTED_FEATURE!>,<!>
++            x2,
+         ) {}
+ 
+     var x3: (Int) -> Unit
+         get() = {}
+-        set(x2: (Int) -> Unit<!UNSUPPORTED_FEATURE!>,<!>) {}
++        set(x2: (Int) -> Unit,) {}
+ 
+     var x4: (Int) -> Unit
+         get() = {}
+-        set(x2: (Int) -> Unit<!UNSUPPORTED_FEATURE!>,<!>/**/) {}
++        set(x2: (Int) -> Unit,/**/) {}
+ }
+ 
+-enum class Foo3(x: Int<!UNSUPPORTED_FEATURE!>,<!> )
++enum class Foo3(x: Int, )
+ 
+-fun foo4(x: Int, y: Comparable<Float><!UNSUPPORTED_FEATURE!>,<!>) {}
++fun foo4(x: Int, y: Comparable<Float>,) {}
+ 
+-fun foo5(x: Int = 10<!UNSUPPORTED_FEATURE!>,<!>) {}
++fun foo5(x: Int = 10,) {}
+ 
+-fun foo6(vararg x: Int<!UNSUPPORTED_FEATURE!>,<!>) {}
++fun foo6(vararg x: Int,) {}
+ 
+-fun foo7(y: Float, vararg x: Int<!UNSUPPORTED_FEATURE!>,<!>) {}
++fun foo7(y: Float, vararg x: Int,) {}
+ 
+-val foo8: (Int, Int<!UNSUPPORTED_FEATURE!>,<!>) -> Int = fun(
++val foo8: (Int, Int,) -> Int = fun(
+     x,
+-    y<!UNSUPPORTED_FEATURE!>,<!>
++    y,
+     ): Int {
+     return x + y
+ }
+ 
+-val foo9: (Int, Int, Int<!UNSUPPORTED_FEATURE!>,<!>) -> Int =
+-    fun (x, y: Int, z<!UNSUPPORTED_FEATURE!>,<!>): Int {
++val foo9: (Int, Int, Int,) -> Int =
++    fun (x, y: Int, z,): Int {
+         return x + y
+     }
+ 
+ open class Foo10(x: Int = 10, y: Float = 0f)
+ 
+ class Foo11: Foo10 {
+     constructor(
+         x: Float
+-    ): super(1, 1f<!UNSUPPORTED_FEATURE!>,<!>)
++    ): super(1, 1f,)
+ }
+ 
+ class Foo12: Foo10 {
+     constructor(
+         x: Float
+-    ): super(1, 1f<!UNSUPPORTED_FEATURE!>,<!>/**/)
++    ): super(1, 1f,/**/)
+ }
+ 
+ fun main() {
+     val x1 = {
+             x: Comparable<Comparable<Number>>,
+-            y: Iterable<Iterable<Number>><!UNSUPPORTED_FEATURE!>,<!>
++            y: Iterable<Iterable<Number>>,
+         ->
+         println("1")
+     }
+-    val x2 = { x: Comparable<Comparable<Number>><!UNSUPPORTED_FEATURE!>,<!>
++    val x2 = { x: Comparable<Comparable<Number>>,
+         -> println("1")
+     }
+-    val x3: ((Int<!UNSUPPORTED_FEATURE!>,<!>) -> Int) -> Unit = { x: (Int<!UNSUPPORTED_FEATURE!>,<!>) -> Int<!UNSUPPORTED_FEATURE!>,<!> -> println("1") }
+-    val x4: ((Int<!UNSUPPORTED_FEATURE!>,<!>) -> Int) -> Unit = { x<!UNSUPPORTED_FEATURE!>,<!> -> println("1") }
++    val x3: ((Int,) -> Int) -> Unit = { x: (Int,) -> Int, -> println("1") }
++    val x4: ((Int,) -> Int) -> Unit = { x, -> println("1") }
+ 
+-    fun foo10(x:Int,y:Int<!UNSUPPORTED_FEATURE!>,<!>) {
+-        fun foo10(x:Int,y:Int<!UNSUPPORTED_FEATURE!>,<!>) {}
++    fun foo10(x:Int,y:Int,) {
++        fun foo10(x:Int,y:Int,) {}
+     }
+-    fun foo101(x:Int,y:Int<!UNSUPPORTED_FEATURE!>,<!>/**/) {
+-        fun foo10(x:Int,y:Int<!UNSUPPORTED_FEATURE!>,<!>/**/) {}
++    fun foo101(x:Int,y:Int,/**/) {
++        fun foo10(x:Int,y:Int,/**/) {}
+     }
+ 
+     try {
+         println(1)
+-    } catch (e: Exception<!UNSUPPORTED_FEATURE!>,<!>) {
++    } catch (e: Exception,) {
+ 
+     }
+ 
+     try {
+         println(1)
+-    } catch (e: Exception<!UNSUPPORTED_FEATURE!>,<!>) {
++    } catch (e: Exception,) {
+ 
+-    } catch (e: Exception<!UNSUPPORTED_FEATURE!>,<!>) {
++    } catch (e: Exception,) {
+ 
+     }
+ 
+     try {
+         println(1)
+-    } catch (e: Exception<!UNSUPPORTED_FEATURE!>,<!>) {
++    } catch (e: Exception,) {
+ 
+     } finally {
+ 
+     }
+ 
+     try {
+         println(1)
+-    } catch (e: Exception<!UNSUPPORTED_FEATURE!>,<!>/**/) {
++    } catch (e: Exception,/**/) {
+ 
+     } finally {
+ 
+     }
+ }`;
+                    const targetElement = $('#diff0')[0];
+                    const configuration = {
+                        drawFileList: false,
+                        fileListToggle: false,
+                        fileListStartVisible: false,
+                        fileContentToggle: false,
+                        matching: 'lines',
+                        outputFormat: 'side-by-side',
+                        synchronisedScroll: true,
+                        highlight: true,
+                        renderNothingWhenEmpty: false,
+                        rawTemplates: {
+                            'generic-file-path': `
+                                <div class="col">
+                                    <a href="https://github.com/google/kotlin/blob/60458214a559306869c773e09a903e99c3f0d23a/compiler/testData/diagnostics/testsWithStdLib/trailingComma/valueParametersWithDisabledFeature.kt" target="_blank">
+                                        <strong>FE 1.0:</strong> testsWithStdLib/trailingComma/valueParametersWithDisabledFeature.kt
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="https://github.com/google/kotlin/blob/60458214a559306869c773e09a903e99c3f0d23a/compiler/testData/diagnostics/testsWithStdLib/trailingComma/valueParametersWithDisabledFeature.fir.kt" target="_blank">
+                                        <strong>FIR:</strong> testsWithStdLib/trailingComma/valueParametersWithDisabledFeature.fir.kt
+                                    </a>
+                                </div>
+                            `
+                        }
+                    };
+                    const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                    diff2htmlUi.draw();
+                    diff2htmlUi.highlightCode();
+                })();</script>
+    </div>
+  </body>
+</html>

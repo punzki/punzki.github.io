@@ -1,0 +1,76 @@
+<html>
+  <head>
+    <title>Diagnostics diff: EXPOSED_FUNCTION_RETURN_TYPE</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row sticky-top" style="background: white" id="summary">
+        <div class="d-inline-flex align-items-baseline">
+          <h1 class="mr-2">EXPOSED_FUNCTION_RETURN_TYPE</h1>
+<a href="index.html">(back to diagnostic list)</a></div>
+      </div>
+      <div class="row">
+        <ul>
+          <li><strong>Total: </strong>48</li>
+          <li><strong>Match %: </strong>60.42%</li>
+          <li><a href="#matched"><strong># Matched: </strong>29</a></li>
+          <li><strong># Non-matched: </strong>19</li>
+          <li><a href="#missing"><strong># Missing: </strong>17</a></li>
+          <li><a href="#unexpected"><strong># Unexpected: </strong>0</a></li>
+          <li><a href="#mismatched"><strong># Mismatched: </strong>2</a></li>
+          <li><strong># Files: </strong>19</li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="missing">
+        <h2>Missing (17)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__declarationChecks__ambiguousObjectExpressionType.kt.html" target="_blank">tests/declarationChecks/ambiguousObjectExpressionType.kt (12)</a></li>
+          <li><a href="diff-tests__exposed__localInFunReturnType.kt.html" target="_blank">tests/exposed/localInFunReturnType.kt (2)</a></li>
+          <li><a href="diff-tests__exposed__packagePrivate.kt.html" target="_blank">tests/exposed/packagePrivate.kt (2)</a></li>
+          <li><a href="diff-tests__exposed__typeArgs.kt.html" target="_blank">tests/exposed/typeArgs.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="mismatched">
+        <h2>Mismatched (2)</h2>
+      </div>
+      <div class="row sticky-top" style="top: 5.5em; background: white">
+        <h5>EXPOSED_FROM_PRIVATE_IN_FILE → EXPOSED_FUNCTION_RETURN_TYPE (2)</h5>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__exposed__privateInFileDisabled.kt.html" target="_blank">tests/exposed/privateInFileDisabled.kt (2)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="matched">
+        <h2>Matched (29)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__exposed__object.kt.html" target="_blank">tests/exposed/object.kt (5)</a></li>
+          <li><a href="diff-tests__exposed__localInFunReturnType.kt.html" target="_blank">tests/exposed/localInFunReturnType.kt (3)</a></li>
+          <li><a href="diff-tests__exposed__localInMemberType.kt.html" target="_blank">tests/exposed/localInMemberType.kt (3)</a></li>
+          <li><a href="diff-tests__exposed__privateInFile.kt.html" target="_blank">tests/exposed/privateInFile.kt (3)</a></li>
+          <li><a href="diff-tests__exposed__local.kt.html" target="_blank">tests/exposed/local.kt (2)</a></li>
+          <li><a href="diff-tests__exposed__simple.kt.html" target="_blank">tests/exposed/simple.kt (2)</a></li>
+          <li><a href="diff-tests__classObjects__nestedClassInPrivateClassObject.kt.html" target="_blank">tests/classObjects/nestedClassInPrivateClassObject.kt (1)</a></li>
+          <li><a href="diff-tests__enum__classObjectInEnumPrivate.kt.html" target="_blank">tests/enum/classObjectInEnumPrivate.kt (1)</a></li>
+          <li><a href="diff-tests__exposed__functional.kt.html" target="_blank">tests/exposed/functional.kt (1)</a></li>
+          <li><a href="diff-tests__exposed__internal.kt.html" target="_blank">tests/exposed/internal.kt (1)</a></li>
+          <li><a href="diff-tests__exposed__internalFromLocal.kt.html" target="_blank">tests/exposed/internalFromLocal.kt (1)</a></li>
+          <li><a href="diff-tests__exposed__privateInFileDisabled.kt.html" target="_blank">tests/exposed/privateInFileDisabled.kt (1)</a></li>
+          <li><a href="diff-tests__exposed__typeArgs.kt.html" target="_blank">tests/exposed/typeArgs.kt (1)</a></li>
+          <li><a href="diff-tests__javac__imports__PackagePrivateAndPublicNested.kt.html" target="_blank">tests/javac/imports/PackagePrivateAndPublicNested.kt (1)</a></li>
+          <li><a href="diff-tests__privateInFile__visibility.kt.html" target="_blank">tests/privateInFile/visibility.kt (1)</a></li>
+          <li><a href="diff-tests__scopes__visibility2.kt.html" target="_blank">tests/scopes/visibility2.kt (1)</a></li>
+          <li><a href="diff-tests__scopes__visibility3.kt.html" target="_blank">tests/scopes/visibility3.kt (1)</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

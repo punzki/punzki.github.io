@@ -1,0 +1,80 @@
+<html>
+  <head>
+    <title>Diagnostics diff: UNCHECKED_CAST</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row sticky-top" style="background: white" id="summary">
+        <div class="d-inline-flex align-items-baseline">
+          <h1 class="mr-2">UNCHECKED_CAST</h1>
+<a href="index.html">(back to diagnostic list)</a></div>
+      </div>
+      <div class="row">
+        <ul>
+          <li><strong>Total: </strong>69</li>
+          <li><strong>Match %: </strong>5.80%</li>
+          <li><a href="#matched"><strong># Matched: </strong>4</a></li>
+          <li><strong># Non-matched: </strong>65</li>
+          <li><a href="#missing"><strong># Missing: </strong>65</a></li>
+          <li><a href="#unexpected"><strong># Unexpected: </strong>0</a></li>
+          <li><a href="#mismatched"><strong># Mismatched: </strong>0</a></li>
+          <li><strong># Files: </strong>36</li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="missing">
+        <h2>Missing (65)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__cast__AsWithOtherParameter.kt.html" target="_blank">tests/cast/AsWithOtherParameter.kt (6)</a></li>
+          <li><a href="diff-tests__platformTypes__genericVarianceViolation__simple.kt.html" target="_blank">tests/platformTypes/genericVarianceViolation/simple.kt (5)</a></li>
+          <li><a href="diff-tests__classObjects__typeParametersInAnnonymousObject.kt.html" target="_blank">tests/classObjects/typeParametersInAnnonymousObject.kt (4)</a></li>
+          <li><a href="diff-tests__classObjects__typeParametersInAnnonymousObject_after.kt.html" target="_blank">tests/classObjects/typeParametersInAnnonymousObject_after.kt (4)</a></li>
+          <li><a href="diff-tests__generics__capturedParameters__uncheckedCast.kt.html" target="_blank">tests/generics/capturedParameters/uncheckedCast.kt (3)</a></li>
+          <li><a href="diff-tests__samConversions__samConversionToGeneric.kt.html" target="_blank">tests/samConversions/samConversionToGeneric.kt (3)</a></li>
+          <li><a href="diff-tests__samConversions__samConversionsWithSmartCasts.kt.html" target="_blank">tests/samConversions/samConversionsWithSmartCasts.kt (3)</a></li>
+          <li><a href="diff-tests__suppress__oneWarning__onBlockStatementSameLine.kt.html" target="_blank">tests/suppress/oneWarning/onBlockStatementSameLine.kt (3)</a></li>
+          <li><a href="diff-tests__cast__IsErasedUpcastToNonReified.kt.html" target="_blank">tests/cast/IsErasedUpcastToNonReified.kt (2)</a></li>
+          <li><a href="diff-tests__inference__regressions__kt35844.kt.html" target="_blank">tests/inference/regressions/kt35844.kt (2)</a></li>
+          <li><a href="diff-tests__library__Collections.kt.html" target="_blank">tests/library/Collections.kt (2)</a></li>
+          <li><a href="diff-tests__nullableTypes__uselessElvis.kt.html" target="_blank">tests/nullableTypes/uselessElvis.kt (2)</a></li>
+          <li><a href="diff-tests__smartCasts__kt10444.kt.html" target="_blank">tests/smartCasts/kt10444.kt (2)</a></li>
+          <li><a href="diff-testsWithStdLib__coroutines__inference__kt15516.kt.html" target="_blank">testsWithStdLib/coroutines/inference/kt15516.kt (2)</a></li>
+          <li><a href="diff-testsWithStdLib__functionLiterals__pseudocodeMemoryOverhead.kt.html" target="_blank">testsWithStdLib/functionLiterals/pseudocodeMemoryOverhead.kt (2)</a></li>
+          <li><a href="diff-tests__EnumEntryAsType.kt.html" target="_blank">tests/EnumEntryAsType.kt (1)</a></li>
+          <li><a href="diff-tests__callableReference__propertyOfNestedGenericClass.kt.html" target="_blank">tests/callableReference/propertyOfNestedGenericClass.kt (1)</a></li>
+          <li><a href="diff-tests__cast__AsArray.kt.html" target="_blank">tests/cast/AsArray.kt (1)</a></li>
+          <li><a href="diff-tests__cast__AsErasedError.kt.html" target="_blank">tests/cast/AsErasedError.kt (1)</a></li>
+          <li><a href="diff-tests__cast__AsErasedWarning.kt.html" target="_blank">tests/cast/AsErasedWarning.kt (1)</a></li>
+          <li><a href="diff-tests__delegatedProperty__inference__differentDelegatedExpressions.kt.html" target="_blank">tests/delegatedProperty/inference/differentDelegatedExpressions.kt (1)</a></li>
+          <li><a href="diff-tests__inference__expectedTypeAdditionalTest.kt.html" target="_blank">tests/inference/expectedTypeAdditionalTest.kt (1)</a></li>
+          <li><a href="diff-tests__inference__recursiveTypes__selfTypes__disabledInferenceOnSelfTypes__writerAppenderExampleRecursive.kt.html" target="_blank">tests/inference/recursiveTypes/selfTypes/disabledInferenceOnSelfTypes/writerAppenderExampleRecursive.kt (1)</a></li>
+          <li><a href="diff-tests__inference__recursiveTypes__selfTypes__enabledInferenceOnSelfTypes__writerAppenderExampleRecursive.kt.html" target="_blank">tests/inference/recursiveTypes/selfTypes/enabledInferenceOnSelfTypes/writerAppenderExampleRecursive.kt (1)</a></li>
+          <li><a href="diff-tests__inference__regressions__kt38691.kt.html" target="_blank">tests/inference/regressions/kt38691.kt (1)</a></li>
+          <li><a href="diff-tests__inference__upperBounds__kt2856.kt.html" target="_blank">tests/inference/upperBounds/kt2856.kt (1)</a></li>
+          <li><a href="diff-tests__platformTypes__genericVarianceViolation__smartCast.kt.html" target="_blank">tests/platformTypes/genericVarianceViolation/smartCast.kt (1)</a></li>
+          <li><a href="diff-tests__regressions__kt307.kt.html" target="_blank">tests/regressions/kt307.kt (1)</a></li>
+          <li><a href="diff-tests__regressions__kt498.kt.html" target="_blank">tests/regressions/kt498.kt (1)</a></li>
+          <li><a href="diff-tests__regressions__kt716.kt.html" target="_blank">tests/regressions/kt716.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__kt3224.kt.html" target="_blank">tests/smartCasts/kt3224.kt (1)</a></li>
+          <li><a href="diff-tests__substitutions__kt4887.kt.html" target="_blank">tests/substitutions/kt4887.kt (1)</a></li>
+          <li><a href="diff-testsWithStdLib__coroutines__lambdaExpectedType.kt.html" target="_blank">testsWithStdLib/coroutines/lambdaExpectedType.kt (1)</a></li>
+          <li><a href="diff-testsWithStdLib__coroutines__usageOfResultTypeInReturnType.kt.html" target="_blank">testsWithStdLib/coroutines/usageOfResultTypeInReturnType.kt (1)</a></li>
+          <li><a href="diff-testsWithStdLib__coroutines__usageOfResultTypeInReturnType_1_4.kt.html" target="_blank">testsWithStdLib/coroutines/usageOfResultTypeInReturnType_1_4.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="matched">
+        <h2>Matched (4)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-foreignAnnotationsTests__java8Tests__jsr305__typeArguments.kt.html" target="_blank">foreignAnnotationsTests/java8Tests/jsr305/typeArguments.kt (4)</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

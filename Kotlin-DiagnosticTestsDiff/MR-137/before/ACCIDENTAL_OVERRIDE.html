@@ -1,0 +1,99 @@
+<html>
+  <head>
+    <title>Diagnostics diff: ACCIDENTAL_OVERRIDE</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row sticky-top" style="background: white" id="summary">
+        <div class="d-inline-flex align-items-baseline">
+          <h1 class="mr-2">ACCIDENTAL_OVERRIDE</h1>
+<a href="index.html">(back to diagnostic list)</a></div>
+      </div>
+      <div class="row">
+        <ul>
+          <li><strong>Total: </strong>81</li>
+          <li><strong>Match %: </strong>60.49%</li>
+          <li><a href="#matched"><strong># Matched: </strong>49</a></li>
+          <li><strong># Non-matched: </strong>32</li>
+          <li><a href="#missing"><strong># Missing: </strong>32</a></li>
+          <li><a href="#unexpected"><strong># Unexpected: </strong>0</a></li>
+          <li><a href="#mismatched"><strong># Mismatched: </strong>0</a></li>
+          <li><strong># Files: </strong>55</li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="missing">
+        <h2>Missing (32)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__override__Generics.kt.html" target="_blank">tests/override/Generics.kt (4)</a></li>
+          <li><a href="diff-tests__platformTypes__typeEnhancement__supertypeDifferentParameterNullability.kt.html" target="_blank">tests/platformTypes/typeEnhancement/supertypeDifferentParameterNullability.kt (4)</a></li>
+          <li><a href="diff-tests__duplicateJvmSignature__statics__jkjk.kt.html" target="_blank">tests/duplicateJvmSignature/statics/jkjk.kt (2)</a></li>
+          <li><a href="diff-tests__duplicateJvmSignature__statics__kotlinClassExtendsJavaClassExtendsJavaClass.kt.html" target="_blank">tests/duplicateJvmSignature/statics/kotlinClassExtendsJavaClassExtendsJavaClass.kt (2)</a></li>
+          <li><a href="diff-testsWithStdLib__duplicateJvmSignature__jvmNamesDuplicate.kt.html" target="_blank">testsWithStdLib/duplicateJvmSignature/jvmNamesDuplicate.kt (2)</a></li>
+          <li><a href="diff-testsWithStdLib__duplicateJvmSignature__statics__jjk.kt.html" target="_blank">testsWithStdLib/duplicateJvmSignature/statics/jjk.kt (2)</a></li>
+          <li><a href="diff-testsWithStdLib__duplicateJvmSignature__statics__jkjk.kt.html" target="_blank">testsWithStdLib/duplicateJvmSignature/statics/jkjk.kt (2)</a></li>
+          <li><a href="diff-tests__duplicateJvmSignature__accidentalOverrides__accidentalOverrideFromGrandparent.kt.html" target="_blank">tests/duplicateJvmSignature/accidentalOverrides/accidentalOverrideFromGrandparent.kt (1)</a></li>
+          <li><a href="diff-tests__duplicateJvmSignature__accidentalOverrides__classFunctionOverriddenByProperty.kt.html" target="_blank">tests/duplicateJvmSignature/accidentalOverrides/classFunctionOverriddenByProperty.kt (1)</a></li>
+          <li><a href="diff-tests__duplicateJvmSignature__accidentalOverrides__classFunctionOverriddenByPropertyInConstructor.kt.html" target="_blank">tests/duplicateJvmSignature/accidentalOverrides/classFunctionOverriddenByPropertyInConstructor.kt (1)</a></li>
+          <li><a href="diff-tests__duplicateJvmSignature__accidentalOverrides__classFunctionOverriddenByPropertyNoGetter.kt.html" target="_blank">tests/duplicateJvmSignature/accidentalOverrides/classFunctionOverriddenByPropertyNoGetter.kt (1)</a></li>
+          <li><a href="diff-tests__duplicateJvmSignature__accidentalOverrides__classPropertyOverriddenByFunction.kt.html" target="_blank">tests/duplicateJvmSignature/accidentalOverrides/classPropertyOverriddenByFunction.kt (1)</a></li>
+          <li><a href="diff-tests__duplicateJvmSignature__accidentalOverrides__defaultFunction.kt.html" target="_blank">tests/duplicateJvmSignature/accidentalOverrides/defaultFunction.kt (1)</a></li>
+          <li><a href="diff-tests__duplicateJvmSignature__accidentalOverrides__genericClassFunction.kt.html" target="_blank">tests/duplicateJvmSignature/accidentalOverrides/genericClassFunction.kt (1)</a></li>
+          <li><a href="diff-tests__duplicateJvmSignature__accidentalOverrides__require.kt.html" target="_blank">tests/duplicateJvmSignature/accidentalOverrides/require.kt (1)</a></li>
+          <li><a href="diff-tests__duplicateJvmSignature__accidentalOverrides__traitFunctionOverriddenByPropertyNoImpl.kt.html" target="_blank">tests/duplicateJvmSignature/accidentalOverrides/traitFunctionOverriddenByPropertyNoImpl.kt (1)</a></li>
+          <li><a href="diff-tests__duplicateJvmSignature__accidentalOverrides__traitPropertyOverriddenByFunctionNoImpl.kt.html" target="_blank">tests/duplicateJvmSignature/accidentalOverrides/traitPropertyOverriddenByFunctionNoImpl.kt (1)</a></li>
+          <li><a href="diff-tests__duplicateJvmSignature__statics__kotlinClassExtendsJavaClass.kt.html" target="_blank">tests/duplicateJvmSignature/statics/kotlinClassExtendsJavaClass.kt (1)</a></li>
+          <li><a href="diff-testsWithStdLib__duplicateJvmSignature__jvmStaticInClassObject.kt.html" target="_blank">testsWithStdLib/duplicateJvmSignature/jvmStaticInClassObject.kt (1)</a></li>
+          <li><a href="diff-testsWithStdLib__duplicateJvmSignature__jvmStaticInObject.kt.html" target="_blank">testsWithStdLib/duplicateJvmSignature/jvmStaticInObject.kt (1)</a></li>
+          <li><a href="diff-testsWithStdLib__duplicateJvmSignature__statics__jk.kt.html" target="_blank">testsWithStdLib/duplicateJvmSignature/statics/jk.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="matched">
+        <h2>Matched (49)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-testsWithJvmBackend__duplicateJvmSignature__finalMembersFromBuiltIns__waitNotifyGetClass_ir.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/finalMembersFromBuiltIns/waitNotifyGetClass_ir.kt (12)</a></li>
+          <li><a href="diff-testsWithJvmBackend__duplicateJvmSignature__statics__jkjk.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/statics/jkjk.kt (2)</a></li>
+          <li><a href="diff-testsWithJvmBackend__duplicateJvmSignature__statics__kotlinClassExtendsJavaClassExtendsJavaClass.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/statics/kotlinClassExtendsJavaClassExtendsJavaClass.kt (2)</a></li>
+          <li><a href="diff-testsWithJvmBackend__duplicateJvmSignature__traitImpl__traitFunctionOverriddenByPropertyInTrait_old.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/traitImpl/traitFunctionOverriddenByPropertyInTrait_old.kt (2)</a></li>
+          <li><a href="diff-testsWithJvmBackend__duplicateJvmSignature__traitImpl__traitPropertyOverriddenByFunctionInTrait_old.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/traitImpl/traitPropertyOverriddenByFunctionInTrait_old.kt (2)</a></li>
+          <li><a href="diff-testsWithJvmBackend__duplicateJvmSignature__accidentalOverrides__accidentalOverrideFromGrandparent.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/accidentalOverrides/accidentalOverrideFromGrandparent.kt (1)</a></li>
+          <li><a href="diff-testsWithJvmBackend__duplicateJvmSignature__accidentalOverrides__classFunctionOverriddenByProperty.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/accidentalOverrides/classFunctionOverriddenByProperty.kt (1)</a></li>
+          <li><a href="diff-testsWithJvmBackend__duplicateJvmSignature__accidentalOverrides__classFunctionOverriddenByPropertyInConstructor.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/accidentalOverrides/classFunctionOverriddenByPropertyInConstructor.kt (1)</a></li>
+          <li><a href="diff-testsWithJvmBackend__duplicateJvmSignature__accidentalOverrides__classFunctionOverriddenByPropertyNoGetter.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/accidentalOverrides/classFunctionOverriddenByPropertyNoGetter.kt (1)</a></li>
+          <li><a href="diff-testsWithJvmBackend__duplicateJvmSignature__accidentalOverrides__classPropertyOverriddenByFunction.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/accidentalOverrides/classPropertyOverriddenByFunction.kt (1)</a></li>
+          <li><a href="diff-testsWithJvmBackend__duplicateJvmSignature__accidentalOverrides__defaultFunction_ir.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/accidentalOverrides/defaultFunction_ir.kt (1)</a></li>
+          <li><a href="diff-testsWithJvmBackend__duplicateJvmSignature__accidentalOverrides__defaultFunction_old.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/accidentalOverrides/defaultFunction_old.kt (1)</a></li>
+          <li><a href="diff-testsWithJvmBackend__duplicateJvmSignature__accidentalOverrides__delegatedFunctionOverriddenByProperty_ir.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/accidentalOverrides/delegatedFunctionOverriddenByProperty_ir.kt (1)</a></li>
+          <li><a href="diff-testsWithJvmBackend__duplicateJvmSignature__accidentalOverrides__genericClassFunction.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/accidentalOverrides/genericClassFunction.kt (1)</a></li>
+          <li><a href="diff-testsWithJvmBackend__duplicateJvmSignature__accidentalOverrides__overridesNothing_ir.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/accidentalOverrides/overridesNothing_ir.kt (1)</a></li>
+          <li><a href="diff-testsWithJvmBackend__duplicateJvmSignature__accidentalOverrides__overridesNothing_old.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/accidentalOverrides/overridesNothing_old.kt (1)</a></li>
+          <li><a href="diff-testsWithJvmBackend__duplicateJvmSignature__accidentalOverrides__traitFunctionOverriddenByPropertyNoImpl.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/accidentalOverrides/traitFunctionOverriddenByPropertyNoImpl.kt (1)</a></li>
+          <li><a href="diff-testsWithJvmBackend__duplicateJvmSignature__accidentalOverrides__traitFunctionOverriddenByProperty_ir.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/accidentalOverrides/traitFunctionOverriddenByProperty_ir.kt (1)</a></li>
+          <li><a href="diff-testsWithJvmBackend__duplicateJvmSignature__accidentalOverrides__traitFunctionOverriddenByProperty_old.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/accidentalOverrides/traitFunctionOverriddenByProperty_old.kt (1)</a></li>
+          <li><a href="diff-testsWithJvmBackend__duplicateJvmSignature__accidentalOverrides__traitPropertyOverriddenByFunctionNoImpl.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/accidentalOverrides/traitPropertyOverriddenByFunctionNoImpl.kt (1)</a></li>
+          <li><a href="diff-testsWithJvmBackend__duplicateJvmSignature__accidentalOverrides__traitPropertyOverriddenByFunction_ir.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/accidentalOverrides/traitPropertyOverriddenByFunction_ir.kt (1)</a></li>
+          <li><a href="diff-testsWithJvmBackend__duplicateJvmSignature__accidentalOverrides__traitPropertyOverriddenByFunction_old.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/accidentalOverrides/traitPropertyOverriddenByFunction_old.kt (1)</a></li>
+          <li><a href="diff-testsWithJvmBackend__duplicateJvmSignature__bridges__class_ir.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/bridges/class_ir.kt (1)</a></li>
+          <li><a href="diff-testsWithJvmBackend__duplicateJvmSignature__bridges__fakeOverrideTrait_ir.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/bridges/fakeOverrideTrait_ir.kt (1)</a></li>
+          <li><a href="diff-testsWithJvmBackend__duplicateJvmSignature__bridges__fakeOverrideTrait_old.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/bridges/fakeOverrideTrait_old.kt (1)</a></li>
+          <li><a href="diff-testsWithJvmBackend__duplicateJvmSignature__bridges__trait_ir.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/bridges/trait_ir.kt (1)</a></li>
+          <li><a href="diff-testsWithJvmBackend__duplicateJvmSignature__erasure__superTraitAndDelegationToTraitImpl_ir.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/erasure/superTraitAndDelegationToTraitImpl_ir.kt (1)</a></li>
+          <li><a href="diff-testsWithJvmBackend__duplicateJvmSignature__erasure__twoTraitsAndOwnFunction_ir.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/erasure/twoTraitsAndOwnFunction_ir.kt (1)</a></li>
+          <li><a href="diff-testsWithJvmBackend__duplicateJvmSignature__erasure__twoTraitsAndOwnFunction_old.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/erasure/twoTraitsAndOwnFunction_old.kt (1)</a></li>
+          <li><a href="diff-testsWithJvmBackend__duplicateJvmSignature__statics__kotlinClassExtendsJavaClass.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/statics/kotlinClassExtendsJavaClass.kt (1)</a></li>
+          <li><a href="diff-testsWithJvmBackend__duplicateJvmSignature__traitImpl__oneTrait_ir.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/traitImpl/oneTrait_ir.kt (1)</a></li>
+          <li><a href="diff-testsWithJvmBackend__duplicateJvmSignature__traitImpl__oneTrait_old.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/traitImpl/oneTrait_old.kt (1)</a></li>
+          <li><a href="diff-testsWithJvmBackend__duplicateJvmSignature__traitImpl__traitFunctionOverriddenByPropertyInTrait_ir.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/traitImpl/traitFunctionOverriddenByPropertyInTrait_ir.kt (1)</a></li>
+          <li><a href="diff-testsWithJvmBackend__duplicateJvmSignature__traitImpl__traitPropertyOverriddenByFunctionInTrait_ir.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/traitImpl/traitPropertyOverriddenByFunctionInTrait_ir.kt (1)</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

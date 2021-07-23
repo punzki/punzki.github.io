@@ -1,0 +1,107 @@
+<html>
+  <head>
+    <title>Diagnostics diff: Summary</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <style>th { position: sticky; top: 0; }
+tr > *:not(:first-child) { text-align: right; }</style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <ul>
+          <li><strong>Report generated on: </strong>2021-07-22T22:28:43.943Z[Etc/UTC]</li>
+          <li><strong>Before commit: </strong><a href="https://github.com/google/kotlin/tree/60458214a559306869c773e09a903e99c3f0d23a" target="_blank">60458214a559306869c773e09a903e99c3f0d23a</a> <a href="before/index.html" target="_blank">(View report)</a></li>
+          <li><strong>After commit: </strong><a href="https://github.com/google/kotlin/tree/39c1204b931b46faf1cf0333b8f22c5eba13fd8e" target="_blank">39c1204b931b46faf1cf0333b8f22c5eba13fd8e</a> <a href="after/index.html" target="_blank">(View report)</a></li>
+        </ul>
+      </div>
+      <div class="row">
+        <table class="table table-bordered table-striped table-hover">
+          <thead class="thead-dark">
+            <tr>
+              <th>Diagnostic</th>
+              <th>Total</th>
+              <th>Δ Match %</th>
+              <th>Δ Matched</th>
+              <th>Δ Non-matched</th>
+              <th>Δ Missing</th>
+              <th>Δ Unexpected</th>
+              <th>Δ Mismatched</th>
+              <th>Δ Files</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>&lt;OVERALL&gt;</td>
+              <td>+31</td>
+              <td>0.30%</td>
+              <td>+78</td>
+              <td>-47</td>
+              <td>-78</td>
+              <td>+31</td>
+              <td>0</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td><a href="UNNECESSARY_NOT_NULL_ASSERTION.html">UNNECESSARY_NOT_NULL_ASSERTION</a></td>
+              <td>0</td>
+              <td>0.00%</td>
+              <td><a href="UNNECESSARY_NOT_NULL_ASSERTION.html#matched">0</a></td>
+              <td>0</td>
+              <td><a href="UNNECESSARY_NOT_NULL_ASSERTION.html#missing">0</a></td>
+              <td><a href="UNNECESSARY_NOT_NULL_ASSERTION.html#unexpected">0</a></td>
+              <td><a href="UNNECESSARY_NOT_NULL_ASSERTION.html#mismatched">0</a></td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td><a href="UNNECESSARY_SAFE_CALL.html">UNNECESSARY_SAFE_CALL</a></td>
+              <td>0</td>
+              <td>0.00%</td>
+              <td><a href="UNNECESSARY_SAFE_CALL.html#matched">0</a></td>
+              <td>0</td>
+              <td><a href="UNNECESSARY_SAFE_CALL.html#missing">0</a></td>
+              <td><a href="UNNECESSARY_SAFE_CALL.html#unexpected">0</a></td>
+              <td><a href="UNNECESSARY_SAFE_CALL.html#mismatched">0</a></td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td><a href="USELESS_ELVIS.html">USELESS_ELVIS</a></td>
+              <td>0</td>
+              <td>0.00%</td>
+              <td><a href="USELESS_ELVIS.html#matched">0</a></td>
+              <td>0</td>
+              <td><a href="USELESS_ELVIS.html#missing">0</a></td>
+              <td><a href="USELESS_ELVIS.html#unexpected">0</a></td>
+              <td><a href="USELESS_ELVIS.html#mismatched">0</a></td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td><a href="SENSELESS_NULL_IN_WHEN.html">SENSELESS_NULL_IN_WHEN</a></td>
+              <td>0</td>
+              <td>100.00%</td>
+              <td><a href="SENSELESS_NULL_IN_WHEN.html#matched">+2</a></td>
+              <td>-2</td>
+              <td><a href="SENSELESS_NULL_IN_WHEN.html#missing">-2</a></td>
+              <td><a href="SENSELESS_NULL_IN_WHEN.html#unexpected">0</a></td>
+              <td><a href="SENSELESS_NULL_IN_WHEN.html#mismatched">0</a></td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td><a href="SENSELESS_COMPARISON.html">SENSELESS_COMPARISON</a></td>
+              <td>+31</td>
+              <td>63.84%</td>
+              <td><a href="SENSELESS_COMPARISON.html#matched">+76</a></td>
+              <td>-45</td>
+              <td><a href="SENSELESS_COMPARISON.html#missing">-76</a></td>
+              <td><a href="SENSELESS_COMPARISON.html#unexpected">+31</a></td>
+              <td><a href="SENSELESS_COMPARISON.html#mismatched">0</a></td>
+              <td>+6</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,77 @@
+<html>
+  <head>
+    <title>Diagnostics diff: CONST_VAL_WITH_NON_CONST_INITIALIZER</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row sticky-top" style="background: white" id="summary">
+        <div class="d-inline-flex align-items-baseline">
+          <h1 class="mr-2">CONST_VAL_WITH_NON_CONST_INITIALIZER</h1>
+<a href="index.html">(back to diagnostic list)</a></div>
+      </div>
+      <div class="row">
+        <ul>
+          <li><strong>Total: </strong>36</li>
+          <li><strong>Match %: </strong>52.78%</li>
+          <li><a href="#matched"><strong># Matched: </strong>19</a></li>
+          <li><strong># Non-matched: </strong>17</li>
+          <li><a href="#missing"><strong># Missing: </strong>9</a></li>
+          <li><a href="#unexpected"><strong># Unexpected: </strong>4</a></li>
+          <li><a href="#mismatched"><strong># Mismatched: </strong>4</a></li>
+          <li><strong># Files: </strong>7</li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="missing">
+        <h2>Missing (9)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__modifiers__const__noDivisionByZeroFeature.kt.html" target="_blank">tests/modifiers/const/noDivisionByZeroFeature.kt (7)</a></li>
+          <li><a href="diff-tests__modifiers__const__constInteraction.kt.html" target="_blank">tests/modifiers/const/constInteraction.kt (2)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="unexpected">
+        <h2>Unexpected (4)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-testsWithStdLib__evaluate__charCodeExpType.kt.html" target="_blank">testsWithStdLib/evaluate/charCodeExpType.kt (4)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="mismatched">
+        <h2>Mismatched (4)</h2>
+      </div>
+      <div class="row sticky-top" style="top: 5.5em; background: white">
+        <h5>TYPE_MISMATCH → CONST_VAL_WITH_NON_CONST_INITIALIZER (3)</h5>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-testsWithStdLib__evaluate__charCodeExpType.kt.html" target="_blank">testsWithStdLib/evaluate/charCodeExpType.kt (3)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 5.5em; background: white">
+        <h5>NON_CONST_VAL_USED_IN_CONSTANT_EXPRESSION → CONST_VAL_WITH_NON_CONST_INITIALIZER (1)</h5>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-testsWithStdLib__annotations__annotationParameterMustBeConstant__useOfNonConstVal.kt.html" target="_blank">testsWithStdLib/annotations/annotationParameterMustBeConstant/useOfNonConstVal.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="matched">
+        <h2>Matched (19)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__modifiers__const__applicability.kt.html" target="_blank">tests/modifiers/const/applicability.kt (14)</a></li>
+          <li><a href="diff-tests__evaluate__customExtensionOverKotlinExtensionInConst.kt.html" target="_blank">tests/evaluate/customExtensionOverKotlinExtensionInConst.kt (2)</a></li>
+          <li><a href="diff-tests__evaluate__infixFunOverBuiltinMemberInConst.kt.html" target="_blank">tests/evaluate/infixFunOverBuiltinMemberInConst.kt (2)</a></li>
+          <li><a href="diff-tests__modifiers__const__noDivisionByZeroFeature.kt.html" target="_blank">tests/modifiers/const/noDivisionByZeroFeature.kt (1)</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

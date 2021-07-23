@@ -1,0 +1,213 @@
+<html>
+  <head>
+    <title>Diagnostics diff: tests/when/nonExhaustiveWhenStatement_1_7.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="card-header p-0" id="heading0"><button class="btn btn-link btn-block text-left" data-toggle="collapse" data-target="#collapse0">
+          <h5>Diff between FE 1.0 vs FIR</h5>
+        </button></div>
+      <div class="collapse show" id="collapse0">
+        <div class="card-body p-1">
+          <div id="diff0" style="width: 100%"></div>
+        </div>
+      </div>
+      <script type="text/javascript">                (function() {
+                    const diffString = `--- tests/when/nonExhaustiveWhenStatement_1_7.kt
++++ tests/when/nonExhaustiveWhenStatement_1_7.kt
+@@ -1,155 +1,155 @@
+ // FIR_IDENTICAL
+ // !LANGUAGE: +WarnAboutNonExhaustiveWhenOnAlgebraicTypes +ProhibitNonExhaustiveWhenOnAlgebraicTypes
+ 
+ enum class SomeEnum {
+     A, B
+ }
+ 
+ sealed class Base {
+     class A : Base()
+     class B : Base()
+ }
+ 
+ sealed interface IBase {
+     interface A : IBase
+     interface B : IBase
+ }
+ 
+ // ------------------ not null ------------------
+ 
+ fun test_1(x: SomeEnum) {
+     <!NO_ELSE_IN_WHEN!>when<!> (x) {
+         SomeEnum.A -> ""
+     }
+ }
+ 
+ fun test_2(x: Base) {
+     <!NO_ELSE_IN_WHEN!>when<!> (x) {
+         is Base.A -> ""
+     }
+ }
+ 
+ fun test_3(x: IBase) {
+     <!NO_ELSE_IN_WHEN!>when<!> (x) {
+         is IBase.A -> ""
+     }
+ }
+ 
+ fun test_4(x: Boolean) {
+     <!NO_ELSE_IN_WHEN!>when<!> (x) {
+         true -> ""
+     }
+ }
+ 
+ // ------------------ nullable ------------------
+ 
+ fun test_5(x: SomeEnum?) {
+     <!NO_ELSE_IN_WHEN!>when<!> (x) {
+         SomeEnum.A -> ""
+         SomeEnum.B -> ""
+     }
+ 
+     <!NO_ELSE_IN_WHEN!>when<!> (x) {
+         SomeEnum.A -> ""
+         null -> ""
+     }
+ }
+ 
+ fun test_6(x: Base?) {
+     <!NO_ELSE_IN_WHEN!>when<!> (x) {
+         is Base.A -> ""
+         is Base.B -> ""
+     }
+ 
+     <!NO_ELSE_IN_WHEN!>when<!> (x) {
+         is Base.A -> ""
+         null -> ""
+     }
+ }
+ 
+ fun test_7(x: IBase?) {
+     <!NO_ELSE_IN_WHEN!>when<!> (x) {
+         is IBase.A -> ""
+         is IBase.B -> ""
+     }
+     <!NO_ELSE_IN_WHEN!>when<!> (x) {
+         is IBase.A -> ""
+         null -> ""
+     }
+ }
+ 
+ fun test_8(x: Boolean?) {
+     <!NO_ELSE_IN_WHEN!>when<!> (x) {
+         true -> ""
+         false -> ""
+     }
+ 
+     <!NO_ELSE_IN_WHEN!>when<!> (x) {
+         true -> ""
+         null -> ""
+     }
+ }
+ 
+ // ------------------ with else ------------------
+ 
+ fun test_9(x: SomeEnum?) {
+     when (x) {
+         SomeEnum.A -> ""
+         else -> ""
+     }
+ }
+ 
+ fun test_10(x: Base?) {
+     when (x) {
+         is Base.A -> ""
+         else -> ""
+     }
+ }
+ 
+ fun test_11(x: IBase?) {
+     when (x) {
+         is IBase.A -> ""
+         else -> ""
+     }
+ }
+ 
+ fun test_12(x: Boolean?) {
+     when (x) {
+         true -> ""
+         else -> ""
+     }
+ }
+ 
+ // ------------------ exhaustive ------------------
+ 
+ fun test_13(x: SomeEnum?) {
+     when (x) {
+         SomeEnum.A -> ""
+         SomeEnum.B -> ""
+         null -> ""
+     }
+ }
+ 
+ fun test_14(x: Base?) {
+     when (x) {
+         is Base.A -> ""
+         is Base.B -> ""
+         null -> ""
+     }
+ }
+ 
+ fun test_15(x: IBase?) {
+     when (x) {
+         is IBase.A -> ""
+         is IBase.B -> ""
+         null -> ""
+     }
+ }
+ 
+ fun test_16(x: Boolean?) {
+     when (x) {
+         true -> ""
+         false -> ""
+         null -> ""
+     }
+ }`;
+                    const targetElement = $('#diff0')[0];
+                    const configuration = {
+                        drawFileList: false,
+                        fileListToggle: false,
+                        fileListStartVisible: false,
+                        fileContentToggle: false,
+                        matching: 'lines',
+                        outputFormat: 'side-by-side',
+                        synchronisedScroll: true,
+                        highlight: true,
+                        renderNothingWhenEmpty: false,
+                        rawTemplates: {
+                            'generic-file-path': `
+                                <div class="col">
+                                    <a href="https://github.com/google/kotlin/blob/39c1204b931b46faf1cf0333b8f22c5eba13fd8e/compiler/testData/diagnostics/tests/when/nonExhaustiveWhenStatement_1_7.kt" target="_blank">
+                                        <strong>FE 1.0:</strong> tests/when/nonExhaustiveWhenStatement_1_7.kt
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="https://github.com/google/kotlin/blob/39c1204b931b46faf1cf0333b8f22c5eba13fd8e/compiler/testData/diagnostics/tests/when/nonExhaustiveWhenStatement_1_7.kt" target="_blank">
+                                        <strong>FIR:</strong> tests/when/nonExhaustiveWhenStatement_1_7.kt
+                                    </a>
+                                </div>
+                            `
+                        }
+                    };
+                    const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                    diff2htmlUi.draw();
+                    diff2htmlUi.highlightCode();
+                })();</script>
+    </div>
+  </body>
+</html>

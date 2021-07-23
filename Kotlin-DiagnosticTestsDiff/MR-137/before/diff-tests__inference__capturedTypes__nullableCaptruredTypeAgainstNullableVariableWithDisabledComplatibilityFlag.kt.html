@@ -1,0 +1,113 @@
+<html>
+  <head>
+    <title>Diagnostics diff: tests/inference/capturedTypes/nullableCaptruredTypeAgainstNullableVariableWithDisabledComplatibilityFlag.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="card-header p-0" id="heading0"><button class="btn btn-link btn-block text-left" data-toggle="collapse" data-target="#collapse0">
+          <h5>Diff between FE 1.0 vs FIR</h5>
+        </button></div>
+      <div class="collapse show" id="collapse0">
+        <div class="card-body p-1">
+          <div id="diff0" style="width: 100%"></div>
+        </div>
+      </div>
+      <script type="text/javascript">                (function() {
+                    const diffString = `--- tests/inference/capturedTypes/nullableCaptruredTypeAgainstNullableVariableWithDisabledComplatibilityFlag.kt
++++ tests/inference/capturedTypes/nullableCaptruredTypeAgainstNullableVariableWithDisabledComplatibilityFlag.fir.kt
+@@ -1,39 +1,39 @@
+ // !DIAGNOSTICS: -CAST_NEVER_SUCCEEDS -REDUNDANT_PROJECTION
+ // !LANGUAGE: -InferenceCompatibility
+ 
+ // FILE: Foo.java
+ public class Foo<L> extends Bar<L> {
+     public Foo(L x) {
+         super(x);
+     }
+ }
+ 
+ // FILE: main.kt
+ fun <T : Any> Bar<T>.foo(): T = null as T
+ fun <T : Any> Bar<T?>.bar(): T = null as T
+ fun <T : Any> Foo<T>.boo1(): T = null as T
+ fun <T : Any> Foo<T?>.boo2(): T = null as T
+ 
+ open class Bar<out K>(val x: K)
+ 
+ fun main(x: Foo<out Number?>, y: Bar<out Number?>, z1: Foo<out Number>, z2: Bar<out Number>) {
+-    <!DEBUG_INFO_EXPRESSION_TYPE("kotlin.Any")!>x.foo()<!>
+-    <!DEBUG_INFO_EXPRESSION_TYPE("kotlin.Any")!>x.bar()<!>
+-    <!DEBUG_INFO_EXPRESSION_TYPE("kotlin.Number?")!>x.boo1()<!>
+-    <!DEBUG_INFO_EXPRESSION_TYPE("Type is unknown")!>x.<!UNRESOLVED_REFERENCE_WRONG_RECEIVER!>boo2<!>()<!>
++    x.foo()
++    x.bar()
++    x.boo1()
++    x.<!INAPPLICABLE_CANDIDATE!>boo2<!>()
+ 
+-    <!DEBUG_INFO_EXPRESSION_TYPE("Type is unknown")!>y.<!UNRESOLVED_REFERENCE_WRONG_RECEIVER!>foo<!>()<!>
+-    <!DEBUG_INFO_EXPRESSION_TYPE("kotlin.Number")!>y.bar()<!>
+-    <!DEBUG_INFO_EXPRESSION_TYPE("Type is unknown")!>y.<!UNRESOLVED_REFERENCE_WRONG_RECEIVER!>boo1<!>()<!>
+-    <!DEBUG_INFO_EXPRESSION_TYPE("Type is unknown")!>y.<!UNRESOLVED_REFERENCE_WRONG_RECEIVER!>boo2<!>()<!>
++    y.<!INAPPLICABLE_CANDIDATE!>foo<!>()
++    y.bar()
++    y.<!INAPPLICABLE_CANDIDATE!>boo1<!>()
++    y.<!INAPPLICABLE_CANDIDATE!>boo2<!>()
+ 
+-    <!DEBUG_INFO_EXPRESSION_TYPE("(kotlin.Number..kotlin.Number?)")!>z1.foo()<!>
+-    <!DEBUG_INFO_EXPRESSION_TYPE("kotlin.Number")!>z1.bar()<!>
+-    <!DEBUG_INFO_EXPRESSION_TYPE("kotlin.Number")!>z1.boo1()<!>
+-    <!DEBUG_INFO_EXPRESSION_TYPE("Type is unknown")!>z1.<!UNRESOLVED_REFERENCE_WRONG_RECEIVER!>boo2<!>()<!>
++    z1.foo()
++    z1.bar()
++    z1.boo1()
++    z1.<!INAPPLICABLE_CANDIDATE!>boo2<!>()
+ 
+-    <!DEBUG_INFO_EXPRESSION_TYPE("kotlin.Number")!>z2.foo()<!>
+-    <!DEBUG_INFO_EXPRESSION_TYPE("kotlin.Number")!>z2.bar()<!>
+-    <!DEBUG_INFO_EXPRESSION_TYPE("Type is unknown")!>z2.<!UNRESOLVED_REFERENCE_WRONG_RECEIVER!>boo1<!>()<!>
+-    <!DEBUG_INFO_EXPRESSION_TYPE("Type is unknown")!>z2.<!UNRESOLVED_REFERENCE_WRONG_RECEIVER!>boo2<!>()<!>
++    z2.foo()
++    z2.bar()
++    z2.<!INAPPLICABLE_CANDIDATE!>boo1<!>()
++    z2.<!INAPPLICABLE_CANDIDATE!>boo2<!>()
+ }`;
+                    const targetElement = $('#diff0')[0];
+                    const configuration = {
+                        drawFileList: false,
+                        fileListToggle: false,
+                        fileListStartVisible: false,
+                        fileContentToggle: false,
+                        matching: 'lines',
+                        outputFormat: 'side-by-side',
+                        synchronisedScroll: true,
+                        highlight: true,
+                        renderNothingWhenEmpty: false,
+                        rawTemplates: {
+                            'generic-file-path': `
+                                <div class="col">
+                                    <a href="https://github.com/google/kotlin/blob/60458214a559306869c773e09a903e99c3f0d23a/compiler/testData/diagnostics/tests/inference/capturedTypes/nullableCaptruredTypeAgainstNullableVariableWithDisabledComplatibilityFlag.kt" target="_blank">
+                                        <strong>FE 1.0:</strong> tests/inference/capturedTypes/nullableCaptruredTypeAgainstNullableVariableWithDisabledComplatibilityFlag.kt
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="https://github.com/google/kotlin/blob/60458214a559306869c773e09a903e99c3f0d23a/compiler/testData/diagnostics/tests/inference/capturedTypes/nullableCaptruredTypeAgainstNullableVariableWithDisabledComplatibilityFlag.fir.kt" target="_blank">
+                                        <strong>FIR:</strong> tests/inference/capturedTypes/nullableCaptruredTypeAgainstNullableVariableWithDisabledComplatibilityFlag.fir.kt
+                                    </a>
+                                </div>
+                            `
+                        }
+                    };
+                    const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                    diff2htmlUi.draw();
+                    diff2htmlUi.highlightCode();
+                })();</script>
+    </div>
+  </body>
+</html>

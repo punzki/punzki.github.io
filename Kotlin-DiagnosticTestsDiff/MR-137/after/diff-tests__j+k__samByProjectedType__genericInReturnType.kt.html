@@ -1,0 +1,112 @@
+<html>
+  <head>
+    <title>Diagnostics diff: tests/j+k/samByProjectedType/genericInReturnType.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="card-header p-0" id="heading0"><button class="btn btn-link btn-block text-left" data-toggle="collapse" data-target="#collapse0">
+          <h5>Diff between FE 1.0 vs FIR</h5>
+        </button></div>
+      <div class="collapse show" id="collapse0">
+        <div class="card-body p-1">
+          <div id="diff0" style="width: 100%"></div>
+        </div>
+      </div>
+      <script type="text/javascript">                (function() {
+                    const diffString = `--- tests/j+k/samByProjectedType/genericInReturnType.kt
++++ tests/j+k/samByProjectedType/genericInReturnType.fir.kt
+@@ -1,52 +1,52 @@
+ // !CHECK_TYPE
+ // FILE: EventListener.java
+ public interface EventListener<E> {
+     E handle(String x);
+ }
+ 
+ // FILE: A.java
+ public class A {
+     public void foo(EventListener<?> l) {
+     }
+ 
+     public static void bar(EventListener<?> l) {
+     }
+ 
+     public static void baz(EventListener<? extends CharSequence> l) {
+     }
+ }
+ 
+ // FILE: main.kt
+ fun main() {
+     A().foo {
+         x -> x.hashCode()
+     }
+ 
+     A.bar {
+         x -> x.hashCode()
+     }
+ 
+ 
+     // baz
+     A.baz {
+         x -> x.toString() // OK
+     }
+ 
+     A.baz {
+-        x -> <!TYPE_MISMATCH, TYPE_MISMATCH!>x.hashCode()<!>
++        x -> <!ARGUMENT_TYPE_MISMATCH, TYPE_MISMATCH!>x.hashCode()<!>
+     }
+ 
+     val block: (String) -> Any? = {
+         x -> x.hashCode()
+     }
+ 
+     A().foo(block)
+     A.bar(block)
+ 
+     val block2: (String) -> CharSequence? = {
+         x -> x.toString()
+     }
+ 
+-    A.baz(<!TYPE_MISMATCH!>block<!>)
++    A.baz(<!ARGUMENT_TYPE_MISMATCH!>block<!>)
+     A.baz(block2)
+ }`;
+                    const targetElement = $('#diff0')[0];
+                    const configuration = {
+                        drawFileList: false,
+                        fileListToggle: false,
+                        fileListStartVisible: false,
+                        fileContentToggle: false,
+                        matching: 'lines',
+                        outputFormat: 'side-by-side',
+                        synchronisedScroll: true,
+                        highlight: true,
+                        renderNothingWhenEmpty: false,
+                        rawTemplates: {
+                            'generic-file-path': `
+                                <div class="col">
+                                    <a href="https://github.com/google/kotlin/blob/39c1204b931b46faf1cf0333b8f22c5eba13fd8e/compiler/testData/diagnostics/tests/j+k/samByProjectedType/genericInReturnType.kt" target="_blank">
+                                        <strong>FE 1.0:</strong> tests/j+k/samByProjectedType/genericInReturnType.kt
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="https://github.com/google/kotlin/blob/39c1204b931b46faf1cf0333b8f22c5eba13fd8e/compiler/testData/diagnostics/tests/j+k/samByProjectedType/genericInReturnType.fir.kt" target="_blank">
+                                        <strong>FIR:</strong> tests/j+k/samByProjectedType/genericInReturnType.fir.kt
+                                    </a>
+                                </div>
+                            `
+                        }
+                    };
+                    const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                    diff2htmlUi.draw();
+                    diff2htmlUi.highlightCode();
+                })();</script>
+    </div>
+  </body>
+</html>
