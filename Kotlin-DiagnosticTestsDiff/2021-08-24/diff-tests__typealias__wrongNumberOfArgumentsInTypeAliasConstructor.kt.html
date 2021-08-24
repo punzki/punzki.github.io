@@ -1,0 +1,110 @@
+<html>
+  <head>
+    <title>Diagnostics diff: tests/typealias/wrongNumberOfArgumentsInTypeAliasConstructor.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="card-header p-0" id="heading0"><button class="btn btn-link btn-block text-left" data-toggle="collapse" data-target="#collapse0">
+          <h5>Diff between FE 1.0 vs FIR</h5>
+        </button></div>
+      <div class="collapse show" id="collapse0">
+        <div class="card-body p-1">
+          <div id="diff0" style="width: 100%"></div>
+        </div>
+      </div>
+      <script type="text/javascript">                (function() {
+                    const diffString = `--- tests/typealias/wrongNumberOfArgumentsInTypeAliasConstructor.kt
++++ tests/typealias/wrongNumberOfArgumentsInTypeAliasConstructor.fir.kt
+@@ -1,41 +1,41 @@
+ // NI_EXPECTED_FILE
+ 
+ class Pair<T1, T2>(val x1: T1, val x2: T2)
+ 
+ typealias P<T1, T2> = Pair<T1, T2>
+ 
+ typealias P2<T> = Pair<T, T>
+ 
+ typealias PR<T1, T2> = Pair<T2, T1>
+ 
+ val test0 = P(1, 2)
+-val test1 = P<!WRONG_NUMBER_OF_TYPE_ARGUMENTS!><Int><!>(1, 2)
++val test1 = <!INAPPLICABLE_CANDIDATE!>P<!><Int>(1, 2)
+ val test2 = P<Int, Int>(1, 2)
+-val test3 = P<!WRONG_NUMBER_OF_TYPE_ARGUMENTS!><Int, Int, Int><!>(1, 2)
++val test3 = <!INAPPLICABLE_CANDIDATE!>P<!><Int, Int, Int>(1, 2)
+ 
+ val test0p2 = P2(1, 1)
+ val test0p2a = P2(1, "")
+ val test1p2 = P2<Int>(1, 1)
+-val test2p2 = P2<!WRONG_NUMBER_OF_TYPE_ARGUMENTS!><Int, Int><!>(1, 1)
+-val test3p2 = P2<!WRONG_NUMBER_OF_TYPE_ARGUMENTS!><Int, Int, Int><!>(1, 1)
++val test2p2 = <!INAPPLICABLE_CANDIDATE!>P2<!><Int, Int>(1, 1)
++val test3p2 = <!INAPPLICABLE_CANDIDATE!>P2<!><Int, Int, Int>(1, 1)
+ 
+ val test0pr = PR(1, "")
+-val test1pr = PR<!WRONG_NUMBER_OF_TYPE_ARGUMENTS!><Int><!>(1, "")
+-val test2pr = PR<Int, String>(<!CONSTANT_EXPECTED_TYPE_MISMATCH!>1<!>, <!TYPE_MISMATCH!>""<!>)
++val test1pr = <!INAPPLICABLE_CANDIDATE!>PR<!><Int>(1, "")
++val test2pr = PR<Int, String>(<!ARGUMENT_TYPE_MISMATCH!>1<!>, <!ARGUMENT_TYPE_MISMATCH!>""<!>)
+ val test2pra = PR<String, Int>(1, "")
+-val test3pr = P2<!WRONG_NUMBER_OF_TYPE_ARGUMENTS!><String, Int, Int><!>(1, "")
++val test3pr = <!INAPPLICABLE_CANDIDATE!>P2<!><String, Int, Int>(1, "")
+ 
+ class Num<T : Number>(val x: T)
+ typealias N<T> = Num<T>
+ 
+-val testN0 = N(<!TYPE_MISMATCH!>""<!>)
++val testN0 = N("")
+ val testN1 = N<Int>(1)
+ val testN1a = N<<!UPPER_BOUND_VIOLATED!>String<!>>("")
+-val testN2 = N<!WRONG_NUMBER_OF_TYPE_ARGUMENTS!><Int, Int><!>(1)
++val testN2 = <!INAPPLICABLE_CANDIDATE!>N<!><Int, Int>(1)
+ 
+ class MyPair<T1 : CharSequence, T2 : Number>(val string: T1, val number: T2)
+ typealias MP<T1> = MyPair<String, T1>
+ 
+ val testMP0 = MP<Int>("", 1)
+-val testMP1 = MP(<!CONSTANT_EXPECTED_TYPE_MISMATCH!>1<!>, <!TYPE_MISMATCH!>""<!>)
+-val testMP2 = MP<<!UPPER_BOUND_VIOLATED!>String<!>>("", "")
++val testMP1 = MP(<!ARGUMENT_TYPE_MISMATCH!>1<!>, "")
++val testMP2 = MP<String>("", "")`;
+                    const targetElement = $('#diff0')[0];
+                    const configuration = {
+                        drawFileList: false,
+                        fileListToggle: false,
+                        fileListStartVisible: false,
+                        fileContentToggle: false,
+                        matching: 'lines',
+                        outputFormat: 'side-by-side',
+                        synchronisedScroll: true,
+                        highlight: true,
+                        renderNothingWhenEmpty: false,
+                        rawTemplates: {
+                            'generic-file-path': `
+                                <div class="col">
+                                    <a href="https://github.com/JetBrains/kotlin/blob/4243bafd1d28dfb708235ccdeb5ac14e307f7354/compiler/testData/diagnostics/tests/typealias/wrongNumberOfArgumentsInTypeAliasConstructor.kt" target="_blank">
+                                        <strong>FE 1.0:</strong> tests/typealias/wrongNumberOfArgumentsInTypeAliasConstructor.kt
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="https://github.com/JetBrains/kotlin/blob/4243bafd1d28dfb708235ccdeb5ac14e307f7354/compiler/testData/diagnostics/tests/typealias/wrongNumberOfArgumentsInTypeAliasConstructor.fir.kt" target="_blank">
+                                        <strong>FIR:</strong> tests/typealias/wrongNumberOfArgumentsInTypeAliasConstructor.fir.kt
+                                    </a>
+                                </div>
+                            `
+                        }
+                    };
+                    const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                    diff2htmlUi.draw();
+                    diff2htmlUi.highlightCode();
+                })();</script>
+    </div>
+  </body>
+</html>

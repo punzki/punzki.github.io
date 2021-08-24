@@ -1,0 +1,119 @@
+<html>
+  <head>
+    <title>Diagnostics diff: FUNCTION_EXPECTED</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row sticky-top" style="background: white" id="summary">
+        <div class="d-inline-flex align-items-baseline">
+          <h1 class="mr-2">FUNCTION_EXPECTED</h1>
+<a href="index.html">(back to diagnostic list)</a></div>
+      </div>
+      <div class="row">
+        <ul>
+          <li><strong>Total: </strong>52</li>
+          <li><strong>Match %: </strong>17.31%</li>
+          <li><a href="#matched"><strong># Matched: </strong>9</a></li>
+          <li><strong># Non-matched: </strong>43</li>
+          <li><a href="#missing"><strong># Missing: </strong>14</a></li>
+          <li><a href="#unexpected"><strong># Unexpected: </strong>14</a></li>
+          <li><a href="#mismatched"><strong># Mismatched: </strong>15</a></li>
+          <li><strong># Files: </strong>24</li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="missing">
+        <h2>Missing (14)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__resolve__invoke__errors__wrongReceiverForInvokeOnExpression.kt.html" target="_blank">tests/resolve/invoke/errors/wrongReceiverForInvokeOnExpression.kt (5)</a></li>
+          <li><a href="diff-tests__resolve__invoke__invokeOnVariableWithExtensionFunctionType.kt.html" target="_blank">tests/resolve/invoke/invokeOnVariableWithExtensionFunctionType.kt (3)</a></li>
+          <li><a href="diff-tests__resolve__invoke__wrongInvokeExtension.kt.html" target="_blank">tests/resolve/invoke/wrongInvokeExtension.kt (2)</a></li>
+          <li><a href="diff-tests__FunctionCalleeExpressions.kt.html" target="_blank">tests/FunctionCalleeExpressions.kt (1)</a></li>
+          <li><a href="diff-tests__extensions__throwOutCandidatesByReceiver.kt.html" target="_blank">tests/extensions/throwOutCandidatesByReceiver.kt (1)</a></li>
+          <li><a href="diff-tests__resolve__dslMarker__threeImplicitReceivers.kt.html" target="_blank">tests/resolve/dslMarker/threeImplicitReceivers.kt (1)</a></li>
+          <li><a href="diff-tests__resolve__dslMarker__threeImplicitReceivers2.kt.html" target="_blank">tests/resolve/dslMarker/threeImplicitReceivers2.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="unexpected">
+        <h2>Unexpected (14)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__FunctionCalleeExpressions.kt.html" target="_blank">tests/FunctionCalleeExpressions.kt (7)</a></li>
+          <li><a href="diff-tests__resolve__invoke__errors__wrongReceiverForInvokeOnExpression.kt.html" target="_blank">tests/resolve/invoke/errors/wrongReceiverForInvokeOnExpression.kt (3)</a></li>
+          <li><a href="diff-tests__resolve__invoke__invokeAndSmartCast.kt.html" target="_blank">tests/resolve/invoke/invokeAndSmartCast.kt (2)</a></li>
+          <li><a href="diff-tests__extensions__throwOutCandidatesByReceiver.kt.html" target="_blank">tests/extensions/throwOutCandidatesByReceiver.kt (1)</a></li>
+          <li><a href="diff-tests__secondaryConstructors__headerCallChecker__operatorCall.kt.html" target="_blank">tests/secondaryConstructors/headerCallChecker/operatorCall.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="mismatched">
+        <h2>Mismatched (15)</h2>
+      </div>
+      <div class="row sticky-top" style="top: 5.5em; background: white">
+        <h5>FUNCTION_EXPECTED → INVISIBLE_REFERENCE (6)</h5>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__resolve__noCandidates__resolvedToClassifierWithReceiver.kt.html" target="_blank">tests/resolve/noCandidates/resolvedToClassifierWithReceiver.kt (2)</a></li>
+          <li><a href="diff-tests__typealias__typeAliasConstructor.kt.html" target="_blank">tests/typealias/typeAliasConstructor.kt (2)</a></li>
+          <li><a href="diff-tests__incompleteCode__kt2014.kt.html" target="_blank">tests/incompleteCode/kt2014.kt (1)</a></li>
+          <li><a href="diff-tests__resolve__noCandidates__resolvedToClassifier.kt.html" target="_blank">tests/resolve/noCandidates/resolvedToClassifier.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 5.5em; background: white">
+        <h5>FUNCTION_EXPECTED → UNRESOLVED_REFERENCE (4)</h5>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__resolve__invoke__reportFunctionExpectedOnSimpleUnresolved.kt.html" target="_blank">tests/resolve/invoke/reportFunctionExpectedOnSimpleUnresolved.kt (2)</a></li>
+          <li><a href="diff-tests__incompleteCode__senselessComparisonWithNull.kt.html" target="_blank">tests/incompleteCode/senselessComparisonWithNull.kt (1)</a></li>
+          <li><a href="diff-tests__resolve__invoke__errors__unresolvedInvoke.kt.html" target="_blank">tests/resolve/invoke/errors/unresolvedInvoke.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 5.5em; background: white">
+        <h5>FUNCTION_EXPECTED → INAPPLICABLE_CANDIDATE (2)</h5>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__resolve__invoke__errors__wrongReceiverTypeForInvoke.kt.html" target="_blank">tests/resolve/invoke/errors/wrongReceiverTypeForInvoke.kt (1)</a></li>
+          <li><a href="diff-tests__resolve__invoke__reportFunctionExpectedWhenOneInvokeExist.kt.html" target="_blank">tests/resolve/invoke/reportFunctionExpectedWhenOneInvokeExist.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 5.5em; background: white">
+        <h5>UNRESOLVED_REFERENCE → FUNCTION_EXPECTED (2)</h5>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__smartCasts__variables__ifElseBlockInsideDoWhileWithBreak.kt.html" target="_blank">tests/smartCasts/variables/ifElseBlockInsideDoWhileWithBreak.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__variables__whileTrue.kt.html" target="_blank">tests/smartCasts/variables/whileTrue.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 5.5em; background: white">
+        <h5>FUNCTION_EXPECTED → NONE_APPLICABLE (1)</h5>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__resolve__invoke__functionExpectedWhenSeveralInvokesExist.kt.html" target="_blank">tests/resolve/invoke/functionExpectedWhenSeveralInvokesExist.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="matched">
+        <h2>Matched (9)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__FunctionCalleeExpressions.kt.html" target="_blank">tests/FunctionCalleeExpressions.kt (4)</a></li>
+          <li><a href="diff-tests__extensions__kt1875.kt.html" target="_blank">tests/extensions/kt1875.kt (1)</a></li>
+          <li><a href="diff-tests__incompleteCode__kt2014.kt.html" target="_blank">tests/incompleteCode/kt2014.kt (1)</a></li>
+          <li><a href="diff-tests__kt310.kt.html" target="_blank">tests/kt310.kt (1)</a></li>
+          <li><a href="diff-tests__resolve__invoke__errors__unresolvedInvoke.kt.html" target="_blank">tests/resolve/invoke/errors/unresolvedInvoke.kt (1)</a></li>
+          <li><a href="diff-tests__resolve__invoke__kt30695_2.kt.html" target="_blank">tests/resolve/invoke/kt30695_2.kt (1)</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

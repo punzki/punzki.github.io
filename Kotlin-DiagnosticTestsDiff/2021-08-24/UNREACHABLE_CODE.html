@@ -1,0 +1,141 @@
+<html>
+  <head>
+    <title>Diagnostics diff: UNREACHABLE_CODE</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row sticky-top" style="background: white" id="summary">
+        <div class="d-inline-flex align-items-baseline">
+          <h1 class="mr-2">UNREACHABLE_CODE</h1>
+<a href="index.html">(back to diagnostic list)</a></div>
+      </div>
+      <div class="row">
+        <ul>
+          <li><strong>Total: </strong>250</li>
+          <li><strong>Match %: </strong>36.80%</li>
+          <li><a href="#matched"><strong># Matched: </strong>92</a></li>
+          <li><strong># Non-matched: </strong>158</li>
+          <li><a href="#missing"><strong># Missing: </strong>134</a></li>
+          <li><a href="#unexpected"><strong># Unexpected: </strong>24</a></li>
+          <li><a href="#mismatched"><strong># Mismatched: </strong>0</a></li>
+          <li><strong># Files: </strong>75</li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="missing">
+        <h2>Missing (134)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__controlFlowAnalysis__deadCode__deadCodeInLocalDeclarations.kt.html" target="_blank">tests/controlFlowAnalysis/deadCode/deadCodeInLocalDeclarations.kt (7)</a></li>
+          <li><a href="diff-tests__controlFlowAnalysis__loopWithNonTrivialBooleanConst_warning.kt.html" target="_blank">tests/controlFlowAnalysis/loopWithNonTrivialBooleanConst_warning.kt (6)</a></li>
+          <li><a href="diff-tests__controlFlowAnalysis__kt1027.kt.html" target="_blank">tests/controlFlowAnalysis/kt1027.kt (5)</a></li>
+          <li><a href="diff-tests__controlStructures__kt786.kt.html" target="_blank">tests/controlStructures/kt786.kt (5)</a></li>
+          <li><a href="diff-testsWithStdLib__trailingComma__valueArgumentsWithDisabledFeature.kt.html" target="_blank">testsWithStdLib/trailingComma/valueArgumentsWithDisabledFeature.kt (5)</a></li>
+          <li><a href="diff-tests__callableReference__bound__controlFlow.kt.html" target="_blank">tests/callableReference/bound/controlFlow.kt (4)</a></li>
+          <li><a href="diff-tests__controlFlowAnalysis__breakOrContinueInLoopCondition.kt.html" target="_blank">tests/controlFlowAnalysis/breakOrContinueInLoopCondition.kt (4)</a></li>
+          <li><a href="diff-tests__controlFlowAnalysis__deadCode__deadCodeDifferentExamples.kt.html" target="_blank">tests/controlFlowAnalysis/deadCode/deadCodeDifferentExamples.kt (4)</a></li>
+          <li><a href="diff-tests__controlFlowAnalysis__kt1001.kt.html" target="_blank">tests/controlFlowAnalysis/kt1001.kt (4)</a></li>
+          <li><a href="diff-tests__typeParameters__implicitNothingInReturnPosition.kt.html" target="_blank">tests/typeParameters/implicitNothingInReturnPosition.kt (4)</a></li>
+          <li><a href="diff-testsWithStdLib__trailingComma__valueArgumentsWithEnabledFeature.kt.html" target="_blank">testsWithStdLib/trailingComma/valueArgumentsWithEnabledFeature.kt (4)</a></li>
+          <li><a href="diff-tests__controlFlowAnalysis__deadCode__deadCodeInArrayAccess.kt.html" target="_blank">tests/controlFlowAnalysis/deadCode/deadCodeInArrayAccess.kt (3)</a></li>
+          <li><a href="diff-tests__controlFlowAnalysis__deadCode__deadCodeInBinaryExpressions.kt.html" target="_blank">tests/controlFlowAnalysis/deadCode/deadCodeInBinaryExpressions.kt (3)</a></li>
+          <li><a href="diff-tests__controlFlowAnalysis__throwInLambda.kt.html" target="_blank">tests/controlFlowAnalysis/throwInLambda.kt (3)</a></li>
+          <li><a href="diff-tests__inference__implicitInvokeWithFunctionLiteralArgument.kt.html" target="_blank">tests/inference/implicitInvokeWithFunctionLiteralArgument.kt (3)</a></li>
+          <li><a href="diff-tests__nullabilityAndSmartCasts__kt2164.kt.html" target="_blank">tests/nullabilityAndSmartCasts/kt2164.kt (3)</a></li>
+          <li><a href="diff-testsWithStdLib__contracts__controlflow__flowInlining__unreachableCode.kt.html" target="_blank">testsWithStdLib/contracts/controlflow/flowInlining/unreachableCode.kt (3)</a></li>
+          <li><a href="diff-tests__BreakContinue.kt.html" target="_blank">tests/BreakContinue.kt (2)</a></li>
+          <li><a href="diff-tests__annotations__onLoopsUnreachable.kt.html" target="_blank">tests/annotations/onLoopsUnreachable.kt (2)</a></li>
+          <li><a href="diff-tests__controlFlowAnalysis__breakContinueInTryFinally.kt.html" target="_blank">tests/controlFlowAnalysis/breakContinueInTryFinally.kt (2)</a></li>
+          <li><a href="diff-tests__controlFlowAnalysis__deadCode__deadCallInReceiver.kt.html" target="_blank">tests/controlFlowAnalysis/deadCode/deadCallInReceiver.kt (2)</a></li>
+          <li><a href="diff-tests__controlFlowAnalysis__deadCode__kt2585_2.kt.html" target="_blank">tests/controlFlowAnalysis/deadCode/kt2585_2.kt (2)</a></li>
+          <li><a href="diff-tests__controlFlowAnalysis__infiniteLoops.kt.html" target="_blank">tests/controlFlowAnalysis/infiniteLoops.kt (2)</a></li>
+          <li><a href="diff-tests__controlFlowAnalysis__loopWithNonTrivialBooleanConst_error.kt.html" target="_blank">tests/controlFlowAnalysis/loopWithNonTrivialBooleanConst_error.kt (2)</a></li>
+          <li><a href="diff-tests__controlStructures__when.kt234.kt973.kt.html" target="_blank">tests/controlStructures/when.kt234.kt973.kt (2)</a></li>
+          <li><a href="diff-tests__dataFlowInfoTraversal__ExclExcl.kt.html" target="_blank">tests/dataFlowInfoTraversal/ExclExcl.kt (2)</a></li>
+          <li><a href="diff-tests__functionLiterals__return__LocalReturnHasTypeNothing.kt.html" target="_blank">tests/functionLiterals/return/LocalReturnHasTypeNothing.kt (2)</a></li>
+          <li><a href="diff-tests__implicitNothing.kt.html" target="_blank">tests/implicitNothing.kt (2)</a></li>
+          <li><a href="diff-tests__inference__constraints__ignoreConstraintFromImplicitInNothing.kt.html" target="_blank">tests/inference/constraints/ignoreConstraintFromImplicitInNothing.kt (2)</a></li>
+          <li><a href="diff-tests__inference__implicitInvokeInCompanionObjectWithFunctionalArgument.kt.html" target="_blank">tests/inference/implicitInvokeInCompanionObjectWithFunctionalArgument.kt (2)</a></li>
+          <li><a href="diff-tests__inference__implicitInvokeInObjectWithFunctionalArgument.kt.html" target="_blank">tests/inference/implicitInvokeInObjectWithFunctionalArgument.kt (2)</a></li>
+          <li><a href="diff-tests__overload__defaultParameters.kt.html" target="_blank">tests/overload/defaultParameters.kt (2)</a></li>
+          <li><a href="diff-tests__secondaryConstructors__return.kt.html" target="_blank">tests/secondaryConstructors/return.kt (2)</a></li>
+          <li><a href="diff-testsWithStdLib__contracts__controlflow__flowInlining__nonReturningInlinedLambda.kt.html" target="_blank">testsWithStdLib/contracts/controlflow/flowInlining/nonReturningInlinedLambda.kt (2)</a></li>
+          <li><a href="diff-testsWithStdLib__contracts__controlflow__flowInlining__severalJumpOutsFromInlinedLambda.kt.html" target="_blank">testsWithStdLib/contracts/controlflow/flowInlining/severalJumpOutsFromInlinedLambda.kt (2)</a></li>
+          <li><a href="diff-testsWithStdLib__tryCatch__assignTry.kt.html" target="_blank">testsWithStdLib/tryCatch/assignTry.kt (2)</a></li>
+          <li><a href="diff-tests__controlFlowAnalysis__deadCode__commentsInDeadCode.kt.html" target="_blank">tests/controlFlowAnalysis/deadCode/commentsInDeadCode.kt (1)</a></li>
+          <li><a href="diff-tests__controlFlowAnalysis__deadCode__deadCodeInCalls.kt.html" target="_blank">tests/controlFlowAnalysis/deadCode/deadCodeInCalls.kt (1)</a></li>
+          <li><a href="diff-tests__controlFlowAnalysis__deadCode__deadCodeInWhileFromBreak.kt.html" target="_blank">tests/controlFlowAnalysis/deadCode/deadCodeInWhileFromBreak.kt (1)</a></li>
+          <li><a href="diff-tests__controlFlowAnalysis__deadCode__kt2585_1.kt.html" target="_blank">tests/controlFlowAnalysis/deadCode/kt2585_1.kt (1)</a></li>
+          <li><a href="diff-tests__controlFlowAnalysis__deadCode__kt2585_3.kt.html" target="_blank">tests/controlFlowAnalysis/deadCode/kt2585_3.kt (1)</a></li>
+          <li><a href="diff-tests__controlFlowAnalysis__reassignmentInTryCatch.kt.html" target="_blank">tests/controlFlowAnalysis/reassignmentInTryCatch.kt (1)</a></li>
+          <li><a href="diff-tests__controlStructures__continueAndBreakLabelWithSameFunctionName.kt.html" target="_blank">tests/controlStructures/continueAndBreakLabelWithSameFunctionName.kt (1)</a></li>
+          <li><a href="diff-tests__controlStructures__tryReturnType.kt.html" target="_blank">tests/controlStructures/tryReturnType.kt (1)</a></li>
+          <li><a href="diff-tests__dataFlowInfoTraversal__Throw.kt.html" target="_blank">tests/dataFlowInfoTraversal/Throw.kt (1)</a></li>
+          <li><a href="diff-tests__explicitDefinitelyNotNull__isAsOperators.kt.html" target="_blank">tests/explicitDefinitelyNotNull/isAsOperators.kt (1)</a></li>
+          <li><a href="diff-tests__explicitDefinitelyNotNull__isAsOperatorsEnabled.kt.html" target="_blank">tests/explicitDefinitelyNotNull/isAsOperatorsEnabled.kt (1)</a></li>
+          <li><a href="diff-tests__inference__completion__postponedArgumentsAnalysis__lambdasInTryCatch.kt.html" target="_blank">tests/inference/completion/postponedArgumentsAnalysis/lambdasInTryCatch.kt (1)</a></li>
+          <li><a href="diff-tests__labels__labelReferencesInsideObjectExpressions.kt.html" target="_blank">tests/labels/labelReferencesInsideObjectExpressions.kt (1)</a></li>
+          <li><a href="diff-tests__platformTypes__nullabilityWarnings__elvis.kt.html" target="_blank">tests/platformTypes/nullabilityWarnings/elvis.kt (1)</a></li>
+          <li><a href="diff-tests__properties__inferenceFromGetters__nullAsNothing.kt.html" target="_blank">tests/properties/inferenceFromGetters/nullAsNothing.kt (1)</a></li>
+          <li><a href="diff-tests__regressions__kt411.kt.html" target="_blank">tests/regressions/kt411.kt (1)</a></li>
+          <li><a href="diff-tests__regressions__kt58.kt.html" target="_blank">tests/regressions/kt58.kt (1)</a></li>
+          <li><a href="diff-tests__secondaryConstructors__unreachableCode.kt.html" target="_blank">tests/secondaryConstructors/unreachableCode.kt (1)</a></li>
+          <li><a href="diff-tests__when__DuplicatedLabels.kt.html" target="_blank">tests/when/DuplicatedLabels.kt (1)</a></li>
+          <li><a href="diff-tests__when__ExhaustiveBreakContinue.kt.html" target="_blank">tests/when/ExhaustiveBreakContinue.kt (1)</a></li>
+          <li><a href="diff-tests__when__ExhaustiveReturnThrow.kt.html" target="_blank">tests/when/ExhaustiveReturnThrow.kt (1)</a></li>
+          <li><a href="diff-tests__when__When.kt.html" target="_blank">tests/when/When.kt (1)</a></li>
+          <li><a href="diff-testsWithStdLib__contracts__controlflow__flowInlining__breakContinuesInInlinedLambda.kt.html" target="_blank">testsWithStdLib/contracts/controlflow/flowInlining/breakContinuesInInlinedLambda.kt (1)</a></li>
+          <li><a href="diff-testsWithStdLib__contracts__controlflow__flowInlining__inlinedLambdaAlwaysThrows.kt.html" target="_blank">testsWithStdLib/contracts/controlflow/flowInlining/inlinedLambdaAlwaysThrows.kt (1)</a></li>
+          <li><a href="diff-testsWithStdLib__contracts__controlflow__flowInlining__labeledReturns.kt.html" target="_blank">testsWithStdLib/contracts/controlflow/flowInlining/labeledReturns.kt (1)</a></li>
+          <li><a href="diff-testsWithStdLib__contracts__smartcasts__throwsEffect.kt.html" target="_blank">testsWithStdLib/contracts/smartcasts/throwsEffect.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="unexpected">
+        <h2>Unexpected (24)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__controlFlowAnalysis__deadCode__deadCodeInArrayAccess.kt.html" target="_blank">tests/controlFlowAnalysis/deadCode/deadCodeInArrayAccess.kt (6)</a></li>
+          <li><a href="diff-tests__controlFlowAnalysis__deadCode__deadCodeInLocalDeclarations.kt.html" target="_blank">tests/controlFlowAnalysis/deadCode/deadCodeInLocalDeclarations.kt (6)</a></li>
+          <li><a href="diff-tests__controlFlowAnalysis__deadCode__deadCodeInBinaryExpressions.kt.html" target="_blank">tests/controlFlowAnalysis/deadCode/deadCodeInBinaryExpressions.kt (3)</a></li>
+          <li><a href="diff-tests__controlFlowAnalysis__deadCode__commentsInDeadCode.kt.html" target="_blank">tests/controlFlowAnalysis/deadCode/commentsInDeadCode.kt (2)</a></li>
+          <li><a href="diff-tests__controlFlowAnalysis__deadCode__deadCallInReceiver.kt.html" target="_blank">tests/controlFlowAnalysis/deadCode/deadCallInReceiver.kt (2)</a></li>
+          <li><a href="diff-tests__controlFlowAnalysis__deadCode__deadCodeDifferentExamples.kt.html" target="_blank">tests/controlFlowAnalysis/deadCode/deadCodeDifferentExamples.kt (2)</a></li>
+          <li><a href="diff-tests__controlFlowAnalysis__deadCode__deadCodeInWhileFromBreak.kt.html" target="_blank">tests/controlFlowAnalysis/deadCode/deadCodeInWhileFromBreak.kt (2)</a></li>
+          <li><a href="diff-tests__controlFlowAnalysis__deadCode__deadCodeInCalls.kt.html" target="_blank">tests/controlFlowAnalysis/deadCode/deadCodeInCalls.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="matched">
+        <h2>Matched (92)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__controlFlowAnalysis__deadCode__deadCodeDifferentExamples.kt.html" target="_blank">tests/controlFlowAnalysis/deadCode/deadCodeDifferentExamples.kt (31)</a></li>
+          <li><a href="diff-tests__controlFlowAnalysis__deadCode__deadCodeInWhileFromBreak.kt.html" target="_blank">tests/controlFlowAnalysis/deadCode/deadCodeInWhileFromBreak.kt (10)</a></li>
+          <li><a href="diff-tests__controlFlowAnalysis__deadCode__deadCodeInArrayAccess.kt.html" target="_blank">tests/controlFlowAnalysis/deadCode/deadCodeInArrayAccess.kt (6)</a></li>
+          <li><a href="diff-tests__controlFlowAnalysis__deadCode__commentsInDeadCode.kt.html" target="_blank">tests/controlFlowAnalysis/deadCode/commentsInDeadCode.kt (5)</a></li>
+          <li><a href="diff-tests__controlFlowAnalysis__deadCode__deadCodeInLoops.kt.html" target="_blank">tests/controlFlowAnalysis/deadCode/deadCodeInLoops.kt (5)</a></li>
+          <li><a href="diff-tests__controlFlowAnalysis__deadCode__deadCodeInDeadCode.kt.html" target="_blank">tests/controlFlowAnalysis/deadCode/deadCodeInDeadCode.kt (4)</a></li>
+          <li><a href="diff-tests__controlFlowAnalysis__deadCode__deadCodeFromDifferentSources.kt.html" target="_blank">tests/controlFlowAnalysis/deadCode/deadCodeFromDifferentSources.kt (3)</a></li>
+          <li><a href="diff-tests__controlFlowAnalysis__deadCode__deadCodeInAssignment.kt.html" target="_blank">tests/controlFlowAnalysis/deadCode/deadCodeInAssignment.kt (3)</a></li>
+          <li><a href="diff-tests__controlFlowAnalysis__deadCode__deadCodeInBinaryExpressions.kt.html" target="_blank">tests/controlFlowAnalysis/deadCode/deadCodeInBinaryExpressions.kt (3)</a></li>
+          <li><a href="diff-tests__controlFlowAnalysis__deadCode__deadCodeInCalls.kt.html" target="_blank">tests/controlFlowAnalysis/deadCode/deadCodeInCalls.kt (3)</a></li>
+          <li><a href="diff-tests__controlFlowAnalysis__deadCode__deadCodeInInnerExpressions.kt.html" target="_blank">tests/controlFlowAnalysis/deadCode/deadCodeInInnerExpressions.kt (3)</a></li>
+          <li><a href="diff-tests__controlFlowAnalysis__deadCode__deadCodeInUnaryExpr.kt.html" target="_blank">tests/controlFlowAnalysis/deadCode/deadCodeInUnaryExpr.kt (3)</a></li>
+          <li><a href="diff-tests__controlFlowAnalysis__deadCode__commasAndWhitespaces.kt.html" target="_blank">tests/controlFlowAnalysis/deadCode/commasAndWhitespaces.kt (2)</a></li>
+          <li><a href="diff-tests__controlFlowAnalysis__deadCode__deadCallInInvokeCall.kt.html" target="_blank">tests/controlFlowAnalysis/deadCode/deadCallInInvokeCall.kt (2)</a></li>
+          <li><a href="diff-tests__controlFlowAnalysis__deadCode__deadCodeInIf.kt.html" target="_blank">tests/controlFlowAnalysis/deadCode/deadCodeInIf.kt (2)</a></li>
+          <li><a href="diff-tests__controlFlowAnalysis__deadCode__deadCodeInLocalDeclarations.kt.html" target="_blank">tests/controlFlowAnalysis/deadCode/deadCodeInLocalDeclarations.kt (2)</a></li>
+          <li><a href="diff-tests__controlFlowAnalysis__deadCode__kt5200DeadCodeInLambdas.kt.html" target="_blank">tests/controlFlowAnalysis/deadCode/kt5200DeadCodeInLambdas.kt (2)</a></li>
+          <li><a href="diff-tests__controlFlowAnalysis__deadCode__deadCodeInReturn.kt.html" target="_blank">tests/controlFlowAnalysis/deadCode/deadCodeInReturn.kt (1)</a></li>
+          <li><a href="diff-tests__controlFlowAnalysis__deadCode__kt3162tryAsInitializer.kt.html" target="_blank">tests/controlFlowAnalysis/deadCode/kt3162tryAsInitializer.kt (1)</a></li>
+          <li><a href="diff-tests__controlFlowAnalysis__deadCode__returnInDeadLambda.kt.html" target="_blank">tests/controlFlowAnalysis/deadCode/returnInDeadLambda.kt (1)</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

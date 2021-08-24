@@ -1,0 +1,200 @@
+<html>
+  <head>
+    <title>Diagnostics diff: tests/resolve/invoke/implicitInvokeAfterSafeCall.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="card-header p-0" id="heading0"><button class="btn btn-link btn-block text-left" data-toggle="collapse" data-target="#collapse0">
+          <h5>Diff between FE 1.0 vs FIR</h5>
+        </button></div>
+      <div class="collapse show" id="collapse0">
+        <div class="card-body p-1">
+          <div id="diff0" style="width: 100%"></div>
+        </div>
+      </div>
+      <script type="text/javascript">                (function() {
+                    const diffString = `--- tests/resolve/invoke/implicitInvokeAfterSafeCall.kt
++++ tests/resolve/invoke/implicitInvokeAfterSafeCall.fir.kt
+@@ -1,139 +1,139 @@
+ // !DIAGNOSTICS: -UNUSED_PARAMETER
+ 
+ // Test case 1: additional receiver, generic invoke
+ 
+ class Foo1<T>
+ class Bar1<T>(val value: Foo1<T>)
+ 
+ class Another1 {
+     operator fun <T> Foo1<T>.invoke(handler: () -> Unit) {}
+ }
+ 
+ fun Another1.main(x: Bar1<String>?) {
+     x?.value {}
+     x?.value<!UNSAFE_CALL!>.<!>invoke({})
+ }
+ 
+ // Test case 2: additional receiver, non-generic invoke
+ 
+ class Foo2<T>
+ class Bar2<T>(val value: Foo2<T>)
+ 
+ class Another2 {
+     operator fun Foo2<String>.invoke(x: Int) {}
+ }
+ 
+ fun Another2.main(x: Bar2<String>?) {
+-    x?.<!UNSAFE_IMPLICIT_INVOKE_CALL!>value<!>(1)
++    x?.value(1)
+     x?.value<!UNSAFE_CALL!>.<!>invoke(1)
+ }
+ 
+ // Test case 3: additional generic receiver, generic invoke
+ 
+ class Foo3<T>
+ class Bar3<T>(val value: Foo3<T>)
+ 
+ class Another3<T> {
+     operator fun Foo3<T>.invoke(x: Int) {}
+ }
+ 
+ fun <K> Another3<K>.main(x: Bar3<K>?) {
+-    x?.<!UNSAFE_IMPLICIT_INVOKE_CALL!>value<!>(1)
++    x?.value(1)
+     x?.value<!UNSAFE_CALL!>.<!>invoke(1)
+ }
+ 
+ // Test case 4: additional receiver, generic invoke with nullable receiver
+ 
+ class Foo4<T>
+ class Bar4<T>(val value: Foo4<T>)
+ 
+ class Another4<T> {
+     operator fun Foo4<T>?.invoke(x: Int) {}
+ }
+ 
+ fun <K> Another4<K>.main(x: Bar4<K>?) {
+-    x?.<!UNSAFE_IMPLICIT_INVOKE_CALL!>value<!>(1)
++    x?.value(1)
+     x?.value.invoke(1)
+ }
+ 
+ // Test case 5: additional receiver, generic invoke without using a type parameter inside a recevier
+ 
+ class Foo5
+ class Bar5(val value: Foo5)
+ 
+ class Another5 {
+     operator fun <T> Foo5.invoke(handler: T) {}
+ }
+ 
+ fun Another5.main(x: Bar5?) {
+     x?.value {}
+     x?.value<!UNSAFE_CALL!>.<!>invoke({})
+ }
+ 
+ // Test case 6: top-level generic invoke
+ 
+ class Foo6<T>
+ class Bar6<T>(val value: Foo6<T>)
+ 
+ operator fun <T> Foo6<T>.invoke(x: Int) {}
+ 
+ fun main(x: Bar6<String>?) {
+     x?.value(1)
+     x?.value<!UNSAFE_CALL!>.<!>invoke(1)
+ }
+ 
+ // Test case 7: top-level generic invoke and invoke with compatible additional dispatch recevier
+ 
+ class Foo7<T>
+ class Bar7<T>(val value: Foo7<T>)
+ 
+ class Another7 {
+     operator fun <T> Foo7<T>.invoke(x: Int) {}
+ }
+ 
+ operator fun <T> Foo7<T>.invoke(x: Int) {}
+ 
+ fun Another7.main(x: Bar7<String>?) {
+     x?.value(1)
+     x?.value<!UNSAFE_CALL!>.<!>invoke(1)
+ }
+ 
+ // Test case 8: top-level non-generic invoke
+ 
+ class Foo8<T>
+ class Bar8<T>(val value: Foo8<T>)
+ 
+ operator fun Foo8<String>.invoke(x: Int) {}
+ 
+ fun main(x: Bar8<String>?) {
+     x?.value(1)
+     x?.value<!UNSAFE_CALL!>.<!>invoke(1)
+ }
+ 
+ // Test case 9: additional receiver, generic invoke with pure type perameter receiver
+ 
+ class Foo9<T>
+ class Bar9<T>(val value: Foo9<T>)
+ 
+ class Another9 {
+     operator fun <T> T.invoke(handler: () -> Unit) {}
+ }
+ 
+ fun Another9.main(x: Bar9<String>?) {
+     x?.value {}
+     x?.value.invoke({})
+ }
+ 
+ // Test case 10: additional receiver, generic invoke with upper bound
+ 
+ class Foo10<T>
+ class Bar10<T>(val value: Foo10<T>)
+ 
+ class Another10 {
+     operator fun <T: Any> Foo10<T>.invoke(handler: () -> Unit) {}
+ }
+ 
+ fun Another10.main(x: Bar10<String>?) {
+     x?.value {}
+     x?.value<!UNSAFE_CALL!>.<!>invoke({})
+ }`;
+                    const targetElement = $('#diff0')[0];
+                    const configuration = {
+                        drawFileList: false,
+                        fileListToggle: false,
+                        fileListStartVisible: false,
+                        fileContentToggle: false,
+                        matching: 'lines',
+                        outputFormat: 'side-by-side',
+                        synchronisedScroll: true,
+                        highlight: true,
+                        renderNothingWhenEmpty: false,
+                        rawTemplates: {
+                            'generic-file-path': `
+                                <div class="col">
+                                    <a href="https://github.com/JetBrains/kotlin/blob/4243bafd1d28dfb708235ccdeb5ac14e307f7354/compiler/testData/diagnostics/tests/resolve/invoke/implicitInvokeAfterSafeCall.kt" target="_blank">
+                                        <strong>FE 1.0:</strong> tests/resolve/invoke/implicitInvokeAfterSafeCall.kt
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="https://github.com/JetBrains/kotlin/blob/4243bafd1d28dfb708235ccdeb5ac14e307f7354/compiler/testData/diagnostics/tests/resolve/invoke/implicitInvokeAfterSafeCall.fir.kt" target="_blank">
+                                        <strong>FIR:</strong> tests/resolve/invoke/implicitInvokeAfterSafeCall.fir.kt
+                                    </a>
+                                </div>
+                            `
+                        }
+                    };
+                    const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                    diff2htmlUi.draw();
+                    diff2htmlUi.highlightCode();
+                })();</script>
+    </div>
+  </body>
+</html>

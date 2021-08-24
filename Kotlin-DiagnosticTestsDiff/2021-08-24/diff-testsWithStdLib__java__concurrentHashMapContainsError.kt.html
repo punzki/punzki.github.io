@@ -1,0 +1,161 @@
+<html>
+  <head>
+    <title>Diagnostics diff: testsWithStdLib/java/concurrentHashMapContainsError.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="card-header p-0" id="heading0"><button class="btn btn-link btn-block text-left" data-toggle="collapse" data-target="#collapse0">
+          <h5>Diff between FE 1.0 vs FIR</h5>
+        </button></div>
+      <div class="collapse show" id="collapse0">
+        <div class="card-body p-1">
+          <div id="diff0" style="width: 100%"></div>
+        </div>
+      </div>
+      <script type="text/javascript">                (function() {
+                    const diffString = `--- testsWithStdLib/java/concurrentHashMapContainsError.kt
++++ testsWithStdLib/java/concurrentHashMapContainsError.fir.kt
+@@ -1,78 +1,79 @@
+ // !LANGUAGE: +ProhibitConcurrentHashMapContains
+ // FULL_JDK
+ 
+ class A : java.util.concurrent.ConcurrentHashMap<String, Int>() {
+     operator fun contains(x: Char): Boolean = true
+ }
+ class B : java.util.concurrent.ConcurrentHashMap<String, Int>() {
+     override fun contains(value: Any?): Boolean {
+         return super.contains(value)
+     }
+ }
+ 
+ class C : java.util.concurrent.ConcurrentHashMap<String, Int>() {
+     operator override fun contains(value: Any?): Boolean {
+         return super.contains(value)
+     }
+ }
+ 
+ fun main() {
+     val hm = java.util.concurrent.ConcurrentHashMap<String, Int>()
+-    "" <!CONCURRENT_HASH_MAP_CONTAINS_OPERATOR_ERROR!>in<!> hm
+-    "" <!CONCURRENT_HASH_MAP_CONTAINS_OPERATOR_ERROR!>!in<!> hm
+-    1 <!CONCURRENT_HASH_MAP_CONTAINS_OPERATOR_ERROR!>!in<!> hm
+-    2 <!CONCURRENT_HASH_MAP_CONTAINS_OPERATOR_ERROR!>in<!> hm
++    "" in hm
++    "" !in hm
++    1 !in hm
++    2 in hm
+ 
+     hm.contains("")
+     hm.contains(1)
+ 
+     "" in (hm as Map<String, Int>)
+     "" !in (hm as Map<String, Int>)
+-    1 <!TYPE_INFERENCE_ONLY_INPUT_TYPES_ERROR!>in<!> (hm as Map<String, Int>)
+-    1 <!TYPE_INFERENCE_ONLY_INPUT_TYPES_ERROR!>!in<!> (hm as Map<String, Int>)
++    1 in (hm as Map<String, Int>)
++    1 !in (hm as Map<String, Int>)
+ 
+     val a = A()
+-    "" <!CONCURRENT_HASH_MAP_CONTAINS_OPERATOR_ERROR!>in<!> a
+-    "" <!CONCURRENT_HASH_MAP_CONTAINS_OPERATOR_ERROR!>!in<!> a
+-    1 <!CONCURRENT_HASH_MAP_CONTAINS_OPERATOR_ERROR!>!in<!> a
+-    2 <!CONCURRENT_HASH_MAP_CONTAINS_OPERATOR_ERROR!>in<!> a
++    "" in a
++    "" !in a
++    1 !in a
++    2 in a
+ 
+     ' ' in a
+     ' ' !in a
+     a.contains("")
+     a.contains(1)
+ 
+     "" in (a as Map<String, Int>)
+     "" !in (a as Map<String, Int>)
+-    1 <!TYPE_INFERENCE_ONLY_INPUT_TYPES_ERROR!>in<!> (a as Map<String, Int>)
+-    1 <!TYPE_INFERENCE_ONLY_INPUT_TYPES_ERROR!>!in<!> (a as Map<String, Int>)
++    1 in (a as Map<String, Int>)
++    1 !in (a as Map<String, Int>)
+ 
+     val b = B()
+-    "" <!CONCURRENT_HASH_MAP_CONTAINS_OPERATOR_ERROR!>in<!> b
+-    "" <!CONCURRENT_HASH_MAP_CONTAINS_OPERATOR_ERROR!>!in<!> b
+-    1 <!CONCURRENT_HASH_MAP_CONTAINS_OPERATOR_ERROR!>!in<!> b
+-    2 <!CONCURRENT_HASH_MAP_CONTAINS_OPERATOR_ERROR!>in<!> b
++    "" in b
++    "" !in b
++    1 !in b
++    2 in b
+ 
+     b.contains("")
+     b.contains(1)
+ 
+     "" in (b as Map<String, Int>)
+     "" !in (b as Map<String, Int>)
+-    1 <!TYPE_INFERENCE_ONLY_INPUT_TYPES_ERROR!>in<!> (b as Map<String, Int>)
+-    1 <!TYPE_INFERENCE_ONLY_INPUT_TYPES_ERROR!>!in<!> (b as Map<String, Int>)
++    1 in (b as Map<String, Int>)
++    1 !in (b as Map<String, Int>)
+ 
+     // Actually, we could've allow calls here because the owner explicitly declared as operator, but semantics is still weird
+     val c = C()
+-    "" <!CONCURRENT_HASH_MAP_CONTAINS_OPERATOR_ERROR!>in<!> c
+-    "" <!CONCURRENT_HASH_MAP_CONTAINS_OPERATOR_ERROR!>!in<!> c
+-    1 <!CONCURRENT_HASH_MAP_CONTAINS_OPERATOR_ERROR!>!in<!> c
+-    2 <!CONCURRENT_HASH_MAP_CONTAINS_OPERATOR_ERROR!>in<!> c
++    "" in c
++    "" !in c
++    1 !in c
++    2 in c
+ 
+     c.contains("")
+     c.contains(1)
+ 
+     "" in (c as Map<String, Int>)
+     "" !in (c as Map<String, Int>)
+-    1 <!TYPE_INFERENCE_ONLY_INPUT_TYPES_ERROR!>in<!> (c as Map<String, Int>)
+-    1 <!TYPE_INFERENCE_ONLY_INPUT_TYPES_ERROR!>!in<!> (c as Map<String, Int>)
++    1 in (c as Map<String, Int>)
++    1 !in (c as Map<String, Int>)
+ }
++`;
+                    const targetElement = $('#diff0')[0];
+                    const configuration = {
+                        drawFileList: false,
+                        fileListToggle: false,
+                        fileListStartVisible: false,
+                        fileContentToggle: false,
+                        matching: 'lines',
+                        outputFormat: 'side-by-side',
+                        synchronisedScroll: true,
+                        highlight: true,
+                        renderNothingWhenEmpty: false,
+                        rawTemplates: {
+                            'generic-file-path': `
+                                <div class="col">
+                                    <a href="https://github.com/JetBrains/kotlin/blob/4243bafd1d28dfb708235ccdeb5ac14e307f7354/compiler/testData/diagnostics/testsWithStdLib/java/concurrentHashMapContainsError.kt" target="_blank">
+                                        <strong>FE 1.0:</strong> testsWithStdLib/java/concurrentHashMapContainsError.kt
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="https://github.com/JetBrains/kotlin/blob/4243bafd1d28dfb708235ccdeb5ac14e307f7354/compiler/testData/diagnostics/testsWithStdLib/java/concurrentHashMapContainsError.fir.kt" target="_blank">
+                                        <strong>FIR:</strong> testsWithStdLib/java/concurrentHashMapContainsError.fir.kt
+                                    </a>
+                                </div>
+                            `
+                        }
+                    };
+                    const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                    diff2htmlUi.draw();
+                    diff2htmlUi.highlightCode();
+                })();</script>
+    </div>
+  </body>
+</html>

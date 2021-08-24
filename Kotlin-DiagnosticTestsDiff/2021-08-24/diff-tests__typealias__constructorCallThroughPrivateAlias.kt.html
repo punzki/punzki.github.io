@@ -1,0 +1,94 @@
+<html>
+  <head>
+    <title>Diagnostics diff: tests/typealias/constructorCallThroughPrivateAlias.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="card-header p-0" id="heading0"><button class="btn btn-link btn-block text-left" data-toggle="collapse" data-target="#collapse0">
+          <h5>Diff between FE 1.0 vs FIR</h5>
+        </button></div>
+      <div class="collapse show" id="collapse0">
+        <div class="card-body p-1">
+          <div id="diff0" style="width: 100%"></div>
+        </div>
+      </div>
+      <script type="text/javascript">                (function() {
+                    const diffString = `--- tests/typealias/constructorCallThroughPrivateAlias.kt
++++ tests/typealias/constructorCallThroughPrivateAlias.fir.kt
+@@ -1,34 +1,34 @@
+ // !DIAGNOSTICS: -UNUSED_PARAMETER -UNUSED_VARIABLE
+ // !CHECK_TYPE
+ // FILE: a.kt
+ package a
+ 
+ import checkType
+ import _
+ 
+ class B(x: String)
+ typealias A1 = B
+ private typealias A2 = B
+ private typealias A3 = B
+ 
+ fun A3(x: Any) = "OK"
+ 
+ fun bar() {
+     A3("") checkType { _<B>() }
+ }
+ 
+ // FILE: main.kt
+ package usage
+ 
+ import a.B
+ import checkType
+ import _
+ 
+ fun baz() {
+     a.A1("") // resolved to B constructor, OK
+-    a.<!INVISIBLE_MEMBER!>A2<!>("") // resolved to B constructor, INVISIBLE_MEMBER because type alias is private, OK
++    a.A2("") // resolved to B constructor, INVISIBLE_MEMBER because type alias is private, OK
+ 
+     a.A3("") checkType { _<String>() }
+ 
+-    val x: a.<!INVISIBLE_REFERENCE!>A2<!> = B("") // A2 is unresolved because it's private in file, OK
++    val x: a.A2 = B("") // A2 is unresolved because it's private in file, OK
+ }`;
+                    const targetElement = $('#diff0')[0];
+                    const configuration = {
+                        drawFileList: false,
+                        fileListToggle: false,
+                        fileListStartVisible: false,
+                        fileContentToggle: false,
+                        matching: 'lines',
+                        outputFormat: 'side-by-side',
+                        synchronisedScroll: true,
+                        highlight: true,
+                        renderNothingWhenEmpty: false,
+                        rawTemplates: {
+                            'generic-file-path': `
+                                <div class="col">
+                                    <a href="https://github.com/JetBrains/kotlin/blob/4243bafd1d28dfb708235ccdeb5ac14e307f7354/compiler/testData/diagnostics/tests/typealias/constructorCallThroughPrivateAlias.kt" target="_blank">
+                                        <strong>FE 1.0:</strong> tests/typealias/constructorCallThroughPrivateAlias.kt
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="https://github.com/JetBrains/kotlin/blob/4243bafd1d28dfb708235ccdeb5ac14e307f7354/compiler/testData/diagnostics/tests/typealias/constructorCallThroughPrivateAlias.fir.kt" target="_blank">
+                                        <strong>FIR:</strong> tests/typealias/constructorCallThroughPrivateAlias.fir.kt
+                                    </a>
+                                </div>
+                            `
+                        }
+                    };
+                    const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                    diff2htmlUi.draw();
+                    diff2htmlUi.highlightCode();
+                })();</script>
+    </div>
+  </body>
+</html>

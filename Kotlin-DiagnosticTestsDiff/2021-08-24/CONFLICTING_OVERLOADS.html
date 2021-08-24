@@ -1,0 +1,100 @@
+<html>
+  <head>
+    <title>Diagnostics diff: CONFLICTING_OVERLOADS</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row sticky-top" style="background: white" id="summary">
+        <div class="d-inline-flex align-items-baseline">
+          <h1 class="mr-2">CONFLICTING_OVERLOADS</h1>
+<a href="index.html">(back to diagnostic list)</a></div>
+      </div>
+      <div class="row">
+        <ul>
+          <li><strong>Total: </strong>275</li>
+          <li><strong>Match %: </strong>37.09%</li>
+          <li><a href="#matched"><strong># Matched: </strong>102</a></li>
+          <li><strong># Non-matched: </strong>173</li>
+          <li><a href="#missing"><strong># Missing: </strong>169</a></li>
+          <li><a href="#unexpected"><strong># Unexpected: </strong>4</a></li>
+          <li><a href="#mismatched"><strong># Mismatched: </strong>0</a></li>
+          <li><strong># Files: </strong>46</li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="missing">
+        <h2>Missing (169)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__overload__LocalFunctions.kt.html" target="_blank">tests/overload/LocalFunctions.kt (100)</a></li>
+          <li><a href="diff-tests__secondaryConstructors__redeclarations.kt.html" target="_blank">tests/secondaryConstructors/redeclarations.kt (12)</a></li>
+          <li><a href="diff-tests__declarationChecks__FunctionWithMissingNames.kt.html" target="_blank">tests/declarationChecks/FunctionWithMissingNames.kt (6)</a></li>
+          <li><a href="diff-tests__overload__ConflictingOlverloadsGenericFunctions.kt.html" target="_blank">tests/overload/ConflictingOlverloadsGenericFunctions.kt (6)</a></li>
+          <li><a href="diff-tests__overload__ConstructorVsFunOverload.kt.html" target="_blank">tests/overload/ConstructorVsFunOverload.kt (6)</a></li>
+          <li><a href="diff-tests__explicitDefinitelyNotNull__notApplicable.kt.html" target="_blank">tests/explicitDefinitelyNotNull/notApplicable.kt (5)</a></li>
+          <li><a href="diff-tests__redeclarations__TypeAliasCtorVsFun.kt.html" target="_blank">tests/redeclarations/TypeAliasCtorVsFun.kt (4)</a></li>
+          <li><a href="diff-tests__override__Generics.kt.html" target="_blank">tests/override/Generics.kt (3)</a></li>
+          <li><a href="diff-tests__dataClasses__conflictingOverloads.kt.html" target="_blank">tests/dataClasses/conflictingOverloads.kt (2)</a></li>
+          <li><a href="diff-tests__redeclarations__RedeclarationParameterlessMainInvalid.kt.html" target="_blank">tests/redeclarations/RedeclarationParameterlessMainInvalid.kt (2)</a></li>
+          <li><a href="diff-tests__redeclarations__RedeclarationParameterlessMain_before.kt.html" target="_blank">tests/redeclarations/RedeclarationParameterlessMain_before.kt (2)</a></li>
+          <li><a href="diff-tests__redeclarations__RedeclarationSuspendMainInMultiFile_before.kt.html" target="_blank">tests/redeclarations/RedeclarationSuspendMainInMultiFile_before.kt (2)</a></li>
+          <li><a href="diff-tests__redeclarations__SingletonAndFunctionSameName.kt.html" target="_blank">tests/redeclarations/SingletonAndFunctionSameName.kt (2)</a></li>
+          <li><a href="diff-tests__resolve__overloadConflicts__withVariance.kt.html" target="_blank">tests/resolve/overloadConflicts/withVariance.kt (2)</a></li>
+          <li><a href="diff-testsWithStdLib__coroutines__suspendConflictsWithNoSuspend.kt.html" target="_blank">testsWithStdLib/coroutines/suspendConflictsWithNoSuspend.kt (2)</a></li>
+          <li><a href="diff-testsWithStdLib__coroutines__suspendOverridability.kt.html" target="_blank">testsWithStdLib/coroutines/suspendOverridability.kt (2)</a></li>
+          <li><a href="diff-tests__annotations__rendering__conflictingOverloads.kt.html" target="_blank">tests/annotations/rendering/conflictingOverloads.kt (1)</a></li>
+          <li><a href="diff-tests__dataClasses__dataClassExplicitlyOverridingCopyNoDefaults.kt.html" target="_blank">tests/dataClasses/dataClassExplicitlyOverridingCopyNoDefaults.kt (1)</a></li>
+          <li><a href="diff-tests__dataClasses__dataClassExplicitlyOverridingCopyWithDefaults.kt.html" target="_blank">tests/dataClasses/dataClassExplicitlyOverridingCopyWithDefaults.kt (1)</a></li>
+          <li><a href="diff-tests__duplicateJvmSignature__missingNames.kt.html" target="_blank">tests/duplicateJvmSignature/missingNames.kt (1)</a></li>
+          <li><a href="diff-tests__override__ComplexValRedeclaration.kt.html" target="_blank">tests/override/ComplexValRedeclaration.kt (1)</a></li>
+          <li><a href="diff-tests__override__ConflictingFunctionSignatureFromSuperclass.kt.html" target="_blank">tests/override/ConflictingFunctionSignatureFromSuperclass.kt (1)</a></li>
+          <li><a href="diff-tests__override__ConflictingPropertySignatureFromSuperclass.kt.html" target="_blank">tests/override/ConflictingPropertySignatureFromSuperclass.kt (1)</a></li>
+          <li><a href="diff-tests__override__clashesOnInheritance__kt9550.kt.html" target="_blank">tests/override/clashesOnInheritance/kt9550.kt (1)</a></li>
+          <li><a href="diff-tests__recovery__namelessToplevelDeclarations.kt.html" target="_blank">tests/recovery/namelessToplevelDeclarations.kt (1)</a></li>
+          <li><a href="diff-tests__redeclarations__RedeclaringPrivateToFile.kt.html" target="_blank">tests/redeclarations/RedeclaringPrivateToFile.kt (1)</a></li>
+          <li><a href="diff-tests__resolve__resolveWithRedeclarationError.kt.html" target="_blank">tests/resolve/resolveWithRedeclarationError.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="unexpected">
+        <h2>Unexpected (4)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-testsWithStdLib__inference__annotationsForResolve__noInferAndLowPriority.kt.html" target="_blank">testsWithStdLib/inference/annotationsForResolve/noInferAndLowPriority.kt (2)</a></li>
+          <li><a href="diff-testsWithStdLib__inference__annotationsForResolve__onlyInputTypesAndLowPriority.kt.html" target="_blank">testsWithStdLib/inference/annotationsForResolve/onlyInputTypesAndLowPriority.kt (2)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="matched">
+        <h2>Matched (102)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__resolve__resolveWithRedeclarationError.kt.html" target="_blank">tests/resolve/resolveWithRedeclarationError.kt (27)</a></li>
+          <li><a href="diff-tests__redeclarations__kt470.kt.html" target="_blank">tests/redeclarations/kt470.kt (14)</a></li>
+          <li><a href="diff-tests__redeclarations__RedeclaringPrivateToFile.kt.html" target="_blank">tests/redeclarations/RedeclaringPrivateToFile.kt (11)</a></li>
+          <li><a href="diff-testsWithJsStdLib__name__declarationClash.kt.html" target="_blank">testsWithJsStdLib/name/declarationClash.kt (8)</a></li>
+          <li><a href="diff-tests__redeclarations__FunVsCtorInDifferentFiles.kt.html" target="_blank">tests/redeclarations/FunVsCtorInDifferentFiles.kt (6)</a></li>
+          <li><a href="diff-tests__multiplatform__topLevelFun__conflictingImplDeclarations.kt.html" target="_blank">tests/multiplatform/topLevelFun/conflictingImplDeclarations.kt (4)</a></li>
+          <li><a href="diff-tests__overload__TypeParameterMultipleBounds.kt.html" target="_blank">tests/overload/TypeParameterMultipleBounds.kt (4)</a></li>
+          <li><a href="diff-testsWithStdLib__coroutines__suspendConflictsWithNoSuspend.kt.html" target="_blank">testsWithStdLib/coroutines/suspendConflictsWithNoSuspend.kt (4)</a></li>
+          <li><a href="diff-tests__dataClasses__conflictingCopyOverloads.kt.html" target="_blank">tests/dataClasses/conflictingCopyOverloads.kt (2)</a></li>
+          <li><a href="diff-tests__declarationChecks__MultiDeclarationErrors.kt.html" target="_blank">tests/declarationChecks/MultiDeclarationErrors.kt (2)</a></li>
+          <li><a href="diff-tests__declarationChecks__destructuringDeclarations__ForLoopComponentFunctionAmbiguity.kt.html" target="_blank">tests/declarationChecks/destructuringDeclarations/ForLoopComponentFunctionAmbiguity.kt (2)</a></li>
+          <li><a href="diff-tests__multiplatform__topLevelFun__conflictingHeaderDeclarations.kt.html" target="_blank">tests/multiplatform/topLevelFun/conflictingHeaderDeclarations.kt (2)</a></li>
+          <li><a href="diff-tests__multiplatform__topLevelFun__headerDeclarationWithBody.kt.html" target="_blank">tests/multiplatform/topLevelFun/headerDeclarationWithBody.kt (2)</a></li>
+          <li><a href="diff-tests__overload__ConflictingOverloadsFunsDifferentReturnInClass.kt.html" target="_blank">tests/overload/ConflictingOverloadsFunsDifferentReturnInClass.kt (2)</a></li>
+          <li><a href="diff-tests__overload__ConflictingOverloadsFunsDifferentReturnInPackage.kt.html" target="_blank">tests/overload/ConflictingOverloadsFunsDifferentReturnInPackage.kt (2)</a></li>
+          <li><a href="diff-tests__overload__ConflictingOverloadsIdenticalExtFunsInPackage.kt.html" target="_blank">tests/overload/ConflictingOverloadsIdenticalExtFunsInPackage.kt (2)</a></li>
+          <li><a href="diff-tests__overload__ConflictingOverloadsIdenticalFunsInClass.kt.html" target="_blank">tests/overload/ConflictingOverloadsIdenticalFunsInClass.kt (2)</a></li>
+          <li><a href="diff-tests__override__DuplicateMethod.kt.html" target="_blank">tests/override/DuplicateMethod.kt (2)</a></li>
+          <li><a href="diff-tests__redeclarations__RedeclarationInMultiFile.kt.html" target="_blank">tests/redeclarations/RedeclarationInMultiFile.kt (2)</a></li>
+          <li><a href="diff-tests__redeclarations__RedeclarationMainInFile.kt.html" target="_blank">tests/redeclarations/RedeclarationMainInFile.kt (2)</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

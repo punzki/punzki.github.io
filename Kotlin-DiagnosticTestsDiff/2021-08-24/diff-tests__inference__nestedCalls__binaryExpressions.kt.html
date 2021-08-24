@@ -1,0 +1,136 @@
+<html>
+  <head>
+    <title>Diagnostics diff: tests/inference/nestedCalls/binaryExpressions.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="card-header p-0" id="heading0"><button class="btn btn-link btn-block text-left" data-toggle="collapse" data-target="#collapse0">
+          <h5>Diff between FE 1.0 vs FIR</h5>
+        </button></div>
+      <div class="collapse show" id="collapse0">
+        <div class="card-body p-1">
+          <div id="diff0" style="width: 100%"></div>
+        </div>
+      </div>
+      <script type="text/javascript">                (function() {
+                    const diffString = `--- tests/inference/nestedCalls/binaryExpressions.kt
++++ tests/inference/nestedCalls/binaryExpressions.fir.kt
+@@ -1,71 +1,71 @@
+ package h
+ 
+ interface A<T> {}
+ 
+ fun <T> newA(): A<T> = throw Exception()
+ 
+ interface Z
+ 
+ fun <T> id(t: T): T = t
+ 
+ //binary expressions
+ //identifier
+ infix fun <T> Z.foo(a: A<T>): A<T> = a
+ 
+ fun test(z: Z) {
+-    z <!NEW_INFERENCE_NO_INFORMATION_FOR_PARAMETER!>foo<!> <!NEW_INFERENCE_NO_INFORMATION_FOR_PARAMETER!>newA<!>()
++    z <!NEW_INFERENCE_NO_INFORMATION_FOR_PARAMETER, NEW_INFERENCE_NO_INFORMATION_FOR_PARAMETER!>foo<!> newA()
+     val a: A<Int> = id(z foo newA())
+     val b: A<Int> = id(z.foo(newA()))
+     use(a, b)
+ }
+ 
+ //binary operation expression
+ operator fun <T> Z.plus(a: A<T>): A<T> = a
+ 
+ fun test1(z: Z) {
+-    <!NEW_INFERENCE_NO_INFORMATION_FOR_PARAMETER!>id<!>(z <!NEW_INFERENCE_NO_INFORMATION_FOR_PARAMETER!>+<!> <!NEW_INFERENCE_NO_INFORMATION_FOR_PARAMETER!>newA<!>())
++    <!NEW_INFERENCE_NO_INFORMATION_FOR_PARAMETER, NEW_INFERENCE_NO_INFORMATION_FOR_PARAMETER, NEW_INFERENCE_NO_INFORMATION_FOR_PARAMETER!>id<!>(z + newA())
+     val a: A<Z> = z + newA()
+     val b: A<Z> = z.plus(newA())
+     val c: A<Z> = id(z + newA())
+     val d: A<Z> = id(z.plus(newA()))
+     use(a, b, c, d)
+ }
+ 
+ //comparison operation
+ operator fun <T> Z.compareTo(a: A<T>): Int { use(a); return 1 }
+ 
+ fun test2(z: Z) {
+-    val a: Boolean = id(z <!NEW_INFERENCE_NO_INFORMATION_FOR_PARAMETER!><<!> <!NEW_INFERENCE_NO_INFORMATION_FOR_PARAMETER!>newA<!>())
++    val a: Boolean = id(z <!NEW_INFERENCE_NO_INFORMATION_FOR_PARAMETER, NEW_INFERENCE_NO_INFORMATION_FOR_PARAMETER!><<!> newA())
+     val b: Boolean = id(z < newA<Z>())
+     use(a, b)
+ }
+ 
+ //'equals' operation
+-fun Z.<!EXTENSION_SHADOWED_BY_MEMBER!>equals<!>(any: Any): Int { use(any); return 1 }
++fun Z.equals(any: Any): Int { use(any); return 1 }
+ 
+ fun test3(z: Z) {
+-    z <!EQUALS_MISSING!>==<!> <!NEW_INFERENCE_NO_INFORMATION_FOR_PARAMETER!>newA<!>()
++    z == <!NEW_INFERENCE_NO_INFORMATION_FOR_PARAMETER!>newA<!>()
+     z == newA<Z>()
+-    id(z <!EQUALS_MISSING!>==<!> <!NEW_INFERENCE_NO_INFORMATION_FOR_PARAMETER!>newA<!>())
++    id(z == <!NEW_INFERENCE_NO_INFORMATION_FOR_PARAMETER!>newA<!>())
+     id(z == newA<Z>())
+ 
+     id(z === <!NEW_INFERENCE_NO_INFORMATION_FOR_PARAMETER!>newA<!>())
+     id(z === newA<Z>())
+ }
+ 
+ //'in' operation
+ fun test4(collection: Collection<A<*>>) {
+-    id(<!NEW_INFERENCE_NO_INFORMATION_FOR_PARAMETER!>newA<!>() in collection)
++    id(newA() <!NEW_INFERENCE_NO_INFORMATION_FOR_PARAMETER!>in<!> collection)
+     id(newA<Int>() in collection)
+ }
+ 
+ //boolean operations
+ fun <T> toBeOrNot(): Boolean = throw Exception()
+ 
+ fun test5() {
+     if (<!NEW_INFERENCE_NO_INFORMATION_FOR_PARAMETER!>toBeOrNot<!>() && <!NEW_INFERENCE_NO_INFORMATION_FOR_PARAMETER!>toBeOrNot<!>()) {}
+     if (toBeOrNot<Int>() && toBeOrNot<Int>()) {}
+ }
+ 
+ //use
+ fun use(vararg a: Any?) = a`;
+                    const targetElement = $('#diff0')[0];
+                    const configuration = {
+                        drawFileList: false,
+                        fileListToggle: false,
+                        fileListStartVisible: false,
+                        fileContentToggle: false,
+                        matching: 'lines',
+                        outputFormat: 'side-by-side',
+                        synchronisedScroll: true,
+                        highlight: true,
+                        renderNothingWhenEmpty: false,
+                        rawTemplates: {
+                            'generic-file-path': `
+                                <div class="col">
+                                    <a href="https://github.com/JetBrains/kotlin/blob/4243bafd1d28dfb708235ccdeb5ac14e307f7354/compiler/testData/diagnostics/tests/inference/nestedCalls/binaryExpressions.kt" target="_blank">
+                                        <strong>FE 1.0:</strong> tests/inference/nestedCalls/binaryExpressions.kt
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="https://github.com/JetBrains/kotlin/blob/4243bafd1d28dfb708235ccdeb5ac14e307f7354/compiler/testData/diagnostics/tests/inference/nestedCalls/binaryExpressions.fir.kt" target="_blank">
+                                        <strong>FIR:</strong> tests/inference/nestedCalls/binaryExpressions.fir.kt
+                                    </a>
+                                </div>
+                            `
+                        }
+                    };
+                    const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                    diff2htmlUi.draw();
+                    diff2htmlUi.highlightCode();
+                })();</script>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,137 @@
+<html>
+  <head>
+    <title>Diagnostics diff: foreignAnnotationsTests/java8Tests/misc/valueParameterWithWarnings.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="card-header p-0" id="heading0"><button class="btn btn-link btn-block text-left" data-toggle="collapse" data-target="#collapse0">
+          <h5>Diff between FE 1.0 vs FIR</h5>
+        </button></div>
+      <div class="collapse show" id="collapse0">
+        <div class="card-body p-1">
+          <div id="diff0" style="width: 100%"></div>
+        </div>
+      </div>
+      <script type="text/javascript">                (function() {
+                    const diffString = `--- foreignAnnotationsTests/java8Tests/misc/valueParameterWithWarnings.kt
++++ foreignAnnotationsTests/java8Tests/misc/valueParameterWithWarnings.fir.kt
+@@ -1,64 +1,64 @@
+ // !LANGUAGE: +ProhibitUsingNullableTypeParameterAgainstNotNullAnnotated, -TypeEnhancementImprovementsInStrictMode
+ // !DIAGNOSTICS: -UNUSED_PARAMETER -CAST_NEVER_SUCCEEDS
+ // SKIP_TXT
+ // MUTE_FOR_PSI_CLASS_FILES_READING
+ 
+ // FILE: ValueParameterWithWarnings.java
+ // We've already had errors in source mode, so it's relevant only for binaries for now
+ // INCLUDE_JAVA_AS_BINARY
+ 
+ import org.jetbrains.annotations.*;
+ 
+ public class ValueParameterWithWarnings<T> {
+     public interface A<T1, T2> {}
+ 
+     public void foo1(A<@Nullable String, @Nullable T> x) { }
+     public void foo2(A<@Nullable String, @NotNull T> x) { }
+     public void foo3(A<@NotNull String, @NotNull T> x) { }
+     public void foo4(@NotNull T [] x) { }
+     public void foo41(@Nullable String x) { }
+     public void foo411(T x) { }
+     public void foo5(@Nullable String [] x) { }
+ }
+ 
+ // FILE: main.kt
+ fun <K> getNotNullStringAndKNullable() = null as ValueParameterWithWarnings.A<String, K?>
+ fun <K> getNullableStringAndKNullable() = null as ValueParameterWithWarnings.A<String?, K?>
+ fun <K: Any> getNotNullStringAndNotNullK() = null as ValueParameterWithWarnings.A<String, K>
+ fun <K: Any> getNullableStringAndNotNullK() = null as ValueParameterWithWarnings.A<String?, K>
+ fun getNotNullString() = null as String
+ 
+ fun getArrayOfNotNullString() = null as Array<String>
+ fun getArrayOfNullableString() = null as Array<String?>
+ fun <K: Any> getArrayOfNotNullK() = null as Array<K>
+ fun <K> getArrayOfNullableK() = null as Array<K?>
+ 
+ fun <R> main(a: ValueParameterWithWarnings<R>) {
+-    a.foo1(<!NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS!>getNotNullStringAndKNullable()<!>)
++    a.foo1(<!ARGUMENT_TYPE_MISMATCH!>getNotNullStringAndKNullable()<!>)
+     a.foo1(getNullableStringAndKNullable())
+-    a.foo1(<!NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS, TYPE_MISMATCH!>getNotNullStringAndNotNullK()<!>)
+-    a.foo1(<!TYPE_MISMATCH!>getNullableStringAndNotNullK()<!>)
++    a.foo1(<!ARGUMENT_TYPE_MISMATCH!>getNotNullStringAndNotNullK()<!>)
++    a.foo1(<!ARGUMENT_TYPE_MISMATCH!>getNullableStringAndNotNullK()<!>)
+ 
+-    a.foo2(<!NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS!>getNotNullStringAndKNullable()<!>)
+-    a.foo2(<!NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS!>getNullableStringAndKNullable()<!>)
+-    a.foo2(<!NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS, TYPE_MISMATCH!>getNotNullStringAndNotNullK()<!>)
+-    a.foo2(<!TYPE_MISMATCH!>getNullableStringAndNotNullK()<!>)
++    a.foo2(getNotNullStringAndKNullable())
++    a.foo2(<!ARGUMENT_TYPE_MISMATCH!>getNullableStringAndKNullable()<!>)
++    a.foo2(<!ARGUMENT_TYPE_MISMATCH!>getNotNullStringAndNotNullK()<!>)
++    a.foo2(<!ARGUMENT_TYPE_MISMATCH!>getNullableStringAndNotNullK()<!>)
+ 
+-    a.foo3(<!NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS!>getNotNullStringAndKNullable()<!>)
+-    a.foo3(<!NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS!>getNullableStringAndKNullable()<!>)
+-    a.foo3(<!TYPE_MISMATCH!>getNotNullStringAndNotNullK()<!>)
+-    a.foo3(<!NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS, TYPE_MISMATCH!>getNullableStringAndNotNullK()<!>)
++    a.foo3(getNotNullStringAndKNullable())
++    a.foo3(<!ARGUMENT_TYPE_MISMATCH!>getNullableStringAndKNullable()<!>)
++    a.foo3(<!ARGUMENT_TYPE_MISMATCH!>getNotNullStringAndNotNullK()<!>)
++    a.foo3(<!ARGUMENT_TYPE_MISMATCH!>getNullableStringAndNotNullK()<!>)
+ 
+-    a.foo4(<!TYPE_MISMATCH!>getArrayOfNotNullString()<!>)
+-    a.foo4(<!TYPE_MISMATCH!>getArrayOfNullableString()<!>)
++    a.foo4(<!ARGUMENT_TYPE_MISMATCH!>getArrayOfNotNullString()<!>)
++    a.foo4(<!ARGUMENT_TYPE_MISMATCH!>getArrayOfNullableString()<!>)
+     a.foo4(getArrayOfNotNullK())
+-    a.foo4(<!NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS!>getArrayOfNullableK()<!>)
++    a.foo4(getArrayOfNullableK())
+ 
+     a.foo5(getArrayOfNotNullString())
+     a.foo5(getArrayOfNullableString())
+     a.foo5(getArrayOfNotNullK())
+     a.foo5(getArrayOfNullableK())
+ 
+     a.foo41(getNotNullString())
+-    a.foo411(<!TYPE_MISMATCH!>getNotNullString()<!>)
++    a.foo411(<!ARGUMENT_TYPE_MISMATCH!>getNotNullString()<!>)
+ }`;
+                    const targetElement = $('#diff0')[0];
+                    const configuration = {
+                        drawFileList: false,
+                        fileListToggle: false,
+                        fileListStartVisible: false,
+                        fileContentToggle: false,
+                        matching: 'lines',
+                        outputFormat: 'side-by-side',
+                        synchronisedScroll: true,
+                        highlight: true,
+                        renderNothingWhenEmpty: false,
+                        rawTemplates: {
+                            'generic-file-path': `
+                                <div class="col">
+                                    <a href="https://github.com/JetBrains/kotlin/blob/4243bafd1d28dfb708235ccdeb5ac14e307f7354/compiler/testData/diagnostics/foreignAnnotationsTests/java8Tests/misc/valueParameterWithWarnings.kt" target="_blank">
+                                        <strong>FE 1.0:</strong> foreignAnnotationsTests/java8Tests/misc/valueParameterWithWarnings.kt
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="https://github.com/JetBrains/kotlin/blob/4243bafd1d28dfb708235ccdeb5ac14e307f7354/compiler/testData/diagnostics/foreignAnnotationsTests/java8Tests/misc/valueParameterWithWarnings.fir.kt" target="_blank">
+                                        <strong>FIR:</strong> foreignAnnotationsTests/java8Tests/misc/valueParameterWithWarnings.fir.kt
+                                    </a>
+                                </div>
+                            `
+                        }
+                    };
+                    const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                    diff2htmlUi.draw();
+                    diff2htmlUi.highlightCode();
+                })();</script>
+    </div>
+  </body>
+</html>

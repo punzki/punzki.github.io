@@ -1,0 +1,97 @@
+<html>
+  <head>
+    <title>Diagnostics diff: tests/syntheticExtensions/samAdapters/overloadResolutionWithoutRefinedSams.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="card-header p-0" id="heading0"><button class="btn btn-link btn-block text-left" data-toggle="collapse" data-target="#collapse0">
+          <h5>Diff between FE 1.0 vs FIR</h5>
+        </button></div>
+      <div class="collapse show" id="collapse0">
+        <div class="card-body p-1">
+          <div id="diff0" style="width: 100%"></div>
+        </div>
+      </div>
+      <script type="text/javascript">                (function() {
+                    const diffString = `--- tests/syntheticExtensions/samAdapters/overloadResolutionWithoutRefinedSams.kt
++++ tests/syntheticExtensions/samAdapters/overloadResolutionWithoutRefinedSams.fir.kt
+@@ -1,37 +1,37 @@
+ // !LANGUAGE: -RefinedSamAdaptersPriority -NewInference
+ // !CHECK_TYPE
+ // FILE: A.java
+ public class A {
+     public int foo(Runnable r) { return 0; }
+     public String foo(Object r) { return null;}
+ 
+     public int bar(Runnable r) { return 1; }
+     public String bar(CharSequence r) { return null; }
+ }
+ 
+ // FILE: 1.kt
+ fun fn() {}
+ fun x(a: A, r: Runnable) {
+-    a.foo(::fn) checkType { _<String>() }
+-    a.foo {} checkType { _<String>() }
++    a.foo(::fn) checkType { <!INAPPLICABLE_CANDIDATE!>_<!><String>() }
++    a.foo {} checkType { <!INAPPLICABLE_CANDIDATE!>_<!><String>() }
+ 
+     a.foo(null) checkType { _<Int>() }
+     a.foo(Runnable { }) checkType { _<Int>() }
+     a.foo(r) checkType { _<Int>() }
+ 
+     a.foo(123) checkType { _<String>() }
+     a.foo("") checkType { _<String>() }
+ 
+     a.bar(::fn) checkType { _<Int>() }
+     a.bar {} checkType { _<Int>() }
+ 
+     a.bar(r) checkType { _<Int>() }
+ 
+     a.<!OVERLOAD_RESOLUTION_AMBIGUITY!>bar<!>(null)
+ 
+     a.bar(null as Runnable?) checkType { _<Int>() }
+     a.bar(null as CharSequence?) checkType { _<String>() }
+ 
+     a.bar("") checkType { _<String>() }
+     a.<!NONE_APPLICABLE!>bar<!>(123)
+ }`;
+                    const targetElement = $('#diff0')[0];
+                    const configuration = {
+                        drawFileList: false,
+                        fileListToggle: false,
+                        fileListStartVisible: false,
+                        fileContentToggle: false,
+                        matching: 'lines',
+                        outputFormat: 'side-by-side',
+                        synchronisedScroll: true,
+                        highlight: true,
+                        renderNothingWhenEmpty: false,
+                        rawTemplates: {
+                            'generic-file-path': `
+                                <div class="col">
+                                    <a href="https://github.com/JetBrains/kotlin/blob/4243bafd1d28dfb708235ccdeb5ac14e307f7354/compiler/testData/diagnostics/tests/syntheticExtensions/samAdapters/overloadResolutionWithoutRefinedSams.kt" target="_blank">
+                                        <strong>FE 1.0:</strong> tests/syntheticExtensions/samAdapters/overloadResolutionWithoutRefinedSams.kt
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="https://github.com/JetBrains/kotlin/blob/4243bafd1d28dfb708235ccdeb5ac14e307f7354/compiler/testData/diagnostics/tests/syntheticExtensions/samAdapters/overloadResolutionWithoutRefinedSams.fir.kt" target="_blank">
+                                        <strong>FIR:</strong> tests/syntheticExtensions/samAdapters/overloadResolutionWithoutRefinedSams.fir.kt
+                                    </a>
+                                </div>
+                            `
+                        }
+                    };
+                    const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                    diff2htmlUi.draw();
+                    diff2htmlUi.highlightCode();
+                })();</script>
+    </div>
+  </body>
+</html>

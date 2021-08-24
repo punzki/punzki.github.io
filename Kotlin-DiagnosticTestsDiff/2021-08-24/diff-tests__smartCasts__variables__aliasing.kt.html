@@ -1,0 +1,139 @@
+<html>
+  <head>
+    <title>Diagnostics diff: tests/smartCasts/variables/aliasing.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="card-header p-0" id="heading0"><button class="btn btn-link btn-block text-left" data-toggle="collapse" data-target="#collapse0">
+          <h5>Diff between FE 1.0 vs FIR</h5>
+        </button></div>
+      <div class="collapse show" id="collapse0">
+        <div class="card-body p-1">
+          <div id="diff0" style="width: 100%"></div>
+        </div>
+      </div>
+      <script type="text/javascript">                (function() {
+                    const diffString = `--- tests/smartCasts/variables/aliasing.kt
++++ tests/smartCasts/variables/aliasing.fir.kt
+@@ -1,65 +1,65 @@
+ fun test() {
+     var a: Any? = null
+     var b = a
+     var c = b
+     // Now both \`b\` and \`c\` are aliases of \`a\`.
+ 
+     if (a is String) {
+-        b.<!UNRESOLVED_REFERENCE!>length<!> // OK
+-        c.<!UNRESOLVED_REFERENCE!>length<!> // OK
++        b.length // OK
++        c.length // OK
+     }
+     if (b is String) {
+-        a.<!UNRESOLVED_REFERENCE!>length<!> // OK
+-        c.<!UNRESOLVED_REFERENCE!>length<!> // OK
++        a.length // OK
++        c.length // OK
+     }
+     if (c is String) {
+-        a.<!UNRESOLVED_REFERENCE!>length<!> // OK
+-        b.<!UNRESOLVED_REFERENCE!>length<!> // OK
++        a.length // OK
++        b.length // OK
+     }
+ 
+     b = 3 // break \`b\` -> \`a\`
+     if (a is String) {
+         b.<!UNRESOLVED_REFERENCE!>length<!> // error
+-        c.<!UNRESOLVED_REFERENCE!>length<!> // OK, since \`c\` is aliased to \`a\`
++        c.length // OK, since \`c\` is aliased to \`a\`
+     }
+-    if (<!USELESS_IS_CHECK!>b is String<!>) {
++    if (b is String) {
+         a.<!UNRESOLVED_REFERENCE!>length<!> // error
+         c.<!UNRESOLVED_REFERENCE!>length<!> // error
+     }
+     if (c is String) {
+-        a.<!UNRESOLVED_REFERENCE!>length<!> // OK, since \`c\` is alised to \`a\`
++        a.length // OK, since \`c\` is alised to \`a\`
+         b.<!UNRESOLVED_REFERENCE!>length<!> // error
+     }
+ 
+     a = 2 // break \`c\` -> \`a\`
+-    if (<!USELESS_IS_CHECK!>a is String<!>) {
++    if (a is String) {
+         b.<!UNRESOLVED_REFERENCE!>length<!> // error
+         c.<!UNRESOLVED_REFERENCE!>length<!> // error
+     }
+-    if (<!USELESS_IS_CHECK!>b is String<!>) {
++    if (b is String) {
+         a.<!UNRESOLVED_REFERENCE!>length<!> // error
+         c.<!UNRESOLVED_REFERENCE!>length<!> // error
+     }
+     if (c is String) {
+         a.<!UNRESOLVED_REFERENCE!>length<!> // error
+         b.<!UNRESOLVED_REFERENCE!>length<!> // error
+     }
+ 
+     c = b // create aliasing \`c\` -> \`b\`
+-    <!DEBUG_INFO_SMARTCAST!>c<!>.unaryPlus() // OK due to aliasing
++    c.unaryPlus() // OK due to aliasing
+     b = ""
+-    <!DEBUG_INFO_SMARTCAST!>c<!>.unaryPlus() // OK since \`c\` should carry all typing information that was on \`b\` before \`b = ""\`.
++    c.unaryPlus() // OK since \`c\` should carry all typing information that was on \`b\` before \`b = ""\`.
+ 
+     c = ""
+-    <!DEBUG_INFO_SMARTCAST!>c<!>.length // OK
++    c.length // OK
+     c.<!UNRESOLVED_REFERENCE!>unaryPlus<!>() // error
+ }
+ 
+ fun test2() {
+-    var a: Any? = <!VARIABLE_WITH_REDUNDANT_INITIALIZER!>null<!>
++    var a: Any? = null
+     a = ""
+     var b = a
+     a = 3
+-    <!DEBUG_INFO_SMARTCAST!>b<!>.length // OK
++    b.length // OK
+     b.<!UNRESOLVED_REFERENCE!>unaryPlus<!>() // error
+ }`;
+                    const targetElement = $('#diff0')[0];
+                    const configuration = {
+                        drawFileList: false,
+                        fileListToggle: false,
+                        fileListStartVisible: false,
+                        fileContentToggle: false,
+                        matching: 'lines',
+                        outputFormat: 'side-by-side',
+                        synchronisedScroll: true,
+                        highlight: true,
+                        renderNothingWhenEmpty: false,
+                        rawTemplates: {
+                            'generic-file-path': `
+                                <div class="col">
+                                    <a href="https://github.com/JetBrains/kotlin/blob/4243bafd1d28dfb708235ccdeb5ac14e307f7354/compiler/testData/diagnostics/tests/smartCasts/variables/aliasing.kt" target="_blank">
+                                        <strong>FE 1.0:</strong> tests/smartCasts/variables/aliasing.kt
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="https://github.com/JetBrains/kotlin/blob/4243bafd1d28dfb708235ccdeb5ac14e307f7354/compiler/testData/diagnostics/tests/smartCasts/variables/aliasing.fir.kt" target="_blank">
+                                        <strong>FIR:</strong> tests/smartCasts/variables/aliasing.fir.kt
+                                    </a>
+                                </div>
+                            `
+                        }
+                    };
+                    const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                    diff2htmlUi.draw();
+                    diff2htmlUi.highlightCode();
+                })();</script>
+    </div>
+  </body>
+</html>

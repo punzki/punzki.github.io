@@ -1,0 +1,117 @@
+<html>
+  <head>
+    <title>Diagnostics diff: tests/functionLiterals/missedTypeMismatch.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="card-header p-0" id="heading0"><button class="btn btn-link btn-block text-left" data-toggle="collapse" data-target="#collapse0">
+          <h5>Diff between FE 1.0 vs FIR</h5>
+        </button></div>
+      <div class="collapse show" id="collapse0">
+        <div class="card-body p-1">
+          <div id="diff0" style="width: 100%"></div>
+        </div>
+      </div>
+      <script type="text/javascript">                (function() {
+                    const diffString = `--- tests/functionLiterals/missedTypeMismatch.kt
++++ tests/functionLiterals/missedTypeMismatch.fir.kt
+@@ -1,40 +1,40 @@
+ // !DIAGNOSTICS: -UNUSED_VARIABLE -UNUSED_PARAMETER -UNUSED_ANONYMOUS_PARAMETER -UNCHECKED_CAST
+ // Issues: KT-38890, KT-38439
+ 
+ fun foo(x: () -> Int) {}
+ 
+ fun <T>id(x: T) = x
+ 
+ // Before the fix, there wasn't any type mismatch error in NI due to result type not being a subtype of expected type
+ fun main() {
+-    val x: () -> Int = { <!TYPE_MISMATCH!>""<!> }
++    val x: () -> Int = <!INITIALIZER_TYPE_MISMATCH!>{ "" }<!>
+ 
+-    val a0: () -> Int = <!TYPE_MISMATCH!>fun(): String = "1"<!>
+-    val a1: () -> Int = (<!TYPE_MISMATCH!>fun() = "1"<!>)
+-    val a2: () -> Unit = (<!TYPE_MISMATCH!>fun() = "1"<!>)
+-    val a3: Unit = (<!TYPE_MISMATCH!>fun() = "1"<!>)
++    val a0: () -> Int = <!INITIALIZER_TYPE_MISMATCH!>fun(): String = "1"<!>
++    val a1: () -> Int = <!INITIALIZER_TYPE_MISMATCH!>(fun() = "1")<!>
++    val a2: () -> Unit = (fun() = "1")
++    val a3: Unit = <!INITIALIZER_TYPE_MISMATCH!>(fun() = "1")<!>
+     val a4 = (fun() = "1")
+     val a5 = (fun(): String = "1")
+     val a6: () -> Int = (fun() = 1)
+     val a7: () -> Int = (fun(): String = "1") as () -> Int
+-    val a8: () -> Int = <!TYPE_MISMATCH!>fun(): String = "1"<!>
+-    val a9: () -> () -> () -> Int = <!TYPE_MISMATCH!>fun(): () -> () -> String = fun(): () -> String = fun(): String = "1"<!>
++    val a8: () -> Int = <!INITIALIZER_TYPE_MISMATCH!>fun(): String = "1"<!>
++    val a9: () -> () -> () -> Int = <!INITIALIZER_TYPE_MISMATCH!>fun(): () -> () -> String = fun(): () -> String = fun(): String = "1"<!>
+ 
+-    foo(<!TYPE_MISMATCH!>fun(): String = "1"<!>)
+-    foo(((<!TYPE_MISMATCH!>fun(): String = "1"<!>)))
++    foo(<!ARGUMENT_TYPE_MISMATCH!>fun(): String = "1"<!>)
++    foo(((<!ARGUMENT_TYPE_MISMATCH!>fun(): String = "1"<!>)))
+ 
+-    val a10: Int.(String) -> Int = <!TYPE_MISMATCH!>fun (x: String) = 10<!>
+-    val a11: () -> () -> () -> Int = <!TYPE_MISMATCH!>fun() = fun() = fun(): String = "1"<!>
++    val a10: Int.(String) -> Int = fun (x: String) = 10
++    val a11: () -> () -> () -> Int = <!INITIALIZER_TYPE_MISMATCH!>fun() = fun() = fun(): String = "1"<!>
+ 
+-    val a12: Int = <!TYPE_MISMATCH!>fun(): String = "1"<!>
+-    val a13: Int = <!TYPE_MISMATCH!>fun() = fun(): String = "1"<!>
+-    val a14: Int = <!TYPE_MISMATCH!>fun() = fun() = "1"<!>
+-    val a15: Int = <!TYPE_MISMATCH!>fun() = fun() = {}<!>
+-    val a16: Int = <!TYPE_MISMATCH!>fun() = fun() {}<!>
++    val a12: Int = <!INITIALIZER_TYPE_MISMATCH!>fun(): String = "1"<!>
++    val a13: Int = <!INITIALIZER_TYPE_MISMATCH!>fun() = fun(): String = "1"<!>
++    val a14: Int = <!INITIALIZER_TYPE_MISMATCH!>fun() = fun() = "1"<!>
++    val a15: Int = <!INITIALIZER_TYPE_MISMATCH!>fun() = fun() = {}<!>
++    val a16: Int = <!INITIALIZER_TYPE_MISMATCH!>fun() = fun() {}<!>
+ 
+     val a17: () -> Unit = fun() {}
+-    val a18: () -> Int = <!TYPE_MISMATCH!>fun() {}<!>
+-    val a19: () -> () -> Int = <!TYPE_MISMATCH!>fun() = fun() {}<!>
++    val a18: () -> Int = <!INITIALIZER_TYPE_MISMATCH!>fun() {}<!>
++    val a19: () -> () -> Int = <!INITIALIZER_TYPE_MISMATCH!>fun() = fun() {}<!>
+     val a20: () -> () -> () -> Unit = fun() = fun() = {}
+-    val a21: () -> () -> () -> Int = <!TYPE_MISMATCH!>fun() = fun() = {}<!>
++    val a21: () -> () -> () -> Int = fun() = fun() = {}
+ }`;
+                    const targetElement = $('#diff0')[0];
+                    const configuration = {
+                        drawFileList: false,
+                        fileListToggle: false,
+                        fileListStartVisible: false,
+                        fileContentToggle: false,
+                        matching: 'lines',
+                        outputFormat: 'side-by-side',
+                        synchronisedScroll: true,
+                        highlight: true,
+                        renderNothingWhenEmpty: false,
+                        rawTemplates: {
+                            'generic-file-path': `
+                                <div class="col">
+                                    <a href="https://github.com/JetBrains/kotlin/blob/4243bafd1d28dfb708235ccdeb5ac14e307f7354/compiler/testData/diagnostics/tests/functionLiterals/missedTypeMismatch.kt" target="_blank">
+                                        <strong>FE 1.0:</strong> tests/functionLiterals/missedTypeMismatch.kt
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="https://github.com/JetBrains/kotlin/blob/4243bafd1d28dfb708235ccdeb5ac14e307f7354/compiler/testData/diagnostics/tests/functionLiterals/missedTypeMismatch.fir.kt" target="_blank">
+                                        <strong>FIR:</strong> tests/functionLiterals/missedTypeMismatch.fir.kt
+                                    </a>
+                                </div>
+                            `
+                        }
+                    };
+                    const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                    diff2htmlUi.draw();
+                    diff2htmlUi.highlightCode();
+                })();</script>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,116 @@
+<html>
+  <head>
+    <title>Diagnostics diff: SMARTCAST_IMPOSSIBLE</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row sticky-top" style="background: white" id="summary">
+        <div class="d-inline-flex align-items-baseline">
+          <h1 class="mr-2">SMARTCAST_IMPOSSIBLE</h1>
+<a href="index.html">(back to diagnostic list)</a></div>
+      </div>
+      <div class="row">
+        <ul>
+          <li><strong>Total: </strong>82</li>
+          <li><strong>Match %: </strong>51.22%</li>
+          <li><a href="#matched"><strong># Matched: </strong>42</a></li>
+          <li><strong># Non-matched: </strong>40</li>
+          <li><a href="#missing"><strong># Missing: </strong>36</a></li>
+          <li><a href="#unexpected"><strong># Unexpected: </strong>0</a></li>
+          <li><a href="#mismatched"><strong># Mismatched: </strong>4</a></li>
+          <li><strong># Files: </strong>52</li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="missing">
+        <h2>Missing (36)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__smartCasts__variables__capturedByAtLeastOnce.kt.html" target="_blank">tests/smartCasts/variables/capturedByAtLeastOnce.kt (4)</a></li>
+          <li><a href="diff-tests__when__withSubjectVariable__capturingInInitializer.kt.html" target="_blank">tests/when/withSubjectVariable/capturingInInitializer.kt (4)</a></li>
+          <li><a href="diff-tests__nullabilityAndSmartCasts__nullableReceiverWithOverloadedMethod.kt.html" target="_blank">tests/nullabilityAndSmartCasts/nullableReceiverWithOverloadedMethod.kt (3)</a></li>
+          <li><a href="diff-tests__smartCasts__ownerDeclaresBothModifies.kt.html" target="_blank">tests/smartCasts/ownerDeclaresBothModifies.kt (2)</a></li>
+          <li><a href="diff-tests__smartCasts__variables__accessorAndFunction.kt.html" target="_blank">tests/smartCasts/variables/accessorAndFunction.kt (2)</a></li>
+          <li><a href="diff-tests__smartCasts__variables__capturedByMultipleLambdas.kt.html" target="_blank">tests/smartCasts/variables/capturedByMultipleLambdas.kt (2)</a></li>
+          <li><a href="diff-testsWithStdLib__smartcasts__lambdaInCallArgs.kt.html" target="_blank">testsWithStdLib/smartcasts/lambdaInCallArgs.kt (2)</a></li>
+          <li><a href="diff-testsWithStdLib__smartcasts__withChangesToNull.kt.html" target="_blank">testsWithStdLib/smartcasts/withChangesToNull.kt (2)</a></li>
+          <li><a href="diff-tests__nullabilityAndSmartCasts__QualifiedExpressionNullability.kt.html" target="_blank">tests/nullabilityAndSmartCasts/QualifiedExpressionNullability.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__explicitDefaultGetter.kt.html" target="_blank">tests/smartCasts/explicitDefaultGetter.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__kt30826.kt.html" target="_blank">tests/smartCasts/kt30826.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__lambdaUsesOwnerModifies.kt.html" target="_blank">tests/smartCasts/lambdaUsesOwnerModifies.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__objectLiterals__captured.kt.html" target="_blank">tests/smartCasts/objectLiterals/captured.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__publicVals__delegate.kt.html" target="_blank">tests/smartCasts/publicVals/delegate.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__safecalls__safeAccessReceiverNotNull.kt.html" target="_blank">tests/smartCasts/safecalls/safeAccessReceiverNotNull.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__varInInitNoPrimary.kt.html" target="_blank">tests/smartCasts/varInInitNoPrimary.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__variables__lambdaBetweenArguments.kt.html" target="_blank">tests/smartCasts/variables/lambdaBetweenArguments.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__varnotnull__boundInitializerWrong.kt.html" target="_blank">tests/smartCasts/varnotnull/boundInitializerWrong.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__varnotnull__capturedInClosureOff.kt.html" target="_blank">tests/smartCasts/varnotnull/capturedInClosureOff.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__varnotnull__unnecessaryWithMap.kt.html" target="_blank">tests/smartCasts/varnotnull/unnecessaryWithMap.kt (1)</a></li>
+          <li><a href="diff-testsWithStdLib__smartcasts__letChangesToNull.kt.html" target="_blank">testsWithStdLib/smartcasts/letChangesToNull.kt (1)</a></li>
+          <li><a href="diff-testsWithStdLib__smartcasts__letChangesToNullComplex.kt.html" target="_blank">testsWithStdLib/smartcasts/letChangesToNullComplex.kt (1)</a></li>
+          <li><a href="diff-testsWithStdLib__smartcasts__letMergeNotNull.kt.html" target="_blank">testsWithStdLib/smartcasts/letMergeNotNull.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="mismatched">
+        <h2>Mismatched (4)</h2>
+      </div>
+      <div class="row sticky-top" style="top: 5.5em; background: white">
+        <h5>DEPRECATED_SMARTCAST → SMARTCAST_IMPOSSIBLE (3)</h5>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__smartCasts__publicVals__otherModuleInheritance.kt.html" target="_blank">tests/smartCasts/publicVals/otherModuleInheritance.kt (2)</a></li>
+          <li><a href="diff-tests__smartCasts__localDelegatedPropertyBefore.kt.html" target="_blank">tests/smartCasts/localDelegatedPropertyBefore.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 5.5em; background: white">
+        <h5>SMARTCAST_IMPOSSIBLE → ARGUMENT_TYPE_MISMATCH (1)</h5>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__smartCasts__variables__property.kt.html" target="_blank">tests/smartCasts/variables/property.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="matched">
+        <h2>Matched (42)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__smartCasts__varnotnull__capturedInClosureModifiedBefore.kt.html" target="_blank">tests/smartCasts/varnotnull/capturedInClosureModifiedBefore.kt (5)</a></li>
+          <li><a href="diff-tests__smartCasts__localFunChanges.kt.html" target="_blank">tests/smartCasts/localFunChanges.kt (3)</a></li>
+          <li><a href="diff-tests__smartCasts__intersectionScope__unstableSmartCast.kt.html" target="_blank">tests/smartCasts/intersectionScope/unstableSmartCast.kt (2)</a></li>
+          <li><a href="diff-tests__smartCasts__localClassChanges.kt.html" target="_blank">tests/smartCasts/localClassChanges.kt (2)</a></li>
+          <li><a href="diff-tests__smartCasts__publicVals__otherModule.kt.html" target="_blank">tests/smartCasts/publicVals/otherModule.kt (2)</a></li>
+          <li><a href="diff-tests__smartCasts__publicVals__otherModuleInheritance_after.kt.html" target="_blank">tests/smartCasts/publicVals/otherModuleInheritance_after.kt (2)</a></li>
+          <li><a href="diff-tests__smartCasts__publicVals__var.kt.html" target="_blank">tests/smartCasts/publicVals/var.kt (2)</a></li>
+          <li><a href="diff-tests__smartCasts__variables__capturedByMultipleLambdas.kt.html" target="_blank">tests/smartCasts/variables/capturedByMultipleLambdas.kt (2)</a></li>
+          <li><a href="diff-tests__smartCasts__varnotnull__varCapturedInClosure.kt.html" target="_blank">tests/smartCasts/varnotnull/varCapturedInClosure.kt (2)</a></li>
+          <li><a href="diff-tests__nullabilityAndSmartCasts__unstableSmartcastWhenOpenGetterWithOverloading.kt.html" target="_blank">tests/nullabilityAndSmartCasts/unstableSmartcastWhenOpenGetterWithOverloading.kt (1)</a></li>
+          <li><a href="diff-tests__nullabilityAndSmartCasts__unstableSmartcastWithOverloadedExtensions.kt.html" target="_blank">tests/nullabilityAndSmartCasts/unstableSmartcastWithOverloadedExtensions.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__inference__kt39010.kt.html" target="_blank">tests/smartCasts/inference/kt39010.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__inference__kt39010_2.kt.html" target="_blank">tests/smartCasts/inference/kt39010_2.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__inference__syntheticPropertyOnUnstableSmartcast.kt.html" target="_blank">tests/smartCasts/inference/syntheticPropertyOnUnstableSmartcast.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__lambdaAndArgumentFun.kt.html" target="_blank">tests/smartCasts/lambdaAndArgumentFun.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__localDelegatedPropertyAfter.kt.html" target="_blank">tests/smartCasts/localDelegatedPropertyAfter.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__localObjectChanges.kt.html" target="_blank">tests/smartCasts/localObjectChanges.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__openInSealed.kt.html" target="_blank">tests/smartCasts/openInSealed.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__propertyToNotNull.kt.html" target="_blank">tests/smartCasts/propertyToNotNull.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__publicVals__customGetter.kt.html" target="_blank">tests/smartCasts/publicVals/customGetter.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__publicVals__open.kt.html" target="_blank">tests/smartCasts/publicVals/open.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__unstableToStable.kt.html" target="_blank">tests/smartCasts/unstableToStable.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__unstableToStableTypes.kt.html" target="_blank">tests/smartCasts/unstableToStableTypes.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__variables__capturedByAtLeastOnce.kt.html" target="_blank">tests/smartCasts/variables/capturedByAtLeastOnce.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__varnotnull__varCapturedInInlineClosure.kt.html" target="_blank">tests/smartCasts/varnotnull/varCapturedInInlineClosure.kt (1)</a></li>
+          <li><a href="diff-testsWithStdLib__contracts__smartcasts__receiver.kt.html" target="_blank">testsWithStdLib/contracts/smartcasts/receiver.kt (1)</a></li>
+          <li><a href="diff-testsWithStdLib__regression__kt10001.kt.html" target="_blank">testsWithStdLib/regression/kt10001.kt (1)</a></li>
+          <li><a href="diff-testsWithStdLib__smartcasts__forEachSafe.kt.html" target="_blank">testsWithStdLib/smartcasts/forEachSafe.kt (1)</a></li>
+          <li><a href="diff-testsWithStdLib__smartcasts__lambdaInCallArgs.kt.html" target="_blank">testsWithStdLib/smartcasts/lambdaInCallArgs.kt (1)</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,173 @@
+<html>
+  <head>
+    <title>Diagnostics diff: foreignAnnotationsTests/java8Tests/jsr305/typeArguments.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="card-header p-0" id="heading0"><button class="btn btn-link btn-block text-left" data-toggle="collapse" data-target="#collapse0">
+          <h5>Diff between FE 1.0 vs FIR</h5>
+        </button></div>
+      <div class="collapse show" id="collapse0">
+        <div class="card-body p-1">
+          <div id="diff0" style="width: 100%"></div>
+        </div>
+      </div>
+      <script type="text/javascript">                (function() {
+                    const diffString = `--- foreignAnnotationsTests/java8Tests/jsr305/typeArguments.kt
++++ foreignAnnotationsTests/java8Tests/jsr305/typeArguments.fir.kt
+@@ -1,107 +1,107 @@
+ // !DIAGNOSTICS: -UNUSED_VARIABLE -UNUSED_PARAMETER
+ // RENDER_PACKAGE: test
+ // SOURCE_RETENTION_ANNOTATIONS
+ // WITH_RUNTIME
+ // JSR305_GLOBAL_REPORT: strict
+ 
+ // FILE: spr/Nullable.java
+ package spr;
+ 
+ import java.lang.annotation.Documented;
+ import java.lang.annotation.ElementType;
+ import java.lang.annotation.Retention;
+ import java.lang.annotation.RetentionPolicy;
+ import java.lang.annotation.Target;
+ import javax.annotation.Nonnull;
+ import javax.annotation.meta.TypeQualifierNickname;
+ import javax.annotation.meta.When;
+ 
+ @Target({ElementType.TYPE_USE})
+ @Retention(RetentionPolicy.RUNTIME)
+ @Documented
+ @Nonnull(when = When.MAYBE)
+ @TypeQualifierNickname
+ public @interface Nullable {
+ }
+ 
+ // FILE: spr/NonNullApi.java
+ package spr;
+ 
+ import java.lang.annotation.Documented;
+ import java.lang.annotation.ElementType;
+ import java.lang.annotation.Retention;
+ import java.lang.annotation.RetentionPolicy;
+ import java.lang.annotation.Target;
+ import javax.annotation.Nonnull;
+ import javax.annotation.meta.TypeQualifierDefault;
+ 
+ @Target(ElementType.PACKAGE)
+ @Retention(RetentionPolicy.RUNTIME)
+ @Documented
+ @Nonnull
+ @TypeQualifierDefault({ElementType.TYPE_USE})
+ public @interface NonNullApi {
+ }
+ 
+ // FILE: test/package-info.java
+ @spr.NonNullApi()
+ package test;
+ 
+ // FILE: test/L.java
+ package test;
+ 
+ public class L<T extends java.util.Map<String, S>, S> {
+     public T t() { return null; }
+     public S s() { return null; }
+ 
+     public void setT(@spr.Nullable T t) {}
+     public void setS(S s) {}
+ }
+ 
+ // FILE: test/A.java
+ package test;
+ 
+ import spr.*;
+ import java.util.*;
+ 
+ public class A {
+     public void foo(L<Map<String, Integer>, @Nullable Integer> l) {}
+     public void bar(L<?, Integer> l) {}
+     public L<Map<String, Integer>, @Nullable Integer> baz1() { return null; }
+     public L<?, Integer> baz2() { return null; }
+     public L<? extends Map<String, Integer>, Integer> baz3() { return null; }
+ }
+ 
+ // FILE: main.kt
+ import test.L
+ 
+ fun main(a: test.A, l: L<Map<String, Int>, Int?>, l1: L<Map<String, Int>, Int>) {
+     a.foo(l)
+-    a.foo(<!TYPE_MISMATCH!>l <!UNCHECKED_CAST!>as L<Map<String, Int>, Int><!><!>)
+-    a.foo(<!TYPE_MISMATCH!>l <!UNCHECKED_CAST!>as L<Map<String, Int?>, Int?><!><!>)
++    a.foo(l as L<Map<String, Int>, Int>)
++    a.foo(l as L<Map<String, Int?>, Int?>)
+ 
+     a.bar(l1)
+-    a.bar(<!TYPE_MISMATCH!>l1 <!UNCHECKED_CAST!>as L<Map<String, Int>, Int?><!><!>)
++    a.bar(l1 as L<Map<String, Int>, Int?>)
+ 
+     a.baz1().t().containsKey("")
+-    a.baz1().t().<!TYPE_INFERENCE_ONLY_INPUT_TYPES_ERROR!>containsKey<!>(null)
++    a.baz1().t().containsKey(null)
+     a.baz1().t().containsValue(1)
+-    a.baz1().t().<!TYPE_INFERENCE_ONLY_INPUT_TYPES_ERROR!>containsValue<!>(null)
++    a.baz1().t().containsValue(null)
+     a.baz1().s().hashCode()
+ 
+     a.baz1().setT(l.t())
+-    a.baz1().setT(<!TYPE_MISMATCH!>l.t() <!UNCHECKED_CAST!>as L<Map<String, Int>, Int><!><!>)
++    a.baz1().setT(<!ARGUMENT_TYPE_MISMATCH!>l.t() as L<Map<String, Int>, Int><!>)
+     a.baz1().setT(null)
+ 
+     a.baz2().t().containsKey("")
+     a.baz2().t().containsKey(null)
+     a.baz2().t().containsValue(1)
+     a.baz2().t().containsValue(null)
+     a.baz2().s().hashCode()
+ 
+     a.baz3().t().containsKey("")
+-    a.baz3().t().<!TYPE_INFERENCE_ONLY_INPUT_TYPES_ERROR!>containsKey<!>(null)
++    a.baz3().t().containsKey(null)
+     a.baz3().t().containsValue(1)
+-    a.baz3().t().<!TYPE_INFERENCE_ONLY_INPUT_TYPES_ERROR!>containsValue<!>(null)
++    a.baz3().t().containsValue(null)
+     a.baz3().s().hashCode()
+ }`;
+                    const targetElement = $('#diff0')[0];
+                    const configuration = {
+                        drawFileList: false,
+                        fileListToggle: false,
+                        fileListStartVisible: false,
+                        fileContentToggle: false,
+                        matching: 'lines',
+                        outputFormat: 'side-by-side',
+                        synchronisedScroll: true,
+                        highlight: true,
+                        renderNothingWhenEmpty: false,
+                        rawTemplates: {
+                            'generic-file-path': `
+                                <div class="col">
+                                    <a href="https://github.com/JetBrains/kotlin/blob/4243bafd1d28dfb708235ccdeb5ac14e307f7354/compiler/testData/diagnostics/foreignAnnotationsTests/java8Tests/jsr305/typeArguments.kt" target="_blank">
+                                        <strong>FE 1.0:</strong> foreignAnnotationsTests/java8Tests/jsr305/typeArguments.kt
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="https://github.com/JetBrains/kotlin/blob/4243bafd1d28dfb708235ccdeb5ac14e307f7354/compiler/testData/diagnostics/foreignAnnotationsTests/java8Tests/jsr305/typeArguments.fir.kt" target="_blank">
+                                        <strong>FIR:</strong> foreignAnnotationsTests/java8Tests/jsr305/typeArguments.fir.kt
+                                    </a>
+                                </div>
+                            `
+                        }
+                    };
+                    const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                    diff2htmlUi.draw();
+                    diff2htmlUi.highlightCode();
+                })();</script>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,146 @@
+<html>
+  <head>
+    <title>Diagnostics diff: tests/modifiers/modifierOnParameterInFunctionType.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="card-header p-0" id="heading0"><button class="btn btn-link btn-block text-left" data-toggle="collapse" data-target="#collapse0">
+          <h5>Diff between FE 1.0 vs FIR</h5>
+        </button></div>
+      <div class="collapse show" id="collapse0">
+        <div class="card-body p-1">
+          <div id="diff0" style="width: 100%"></div>
+        </div>
+      </div>
+      <script type="text/javascript">                (function() {
+                    const diffString = `--- tests/modifiers/modifierOnParameterInFunctionType.kt
++++ tests/modifiers/modifierOnParameterInFunctionType.fir.kt
+@@ -1,52 +1,52 @@
+ // !DIAGNOSTICS: -UNUSED_PARAMETER -UNUSED_VARIABLE
+ 
+ fun f(vararg x: Int) {}
+ 
+-val inVal: (<!UNSUPPORTED!>vararg<!> x: Int)->Unit = {}
++val inVal: (<!WRONG_MODIFIER_CONTAINING_DECLARATION!>vararg<!> x: Int)->Unit = {}
+ 
+-fun inParam(fn: (<!UNSUPPORTED!>vararg<!> x: Int)->Unit) {}
++fun inParam(fn: (<!WRONG_MODIFIER_CONTAINING_DECLARATION!>vararg<!> x: Int)->Unit) {}
+ 
+-fun inParamNested(fn1: (fn2: (<!UNSUPPORTED!>vararg<!> n: Int)->Unit)->Unit) {}
++fun inParamNested(fn1: (fn2: (<!WRONG_MODIFIER_CONTAINING_DECLARATION!>vararg<!> n: Int)->Unit)->Unit) {}
+ 
+-fun inReturn(): (<!UNSUPPORTED!>vararg<!> x: Int)->Unit = {}
++fun inReturn(): (vararg x: Int)->Unit = {}
+ 
+-class A : (<!UNSUPPORTED!>vararg<!> Int)->Unit {
++class A : (vararg Int)->Unit {
+     override fun invoke(p1: Int) {
+-        var lambda: (<!UNSUPPORTED!>vararg<!> x: Int)->Unit = {}
++        var lambda: (vararg x: Int)->Unit = {}
+     }
+ 
+-    val prop: (<!UNSUPPORTED!>vararg<!> x: Int)->Unit
+-        get(): (<!UNSUPPORTED!>vararg<!> x: Int)->Unit = {}
++    val prop: (vararg x: Int)->Unit
++        get(): (<!WRONG_MODIFIER_CONTAINING_DECLARATION, WRONG_MODIFIER_CONTAINING_DECLARATION!>vararg<!> x: Int)->Unit = {}
+ }
+ 
+-val allProhibited: (<!UNSUPPORTED!>abstract<!>
+-                    <!UNSUPPORTED!>annotation<!>
+-                    <!UNSUPPORTED!>companion<!>
+-                    <!UNSUPPORTED!>const<!>
+-                    <!UNSUPPORTED!>crossinline<!>
+-                    <!UNSUPPORTED!>data<!>
+-                    <!UNSUPPORTED!>enum<!>
+-                    <!UNSUPPORTED!>external<!>
+-                    <!UNSUPPORTED!>final<!>
+-                    <!UNSUPPORTED!>in<!>
+-                    <!UNSUPPORTED!>inline<!>
+-                    <!UNSUPPORTED!>inner<!>
+-                    <!UNSUPPORTED!>internal<!>
+-                    <!UNSUPPORTED!>lateinit<!>
+-                    <!UNSUPPORTED!>noinline<!>
+-                    <!UNSUPPORTED!>open<!>
+-                    <!UNSUPPORTED!>operator<!>
+-                    <!UNSUPPORTED!>out<!>
+-                    <!UNSUPPORTED!>override<!>
+-                    <!UNSUPPORTED!>private<!>
+-                    <!UNSUPPORTED!>protected<!>
+-                    <!UNSUPPORTED!>public<!>
+-                    <!UNSUPPORTED!>reified<!>
+-                    <!UNSUPPORTED!>sealed<!>
+-                    <!UNSUPPORTED!>tailrec<!>
+-                    <!UNSUPPORTED!>vararg<!>
++val allProhibited: (<!REDUNDANT_MODIFIER, WRONG_MODIFIER_TARGET!>abstract<!>
++                    <!WRONG_MODIFIER_TARGET!>annotation<!>
++                    <!WRONG_MODIFIER_TARGET!>companion<!>
++                    <!INCOMPATIBLE_MODIFIERS!>const<!>
++                    <!INCOMPATIBLE_MODIFIERS!>crossinline<!>
++                    <!INCOMPATIBLE_MODIFIERS!>data<!>
++                    <!WRONG_MODIFIER_TARGET!>enum<!>
++                    <!WRONG_MODIFIER_TARGET!>external<!>
++                    <!INCOMPATIBLE_MODIFIERS!>final<!>
++                    <!WRONG_MODIFIER_TARGET!>in<!>
++                    <!INCOMPATIBLE_MODIFIERS!>inline<!>
++                    <!INCOMPATIBLE_MODIFIERS!>inner<!>
++                    <!WRONG_MODIFIER_TARGET!>internal<!>
++                    <!WRONG_MODIFIER_TARGET!>lateinit<!>
++                    <!INCOMPATIBLE_MODIFIERS!>noinline<!>
++                    <!INCOMPATIBLE_MODIFIERS, REDUNDANT_MODIFIER!>open<!>
++                    <!WRONG_MODIFIER_TARGET!>operator<!>
++                    <!INCOMPATIBLE_MODIFIERS!>out<!>
++                    <!INCOMPATIBLE_MODIFIERS!>override<!>
++                    <!INCOMPATIBLE_MODIFIERS!>private<!>
++                    <!INCOMPATIBLE_MODIFIERS!>protected<!>
++                    <!INCOMPATIBLE_MODIFIERS!>public<!>
++                    <!WRONG_MODIFIER_TARGET!>reified<!>
++                    <!INCOMPATIBLE_MODIFIERS!>sealed<!>
++                    <!WRONG_MODIFIER_TARGET!>tailrec<!>
++                    <!WRONG_MODIFIER_CONTAINING_DECLARATION!>vararg<!>
+ 
+                     x: Int)->Unit = {}
+ 
+-val valProhibited: (<!UNSUPPORTED!>val<!> x: Int)->Unit = {}
+-val varProhibited: (<!UNSUPPORTED!>var<!> x: Int)->Unit = {}
++val valProhibited: (val x: Int)->Unit = {}
++val varProhibited: (var x: Int)->Unit = {}`;
+                    const targetElement = $('#diff0')[0];
+                    const configuration = {
+                        drawFileList: false,
+                        fileListToggle: false,
+                        fileListStartVisible: false,
+                        fileContentToggle: false,
+                        matching: 'lines',
+                        outputFormat: 'side-by-side',
+                        synchronisedScroll: true,
+                        highlight: true,
+                        renderNothingWhenEmpty: false,
+                        rawTemplates: {
+                            'generic-file-path': `
+                                <div class="col">
+                                    <a href="https://github.com/JetBrains/kotlin/blob/4243bafd1d28dfb708235ccdeb5ac14e307f7354/compiler/testData/diagnostics/tests/modifiers/modifierOnParameterInFunctionType.kt" target="_blank">
+                                        <strong>FE 1.0:</strong> tests/modifiers/modifierOnParameterInFunctionType.kt
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="https://github.com/JetBrains/kotlin/blob/4243bafd1d28dfb708235ccdeb5ac14e307f7354/compiler/testData/diagnostics/tests/modifiers/modifierOnParameterInFunctionType.fir.kt" target="_blank">
+                                        <strong>FIR:</strong> tests/modifiers/modifierOnParameterInFunctionType.fir.kt
+                                    </a>
+                                </div>
+                            `
+                        }
+                    };
+                    const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                    diff2htmlUi.draw();
+                    diff2htmlUi.highlightCode();
+                })();</script>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,77 @@
+<html>
+  <head>
+    <title>Diagnostics diff: UNSAFE_IMPLICIT_INVOKE_CALL</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row sticky-top" style="background: white" id="summary">
+        <div class="d-inline-flex align-items-baseline">
+          <h1 class="mr-2">UNSAFE_IMPLICIT_INVOKE_CALL</h1>
+<a href="index.html">(back to diagnostic list)</a></div>
+      </div>
+      <div class="row">
+        <ul>
+          <li><strong>Total: </strong>30</li>
+          <li><strong>Match %: </strong>46.67%</li>
+          <li><a href="#matched"><strong># Matched: </strong>14</a></li>
+          <li><strong># Non-matched: </strong>16</li>
+          <li><a href="#missing"><strong># Missing: </strong>14</a></li>
+          <li><a href="#unexpected"><strong># Unexpected: </strong>0</a></li>
+          <li><a href="#mismatched"><strong># Mismatched: </strong>2</a></li>
+          <li><strong># Files: </strong>13</li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="missing">
+        <h2>Missing (14)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__resolve__invoke__invokeAndSmartCast.kt.html" target="_blank">tests/resolve/invoke/invokeAndSmartCast.kt (4)</a></li>
+          <li><a href="diff-tests__resolve__invoke__implicitInvokeAfterSafeCall.kt.html" target="_blank">tests/resolve/invoke/implicitInvokeAfterSafeCall.kt (3)</a></li>
+          <li><a href="diff-tests__resolve__invoke__kt30695.kt.html" target="_blank">tests/resolve/invoke/kt30695.kt (2)</a></li>
+          <li><a href="diff-tests__resolve__invoke__kt30695_2.kt.html" target="_blank">tests/resolve/invoke/kt30695_2.kt (2)</a></li>
+          <li><a href="diff-tests__SafeCallInvoke.kt.html" target="_blank">tests/SafeCallInvoke.kt (1)</a></li>
+          <li><a href="diff-tests__operatorsOverloading__kt13330.kt.html" target="_blank">tests/operatorsOverloading/kt13330.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__safecalls__safeAccessReceiverNotNull.kt.html" target="_blank">tests/smartCasts/safecalls/safeAccessReceiverNotNull.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="mismatched">
+        <h2>Mismatched (2)</h2>
+      </div>
+      <div class="row sticky-top" style="top: 5.5em; background: white">
+        <h5>UNSAFE_CALL → UNSAFE_IMPLICIT_INVOKE_CALL (1)</h5>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__resolve__invoke__errors__unsafeCallWithInvoke.kt.html" target="_blank">tests/resolve/invoke/errors/unsafeCallWithInvoke.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 5.5em; background: white">
+        <h5>RECEIVER_NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS → UNSAFE_IMPLICIT_INVOKE_CALL (1)</h5>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-foreignAnnotationsTests__tests__jsr305__nullabilityWarnings__fromPlatformTypes__invoke.kt.html" target="_blank">foreignAnnotationsTests/tests/jsr305/nullabilityWarnings/fromPlatformTypes/invoke.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="matched">
+        <h2>Matched (14)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__resolve__invoke__kt30695_2.kt.html" target="_blank">tests/resolve/invoke/kt30695_2.kt (4)</a></li>
+          <li><a href="diff-tests__resolve__invoke__invokeAndSmartCast.kt.html" target="_blank">tests/resolve/invoke/invokeAndSmartCast.kt (3)</a></li>
+          <li><a href="diff-tests__extensions__kt1875.kt.html" target="_blank">tests/extensions/kt1875.kt (2)</a></li>
+          <li><a href="diff-tests__safeCall.kt.html" target="_blank">tests/safeCall.kt (2)</a></li>
+          <li><a href="diff-tests__generics__nullability__functionalBound.kt.html" target="_blank">tests/generics/nullability/functionalBound.kt (1)</a></li>
+          <li><a href="diff-tests__platformTypes__nullabilityWarnings__invoke.kt.html" target="_blank">tests/platformTypes/nullabilityWarnings/invoke.kt (1)</a></li>
+          <li><a href="diff-tests__resolve__invoke__errors__unsafeCallWithInvoke.kt.html" target="_blank">tests/resolve/invoke/errors/unsafeCallWithInvoke.kt (1)</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
