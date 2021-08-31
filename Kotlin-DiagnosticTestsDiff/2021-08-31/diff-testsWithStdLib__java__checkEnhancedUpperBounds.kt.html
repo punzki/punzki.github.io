@@ -1,0 +1,105 @@
+<html>
+  <head>
+    <title>Diagnostics diff: testsWithStdLib/java/checkEnhancedUpperBounds.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="card-header p-0" id="heading0"><button class="btn btn-link btn-block text-left" data-toggle="collapse" data-target="#collapse0">
+          <h5>Diff between FE 1.0 vs FIR</h5>
+        </button></div>
+      <div class="collapse show" id="collapse0">
+        <div class="card-body p-1">
+          <div id="diff0" style="width: 100%"></div>
+        </div>
+      </div>
+      <script type="text/javascript">                (function() {
+                    const diffString = `--- testsWithStdLib/java/checkEnhancedUpperBounds.kt
++++ testsWithStdLib/java/checkEnhancedUpperBounds.fir.kt
+@@ -1,37 +1,37 @@
+ // !DIAGNOSTICS: -UNUSED_PARAMETER -UNUSED_VARIABLE
+ // !LANGUAGE: -TypeEnhancementImprovementsInStrictMode
+ // FULL_JDK
+ 
+ // FILE: MapLike.java
+ import java.util.Map;
+ 
+ public class MapLike<@org.jetbrains.annotations.NotNull K, V> {
+     void putAll(Map<K, V> map);
+ }
+ 
+ // FILE: ListLike.java
+ import java.util.Collection;
+ 
+ public class ListLike<K extends Collection<@org.jetbrains.annotations.NotNull Object>> {}
+ 
+ // FILE: main.kt
+-fun test0(map : MapLike<<!UPPER_BOUND_VIOLATED_BASED_ON_JAVA_ANNOTATIONS!>Int?<!>, Int>) {}
+-fun <K> test11(map : MapLike<<!UPPER_BOUND_VIOLATED_BASED_ON_JAVA_ANNOTATIONS!>K<!>, K>) {}
+-fun <K> test12(map : MapLike<<!UPPER_BOUND_VIOLATED_BASED_ON_JAVA_ANNOTATIONS!>K?<!>, K>) {}
++fun test0(map : MapLike<Int?, Int>) {}
++fun <K> test11(map : MapLike<K, K>) {}
++fun <K> test12(map : MapLike<K?, K>) {}
+ fun <K : Any> test13(map : MapLike<K, K>) {}
+-fun <K : Any> test14(map : MapLike<<!UPPER_BOUND_VIOLATED_BASED_ON_JAVA_ANNOTATIONS!>K?<!>, K>) {}
++fun <K : Any> test14(map : MapLike<K?, K>) {}
+ 
+ class Foo<K>
+ 
+ typealias A<A> = MapLike<A, Int>
+ typealias A2<B> = Foo<MapLike<B, Int>>
+ typealias A3<C> = ListLike<List<C>>
+ 
+-fun main1(x: A<<!UPPER_BOUND_VIOLATED_BASED_ON_JAVA_ANNOTATIONS!>Int?<!>>) {}
+-fun main2(x: A2<<!UPPER_BOUND_VIOLATED_BASED_ON_JAVA_ANNOTATIONS!>Int?<!>>) {}
+-fun main3(x: <!UPPER_BOUND_VIOLATED_IN_TYPEALIAS_EXPANSION_BASED_ON_JAVA_ANNOTATIONS!>A3<Int?><!>) {}
++fun main1(x: A<Int?>) {}
++fun main2(x: A2<Int?>) {}
++fun main3(x: A3<Int?>) {}
+ fun main3() {
+-    val x = <!UPPER_BOUND_VIOLATED_IN_TYPEALIAS_EXPANSION_BASED_ON_JAVA_ANNOTATIONS!>A3<Int?>()<!> // TODO: support reporting errors on typealias constructor calls
+-    val x2 = <!UPPER_BOUND_VIOLATED_IN_TYPEALIAS_EXPANSION_BASED_ON_JAVA_ANNOTATIONS!>A<Int?>()<!> // TODO: support reporting errors on typealias constructor calls
+-    val y: <!UPPER_BOUND_VIOLATED_IN_TYPEALIAS_EXPANSION_BASED_ON_JAVA_ANNOTATIONS!>A3<Int?><!> = <!UPPER_BOUND_VIOLATED_IN_TYPEALIAS_EXPANSION_BASED_ON_JAVA_ANNOTATIONS!>A3<Int?>()<!>
++    val x = A3<Int?>() // TODO: support reporting errors on typealias constructor calls
++    val x2 = A<Int?>() // TODO: support reporting errors on typealias constructor calls
++    val y: A3<Int?> = A3<Int?>()
+ }`;
+                    const targetElement = $('#diff0')[0];
+                    const configuration = {
+                        drawFileList: false,
+                        fileListToggle: false,
+                        fileListStartVisible: false,
+                        fileContentToggle: false,
+                        matching: 'lines',
+                        outputFormat: 'side-by-side',
+                        synchronisedScroll: true,
+                        highlight: true,
+                        renderNothingWhenEmpty: false,
+                        rawTemplates: {
+                            'generic-file-path': `
+                                <div class="col">
+                                    <a href="https://github.com/JetBrains/kotlin/blob/ffe0d9de70ee93c282f87d5aa88ff0902a3065cb/compiler/testData/diagnostics/testsWithStdLib/java/checkEnhancedUpperBounds.kt" target="_blank">
+                                        <strong>FE 1.0:</strong> testsWithStdLib/java/checkEnhancedUpperBounds.kt
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="https://github.com/JetBrains/kotlin/blob/ffe0d9de70ee93c282f87d5aa88ff0902a3065cb/compiler/testData/diagnostics/testsWithStdLib/java/checkEnhancedUpperBounds.fir.kt" target="_blank">
+                                        <strong>FIR:</strong> testsWithStdLib/java/checkEnhancedUpperBounds.fir.kt
+                                    </a>
+                                </div>
+                            `
+                        }
+                    };
+                    const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                    diff2htmlUi.draw();
+                    diff2htmlUi.highlightCode();
+                })();</script>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,151 @@
+<html>
+  <head>
+    <title>Diagnostics diff: tests/controlStructures/ifWhenWithoutElse.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="card-header p-0" id="heading0"><button class="btn btn-link btn-block text-left" data-toggle="collapse" data-target="#collapse0">
+          <h5>Diff between FE 1.0 vs FIR</h5>
+        </button></div>
+      <div class="collapse show" id="collapse0">
+        <div class="card-body p-1">
+          <div id="diff0" style="width: 100%"></div>
+        </div>
+      </div>
+      <script type="text/javascript">                (function() {
+                    const diffString = `--- tests/controlStructures/ifWhenWithoutElse.kt
++++ tests/controlStructures/ifWhenWithoutElse.fir.kt
+@@ -1,84 +1,85 @@
+ fun idAny(x: Any) = x
+ fun <T> id(x: T) = x
+ fun idUnit(x: Unit) = x
+ 
+ class MList {
+     // MutableCollection<T>.add returns Boolean, but nobody cares
+     fun add(): Boolean = true
+ }
+ val mlist = MList()
+ 
+ fun work() {}
+ 
+ val xx1 = <!INVALID_IF_AS_EXPRESSION!>if<!> (true) 42
+ val xx2: Unit = <!INVALID_IF_AS_EXPRESSION!>if<!> (true) 42
+ val xx3 = idAny(<!INVALID_IF_AS_EXPRESSION!>if<!> (true) 42)
+ val xx4 = id(<!INVALID_IF_AS_EXPRESSION!>if<!> (true) 42)
+ val xx5 = idUnit(<!INVALID_IF_AS_EXPRESSION!>if<!> (true) 42)
+ val xx6 = null ?: <!INVALID_IF_AS_EXPRESSION!>if<!> (true) 42
+ val xx7 = "" + <!INVALID_IF_AS_EXPRESSION!>if<!> (true) 42
+ 
+ val wxx1 = <!NO_ELSE_IN_WHEN!>when<!> { true -> 42 }
+-val wxx2: Unit = <!TYPE_MISMATCH!><!NO_ELSE_IN_WHEN!>when<!> { true -> 42 }<!>
++val wxx2: Unit = <!NO_ELSE_IN_WHEN!>when<!> { true -> 42 }
+ val wxx3 = idAny(<!NO_ELSE_IN_WHEN!>when<!> { true -> 42 })
+ val wxx4 = id(<!NO_ELSE_IN_WHEN!>when<!> { true -> 42 })
+-val wxx5 = idUnit(<!TYPE_MISMATCH!><!NO_ELSE_IN_WHEN!>when<!> { true -> 42 }<!>)
++val wxx5 = idUnit(<!NO_ELSE_IN_WHEN!>when<!> { true -> 42 })
+ val wxx6 = null ?: <!NO_ELSE_IN_WHEN!>when<!> { true -> 42 }
+ val wxx7 = "" + <!NO_ELSE_IN_WHEN!>when<!> { true -> 42 }
+ 
+ val fn1 = { if (true) 42 }
+ val fn2 = { if (true) mlist.add() }
+ val fn3 = { if (true) work() }
+-val fn4 = { <!NO_ELSE_IN_WHEN!>when<!> { true -> 42 } }
+-val fn5 = { <!NO_ELSE_IN_WHEN!>when<!> { true -> mlist.add() } }
++val fn4 = { when { true -> 42 } }
++val fn5 = { when { true -> mlist.add() } }
+ val fn6 = { when { true -> work() } }
+ 
+ val ufn1: () -> Unit = { if (true) 42 }
+ val ufn2: () -> Unit = { if (true) mlist.add() }
+ val ufn3: () -> Unit = { if (true) work() }
+ val ufn4: () -> Unit = { when { true -> 42 } }
+ val ufn5: () -> Unit = { when { true -> mlist.add() } }
+ val ufn6: () -> Unit = { when { true -> work() } }
+ 
+ fun f1() = <!INVALID_IF_AS_EXPRESSION!>if<!> (true) work()
+ fun f2() = <!INVALID_IF_AS_EXPRESSION!>if<!> (true) mlist.add()
+ fun f3() = <!INVALID_IF_AS_EXPRESSION!>if<!> (true) 42
+ fun f4(): Unit = <!INVALID_IF_AS_EXPRESSION!>if<!> (true) work()
+ fun f5(): Unit = <!INVALID_IF_AS_EXPRESSION!>if<!> (true) mlist.add()
+ fun f6(): Unit = <!INVALID_IF_AS_EXPRESSION!>if<!> (true) 42
+ fun g1() = <!NO_ELSE_IN_WHEN!>when<!> { true -> work() }
+ fun g2() = <!NO_ELSE_IN_WHEN!>when<!> { true -> mlist.add() }
+ fun g3() = <!NO_ELSE_IN_WHEN!>when<!> { true -> 42 }
+ fun g4(): Unit = <!NO_ELSE_IN_WHEN!>when<!> { true -> work() }
+-fun g5(): Unit = <!TYPE_MISMATCH!><!NO_ELSE_IN_WHEN!>when<!> { true -> mlist.add() }<!>
+-fun g6(): Unit = <!TYPE_MISMATCH!><!NO_ELSE_IN_WHEN!>when<!> { true -> 42 }<!>
++fun g5(): Unit = <!NO_ELSE_IN_WHEN!>when<!> { true -> mlist.add() }
++fun g6(): Unit = <!NO_ELSE_IN_WHEN!>when<!> { true -> 42 }
+ 
+ fun foo1(x: String?) {
+     "" + <!INVALID_IF_AS_EXPRESSION!>if<!> (true) 42
+     w@while (true) {
+-        x ?: if (true) break
+-        x ?: when { true -> break@w }
++        x ?: <!INVALID_IF_AS_EXPRESSION!>if<!> (true) break
++        x ?: <!NO_ELSE_IN_WHEN!>when<!> { true -> break@w }
+     }
+ }
+ 
+ fun foo2() {
+     if (true) {
+         mlist.add()
+     }
+     else if (true) {
+         mlist.add()
+     }
+     else if (true) {
+         mlist.add()
+     }
+ 
+     when {
+         true -> mlist.add()
+         else -> when {
+             true -> mlist.add()
+             else -> when {
+                 true -> mlist.add()
+             }
+         }
+     }
+ }
++`;
+                    const targetElement = $('#diff0')[0];
+                    const configuration = {
+                        drawFileList: false,
+                        fileListToggle: false,
+                        fileListStartVisible: false,
+                        fileContentToggle: false,
+                        matching: 'lines',
+                        outputFormat: 'side-by-side',
+                        synchronisedScroll: true,
+                        highlight: true,
+                        renderNothingWhenEmpty: false,
+                        rawTemplates: {
+                            'generic-file-path': `
+                                <div class="col">
+                                    <a href="https://github.com/JetBrains/kotlin/blob/ffe0d9de70ee93c282f87d5aa88ff0902a3065cb/compiler/testData/diagnostics/tests/controlStructures/ifWhenWithoutElse.kt" target="_blank">
+                                        <strong>FE 1.0:</strong> tests/controlStructures/ifWhenWithoutElse.kt
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="https://github.com/JetBrains/kotlin/blob/ffe0d9de70ee93c282f87d5aa88ff0902a3065cb/compiler/testData/diagnostics/tests/controlStructures/ifWhenWithoutElse.fir.kt" target="_blank">
+                                        <strong>FIR:</strong> tests/controlStructures/ifWhenWithoutElse.fir.kt
+                                    </a>
+                                </div>
+                            `
+                        }
+                    };
+                    const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                    diff2htmlUi.draw();
+                    diff2htmlUi.highlightCode();
+                })();</script>
+    </div>
+  </body>
+</html>

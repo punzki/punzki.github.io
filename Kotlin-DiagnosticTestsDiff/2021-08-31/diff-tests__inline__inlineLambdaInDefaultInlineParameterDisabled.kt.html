@@ -1,0 +1,126 @@
+<html>
+  <head>
+    <title>Diagnostics diff: tests/inline/inlineLambdaInDefaultInlineParameterDisabled.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="card-header p-0" id="heading0"><button class="btn btn-link btn-block text-left" data-toggle="collapse" data-target="#collapse0">
+          <h5>Diff between FE 1.0 vs FIR</h5>
+        </button></div>
+      <div class="collapse show" id="collapse0">
+        <div class="card-body p-1">
+          <div id="diff0" style="width: 100%"></div>
+        </div>
+      </div>
+      <script type="text/javascript">                (function() {
+                    const diffString = `--- tests/inline/inlineLambdaInDefaultInlineParameterDisabled.kt
++++ tests/inline/inlineLambdaInDefaultInlineParameterDisabled.fir.kt
+@@ -1,60 +1,60 @@
+ // !DIAGNOSTICS: -UNUSED_EXPRESSION -UNUSED_PARAMETER -UNUSED_VARIABLE -NOTHING_TO_INLINE
+ // !LANGUAGE: -InlineDefaultFunctionalParameters
+ 
+ inline fun inlineFun(lambda: () -> String) = lambda()
+ 
+ fun noInlineFun(lambda: () -> String) = lambda()
+ 
+ 
+-inline fun default0_1(lambda: () -> String, <!NOT_YET_SUPPORTED_IN_INLINE!>dlambda: () -> String = { <!TYPE_MISMATCH, USAGE_IS_NOT_INLINABLE!>lambda<!> }<!>) {
++inline fun default0_1(lambda: () -> String, dlambda: () -> String = { lambda }) {
+     lambda() + dlambda()
+ }
+ 
+-inline fun default0_2(lambda: () -> String, <!NOT_YET_SUPPORTED_IN_INLINE!>dlambda: () -> String = { noInlineFun (<!USAGE_IS_NOT_INLINABLE!>lambda<!>) }<!>) {
++inline fun default0_2(lambda: () -> String, dlambda: () -> String = { noInlineFun (lambda) }) {
+     lambda() + dlambda()
+ }
+ 
+ 
+ 
+-inline fun default1_0(lambda: () -> String, <!NOT_YET_SUPPORTED_IN_INLINE!>dlambda: () -> String = { <!NON_LOCAL_RETURN_NOT_ALLOWED!>lambda<!>() }<!>) {
++inline fun default1_0(lambda: () -> String, dlambda: () -> String = { lambda() }) {
+     lambda() + dlambda()
+ }
+ 
+-inline fun default1_1(lambda: () -> String, noinline dlambda: () -> String = { <!NON_LOCAL_RETURN_NOT_ALLOWED!>lambda<!>() }) {
++inline fun default1_1(lambda: () -> String, noinline dlambda: () -> String = { lambda() }) {
+     lambda() + dlambda()
+ }
+ 
+ inline fun default1_1crossinline(crossinline lambda: () -> String, noinline dlambda: () -> String = { lambda() }) {
+     lambda() + dlambda()
+ }
+ 
+-inline fun default1_2(noinline lambda: () -> String, <!NOT_YET_SUPPORTED_IN_INLINE!>dlambda: () -> String = { lambda() }<!>) {
++inline fun default1_2(noinline lambda: () -> String, dlambda: () -> String = { lambda() }) {
+     lambda() + dlambda()
+ }
+ 
+ inline fun default1_3(noinline lambda: () -> String, noinline dlambda: () -> String = { lambda() }) {
+     lambda() + dlambda()
+ }
+ 
+ 
+ 
+ 
+-inline fun default2_0(lambda: () -> String, <!NOT_YET_SUPPORTED_IN_INLINE!>dlambda: () -> String = { inlineFun(<!NON_LOCAL_RETURN_NOT_ALLOWED!>lambda<!>) }<!>) {
++inline fun default2_0(lambda: () -> String, dlambda: () -> String = { inlineFun(lambda) }) {
+     lambda() + dlambda()
+ }
+ 
+-inline fun default2_1(lambda: () -> String, noinline dlambda: () -> String = { inlineFun(<!NON_LOCAL_RETURN_NOT_ALLOWED!>lambda<!>) }) {
++inline fun default2_1(lambda: () -> String, noinline dlambda: () -> String = { inlineFun(lambda) }) {
+     lambda() + dlambda()
+ }
+ 
+ inline fun default2_1crossinline(crossinline lambda: () -> String, noinline dlambda: () -> String = { inlineFun(lambda) }) {
+     lambda() + dlambda()
+ }
+ 
+-inline fun default2_2(noinline lambda: () -> String, <!NOT_YET_SUPPORTED_IN_INLINE!>dlambda: () -> String = { inlineFun(lambda) }<!>) {
++inline fun default2_2(noinline lambda: () -> String, dlambda: () -> String = { inlineFun(lambda) }) {
+     lambda() + dlambda()
+ }
+ 
+ inline fun default2_3(noinline lambda: () -> String, noinline dlambda: () -> String = { inlineFun(lambda) }) {
+     lambda() + dlambda()
+ }`;
+                    const targetElement = $('#diff0')[0];
+                    const configuration = {
+                        drawFileList: false,
+                        fileListToggle: false,
+                        fileListStartVisible: false,
+                        fileContentToggle: false,
+                        matching: 'lines',
+                        outputFormat: 'side-by-side',
+                        synchronisedScroll: true,
+                        highlight: true,
+                        renderNothingWhenEmpty: false,
+                        rawTemplates: {
+                            'generic-file-path': `
+                                <div class="col">
+                                    <a href="https://github.com/JetBrains/kotlin/blob/ffe0d9de70ee93c282f87d5aa88ff0902a3065cb/compiler/testData/diagnostics/tests/inline/inlineLambdaInDefaultInlineParameterDisabled.kt" target="_blank">
+                                        <strong>FE 1.0:</strong> tests/inline/inlineLambdaInDefaultInlineParameterDisabled.kt
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="https://github.com/JetBrains/kotlin/blob/ffe0d9de70ee93c282f87d5aa88ff0902a3065cb/compiler/testData/diagnostics/tests/inline/inlineLambdaInDefaultInlineParameterDisabled.fir.kt" target="_blank">
+                                        <strong>FIR:</strong> tests/inline/inlineLambdaInDefaultInlineParameterDisabled.fir.kt
+                                    </a>
+                                </div>
+                            `
+                        }
+                    };
+                    const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                    diff2htmlUi.draw();
+                    diff2htmlUi.highlightCode();
+                })();</script>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,91 @@
+<html>
+  <head>
+    <title>Diagnostics diff: RESOLUTION_TO_CLASSIFIER</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row sticky-top" style="background: white" id="summary">
+        <div class="d-inline-flex align-items-baseline">
+          <h1 class="mr-2">RESOLUTION_TO_CLASSIFIER</h1>
+<a href="index.html">(back to diagnostic list)</a></div>
+      </div>
+      <div class="row">
+        <ul>
+          <li><strong>Total: </strong>53</li>
+          <li><strong>Match %: </strong>75.47%</li>
+          <li><a href="#matched"><strong># Matched: </strong>40</a></li>
+          <li><strong># Non-matched: </strong>13</li>
+          <li><a href="#missing"><strong># Missing: </strong>0</a></li>
+          <li><a href="#unexpected"><strong># Unexpected: </strong>0</a></li>
+          <li><a href="#mismatched"><strong># Mismatched: </strong>13</a></li>
+          <li><strong># Files: </strong>26</li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="mismatched">
+        <h2>Mismatched (13)</h2>
+      </div>
+      <div class="row sticky-top" style="top: 5.5em; background: white">
+        <h5>RESOLUTION_TO_CLASSIFIER → UNRESOLVED_REFERENCE (7)</h5>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__inner__nestedClassAccessedViaInstanceReference.kt.html" target="_blank">tests/inner/nestedClassAccessedViaInstanceReference.kt (3)</a></li>
+          <li><a href="diff-tests__resolve__noCandidates__resolvedToClassifierWithReceiver.kt.html" target="_blank">tests/resolve/noCandidates/resolvedToClassifierWithReceiver.kt (2)</a></li>
+          <li><a href="diff-tests__resolve__noCandidates__resolvedToClassifier.kt.html" target="_blank">tests/resolve/noCandidates/resolvedToClassifier.kt (1)</a></li>
+          <li><a href="diff-tests__typealias__typeAliasConstructorWrongClass.kt.html" target="_blank">tests/typealias/typeAliasConstructorWrongClass.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 5.5em; background: white">
+        <h5>INSTANCE_ACCESS_BEFORE_SUPER_CALL → RESOLUTION_TO_CLASSIFIER (5)</h5>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__scopes__classHeader__constructors.kt.html" target="_blank">tests/scopes/classHeader/constructors.kt (2)</a></li>
+          <li><a href="diff-tests__secondaryConstructors__headerCallChecker__innerInstanceCreation.kt.html" target="_blank">tests/secondaryConstructors/headerCallChecker/innerInstanceCreation.kt (2)</a></li>
+          <li><a href="diff-tests__scopes__classHeader__superConstructorArgumentsInSecondaryConstructor.kt.html" target="_blank">tests/scopes/classHeader/superConstructorArgumentsInSecondaryConstructor.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 5.5em; background: white">
+        <h5>RESOLUTION_TO_CLASSIFIER → NO_COMPANION_OBJECT (1)</h5>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__ResolveToJava.kt.html" target="_blank">tests/ResolveToJava.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="matched">
+        <h2>Matched (40)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__inner__innerConstructorsFromQualifiers.kt.html" target="_blank">tests/inner/innerConstructorsFromQualifiers.kt (6)</a></li>
+          <li><a href="diff-tests__scopes__inheritance__innerClasses.kt.html" target="_blank">tests/scopes/inheritance/innerClasses.kt (4)</a></li>
+          <li><a href="diff-tests__inner__constructorAccess.kt.html" target="_blank">tests/inner/constructorAccess.kt (3)</a></li>
+          <li><a href="diff-tests__scopes__inheritance__nestedFromJava.kt.html" target="_blank">tests/scopes/inheritance/nestedFromJava.kt (3)</a></li>
+          <li><a href="diff-tests__funInterface__resolveFunInterfaceWithoutMainMethod.kt.html" target="_blank">tests/funInterface/resolveFunInterfaceWithoutMainMethod.kt (2)</a></li>
+          <li><a href="diff-tests__inner__qualifiedExpression__constructNestedClass.kt.html" target="_blank">tests/inner/qualifiedExpression/constructNestedClass.kt (2)</a></li>
+          <li><a href="diff-tests__regressions__kt4827.kt.html" target="_blank">tests/regressions/kt4827.kt (2)</a></li>
+          <li><a href="diff-tests__resolve__noCandidates__resolvedToClassifierWithReceiver.kt.html" target="_blank">tests/resolve/noCandidates/resolvedToClassifierWithReceiver.kt (2)</a></li>
+          <li><a href="diff-tests__typealias__typeAliasConstructor.kt.html" target="_blank">tests/typealias/typeAliasConstructor.kt (2)</a></li>
+          <li><a href="diff-tests__typealias__typeAliasConstructorWrongClass.kt.html" target="_blank">tests/typealias/typeAliasConstructorWrongClass.kt (2)</a></li>
+          <li><a href="diff-tests__classObjects__InnerClassAccessThroughEnum_after.kt.html" target="_blank">tests/classObjects/InnerClassAccessThroughEnum_after.kt (1)</a></li>
+          <li><a href="diff-tests__classObjects__InnerClassAccessThroughEnum_before.kt.html" target="_blank">tests/classObjects/InnerClassAccessThroughEnum_before.kt (1)</a></li>
+          <li><a href="diff-tests__inner__innerErrorForClassObjects.kt.html" target="_blank">tests/inner/innerErrorForClassObjects.kt (1)</a></li>
+          <li><a href="diff-tests__inner__innerErrorForObjects.kt.html" target="_blank">tests/inner/innerErrorForObjects.kt (1)</a></li>
+          <li><a href="diff-tests__multiplatform__headerClass__expectClassWithoutConstructor.kt.html" target="_blank">tests/multiplatform/headerClass/expectClassWithoutConstructor.kt (1)</a></li>
+          <li><a href="diff-tests__resolve__noCandidates__kt2787.kt.html" target="_blank">tests/resolve/noCandidates/kt2787.kt (1)</a></li>
+          <li><a href="diff-tests__resolve__noCandidates__resolvedToClassifier.kt.html" target="_blank">tests/resolve/noCandidates/resolvedToClassifier.kt (1)</a></li>
+          <li><a href="diff-tests__scopes__classHeader__constructors.kt.html" target="_blank">tests/scopes/classHeader/constructors.kt (1)</a></li>
+          <li><a href="diff-tests__scopes__classHeader__delegation.kt.html" target="_blank">tests/scopes/classHeader/delegation.kt (1)</a></li>
+          <li><a href="diff-tests__scopes__classHeader__superConstructorArguments.kt.html" target="_blank">tests/scopes/classHeader/superConstructorArguments.kt (1)</a></li>
+          <li><a href="diff-tests__scopes__inheritance__nestedFromJavaAfterKotlin.kt.html" target="_blank">tests/scopes/inheritance/nestedFromJavaAfterKotlin.kt (1)</a></li>
+          <li><a href="diff-tests__typealias__typeAliasConstructorForInterface.kt.html" target="_blank">tests/typealias/typeAliasConstructorForInterface.kt (1)</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

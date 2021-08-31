@@ -1,0 +1,224 @@
+<html>
+  <head>
+    <title>Diagnostics diff: tests/modifiers/IllegalModifiers.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="card-header p-0" id="heading0"><button class="btn btn-link btn-block text-left" data-toggle="collapse" data-target="#collapse0">
+          <h5>Diff between FE 1.0 vs FIR</h5>
+        </button></div>
+      <div class="collapse show" id="collapse0">
+        <div class="card-body p-1">
+          <div id="diff0" style="width: 100%"></div>
+        </div>
+      </div>
+      <script type="text/javascript">                (function() {
+                    const diffString = `--- tests/modifiers/IllegalModifiers.kt
++++ tests/modifiers/IllegalModifiers.fir.kt
+@@ -1,163 +1,163 @@
+-@<!UNRESOLVED_REFERENCE!><!SYNTAX!><!>myAnnotation<!> <!WRONG_MODIFIER_TARGET!>public<!>
++@<!UNRESOLVED_REFERENCE!><!SYNTAX!><!>myAnnotation<!> public
+ package illegal_modifiers
+ 
+ abstract class A() {
+     <!INCOMPATIBLE_MODIFIERS!>abstract<!> <!INCOMPATIBLE_MODIFIERS!>final<!> fun f()
+     abstract <!REDUNDANT_MODIFIER!>open<!> fun g()
+     <!INCOMPATIBLE_MODIFIERS!>final<!> <!INCOMPATIBLE_MODIFIERS!>open<!> fun h() {}
+ 
+     <!MUST_BE_INITIALIZED_OR_BE_ABSTRACT!>open var r: String<!>
+         get
+         <!WRONG_MODIFIER_TARGET!>abstract<!> protected set
+ }
+ 
+ <!WRONG_MODIFIER_TARGET!>final<!> interface T {}
+ 
+ class FinalClass() {
+     <!NON_FINAL_MEMBER_IN_FINAL_CLASS!>open<!> fun foo() {}
+     val i: Int = 1
+         <!WRONG_MODIFIER_TARGET!>open<!> get(): Int = field
+     var j: Int = 1
+         <!WRONG_MODIFIER_TARGET!>open<!> set(v: Int) {}
+ }
+ 
+ <!INCOMPATIBLE_MODIFIERS!>private<!> <!INCOMPATIBLE_MODIFIERS!>public<!> class C
+ <!INCOMPATIBLE_MODIFIERS!>private<!> <!INCOMPATIBLE_MODIFIERS!>public<!> object D
+ 
+ //A sample annotation to check annotation usage in parameters.
+ annotation class annotated(val text: String = "not given")
+ 
+ //Check legal modifiers in constructor
+ class LegalModifier(val a: Int, @annotated private var b: String, @annotated vararg v: Int)
+ 
+ //Check illegal modifier in constructor parameters
+ class IllegalModifiers1(
+     <!WRONG_MODIFIER_TARGET!>in<!>
+     <!INCOMPATIBLE_MODIFIERS!>out<!>
+     <!WRONG_MODIFIER_TARGET!>reified<!>
+     <!WRONG_MODIFIER_TARGET!>enum<!>
+     <!WRONG_MODIFIER_TARGET!>private<!>
+     <!WRONG_MODIFIER_TARGET!>const<!>
+     a: Int)
+ 
+ //Check multiple illegal modifiers in constructor
+ class IllegalModifiers2(<!WRONG_MODIFIER_TARGET!>private<!> <!INCOMPATIBLE_MODIFIERS!>abstract<!> a: Int)
+ 
+ 
+ //Check annotations with illegal modifiers in constructor
+ class IllegalModifiers3(@annotated <!WRONG_MODIFIER_TARGET!>public<!> <!WRONG_MODIFIER_TARGET!>abstract<!> b: String)
+ 
+ //Check annotations and vararg with illegal modifiers in constructor
+ class IllegalModifiers4(val a: Int, @annotated("a text") <!WRONG_MODIFIER_TARGET!>protected<!> vararg v: Int)
+ 
+ //Check illegal modifiers for functions and catch block
+ abstract class IllegalModifiers5() {
+ 
+     //Check illegal modifier in function parameter
+     abstract fun foo(<!WRONG_MODIFIER_TARGET!>public<!> a: Int, vararg v: String)
+ 
+     //Check multiple illegal modifiers in function parameter
+     abstract fun bar(<!WRONG_MODIFIER_TARGET!>public<!> <!WRONG_MODIFIER_TARGET!>abstract<!> a: Int, vararg v: String)
+ 
+     //Check annotations with illegal modifiers
+     abstract fun baz(@annotated("a text") <!WRONG_MODIFIER_TARGET!>public<!> <!WRONG_MODIFIER_TARGET!>abstract<!> a: Int)
+ 
+     private fun qux() {
+ 
+         //Check illegal modifier in catch block
+         try {} catch (<!WRONG_MODIFIER_TARGET!>in<!> <!INCOMPATIBLE_MODIFIERS!>out<!> <!WRONG_MODIFIER_TARGET!>reified<!> <!WRONG_MODIFIER_TARGET!>enum<!> <!WRONG_MODIFIER_TARGET!>public<!> e: Exception) {}
+ 
+         //Check multiple illegal modifiers in catch block
+         try {} catch (<!WRONG_MODIFIER_TARGET!>in<!> <!INCOMPATIBLE_MODIFIERS!>out<!> <!WRONG_MODIFIER_TARGET!>reified<!> <!WRONG_MODIFIER_TARGET!>enum<!> <!WRONG_MODIFIER_TARGET!>abstract<!> <!WRONG_MODIFIER_TARGET!>public<!> e: Exception) {}
+ 
+         //Check annotations with illegal modifiers
+         try {} catch (@annotated("a text") <!WRONG_MODIFIER_TARGET!>abstract<!> <!WRONG_MODIFIER_TARGET!>public<!> e: Exception) {}
+     }
+ }
+ 
+ //Check illegal modifiers on anonymous initializers
+ abstract class IllegalModifiers6() {
+     <!WRONG_MODIFIER_TARGET!>public<!> init {}
+     <!WRONG_MODIFIER_TARGET!>private<!> init {}
+     <!WRONG_MODIFIER_TARGET!>protected<!> init {}
+     <!WRONG_MODIFIER_TARGET!>vararg<!> init {}
+     <!WRONG_MODIFIER_TARGET!>abstract<!> init {}
+     <!WRONG_MODIFIER_TARGET!>open<!> init {}
+     <!WRONG_MODIFIER_TARGET!>final<!> init {}
+ 
+-    <!WRONG_MODIFIER_TARGET!>public<!> <!WRONG_ANNOTATION_TARGET!>@annotated<!> init {}
++    <!WRONG_MODIFIER_TARGET!>public<!> @annotated init {}
+ 
+-    <!WRONG_MODIFIER_TARGET!>private<!> <!NOT_AN_ANNOTATION_CLASS, WRONG_ANNOTATION_TARGET!>@IllegalModifiers6()<!> init {}
++    <!WRONG_MODIFIER_TARGET!>private<!> @IllegalModifiers6() init {}
+ }
+ 
+ // strange inappropriate modifiers usages
+ <!WRONG_MODIFIER_TARGET!>override<!>
+ <!WRONG_MODIFIER_TARGET!>out<!>
+ <!INCOMPATIBLE_MODIFIERS!>in<!>
+ <!WRONG_MODIFIER_TARGET!>vararg<!>
+ <!WRONG_MODIFIER_TARGET!>reified<!>
+ class IllegalModifiers7() {
+     <!WRONG_MODIFIER_TARGET!>enum<!>
+     <!WRONG_MODIFIER_TARGET!>inner<!>
+     <!WRONG_MODIFIER_TARGET!>annotation<!>
+     <!WRONG_MODIFIER_TARGET!>out<!>
+     <!INCOMPATIBLE_MODIFIERS!>in<!>
+     <!WRONG_MODIFIER_TARGET!>vararg<!>
+     <!WRONG_MODIFIER_TARGET!>reified<!>
+     val x = 1
+     <!WRONG_MODIFIER_TARGET!>enum<!>
+     <!WRONG_MODIFIER_TARGET!>inner<!>
+     <!WRONG_MODIFIER_TARGET!>annotation<!>
+     <!WRONG_MODIFIER_TARGET!>out<!>
+     <!INCOMPATIBLE_MODIFIERS!>in<!>
+     <!WRONG_MODIFIER_TARGET!>vararg<!>
+     <!WRONG_MODIFIER_TARGET!>reified<!>
+     <!WRONG_MODIFIER_TARGET!>const<!>
+     fun foo() {}
+ }
+ 
+ // Secondary constructors
+ class IllegalModifiers8 {
+     <!WRONG_MODIFIER_TARGET!>abstract<!>
+     enum
+     <!REDUNDANT_MODIFIER, WRONG_MODIFIER_TARGET!>open<!>
+     <!WRONG_MODIFIER_TARGET!>inner<!>
+     <!WRONG_MODIFIER_TARGET!>annotation<!>
+     <!WRONG_MODIFIER_TARGET!>override<!>
+     <!WRONG_MODIFIER_TARGET!>out<!>
+     <!INCOMPATIBLE_MODIFIERS!>in<!>
+     <!INCOMPATIBLE_MODIFIERS!>final<!>
+     <!WRONG_MODIFIER_TARGET!>vararg<!>
+     <!WRONG_MODIFIER_TARGET!>reified<!>
+     <!INCOMPATIBLE_MODIFIERS!>const<!><!SYNTAX!><!>
+     constructor() {}
+ 
+     constructor(<!WRONG_MODIFIER_TARGET!>private<!> <!WRONG_MODIFIER_TARGET!>enum<!> <!INCOMPATIBLE_MODIFIERS!>abstract<!> x: Int) {}
+ }
+ 
+ class IllegalModifiers9 {
+     <!INCOMPATIBLE_MODIFIERS!>private<!> <!INCOMPATIBLE_MODIFIERS!>protected<!> constructor() {}
+     <!INCOMPATIBLE_MODIFIERS!>private<!> <!INCOMPATIBLE_MODIFIERS!>internal<!> constructor(x: Int) {}
+ }
+ 
+ // Illegal modifiers on primary constructor
+ 
+ class IllegalModifiers10
+ <!WRONG_MODIFIER_TARGET!>abstract<!>
+ <!WRONG_MODIFIER_TARGET!>enum<!>
+ <!REDUNDANT_MODIFIER, WRONG_MODIFIER_TARGET!>open<!>
+ <!WRONG_MODIFIER_TARGET!>inner<!>
+ <!WRONG_MODIFIER_TARGET!>annotation<!>
+ <!WRONG_MODIFIER_TARGET!>override<!>
+ <!WRONG_MODIFIER_TARGET!>out<!>
+ <!INCOMPATIBLE_MODIFIERS!>in<!>
+ <!INCOMPATIBLE_MODIFIERS!>final<!>
+ <!WRONG_MODIFIER_TARGET!>vararg<!>
+ <!WRONG_MODIFIER_TARGET!>reified<!>
+ <!INCOMPATIBLE_MODIFIERS!>const<!> constructor()
+ 
+ class IllegalModifiers11 <!INCOMPATIBLE_MODIFIERS!>private<!> <!INCOMPATIBLE_MODIFIERS!>protected<!> constructor()
+ 
+ class Outer {
+     <!INCOMPATIBLE_MODIFIERS!>inner<!> <!INCOMPATIBLE_MODIFIERS!>sealed<!> class Inner
+ }`;
+                    const targetElement = $('#diff0')[0];
+                    const configuration = {
+                        drawFileList: false,
+                        fileListToggle: false,
+                        fileListStartVisible: false,
+                        fileContentToggle: false,
+                        matching: 'lines',
+                        outputFormat: 'side-by-side',
+                        synchronisedScroll: true,
+                        highlight: true,
+                        renderNothingWhenEmpty: false,
+                        rawTemplates: {
+                            'generic-file-path': `
+                                <div class="col">
+                                    <a href="https://github.com/JetBrains/kotlin/blob/ffe0d9de70ee93c282f87d5aa88ff0902a3065cb/compiler/testData/diagnostics/tests/modifiers/IllegalModifiers.kt" target="_blank">
+                                        <strong>FE 1.0:</strong> tests/modifiers/IllegalModifiers.kt
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="https://github.com/JetBrains/kotlin/blob/ffe0d9de70ee93c282f87d5aa88ff0902a3065cb/compiler/testData/diagnostics/tests/modifiers/IllegalModifiers.fir.kt" target="_blank">
+                                        <strong>FIR:</strong> tests/modifiers/IllegalModifiers.fir.kt
+                                    </a>
+                                </div>
+                            `
+                        }
+                    };
+                    const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                    diff2htmlUi.draw();
+                    diff2htmlUi.highlightCode();
+                })();</script>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,125 @@
+<html>
+  <head>
+    <title>Diagnostics diff: WRONG_NUMBER_OF_TYPE_ARGUMENTS</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row sticky-top" style="background: white" id="summary">
+        <div class="d-inline-flex align-items-baseline">
+          <h1 class="mr-2">WRONG_NUMBER_OF_TYPE_ARGUMENTS</h1>
+<a href="index.html">(back to diagnostic list)</a></div>
+      </div>
+      <div class="row">
+        <ul>
+          <li><strong>Total: </strong>95</li>
+          <li><strong>Match %: </strong>51.58%</li>
+          <li><a href="#matched"><strong># Matched: </strong>49</a></li>
+          <li><strong># Non-matched: </strong>46</li>
+          <li><a href="#missing"><strong># Missing: </strong>32</a></li>
+          <li><a href="#unexpected"><strong># Unexpected: </strong>1</a></li>
+          <li><a href="#mismatched"><strong># Mismatched: </strong>13</a></li>
+          <li><strong># Files: </strong>38</li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="missing">
+        <h2>Missing (32)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__typealias__wrongNumberOfArgumentsInTypeAliasConstructor.kt.html" target="_blank">tests/typealias/wrongNumberOfArgumentsInTypeAliasConstructor.kt (7)</a></li>
+          <li><a href="diff-tests__cast__bare__AsNestedBare.kt.html" target="_blank">tests/cast/bare/AsNestedBare.kt (4)</a></li>
+          <li><a href="diff-tests__callableReference__bareType.kt.html" target="_blank">tests/callableReference/bareType.kt (3)</a></li>
+          <li><a href="diff-tests__generics__genericsInType.kt.html" target="_blank">tests/generics/genericsInType.kt (3)</a></li>
+          <li><a href="diff-tests__generics__wrongNumberOfTypeArgumentsDiagnostic.kt.html" target="_blank">tests/generics/wrongNumberOfTypeArgumentsDiagnostic.kt (2)</a></li>
+          <li><a href="diff-tests__resolve__wrongNumberOfTypeArguments.kt.html" target="_blank">tests/resolve/wrongNumberOfTypeArguments.kt (2)</a></li>
+          <li><a href="diff-tests__typealias__innerTypeAliasAsType.kt.html" target="_blank">tests/typealias/innerTypeAliasAsType.kt (2)</a></li>
+          <li><a href="diff-tests__FunctionCalleeExpressions.kt.html" target="_blank">tests/FunctionCalleeExpressions.kt (1)</a></li>
+          <li><a href="diff-tests__classLiteral__nonClassesOnLHS.kt.html" target="_blank">tests/classLiteral/nonClassesOnLHS.kt (1)</a></li>
+          <li><a href="diff-tests__enum__typeParametersInEnum.kt.html" target="_blank">tests/enum/typeParametersInEnum.kt (1)</a></li>
+          <li><a href="diff-tests__explicitDefinitelyNotNullableViaIntersection__bareTypes.kt.html" target="_blank">tests/explicitDefinitelyNotNullableViaIntersection/bareTypes.kt (1)</a></li>
+          <li><a href="diff-tests__generics__RawTypeInIsExpression.kt.html" target="_blank">tests/generics/RawTypeInIsExpression.kt (1)</a></li>
+          <li><a href="diff-tests__generics__RawTypeInIsPattern.kt.html" target="_blank">tests/generics/RawTypeInIsPattern.kt (1)</a></li>
+          <li><a href="diff-tests__inner__qualifiedExpression__genericNestedClass.kt.html" target="_blank">tests/inner/qualifiedExpression/genericNestedClass.kt (1)</a></li>
+          <li><a href="diff-tests__operatorsOverloading__kt13330.kt.html" target="_blank">tests/operatorsOverloading/kt13330.kt (1)</a></li>
+          <li><a href="diff-tests__typealias__typeAliasConstructorInferenceInSupertypesList.kt.html" target="_blank">tests/typealias/typeAliasConstructorInferenceInSupertypesList.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="unexpected">
+        <h2>Unexpected (1)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-testsWithStdLib__InaccessibleInternalClass.kt.html" target="_blank">testsWithStdLib/InaccessibleInternalClass.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="mismatched">
+        <h2>Mismatched (13)</h2>
+      </div>
+      <div class="row sticky-top" style="top: 5.5em; background: white">
+        <h5>TYPE_ARGUMENTS_FOR_OUTER_CLASS_WHEN_NESTED_REFERENCED → WRONG_NUMBER_OF_TYPE_ARGUMENTS (7)</h5>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__generics__genericsInType.kt.html" target="_blank">tests/generics/genericsInType.kt (4)</a></li>
+          <li><a href="diff-tests__generics__innerClasses__qualifiedTypesResolution.kt.html" target="_blank">tests/generics/innerClasses/qualifiedTypesResolution.kt (2)</a></li>
+          <li><a href="diff-tests__typealias__kt14518.kt.html" target="_blank">tests/typealias/kt14518.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 5.5em; background: white">
+        <h5>WRONG_NUMBER_OF_TYPE_ARGUMENTS → NO_TYPE_ARGUMENTS_ON_RHS (4)</h5>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__typealias__typeAliasAsBareType.kt.html" target="_blank">tests/typealias/typeAliasAsBareType.kt (4)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 5.5em; background: white">
+        <h5>TYPE_ARGUMENTS_NOT_ALLOWED → WRONG_NUMBER_OF_TYPE_ARGUMENTS (1)</h5>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__generics__innerClasses__qualifiedTypesResolution.kt.html" target="_blank">tests/generics/innerClasses/qualifiedTypesResolution.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 5.5em; background: white">
+        <h5>OUTER_CLASS_ARGUMENTS_REQUIRED → WRONG_NUMBER_OF_TYPE_ARGUMENTS (1)</h5>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__generics__innerClasses__importedInner.kt.html" target="_blank">tests/generics/innerClasses/importedInner.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="matched">
+        <h2>Matched (49)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__generics__invalidArgumentsNumberInWhere.kt.html" target="_blank">tests/generics/invalidArgumentsNumberInWhere.kt (13)</a></li>
+          <li><a href="diff-tests__generics__innerClasses__qualifiedTypesResolution.kt.html" target="_blank">tests/generics/innerClasses/qualifiedTypesResolution.kt (4)</a></li>
+          <li><a href="diff-tests__variance__InPosition.kt.html" target="_blank">tests/variance/InPosition.kt (4)</a></li>
+          <li><a href="diff-tests__variance__InvariantPosition.kt.html" target="_blank">tests/variance/InvariantPosition.kt (4)</a></li>
+          <li><a href="diff-tests__variance__OutPosition.kt.html" target="_blank">tests/variance/OutPosition.kt (4)</a></li>
+          <li><a href="diff-tests__Unresolved.kt.html" target="_blank">tests/Unresolved.kt (2)</a></li>
+          <li><a href="diff-tests__generics__RawTypeInIsPattern.kt.html" target="_blank">tests/generics/RawTypeInIsPattern.kt (2)</a></li>
+          <li><a href="diff-tests__generics__innerClasses__bareTypes.kt.html" target="_blank">tests/generics/innerClasses/bareTypes.kt (2)</a></li>
+          <li><a href="diff-tests__multimodule__duplicateClass__genericArgumentNumberMismatch.kt.html" target="_blank">tests/multimodule/duplicateClass/genericArgumentNumberMismatch.kt (2)</a></li>
+          <li><a href="diff-tests__redeclarations__shadowedExtension__extensionOnErrorType.kt.html" target="_blank">tests/redeclarations/shadowedExtension/extensionOnErrorType.kt (2)</a></li>
+          <li><a href="diff-tests__cast__bare__UnrelatedColon.kt.html" target="_blank">tests/cast/bare/UnrelatedColon.kt (1)</a></li>
+          <li><a href="diff-tests__classLiteral__arrays.kt.html" target="_blank">tests/classLiteral/arrays.kt (1)</a></li>
+          <li><a href="diff-tests__declarationChecks__finiteBoundRestriction__CasesWithOneTypeParameter.kt.html" target="_blank">tests/declarationChecks/finiteBoundRestriction/CasesWithOneTypeParameter.kt (1)</a></li>
+          <li><a href="diff-tests__generics__RawTypeInIsExpression.kt.html" target="_blank">tests/generics/RawTypeInIsExpression.kt (1)</a></li>
+          <li><a href="diff-tests__generics__innerClasses__qualifiedOuter.kt.html" target="_blank">tests/generics/innerClasses/qualifiedOuter.kt (1)</a></li>
+          <li><a href="diff-tests__regressions__OrphanStarProjection.kt.html" target="_blank">tests/regressions/OrphanStarProjection.kt (1)</a></li>
+          <li><a href="diff-tests__subtyping__kt304.kt.html" target="_blank">tests/subtyping/kt304.kt (1)</a></li>
+          <li><a href="diff-testsWithJsStdLib__classLiteral__arrays_after.kt.html" target="_blank">testsWithJsStdLib/classLiteral/arrays_after.kt (1)</a></li>
+          <li><a href="diff-testsWithJsStdLib__classLiteral__arrays_before.kt.html" target="_blank">testsWithJsStdLib/classLiteral/arrays_before.kt (1)</a></li>
+          <li><a href="diff-testsWithJsStdLib__module__incompleteReifiedArg.kt.html" target="_blank">testsWithJsStdLib/module/incompleteReifiedArg.kt (1)</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

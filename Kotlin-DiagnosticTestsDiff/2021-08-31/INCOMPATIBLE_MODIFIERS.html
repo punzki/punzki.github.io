@@ -1,0 +1,83 @@
+<html>
+  <head>
+    <title>Diagnostics diff: INCOMPATIBLE_MODIFIERS</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row sticky-top" style="background: white" id="summary">
+        <div class="d-inline-flex align-items-baseline">
+          <h1 class="mr-2">INCOMPATIBLE_MODIFIERS</h1>
+<a href="index.html">(back to diagnostic list)</a></div>
+      </div>
+      <div class="row">
+        <ul>
+          <li><strong>Total: </strong>98</li>
+          <li><strong>Match %: </strong>83.67%</li>
+          <li><a href="#matched"><strong># Matched: </strong>82</a></li>
+          <li><strong># Non-matched: </strong>16</li>
+          <li><a href="#missing"><strong># Missing: </strong>2</a></li>
+          <li><a href="#unexpected"><strong># Unexpected: </strong>1</a></li>
+          <li><a href="#mismatched"><strong># Mismatched: </strong>13</a></li>
+          <li><strong># Files: </strong>21</li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="missing">
+        <h2>Missing (2)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__modifiers__incompatibleVarianceModifiers.kt.html" target="_blank">tests/modifiers/incompatibleVarianceModifiers.kt (2)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="unexpected">
+        <h2>Unexpected (1)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__modifiers__modifierOnParameterInFunctionType.kt.html" target="_blank">tests/modifiers/modifierOnParameterInFunctionType.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="mismatched">
+        <h2>Mismatched (13)</h2>
+      </div>
+      <div class="row sticky-top" style="top: 5.5em; background: white">
+        <h5>UNSUPPORTED → INCOMPATIBLE_MODIFIERS (13)</h5>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__modifiers__modifierOnParameterInFunctionType.kt.html" target="_blank">tests/modifiers/modifierOnParameterInFunctionType.kt (13)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="matched">
+        <h2>Matched (82)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__modifiers__IllegalModifiers.kt.html" target="_blank">tests/modifiers/IllegalModifiers.kt (30)</a></li>
+          <li><a href="diff-tests__multiplatform__incompatibles.kt.html" target="_blank">tests/multiplatform/incompatibles.kt (12)</a></li>
+          <li><a href="diff-tests__modifiers__const__applicability.kt.html" target="_blank">tests/modifiers/const/applicability.kt (6)</a></li>
+          <li><a href="diff-testsWithStdLib__coroutines__suspendFunctionType__inline.kt.html" target="_blank">testsWithStdLib/coroutines/suspendFunctionType/inline.kt (4)</a></li>
+          <li><a href="diff-tests__modifiers__repeatedModifiers.kt.html" target="_blank">tests/modifiers/repeatedModifiers.kt (3)</a></li>
+          <li><a href="diff-tests__dataClasses__dataInheritance.kt.html" target="_blank">tests/dataClasses/dataInheritance.kt (2)</a></li>
+          <li><a href="diff-tests__dataClasses__innerDataClass.kt.html" target="_blank">tests/dataClasses/innerDataClass.kt (2)</a></li>
+          <li><a href="diff-tests__dataClasses__sealedDataClass.kt.html" target="_blank">tests/dataClasses/sealedDataClass.kt (2)</a></li>
+          <li><a href="diff-tests__inlineClasses__inlineClassDeclarationCheck.kt.html" target="_blank">tests/inlineClasses/inlineClassDeclarationCheck.kt (2)</a></li>
+          <li><a href="diff-tests__modifiers__inlineParameters.kt.html" target="_blank">tests/modifiers/inlineParameters.kt (2)</a></li>
+          <li><a href="diff-tests__modifiers__privateInInterface.kt.html" target="_blank">tests/modifiers/privateInInterface.kt (2)</a></li>
+          <li><a href="diff-tests__resolve__invoke__kt4204-completeNestedCallsForInvoke.kt.html" target="_blank">tests/resolve/invoke/kt4204-completeNestedCallsForInvoke.kt (2)</a></li>
+          <li><a href="diff-tests__scopes__VisibilityInheritModifier.kt.html" target="_blank">tests/scopes/VisibilityInheritModifier.kt (2)</a></li>
+          <li><a href="diff-tests__scopes__kt151.kt.html" target="_blank">tests/scopes/kt151.kt (2)</a></li>
+          <li><a href="diff-tests__sealed__NeverFinal.kt.html" target="_blank">tests/sealed/NeverFinal.kt (2)</a></li>
+          <li><a href="diff-tests__sealed__NeverOpen.kt.html" target="_blank">tests/sealed/NeverOpen.kt (2)</a></li>
+          <li><a href="diff-tests__sourceCompatibility__noDataClassInheritance.kt.html" target="_blank">tests/sourceCompatibility/noDataClassInheritance.kt (2)</a></li>
+          <li><a href="diff-tests__valueClasses__valueClassDeclarationCheck.kt.html" target="_blank">tests/valueClasses/valueClassDeclarationCheck.kt (2)</a></li>
+          <li><a href="diff-tests__dataClasses__innerOuterDataClass.kt.html" target="_blank">tests/dataClasses/innerOuterDataClass.kt (1)</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

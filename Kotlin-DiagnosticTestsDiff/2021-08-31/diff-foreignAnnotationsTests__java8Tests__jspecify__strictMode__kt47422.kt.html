@@ -1,0 +1,197 @@
+<html>
+  <head>
+    <title>Diagnostics diff: foreignAnnotationsTests/java8Tests/jspecify/strictMode/kt47422.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="card-header p-0" id="heading0"><button class="btn btn-link btn-block text-left" data-toggle="collapse" data-target="#collapse0">
+          <h5>Diff between FE 1.0 vs FIR</h5>
+        </button></div>
+      <div class="collapse show" id="collapse0">
+        <div class="card-body p-1">
+          <div id="diff0" style="width: 100%"></div>
+        </div>
+      </div>
+      <script type="text/javascript">                (function() {
+                    const diffString = `--- foreignAnnotationsTests/java8Tests/jspecify/strictMode/kt47422.kt
++++ foreignAnnotationsTests/java8Tests/jspecify/strictMode/kt47422.fir.kt
+@@ -1,137 +1,135 @@
+ // JSPECIFY_STATE: strict
+ // !DIAGNOSTICS: -UNUSED_PARAMETER
+ // !LANGUAGE: +TypeEnhancementImprovementsInStrictMode
+ // MUTE_FOR_PSI_CLASS_FILES_READING
+ 
+ // FILE: Foo.java
+ import org.jspecify.nullness.*;
+ 
+ public interface Foo<T extends @Nullable Object> {}
+ 
+ // FILE: Util.java
+ public class Util {
+     public static Foo<String> getFooOfString() {
+         throw new RuntimeException();
+     }
+ }
+ 
+ // FILE: UtilNullMarked.java
+ import org.jspecify.nullness.*;
+ 
+ @NullMarked
+ public class UtilNullMarked {
+     public static Foo<String> getFooOfString() {
+         throw new RuntimeException();
+     }
+ }
+ 
+ // FILE: UtilNullMarkedGeneric.java
+ import org.jspecify.nullness.*;
+ 
+ @NullMarked
+ public class UtilNullMarkedGeneric {
+     public static <K> Foo<K> getFooOfK() {
+         throw new RuntimeException();
+     }
+ }
+ 
+ // FILE: UtilNullMarkedGenericNullableBound.java
+ import org.jspecify.nullness.*;
+ 
+ @NullMarked
+ public class UtilNullMarkedGenericNullableBound {
+     public static <K extends @Nullable Object> Foo<K> getFooOfK() {
+         throw new RuntimeException();
+     }
+ }
+ 
+ // FILE: UtilGenericNullableBound.java
+ import org.jspecify.nullness.*;
+ 
+ public class UtilGenericNullableBound {
+     public static <K extends @Nullable Object> Foo<K> getFooOfK() {
+         throw new RuntimeException();
+     }
+ }
+ 
+ // FILE: UtilNullMarkedGenericNullnessUnspecifiedBound.java
+ import org.jspecify.nullness.*;
+ 
+ @NullMarked
+ public class UtilNullMarkedGenericNullnessUnspecifiedBound {
+     public static <K extends @NullnessUnspecified Object> Foo<K> getFooOfK() {
+         throw new RuntimeException();
+     }
+ }
+ 
+ // FILE: UtilGenericNullnessUnspecifiedBound.java
+ import org.jspecify.nullness.*;
+ 
+ public class UtilGenericNullnessUnspecifiedBound {
+     public static <K extends @NullnessUnspecified Object> Foo<K> getFooOfK() {
+         throw new RuntimeException();
+     }
+ }
+ 
+ // FILE: main.kt
+ 
+ // no errors on this call means String in Foo is flexible
+ fun isNotNullAndNullableStringInFoo(x: Foo<String>, y: Foo<String?>) {}
+ 
+ fun test1() {
+     // String in Foo is flexible
+     isNotNullAndNullableStringInFoo(
+         Util.getFooOfString(),
+         Util.getFooOfString()
+     )
+ }
+ 
+ fun test2() {
+     // String in Foo is not null
+     isNotNullAndNullableStringInFoo(
+         UtilNullMarked.getFooOfString(),
+-        // jspecify_nullness_mismatch
+-        <!TYPE_MISMATCH!>UtilNullMarked.getFooOfString()<!>
++        UtilNullMarked.getFooOfString()
+     )
+ }
+ 
+ fun test3() {
+     // String in Foo is not null
+     isNotNullAndNullableStringInFoo(
+         UtilNullMarkedGeneric.getFooOfK(),
+-        // jspecify_nullness_mismatch
+-        <!TYPE_MISMATCH!>UtilNullMarkedGeneric.getFooOfK()<!>
++        UtilNullMarkedGeneric.getFooOfK()
+     )
+ }
+ 
+ fun test4() {
+     // String in Foo is flexible
+     isNotNullAndNullableStringInFoo(
+         UtilNullMarkedGenericNullableBound.getFooOfK(),
+         UtilNullMarkedGenericNullableBound.getFooOfK()
+     )
+ }
+ 
+ fun test5() {
+     // String in Foo is flexible
+     isNotNullAndNullableStringInFoo(
+         UtilGenericNullableBound.getFooOfK(),
+         UtilGenericNullableBound.getFooOfK()
+     )
+ }
+ 
+ fun test6() {
+     // String in Foo is flexible
+     isNotNullAndNullableStringInFoo(
+         UtilNullMarkedGenericNullnessUnspecifiedBound.getFooOfK(),
+         UtilNullMarkedGenericNullnessUnspecifiedBound.getFooOfK()
+     )
+ }
+ 
+ fun test7() {
+     // String in Foo is flexible
+     isNotNullAndNullableStringInFoo(
+         UtilGenericNullnessUnspecifiedBound.getFooOfK(),
+         UtilGenericNullnessUnspecifiedBound.getFooOfK()
+     )
+ }`;
+                    const targetElement = $('#diff0')[0];
+                    const configuration = {
+                        drawFileList: false,
+                        fileListToggle: false,
+                        fileListStartVisible: false,
+                        fileContentToggle: false,
+                        matching: 'lines',
+                        outputFormat: 'side-by-side',
+                        synchronisedScroll: true,
+                        highlight: true,
+                        renderNothingWhenEmpty: false,
+                        rawTemplates: {
+                            'generic-file-path': `
+                                <div class="col">
+                                    <a href="https://github.com/JetBrains/kotlin/blob/ffe0d9de70ee93c282f87d5aa88ff0902a3065cb/compiler/testData/diagnostics/foreignAnnotationsTests/java8Tests/jspecify/strictMode/kt47422.kt" target="_blank">
+                                        <strong>FE 1.0:</strong> foreignAnnotationsTests/java8Tests/jspecify/strictMode/kt47422.kt
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="https://github.com/JetBrains/kotlin/blob/ffe0d9de70ee93c282f87d5aa88ff0902a3065cb/compiler/testData/diagnostics/foreignAnnotationsTests/java8Tests/jspecify/strictMode/kt47422.fir.kt" target="_blank">
+                                        <strong>FIR:</strong> foreignAnnotationsTests/java8Tests/jspecify/strictMode/kt47422.fir.kt
+                                    </a>
+                                </div>
+                            `
+                        }
+                    };
+                    const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                    diff2htmlUi.draw();
+                    diff2htmlUi.highlightCode();
+                })();</script>
+    </div>
+  </body>
+</html>

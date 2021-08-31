@@ -1,0 +1,141 @@
+<html>
+  <head>
+    <title>Diagnostics diff: tests/controlFlowAnalysis/enumCompanionInterdependence.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="card-header p-0" id="heading0"><button class="btn btn-link btn-block text-left" data-toggle="collapse" data-target="#collapse0">
+          <h5>Diff between FE 1.0 vs FIR</h5>
+        </button></div>
+      <div class="collapse show" id="collapse0">
+        <div class="card-body p-1">
+          <div id="diff0" style="width: 100%"></div>
+        </div>
+      </div>
+      <script type="text/javascript">                (function() {
+                    const diffString = `--- tests/controlFlowAnalysis/enumCompanionInterdependence.kt
++++ tests/controlFlowAnalysis/enumCompanionInterdependence.fir.kt
+@@ -1,81 +1,81 @@
+ enum class B(val x: Int) {
+     B1(1),
+     B2(2);
+ 
+     companion object {
+         val SUM = B1.x + B2.x
+         val COPY = B1
+     }
+ }
+ 
+ enum class C(val x: Int) {
+     C1(<!UNINITIALIZED_VARIABLE!>SUM<!>),
+     C2(1);
+ 
+     companion object {
+         val COPY = C2
+         val SUM = C1.x + COPY.x
+     }
+ }
+ 
+ // From KT-11769
+ enum class Fruit(personal: Int) {
+     APPLE(1);
+ 
+     companion object {
+         val common = 20
+     }
+ 
+     val score = personal + <!UNINITIALIZED_VARIABLE!>common<!>
+-    val score2 = { personal + common }()
++    val score2 = { personal + <!UNINITIALIZED_VARIABLE!>common<!> }()
+ }
+ 
+ // Another example from KT-11769
+ enum class EnumCompanion1(val x: Int) {
+     INSTANCE(<!UNINITIALIZED_ENUM_COMPANION!>Companion<!>.foo()),
+-    ANOTHER(foo());
++    ANOTHER(<!UNINITIALIZED_ENUM_COMPANION!>foo<!>());
+ 
+     companion object {
+         fun foo() = 42
+     }
+ }
+ // Also should be reported for implicit receiver
+ enum class EnumCompanion2(val x: Int) {
+     INSTANCE(<!UNINITIALIZED_ENUM_COMPANION!>foo<!>());
+ 
+     companion object {
+         fun foo() = 42
+     }
+ }
+ // But not for another enum
+ enum class EnumCompanion3(val x: Int) {
+     INSTANCE(EnumCompanion1.foo()),
+     ANOTHER(EnumCompanion2.foo());
+ 
+     companion object
+ }
+ 
+ interface ExtractableCodeDescriptor {
+     fun isInterface(): Boolean
+ }
+ 
+ enum class ExtractionTarget(val targetName: String) {
+     FUNCTION("function") {
+         override fun isAvailable(descriptor: ExtractableCodeDescriptor) = true
+     },
+ 
+     LAZY_PROPERTY("lazy property") {
+         override fun isAvailable(descriptor: ExtractableCodeDescriptor): Boolean {
+             // Should not report UNINITIALIZED_ENUM_COMPANION
+             return checkNotTrait(descriptor)
+         }
+     };
+ 
+     abstract fun isAvailable(descriptor: ExtractableCodeDescriptor): Boolean
+ 
+     companion object {
+         fun checkNotTrait(descriptor: ExtractableCodeDescriptor): Boolean {
+             return !descriptor.isInterface()
+         }
+     }
+ }`;
+                    const targetElement = $('#diff0')[0];
+                    const configuration = {
+                        drawFileList: false,
+                        fileListToggle: false,
+                        fileListStartVisible: false,
+                        fileContentToggle: false,
+                        matching: 'lines',
+                        outputFormat: 'side-by-side',
+                        synchronisedScroll: true,
+                        highlight: true,
+                        renderNothingWhenEmpty: false,
+                        rawTemplates: {
+                            'generic-file-path': `
+                                <div class="col">
+                                    <a href="https://github.com/JetBrains/kotlin/blob/ffe0d9de70ee93c282f87d5aa88ff0902a3065cb/compiler/testData/diagnostics/tests/controlFlowAnalysis/enumCompanionInterdependence.kt" target="_blank">
+                                        <strong>FE 1.0:</strong> tests/controlFlowAnalysis/enumCompanionInterdependence.kt
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="https://github.com/JetBrains/kotlin/blob/ffe0d9de70ee93c282f87d5aa88ff0902a3065cb/compiler/testData/diagnostics/tests/controlFlowAnalysis/enumCompanionInterdependence.fir.kt" target="_blank">
+                                        <strong>FIR:</strong> tests/controlFlowAnalysis/enumCompanionInterdependence.fir.kt
+                                    </a>
+                                </div>
+                            `
+                        }
+                    };
+                    const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                    diff2htmlUi.draw();
+                    diff2htmlUi.highlightCode();
+                })();</script>
+    </div>
+  </body>
+</html>

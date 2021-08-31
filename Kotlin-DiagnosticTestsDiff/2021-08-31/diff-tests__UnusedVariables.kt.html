@@ -1,0 +1,215 @@
+<html>
+  <head>
+    <title>Diagnostics diff: tests/UnusedVariables.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="card-header p-0" id="heading0"><button class="btn btn-link btn-block text-left" data-toggle="collapse" data-target="#collapse0">
+          <h5>Diff between FE 1.0 vs FIR</h5>
+        </button></div>
+      <div class="collapse show" id="collapse0">
+        <div class="card-body p-1">
+          <div id="diff0" style="width: 100%"></div>
+        </div>
+      </div>
+      <script type="text/javascript">                (function() {
+                    const diffString = `--- tests/UnusedVariables.kt
++++ tests/UnusedVariables.fir.kt
+@@ -1,135 +1,135 @@
+ // !DIAGNOSTICS: +UNUSED_VALUE, +UNUSED_CHANGED_VALUE, +UNUSED_PARAMETER, +UNUSED_VARIABLE
+ 
+ package unused_variables
+ 
+ fun testSimpleCases() {
+-    var i = <!VARIABLE_WITH_REDUNDANT_INITIALIZER!>2<!>
+-    <!UNUSED_VALUE!>i =<!> 34
++    var i = 2
+     i = 34
++    i = 34
+     doSmth(i)
+-    <!UNUSED_VALUE!>i =<!> 5
++    i = 5
+ 
+     var j = 2
+-    j = <!UNUSED_CHANGED_VALUE!>j++<!>
+-    <!UNUSED_VALUE!>j =<!> <!UNUSED_CHANGED_VALUE!>j--<!>
++    j = j++
++    j = j--
+ }
+ 
+ class IncDec() {
+   operator fun inc() : IncDec = this
+   operator fun dec() : IncDec = this
+ }
+ 
+ class MyTest() {
+     fun testIncDec() {
+       var x = IncDec()
+       x++
+       ++x
+       x--
+       --x
+-      x = <!UNUSED_CHANGED_VALUE!>x++<!>
+-      x = <!UNUSED_CHANGED_VALUE!>x--<!>
++      x = x++
++      x = x--
+       x = ++x
+-      <!UNUSED_VALUE!>x =<!> --x
++      x = --x
+     }
+ 
+     var a: String = "s"
+         set(v: String) {
+             var i: Int = 23
+             doSmth(i)
+-            <!UNUSED_VALUE!>i =<!> 34
++            i = 34
+             field = v
+         }
+ 
+     init {
+         a = "rr"
+     }
+ 
+     fun testSimple() {
+         a = "rro"
+ 
+-        var <!ASSIGNED_BUT_NEVER_ACCESSED_VARIABLE!>i<!> = 1;
+-        <!UNUSED_VALUE!>i =<!> 34;
+-        <!UNUSED_VALUE!>i =<!> 456;
++        var i = 1;
++        i = 34;
++        i = 456;
+     }
+ 
+     fun testWhile() {
+         var a : Any? = true
+         var b : Any? = 34
+         while (a is Any) {
+             a = null
+         }
+         while (b != null) {
+-            <!UNUSED_VALUE!>a =<!> null
++            a = null
+         }
+     }
+ 
+     fun testIf() {
+         var a : Any
+         if (1 < 2) {
+             a = 23
+         }
+         else {
+             a = "ss"
+-            doSmth(<!DEBUG_INFO_SMARTCAST!>a<!>)
++            doSmth(a)
+         }
+         doSmth(a)
+ 
+         if (1 < 2) {
+-            <!UNUSED_VALUE!>a =<!> 23
++            a = 23
+         }
+         else {
+-            <!UNUSED_VALUE!>a =<!> "ss"
++            a = "ss"
+         }
+     }
+ 
+     fun testFor() {
+         for (i in 1..10) {
+             doSmth(i)
+         }
+     }
+ 
+-    fun doSmth(<!UNUSED_PARAMETER!>s<!>: String) {}
+-    fun doSmth(<!UNUSED_PARAMETER!>a<!>: Any) {}
++    fun doSmth(s: String) {}
++    fun doSmth(a: Any) {}
+ }
+ 
+ fun testInnerFunctions() {
+-    var <!ASSIGNED_BUT_NEVER_ACCESSED_VARIABLE!>y<!> = 1
++    var y = 1
+     fun foo() {
+         y = 1
+     }
+     var z = 1
+     fun bar() {
+         doSmth(z)
+     }
+ }
+ 
+ fun testFunctionLiterals() {
+     var x = 1
+-    var <!UNUSED_VARIABLE!>fl<!> = {
++    var fl = {
+         x
+     }
+     var y = 2
+-    var <!UNUSED_VARIABLE!>fl1<!> = {
++    var fl1 = {
+         doSmth(y)
+     }
+ }
+ 
+ interface Trait {
+     fun foo()
+ }
+ 
+ fun testObject() : Trait {
+     val x = 24
+     val o = object : Trait {
+         val y : Int   //in this case y should not be marked as unused
+            get() = 55
+ 
+         override fun foo() {
+             doSmth(x)
+         }
+     }
+ 
+     return o
+ }
+ 
+-fun doSmth(<!UNUSED_PARAMETER!>i<!> : Int) {}
++fun doSmth(i : Int) {}`;
+                    const targetElement = $('#diff0')[0];
+                    const configuration = {
+                        drawFileList: false,
+                        fileListToggle: false,
+                        fileListStartVisible: false,
+                        fileContentToggle: false,
+                        matching: 'lines',
+                        outputFormat: 'side-by-side',
+                        synchronisedScroll: true,
+                        highlight: true,
+                        renderNothingWhenEmpty: false,
+                        rawTemplates: {
+                            'generic-file-path': `
+                                <div class="col">
+                                    <a href="https://github.com/JetBrains/kotlin/blob/ffe0d9de70ee93c282f87d5aa88ff0902a3065cb/compiler/testData/diagnostics/tests/UnusedVariables.kt" target="_blank">
+                                        <strong>FE 1.0:</strong> tests/UnusedVariables.kt
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="https://github.com/JetBrains/kotlin/blob/ffe0d9de70ee93c282f87d5aa88ff0902a3065cb/compiler/testData/diagnostics/tests/UnusedVariables.fir.kt" target="_blank">
+                                        <strong>FIR:</strong> tests/UnusedVariables.fir.kt
+                                    </a>
+                                </div>
+                            `
+                        }
+                    };
+                    const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                    diff2htmlUi.draw();
+                    diff2htmlUi.highlightCode();
+                })();</script>
+    </div>
+  </body>
+</html>

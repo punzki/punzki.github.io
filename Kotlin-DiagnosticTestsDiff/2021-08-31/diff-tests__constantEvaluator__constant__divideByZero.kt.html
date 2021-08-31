@@ -1,0 +1,163 @@
+<html>
+  <head>
+    <title>Diagnostics diff: tests/constantEvaluator/constant/divideByZero.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="card-header p-0" id="heading0"><button class="btn btn-link btn-block text-left" data-toggle="collapse" data-target="#collapse0">
+          <h5>Diff between FE 1.0 vs FIR</h5>
+        </button></div>
+      <div class="collapse show" id="collapse0">
+        <div class="card-body p-1">
+          <div id="diff0" style="width: 100%"></div>
+        </div>
+      </div>
+      <script type="text/javascript">                (function() {
+                    const diffString = `--- tests/constantEvaluator/constant/divideByZero.kt
++++ tests/constantEvaluator/constant/divideByZero.fir.kt
+@@ -1,79 +1,79 @@
+ package test
+ 
+ // val prop1: null
+-<!DEBUG_INFO_CONSTANT_VALUE("null")!>val prop1 = <!DIVISION_BY_ZERO!>1 / 0<!><!>
++val prop1 = <!DIVISION_BY_ZERO!>1 / 0<!>
+ 
+ // val prop2: Infinity.toDouble()
+-<!DEBUG_INFO_CONSTANT_VALUE("Infinity.toDouble()")!>val prop2 = <!DIVISION_BY_ZERO!>1 / 0.0<!><!>
++val prop2 = <!DIVISION_BY_ZERO!>1 / 0.0<!>
+ 
+ // val prop3: Infinity.toDouble()
+-<!DEBUG_INFO_CONSTANT_VALUE("Infinity.toDouble()")!>val prop3 = <!DIVISION_BY_ZERO!>1.0 / 0<!><!>
++val prop3 = <!DIVISION_BY_ZERO!>1.0 / 0<!>
+ 
+ // val prop4: 10.0.toDouble()
+-<!DEBUG_INFO_CONSTANT_VALUE("10.0.toDouble()")!>val prop4 = 1 / 0.1<!>
++val prop4 = 1 / 0.1
+ 
+ // val prop5: null
+-<!DEBUG_INFO_CONSTANT_VALUE("null")!>val prop5 = <!DIVISION_BY_ZERO!>1 / 0.toLong()<!><!>
++val prop5 = 1 / 0.toLong()
+ 
+ // val prop6: Infinity.toDouble()
+-<!DEBUG_INFO_CONSTANT_VALUE("Infinity.toDouble()")!>val prop6 = <!DIVISION_BY_ZERO!>1.0 / 0.toInt()<!><!>
++val prop6 = 1.0 / 0.toInt()
+ 
+ // val prop7: Infinity.toDouble()
+-<!DEBUG_INFO_CONSTANT_VALUE("Infinity.toDouble()")!>val prop7 = <!DIVISION_BY_ZERO!>1.0 / 0.toLong()<!><!>
++val prop7 = 1.0 / 0.toLong()
+ 
+ // val prop8: Infinity.toDouble()
+-<!DEBUG_INFO_CONSTANT_VALUE("Infinity.toDouble()")!>val prop8 = <!DIVISION_BY_ZERO!>1.0 / 0.toByte()<!><!>
++val prop8 = 1.0 / 0.toByte()
+ 
+ // val prop9: Infinity.toDouble()
+-<!DEBUG_INFO_CONSTANT_VALUE("Infinity.toDouble()")!>val prop9 = <!DIVISION_BY_ZERO!>1.0 / 0.toShort()<!><!>
++val prop9 = 1.0 / 0.toShort()
+ 
+ // val prop10: Infinity.toDouble()
+-<!DEBUG_INFO_CONSTANT_VALUE("Infinity.toDouble()")!>val prop10 = <!DIVISION_BY_ZERO!>1.0 / 0.toFloat()<!><!>
++val prop10 = 1.0 / 0.toFloat()
+ 
+ // val prop11: Infinity.toDouble()
+-<!DEBUG_INFO_CONSTANT_VALUE("Infinity.toDouble()")!>val prop11 = <!DIVISION_BY_ZERO!>1.0 / 0.toDouble()<!><!>
++val prop11 = 1.0 / 0.toDouble()
+ 
+ // val prop12: -Infinity.toDouble()
+-<!DEBUG_INFO_CONSTANT_VALUE("-Infinity.toDouble()")!>val prop12 = <!DIVISION_BY_ZERO!>-1.0 / 0<!><!>
++val prop12 = <!DIVISION_BY_ZERO!>-1.0 / 0<!>
+ 
+ // val prop13: Infinity.toFloat()
+-<!DEBUG_INFO_CONSTANT_VALUE("Infinity.toFloat()")!>val prop13 = <!DIVISION_BY_ZERO!>1f / 0<!><!>
++val prop13 = <!DIVISION_BY_ZERO!>1f / 0<!>
+ 
+ // val prop14: -Infinity.toFloat()
+-<!DEBUG_INFO_CONSTANT_VALUE("-Infinity.toFloat()")!>val prop14 = <!DIVISION_BY_ZERO!>-1f / 0<!><!>
++val prop14 = <!DIVISION_BY_ZERO!>-1f / 0<!>
+ 
+ // val prop15: NaN.toDouble()
+-<!DEBUG_INFO_CONSTANT_VALUE("NaN.toDouble()")!>val prop15 = <!DIVISION_BY_ZERO!>0.0 / 0<!><!>
++val prop15 = <!DIVISION_BY_ZERO!>0.0 / 0<!>
+ 
+ // val prop16: NaN.toFloat()
+-<!DEBUG_INFO_CONSTANT_VALUE("NaN.toFloat()")!>val prop16 = <!DIVISION_BY_ZERO!>0f / 0<!><!>
++val prop16 = <!DIVISION_BY_ZERO!>0f / 0<!>
+ 
+ // val prop17: NaN.toDouble()
+-<!DEBUG_INFO_CONSTANT_VALUE("NaN.toDouble()")!>val prop17 = <!DIVISION_BY_ZERO!>-0.0 / 0<!><!>
++val prop17 = <!DIVISION_BY_ZERO!>-0.0 / 0<!>
+ 
+ // val prop18: NaN.toDouble()
+-<!DEBUG_INFO_CONSTANT_VALUE("NaN.toDouble()")!>val prop18 = <!DIVISION_BY_ZERO!>1.0 / 0<!> - <!DIVISION_BY_ZERO!>1.0 / 0<!><!>
++val prop18 = <!DIVISION_BY_ZERO!>1.0 / 0<!> - <!DIVISION_BY_ZERO!>1.0 / 0<!>
+ 
+ // val prop19: NaN.toFloat()
+-<!DEBUG_INFO_CONSTANT_VALUE("NaN.toFloat()")!>val prop19 = <!DIVISION_BY_ZERO!>1f / 0<!> - <!DIVISION_BY_ZERO!>1f / 0<!><!>
++val prop19 = <!DIVISION_BY_ZERO!>1f / 0<!> - <!DIVISION_BY_ZERO!>1f / 0<!>
+ 
+ // val prop20: NaN.toDouble()
+-<!DEBUG_INFO_CONSTANT_VALUE("NaN.toDouble()")!>val prop20 = <!DIVISION_BY_ZERO!>1.0 % 0<!><!>
++val prop20 = 1.0 % 0
+ 
+ // val prop21: NaN.toDouble()
+-<!DEBUG_INFO_CONSTANT_VALUE("NaN.toDouble()")!>val prop21 = <!DIVISION_BY_ZERO!>0.0 % 0<!><!>
++val prop21 = 0.0 % 0
+ 
+ // val prop22: NaN.toFloat()
+-<!DEBUG_INFO_CONSTANT_VALUE("NaN.toFloat()")!>val prop22 = <!DIVISION_BY_ZERO!>1f % 0<!><!>
++val prop22 = 1f % 0
+ 
+ // val prop23: NaN.toDouble()
+-<!DEBUG_INFO_CONSTANT_VALUE("NaN.toDouble()")!>val prop23 = <!DIVISION_BY_ZERO!>-1.0 % 0<!><!>
++val prop23 = -1.0 % 0
+ 
+ // val prop24: NaN.toDouble()
+-<!DEBUG_INFO_CONSTANT_VALUE("NaN.toDouble()")!>val prop24 = <!DIVISION_BY_ZERO!>-0.0 % 0<!><!>
++val prop24 = -0.0 % 0
+ 
+ // val prop26: NaN.toDouble()
+-<!DEBUG_INFO_CONSTANT_VALUE("NaN.toDouble()")!>val prop26 = <!DIVISION_BY_ZERO!>1.0.rem(0)<!><!>
++val prop26 = 1.0.rem(0)
+ 
+ // val prop27: Infinity.toDouble()
+-<!DEBUG_INFO_CONSTANT_VALUE("Infinity.toDouble()")!>val prop27 = <!DIVISION_BY_ZERO!>1.0.div(0)<!><!>
++val prop27 = <!DIVISION_BY_ZERO!>1.0.div(0)<!>`;
+                    const targetElement = $('#diff0')[0];
+                    const configuration = {
+                        drawFileList: false,
+                        fileListToggle: false,
+                        fileListStartVisible: false,
+                        fileContentToggle: false,
+                        matching: 'lines',
+                        outputFormat: 'side-by-side',
+                        synchronisedScroll: true,
+                        highlight: true,
+                        renderNothingWhenEmpty: false,
+                        rawTemplates: {
+                            'generic-file-path': `
+                                <div class="col">
+                                    <a href="https://github.com/JetBrains/kotlin/blob/ffe0d9de70ee93c282f87d5aa88ff0902a3065cb/compiler/testData/diagnostics/tests/constantEvaluator/constant/divideByZero.kt" target="_blank">
+                                        <strong>FE 1.0:</strong> tests/constantEvaluator/constant/divideByZero.kt
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="https://github.com/JetBrains/kotlin/blob/ffe0d9de70ee93c282f87d5aa88ff0902a3065cb/compiler/testData/diagnostics/tests/constantEvaluator/constant/divideByZero.fir.kt" target="_blank">
+                                        <strong>FIR:</strong> tests/constantEvaluator/constant/divideByZero.fir.kt
+                                    </a>
+                                </div>
+                            `
+                        }
+                    };
+                    const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                    diff2htmlUi.draw();
+                    diff2htmlUi.highlightCode();
+                })();</script>
+    </div>
+  </body>
+</html>
