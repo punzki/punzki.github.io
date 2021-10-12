@@ -1,0 +1,90 @@
+<html>
+  <head>
+    <title>Diagnostics diff: RETURN_NOT_ALLOWED</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row sticky-top" style="background: white" id="summary">
+        <div class="d-inline-flex align-items-baseline">
+          <h1 class="mr-2">RETURN_NOT_ALLOWED</h1>
+<a href="index.html">(back to diagnostic list)</a></div>
+      </div>
+      <div class="row">
+        <ul>
+          <li><strong>Total: </strong>60</li>
+          <li><strong>Match %: </strong>85.00%</li>
+          <li><a href="#matched"><strong># Matched: </strong>51</a></li>
+          <li><strong># Non-matched: </strong>9</li>
+          <li><a href="#missing"><strong># Missing: </strong>3</a></li>
+          <li><a href="#unexpected"><strong># Unexpected: </strong>4</a></li>
+          <li><a href="#mismatched"><strong># Mismatched: </strong>2</a></li>
+          <li><strong># Files: </strong>27</li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="missing">
+        <h2>Missing (3)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__controlStructures__kt799.kt.html" target="_blank">tests/controlStructures/kt799.kt (1)</a></li>
+          <li><a href="diff-tests__inline__nonLocalReturns__lambdaAsGeneric.kt.html" target="_blank">tests/inline/nonLocalReturns/lambdaAsGeneric.kt (1)</a></li>
+          <li><a href="diff-tests__inline__nonLocalReturns__lambdaAsNonFunction.kt.html" target="_blank">tests/inline/nonLocalReturns/lambdaAsNonFunction.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="unexpected">
+        <h2>Unexpected (4)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__Return.kt.html" target="_blank">tests/Return.kt (2)</a></li>
+          <li><a href="diff-tests__ReturnInFunctionWithoutBody.kt.html" target="_blank">tests/ReturnInFunctionWithoutBody.kt (1)</a></li>
+          <li><a href="diff-tests__functionAsExpression__AutoLabels.kt.html" target="_blank">tests/functionAsExpression/AutoLabels.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="mismatched">
+        <h2>Mismatched (2)</h2>
+      </div>
+      <div class="row sticky-top" style="top: 5.5em; background: white">
+        <h5>RETURN_NOT_ALLOWED → NOT_A_FUNCTION_LABEL (2)</h5>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__controlStructures__notAFunctionLabel_after.kt.html" target="_blank">tests/controlStructures/notAFunctionLabel_after.kt (1)</a></li>
+          <li><a href="diff-tests__controlStructures__notAFunctionLabel_before.kt.html" target="_blank">tests/controlStructures/notAFunctionLabel_before.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="matched">
+        <h2>Matched (51)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__declarationChecks__ScalaLikeNamedFun.kt.html" target="_blank">tests/declarationChecks/ScalaLikeNamedFun.kt (8)</a></li>
+          <li><a href="diff-testsWithStdLib__coroutines__suspendFunctionType__inline.kt.html" target="_blank">testsWithStdLib/coroutines/suspendFunctionType/inline.kt (6)</a></li>
+          <li><a href="diff-tests__FunctionReturnTypes.kt.html" target="_blank">tests/FunctionReturnTypes.kt (4)</a></li>
+          <li><a href="diff-tests__controlFlowAnalysis__kt10823.kt.html" target="_blank">tests/controlFlowAnalysis/kt10823.kt (4)</a></li>
+          <li><a href="diff-tests__regressions__kt411.kt.html" target="_blank">tests/regressions/kt411.kt (4)</a></li>
+          <li><a href="diff-tests__controlStructures__kt799.kt.html" target="_blank">tests/controlStructures/kt799.kt (3)</a></li>
+          <li><a href="diff-tests__functionAsExpression__ForbiddenNonLocalReturn.kt.html" target="_blank">tests/functionAsExpression/ForbiddenNonLocalReturn.kt (3)</a></li>
+          <li><a href="diff-tests__functionLiterals__return__ForbiddenNonLocalReturnNoType.kt.html" target="_blank">tests/functionLiterals/return/ForbiddenNonLocalReturnNoType.kt (3)</a></li>
+          <li><a href="diff-tests__inline__nonLocalReturns__onlyLocalReturnLambda.kt.html" target="_blank">tests/inline/nonLocalReturns/onlyLocalReturnLambda.kt (2)</a></li>
+          <li><a href="diff-tests__secondaryConstructors__return.kt.html" target="_blank">tests/secondaryConstructors/return.kt (2)</a></li>
+          <li><a href="diff-testsWithStdLib__factoryPattern__returnFromInlineLambda.kt.html" target="_blank">testsWithStdLib/factoryPattern/returnFromInlineLambda.kt (2)</a></li>
+          <li><a href="diff-tests__Return.kt.html" target="_blank">tests/Return.kt (1)</a></li>
+          <li><a href="diff-tests__controlStructures__localReturnInsidePropertyAccessor.kt.html" target="_blank">tests/controlStructures/localReturnInsidePropertyAccessor.kt (1)</a></li>
+          <li><a href="diff-tests__functionLiterals__return__AutoLabelsNonLocal.kt.html" target="_blank">tests/functionLiterals/return/AutoLabelsNonLocal.kt (1)</a></li>
+          <li><a href="diff-tests__functionLiterals__return__LocalAndNonLocalReturnInLambda.kt.html" target="_blank">tests/functionLiterals/return/LocalAndNonLocalReturnInLambda.kt (1)</a></li>
+          <li><a href="diff-tests__inline__nonLocalReturns__labeledReturn.kt.html" target="_blank">tests/inline/nonLocalReturns/labeledReturn.kt (1)</a></li>
+          <li><a href="diff-tests__inline__nonLocalReturns__noInlineAnnotation.kt.html" target="_blank">tests/inline/nonLocalReturns/noInlineAnnotation.kt (1)</a></li>
+          <li><a href="diff-tests__inline__nonLocalReturns__onlyLocalReturnLambdaBinaryExpr.kt.html" target="_blank">tests/inline/nonLocalReturns/onlyLocalReturnLambdaBinaryExpr.kt (1)</a></li>
+          <li><a href="diff-tests__inline__nonLocalReturns__propertyAccessorsAndConstructor.kt.html" target="_blank">tests/inline/nonLocalReturns/propertyAccessorsAndConstructor.kt (1)</a></li>
+          <li><a href="diff-tests__labels__kt361.kt.html" target="_blank">tests/labels/kt361.kt (1)</a></li>
+          <li><a href="diff-testsWithStdLib__inline__inlineConstructorOfArray.kt.html" target="_blank">testsWithStdLib/inline/inlineConstructorOfArray.kt (1)</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

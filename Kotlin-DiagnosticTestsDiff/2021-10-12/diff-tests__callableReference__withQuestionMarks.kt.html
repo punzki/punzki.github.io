@@ -1,0 +1,105 @@
+<html>
+  <head>
+    <title>Diagnostics diff: tests/callableReference/withQuestionMarks.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="card-header p-0" id="heading0"><button class="btn btn-link btn-block text-left" data-toggle="collapse" data-target="#collapse0">
+          <h5>Diff between FE 1.0 vs FIR</h5>
+        </button></div>
+      <div class="collapse show" id="collapse0">
+        <div class="card-body p-1">
+          <div id="diff0" style="width: 100%"></div>
+        </div>
+      </div>
+      <script type="text/javascript">                (function() {
+                    const diffString = `--- tests/callableReference/withQuestionMarks.kt
++++ tests/callableReference/withQuestionMarks.fir.kt
+@@ -1,31 +1,31 @@
+ // !DIAGNOSTICS: -UNUSED_VARIABLE
+ // Issue: KT-35075
+ 
+ fun foo() {}
+ 
+ fun main() {
+-    val x1 = <!UNRESOLVED_REFERENCE!>logger<!>::<!DEBUG_INFO_MISSING_UNRESOLVED!>info<!>?::<!DEBUG_INFO_MISSING_UNRESOLVED!>print<!>
+-    val x2 = <!UNRESOLVED_REFERENCE!>logger<!>?::<!DEBUG_INFO_MISSING_UNRESOLVED!>info<!>?::<!DEBUG_INFO_MISSING_UNRESOLVED!>print<!>
+-    val x3 = <!UNRESOLVED_REFERENCE!>logger<!>?::<!DEBUG_INFO_MISSING_UNRESOLVED!>info<!>::<!DEBUG_INFO_MISSING_UNRESOLVED!>print<!>
+-    val x4 = <!UNRESOLVED_REFERENCE!>logger<!>?::<!DEBUG_INFO_MISSING_UNRESOLVED!>info<!>?::<!DEBUG_INFO_MISSING_UNRESOLVED!>print<!>?::<!DEBUG_INFO_MISSING_UNRESOLVED!>print<!>?::<!DEBUG_INFO_MISSING_UNRESOLVED!>print<!>?::<!DEBUG_INFO_MISSING_UNRESOLVED!>print<!>?::<!DEBUG_INFO_MISSING_UNRESOLVED!>print<!>?::<!DEBUG_INFO_MISSING_UNRESOLVED!>print<!>?::<!DEBUG_INFO_MISSING_UNRESOLVED!>print<!>?::<!DEBUG_INFO_MISSING_UNRESOLVED!>print<!>?::<!DEBUG_INFO_MISSING_UNRESOLVED!>print<!>?::<!DEBUG_INFO_MISSING_UNRESOLVED!>print<!>
+-    val x5 = <!UNRESOLVED_REFERENCE!>logger<!>::<!DEBUG_INFO_MISSING_UNRESOLVED!>info<!>?::<!DEBUG_INFO_MISSING_UNRESOLVED!>print<!>?::<!DEBUG_INFO_MISSING_UNRESOLVED!>print<!>?::<!DEBUG_INFO_MISSING_UNRESOLVED!>print<!>?::<!DEBUG_INFO_MISSING_UNRESOLVED!>print<!>?::<!DEBUG_INFO_MISSING_UNRESOLVED!>print<!>?::<!DEBUG_INFO_MISSING_UNRESOLVED!>print<!>?::<!DEBUG_INFO_MISSING_UNRESOLVED!>print<!>?::<!DEBUG_INFO_MISSING_UNRESOLVED!>print<!>?::<!DEBUG_INFO_MISSING_UNRESOLVED!>print<!>?::<!DEBUG_INFO_MISSING_UNRESOLVED!>print<!>
+-    val x6 = <!UNRESOLVED_REFERENCE!>logger<!>!!::<!DEBUG_INFO_MISSING_UNRESOLVED!>info<!>?::<!DEBUG_INFO_MISSING_UNRESOLVED!>print<!>?::<!DEBUG_INFO_MISSING_UNRESOLVED!>print<!>
+-    val x7 = <!NEW_INFERENCE_NO_INFORMATION_FOR_PARAMETER!><!UNRESOLVED_REFERENCE!>logger<!>::<!UNRESOLVED_REFERENCE!>info<!><!><!NOT_NULL_ASSERTION_ON_CALLABLE_REFERENCE!>!!<!>::<!DEBUG_INFO_MISSING_UNRESOLVED!>print<!>?::<!DEBUG_INFO_MISSING_UNRESOLVED!>print<!>
+-    val x8 = <!NEW_INFERENCE_NO_INFORMATION_FOR_PARAMETER!><!UNRESOLVED_REFERENCE, UNRESOLVED_REFERENCE!>logger<!>?::<!UNRESOLVED_REFERENCE!>info<!><!><!NOT_NULL_ASSERTION_ON_CALLABLE_REFERENCE!>!!<!>::<!DEBUG_INFO_MISSING_UNRESOLVED!>print<!>?::<!DEBUG_INFO_MISSING_UNRESOLVED!>print<!>
+-    val x9 = <!UNRESOLVED_REFERENCE!>logger<!>!!::<!DEBUG_INFO_MISSING_UNRESOLVED!>info<!>?::<!DEBUG_INFO_MISSING_UNRESOLVED!>print<!>?::<!DEBUG_INFO_MISSING_UNRESOLVED!>print<!>
+-    val x10 = <!NEW_INFERENCE_NO_INFORMATION_FOR_PARAMETER!><!UNRESOLVED_REFERENCE!>logger<!>::<!DEBUG_INFO_MISSING_UNRESOLVED!>info<!>?::<!UNRESOLVED_REFERENCE!>print<!><!><!NOT_NULL_ASSERTION_ON_CALLABLE_REFERENCE!>!!<!>::<!DEBUG_INFO_MISSING_UNRESOLVED!>print<!>
+-    val x11 = <!NEW_INFERENCE_NO_INFORMATION_FOR_PARAMETER!><!NEW_INFERENCE_NO_INFORMATION_FOR_PARAMETER!><!UNRESOLVED_REFERENCE!>logger<!>!!::<!UNRESOLVED_REFERENCE!>info<!><!><!NOT_NULL_ASSERTION_ON_CALLABLE_REFERENCE!>!!<!>::<!UNRESOLVED_REFERENCE!>print<!><!><!NOT_NULL_ASSERTION_ON_CALLABLE_REFERENCE!>!!<!>::<!DEBUG_INFO_MISSING_UNRESOLVED!>print<!>
+-    val x12 = <!NEW_INFERENCE_NO_INFORMATION_FOR_PARAMETER!><!NEW_INFERENCE_NO_INFORMATION_FOR_PARAMETER!><!UNRESOLVED_REFERENCE, UNRESOLVED_REFERENCE!>logger<!>?::<!UNRESOLVED_REFERENCE!>info<!><!><!NOT_NULL_ASSERTION_ON_CALLABLE_REFERENCE!>!!<!>::<!UNRESOLVED_REFERENCE!>print<!><!><!NOT_NULL_ASSERTION_ON_CALLABLE_REFERENCE!>!!<!>::<!DEBUG_INFO_MISSING_UNRESOLVED!>print<!>
+-    val x13 = <!RESERVED_SYNTAX_IN_CALLABLE_REFERENCE_LHS!>42<!>?::<!UNRESOLVED_REFERENCE!>unresolved<!>?::<!DEBUG_INFO_MISSING_UNRESOLVED!>print<!>
++    val x1 = <!UNRESOLVED_REFERENCE!>logger<!>::info?::<!UNRESOLVED_REFERENCE!>print<!>
++    val x2 = <!UNRESOLVED_REFERENCE!>logger<!>?::info?::<!UNRESOLVED_REFERENCE!>print<!>
++    val x3 = <!UNRESOLVED_REFERENCE!>logger<!>?::info::<!UNRESOLVED_REFERENCE!>print<!>
++    val x4 = <!UNRESOLVED_REFERENCE!>logger<!>?::info?::<!UNRESOLVED_REFERENCE!>print<!>?::<!UNRESOLVED_REFERENCE!>print<!>?::<!UNRESOLVED_REFERENCE!>print<!>?::<!UNRESOLVED_REFERENCE!>print<!>?::<!UNRESOLVED_REFERENCE!>print<!>?::<!UNRESOLVED_REFERENCE!>print<!>?::<!UNRESOLVED_REFERENCE!>print<!>?::<!UNRESOLVED_REFERENCE!>print<!>?::<!UNRESOLVED_REFERENCE!>print<!>?::<!UNRESOLVED_REFERENCE!>print<!>
++    val x5 = <!UNRESOLVED_REFERENCE!>logger<!>::info?::<!UNRESOLVED_REFERENCE!>print<!>?::<!UNRESOLVED_REFERENCE!>print<!>?::<!UNRESOLVED_REFERENCE!>print<!>?::<!UNRESOLVED_REFERENCE!>print<!>?::<!UNRESOLVED_REFERENCE!>print<!>?::<!UNRESOLVED_REFERENCE!>print<!>?::<!UNRESOLVED_REFERENCE!>print<!>?::<!UNRESOLVED_REFERENCE!>print<!>?::<!UNRESOLVED_REFERENCE!>print<!>?::<!UNRESOLVED_REFERENCE!>print<!>
++    val x6 = <!UNRESOLVED_REFERENCE!>logger<!>!!::<!UNRESOLVED_REFERENCE!>info<!>?::<!UNRESOLVED_REFERENCE!>print<!>?::<!UNRESOLVED_REFERENCE!>print<!>
++    val x7 = <!UNRESOLVED_REFERENCE!>logger<!>::info<!NOT_NULL_ASSERTION_ON_CALLABLE_REFERENCE!>!!<!>::<!UNRESOLVED_REFERENCE!>print<!>?::<!UNRESOLVED_REFERENCE!>print<!>
++    val x8 = <!UNRESOLVED_REFERENCE!>logger<!>?::info<!NOT_NULL_ASSERTION_ON_CALLABLE_REFERENCE!>!!<!>::<!UNRESOLVED_REFERENCE!>print<!>?::<!UNRESOLVED_REFERENCE!>print<!>
++    val x9 = <!UNRESOLVED_REFERENCE!>logger<!>!!::<!UNRESOLVED_REFERENCE!>info<!>?::<!UNRESOLVED_REFERENCE!>print<!>?::<!UNRESOLVED_REFERENCE!>print<!>
++    val x10 = <!UNRESOLVED_REFERENCE!>logger<!>::info?::<!UNRESOLVED_REFERENCE!>print<!><!NOT_NULL_ASSERTION_ON_CALLABLE_REFERENCE!>!!<!>::<!UNRESOLVED_REFERENCE!>print<!>
++    val x11 = <!UNRESOLVED_REFERENCE!>logger<!>!!::<!UNRESOLVED_REFERENCE!>info<!><!NOT_NULL_ASSERTION_ON_CALLABLE_REFERENCE!>!!<!>::<!UNRESOLVED_REFERENCE!>print<!><!NOT_NULL_ASSERTION_ON_CALLABLE_REFERENCE!>!!<!>::<!UNRESOLVED_REFERENCE!>print<!>
++    val x12 = <!UNRESOLVED_REFERENCE!>logger<!>?::info<!NOT_NULL_ASSERTION_ON_CALLABLE_REFERENCE!>!!<!>::<!UNRESOLVED_REFERENCE!>print<!><!NOT_NULL_ASSERTION_ON_CALLABLE_REFERENCE!>!!<!>::<!UNRESOLVED_REFERENCE!>print<!>
++    val x13 = 42?::<!UNRESOLVED_REFERENCE!>unresolved<!>?::<!UNRESOLVED_REFERENCE!>print<!>
+ 
+     val x14 = <!UNRESOLVED_REFERENCE!>logger<!><!SYNTAX!>?!!::info?::print?::print<!>
+-    val x15 = <!UNRESOLVED_REFERENCE!>logger<!>::<!DEBUG_INFO_MISSING_UNRESOLVED!>info<!><!SYNTAX!>?!!::print?::print<!>
+-    val x16 = <!UNRESOLVED_REFERENCE!>logger<!>!!?::<!DEBUG_INFO_MISSING_UNRESOLVED!>info<!>?::<!DEBUG_INFO_MISSING_UNRESOLVED!>print<!>?::<!DEBUG_INFO_MISSING_UNRESOLVED!>print<!>
+-    val x17 = <!NEW_INFERENCE_NO_INFORMATION_FOR_PARAMETER!><!UNRESOLVED_REFERENCE!>logger<!>::<!UNRESOLVED_REFERENCE!>info<!><!><!NOT_NULL_ASSERTION_ON_CALLABLE_REFERENCE!>!!<!>?::<!DEBUG_INFO_MISSING_UNRESOLVED!>print<!>?::<!DEBUG_INFO_MISSING_UNRESOLVED!>print<!>
++    val x15 = <!UNRESOLVED_REFERENCE!>logger<!>::info<!SYNTAX!>?!!::print?::print<!>
++    val x16 = <!UNRESOLVED_REFERENCE!>logger<!>!!?::<!UNRESOLVED_REFERENCE!>info<!>?::<!UNRESOLVED_REFERENCE!>print<!>?::<!UNRESOLVED_REFERENCE!>print<!>
++    val x17 = <!UNRESOLVED_REFERENCE!>logger<!>::info<!NOT_NULL_ASSERTION_ON_CALLABLE_REFERENCE!>!!<!>?::<!UNRESOLVED_REFERENCE!>print<!>?::<!UNRESOLVED_REFERENCE!>print<!>
+ 
+     // It must be OK
+     val x18 = String?::hashCode <!USELESS_ELVIS!>?: ::foo<!>
+     val x19 = String::hashCode <!USELESS_ELVIS!>?: ::foo<!>
+     val x20 = String?::hashCode::hashCode
+     val x21 = kotlin.String?::hashCode::hashCode
+ }`;
+                    const targetElement = $('#diff0')[0];
+                    const configuration = {
+                        drawFileList: false,
+                        fileListToggle: false,
+                        fileListStartVisible: false,
+                        fileContentToggle: false,
+                        matching: 'lines',
+                        outputFormat: 'side-by-side',
+                        synchronisedScroll: true,
+                        highlight: true,
+                        renderNothingWhenEmpty: false,
+                        rawTemplates: {
+                            'generic-file-path': `
+                                <div class="col">
+                                    <a href="https://github.com/JetBrains/kotlin/blob/b946a284b00dbcbcd3f5d34d4e3dccc04849e5d0/compiler/testData/diagnostics/tests/callableReference/withQuestionMarks.kt" target="_blank">
+                                        <strong>FE 1.0:</strong> tests/callableReference/withQuestionMarks.kt
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="https://github.com/JetBrains/kotlin/blob/b946a284b00dbcbcd3f5d34d4e3dccc04849e5d0/compiler/testData/diagnostics/tests/callableReference/withQuestionMarks.fir.kt" target="_blank">
+                                        <strong>FIR:</strong> tests/callableReference/withQuestionMarks.fir.kt
+                                    </a>
+                                </div>
+                            `
+                        }
+                    };
+                    const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                    diff2htmlUi.draw();
+                    diff2htmlUi.highlightCode();
+                })();</script>
+    </div>
+  </body>
+</html>

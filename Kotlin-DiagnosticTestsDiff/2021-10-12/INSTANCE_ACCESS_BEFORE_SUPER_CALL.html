@@ -1,0 +1,108 @@
+<html>
+  <head>
+    <title>Diagnostics diff: INSTANCE_ACCESS_BEFORE_SUPER_CALL</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row sticky-top" style="background: white" id="summary">
+        <div class="d-inline-flex align-items-baseline">
+          <h1 class="mr-2">INSTANCE_ACCESS_BEFORE_SUPER_CALL</h1>
+<a href="index.html">(back to diagnostic list)</a></div>
+      </div>
+      <div class="row">
+        <ul>
+          <li><strong>Total: </strong>72</li>
+          <li><strong>Match %: </strong>47.22%</li>
+          <li><a href="#matched"><strong># Matched: </strong>34</a></li>
+          <li><strong># Non-matched: </strong>38</li>
+          <li><a href="#missing"><strong># Missing: </strong>9</a></li>
+          <li><a href="#unexpected"><strong># Unexpected: </strong>0</a></li>
+          <li><a href="#mismatched"><strong># Mismatched: </strong>29</a></li>
+          <li><strong># Files: </strong>19</li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="missing">
+        <h2>Missing (9)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__secondaryConstructors__headerCallChecker__propertyAccessUnitialized.kt.html" target="_blank">tests/secondaryConstructors/headerCallChecker/propertyAccessUnitialized.kt (2)</a></li>
+          <li><a href="diff-tests__scopes__classHeader__superConstructorArgumentsInSecondaryConstructor.kt.html" target="_blank">tests/scopes/classHeader/superConstructorArgumentsInSecondaryConstructor.kt (1)</a></li>
+          <li><a href="diff-tests__secondaryConstructors__headerCallChecker__accessBaseGenericFromInnerExtendingSameBase.kt.html" target="_blank">tests/secondaryConstructors/headerCallChecker/accessBaseGenericFromInnerExtendingSameBase.kt (1)</a></li>
+          <li><a href="diff-tests__secondaryConstructors__headerCallChecker__accessBaseGenericFromInnerExtendingSameBase2.kt.html" target="_blank">tests/secondaryConstructors/headerCallChecker/accessBaseGenericFromInnerExtendingSameBase2.kt (1)</a></li>
+          <li><a href="diff-tests__secondaryConstructors__headerCallChecker__accessBaseWithSameExtension.kt.html" target="_blank">tests/secondaryConstructors/headerCallChecker/accessBaseWithSameExtension.kt (1)</a></li>
+          <li><a href="diff-tests__secondaryConstructors__headerCallChecker__accessGenericBaseWithSameExtension.kt.html" target="_blank">tests/secondaryConstructors/headerCallChecker/accessGenericBaseWithSameExtension.kt (1)</a></li>
+          <li><a href="diff-tests__secondaryConstructors__headerCallChecker__objectLiteralAsArgument.kt.html" target="_blank">tests/secondaryConstructors/headerCallChecker/objectLiteralAsArgument.kt (1)</a></li>
+          <li><a href="diff-tests__secondaryConstructors__headerCallChecker__operatorCall.kt.html" target="_blank">tests/secondaryConstructors/headerCallChecker/operatorCall.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="mismatched">
+        <h2>Mismatched (29)</h2>
+      </div>
+      <div class="row sticky-top" style="top: 5.5em; background: white">
+        <h5>INSTANCE_ACCESS_BEFORE_SUPER_CALL → UNRESOLVED_REFERENCE (22)</h5>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__scopes__classHeader__constructors.kt.html" target="_blank">tests/scopes/classHeader/constructors.kt (4)</a></li>
+          <li><a href="diff-tests__secondaryConstructors__headerCallChecker__lambdaAsArgument.kt.html" target="_blank">tests/secondaryConstructors/headerCallChecker/lambdaAsArgument.kt (2)</a></li>
+          <li><a href="diff-tests__secondaryConstructors__headerCallChecker__memberFunAccess.kt.html" target="_blank">tests/secondaryConstructors/headerCallChecker/memberFunAccess.kt (2)</a></li>
+          <li><a href="diff-tests__secondaryConstructors__headerCallChecker__propertyAccess.kt.html" target="_blank">tests/secondaryConstructors/headerCallChecker/propertyAccess.kt (2)</a></li>
+          <li><a href="diff-tests__secondaryConstructors__headerCallChecker__superFunAccess.kt.html" target="_blank">tests/secondaryConstructors/headerCallChecker/superFunAccess.kt (2)</a></li>
+          <li><a href="diff-tests__secondaryConstructors__headerCallChecker__superFunAccessOverriden.kt.html" target="_blank">tests/secondaryConstructors/headerCallChecker/superFunAccessOverriden.kt (2)</a></li>
+          <li><a href="diff-tests__secondaryConstructors__headerCallChecker__superPropertyAccess.kt.html" target="_blank">tests/secondaryConstructors/headerCallChecker/superPropertyAccess.kt (2)</a></li>
+          <li><a href="diff-tests__secondaryConstructors__headerCallChecker__thisAsExtensionReceiver.kt.html" target="_blank">tests/secondaryConstructors/headerCallChecker/thisAsExtensionReceiver.kt (2)</a></li>
+          <li><a href="diff-tests__scopes__classHeader__superConstructorArgumentsInSecondaryConstructor.kt.html" target="_blank">tests/scopes/classHeader/superConstructorArgumentsInSecondaryConstructor.kt (1)</a></li>
+          <li><a href="diff-tests__secondaryConstructors__headerCallChecker__objectLiteralAsArgument.kt.html" target="_blank">tests/secondaryConstructors/headerCallChecker/objectLiteralAsArgument.kt (1)</a></li>
+          <li><a href="diff-tests__secondaryConstructors__headerCallChecker__objectLiteralAsDefaultValueParameter.kt.html" target="_blank">tests/secondaryConstructors/headerCallChecker/objectLiteralAsDefaultValueParameter.kt (1)</a></li>
+          <li><a href="diff-tests__secondaryConstructors__headerCallChecker__operatorCall.kt.html" target="_blank">tests/secondaryConstructors/headerCallChecker/operatorCall.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 5.5em; background: white">
+        <h5>INSTANCE_ACCESS_BEFORE_SUPER_CALL → RESOLUTION_TO_CLASSIFIER (5)</h5>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__scopes__classHeader__constructors.kt.html" target="_blank">tests/scopes/classHeader/constructors.kt (2)</a></li>
+          <li><a href="diff-tests__secondaryConstructors__headerCallChecker__innerInstanceCreation.kt.html" target="_blank">tests/secondaryConstructors/headerCallChecker/innerInstanceCreation.kt (2)</a></li>
+          <li><a href="diff-tests__scopes__classHeader__superConstructorArgumentsInSecondaryConstructor.kt.html" target="_blank">tests/scopes/classHeader/superConstructorArgumentsInSecondaryConstructor.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 5.5em; background: white">
+        <h5>INSTANCE_ACCESS_BEFORE_SUPER_CALL → UNRESOLVED_REFERENCE_WRONG_RECEIVER (2)</h5>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__secondaryConstructors__headerCallChecker__objectLiteralAsArgument.kt.html" target="_blank">tests/secondaryConstructors/headerCallChecker/objectLiteralAsArgument.kt (1)</a></li>
+          <li><a href="diff-tests__secondaryConstructors__headerCallChecker__objectLiteralAsDefaultValueParameter.kt.html" target="_blank">tests/secondaryConstructors/headerCallChecker/objectLiteralAsDefaultValueParameter.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="matched">
+        <h2>Matched (34)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__secondaryConstructors__headerCallChecker__passingInstance.kt.html" target="_blank">tests/secondaryConstructors/headerCallChecker/passingInstance.kt (4)</a></li>
+          <li><a href="diff-tests__secondaryConstructors__headerCallChecker__superFunAccess.kt.html" target="_blank">tests/secondaryConstructors/headerCallChecker/superFunAccess.kt (4)</a></li>
+          <li><a href="diff-tests__secondaryConstructors__headerCallChecker__superFunAccessOverriden.kt.html" target="_blank">tests/secondaryConstructors/headerCallChecker/superFunAccessOverriden.kt (4)</a></li>
+          <li><a href="diff-tests__secondaryConstructors__headerCallChecker__superPropertyAccess.kt.html" target="_blank">tests/secondaryConstructors/headerCallChecker/superPropertyAccess.kt (4)</a></li>
+          <li><a href="diff-tests__secondaryConstructors__headerCallChecker__thisAsExtensionReceiver.kt.html" target="_blank">tests/secondaryConstructors/headerCallChecker/thisAsExtensionReceiver.kt (3)</a></li>
+          <li><a href="diff-tests__secondaryConstructors__headerCallChecker__innerInstanceCreation.kt.html" target="_blank">tests/secondaryConstructors/headerCallChecker/innerInstanceCreation.kt (2)</a></li>
+          <li><a href="diff-tests__secondaryConstructors__headerCallChecker__lambdaAsArgument.kt.html" target="_blank">tests/secondaryConstructors/headerCallChecker/lambdaAsArgument.kt (2)</a></li>
+          <li><a href="diff-tests__secondaryConstructors__headerCallChecker__memberFunAccess.kt.html" target="_blank">tests/secondaryConstructors/headerCallChecker/memberFunAccess.kt (2)</a></li>
+          <li><a href="diff-tests__secondaryConstructors__headerCallChecker__propertyAccess.kt.html" target="_blank">tests/secondaryConstructors/headerCallChecker/propertyAccess.kt (2)</a></li>
+          <li><a href="diff-tests__secondaryConstructors__headerCallChecker__propertyAccessUnitialized.kt.html" target="_blank">tests/secondaryConstructors/headerCallChecker/propertyAccessUnitialized.kt (2)</a></li>
+          <li><a href="diff-tests__secondaryConstructors__headerCallChecker__accessBaseGenericFromInnerExtendingSameBase2.kt.html" target="_blank">tests/secondaryConstructors/headerCallChecker/accessBaseGenericFromInnerExtendingSameBase2.kt (1)</a></li>
+          <li><a href="diff-tests__secondaryConstructors__headerCallChecker__accessBaseWithSameExtension.kt.html" target="_blank">tests/secondaryConstructors/headerCallChecker/accessBaseWithSameExtension.kt (1)</a></li>
+          <li><a href="diff-tests__secondaryConstructors__headerCallChecker__accessGenericBaseWithSameExtension.kt.html" target="_blank">tests/secondaryConstructors/headerCallChecker/accessGenericBaseWithSameExtension.kt (1)</a></li>
+          <li><a href="diff-tests__secondaryConstructors__headerCallChecker__objectLiteralAsArgument.kt.html" target="_blank">tests/secondaryConstructors/headerCallChecker/objectLiteralAsArgument.kt (1)</a></li>
+          <li><a href="diff-tests__secondaryConstructors__headerCallChecker__objectLiteralAsDefaultValueParameter.kt.html" target="_blank">tests/secondaryConstructors/headerCallChecker/objectLiteralAsDefaultValueParameter.kt (1)</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,101 @@
+<html>
+  <head>
+    <title>Diagnostics diff: tests/typealias/typeAliasAsBareType.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="card-header p-0" id="heading0"><button class="btn btn-link btn-block text-left" data-toggle="collapse" data-target="#collapse0">
+          <h5>Diff between FE 1.0 vs FIR</h5>
+        </button></div>
+      <div class="collapse show" id="collapse0">
+        <div class="card-body p-1">
+          <div id="diff0" style="width: 100%"></div>
+        </div>
+      </div>
+      <script type="text/javascript">                (function() {
+                    const diffString = `--- tests/typealias/typeAliasAsBareType.kt
++++ tests/typealias/typeAliasAsBareType.fir.kt
+@@ -1,35 +1,35 @@
+ // !DIAGNOSTICS: -UNUSED_VARIABLE -UNUSED_PARAMETER -TOPLEVEL_TYPEALIASES_ONLY
+ 
+ typealias L<T> = List<T>
+ typealias NL<T> = List<T>?
+ typealias LStar<T> = List<*>
+ typealias MyList<T, X> = List<X>
+ 
+ fun testL1(x: Collection<Any>) = x is L
+ fun testL2(x: Collection<Int>): List<Int> = x as L
+ fun testL3(x: Collection<Int>?): List<Int>? = x as L?
+ fun testL4(x: Collection<Int>?): List<Int>? = x as? L
+ 
+ fun testNL1(x: Collection<Int>?): Boolean = x is NL
+ fun testNL2(x: Collection<Int>?): List<Int>? = x as NL
+-fun testNL3(x: Collection<Int>?): List<Int>? = x as NL<!REDUNDANT_NULLABLE!>?<!>
++fun testNL3(x: Collection<Int>?): List<Int>? = x as NL?
+ 
+ fun testLStar(x: Collection<Int>): List<Int> = x as LStar
+ fun testMyList(x: Collection<Int>): List<Int> = x as MyList
+ 
+ typealias MMTT<T> = MutableMap<T, T>
+ typealias Dictionary<T> = MutableMap<String, T>
+ typealias WriteableMap<K, V> = MutableMap<in K, V>
+ typealias ReadableList<T> = MutableList<out T>
+ 
+-fun testWrong1(x: Map<Any, Any>) = x is <!WRONG_NUMBER_OF_TYPE_ARGUMENTS!>MMTT<!>
+-fun testWrong2(x: Map<Any, Any>) = x is <!WRONG_NUMBER_OF_TYPE_ARGUMENTS!>Dictionary<!>
+-fun testWrong3(x: Map<Any, Any>) = x is <!WRONG_NUMBER_OF_TYPE_ARGUMENTS!>WriteableMap<!>
+-fun testWrong4(x: List<Any>) = x is <!WRONG_NUMBER_OF_TYPE_ARGUMENTS!>ReadableList<!>
++fun testWrong1(x: Map<Any, Any>) = x is <!NO_TYPE_ARGUMENTS_ON_RHS!>MMTT<!>
++fun testWrong2(x: Map<Any, Any>) = x is <!NO_TYPE_ARGUMENTS_ON_RHS!>Dictionary<!>
++fun testWrong3(x: Map<Any, Any>) = x is <!NO_TYPE_ARGUMENTS_ON_RHS!>WriteableMap<!>
++fun testWrong4(x: List<Any>) = x is <!NO_TYPE_ARGUMENTS_ON_RHS!>ReadableList<!>
+ 
+ fun <T> testLocal(x: Any) {
+     class C
+-    typealias CA = C
+-    if (x is <!CANNOT_CHECK_FOR_ERASED!>C<!>) {}
+-    if (x is <!CANNOT_CHECK_FOR_ERASED!>CA<!>) {}
++    typealias <!EXPOSED_TYPEALIAS_EXPANDED_TYPE!>CA<!> = C
++    if (x is C) {}
++    if (x is <!UNRESOLVED_REFERENCE!>CA<!>) {}
+ }`;
+                    const targetElement = $('#diff0')[0];
+                    const configuration = {
+                        drawFileList: false,
+                        fileListToggle: false,
+                        fileListStartVisible: false,
+                        fileContentToggle: false,
+                        matching: 'lines',
+                        outputFormat: 'side-by-side',
+                        synchronisedScroll: true,
+                        highlight: true,
+                        renderNothingWhenEmpty: false,
+                        rawTemplates: {
+                            'generic-file-path': `
+                                <div class="col">
+                                    <a href="https://github.com/JetBrains/kotlin/blob/b946a284b00dbcbcd3f5d34d4e3dccc04849e5d0/compiler/testData/diagnostics/tests/typealias/typeAliasAsBareType.kt" target="_blank">
+                                        <strong>FE 1.0:</strong> tests/typealias/typeAliasAsBareType.kt
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="https://github.com/JetBrains/kotlin/blob/b946a284b00dbcbcd3f5d34d4e3dccc04849e5d0/compiler/testData/diagnostics/tests/typealias/typeAliasAsBareType.fir.kt" target="_blank">
+                                        <strong>FIR:</strong> tests/typealias/typeAliasAsBareType.fir.kt
+                                    </a>
+                                </div>
+                            `
+                        }
+                    };
+                    const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                    diff2htmlUi.draw();
+                    diff2htmlUi.highlightCode();
+                })();</script>
+    </div>
+  </body>
+</html>

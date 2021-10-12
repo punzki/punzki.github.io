@@ -1,0 +1,109 @@
+<html>
+  <head>
+    <title>Diagnostics diff: tests/variance/VarProperty.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="card-header p-0" id="heading0"><button class="btn btn-link btn-block text-left" data-toggle="collapse" data-target="#collapse0">
+          <h5>Diff between FE 1.0 vs FIR</h5>
+        </button></div>
+      <div class="collapse show" id="collapse0">
+        <div class="card-body p-1">
+          <div id="diff0" style="width: 100%"></div>
+        </div>
+      </div>
+      <script type="text/javascript">                (function() {
+                    const diffString = `--- tests/variance/VarProperty.kt
++++ tests/variance/VarProperty.kt
+@@ -1,51 +1,51 @@
+ // FIR_IDENTICAL
+ import kotlin.reflect.KProperty
+ 
+ interface In<in T>
+ interface Out<out T>
+ interface Inv<T>
+ 
+ class Delegate<T> {
+     operator fun getValue(t: Any, p: KProperty<*>): T = null!!
+     operator fun setValue(t: Any, p: KProperty<*>, varue: T) {}
+ }
+ 
+ fun <T> getT(): T = null!!
+ 
+ abstract class Test<in I, out O, P> {
+     abstract var type1: <!TYPE_VARIANCE_CONFLICT("I; in; invariant; I")!>I<!>
+     abstract var type2: <!TYPE_VARIANCE_CONFLICT("O; out; invariant; O")!>O<!>
+     abstract var type3: P
+     abstract var type4: In<<!TYPE_VARIANCE_CONFLICT("I; in; invariant; In<I>")!>I<!>>
+     abstract var type5: In<<!TYPE_VARIANCE_CONFLICT("O; out; invariant; In<O>")!>O<!>>
+ 
+     <!TYPE_VARIANCE_CONFLICT("I; in; invariant; I")!>var implicitType1<!> = getT<I>()
+     <!TYPE_VARIANCE_CONFLICT("O; out; invariant; O")!>var implicitType2<!> = getT<O>()
+     var implicitType3 = getT<P>()
+     <!TYPE_VARIANCE_CONFLICT("I; in; invariant; In<I>")!>var implicitType4<!> = getT<In<I>>()
+     <!TYPE_VARIANCE_CONFLICT("O; out; invariant; In<O>")!>var implicitType5<!> = getT<In<O>>()
+ 
+     <!TYPE_VARIANCE_CONFLICT("I; in; invariant; I")!>var delegateType1<!> by Delegate<I>()
+     <!TYPE_VARIANCE_CONFLICT("O; out; invariant; O")!>var delegateType2<!> by Delegate<O>()
+     var delegateType3 by Delegate<P>()
+     <!TYPE_VARIANCE_CONFLICT("I; in; invariant; In<I>")!>var delegateType4<!> by Delegate<In<I>>()
+     <!TYPE_VARIANCE_CONFLICT("O; out; invariant; In<O>")!>var delegateType5<!> by Delegate<In<O>>()
+ 
+     abstract var I.receiver1: Int
+     abstract var <!TYPE_VARIANCE_CONFLICT("O; out; in; O")!>O<!>.receiver2: Int
+     abstract var P.receiver3: Int
+     abstract var In<<!TYPE_VARIANCE_CONFLICT("I; in; out; In<I>")!>I<!>>.receiver4: Int
+     abstract var In<O>.receiver5: Int
+ 
+     var <X : I> X.typeParameter1: Int get() = 0; set(i) {}
+     var <X : <!TYPE_VARIANCE_CONFLICT("O; out; in; O")!>O<!>> X.typeParameter2: Int get() = 0; set(i) {}
+     var <X : P> X.typeParameter3: Int get() = 0; set(i) {}
+     var <X : In<<!TYPE_VARIANCE_CONFLICT("I; in; out; In<I>")!>I<!>>> X.typeParameter4: Int get() = 0; set(i) {}
+     var <X : In<O>> X.typeParameter5: Int get() = 0; set(i) {}
+ 
+     var <X> X.typeParameter6: Int where X : I get() = 0; set(i) {}
+     var <X> X.typeParameter7: Int where X : <!TYPE_VARIANCE_CONFLICT("O; out; in; O")!>O<!> get() = 0; set(i) {}
+     var <X> X.typeParameter8: Int where X : P get() = 0; set(i) {}
+     var <X> X.typeParameter9: Int where X : In<<!TYPE_VARIANCE_CONFLICT("I; in; out; In<I>")!>I<!>> get() = 0; set(i) {}
+     var <X> X.typeParameter0: Int where X : In<O> get() = 0; set(i) {}
+ }`;
+                    const targetElement = $('#diff0')[0];
+                    const configuration = {
+                        drawFileList: false,
+                        fileListToggle: false,
+                        fileListStartVisible: false,
+                        fileContentToggle: false,
+                        matching: 'lines',
+                        outputFormat: 'side-by-side',
+                        synchronisedScroll: true,
+                        highlight: true,
+                        renderNothingWhenEmpty: false,
+                        rawTemplates: {
+                            'generic-file-path': `
+                                <div class="col">
+                                    <a href="https://github.com/JetBrains/kotlin/blob/b946a284b00dbcbcd3f5d34d4e3dccc04849e5d0/compiler/testData/diagnostics/tests/variance/VarProperty.kt" target="_blank">
+                                        <strong>FE 1.0:</strong> tests/variance/VarProperty.kt
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="https://github.com/JetBrains/kotlin/blob/b946a284b00dbcbcd3f5d34d4e3dccc04849e5d0/compiler/testData/diagnostics/tests/variance/VarProperty.kt" target="_blank">
+                                        <strong>FIR:</strong> tests/variance/VarProperty.kt
+                                    </a>
+                                </div>
+                            `
+                        }
+                    };
+                    const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                    diff2htmlUi.draw();
+                    diff2htmlUi.highlightCode();
+                })();</script>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,107 @@
+<html>
+  <head>
+    <title>Diagnostics diff: NOTHING_TO_OVERRIDE</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row sticky-top" style="background: white" id="summary">
+        <div class="d-inline-flex align-items-baseline">
+          <h1 class="mr-2">NOTHING_TO_OVERRIDE</h1>
+<a href="index.html">(back to diagnostic list)</a></div>
+      </div>
+      <div class="row">
+        <ul>
+          <li><strong>Total: </strong>61</li>
+          <li><strong>Match %: </strong>47.54%</li>
+          <li><a href="#matched"><strong># Matched: </strong>29</a></li>
+          <li><strong># Non-matched: </strong>32</li>
+          <li><a href="#missing"><strong># Missing: </strong>12</a></li>
+          <li><a href="#unexpected"><strong># Unexpected: </strong>14</a></li>
+          <li><a href="#mismatched"><strong># Mismatched: </strong>6</a></li>
+          <li><strong># Files: </strong>33</li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="missing">
+        <h2>Missing (12)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-testsWithStdLib__targetedBuiltIns__unsupportedFeature.kt.html" target="_blank">testsWithStdLib/targetedBuiltIns/unsupportedFeature.kt (3)</a></li>
+          <li><a href="diff-testsWithStdLib__coroutines__suspendOverridability.kt.html" target="_blank">testsWithStdLib/coroutines/suspendOverridability.kt (2)</a></li>
+          <li><a href="diff-tests__cyclicHierarchy__withCompanion__everythingInOneScope_before.kt.html" target="_blank">tests/cyclicHierarchy/withCompanion/everythingInOneScope_before.kt (1)</a></li>
+          <li><a href="diff-tests__cyclicHierarchy__withCompanion__onlyInterfaces_before.kt.html" target="_blank">tests/cyclicHierarchy/withCompanion/onlyInterfaces_before.kt (1)</a></li>
+          <li><a href="diff-tests__explicitDefinitelyNotNullableViaIntersection__overridesJavaAnnotated.kt.html" target="_blank">tests/explicitDefinitelyNotNullableViaIntersection/overridesJavaAnnotated.kt (1)</a></li>
+          <li><a href="diff-tests__platformTypes__rawTypes__rawSupertypeOverride.kt.html" target="_blank">tests/platformTypes/rawTypes/rawSupertypeOverride.kt (1)</a></li>
+          <li><a href="diff-testsWithStdLib__coroutines__suspendCovarianJavaOverride.kt.html" target="_blank">testsWithStdLib/coroutines/suspendCovarianJavaOverride.kt (1)</a></li>
+          <li><a href="diff-testsWithStdLib__coroutines__suspendJavaImplementationFromDifferentClass.kt.html" target="_blank">testsWithStdLib/coroutines/suspendJavaImplementationFromDifferentClass.kt (1)</a></li>
+          <li><a href="diff-testsWithStdLib__coroutines__suspendJavaOverrides.kt.html" target="_blank">testsWithStdLib/coroutines/suspendJavaOverrides.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="unexpected">
+        <h2>Unexpected (14)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__explicitDefinitelyNotNullableViaIntersection__overrides.kt.html" target="_blank">tests/explicitDefinitelyNotNullableViaIntersection/overrides.kt (4)</a></li>
+          <li><a href="diff-tests__platformTypes__rawTypes__rawSupertypeOverride.kt.html" target="_blank">tests/platformTypes/rawTypes/rawSupertypeOverride.kt (4)</a></li>
+          <li><a href="diff-tests__j+k__types__notNullTypeParameterWithKotlinOverridesDefinitelyNonNullable.kt.html" target="_blank">tests/j+k/types/notNullTypeParameterWithKotlinOverridesDefinitelyNonNullable.kt (2)</a></li>
+          <li><a href="diff-tests__explicitDefinitelyNotNullableViaIntersection__overridesJavaAnnotated.kt.html" target="_blank">tests/explicitDefinitelyNotNullableViaIntersection/overridesJavaAnnotated.kt (1)</a></li>
+          <li><a href="diff-tests__multimodule__duplicateSuper__sameSuperTraitDifferentBounds.kt.html" target="_blank">tests/multimodule/duplicateSuper/sameSuperTraitDifferentBounds.kt (1)</a></li>
+          <li><a href="diff-tests__testWithModifiedMockJdk__notConsideredMethod.kt.html" target="_blank">tests/testWithModifiedMockJdk/notConsideredMethod.kt (1)</a></li>
+          <li><a href="diff-testsWithStdLib__targetedBuiltIns__blackListed.kt.html" target="_blank">testsWithStdLib/targetedBuiltIns/blackListed.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="mismatched">
+        <h2>Mismatched (6)</h2>
+      </div>
+      <div class="row sticky-top" style="top: 5.5em; background: white">
+        <h5>WRONG_NULLABILITY_FOR_JAVA_OVERRIDE → NOTHING_TO_OVERRIDE (4)</h5>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__j+k__types__notNullTypeParameterWithKotlinOverridesDefinitelyNonNullable.kt.html" target="_blank">tests/j+k/types/notNullTypeParameterWithKotlinOverridesDefinitelyNonNullable.kt (2)</a></li>
+          <li><a href="diff-tests__j+k__types__notNullTypeParameterWithKotlinOverridesWarning.kt.html" target="_blank">tests/j+k/types/notNullTypeParameterWithKotlinOverridesWarning.kt (2)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 5.5em; background: white">
+        <h5>CANNOT_OVERRIDE_INVISIBLE_MEMBER → NOTHING_TO_OVERRIDE (2)</h5>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__annotations__rendering__cannotOverrideInvisibleMember.kt.html" target="_blank">tests/annotations/rendering/cannotOverrideInvisibleMember.kt (1)</a></li>
+          <li><a href="diff-tests__scopes__VisibilityInheritModifier.kt.html" target="_blank">tests/scopes/VisibilityInheritModifier.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="matched">
+        <h2>Matched (29)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__explicitDefinitelyNotNullableViaIntersection__overrides.kt.html" target="_blank">tests/explicitDefinitelyNotNullableViaIntersection/overrides.kt (4)</a></li>
+          <li><a href="diff-tests__targetedBuiltIns__forEachRemainingNullability.kt.html" target="_blank">tests/targetedBuiltIns/forEachRemainingNullability.kt (4)</a></li>
+          <li><a href="diff-tests__explicitDefinitelyNotNullableViaIntersection__overridesJavaAnnotated.kt.html" target="_blank">tests/explicitDefinitelyNotNullableViaIntersection/overridesJavaAnnotated.kt (3)</a></li>
+          <li><a href="diff-tests__override__Generics.kt.html" target="_blank">tests/override/Generics.kt (2)</a></li>
+          <li><a href="diff-tests__override__NonGenerics.kt.html" target="_blank">tests/override/NonGenerics.kt (2)</a></li>
+          <li><a href="diff-foreignAnnotationsTests__java8Tests__misc__notNullVarargsOverrides.kt.html" target="_blank">foreignAnnotationsTests/java8Tests/misc/notNullVarargsOverrides.kt (1)</a></li>
+          <li><a href="diff-foreignAnnotationsTests__java8Tests__misc__nullableVarargsOverrides.kt.html" target="_blank">foreignAnnotationsTests/java8Tests/misc/nullableVarargsOverrides.kt (1)</a></li>
+          <li><a href="diff-tests__dataClasses__implementMethodsFromInterface.kt.html" target="_blank">tests/dataClasses/implementMethodsFromInterface.kt (1)</a></li>
+          <li><a href="diff-tests__defaultArguments__kt5232.kt.html" target="_blank">tests/defaultArguments/kt5232.kt (1)</a></li>
+          <li><a href="diff-tests__duplicateJvmSignature__accidentalOverrides__overridesNothing.kt.html" target="_blank">tests/duplicateJvmSignature/accidentalOverrides/overridesNothing.kt (1)</a></li>
+          <li><a href="diff-tests__generics__kt5508.kt.html" target="_blank">tests/generics/kt5508.kt (1)</a></li>
+          <li><a href="diff-tests__override__typeParameters__differentSetsOfBounds.kt.html" target="_blank">tests/override/typeParameters/differentSetsOfBounds.kt (1)</a></li>
+          <li><a href="diff-tests__platformTypes__notNullTypeParameter__substitutionInSuperType.kt.html" target="_blank">tests/platformTypes/notNullTypeParameter/substitutionInSuperType.kt (1)</a></li>
+          <li><a href="diff-tests__platformTypes__rawOverrides.kt.html" target="_blank">tests/platformTypes/rawOverrides.kt (1)</a></li>
+          <li><a href="diff-tests__platformTypes__rawSamOverrides.kt.html" target="_blank">tests/platformTypes/rawSamOverrides.kt (1)</a></li>
+          <li><a href="diff-tests__platformTypes__rawTypes__rawSupertypeOverride.kt.html" target="_blank">tests/platformTypes/rawTypes/rawSupertypeOverride.kt (1)</a></li>
+          <li><a href="diff-tests__platformTypes__typeEnhancement__saveAnnotationAfterSubstitution.kt.html" target="_blank">tests/platformTypes/typeEnhancement/saveAnnotationAfterSubstitution.kt (1)</a></li>
+          <li><a href="diff-testsWithJvmBackend__duplicateJvmSignature__accidentalOverrides__overridesNothing_ir.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/accidentalOverrides/overridesNothing_ir.kt (1)</a></li>
+          <li><a href="diff-testsWithJvmBackend__duplicateJvmSignature__accidentalOverrides__overridesNothing_old.kt.html" target="_blank">testsWithJvmBackend/duplicateJvmSignature/accidentalOverrides/overridesNothing_old.kt (1)</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

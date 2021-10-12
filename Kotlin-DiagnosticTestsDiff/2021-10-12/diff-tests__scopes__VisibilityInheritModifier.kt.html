@@ -1,0 +1,145 @@
+<html>
+  <head>
+    <title>Diagnostics diff: tests/scopes/VisibilityInheritModifier.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="card-header p-0" id="heading0"><button class="btn btn-link btn-block text-left" data-toggle="collapse" data-target="#collapse0">
+          <h5>Diff between FE 1.0 vs FIR</h5>
+        </button></div>
+      <div class="collapse show" id="collapse0">
+        <div class="card-body p-1">
+          <div id="diff0" style="width: 100%"></div>
+        </div>
+      </div>
+      <script type="text/javascript">                (function() {
+                    const diffString = `--- tests/scopes/VisibilityInheritModifier.kt
++++ tests/scopes/VisibilityInheritModifier.fir.kt
+@@ -1,85 +1,85 @@
+ package b
+ 
+ open class A {
+     internal open fun foo() {}
+ }
+ 
+ class B : A() {
+     <!CANNOT_CHANGE_ACCESS_PRIVILEGE!>protected<!> override fun foo() {}
+ }
+ 
+ class C : A() {
+     internal override fun foo() {}
+ }
+ 
+ //------------
+ open class D {
+     <!INCOMPATIBLE_MODIFIERS!>private<!> <!INCOMPATIBLE_MODIFIERS!>open<!> fun self() : D = this
+ }
+ 
+ class E : D() {
+-    internal <!CANNOT_OVERRIDE_INVISIBLE_MEMBER!>override<!> fun self() = this
++    internal <!NOTHING_TO_OVERRIDE!>override<!> fun self() = this
+ 
+     fun test() {
+         val s : E = self()
+     }
+ }
+ 
+ //------------
+ open class F {
+     protected open fun protected_fun() {}
+ }
+ 
+ class G : F() {
+     override fun protected_fun() {}
+ }
+ 
+ fun test_fun_stays_protected(g: G) {
+-    g.<!INVISIBLE_MEMBER!>protected_fun<!>()
++    g.<!INVISIBLE_REFERENCE!>protected_fun<!>()
+ }
+ 
+ //------------
+ open class H {
+     protected open fun pi_fun() {}
+ }
+ 
+ class I : H() {
+     protected override fun pi_fun() {}
+ }
+ 
+ class J : H() {
+     <!CANNOT_CHANGE_ACCESS_PRIVILEGE!>internal<!> override fun pi_fun() {}
+ }
+ 
+ class K : H() {
+     public override fun pi_fun() {}
+ }
+ 
+ //-------------
+ interface T {
+     public fun foo() {}
+ }
+ 
+ open class L : T {
+     override fun foo() {}
+ }
+ 
+ class M : L() {
+     <!CANNOT_WEAKEN_ACCESS_PRIVILEGE!>internal<!> override fun foo() {}
+ }
+ //---------------
+ interface R {
+     fun foo() {}
+ }
+ 
+ interface P : R {
+     override fun foo() {}
+ }
+ 
+ interface Q : R {
+     override fun foo() {}
+ }
+ 
+ class S : P, Q {
+     <!CANNOT_WEAKEN_ACCESS_PRIVILEGE!>internal<!> override fun foo() {}
+ }`;
+                    const targetElement = $('#diff0')[0];
+                    const configuration = {
+                        drawFileList: false,
+                        fileListToggle: false,
+                        fileListStartVisible: false,
+                        fileContentToggle: false,
+                        matching: 'lines',
+                        outputFormat: 'side-by-side',
+                        synchronisedScroll: true,
+                        highlight: true,
+                        renderNothingWhenEmpty: false,
+                        rawTemplates: {
+                            'generic-file-path': `
+                                <div class="col">
+                                    <a href="https://github.com/JetBrains/kotlin/blob/b946a284b00dbcbcd3f5d34d4e3dccc04849e5d0/compiler/testData/diagnostics/tests/scopes/VisibilityInheritModifier.kt" target="_blank">
+                                        <strong>FE 1.0:</strong> tests/scopes/VisibilityInheritModifier.kt
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="https://github.com/JetBrains/kotlin/blob/b946a284b00dbcbcd3f5d34d4e3dccc04849e5d0/compiler/testData/diagnostics/tests/scopes/VisibilityInheritModifier.fir.kt" target="_blank">
+                                        <strong>FIR:</strong> tests/scopes/VisibilityInheritModifier.fir.kt
+                                    </a>
+                                </div>
+                            `
+                        }
+                    };
+                    const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                    diff2htmlUi.draw();
+                    diff2htmlUi.highlightCode();
+                })();</script>
+    </div>
+  </body>
+</html>

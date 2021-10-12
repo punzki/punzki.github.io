@@ -1,0 +1,96 @@
+<html>
+  <head>
+    <title>Diagnostics diff: ASSIGNMENT_TYPE_MISMATCH</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row sticky-top" style="background: white" id="summary">
+        <div class="d-inline-flex align-items-baseline">
+          <h1 class="mr-2">ASSIGNMENT_TYPE_MISMATCH</h1>
+<a href="index.html">(back to diagnostic list)</a></div>
+      </div>
+      <div class="row">
+        <ul>
+          <li><strong>Total: </strong>68</li>
+          <li><strong>Match %: </strong>0.00%</li>
+          <li><a href="#matched"><strong># Matched: </strong>0</a></li>
+          <li><strong># Non-matched: </strong>68</li>
+          <li><a href="#missing"><strong># Missing: </strong>2</a></li>
+          <li><a href="#unexpected"><strong># Unexpected: </strong>17</a></li>
+          <li><a href="#mismatched"><strong># Mismatched: </strong>49</a></li>
+          <li><strong># Files: </strong>35</li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="missing">
+        <h2>Missing (2)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__FunctionReturnTypes.kt.html" target="_blank">tests/FunctionReturnTypes.kt (1)</a></li>
+          <li><a href="diff-tests__functionLiterals__assignmentOperationInLambdaWithExpectedType.kt.html" target="_blank">tests/functionLiterals/assignmentOperationInLambdaWithExpectedType.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="unexpected">
+        <h2>Unexpected (17)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__platformTypes__rawTypes__arrays.kt.html" target="_blank">tests/platformTypes/rawTypes/arrays.kt (8)</a></li>
+          <li><a href="diff-tests__inference__capturedTypes__kt46727Warnings.kt.html" target="_blank">tests/inference/capturedTypes/kt46727Warnings.kt (3)</a></li>
+          <li><a href="diff-tests__platformTypes__rawTypes__simple.kt.html" target="_blank">tests/platformTypes/rawTypes/simple.kt (3)</a></li>
+          <li><a href="diff-tests__generics__varProjection__setterNotProjectedOutAssign.kt.html" target="_blank">tests/generics/varProjection/setterNotProjectedOutAssign.kt (1)</a></li>
+          <li><a href="diff-tests__platformTypes__rawTypes__rawSupertype.kt.html" target="_blank">tests/platformTypes/rawTypes/rawSupertype.kt (1)</a></li>
+          <li><a href="diff-tests__varargs__varargInSetter.kt.html" target="_blank">tests/varargs/varargInSetter.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="mismatched">
+        <h2>Mismatched (49)</h2>
+      </div>
+      <div class="row sticky-top" style="top: 5.5em; background: white">
+        <h5>TYPE_MISMATCH → ASSIGNMENT_TYPE_MISMATCH (44)</h5>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__operatorsOverloading__assignmentOperationsCheckReturnType.kt.html" target="_blank">tests/operatorsOverloading/assignmentOperationsCheckReturnType.kt (13)</a></li>
+          <li><a href="diff-tests__platformTypes__nullabilityWarnings__passToJava.kt.html" target="_blank">tests/platformTypes/nullabilityWarnings/passToJava.kt (4)</a></li>
+          <li><a href="diff-tests__inference__capturedTypes__kt46727.kt.html" target="_blank">tests/inference/capturedTypes/kt46727.kt (3)</a></li>
+          <li><a href="diff-tests__generics__nullability__smartCastsValueArgument.kt.html" target="_blank">tests/generics/nullability/smartCastsValueArgument.kt (2)</a></li>
+          <li><a href="diff-tests__generics__nullability__tpInBounds.kt.html" target="_blank">tests/generics/nullability/tpInBounds.kt (2)</a></li>
+          <li><a href="diff-tests__platformTypes__nullabilityWarnings__dataFlowInfo.kt.html" target="_blank">tests/platformTypes/nullabilityWarnings/dataFlowInfo.kt (2)</a></li>
+          <li><a href="diff-tests__properties__inferenceFromGetters__vars.kt.html" target="_blank">tests/properties/inferenceFromGetters/vars.kt (2)</a></li>
+          <li><a href="diff-tests__BinaryCallsOnNullableValues.kt.html" target="_blank">tests/BinaryCallsOnNullableValues.kt (1)</a></li>
+          <li><a href="diff-tests__Properties.kt.html" target="_blank">tests/Properties.kt (1)</a></li>
+          <li><a href="diff-tests__generics__capturedParameters__objectLiteral.kt.html" target="_blank">tests/generics/capturedParameters/objectLiteral.kt (1)</a></li>
+          <li><a href="diff-tests__generics__innerClasses__iterator.kt.html" target="_blank">tests/generics/innerClasses/iterator.kt (1)</a></li>
+          <li><a href="diff-tests__generics__innerClasses__qualifiedOuter.kt.html" target="_blank">tests/generics/innerClasses/qualifiedOuter.kt (1)</a></li>
+          <li><a href="diff-tests__platformTypes__nullabilityWarnings__assignToVar.kt.html" target="_blank">tests/platformTypes/nullabilityWarnings/assignToVar.kt (1)</a></li>
+          <li><a href="diff-tests__platformTypes__rawTypes__nonTrivialErasure.kt.html" target="_blank">tests/platformTypes/rawTypes/nonTrivialErasure.kt (1)</a></li>
+          <li><a href="diff-tests__regressions__kt251.kt.html" target="_blank">tests/regressions/kt251.kt (1)</a></li>
+          <li><a href="diff-tests__resolve__priority__kt10219.kt.html" target="_blank">tests/resolve/priority/kt10219.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__alwaysNull.kt.html" target="_blank">tests/smartCasts/alwaysNull.kt (1)</a></li>
+          <li><a href="diff-tests__subtyping__localAnonymousObjects.kt.html" target="_blank">tests/subtyping/localAnonymousObjects.kt (1)</a></li>
+          <li><a href="diff-tests__subtyping__localClasses.kt.html" target="_blank">tests/subtyping/localClasses.kt (1)</a></li>
+          <li><a href="diff-tests__subtyping__memberAnonymousObjects.kt.html" target="_blank">tests/subtyping/memberAnonymousObjects.kt (1)</a></li>
+          <li><a href="diff-tests__subtyping__nestedIntoLocalClasses.kt.html" target="_blank">tests/subtyping/nestedIntoLocalClasses.kt (1)</a></li>
+          <li><a href="diff-tests__subtyping__nestedLocalClasses.kt.html" target="_blank">tests/subtyping/nestedLocalClasses.kt (1)</a></li>
+          <li><a href="diff-tests__subtyping__topLevelAnonymousObjects.kt.html" target="_blank">tests/subtyping/topLevelAnonymousObjects.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 5.5em; background: white">
+        <h5>CONSTANT_EXPECTED_TYPE_MISMATCH → ASSIGNMENT_TYPE_MISMATCH (5)</h5>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__properties__inferenceFromGetters__overrides.kt.html" target="_blank">tests/properties/inferenceFromGetters/overrides.kt (2)</a></li>
+          <li><a href="diff-tests__syntheticExtensions__javaProperties__KotlinOverridesJava.kt.html" target="_blank">tests/syntheticExtensions/javaProperties/KotlinOverridesJava.kt (1)</a></li>
+          <li><a href="diff-tests__syntheticExtensions__javaProperties__KotlinOverridesJava2.kt.html" target="_blank">tests/syntheticExtensions/javaProperties/KotlinOverridesJava2.kt (1)</a></li>
+          <li><a href="diff-tests__syntheticExtensions__javaProperties__OverrideGetterOnly.kt.html" target="_blank">tests/syntheticExtensions/javaProperties/OverrideGetterOnly.kt (1)</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

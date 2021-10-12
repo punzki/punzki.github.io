@@ -1,0 +1,188 @@
+<html>
+  <head>
+    <title>Diagnostics diff: testsWithStdLib/annotations/annotationsTargetingNonExistentAccessor.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="card-header p-0" id="heading0"><button class="btn btn-link btn-block text-left" data-toggle="collapse" data-target="#collapse0">
+          <h5>Diff between FE 1.0 vs FIR</h5>
+        </button></div>
+      <div class="collapse show" id="collapse0">
+        <div class="card-body p-1">
+          <div id="diff0" style="width: 100%"></div>
+        </div>
+      </div>
+      <script type="text/javascript">                (function() {
+                    const diffString = `--- testsWithStdLib/annotations/annotationsTargetingNonExistentAccessor.kt
++++ testsWithStdLib/annotations/annotationsTargetingNonExistentAccessor.fir.kt
+@@ -1,114 +1,114 @@
+ // Please make sure that this test is consistent with the blackbox test "annotationsOnNonExistentAccessors.kt"
+ 
+ import kotlin.reflect.KProperty
+ 
+ annotation class Ann
+ annotation class AnnRepeat
+ 
+ class Foo(
+-    <!ANNOTATION_TARGETS_NON_EXISTENT_ACCESSOR!>@get:Ann<!> private val y0: Int,
+-    <!ANNOTATION_TARGETS_NON_EXISTENT_ACCESSOR!>@get:Ann<!> private vararg val y1: String
++    @get:Ann private val y0: Int,
++    @get:Ann private vararg val y1: String
+ ) {
+-    <!ANNOTATION_TARGETS_NON_EXISTENT_ACCESSOR!>@get:Ann<!>
++    @get:Ann
+     private val x1 = ""
+ 
+-    <!ANNOTATION_TARGETS_NON_EXISTENT_ACCESSOR!>@set:Ann<!>
++    @set:Ann
+     private var x2 = ""
+ 
+-    <!ANNOTATION_TARGETS_NON_EXISTENT_ACCESSOR!>@setparam:Ann<!>
++    @setparam:Ann
+     private var x3 = ""
+ 
+-    @setparam:[<!ANNOTATION_TARGETS_NON_EXISTENT_ACCESSOR!>Ann<!> <!ANNOTATION_TARGETS_NON_EXISTENT_ACCESSOR!>AnnRepeat<!>]
++    @setparam:[Ann AnnRepeat]
+     private var x4 = ""
+ 
+     @get:Ann
+     internal val x5 = ""
+ 
+     @get:Ann
+     protected val x6 = ""
+ 
+-    <!ANNOTATION_TARGETS_NON_EXISTENT_ACCESSOR!>@get:Ann<!>
++    @get:Ann
+     private val x7: String = ""
+-        <!ANNOTATION_TARGETS_NON_EXISTENT_ACCESSOR!>@AnnRepeat<!> get
++        @AnnRepeat get
+ 
+     @get:Ann
+-    <!ANNOTATION_TARGETS_NON_EXISTENT_ACCESSOR!>@set:Ann<!>
++    @set:Ann
+     private var x8: String = ""
+         get() { return "" }
+ 
+     @get:Ann
+     @set:Ann
+     private var x9: String = ""
+         get() { return "" }
+         set(f) { field = f }
+ }
+ 
+ private class EffetivelyPrivate private constructor(
+     @get:Ann val x0: Int,
+     @get:Ann protected val x1: Int,
+     @get:Ann internal val x2: Int
+ ) {
+     private class Nested {
+         @get:Ann
+         val fofo = 0
+     }
+ }
+ 
+ class PrivateToThis<in I> {
+-    <!ANNOTATION_TARGETS_NON_EXISTENT_ACCESSOR!>@get:Ann<!>
+-    <!ANNOTATION_TARGETS_NON_EXISTENT_ACCESSOR!>@set:Ann<!>
+-    <!ANNOTATION_TARGETS_NON_EXISTENT_ACCESSOR!>@setparam:Ann<!>
++    @get:Ann
++    @set:Ann
++    @setparam:Ann
+     private var x0: I = TODO()
+ }
+ 
+ class Statics {
+     companion object {
+         @JvmField
+-        <!ANNOTATION_TARGETS_NON_EXISTENT_ACCESSOR!>@get:Ann<!>
++        @get:Ann
+         val x0 = ""
+ 
+-        <!ANNOTATION_TARGETS_NON_EXISTENT_ACCESSOR!>@get:Ann<!>
++        @get:Ann
+         const val x1 = ""
+ 
+         @JvmStatic
+         @get:Ann
+         val x2 = ""
+ 
+         @JvmStatic
+-        <!ANNOTATION_TARGETS_NON_EXISTENT_ACCESSOR!>@get:Ann<!>
++        @get:Ann
+         private val x3 = ""
+ 
+         @JvmStatic
+-        <!ANNOTATION_TARGETS_NON_EXISTENT_ACCESSOR!>@get:Ann<!>
++        @get:Ann
+         private val x4 = ""
+     }
+ }
+ 
+ private class Other(@param:Ann private val param: Int) {
+     @property:Ann
+     @field:Ann
+     private val other = ""
+ 
+     private fun @receiver:Ann Int.receiver() {}
+ 
+     @delegate:Ann
+     @get:Ann
+     private val delegate by CustomDelegate()
+ }
+ 
+ class CustomDelegate {
+     operator fun getValue(thisRef: Any?, prop: KProperty<*>): String = prop.name
+ }
+ 
+ @Retention(AnnotationRetention.SOURCE)
+ annotation class SourceAnn
+ 
+ class WithSource {
+     @get:SourceAnn
+     @set:SourceAnn
+     @setparam:SourceAnn
+     private var x0 = ""
+ 
+     private val x1 = ""
+         @SourceAnn get
+ }`;
+                    const targetElement = $('#diff0')[0];
+                    const configuration = {
+                        drawFileList: false,
+                        fileListToggle: false,
+                        fileListStartVisible: false,
+                        fileContentToggle: false,
+                        matching: 'lines',
+                        outputFormat: 'side-by-side',
+                        synchronisedScroll: true,
+                        highlight: true,
+                        renderNothingWhenEmpty: false,
+                        rawTemplates: {
+                            'generic-file-path': `
+                                <div class="col">
+                                    <a href="https://github.com/JetBrains/kotlin/blob/b946a284b00dbcbcd3f5d34d4e3dccc04849e5d0/compiler/testData/diagnostics/testsWithStdLib/annotations/annotationsTargetingNonExistentAccessor.kt" target="_blank">
+                                        <strong>FE 1.0:</strong> testsWithStdLib/annotations/annotationsTargetingNonExistentAccessor.kt
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="https://github.com/JetBrains/kotlin/blob/b946a284b00dbcbcd3f5d34d4e3dccc04849e5d0/compiler/testData/diagnostics/testsWithStdLib/annotations/annotationsTargetingNonExistentAccessor.fir.kt" target="_blank">
+                                        <strong>FIR:</strong> testsWithStdLib/annotations/annotationsTargetingNonExistentAccessor.fir.kt
+                                    </a>
+                                </div>
+                            `
+                        }
+                    };
+                    const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                    diff2htmlUi.draw();
+                    diff2htmlUi.highlightCode();
+                })();</script>
+    </div>
+  </body>
+</html>

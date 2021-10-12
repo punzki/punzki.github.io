@@ -1,0 +1,244 @@
+<html>
+  <head>
+    <title>Diagnostics diff: UNRESOLVED_REFERENCE_WRONG_RECEIVER</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row sticky-top" style="background: white" id="summary">
+        <div class="d-inline-flex align-items-baseline">
+          <h1 class="mr-2">UNRESOLVED_REFERENCE_WRONG_RECEIVER</h1>
+<a href="index.html">(back to diagnostic list)</a></div>
+      </div>
+      <div class="row">
+        <ul>
+          <li><strong>Total: </strong>291</li>
+          <li><strong>Match %: </strong>32.30%</li>
+          <li><a href="#matched"><strong># Matched: </strong>94</a></li>
+          <li><strong># Non-matched: </strong>197</li>
+          <li><a href="#missing"><strong># Missing: </strong>28</a></li>
+          <li><a href="#unexpected"><strong># Unexpected: </strong>73</a></li>
+          <li><a href="#mismatched"><strong># Mismatched: </strong>96</a></li>
+          <li><strong># Files: </strong>117</li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="missing">
+        <h2>Missing (28)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__typealias__innerClassTypeAliasConstructorInSupertypes.kt.html" target="_blank">tests/typealias/innerClassTypeAliasConstructorInSupertypes.kt (4)</a></li>
+          <li><a href="diff-tests__resolve__invoke__functionExpectedWhenSeveralInvokesExist.kt.html" target="_blank">tests/resolve/invoke/functionExpectedWhenSeveralInvokesExist.kt (3)</a></li>
+          <li><a href="diff-tests__resolve__invoke__reportFunctionExpectedWhenOneInvokeExist.kt.html" target="_blank">tests/resolve/invoke/reportFunctionExpectedWhenOneInvokeExist.kt (3)</a></li>
+          <li><a href="diff-tests__substitutions__starProjections.kt.html" target="_blank">tests/substitutions/starProjections.kt (3)</a></li>
+          <li><a href="diff-tests__callableReference__deprecatedCompanionReceiverInParentheses.kt.html" target="_blank">tests/callableReference/deprecatedCompanionReceiverInParentheses.kt (2)</a></li>
+          <li><a href="diff-tests__extensions__throwOutCandidatesByReceiver.kt.html" target="_blank">tests/extensions/throwOutCandidatesByReceiver.kt (2)</a></li>
+          <li><a href="diff-tests__functionLiterals__destructuringInLambdas__redeclaration.kt.html" target="_blank">tests/functionLiterals/destructuringInLambdas/redeclaration.kt (1)</a></li>
+          <li><a href="diff-tests__inference__kt47316.kt.html" target="_blank">tests/inference/kt47316.kt (1)</a></li>
+          <li><a href="diff-tests__regressions__kt12898.kt.html" target="_blank">tests/regressions/kt12898.kt (1)</a></li>
+          <li><a href="diff-tests__resolve__dslMarker__threeImplicitReceivers.kt.html" target="_blank">tests/resolve/dslMarker/threeImplicitReceivers.kt (1)</a></li>
+          <li><a href="diff-tests__resolve__dslMarker__threeImplicitReceivers2.kt.html" target="_blank">tests/resolve/dslMarker/threeImplicitReceivers2.kt (1)</a></li>
+          <li><a href="diff-tests__resolve__invoke__invokeOnVariableWithExtensionFunctionType.kt.html" target="_blank">tests/resolve/invoke/invokeOnVariableWithExtensionFunctionType.kt (1)</a></li>
+          <li><a href="diff-tests__resolve__propertyInCompanionOfEnum.kt.html" target="_blank">tests/resolve/propertyInCompanionOfEnum.kt (1)</a></li>
+          <li><a href="diff-testsWithStdLib__RenameOnImportHidesDefaultImport.kt.html" target="_blank">testsWithStdLib/RenameOnImportHidesDefaultImport.kt (1)</a></li>
+          <li><a href="diff-testsWithStdLib__contracts__smartcasts__deeplyNested.kt.html" target="_blank">testsWithStdLib/contracts/smartcasts/deeplyNested.kt (1)</a></li>
+          <li><a href="diff-testsWithStdLib__coroutines__inlineCrossinline__inlineOrdinaryOfNoinlineOrdinary.kt.html" target="_blank">testsWithStdLib/coroutines/inlineCrossinline/inlineOrdinaryOfNoinlineOrdinary.kt (1)</a></li>
+          <li><a href="diff-testsWithStdLib__coroutines__inlineCrossinline__inlineSuspendOfNoinlineOrdinary.kt.html" target="_blank">testsWithStdLib/coroutines/inlineCrossinline/inlineSuspendOfNoinlineOrdinary.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="unexpected">
+        <h2>Unexpected (73)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__generics__kt9985.kt.html" target="_blank">tests/generics/kt9985.kt (4)</a></li>
+          <li><a href="diff-tests__j+k__properties__fieldPropertyOverloadsDisabled.kt.html" target="_blank">tests/j+k/properties/fieldPropertyOverloadsDisabled.kt (4)</a></li>
+          <li><a href="diff-tests__generics__capturedParameters__innerLocalClass.kt.html" target="_blank">tests/generics/capturedParameters/innerLocalClass.kt (3)</a></li>
+          <li><a href="diff-tests__generics__innerClasses__implicitArguments__fromSuperClassesLocal.kt.html" target="_blank">tests/generics/innerClasses/implicitArguments/fromSuperClassesLocal.kt (3)</a></li>
+          <li><a href="diff-tests__generics__innerClasses__implicitArguments__fromSuperClassesLocalInsideInner.kt.html" target="_blank">tests/generics/innerClasses/implicitArguments/fromSuperClassesLocalInsideInner.kt (3)</a></li>
+          <li><a href="diff-tests__generics__starProjections__invalid.kt.html" target="_blank">tests/generics/starProjections/invalid.kt (3)</a></li>
+          <li><a href="diff-tests__resolve__propertyInCompanionOfEnum.kt.html" target="_blank">tests/resolve/propertyInCompanionOfEnum.kt (3)</a></li>
+          <li><a href="diff-tests__callableReference__deprecatedCompanionReceiverInParentheses.kt.html" target="_blank">tests/callableReference/deprecatedCompanionReceiverInParentheses.kt (2)</a></li>
+          <li><a href="diff-tests__functionLiterals__destructuringInLambdas__complexInference.kt.html" target="_blank">tests/functionLiterals/destructuringInLambdas/complexInference.kt (2)</a></li>
+          <li><a href="diff-tests__generics__capturedParameters__localClass.kt.html" target="_blank">tests/generics/capturedParameters/localClass.kt (2)</a></li>
+          <li><a href="diff-tests__generics__capturedParameters__localWithTypeParameter.kt.html" target="_blank">tests/generics/capturedParameters/localWithTypeParameter.kt (2)</a></li>
+          <li><a href="diff-tests__generics__innerClasses__implicitArguments__fromSuperClasses.kt.html" target="_blank">tests/generics/innerClasses/implicitArguments/fromSuperClasses.kt (2)</a></li>
+          <li><a href="diff-tests__generics__projectionsScope__platformSuperClass.kt.html" target="_blank">tests/generics/projectionsScope/platformSuperClass.kt (2)</a></li>
+          <li><a href="diff-tests__inference__regressions__kt37419.kt.html" target="_blank">tests/inference/regressions/kt37419.kt (2)</a></li>
+          <li><a href="diff-tests__j+k__selectMoreSpecific.kt.html" target="_blank">tests/j+k/selectMoreSpecific.kt (2)</a></li>
+          <li><a href="diff-tests__samConversions__OverloadPriority.kt.html" target="_blank">tests/samConversions/OverloadPriority.kt (2)</a></li>
+          <li><a href="diff-tests__samConversions__OverloadPriorityKT.kt.html" target="_blank">tests/samConversions/OverloadPriorityKT.kt (2)</a></li>
+          <li><a href="diff-tests__syntheticExtensions__samAdapters__overloadResolutionStaticWithoutRefinedSams.kt.html" target="_blank">tests/syntheticExtensions/samAdapters/overloadResolutionStaticWithoutRefinedSams.kt (2)</a></li>
+          <li><a href="diff-tests__syntheticExtensions__samAdapters__overloadResolutionWithoutRefinedSams.kt.html" target="_blank">tests/syntheticExtensions/samAdapters/overloadResolutionWithoutRefinedSams.kt (2)</a></li>
+          <li><a href="diff-testsWithStdLib__resolve__hidesMembers2.kt.html" target="_blank">testsWithStdLib/resolve/hidesMembers2.kt (2)</a></li>
+          <li><a href="diff-testsWithStdLib__resolve__samAgainstFunctionalType.kt.html" target="_blank">testsWithStdLib/resolve/samAgainstFunctionalType.kt (2)</a></li>
+          <li><a href="diff-testsWithStdLib__resolve__samOverloadsWithGenerics.kt.html" target="_blank">testsWithStdLib/resolve/samOverloadsWithGenerics.kt (2)</a></li>
+          <li><a href="diff-testsWithStdLib__resolve__samOverloadsWithGenericsWithoutRefinedSams.kt.html" target="_blank">testsWithStdLib/resolve/samOverloadsWithGenericsWithoutRefinedSams.kt (2)</a></li>
+          <li><a href="diff-tests__Bounds.kt.html" target="_blank">tests/Bounds.kt (1)</a></li>
+          <li><a href="diff-tests__callableReference__resolve__ambiguityWithBoundExtensionReceiver.kt.html" target="_blank">tests/callableReference/resolve/ambiguityWithBoundExtensionReceiver.kt (1)</a></li>
+          <li><a href="diff-tests__declarationChecks__namedFunAsLastExpressionInBlock.kt.html" target="_blank">tests/declarationChecks/namedFunAsLastExpressionInBlock.kt (1)</a></li>
+          <li><a href="diff-tests__functionLiterals__destructuringInLambdas__inferredFunctionalType.kt.html" target="_blank">tests/functionLiterals/destructuringInLambdas/inferredFunctionalType.kt (1)</a></li>
+          <li><a href="diff-tests__functionLiterals__destructuringInLambdas__noExpectedType.kt.html" target="_blank">tests/functionLiterals/destructuringInLambdas/noExpectedType.kt (1)</a></li>
+          <li><a href="diff-tests__functionLiterals__destructuringInLambdas__simple.kt.html" target="_blank">tests/functionLiterals/destructuringInLambdas/simple.kt (1)</a></li>
+          <li><a href="diff-tests__generics__innerClasses__implicitArguments__fromSuperClassesTransitive.kt.html" target="_blank">tests/generics/innerClasses/implicitArguments/fromSuperClassesTransitive.kt (1)</a></li>
+          <li><a href="diff-tests__generics__nullability__expressionsBoundsViolation.kt.html" target="_blank">tests/generics/nullability/expressionsBoundsViolation.kt (1)</a></li>
+          <li><a href="diff-tests__generics__projectionsScope__kt7296.kt.html" target="_blank">tests/generics/projectionsScope/kt7296.kt (1)</a></li>
+          <li><a href="diff-tests__inference__regressions__kt742.kt.html" target="_blank">tests/inference/regressions/kt742.kt (1)</a></li>
+          <li><a href="diff-tests__operatorRem__DeprecatedModAssignOperatorConventions.kt.html" target="_blank">tests/operatorRem/DeprecatedModAssignOperatorConventions.kt (1)</a></li>
+          <li><a href="diff-tests__resolve__invoke__errors__wrongReceiverTypeForInvoke.kt.html" target="_blank">tests/resolve/invoke/errors/wrongReceiverTypeForInvoke.kt (1)</a></li>
+          <li><a href="diff-tests__sourceCompatibility__noBoundCallableReferences__qualifiedJavaClassLiteralInKClassExtension.kt.html" target="_blank">tests/sourceCompatibility/noBoundCallableReferences/qualifiedJavaClassLiteralInKClassExtension.kt (1)</a></li>
+          <li><a href="diff-tests__unsignedTypes__conversions__inferenceForSignedAndUnsignedTypes.kt.html" target="_blank">tests/unsignedTypes/conversions/inferenceForSignedAndUnsignedTypes.kt (1)</a></li>
+          <li><a href="diff-tests__unsignedTypes__conversions__overloadResolutionForSignedAndUnsignedTypes.kt.html" target="_blank">tests/unsignedTypes/conversions/overloadResolutionForSignedAndUnsignedTypes.kt (1)</a></li>
+          <li><a href="diff-testsWithStdLib__resolve__samOverloadsWithKtFunction.kt.html" target="_blank">testsWithStdLib/resolve/samOverloadsWithKtFunction.kt (1)</a></li>
+          <li><a href="diff-testsWithStdLib__resolve__samOverloadsWithKtFunctionWithoutRefinedSams.kt.html" target="_blank">testsWithStdLib/resolve/samOverloadsWithKtFunctionWithoutRefinedSams.kt (1)</a></li>
+          <li><a href="diff-testsWithStdLib__targetedBuiltIns__unsupportedFeature.kt.html" target="_blank">testsWithStdLib/targetedBuiltIns/unsupportedFeature.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="mismatched">
+        <h2>Mismatched (96)</h2>
+      </div>
+      <div class="row sticky-top" style="top: 5.5em; background: white">
+        <h5>UNRESOLVED_REFERENCE_WRONG_RECEIVER → UNRESOLVED_REFERENCE (65)</h5>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-testsWithStdLib__hugeUnresolvedKotlinxHtml.kt.html" target="_blank">testsWithStdLib/hugeUnresolvedKotlinxHtml.kt (23)</a></li>
+          <li><a href="diff-testsWithStdLib__contracts__smartcasts__intersectingInfo.kt.html" target="_blank">testsWithStdLib/contracts/smartcasts/intersectingInfo.kt (6)</a></li>
+          <li><a href="diff-tests__inference__builderInference__specialCallsWithLambdas.kt.html" target="_blank">tests/inference/builderInference/specialCallsWithLambdas.kt (5)</a></li>
+          <li><a href="diff-testsWithStdLib__contracts__smartcasts__operatorsTests__andOperator.kt.html" target="_blank">testsWithStdLib/contracts/smartcasts/operatorsTests/andOperator.kt (5)</a></li>
+          <li><a href="diff-testsWithStdLib__contracts__smartcasts__operatorsTests__orOperator.kt.html" target="_blank">testsWithStdLib/contracts/smartcasts/operatorsTests/orOperator.kt (5)</a></li>
+          <li><a href="diff-testsWithStdLib__inference__kt42620.kt.html" target="_blank">testsWithStdLib/inference/kt42620.kt (4)</a></li>
+          <li><a href="diff-tests__callableReference__memberExtensionsImportedFromObjectsUnsupported.kt.html" target="_blank">tests/callableReference/memberExtensionsImportedFromObjectsUnsupported.kt (3)</a></li>
+          <li><a href="diff-tests__inference__builderInference__specialCallsWithCallableReferences.kt.html" target="_blank">tests/inference/builderInference/specialCallsWithCallableReferences.kt (2)</a></li>
+          <li><a href="diff-tests__inference__builderInference__specialCallsWithCallableReferencesUnrestricted.kt.html" target="_blank">tests/inference/builderInference/specialCallsWithCallableReferencesUnrestricted.kt (2)</a></li>
+          <li><a href="diff-tests__unsignedTypes__unsignedLiteralsTypeCheck.kt.html" target="_blank">tests/unsignedTypes/unsignedLiteralsTypeCheck.kt (2)</a></li>
+          <li><a href="diff-testsWithStdLib__contracts__smartcasts__intersectionTypes.kt.html" target="_blank">testsWithStdLib/contracts/smartcasts/intersectionTypes.kt (2)</a></li>
+          <li><a href="diff-tests__collectionLiterals__noCollectionLiterals.kt.html" target="_blank">tests/collectionLiterals/noCollectionLiterals.kt (1)</a></li>
+          <li><a href="diff-tests__incompleteCode__plusOnTheRight.kt.html" target="_blank">tests/incompleteCode/plusOnTheRight.kt (1)</a></li>
+          <li><a href="diff-tests__platformTypes__rawTypes__substituteOtherErasedDeepTypeArguments.kt.html" target="_blank">tests/platformTypes/rawTypes/substituteOtherErasedDeepTypeArguments.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__typeInComparison.kt.html" target="_blank">tests/smartCasts/typeInComparison.kt (1)</a></li>
+          <li><a href="diff-tests__typealias__innerClassTypeAliasConstructorInSupertypes.kt.html" target="_blank">tests/typealias/innerClassTypeAliasConstructorInSupertypes.kt (1)</a></li>
+          <li><a href="diff-tests__unsignedTypes__explicitUnsignedLongTypeCheck.kt.html" target="_blank">tests/unsignedTypes/explicitUnsignedLongTypeCheck.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 5.5em; background: white">
+        <h5>UNRESOLVED_REFERENCE_WRONG_RECEIVER → NONE_APPLICABLE (17)</h5>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__resolve__nestedCalls__manyInapplicableCandidatesWithLambdas.kt.html" target="_blank">tests/resolve/nestedCalls/manyInapplicableCandidatesWithLambdas.kt (14)</a></li>
+          <li><a href="diff-tests__inference__reportingImprovements__reportUnresolvedReferenceWrongReceiverForManyCandidates.kt.html" target="_blank">tests/inference/reportingImprovements/reportUnresolvedReferenceWrongReceiverForManyCandidates.kt (1)</a></li>
+          <li><a href="diff-testsWithStdLib__contracts__smartcasts__operatorsTests__andOperator.kt.html" target="_blank">testsWithStdLib/contracts/smartcasts/operatorsTests/andOperator.kt (1)</a></li>
+          <li><a href="diff-testsWithStdLib__contracts__smartcasts__operatorsTests__orOperator.kt.html" target="_blank">testsWithStdLib/contracts/smartcasts/operatorsTests/orOperator.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 5.5em; background: white">
+        <h5>UNRESOLVED_REFERENCE_WRONG_RECEIVER → USAGE_IS_NOT_INLINABLE (4)</h5>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-testsWithStdLib__coroutines__inlineCrossinline__inlineOrdinaryOfCrossinlineOrdinary.kt.html" target="_blank">testsWithStdLib/coroutines/inlineCrossinline/inlineOrdinaryOfCrossinlineOrdinary.kt (1)</a></li>
+          <li><a href="diff-testsWithStdLib__coroutines__inlineCrossinline__inlineOrdinaryOfOrdinary.kt.html" target="_blank">testsWithStdLib/coroutines/inlineCrossinline/inlineOrdinaryOfOrdinary.kt (1)</a></li>
+          <li><a href="diff-testsWithStdLib__coroutines__inlineCrossinline__inlineSuspendOfCrossinlineOrdinary.kt.html" target="_blank">testsWithStdLib/coroutines/inlineCrossinline/inlineSuspendOfCrossinlineOrdinary.kt (1)</a></li>
+          <li><a href="diff-testsWithStdLib__coroutines__inlineCrossinline__inlineSuspendOfOrdinary.kt.html" target="_blank">testsWithStdLib/coroutines/inlineCrossinline/inlineSuspendOfOrdinary.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 5.5em; background: white">
+        <h5>UNRESOLVED_REFERENCE → UNRESOLVED_REFERENCE_WRONG_RECEIVER (4)</h5>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__generics__multipleBoundsMemberScope__propertiesConflict.kt.html" target="_blank">tests/generics/multipleBoundsMemberScope/propertiesConflict.kt (1)</a></li>
+          <li><a href="diff-tests__samConversions__OverloadPriority.kt.html" target="_blank">tests/samConversions/OverloadPriority.kt (1)</a></li>
+          <li><a href="diff-tests__samConversions__OverloadPriorityKT.kt.html" target="_blank">tests/samConversions/OverloadPriorityKT.kt (1)</a></li>
+          <li><a href="diff-tests__substitutions__starProjections.kt.html" target="_blank">tests/substitutions/starProjections.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 5.5em; background: white">
+        <h5>INSTANCE_ACCESS_BEFORE_SUPER_CALL → UNRESOLVED_REFERENCE_WRONG_RECEIVER (2)</h5>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__secondaryConstructors__headerCallChecker__objectLiteralAsArgument.kt.html" target="_blank">tests/secondaryConstructors/headerCallChecker/objectLiteralAsArgument.kt (1)</a></li>
+          <li><a href="diff-tests__secondaryConstructors__headerCallChecker__objectLiteralAsDefaultValueParameter.kt.html" target="_blank">tests/secondaryConstructors/headerCallChecker/objectLiteralAsDefaultValueParameter.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 5.5em; background: white">
+        <h5>DEPRECATED_BINARY_MOD_AS_REM → UNRESOLVED_REFERENCE_WRONG_RECEIVER (2)</h5>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__operatorRem__DeprecatedModOperatorConventions.kt.html" target="_blank">tests/operatorRem/DeprecatedModOperatorConventions.kt (1)</a></li>
+          <li><a href="diff-tests__operatorRem__doNotResolveToInapplicableRem.kt.html" target="_blank">tests/operatorRem/doNotResolveToInapplicableRem.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 5.5em; background: white">
+        <h5>UNRESOLVED_REFERENCE_WRONG_RECEIVER → EXPRESSION_EXPECTED_PACKAGE_FOUND (1)</h5>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__resolve__wrongReceiver.kt.html" target="_blank">tests/resolve/wrongReceiver.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 5.5em; background: white">
+        <h5>FUNCTION_EXPECTED → UNRESOLVED_REFERENCE_WRONG_RECEIVER (1)</h5>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__resolve__invoke__reportFunctionExpectedWhenOneInvokeExist.kt.html" target="_blank">tests/resolve/invoke/reportFunctionExpectedWhenOneInvokeExist.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="matched">
+        <h2>Matched (94)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__extensions__throwOutCandidatesByReceiver.kt.html" target="_blank">tests/extensions/throwOutCandidatesByReceiver.kt (9)</a></li>
+          <li><a href="diff-tests__inference__capturedTypes__nullableCaptruredTypeAgainstNullableVariable.kt.html" target="_blank">tests/inference/capturedTypes/nullableCaptruredTypeAgainstNullableVariable.kt (7)</a></li>
+          <li><a href="diff-tests__inference__capturedTypes__nullableCaptruredTypeAgainstNullableVariableWithDisabledComplatibilityFlag.kt.html" target="_blank">tests/inference/capturedTypes/nullableCaptruredTypeAgainstNullableVariableWithDisabledComplatibilityFlag.kt (7)</a></li>
+          <li><a href="diff-tests__smartCasts__intersectionScope__flexibleTypes.kt.html" target="_blank">tests/smartCasts/intersectionScope/flexibleTypes.kt (7)</a></li>
+          <li><a href="diff-tests__functionLiterals__destructuringInLambdas__redeclaration.kt.html" target="_blank">tests/functionLiterals/destructuringInLambdas/redeclaration.kt (6)</a></li>
+          <li><a href="diff-tests__resolve__wrongReceiver.kt.html" target="_blank">tests/resolve/wrongReceiver.kt (5)</a></li>
+          <li><a href="diff-tests__unsignedTypes__conversions__noConversionForUnsignedTypesOnReceiver.kt.html" target="_blank">tests/unsignedTypes/conversions/noConversionForUnsignedTypesOnReceiver.kt (4)</a></li>
+          <li><a href="diff-tests__generics__projectionsScope__extensionReceiverTypeMismatch.kt.html" target="_blank">tests/generics/projectionsScope/extensionReceiverTypeMismatch.kt (3)</a></li>
+          <li><a href="diff-tests__smartCasts__kt30927.kt.html" target="_blank">tests/smartCasts/kt30927.kt (3)</a></li>
+          <li><a href="diff-tests__DeprecatedUnaryOperatorConventions.kt.html" target="_blank">tests/DeprecatedUnaryOperatorConventions.kt (2)</a></li>
+          <li><a href="diff-tests__checkTypeTest.kt.html" target="_blank">tests/checkTypeTest.kt (2)</a></li>
+          <li><a href="diff-tests__controlStructures__typeInferenceForExclExcl.kt.html" target="_blank">tests/controlStructures/typeInferenceForExclExcl.kt (2)</a></li>
+          <li><a href="diff-tests__extensions__classObject.kt.html" target="_blank">tests/extensions/classObject.kt (2)</a></li>
+          <li><a href="diff-tests__functionLiterals__destructuringInLambdas__inferredFunctionalType.kt.html" target="_blank">tests/functionLiterals/destructuringInLambdas/inferredFunctionalType.kt (2)</a></li>
+          <li><a href="diff-tests__inference__capturedTypes__approximateContravariantCapturedTypes.kt.html" target="_blank">tests/inference/capturedTypes/approximateContravariantCapturedTypes.kt (2)</a></li>
+          <li><a href="diff-tests__inference__capturedTypes__captureForNullableTypes.kt.html" target="_blank">tests/inference/capturedTypes/captureForNullableTypes.kt (2)</a></li>
+          <li><a href="diff-tests__inference__capturedTypes__captureFromNullableTypeVariable.kt.html" target="_blank">tests/inference/capturedTypes/captureFromNullableTypeVariable.kt (2)</a></li>
+          <li><a href="diff-tests__numbers__numbersInSimpleConstraints.kt.html" target="_blank">tests/numbers/numbersInSimpleConstraints.kt (2)</a></li>
+          <li><a href="diff-testsWithJsStdLib__platformDependent.kt.html" target="_blank">testsWithJsStdLib/platformDependent.kt (2)</a></li>
+          <li><a href="diff-testsWithStdLib__coroutines__suspendFunctions.kt.html" target="_blank">testsWithStdLib/coroutines/suspendFunctions.kt (2)</a></li>
+          <li><a href="diff-tests__callableReference__generic__argumentAndReturnExpectedType.kt.html" target="_blank">tests/callableReference/generic/argumentAndReturnExpectedType.kt (1)</a></li>
+          <li><a href="diff-tests__collectionLiterals__basicCollectionLiterals.kt.html" target="_blank">tests/collectionLiterals/basicCollectionLiterals.kt (1)</a></li>
+          <li><a href="diff-tests__extensions__kt3563.kt.html" target="_blank">tests/extensions/kt3563.kt (1)</a></li>
+          <li><a href="diff-tests__extensions__throwOutCandidatesByReceiver2.kt.html" target="_blank">tests/extensions/throwOutCandidatesByReceiver2.kt (1)</a></li>
+          <li><a href="diff-tests__funInterface__funInterfaceConversionOnReceiver.kt.html" target="_blank">tests/funInterface/funInterfaceConversionOnReceiver.kt (1)</a></li>
+          <li><a href="diff-tests__generics__innerClasses__iterator.kt.html" target="_blank">tests/generics/innerClasses/iterator.kt (1)</a></li>
+          <li><a href="diff-tests__generics__innerClasses__qualifiedOuter.kt.html" target="_blank">tests/generics/innerClasses/qualifiedOuter.kt (1)</a></li>
+          <li><a href="diff-tests__inference__capturedTypes__kt2872.kt.html" target="_blank">tests/inference/capturedTypes/kt2872.kt (1)</a></li>
+          <li><a href="diff-tests__inference__regressions__kt742.kt.html" target="_blank">tests/inference/regressions/kt742.kt (1)</a></li>
+          <li><a href="diff-tests__inference__tooEagerSmartcast.kt.html" target="_blank">tests/inference/tooEagerSmartcast.kt (1)</a></li>
+          <li><a href="diff-tests__j+k__genericConstructor__classTypeParameterInferredFromArgument.kt.html" target="_blank">tests/j+k/genericConstructor/classTypeParameterInferredFromArgument.kt (1)</a></li>
+          <li><a href="diff-tests__j+k__genericConstructor__innerClass.kt.html" target="_blank">tests/j+k/genericConstructor/innerClass.kt (1)</a></li>
+          <li><a href="diff-tests__platformTypes__commonSupertype__withNothing.kt.html" target="_blank">tests/platformTypes/commonSupertype/withNothing.kt (1)</a></li>
+          <li><a href="diff-tests__regressions__kt5362.kt.html" target="_blank">tests/regressions/kt5362.kt (1)</a></li>
+          <li><a href="diff-tests__regressions__kt557.kt.html" target="_blank">tests/regressions/kt557.kt (1)</a></li>
+          <li><a href="diff-tests__resolve__invoke__errors__wrongReceiverTypeForInvoke.kt.html" target="_blank">tests/resolve/invoke/errors/wrongReceiverTypeForInvoke.kt (1)</a></li>
+          <li><a href="diff-tests__resolve__invoke__invokeOnVariableWithExtensionFunctionType.kt.html" target="_blank">tests/resolve/invoke/invokeOnVariableWithExtensionFunctionType.kt (1)</a></li>
+          <li><a href="diff-tests__typealias__innerClassTypeAliasConstructor.kt.html" target="_blank">tests/typealias/innerClassTypeAliasConstructor.kt (1)</a></li>
+          <li><a href="diff-tests__unsignedTypes__conversions__inferenceForSignedAndUnsignedTypes.kt.html" target="_blank">tests/unsignedTypes/conversions/inferenceForSignedAndUnsignedTypes.kt (1)</a></li>
+          <li><a href="diff-testsWithStdLib__coroutines__suspendExternalFunctions.kt.html" target="_blank">testsWithStdLib/coroutines/suspendExternalFunctions.kt (1)</a></li>
+          <li><a href="diff-testsWithStdLib__inference__annotationsForResolve__onlyInputTypesAndTopLevelCapturedTypes.kt.html" target="_blank">testsWithStdLib/inference/annotationsForResolve/onlyInputTypesAndTopLevelCapturedTypes.kt (1)</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

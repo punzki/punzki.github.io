@@ -1,0 +1,238 @@
+<html>
+  <head>
+    <title>Diagnostics diff: tests/controlFlowAnalysis/deadCode/deadCodeDifferentExamples.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="card-header p-0" id="heading0"><button class="btn btn-link btn-block text-left" data-toggle="collapse" data-target="#collapse0">
+          <h5>Diff between FE 1.0 vs FIR</h5>
+        </button></div>
+      <div class="collapse show" id="collapse0">
+        <div class="card-body p-1">
+          <div id="diff0" style="width: 100%"></div>
+        </div>
+      </div>
+      <script type="text/javascript">                (function() {
+                    const diffString = `--- tests/controlFlowAnalysis/deadCode/deadCodeDifferentExamples.kt
++++ tests/controlFlowAnalysis/deadCode/deadCodeDifferentExamples.fir.kt
+@@ -1,169 +1,169 @@
+ // LANGUAGE: -ProhibitSimplificationOfNonTrivialConstBooleanExpressions
+ // !DIAGNOSTICS: -UNUSED_PARAMETER -UNUSED_EXPRESSION
+ 
+ fun t1() : Int{
+   return 0
+   <!UNREACHABLE_CODE!>1<!>
+ }
+ 
+ fun t1a() : Int {
+   <!RETURN_TYPE_MISMATCH!>return<!>
+   <!UNREACHABLE_CODE!>return 1<!>
+   <!UNREACHABLE_CODE!>1<!>
+ }
+ 
+ fun t1b() : Int {
+   return 1
+   <!UNREACHABLE_CODE!>return 1<!>
+   <!UNREACHABLE_CODE!>1<!>
+ }
+ 
+ fun t1c() : Int {
+   return 1
+   <!RETURN_TYPE_MISMATCH, UNREACHABLE_CODE!>return<!>
+   <!UNREACHABLE_CODE!>1<!>
+ }
+ 
+ fun t2() : Int {
+   if (1 > 2)
+     return 1
+   else return 1
+   <!UNREACHABLE_CODE!>1<!>
+ }
+ 
+ fun t2a() : Int {
+   if (1 > 2) {
+     return 1
+     <!UNREACHABLE_CODE!>1<!>
+   } else { return 1
+     <!UNREACHABLE_CODE!>2<!>
+   }
+   <!UNREACHABLE_CODE!>1<!>
+ }
+ 
+ fun t3() : Any {
+   if (1 > 2)
+     return 2
+   else return ""
+   <!UNREACHABLE_CODE!>1<!>
+ }
+ 
+ fun t4(a : Boolean) : Int {
+   do {
+     return 1
+   }
+   while (<!UNREACHABLE_CODE!>a<!>)
+   <!UNREACHABLE_CODE!>1<!>
+ }
+ 
+ fun t4break(a : Boolean) : Int {
+   do {
+     break
+   }
+   while (<!UNREACHABLE_CODE!>a<!>)
+   return 1
+ }
+ 
+ fun t5() : Int {
+   do {
+     return 1
+     <!UNREACHABLE_CODE!>2<!>
+   }
+-  while (<!NON_TRIVIAL_BOOLEAN_CONSTANT, UNREACHABLE_CODE!>1 > 2<!>)
++  while (<!UNREACHABLE_CODE!>1 > 2<!>)
+   <!UNREACHABLE_CODE!>return 1<!>
+ }
+ 
+ fun t6() : Int {
+-  while (<!NON_TRIVIAL_BOOLEAN_CONSTANT!>1 > 2<!>) {
++  while (1 > 2) {
+     return 1
+     <!UNREACHABLE_CODE!>2<!>
+   }
+   return 1
+ }
+ 
+ fun t6break() : Int {
+-  while (<!NON_TRIVIAL_BOOLEAN_CONSTANT!>1 > 2<!>) {
++  while (1 > 2) {
+     break
+     <!UNREACHABLE_CODE!>2<!>
+   }
+   return 1
+ }
+ 
+ fun t7(b : Int) : Int {
+   for (i in 1..b) {
+     return 1
+     <!UNREACHABLE_CODE!>2<!>
+   }
+   return 1
+ }
+ 
+ fun t7break(b : Int) : Int {
+   for (i in 1..b) {
+     return 1
+     <!UNREACHABLE_CODE!>2<!>
+   }
+   return 1
+ }
+ 
+ fun t7() : Int {
+   try {
+     return 1
+     <!UNREACHABLE_CODE!>2<!>
+   }
+-  catch (<!TYPE_MISMATCH!>e : Any<!>) {
++  catch (<!THROWABLE_TYPE_MISMATCH!>e : Any<!>) {
+     2
+   }
+   return 1 // this is OK, like in Java
+ }
+ 
+ fun t8() : Int {
+   try {
+     return 1
+     <!UNREACHABLE_CODE!>2<!>
+   }
+-  catch (<!TYPE_MISMATCH!>e : Any<!>) {
++  catch (<!THROWABLE_TYPE_MISMATCH!>e : Any<!>) {
+     return 1
+     <!UNREACHABLE_CODE!>2<!>
+   }
+   <!UNREACHABLE_CODE!>return 1<!>
+ }
+ 
+ fun blockAndAndMismatch() : Boolean {
+-  (return true) <!UNREACHABLE_CODE!>|| (return false)<!>
++  (return true) || (<!UNREACHABLE_CODE!>return false<!>)
+   <!UNREACHABLE_CODE!>return true<!>
+ }
+ 
+ fun tf() : Int {
+-  try {<!UNREACHABLE_CODE!>return<!> 1} finally{return 1}
++  try {return 1} finally{return 1}
+   <!UNREACHABLE_CODE!>return 1<!>
+ }
+ 
+ fun failtest(a : Int) : Int {
+-  if (fail() <!UNREACHABLE_CODE!>|| true<!>) <!UNREACHABLE_CODE!>{
++  if (fail() || <!UNREACHABLE_CODE!>true<!>) {
+ 
+-  }<!>
++  }
+   <!UNREACHABLE_CODE!>return 1<!>
+ }
+ 
+-fun foo(a : Nothing) : Unit {
++fun foo(a : Nothing) : <!REDUNDANT_RETURN_UNIT_TYPE!>Unit<!> {
+   1
+   a
+   <!UNREACHABLE_CODE!>2<!>
+ }
+ 
+ fun fail() : Nothing {
+   throw java.lang.RuntimeException()
+ }
+ 
+-fun nullIsNotNothing() : Unit {
++fun nullIsNotNothing() : <!REDUNDANT_RETURN_UNIT_TYPE!>Unit<!> {
+     val x : Int? = 1
+     if (x != null) {
+          return
+     }
+     fail()
+ }
+ 
+ fun returnInWhile(a: Int) {
+     do {return}
+     while (<!UNREACHABLE_CODE!>1 > a<!>)
+ }`;
+                    const targetElement = $('#diff0')[0];
+                    const configuration = {
+                        drawFileList: false,
+                        fileListToggle: false,
+                        fileListStartVisible: false,
+                        fileContentToggle: false,
+                        matching: 'lines',
+                        outputFormat: 'side-by-side',
+                        synchronisedScroll: true,
+                        highlight: true,
+                        renderNothingWhenEmpty: false,
+                        rawTemplates: {
+                            'generic-file-path': `
+                                <div class="col">
+                                    <a href="https://github.com/JetBrains/kotlin/blob/b946a284b00dbcbcd3f5d34d4e3dccc04849e5d0/compiler/testData/diagnostics/tests/controlFlowAnalysis/deadCode/deadCodeDifferentExamples.kt" target="_blank">
+                                        <strong>FE 1.0:</strong> tests/controlFlowAnalysis/deadCode/deadCodeDifferentExamples.kt
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="https://github.com/JetBrains/kotlin/blob/b946a284b00dbcbcd3f5d34d4e3dccc04849e5d0/compiler/testData/diagnostics/tests/controlFlowAnalysis/deadCode/deadCodeDifferentExamples.fir.kt" target="_blank">
+                                        <strong>FIR:</strong> tests/controlFlowAnalysis/deadCode/deadCodeDifferentExamples.fir.kt
+                                    </a>
+                                </div>
+                            `
+                        }
+                    };
+                    const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                    diff2htmlUi.draw();
+                    diff2htmlUi.highlightCode();
+                })();</script>
+    </div>
+  </body>
+</html>

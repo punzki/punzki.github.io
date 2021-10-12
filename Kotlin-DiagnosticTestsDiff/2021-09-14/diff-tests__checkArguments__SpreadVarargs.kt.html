@@ -1,0 +1,168 @@
+<html>
+  <head>
+    <title>Diagnostics diff: tests/checkArguments/SpreadVarargs.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="card-header p-0" id="heading0"><button class="btn btn-link btn-block text-left" data-toggle="collapse" data-target="#collapse0">
+          <h5>Diff between FE 1.0 vs FIR</h5>
+        </button></div>
+      <div class="collapse show" id="collapse0">
+        <div class="card-body p-1">
+          <div id="diff0" style="width: 100%"></div>
+        </div>
+      </div>
+      <script type="text/javascript">                (function() {
+                    const diffString = `--- tests/checkArguments/SpreadVarargs.kt
++++ tests/checkArguments/SpreadVarargs.fir.kt
+@@ -1,95 +1,95 @@
+ // !CHECK_TYPE
+ // !LANGUAGE: +ProhibitAssigningSingleElementsToVarargsInNamedForm +AllowAssigningArrayElementsToVarargsInNamedFormForFunctions
+ 
+ fun <T> array1(vararg a : T) = a
+ 
+ fun main() {
+     val a = array1("a", "b")
+     val b = array1(1, 1)
+     join(1)
+     join(1, "2")
+     join(1, "2", "3")
+     join(<!NON_VARARG_SPREAD!>*<!>1, "2")
+-    join(1, *<!TYPE_MISMATCH!>"2"<!>)
+-    join(x = 1, a = <!ASSIGNING_SINGLE_ELEMENT_TO_VARARG_IN_NAMED_FORM_FUNCTION_ERROR, TYPE_MISMATCH!>"2"<!>)
+-    join(x = <!NON_VARARG_SPREAD!>*<!>1, a = *<!TYPE_MISMATCH!>"2"<!>)
++    join(1, *<!ARGUMENT_TYPE_MISMATCH!>"2"<!>)
++    join(x = 1, a = <!ASSIGNING_SINGLE_ELEMENT_TO_VARARG_IN_NAMED_FORM_FUNCTION_ERROR!>"2"<!>)
++    join(x = *1, a = *"2")
+     join(x = 1, a = a)
+-    join(x = 1, a = <!TYPE_MISMATCH!>b<!>)
++    join(x = 1, a = <!ARGUMENT_TYPE_MISMATCH!>b<!>)
+     join(1, *a)
+-    join(1, *<!TYPE_MISMATCH!>b<!>)
++    join(1, *<!ARGUMENT_TYPE_MISMATCH!>b<!>)
+     join(1, *a, "3")
+-    join(1, *<!TYPE_MISMATCH!>b<!>, "3")
++    join(1, *<!ARGUMENT_TYPE_MISMATCH!>b<!>, "3")
+     join(1, "4", *a, "3")
+-    join(1, "4", *<!TYPE_MISMATCH!>b<!>, "3")
++    join(1, "4", *<!ARGUMENT_TYPE_MISMATCH!>b<!>, "3")
+     join(1, "4", *a)
+     join(1, "4", *a, *a, "3")
+-    join(1, "4", *a, *<!TYPE_MISMATCH!>b<!>, "3")
++    join(1, "4", *a, *<!ARGUMENT_TYPE_MISMATCH!>b<!>, "3")
+     join(a = a, x = 1)
+-    join(a = <!TYPE_MISMATCH!>b<!>, x = 1)
++    join(a = <!ARGUMENT_TYPE_MISMATCH!>b<!>, x = 1)
+     join(a = a, x = 1)
+ 
+     joinG<String>(1, "2")
+     joinG<String>(<!NON_VARARG_SPREAD!>*<!>1, "2")
+-    joinG<String>(1, *<!TYPE_MISMATCH!>"2"<!>)
++    joinG<String>(1, *<!ARGUMENT_TYPE_MISMATCH!>"2"<!>)
+     joinG<String>(x = 1, a = a)
+-    joinG<String>(x = 1, a = <!ASSIGNING_SINGLE_ELEMENT_TO_VARARG_IN_NAMED_FORM_FUNCTION_ERROR, TYPE_MISMATCH!>"2"<!>)
+-    joinG<String>(x = <!NON_VARARG_SPREAD!>*<!>1, a = *<!TYPE_MISMATCH!>"2"<!>)
++    joinG<String>(x = 1, a = <!ASSIGNING_SINGLE_ELEMENT_TO_VARARG_IN_NAMED_FORM_FUNCTION_ERROR!>"2"<!>)
++    joinG<String>(x = *1, a = *"2")
+     joinG<String>(1, *a)
+     joinG<String>(1, *a, "3")
+     joinG<String>(1, "4", *a, "3")
+     joinG<String>(1, "4", *a)
+     joinG<String>(1, "4", *a, *a, "3")
+     joinG<String>(a = a, x = 1)
+ 
+     joinG(1, "2")
+     joinG(<!NON_VARARG_SPREAD!>*<!>1, "2")
+-    joinG(1, *<!TYPE_MISMATCH!>"2"<!>)
++    joinG(1, *<!ARGUMENT_TYPE_MISMATCH!>"2"<!>)
+     joinG(x = 1, a = a)
+-    joinG(x = 1, a = <!ASSIGNING_SINGLE_ELEMENT_TO_VARARG_IN_NAMED_FORM_FUNCTION_ERROR, TYPE_MISMATCH!>"2"<!>)
+-    joinG(x = <!NON_VARARG_SPREAD!>*<!>1, a = *<!TYPE_MISMATCH!>"2"<!>)
++    joinG(x = 1, a = <!ASSIGNING_SINGLE_ELEMENT_TO_VARARG_IN_NAMED_FORM_FUNCTION_ERROR!>"2"<!>)
++    joinG(x = *1, a = *"2")
+     joinG(1, *a)
+     joinG(1, *a, "3")
+     joinG(1, "4", *a, "3")
+     joinG(1, "4", *a)
+     joinG(1, "4", *a, *a, "3")
+     joinG(a = a, x = 1)
+ 
+     val x1 = joinT(1, "2")
+     checkSubtype<String?>(x1)
+     val x2 = joinT(<!NON_VARARG_SPREAD!>*<!>1, "2")
+     checkSubtype<String?>(x2)
+     val x6 = joinT(1, *a)
+     checkSubtype<String?>(x6)
+     val x7 = joinT(1, *a, "3")
+     checkSubtype<String?>(x7)
+     val x8 = joinT(1, "4", *a, "3")
+     checkSubtype<String?>(x8)
+     val x9 = joinT(1, "4", *a)
+     checkSubtype<String?>(x9)
+     val x10 = joinT(1, "4", *a, *a, "3")
+     checkSubtype<String?>(x10)
+     val x11 = joinT(a = a, x = 1)
+     checkSubtype<String?>(x11)
+     val x12 = joinT(x = 1, a = a)
+     checkSubtype<String?>(x12)
+ }
+ 
+ fun join(x : Int, vararg a : String) : String {
+     val b = StringBuilder(x.toString())
+     for (s in a) {
+         b.append(s)
+     }
+     return b.toString()
+ }
+ 
+ fun <T> joinG(x : Int, vararg a : T) : String {
+     val b = StringBuilder(x.toString())
+     for (s in a) {
+         b.append(s)
+     }
+     return b.toString()
+ }
+ 
+ fun <T: Any> joinT(x : Int, vararg a : T) : T? {
+     return null
+ }`;
+                    const targetElement = $('#diff0')[0];
+                    const configuration = {
+                        drawFileList: false,
+                        fileListToggle: false,
+                        fileListStartVisible: false,
+                        fileContentToggle: false,
+                        matching: 'lines',
+                        outputFormat: 'side-by-side',
+                        synchronisedScroll: true,
+                        highlight: true,
+                        renderNothingWhenEmpty: false,
+                        rawTemplates: {
+                            'generic-file-path': `
+                                <div class="col">
+                                    <a href="https://github.com/JetBrains/kotlin/blob/3c69a5efc89f69903227c8b77f6eb4d776acef74/compiler/testData/diagnostics/tests/checkArguments/SpreadVarargs.kt" target="_blank">
+                                        <strong>FE 1.0:</strong> tests/checkArguments/SpreadVarargs.kt
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="https://github.com/JetBrains/kotlin/blob/3c69a5efc89f69903227c8b77f6eb4d776acef74/compiler/testData/diagnostics/tests/checkArguments/SpreadVarargs.fir.kt" target="_blank">
+                                        <strong>FIR:</strong> tests/checkArguments/SpreadVarargs.fir.kt
+                                    </a>
+                                </div>
+                            `
+                        }
+                    };
+                    const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                    diff2htmlUi.draw();
+                    diff2htmlUi.highlightCode();
+                })();</script>
+    </div>
+  </body>
+</html>

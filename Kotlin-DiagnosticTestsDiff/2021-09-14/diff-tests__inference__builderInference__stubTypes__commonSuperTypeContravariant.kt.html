@@ -1,0 +1,161 @@
+<html>
+  <head>
+    <title>Diagnostics diff: tests/inference/builderInference/stubTypes/commonSuperTypeContravariant.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="card-header p-0" id="heading0"><button class="btn btn-link btn-block text-left" data-toggle="collapse" data-target="#collapse0">
+          <h5>Diff between FE 1.0 vs FIR</h5>
+        </button></div>
+      <div class="collapse show" id="collapse0">
+        <div class="card-body p-1">
+          <div id="diff0" style="width: 100%"></div>
+        </div>
+      </div>
+      <script type="text/javascript">                (function() {
+                    const diffString = `--- tests/inference/builderInference/stubTypes/commonSuperTypeContravariant.kt
++++ tests/inference/builderInference/stubTypes/commonSuperTypeContravariant.fir.kt
+@@ -1,84 +1,84 @@
+ // !LANGUAGE: +UnrestrictedBuilderInference
+ // !DIAGNOSTICS: -UNUSED_PARAMETER -DEPRECATION -OPT_IN_IS_NOT_ENABLED -UNUSED_VARIABLE
+ // WITH_RUNTIME
+ 
+ // FILE: Test.java
+ 
+ class Test {
+     static <T> T foo(T x) { return x; }
+ }
+ 
+ // FILE: main.kt
+ import kotlin.experimental.ExperimentalTypeInference
+ 
+ @OptIn(ExperimentalTypeInference::class)
+ fun <R1> build(@BuilderInference block: TestInterface<R1>.() -> Unit): R1 = TODO()
+ 
+ @OptIn(ExperimentalTypeInference::class)
+ fun <R2> build2(@BuilderInference block: TestInterface<R2>.() -> Unit): R2 = TODO()
+ 
+ class In<in K>
+ 
+ interface TestInterface<R> {
+     fun emit(r: R)
+     fun get(): R
+     fun getIn(): In<R>
+ }
+ 
+ fun <U> id(x: U): U? = x
+ fun <E> select1(x: E, y: In<E>): E? = x
+ fun <E> select2(x: E, y: In<E?>): E = x
+ fun <E> select3(x: E?, y: In<E?>): E = x!!
+ fun <E> select4(x: E?, y: In<E>): E = x!!
+ 
+ fun test() {
+     val ret = build {
+         emit("1")
+         <!DEBUG_INFO_EXPRESSION_TYPE("kotlin.String?")!>select1(get(), getIn())<!>
+         <!DEBUG_INFO_EXPRESSION_TYPE("kotlin.String?")!>select1(get(), Test.foo(getIn()))<!>
+         <!DEBUG_INFO_EXPRESSION_TYPE("kotlin.String?")!>select1(Test.foo(get()), Test.foo(getIn()))<!>
+         <!DEBUG_INFO_EXPRESSION_TYPE("kotlin.String?")!>select1(Test.foo(get()), getIn())<!>
+         <!DEBUG_INFO_EXPRESSION_TYPE("kotlin.String")!>select4(get(), getIn())<!>
+         <!DEBUG_INFO_EXPRESSION_TYPE("kotlin.String")!>select4(get(), Test.foo(getIn()))<!>
+         <!DEBUG_INFO_EXPRESSION_TYPE("kotlin.String")!>select4(Test.foo(get()), Test.foo(getIn()))<!>
+         <!DEBUG_INFO_EXPRESSION_TYPE("kotlin.String")!>select4(Test.foo(get()), getIn())<!>
+ 
+         <!DEBUG_INFO_EXPRESSION_TYPE("kotlin.String")!>select4(id(Test.foo(get())), getIn())<!>
+ 
+         build2 {
+             emit(1)
+-            select1(this@build.get(), <!TYPE_MISMATCH("In<String>; In<Int?>")!>getIn()<!>)
+-            select1(get(), <!TYPE_MISMATCH("In<Int?>; In<String>!")!>Test.foo(this@build.getIn())<!>)
+-            select1(Test.foo(this@build.get()), <!TYPE_MISMATCH("In<String!>; In<Int?>!")!>Test.foo(getIn())<!>)
+-            select1(Test.foo(get()), <!TYPE_MISMATCH("In<Int?>; In<String>")!>this@build.getIn()<!>)
+-            select2(this@build.get(), <!TYPE_MISMATCH("In<String?>; In<Int?>")!>getIn()<!>)
+-            select2(get(), <!TYPE_MISMATCH("In<Int?>; In<String>!")!>Test.foo(this@build.getIn())<!>)
+-            select2(Test.foo(this@build.get()), <!TYPE_MISMATCH("In<String?>; In<Int?>!")!>Test.foo(getIn())<!>)
+-            select2(Test.foo(get()), <!TYPE_MISMATCH("In<Int?>; In<String>")!>this@build.getIn()<!>)
+-            select3(this@build.get(), <!TYPE_MISMATCH("In<String?>; In<Int?>")!>getIn()<!>)
+-            select3(get(), <!TYPE_MISMATCH("In<Int?>; In<String>!")!>Test.foo(this@build.getIn())<!>)
+-            select3(Test.foo(this@build.get()), <!TYPE_MISMATCH("In<String?>; In<Int?>!")!>Test.foo(getIn())<!>)
+-            select3(Test.foo(get()), <!TYPE_MISMATCH("In<Int?>; In<String>")!>this@build.getIn()<!>)
+-            select4(this@build.get(), <!TYPE_MISMATCH("In<String>; In<Int?>")!>getIn()<!>)
+-            select4(get(), <!TYPE_MISMATCH("In<Int>; In<String>!")!>Test.foo(this@build.getIn())<!>)
+-            select4(Test.foo(this@build.get()), <!TYPE_MISMATCH("In<String>; In<Int?>!")!>Test.foo(getIn())<!>)
+-            select4(Test.foo(get()), <!TYPE_MISMATCH("In<Int?>; In<String>")!>this@build.getIn()<!>)
++            select1(this@build.get(), getIn())
++            select1(get(), Test.foo(this@build.getIn()))
++            select1(Test.foo(this@build.get()), Test.foo(getIn()))
++            select1(Test.foo(get()), this@build.getIn())
++            select2(this@build.get(), getIn())
++            select2(get(), Test.foo(this@build.getIn()))
++            select2(Test.foo(this@build.get()), Test.foo(getIn()))
++            select2(Test.foo(get()), this@build.getIn())
++            select3(this@build.get(), getIn())
++            select3(get(), Test.foo(this@build.getIn()))
++            select3(Test.foo(this@build.get()), Test.foo(getIn()))
++            select3(Test.foo(get()), this@build.getIn())
++            select4(this@build.get(), getIn())
++            select4(get(), Test.foo(this@build.getIn()))
++            select4(Test.foo(this@build.get()), Test.foo(getIn()))
++            select4(Test.foo(get()), this@build.getIn())
+ 
+-            select4(id(Test.foo(this@build.get())), <!TYPE_MISMATCH("In<String>; In<Int?>")!>getIn()<!>)
++            select4(id(Test.foo(this@build.get())), getIn())
+             ""
+         }
+         ""
+     }
+     val ret2 = build {
+         emit(if (true) "" else null)
+         <!DEBUG_INFO_EXPRESSION_TYPE("kotlin.String?")!>select2(get(), getIn())<!>
+         <!DEBUG_INFO_EXPRESSION_TYPE("kotlin.String?")!>select2(get(), Test.foo(getIn()))<!>
+         <!DEBUG_INFO_EXPRESSION_TYPE("kotlin.String?")!>select2(Test.foo(get()), Test.foo(getIn()))<!>
+         <!DEBUG_INFO_EXPRESSION_TYPE("kotlin.String?")!>select2(Test.foo(get()), getIn())<!>
+-        <!DEBUG_INFO_EXPRESSION_TYPE("kotlin.String")!>select3(get(), getIn())<!>
+-        <!DEBUG_INFO_EXPRESSION_TYPE("kotlin.String")!>select3(get(), Test.foo(getIn()))<!>
++        <!DEBUG_INFO_EXPRESSION_TYPE("kotlin.String?")!>select3(get(), getIn())<!>
++        <!DEBUG_INFO_EXPRESSION_TYPE("kotlin.String?")!>select3(get(), Test.foo(getIn()))<!>
+         <!DEBUG_INFO_EXPRESSION_TYPE("kotlin.String?")!>select3(Test.foo(get()), Test.foo(getIn()))<!>
+         <!DEBUG_INFO_EXPRESSION_TYPE("kotlin.String?")!>select3(Test.foo(get()), getIn())<!>
+         ""
+     }
+ }`;
+                    const targetElement = $('#diff0')[0];
+                    const configuration = {
+                        drawFileList: false,
+                        fileListToggle: false,
+                        fileListStartVisible: false,
+                        fileContentToggle: false,
+                        matching: 'lines',
+                        outputFormat: 'side-by-side',
+                        synchronisedScroll: true,
+                        highlight: true,
+                        renderNothingWhenEmpty: false,
+                        rawTemplates: {
+                            'generic-file-path': `
+                                <div class="col">
+                                    <a href="https://github.com/JetBrains/kotlin/blob/3c69a5efc89f69903227c8b77f6eb4d776acef74/compiler/testData/diagnostics/tests/inference/builderInference/stubTypes/commonSuperTypeContravariant.kt" target="_blank">
+                                        <strong>FE 1.0:</strong> tests/inference/builderInference/stubTypes/commonSuperTypeContravariant.kt
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="https://github.com/JetBrains/kotlin/blob/3c69a5efc89f69903227c8b77f6eb4d776acef74/compiler/testData/diagnostics/tests/inference/builderInference/stubTypes/commonSuperTypeContravariant.fir.kt" target="_blank">
+                                        <strong>FIR:</strong> tests/inference/builderInference/stubTypes/commonSuperTypeContravariant.fir.kt
+                                    </a>
+                                </div>
+                            `
+                        }
+                    };
+                    const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                    diff2htmlUi.draw();
+                    diff2htmlUi.highlightCode();
+                })();</script>
+    </div>
+  </body>
+</html>

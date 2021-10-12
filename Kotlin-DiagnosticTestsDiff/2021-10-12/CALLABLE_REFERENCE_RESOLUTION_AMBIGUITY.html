@@ -1,0 +1,72 @@
+<html>
+  <head>
+    <title>Diagnostics diff: CALLABLE_REFERENCE_RESOLUTION_AMBIGUITY</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row sticky-top" style="background: white" id="summary">
+        <div class="d-inline-flex align-items-baseline">
+          <h1 class="mr-2">CALLABLE_REFERENCE_RESOLUTION_AMBIGUITY</h1>
+<a href="index.html">(back to diagnostic list)</a></div>
+      </div>
+      <div class="row">
+        <ul>
+          <li><strong>Total: </strong>47</li>
+          <li><strong>Match %: </strong>0.00%</li>
+          <li><a href="#matched"><strong># Matched: </strong>0</a></li>
+          <li><strong># Non-matched: </strong>47</li>
+          <li><a href="#missing"><strong># Missing: </strong>2</a></li>
+          <li><a href="#unexpected"><strong># Unexpected: </strong>0</a></li>
+          <li><a href="#mismatched"><strong># Mismatched: </strong>45</a></li>
+          <li><strong># Files: </strong>17</li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="missing">
+        <h2>Missing (2)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__callableReference__function__unresolved.kt.html" target="_blank">tests/callableReference/function/unresolved.kt (1)</a></li>
+          <li><a href="diff-tests__callableReference__kt49038.kt.html" target="_blank">tests/callableReference/kt49038.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="mismatched">
+        <h2>Mismatched (45)</h2>
+      </div>
+      <div class="row sticky-top" style="top: 5.5em; background: white">
+        <h5>CALLABLE_REFERENCE_RESOLUTION_AMBIGUITY → UNRESOLVED_REFERENCE (33)</h5>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__inference__kt39220.kt.html" target="_blank">tests/inference/kt39220.kt (12)</a></li>
+          <li><a href="diff-tests__callableReference__generic__resolutionWithGenericCallable.kt.html" target="_blank">tests/callableReference/generic/resolutionWithGenericCallable.kt (5)</a></li>
+          <li><a href="diff-testsWithStdLib__inference__kt42620.kt.html" target="_blank">testsWithStdLib/inference/kt42620.kt (5)</a></li>
+          <li><a href="diff-tests__callableReference__generic__resolutionGenericCallableWithNullableTypes.kt.html" target="_blank">tests/callableReference/generic/resolutionGenericCallableWithNullableTypes.kt (3)</a></li>
+          <li><a href="diff-tests__callableReference__generic__nestedCallWithOverload.kt.html" target="_blank">tests/callableReference/generic/nestedCallWithOverload.kt (2)</a></li>
+          <li><a href="diff-testsWithStdLib__coroutines__callableReference__callableReferenceOnUnresolvedLHS.kt.html" target="_blank">testsWithStdLib/coroutines/callableReference/callableReferenceOnUnresolvedLHS.kt (2)</a></li>
+          <li><a href="diff-tests__callableReference__resolve__byGenericArgType.kt.html" target="_blank">tests/callableReference/resolve/byGenericArgType.kt (1)</a></li>
+          <li><a href="diff-tests__callableReference__resolve__withGenericFun.kt.html" target="_blank">tests/callableReference/resolve/withGenericFun.kt (1)</a></li>
+          <li><a href="diff-tests__inference__regressions__kt32862_none.kt.html" target="_blank">tests/inference/regressions/kt32862_none.kt (1)</a></li>
+          <li><a href="diff-tests__inference__regressions__kt34282.kt.html" target="_blank">tests/inference/regressions/kt34282.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 5.5em; background: white">
+        <h5>CALLABLE_REFERENCE_RESOLUTION_AMBIGUITY → OVERLOAD_RESOLUTION_AMBIGUITY (12)</h5>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__inference__kt39220.kt.html" target="_blank">tests/inference/kt39220.kt (6)</a></li>
+          <li><a href="diff-tests__callableReference__resolve__eagerAndPostponedCallableReferences.kt.html" target="_blank">tests/callableReference/resolve/eagerAndPostponedCallableReferences.kt (2)</a></li>
+          <li><a href="diff-tests__callableReference__resolve__ambiguityWhenNoApplicableCallableReferenceCandidate.kt.html" target="_blank">tests/callableReference/resolve/ambiguityWhenNoApplicableCallableReferenceCandidate.kt (1)</a></li>
+          <li><a href="diff-tests__callableReference__resolve__chooseCallableReferenceDependingOnInferredReceiver.kt.html" target="_blank">tests/callableReference/resolve/chooseCallableReferenceDependingOnInferredReceiver.kt (1)</a></li>
+          <li><a href="diff-tests__inference__regressions__kt32862_both.kt.html" target="_blank">tests/inference/regressions/kt32862_both.kt (1)</a></li>
+          <li><a href="diff-testsWithStdLib__inference__completion__postponedArgumentsAnalysis__callableReferences.kt.html" target="_blank">testsWithStdLib/inference/completion/postponedArgumentsAnalysis/callableReferences.kt (1)</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

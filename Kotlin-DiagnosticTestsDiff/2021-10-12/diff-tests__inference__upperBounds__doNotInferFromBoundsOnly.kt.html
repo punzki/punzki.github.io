@@ -1,0 +1,126 @@
+<html>
+  <head>
+    <title>Diagnostics diff: tests/inference/upperBounds/doNotInferFromBoundsOnly.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="card-header p-0" id="heading0"><button class="btn btn-link btn-block text-left" data-toggle="collapse" data-target="#collapse0">
+          <h5>Diff between FE 1.0 vs FIR</h5>
+        </button></div>
+      <div class="collapse show" id="collapse0">
+        <div class="card-body p-1">
+          <div id="diff0" style="width: 100%"></div>
+        </div>
+      </div>
+      <script type="text/javascript">                (function() {
+                    const diffString = `--- tests/inference/upperBounds/doNotInferFromBoundsOnly.kt
++++ tests/inference/upperBounds/doNotInferFromBoundsOnly.fir.kt
+@@ -1,67 +1,67 @@
+ package a
+ 
+ interface A
+ 
+ fun <T> emptyList(): List<T> = throw Exception()
+ 
+ fun test1() {
+     <!NEW_INFERENCE_NO_INFORMATION_FOR_PARAMETER!>emptyList<!>()
+ }
+ 
+ //--------------
+ 
+ fun <T: A> emptyListOfA(): List<T> = throw Exception()
+ 
+ fun test2() {
+     <!NEW_INFERENCE_NO_INFORMATION_FOR_PARAMETER!>emptyListOfA<!>()
+ }
+ 
+ //--------------
+ 
+ fun <T: A, R: T> emptyStrangeMap(): Map<T, R> = throw Exception()
+ 
+ fun test3() {
+-    <!NEW_INFERENCE_NO_INFORMATION_FOR_PARAMETER!>emptyStrangeMap<!>()
++    <!NEW_INFERENCE_NO_INFORMATION_FOR_PARAMETER, NEW_INFERENCE_NO_INFORMATION_FOR_PARAMETER!>emptyStrangeMap<!>()
+ }
+ 
+ //--------------
+ 
+ fun <T, R: T> emptyStrangeMap1(t: T): Map<T, R> = throw Exception("\$t")
+ 
+ fun test4() {
+     emptyStrangeMap1(1)
+ }
+ 
+ //--------------
+ 
+ fun <T: A, R> emptyStrangeMap2(t: T): Map<T, R> where R: T = throw Exception("\$t")
+ 
+ fun test5(a: A) {
+     emptyStrangeMap2(a)
+ }
+ 
+ //--------------
+ 
+ fun <T: A, R: T> emptyStrangeMap3(r: R): Map<T, R> = throw Exception("\$r")
+ 
+ fun test6(a: A) {
+     emptyStrangeMap3(a)
+ }
+ 
+ //--------------
+ 
+ fun <T, R: T> emptyStrangeMap4(l: MutableList<T>): Map<T, R> = throw Exception("\$l")
+ 
+ fun test7(list: MutableList<Int>) {
+     emptyStrangeMap4(list)
+ }
+ 
+ //--------------
+ 
+ fun test7() : Map<A, A> = emptyStrangeMap()
+ 
+ //--------------
+ 
+ fun <U, V: U> foo(): U = throw Exception()
+ 
+ fun test8(): Int = foo()`;
+                    const targetElement = $('#diff0')[0];
+                    const configuration = {
+                        drawFileList: false,
+                        fileListToggle: false,
+                        fileListStartVisible: false,
+                        fileContentToggle: false,
+                        matching: 'lines',
+                        outputFormat: 'side-by-side',
+                        synchronisedScroll: true,
+                        highlight: true,
+                        renderNothingWhenEmpty: false,
+                        rawTemplates: {
+                            'generic-file-path': `
+                                <div class="col">
+                                    <a href="https://github.com/JetBrains/kotlin/blob/b946a284b00dbcbcd3f5d34d4e3dccc04849e5d0/compiler/testData/diagnostics/tests/inference/upperBounds/doNotInferFromBoundsOnly.kt" target="_blank">
+                                        <strong>FE 1.0:</strong> tests/inference/upperBounds/doNotInferFromBoundsOnly.kt
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="https://github.com/JetBrains/kotlin/blob/b946a284b00dbcbcd3f5d34d4e3dccc04849e5d0/compiler/testData/diagnostics/tests/inference/upperBounds/doNotInferFromBoundsOnly.fir.kt" target="_blank">
+                                        <strong>FIR:</strong> tests/inference/upperBounds/doNotInferFromBoundsOnly.fir.kt
+                                    </a>
+                                </div>
+                            `
+                        }
+                    };
+                    const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                    diff2htmlUi.draw();
+                    diff2htmlUi.highlightCode();
+                })();</script>
+    </div>
+  </body>
+</html>

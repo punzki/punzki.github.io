@@ -1,0 +1,212 @@
+<html>
+  <head>
+    <title>Diagnostics diff: tests/deprecated/deprecatedInheritance_before.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="card-header p-0" id="heading0"><button class="btn btn-link btn-block text-left" data-toggle="collapse" data-target="#collapse0">
+          <h5>Diff between FE 1.0 vs FIR</h5>
+        </button></div>
+      <div class="collapse show" id="collapse0">
+        <div class="card-body p-1">
+          <div id="diff0" style="width: 100%"></div>
+        </div>
+      </div>
+      <script type="text/javascript">                (function() {
+                    const diffString = `--- tests/deprecated/deprecatedInheritance_before.kt
++++ tests/deprecated/deprecatedInheritance_before.fir.kt
+@@ -1,141 +1,141 @@
+ // LANGUAGE: -StopPropagatingDeprecationThroughOverrides
+ package foo
+ 
+ interface WarningDeprecated {
+     @Deprecated("", level = DeprecationLevel.WARNING)
+     fun f() {
+ 
+     }
+ }
+ 
+ interface ErrorDeprecated {
+     @Deprecated("", level = DeprecationLevel.ERROR)
+     fun f() {
+ 
+     }
+ }
+ 
+ interface HiddenDeprecated {
+     @Deprecated("", level = DeprecationLevel.HIDDEN)
+     fun f() {
+ 
+     }
+ }
+ 
+ interface NotDeprecated {
+     fun f() {
+ 
+     }
+ }
+ 
+ open class WE : WarningDeprecated, ErrorDeprecated {
+     override fun <!OVERRIDE_DEPRECATION!>f<!>() {
+ 
+     }
+ }
+ 
+ open class WH : WarningDeprecated, HiddenDeprecated {
+     override fun <!OVERRIDE_DEPRECATION!>f<!>() {
+ 
+     }
+ }
+ 
+ open class EH : ErrorDeprecated, HiddenDeprecated {
+     override fun <!OVERRIDE_DEPRECATION!>f<!>() {
+ 
+     }
+ }
+ 
+ open class NW : WarningDeprecated, NotDeprecated {
+-    override fun f() {
++    override fun <!OVERRIDE_DEPRECATION!>f<!>() {
+ 
+     }
+ }
+ 
+ open class NE : ErrorDeprecated, NotDeprecated {
+-    override fun f() {
++    override fun <!OVERRIDE_DEPRECATION!>f<!>() {
+ 
+     }
+ }
+ 
+ open class NH : HiddenDeprecated, NotDeprecated {
+-    override fun f() {
++    override fun <!OVERRIDE_DEPRECATION!>f<!>() {
+ 
+     }
+ }
+ 
+ open class WEH: WarningDeprecated, ErrorDeprecated, HiddenDeprecated {
+     override fun <!OVERRIDE_DEPRECATION!>f<!>() {
+ 
+     }
+ }
+ 
+ open class NWEH: NotDeprecated, WarningDeprecated, ErrorDeprecated, HiddenDeprecated {
+-    override fun f() {
++    override fun <!OVERRIDE_DEPRECATION!>f<!>() {
+ 
+     }
+ }
+ 
+ class WE2: WE()
+ 
+ <!MANY_IMPL_MEMBER_NOT_IMPLEMENTED!>class NWE2<!>: WE(), NotDeprecated
+ 
+ class NWE3: WE(), NotDeprecated {
+     override fun f() {
+     }
+ }
+ 
+ interface E2: ErrorDeprecated
+ interface W2: WarningDeprecated
+ 
+ interface EW2: E2, W2 {
+     override fun <!OVERRIDE_DEPRECATION!>f<!>() {
+     }
+ }
+ 
+ interface HEW2: EW2, HiddenDeprecated {
+     override fun <!OVERRIDE_DEPRECATION!>f<!>() {
+     }
+ }
+ 
+ interface ExplicitError: HEW2 {
+     @Deprecated("", level = DeprecationLevel.ERROR)
+     override fun f() {
+-        super.<!DEPRECATION!>f<!>()
++        super.f()
+     }
+ }
+ 
+ fun use(
+         wd: WarningDeprecated, ed: ErrorDeprecated, hd: HiddenDeprecated,
+         we: WE, wh: WH, eh: EH, nw: NW, ne: NE, nh: NH,
+         weh: WEH, nweh: NWEH,
+         we2: WE2, nwe2: NWE2, nwe3: NWE3,
+         e2: E2, w2: W2, ew2: EW2, hew2: HEW2,
+         explicitError: ExplicitError
+ ) {
+     wd.<!DEPRECATION!>f<!>()
+     ed.<!DEPRECATION_ERROR!>f<!>()
+-    hd.<!UNRESOLVED_REFERENCE!>f<!>()
++    hd.<!INVISIBLE_REFERENCE!>f<!>()
+ 
+-    we.<!DEPRECATION!>f<!>()
+-    wh.<!DEPRECATION!>f<!>()
+-    eh.<!DEPRECATION_ERROR!>f<!>()
++    we.f()
++    wh.f()
++    eh.f()
+ 
+     nw.f()
+     ne.f()
+     nh.f()
+ 
+-    weh.<!DEPRECATION!>f<!>()
++    weh.f()
+     nweh.f()
+ 
+-    we2.<!DEPRECATION!>f<!>()
++    we2.f()
+     nwe2.f()
+     nwe3.f()
+ 
+     e2.<!DEPRECATION_ERROR!>f<!>()
+     w2.<!DEPRECATION!>f<!>()
+-    ew2.<!DEPRECATION!>f<!>()
+-    hew2.<!DEPRECATION!>f<!>()
++    ew2.f()
++    hew2.f()
+ 
+     explicitError.<!DEPRECATION_ERROR!>f<!>()
+ }`;
+                    const targetElement = $('#diff0')[0];
+                    const configuration = {
+                        drawFileList: false,
+                        fileListToggle: false,
+                        fileListStartVisible: false,
+                        fileContentToggle: false,
+                        matching: 'lines',
+                        outputFormat: 'side-by-side',
+                        synchronisedScroll: true,
+                        highlight: true,
+                        renderNothingWhenEmpty: false,
+                        rawTemplates: {
+                            'generic-file-path': `
+                                <div class="col">
+                                    <a href="https://github.com/JetBrains/kotlin/blob/3c69a5efc89f69903227c8b77f6eb4d776acef74/compiler/testData/diagnostics/tests/deprecated/deprecatedInheritance_before.kt" target="_blank">
+                                        <strong>FE 1.0:</strong> tests/deprecated/deprecatedInheritance_before.kt
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="https://github.com/JetBrains/kotlin/blob/3c69a5efc89f69903227c8b77f6eb4d776acef74/compiler/testData/diagnostics/tests/deprecated/deprecatedInheritance_before.fir.kt" target="_blank">
+                                        <strong>FIR:</strong> tests/deprecated/deprecatedInheritance_before.fir.kt
+                                    </a>
+                                </div>
+                            `
+                        }
+                    };
+                    const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                    diff2htmlUi.draw();
+                    diff2htmlUi.highlightCode();
+                })();</script>
+    </div>
+  </body>
+</html>

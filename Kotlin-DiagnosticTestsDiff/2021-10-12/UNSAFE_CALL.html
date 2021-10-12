@@ -1,0 +1,293 @@
+<html>
+  <head>
+    <title>Diagnostics diff: UNSAFE_CALL</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row sticky-top" style="background: white" id="summary">
+        <div class="d-inline-flex align-items-baseline">
+          <h1 class="mr-2">UNSAFE_CALL</h1>
+<a href="index.html">(back to diagnostic list)</a></div>
+      </div>
+      <div class="row">
+        <ul>
+          <li><strong>Total: </strong>561</li>
+          <li><strong>Match %: </strong>80.04%</li>
+          <li><a href="#matched"><strong># Matched: </strong>449</a></li>
+          <li><strong># Non-matched: </strong>112</li>
+          <li><a href="#missing"><strong># Missing: </strong>71</a></li>
+          <li><a href="#unexpected"><strong># Unexpected: </strong>40</a></li>
+          <li><a href="#mismatched"><strong># Mismatched: </strong>1</a></li>
+          <li><strong># Files: </strong>216</li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="missing">
+        <h2>Missing (71)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__smartCasts__level_1_0.kt.html" target="_blank">tests/smartCasts/level_1_0.kt (9)</a></li>
+          <li><a href="diff-foreignAnnotationsTests__java8Tests__jsr305__defaultAnnotationAppliedToType.kt.html" target="_blank">foreignAnnotationsTests/java8Tests/jsr305/defaultAnnotationAppliedToType.kt (7)</a></li>
+          <li><a href="diff-foreignAnnotationsTests__java8Tests__jsr305__typeUseVsMethodConflict.kt.html" target="_blank">foreignAnnotationsTests/java8Tests/jsr305/typeUseVsMethodConflict.kt (7)</a></li>
+          <li><a href="diff-tests__callableReference__bound__expressionWithNullableType.kt.html" target="_blank">tests/callableReference/bound/expressionWithNullableType.kt (5)</a></li>
+          <li><a href="diff-foreignAnnotationsTests__java8Tests__jsr305__defaultAnnotationAppliedToTypeForCompiledJava.kt.html" target="_blank">foreignAnnotationsTests/java8Tests/jsr305/defaultAnnotationAppliedToTypeForCompiledJava.kt (4)</a></li>
+          <li><a href="diff-tests__callableReference__bound__reservedExpressionSyntax.kt.html" target="_blank">tests/callableReference/bound/reservedExpressionSyntax.kt (3)</a></li>
+          <li><a href="diff-tests__smartCasts__castchecks__basicOff.kt.html" target="_blank">tests/smartCasts/castchecks/basicOff.kt (3)</a></li>
+          <li><a href="diff-tests__smartCasts__loops__nestedLoopsWithLongContinue.kt.html" target="_blank">tests/smartCasts/loops/nestedLoopsWithLongContinue.kt (2)</a></li>
+          <li><a href="diff-tests__smartCasts__loops__safeCallBreakInsideDoWhile.kt.html" target="_blank">tests/smartCasts/loops/safeCallBreakInsideDoWhile.kt (2)</a></li>
+          <li><a href="diff-tests__smartCasts__varnotnull__boundInitializer.kt.html" target="_blank">tests/smartCasts/varnotnull/boundInitializer.kt (2)</a></li>
+          <li><a href="diff-tests__smartCasts__varnotnull__boundInitializerWrong.kt.html" target="_blank">tests/smartCasts/varnotnull/boundInitializerWrong.kt (2)</a></li>
+          <li><a href="diff-testsWithStdLib__tryCatch__falsePositiveSmartcasts_after.kt.html" target="_blank">testsWithStdLib/tryCatch/falsePositiveSmartcasts_after.kt (2)</a></li>
+          <li><a href="diff-tests__ExtensionCallInvoke.kt.html" target="_blank">tests/ExtensionCallInvoke.kt (1)</a></li>
+          <li><a href="diff-tests__FunctionCalleeExpressions.kt.html" target="_blank">tests/FunctionCalleeExpressions.kt (1)</a></li>
+          <li><a href="diff-tests__callableReference__bound__reservedExpressionSyntax2.kt.html" target="_blank">tests/callableReference/bound/reservedExpressionSyntax2.kt (1)</a></li>
+          <li><a href="diff-tests__dataFlow__assignment__assignToNewVal.kt.html" target="_blank">tests/dataFlow/assignment/assignToNewVal.kt (1)</a></li>
+          <li><a href="diff-tests__extensions__kt1875.kt.html" target="_blank">tests/extensions/kt1875.kt (1)</a></li>
+          <li><a href="diff-tests__platformTypes__nullabilityWarnings__arithmetic.kt.html" target="_blank">tests/platformTypes/nullabilityWarnings/arithmetic.kt (1)</a></li>
+          <li><a href="diff-tests__platformTypes__nullableTypeArgument.kt.html" target="_blank">tests/platformTypes/nullableTypeArgument.kt (1)</a></li>
+          <li><a href="diff-tests__resolve__invoke__kt30695_2.kt.html" target="_blank">tests/resolve/invoke/kt30695_2.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__castchecks__variables.kt.html" target="_blank">tests/smartCasts/castchecks/variables.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__loops__doWhileEarlyContinue.kt.html" target="_blank">tests/smartCasts/loops/doWhileEarlyContinue.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__loops__doWhileLiteral.kt.html" target="_blank">tests/smartCasts/loops/doWhileLiteral.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__loops__nestedDoWhileWithLongContinue.kt.html" target="_blank">tests/smartCasts/loops/nestedDoWhileWithLongContinue.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__loops__whenReturnInsideWhileTrue.kt.html" target="_blank">tests/smartCasts/loops/whenReturnInsideWhileTrue.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__safecalls__safeAccessReceiverNotNull.kt.html" target="_blank">tests/smartCasts/safecalls/safeAccessReceiverNotNull.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__varnotnull__setSameInTry.kt.html" target="_blank">tests/smartCasts/varnotnull/setSameInTry.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__varnotnull__whileTrue.kt.html" target="_blank">tests/smartCasts/varnotnull/whileTrue.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__varnotnull__whileTrueWithBracketSet.kt.html" target="_blank">tests/smartCasts/varnotnull/whileTrueWithBracketSet.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__varnotnull__whileTrueWithBrackets.kt.html" target="_blank">tests/smartCasts/varnotnull/whileTrueWithBrackets.kt (1)</a></li>
+          <li><a href="diff-tests__when__withSubjectVariable__jumpoutInInitializer.kt.html" target="_blank">tests/when/withSubjectVariable/jumpoutInInitializer.kt (1)</a></li>
+          <li><a href="diff-tests__when__withSubjectVariable__smartCastOnValueBoundToSubjectVariable.kt.html" target="_blank">tests/when/withSubjectVariable/smartCastOnValueBoundToSubjectVariable.kt (1)</a></li>
+          <li><a href="diff-testsWithStdLib__contracts__smartcasts__extensionReceiver.kt.html" target="_blank">testsWithStdLib/contracts/smartcasts/extensionReceiver.kt (1)</a></li>
+          <li><a href="diff-testsWithStdLib__smartcasts__letAlwaysChangesToNotNull.kt.html" target="_blank">testsWithStdLib/smartcasts/letAlwaysChangesToNotNull.kt (1)</a></li>
+          <li><a href="diff-testsWithStdLib__tryCatch__falseNegativeSmartcasts_after.kt.html" target="_blank">testsWithStdLib/tryCatch/falseNegativeSmartcasts_after.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="unexpected">
+        <h2>Unexpected (40)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-testsWithStdLib__tryCatch__falsePositiveSmartcasts.kt.html" target="_blank">testsWithStdLib/tryCatch/falsePositiveSmartcasts.kt (10)</a></li>
+          <li><a href="diff-tests__nullabilityAndSmartCasts__nullableReceiverWithOverloadedMethod.kt.html" target="_blank">tests/nullabilityAndSmartCasts/nullableReceiverWithOverloadedMethod.kt (3)</a></li>
+          <li><a href="diff-tests__nullabilityAndSmartCasts__NullableNothingIsExactlyNull.kt.html" target="_blank">tests/nullabilityAndSmartCasts/NullableNothingIsExactlyNull.kt (2)</a></li>
+          <li><a href="diff-tests__smartCasts__comparisonUnderAnd.kt.html" target="_blank">tests/smartCasts/comparisonUnderAnd.kt (2)</a></li>
+          <li><a href="diff-tests__smartCasts__elvis__basicOn.kt.html" target="_blank">tests/smartCasts/elvis/basicOn.kt (2)</a></li>
+          <li><a href="diff-tests__smartCasts__loops__whileWithAssertInConditionAndBreakAfter.kt.html" target="_blank">tests/smartCasts/loops/whileWithAssertInConditionAndBreakAfter.kt (2)</a></li>
+          <li><a href="diff-tests__smartCasts__loops__whileWithAssertInConditionAndBreakBefore.kt.html" target="_blank">tests/smartCasts/loops/whileWithAssertInConditionAndBreakBefore.kt (2)</a></li>
+          <li><a href="diff-tests__when__withSubjectVariable__capturingInInitializer.kt.html" target="_blank">tests/when/withSubjectVariable/capturingInInitializer.kt (2)</a></li>
+          <li><a href="diff-testsWithStdLib__tryCatch__falsePositiveSmartcasts_after.kt.html" target="_blank">testsWithStdLib/tryCatch/falsePositiveSmartcasts_after.kt (2)</a></li>
+          <li><a href="diff-tests__nullabilityAndSmartCasts__QualifiedExpressionNullability.kt.html" target="_blank">tests/nullabilityAndSmartCasts/QualifiedExpressionNullability.kt (1)</a></li>
+          <li><a href="diff-tests__regressions__kt12898.kt.html" target="_blank">tests/regressions/kt12898.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__enumEntryMembers_before.kt.html" target="_blank">tests/smartCasts/enumEntryMembers_before.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__kt32358_2.kt.html" target="_blank">tests/smartCasts/kt32358_2.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__kt32358_3.kt.html" target="_blank">tests/smartCasts/kt32358_3.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__objectLiterals__kt7110.kt.html" target="_blank">tests/smartCasts/objectLiterals/kt7110.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__ownerDeclaresBothModifies.kt.html" target="_blank">tests/smartCasts/ownerDeclaresBothModifies.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__safecalls__safeAccessReceiverNotNull.kt.html" target="_blank">tests/smartCasts/safecalls/safeAccessReceiverNotNull.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__varnotnull__boundInitializerWrong.kt.html" target="_blank">tests/smartCasts/varnotnull/boundInitializerWrong.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__varnotnull__setNullInTryUnsound.kt.html" target="_blank">tests/smartCasts/varnotnull/setNullInTryUnsound.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__varnotnull__varNotChangedInLoop.kt.html" target="_blank">tests/smartCasts/varnotnull/varNotChangedInLoop.kt (1)</a></li>
+          <li><a href="diff-testsWithStdLib__contracts__smartcasts__throwsEffect.kt.html" target="_blank">testsWithStdLib/contracts/smartcasts/throwsEffect.kt (1)</a></li>
+          <li><a href="diff-testsWithStdLib__smartcasts__letChangesToNull.kt.html" target="_blank">testsWithStdLib/smartcasts/letChangesToNull.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="mismatched">
+        <h2>Mismatched (1)</h2>
+      </div>
+      <div class="row sticky-top" style="top: 5.5em; background: white">
+        <h5>UNSAFE_CALL → UNSAFE_IMPLICIT_INVOKE_CALL (1)</h5>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__resolve__invoke__errors__unsafeCallWithInvoke.kt.html" target="_blank">tests/resolve/invoke/errors/unsafeCallWithInvoke.kt (1)</a></li>
+        </ul>
+      </div>
+      <div class="row sticky-top" style="top: 3em; background: white" id="matched">
+        <h2>Matched (449)</h2>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="diff-tests__Nullability.kt.html" target="_blank">tests/Nullability.kt (11)</a></li>
+          <li><a href="diff-testsWithStdLib__tryCatch__falsePositiveSmartcasts_after.kt.html" target="_blank">testsWithStdLib/tryCatch/falsePositiveSmartcasts_after.kt (11)</a></li>
+          <li><a href="diff-foreignAnnotationsTests__tests__jsr305__typeQualifierDefault__overridingDefaultQualifier.kt.html" target="_blank">foreignAnnotationsTests/tests/jsr305/typeQualifierDefault/overridingDefaultQualifier.kt (10)</a></li>
+          <li><a href="diff-foreignAnnotationsTests__tests__multiple.kt.html" target="_blank">foreignAnnotationsTests/tests/multiple.kt (10)</a></li>
+          <li><a href="diff-tests__smartCasts__comparisonUnderAnd.kt.html" target="_blank">tests/smartCasts/comparisonUnderAnd.kt (10)</a></li>
+          <li><a href="diff-tests__smartCasts__complexConditionsWithExcl.kt.html" target="_blank">tests/smartCasts/complexConditionsWithExcl.kt (10)</a></li>
+          <li><a href="diff-testsWithStdLib__tryCatch__boundedSmartcasts.kt.html" target="_blank">testsWithStdLib/tryCatch/boundedSmartcasts.kt (10)</a></li>
+          <li><a href="diff-tests__smartCasts__castchecks__variables.kt.html" target="_blank">tests/smartCasts/castchecks/variables.kt (9)</a></li>
+          <li><a href="diff-tests__nullabilityAndSmartCasts__InfixCallNullability.kt.html" target="_blank">tests/nullabilityAndSmartCasts/InfixCallNullability.kt (8)</a></li>
+          <li><a href="diff-tests__resolve__invoke__implicitInvokeAfterSafeCall.kt.html" target="_blank">tests/resolve/invoke/implicitInvokeAfterSafeCall.kt (8)</a></li>
+          <li><a href="diff-tests__nullabilityAndSmartCasts__QualifiedExpressionNullability.kt.html" target="_blank">tests/nullabilityAndSmartCasts/QualifiedExpressionNullability.kt (7)</a></li>
+          <li><a href="diff-testsWithStdLib__tryCatch__assignTry.kt.html" target="_blank">testsWithStdLib/tryCatch/assignTry.kt (7)</a></li>
+          <li><a href="diff-foreignAnnotationsTests__tests__jsr305__nullabilityWarnings__typeQualifierDefault__nullabilityFromOverridden.kt.html" target="_blank">foreignAnnotationsTests/tests/jsr305/nullabilityWarnings/typeQualifierDefault/nullabilityFromOverridden.kt (6)</a></li>
+          <li><a href="diff-tests__nullabilityAndSmartCasts__ReceiverNullability.kt.html" target="_blank">tests/nullabilityAndSmartCasts/ReceiverNullability.kt (6)</a></li>
+          <li><a href="diff-tests__smartCasts__complexComparison.kt.html" target="_blank">tests/smartCasts/complexComparison.kt (6)</a></li>
+          <li><a href="diff-tests__smartCasts__safecalls__nullableReceiverInLongChain.kt.html" target="_blank">tests/smartCasts/safecalls/nullableReceiverInLongChain.kt (6)</a></li>
+          <li><a href="diff-testsWithStdLib__contracts__smartcasts__nullabilitySmartcastWhenNullability.kt.html" target="_blank">testsWithStdLib/contracts/smartcasts/nullabilitySmartcastWhenNullability.kt (6)</a></li>
+          <li><a href="diff-testsWithStdLib__contracts__smartcasts__operatorsTests__equalsOperator.kt.html" target="_blank">testsWithStdLib/contracts/smartcasts/operatorsTests/equalsOperator.kt (6)</a></li>
+          <li><a href="diff-foreignAnnotationsTests__java8Tests__checkerFramework.kt.html" target="_blank">foreignAnnotationsTests/java8Tests/checkerFramework.kt (5)</a></li>
+          <li><a href="diff-foreignAnnotationsTests__java8Tests__eclipse.kt.html" target="_blank">foreignAnnotationsTests/java8Tests/eclipse.kt (5)</a></li>
+          <li><a href="diff-foreignAnnotationsTests__tests__androidSdk.kt.html" target="_blank">foreignAnnotationsTests/tests/androidSdk.kt (5)</a></li>
+          <li><a href="diff-foreignAnnotationsTests__tests__android_support.kt.html" target="_blank">foreignAnnotationsTests/tests/android_support.kt (5)</a></li>
+          <li><a href="diff-foreignAnnotationsTests__tests__androidx.kt.html" target="_blank">foreignAnnotationsTests/tests/androidx.kt (5)</a></li>
+          <li><a href="diff-foreignAnnotationsTests__tests__aosp.kt.html" target="_blank">foreignAnnotationsTests/tests/aosp.kt (5)</a></li>
+          <li><a href="diff-foreignAnnotationsTests__tests__eclipse.kt.html" target="_blank">foreignAnnotationsTests/tests/eclipse.kt (5)</a></li>
+          <li><a href="diff-foreignAnnotationsTests__tests__jsr305__nullabilityNicknames.kt.html" target="_blank">foreignAnnotationsTests/tests/jsr305/nullabilityNicknames.kt (5)</a></li>
+          <li><a href="diff-foreignAnnotationsTests__tests__jsr305__typeQualifierDefault__nullabilityFromOverridden.kt.html" target="_blank">foreignAnnotationsTests/tests/jsr305/typeQualifierDefault/nullabilityFromOverridden.kt (5)</a></li>
+          <li><a href="diff-foreignAnnotationsTests__tests__rxjava.kt.html" target="_blank">foreignAnnotationsTests/tests/rxjava.kt (5)</a></li>
+          <li><a href="diff-foreignAnnotationsTests__tests__rxjava3Errors.kt.html" target="_blank">foreignAnnotationsTests/tests/rxjava3Errors.kt (5)</a></li>
+          <li><a href="diff-foreignAnnotationsTests__java8Tests__jspecify__strictMode__Defaults.kt.html" target="_blank">foreignAnnotationsTests/java8Tests/jspecify/strictMode/Defaults.kt (4)</a></li>
+          <li><a href="diff-foreignAnnotationsTests__java8Tests__jspecify__strictMode__IgnoreAnnotations.kt.html" target="_blank">foreignAnnotationsTests/java8Tests/jspecify/strictMode/IgnoreAnnotations.kt (4)</a></li>
+          <li><a href="diff-foreignAnnotationsTests__tests__findBugsSimple.kt.html" target="_blank">foreignAnnotationsTests/tests/findBugsSimple.kt (4)</a></li>
+          <li><a href="diff-foreignAnnotationsTests__tests__jsr305NullabilityWarnings__migration__migrationError.kt.html" target="_blank">foreignAnnotationsTests/tests/jsr305NullabilityWarnings/migration/migrationError.kt (4)</a></li>
+          <li><a href="diff-foreignAnnotationsTests__tests__jsr305NullabilityWarnings__migration__overrideConflicts.kt.html" target="_blank">foreignAnnotationsTests/tests/jsr305NullabilityWarnings/migration/overrideConflicts.kt (4)</a></li>
+          <li><a href="diff-tests__inference__completion__lambdaWithVariableAndNothing.kt.html" target="_blank">tests/inference/completion/lambdaWithVariableAndNothing.kt (4)</a></li>
+          <li><a href="diff-tests__smartCasts__elvis__basicOff.kt.html" target="_blank">tests/smartCasts/elvis/basicOff.kt (4)</a></li>
+          <li><a href="diff-tests__smartCasts__exclUnderAnd.kt.html" target="_blank">tests/smartCasts/exclUnderAnd.kt (4)</a></li>
+          <li><a href="diff-tests__smartCasts__safecalls__insideIfExpr.kt.html" target="_blank">tests/smartCasts/safecalls/insideIfExpr.kt (4)</a></li>
+          <li><a href="diff-foreignAnnotationsTests__java8Tests__jspecify__strictMode__Simple.kt.html" target="_blank">foreignAnnotationsTests/java8Tests/jspecify/strictMode/Simple.kt (3)</a></li>
+          <li><a href="diff-foreignAnnotationsTests__tests__checkerFramework.kt.html" target="_blank">foreignAnnotationsTests/tests/checkerFramework.kt (3)</a></li>
+          <li><a href="diff-foreignAnnotationsTests__tests__jsr305__nonNullNever.kt.html" target="_blank">foreignAnnotationsTests/tests/jsr305/nonNullNever.kt (3)</a></li>
+          <li><a href="diff-foreignAnnotationsTests__tests__jsr305__nullabilityWarnings__simple.kt.html" target="_blank">foreignAnnotationsTests/tests/jsr305/nullabilityWarnings/simple.kt (3)</a></li>
+          <li><a href="diff-foreignAnnotationsTests__tests__jsr305__nullabilityWarnings__typeQualifierDefault__overridingDefaultQualifier.kt.html" target="_blank">foreignAnnotationsTests/tests/jsr305/nullabilityWarnings/typeQualifierDefault/overridingDefaultQualifier.kt (3)</a></li>
+          <li><a href="diff-foreignAnnotationsTests__tests__jsr305__simple.kt.html" target="_blank">foreignAnnotationsTests/tests/jsr305/simple.kt (3)</a></li>
+          <li><a href="diff-foreignAnnotationsTests__tests__jsr305NullabilityWarnings__migration__globalIgnore.kt.html" target="_blank">foreignAnnotationsTests/tests/jsr305NullabilityWarnings/migration/globalIgnore.kt (3)</a></li>
+          <li><a href="diff-foreignAnnotationsTests__tests__jsr305NullabilityWarnings__migration__globalWarningMigrationIgnore.kt.html" target="_blank">foreignAnnotationsTests/tests/jsr305NullabilityWarnings/migration/globalWarningMigrationIgnore.kt (3)</a></li>
+          <li><a href="diff-foreignAnnotationsTests__tests__jsr305NullabilityWarnings__migration__migrationWarning.kt.html" target="_blank">foreignAnnotationsTests/tests/jsr305NullabilityWarnings/migration/migrationWarning.kt (3)</a></li>
+          <li><a href="diff-tests__BreakContinue.kt.html" target="_blank">tests/BreakContinue.kt (3)</a></li>
+          <li><a href="diff-tests__dataFlowInfoTraversal__UnaryExpression.kt.html" target="_blank">tests/dataFlowInfoTraversal/UnaryExpression.kt (3)</a></li>
+          <li><a href="diff-tests__inference__regressions__kt2842.kt.html" target="_blank">tests/inference/regressions/kt2842.kt (3)</a></li>
+          <li><a href="diff-tests__smartCasts__castchecks__basicOff.kt.html" target="_blank">tests/smartCasts/castchecks/basicOff.kt (3)</a></li>
+          <li><a href="diff-tests__smartCasts__castchecks__basicOn.kt.html" target="_blank">tests/smartCasts/castchecks/basicOn.kt (3)</a></li>
+          <li><a href="diff-tests__smartCasts__safecalls__safeAccessReceiverNotNull.kt.html" target="_blank">tests/smartCasts/safecalls/safeAccessReceiverNotNull.kt (3)</a></li>
+          <li><a href="diff-tests__smartCasts__unstableToStable.kt.html" target="_blank">tests/smartCasts/unstableToStable.kt (3)</a></li>
+          <li><a href="diff-tests__smartCasts__varnotnull__doWhileWithBreak.kt.html" target="_blank">tests/smartCasts/varnotnull/doWhileWithBreak.kt (3)</a></li>
+          <li><a href="diff-tests__smartCasts__varnotnull__initInTryReturnInCatch.kt.html" target="_blank">tests/smartCasts/varnotnull/initInTryReturnInCatch.kt (3)</a></li>
+          <li><a href="diff-tests__when__withSubjectVariable__jumpoutInInitializer.kt.html" target="_blank">tests/when/withSubjectVariable/jumpoutInInitializer.kt (3)</a></li>
+          <li><a href="diff-testsWithStdLib__tryCatch__correctSmartcasts.kt.html" target="_blank">testsWithStdLib/tryCatch/correctSmartcasts.kt (3)</a></li>
+          <li><a href="diff-testsWithStdLib__tryCatch__correctSmartcasts_after.kt.html" target="_blank">testsWithStdLib/tryCatch/correctSmartcasts_after.kt (3)</a></li>
+          <li><a href="diff-testsWithStdLib__tryCatch__falsePositiveSmartcasts.kt.html" target="_blank">testsWithStdLib/tryCatch/falsePositiveSmartcasts.kt (3)</a></li>
+          <li><a href="diff-foreignAnnotationsTests__tests__jsr305__nullabilityWarnings__strange.kt.html" target="_blank">foreignAnnotationsTests/tests/jsr305/nullabilityWarnings/strange.kt (2)</a></li>
+          <li><a href="diff-foreignAnnotationsTests__tests__jsr305__nullabilityWarnings__typeQualifierDefault__parametersAreNonnullByDefaultPackage.kt.html" target="_blank">foreignAnnotationsTests/tests/jsr305/nullabilityWarnings/typeQualifierDefault/parametersAreNonnullByDefaultPackage.kt (2)</a></li>
+          <li><a href="diff-foreignAnnotationsTests__tests__jsr305__strange.kt.html" target="_blank">foreignAnnotationsTests/tests/jsr305/strange.kt (2)</a></li>
+          <li><a href="diff-foreignAnnotationsTests__tests__jsr305__typeQualifierDefault__parametersAreNonnullByDefaultPackage.kt.html" target="_blank">foreignAnnotationsTests/tests/jsr305/typeQualifierDefault/parametersAreNonnullByDefaultPackage.kt (2)</a></li>
+          <li><a href="diff-tests__generics__nullability__useAsReceiver.kt.html" target="_blank">tests/generics/nullability/useAsReceiver.kt (2)</a></li>
+          <li><a href="diff-tests__j+k__sam__enhancedSamConstructor.kt.html" target="_blank">tests/j+k/sam/enhancedSamConstructor.kt (2)</a></li>
+          <li><a href="diff-tests__platformTypes__nullabilityWarnings__arithmetic.kt.html" target="_blank">tests/platformTypes/nullabilityWarnings/arithmetic.kt (2)</a></li>
+          <li><a href="diff-tests__platformTypes__nullabilityWarnings__array.kt.html" target="_blank">tests/platformTypes/nullabilityWarnings/array.kt (2)</a></li>
+          <li><a href="diff-tests__platformTypes__nullabilityWarnings__derefenceExtension.kt.html" target="_blank">tests/platformTypes/nullabilityWarnings/derefenceExtension.kt (2)</a></li>
+          <li><a href="diff-tests__platformTypes__nullabilityWarnings__derefenceMember.kt.html" target="_blank">tests/platformTypes/nullabilityWarnings/derefenceMember.kt (2)</a></li>
+          <li><a href="diff-tests__platformTypes__nullabilityWarnings__primitiveArray.kt.html" target="_blank">tests/platformTypes/nullabilityWarnings/primitiveArray.kt (2)</a></li>
+          <li><a href="diff-tests__platformTypes__typeEnhancement__overriddenExtensions.kt.html" target="_blank">tests/platformTypes/typeEnhancement/overriddenExtensions.kt (2)</a></li>
+          <li><a href="diff-tests__smartCasts__loops__assignElvisIfBreakInsideWhileTrue.kt.html" target="_blank">tests/smartCasts/loops/assignElvisIfBreakInsideWhileTrue.kt (2)</a></li>
+          <li><a href="diff-tests__smartCasts__loops__callBreakBetweenInsideDoWhile.kt.html" target="_blank">tests/smartCasts/loops/callBreakBetweenInsideDoWhile.kt (2)</a></li>
+          <li><a href="diff-tests__smartCasts__loops__callBreakFirstInsideDoWhile.kt.html" target="_blank">tests/smartCasts/loops/callBreakFirstInsideDoWhile.kt (2)</a></li>
+          <li><a href="diff-tests__smartCasts__loops__elvisIfBreakInsideWhileTrue.kt.html" target="_blank">tests/smartCasts/loops/elvisIfBreakInsideWhileTrue.kt (2)</a></li>
+          <li><a href="diff-tests__smartCasts__loops__elvisLeftBreakInsideWhileTrue.kt.html" target="_blank">tests/smartCasts/loops/elvisLeftBreakInsideWhileTrue.kt (2)</a></li>
+          <li><a href="diff-tests__smartCasts__safecalls__chainMixedUnsafe.kt.html" target="_blank">tests/smartCasts/safecalls/chainMixedUnsafe.kt (2)</a></li>
+          <li><a href="diff-tests__smartCasts__safecalls__nullableReceiver.kt.html" target="_blank">tests/smartCasts/safecalls/nullableReceiver.kt (2)</a></li>
+          <li><a href="diff-tests__smartCasts__varnotnull__assignment.kt.html" target="_blank">tests/smartCasts/varnotnull/assignment.kt (2)</a></li>
+          <li><a href="diff-tests__smartCasts__varnotnull__boundInitializerWrong.kt.html" target="_blank">tests/smartCasts/varnotnull/boundInitializerWrong.kt (2)</a></li>
+          <li><a href="diff-tests__smartCasts__varnotnull__forEach.kt.html" target="_blank">tests/smartCasts/varnotnull/forEach.kt (2)</a></li>
+          <li><a href="diff-tests__smartCasts__varnotnull__initialization.kt.html" target="_blank">tests/smartCasts/varnotnull/initialization.kt (2)</a></li>
+          <li><a href="diff-tests__syntheticExtensions__javaProperties__TypeAnnotation.kt.html" target="_blank">tests/syntheticExtensions/javaProperties/TypeAnnotation.kt (2)</a></li>
+          <li><a href="diff-tests__when__withSubjectVariable__smartCastOnValueBoundToSubjectVariable.kt.html" target="_blank">tests/when/withSubjectVariable/smartCastOnValueBoundToSubjectVariable.kt (2)</a></li>
+          <li><a href="diff-testsWithStdLib__contracts__fromStdlib__isNullOrBlank.kt.html" target="_blank">testsWithStdLib/contracts/fromStdlib/isNullOrBlank.kt (2)</a></li>
+          <li><a href="diff-testsWithStdLib__contracts__fromStdlib__isNullOrEmpty.kt.html" target="_blank">testsWithStdLib/contracts/fromStdlib/isNullOrEmpty.kt (2)</a></li>
+          <li><a href="diff-testsWithStdLib__contracts__smartcasts__extensionReceiver.kt.html" target="_blank">testsWithStdLib/contracts/smartcasts/extensionReceiver.kt (2)</a></li>
+          <li><a href="diff-testsWithStdLib__contracts__smartcasts__extensionReceiver_after.kt.html" target="_blank">testsWithStdLib/contracts/smartcasts/extensionReceiver_after.kt (2)</a></li>
+          <li><a href="diff-testsWithStdLib__contracts__smartcasts__receiver.kt.html" target="_blank">testsWithStdLib/contracts/smartcasts/receiver.kt (2)</a></li>
+          <li><a href="diff-testsWithStdLib__coroutines__kt36947.kt.html" target="_blank">testsWithStdLib/coroutines/kt36947.kt (2)</a></li>
+          <li><a href="diff-foreignAnnotationsTests__java8Tests__jsr305__overrideWithTypeUseInClasspathWithArray.kt.html" target="_blank">foreignAnnotationsTests/java8Tests/jsr305/overrideWithTypeUseInClasspathWithArray.kt (1)</a></li>
+          <li><a href="diff-foreignAnnotationsTests__java8Tests__jsr305__springNullableWithTypeUse.kt.html" target="_blank">foreignAnnotationsTests/java8Tests/jsr305/springNullableWithTypeUse.kt (1)</a></li>
+          <li><a href="diff-foreignAnnotationsTests__tests__jsr305__ignore__parametersAreNonnullByDefault.kt.html" target="_blank">foreignAnnotationsTests/tests/jsr305/ignore/parametersAreNonnullByDefault.kt (1)</a></li>
+          <li><a href="diff-foreignAnnotationsTests__tests__jsr305__nullabilityWarnings__typeQualifierDefault__parametersAreNonnullByDefault.kt.html" target="_blank">foreignAnnotationsTests/tests/jsr305/nullabilityWarnings/typeQualifierDefault/parametersAreNonnullByDefault.kt (1)</a></li>
+          <li><a href="diff-foreignAnnotationsTests__tests__jsr305__typeQualifierDefault__fieldsAreNullable.kt.html" target="_blank">foreignAnnotationsTests/tests/jsr305/typeQualifierDefault/fieldsAreNullable.kt (1)</a></li>
+          <li><a href="diff-foreignAnnotationsTests__tests__jsr305__typeQualifierDefault__parametersAreNonnullByDefault.kt.html" target="_blank">foreignAnnotationsTests/tests/jsr305/typeQualifierDefault/parametersAreNonnullByDefault.kt (1)</a></li>
+          <li><a href="diff-foreignAnnotationsTests__tests__jsr305__typeQualifierDefault__springNullable.kt.html" target="_blank">foreignAnnotationsTests/tests/jsr305/typeQualifierDefault/springNullable.kt (1)</a></li>
+          <li><a href="diff-foreignAnnotationsTests__tests__jsr305__typeQualifierDefault__springNullablePackage.kt.html" target="_blank">foreignAnnotationsTests/tests/jsr305/typeQualifierDefault/springNullablePackage.kt (1)</a></li>
+          <li><a href="diff-tests__controlStructures__ForLoopWithExtensionIteratorOnNullable.kt.html" target="_blank">tests/controlStructures/ForLoopWithExtensionIteratorOnNullable.kt (1)</a></li>
+          <li><a href="diff-tests__dataFlow__assignment__uninitializedValNullability.kt.html" target="_blank">tests/dataFlow/assignment/uninitializedValNullability.kt (1)</a></li>
+          <li><a href="diff-tests__extensions__ExtensionFunctions.kt.html" target="_blank">tests/extensions/ExtensionFunctions.kt (1)</a></li>
+          <li><a href="diff-tests__extensions__kt1875.kt.html" target="_blank">tests/extensions/kt1875.kt (1)</a></li>
+          <li><a href="diff-tests__generics__nullability__expressionsBoundsViolation.kt.html" target="_blank">tests/generics/nullability/expressionsBoundsViolation.kt (1)</a></li>
+          <li><a href="diff-tests__generics__nullability__smartCastRefinedClass.kt.html" target="_blank">tests/generics/nullability/smartCastRefinedClass.kt (1)</a></li>
+          <li><a href="diff-tests__generics__nullability__smartCasts.kt.html" target="_blank">tests/generics/nullability/smartCasts.kt (1)</a></li>
+          <li><a href="diff-tests__generics__nullability__smartCastsOnThis.kt.html" target="_blank">tests/generics/nullability/smartCastsOnThis.kt (1)</a></li>
+          <li><a href="diff-tests__generics__nullability__tpInBounds.kt.html" target="_blank">tests/generics/nullability/tpInBounds.kt (1)</a></li>
+          <li><a href="diff-tests__nullabilityAndSmartCasts__kt1270.kt.html" target="_blank">tests/nullabilityAndSmartCasts/kt1270.kt (1)</a></li>
+          <li><a href="diff-tests__nullabilityAndSmartCasts__kt2125.kt.html" target="_blank">tests/nullabilityAndSmartCasts/kt2125.kt (1)</a></li>
+          <li><a href="diff-tests__platformTypes__noAnnotationInClassPath.kt.html" target="_blank">tests/platformTypes/noAnnotationInClassPath.kt (1)</a></li>
+          <li><a href="diff-tests__platformTypes__nullabilityWarnings__conditions.kt.html" target="_blank">tests/platformTypes/nullabilityWarnings/conditions.kt (1)</a></li>
+          <li><a href="diff-tests__platformTypes__nullabilityWarnings__kt6829.kt.html" target="_blank">tests/platformTypes/nullabilityWarnings/kt6829.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__alwaysNull.kt.html" target="_blank">tests/smartCasts/alwaysNull.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__alwaysNullWithJava.kt.html" target="_blank">tests/smartCasts/alwaysNullWithJava.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__elvisExclExcl.kt.html" target="_blank">tests/smartCasts/elvisExclExcl.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__elvisNothingRHS.kt.html" target="_blank">tests/smartCasts/elvisNothingRHS.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__enumEntryMembers_after.kt.html" target="_blank">tests/smartCasts/enumEntryMembers_after.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__extensionSafeCall.kt.html" target="_blank">tests/smartCasts/extensionSafeCall.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__fieldExclExcl.kt.html" target="_blank">tests/smartCasts/fieldExclExcl.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__fieldPlus.kt.html" target="_blank">tests/smartCasts/fieldPlus.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__loops__WhileTrueWithBreakInIfCondition.kt.html" target="_blank">tests/smartCasts/loops/WhileTrueWithBreakInIfCondition.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__loops__assignWhenInsideWhileTrue.kt.html" target="_blank">tests/smartCasts/loops/assignWhenInsideWhileTrue.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__loops__callBreakInsideDoWhile.kt.html" target="_blank">tests/smartCasts/loops/callBreakInsideDoWhile.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__loops__callBreakSecondInsideDoWhile.kt.html" target="_blank">tests/smartCasts/loops/callBreakSecondInsideDoWhile.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__loops__callBreakThirdInsideDoWhile.kt.html" target="_blank">tests/smartCasts/loops/callBreakThirdInsideDoWhile.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__loops__doWhileEarlyBreak.kt.html" target="_blank">tests/smartCasts/loops/doWhileEarlyBreak.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__loops__doWhileInConditionWithBreak.kt.html" target="_blank">tests/smartCasts/loops/doWhileInConditionWithBreak.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__loops__doWhileNotNullBreak.kt.html" target="_blank">tests/smartCasts/loops/doWhileNotNullBreak.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__loops__doWhileNullWithBreak.kt.html" target="_blank">tests/smartCasts/loops/doWhileNullWithBreak.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__loops__elvisBreakInsideDoWhile.kt.html" target="_blank">tests/smartCasts/loops/elvisBreakInsideDoWhile.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__loops__ifBreakAssignInsideDoWhile.kt.html" target="_blank">tests/smartCasts/loops/ifBreakAssignInsideDoWhile.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__loops__ifBreakAssignInsideWhileTrue.kt.html" target="_blank">tests/smartCasts/loops/ifBreakAssignInsideWhileTrue.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__loops__ifBreakExprInsideWhileTrue.kt.html" target="_blank">tests/smartCasts/loops/ifBreakExprInsideWhileTrue.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__loops__leftElvisBreakInsideWhileTrue.kt.html" target="_blank">tests/smartCasts/loops/leftElvisBreakInsideWhileTrue.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__loops__nestedLoopsWithLongBreak.kt.html" target="_blank">tests/smartCasts/loops/nestedLoopsWithLongBreak.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__loops__plusAssignWhenInsideDoWhile.kt.html" target="_blank">tests/smartCasts/loops/plusAssignWhenInsideDoWhile.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__loops__whenInsideWhileTrue.kt.html" target="_blank">tests/smartCasts/loops/whenInsideWhileTrue.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__loops__whileNullWithBreak.kt.html" target="_blank">tests/smartCasts/loops/whileNullWithBreak.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__loops__whileSimple.kt.html" target="_blank">tests/smartCasts/loops/whileSimple.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__loops__whileTrivial.kt.html" target="_blank">tests/smartCasts/loops/whileTrivial.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__loops__whileTrueBreakReturn.kt.html" target="_blank">tests/smartCasts/loops/whileTrueBreakReturn.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__loops__whileTrueEarlyBreak.kt.html" target="_blank">tests/smartCasts/loops/whileTrueEarlyBreak.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__safecalls__argument.kt.html" target="_blank">tests/smartCasts/safecalls/argument.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__safecalls__doubleCall.kt.html" target="_blank">tests/smartCasts/safecalls/doubleCall.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__safecalls__innerReceiver.kt.html" target="_blank">tests/smartCasts/safecalls/innerReceiver.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__safecalls__nullableReceiverWithFlexible.kt.html" target="_blank">tests/smartCasts/safecalls/nullableReceiverWithFlexible.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__safecalls__simple.kt.html" target="_blank">tests/smartCasts/safecalls/simple.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__safecalls__twoArgs.kt.html" target="_blank">tests/smartCasts/safecalls/twoArgs.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__smartCastOnWhen.kt.html" target="_blank">tests/smartCasts/smartCastOnWhen.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__smartcastOnSameFieldOfDifferentInstances.kt.html" target="_blank">tests/smartCasts/smartcastOnSameFieldOfDifferentInstances.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__variables__lambdaBetweenArguments.kt.html" target="_blank">tests/smartCasts/variables/lambdaBetweenArguments.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__variables__whileWithBreak.kt.html" target="_blank">tests/smartCasts/variables/whileWithBreak.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__varnotnull__assignNestedWhile.kt.html" target="_blank">tests/smartCasts/varnotnull/assignNestedWhile.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__varnotnull__doWhileWithMiddleBreak.kt.html" target="_blank">tests/smartCasts/varnotnull/doWhileWithMiddleBreak.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__varnotnull__infiniteWhileWithBreak.kt.html" target="_blank">tests/smartCasts/varnotnull/infiniteWhileWithBreak.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__varnotnull__nestedWhile.kt.html" target="_blank">tests/smartCasts/varnotnull/nestedWhile.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__varnotnull__plusplusMinusminus.kt.html" target="_blank">tests/smartCasts/varnotnull/plusplusMinusminus.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__varnotnull__postfixNullableIncrement.kt.html" target="_blank">tests/smartCasts/varnotnull/postfixNullableIncrement.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__varnotnull__prefixNullableClassIncrement.kt.html" target="_blank">tests/smartCasts/varnotnull/prefixNullableClassIncrement.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__varnotnull__prefixNullableIncrement.kt.html" target="_blank">tests/smartCasts/varnotnull/prefixNullableIncrement.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__varnotnull__setNotNullInTry.kt.html" target="_blank">tests/smartCasts/varnotnull/setNotNullInTry.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__varnotnull__setNullInTry.kt.html" target="_blank">tests/smartCasts/varnotnull/setNullInTry.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__varnotnull__setNullInTryFinally.kt.html" target="_blank">tests/smartCasts/varnotnull/setNullInTryFinally.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__varnotnull__varChangedInLoop.kt.html" target="_blank">tests/smartCasts/varnotnull/varChangedInLoop.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__varnotnull__varNull.kt.html" target="_blank">tests/smartCasts/varnotnull/varNull.kt (1)</a></li>
+          <li><a href="diff-tests__smartCasts__varnotnull__whileWithBreak.kt.html" target="_blank">tests/smartCasts/varnotnull/whileWithBreak.kt (1)</a></li>
+          <li><a href="diff-tests__syntheticExtensions__samAdapters__ReturnTypeAnnotation.kt.html" target="_blank">tests/syntheticExtensions/samAdapters/ReturnTypeAnnotation.kt (1)</a></li>
+          <li><a href="diff-tests__targetedBuiltIns__forEachRemainingNullability.kt.html" target="_blank">tests/targetedBuiltIns/forEachRemainingNullability.kt (1)</a></li>
+          <li><a href="diff-tests__typealias__kt15734.kt.html" target="_blank">tests/typealias/kt15734.kt (1)</a></li>
+          <li><a href="diff-testsWithStdLib__contracts__smartcasts__valueOfContractedFunctionIngored.kt.html" target="_blank">testsWithStdLib/contracts/smartcasts/valueOfContractedFunctionIngored.kt (1)</a></li>
+          <li><a href="diff-testsWithStdLib__smartcasts__letChangesToNotNull.kt.html" target="_blank">testsWithStdLib/smartcasts/letChangesToNotNull.kt (1)</a></li>
+          <li><a href="diff-testsWithStdLib__smartcasts__letChangesToNullComplex.kt.html" target="_blank">testsWithStdLib/smartcasts/letChangesToNullComplex.kt (1)</a></li>
+          <li><a href="diff-testsWithStdLib__smartcasts__withChangesToNull.kt.html" target="_blank">testsWithStdLib/smartcasts/withChangesToNull.kt (1)</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

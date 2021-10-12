@@ -1,0 +1,136 @@
+<html>
+  <head>
+    <title>Diagnostics diff: tests/j+k/collectionOverrides/contains.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="card-header p-0" id="heading0"><button class="btn btn-link btn-block text-left" data-toggle="collapse" data-target="#collapse0">
+          <h5>Diff between FE 1.0 vs FIR</h5>
+        </button></div>
+      <div class="collapse show" id="collapse0">
+        <div class="card-body p-1">
+          <div id="diff0" style="width: 100%"></div>
+        </div>
+      </div>
+      <script type="text/javascript">                (function() {
+                    const diffString = `--- tests/j+k/collectionOverrides/contains.kt
++++ tests/j+k/collectionOverrides/contains.fir.kt
+@@ -1,66 +1,66 @@
+ // !DIAGNOSTICS: -UNUSED_PARAMETER -UNUSED_VARIABLE -PARAMETER_NAME_CHANGED_ON_OVERRIDE
+ // JAVAC_EXPECTED_FILE
+ // FILE: A.java
+ 
+ abstract public class A<T> implements java.util.Collection<T> {
+     public boolean contains(Object x) {return false;}
+ }
+ 
+ // FILE: B.java
+ 
+ abstract public class B implements java.util.Collection<String> {
+     public boolean contains(Object x) {return false;}
+ }
+ 
+ // FILE: IC.java
+ public interface IC extends java.util.Collection<String> {
+     public boolean contains(Object x);
+ }
+ 
+ // FILE: main.kt
+ abstract class KA<T> : java.util.AbstractList<T>() {
+     override fun contains(x: T) = false
+ }
+ 
+ abstract class KB : java.util.AbstractList<String>(), IC {
+     override fun contains(element: String) = false
+ }
+ 
+ 
+ // Raw?
+ 
+ fun foo(
+         a: A<String>, b: B, ic: IC,
+         ka: KA<String>, kb: KB,
+         al: java.util.ArrayList<String>
+ ) {
+     a.contains("")
+-    a.contains(<!CONSTANT_EXPECTED_TYPE_MISMATCH!>1<!>)
++    a.contains(<!ARGUMENT_TYPE_MISMATCH!>1<!>)
+     "" in a
+-    <!CONSTANT_EXPECTED_TYPE_MISMATCH!>1<!> in a
++    <!ARGUMENT_TYPE_MISMATCH!>1<!> in a
+ 
+     b.contains("")
+-    b.contains(<!CONSTANT_EXPECTED_TYPE_MISMATCH!>1<!>)
++    b.contains(<!ARGUMENT_TYPE_MISMATCH!>1<!>)
+     "" in b
+-    <!CONSTANT_EXPECTED_TYPE_MISMATCH!>1<!> in b
++    <!ARGUMENT_TYPE_MISMATCH!>1<!> in b
+ 
+     ic.contains("")
+-    ic.contains(<!CONSTANT_EXPECTED_TYPE_MISMATCH!>1<!>)
++    ic.contains(<!ARGUMENT_TYPE_MISMATCH!>1<!>)
+     "" in ic
+-    <!CONSTANT_EXPECTED_TYPE_MISMATCH!>1<!> in ic
++    <!ARGUMENT_TYPE_MISMATCH!>1<!> in ic
+ 
+     ka.contains("")
+-    ka.contains(<!CONSTANT_EXPECTED_TYPE_MISMATCH!>1<!>)
++    ka.contains(<!ARGUMENT_TYPE_MISMATCH!>1<!>)
+     "" in ka
+-    <!CONSTANT_EXPECTED_TYPE_MISMATCH!>1<!> in ka
++    <!ARGUMENT_TYPE_MISMATCH!>1<!> in ka
+ 
+     kb.contains("")
+-    kb.contains(<!CONSTANT_EXPECTED_TYPE_MISMATCH!>1<!>)
++    kb.contains(<!ARGUMENT_TYPE_MISMATCH!>1<!>)
+     "" in kb
+-    <!CONSTANT_EXPECTED_TYPE_MISMATCH!>1<!> in kb
++    <!ARGUMENT_TYPE_MISMATCH!>1<!> in kb
+ 
+     al.contains("")
+-    al.contains(<!CONSTANT_EXPECTED_TYPE_MISMATCH!>1<!>)
++    al.contains(<!ARGUMENT_TYPE_MISMATCH!>1<!>)
+     "" in al
+-    <!CONSTANT_EXPECTED_TYPE_MISMATCH!>1<!> in al
++    <!ARGUMENT_TYPE_MISMATCH!>1<!> in al
+ }`;
+                    const targetElement = $('#diff0')[0];
+                    const configuration = {
+                        drawFileList: false,
+                        fileListToggle: false,
+                        fileListStartVisible: false,
+                        fileContentToggle: false,
+                        matching: 'lines',
+                        outputFormat: 'side-by-side',
+                        synchronisedScroll: true,
+                        highlight: true,
+                        renderNothingWhenEmpty: false,
+                        rawTemplates: {
+                            'generic-file-path': `
+                                <div class="col">
+                                    <a href="https://github.com/JetBrains/kotlin/blob/3c69a5efc89f69903227c8b77f6eb4d776acef74/compiler/testData/diagnostics/tests/j+k/collectionOverrides/contains.kt" target="_blank">
+                                        <strong>FE 1.0:</strong> tests/j+k/collectionOverrides/contains.kt
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="https://github.com/JetBrains/kotlin/blob/3c69a5efc89f69903227c8b77f6eb4d776acef74/compiler/testData/diagnostics/tests/j+k/collectionOverrides/contains.fir.kt" target="_blank">
+                                        <strong>FIR:</strong> tests/j+k/collectionOverrides/contains.fir.kt
+                                    </a>
+                                </div>
+                            `
+                        }
+                    };
+                    const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                    diff2htmlUi.draw();
+                    diff2htmlUi.highlightCode();
+                })();</script>
+    </div>
+  </body>
+</html>

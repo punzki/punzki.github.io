@@ -1,0 +1,116 @@
+<html>
+  <head>
+    <title>Diagnostics diff: tests/extensions/throwOutCandidatesByReceiver.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="card-header p-0" id="heading0"><button class="btn btn-link btn-block text-left" data-toggle="collapse" data-target="#collapse0">
+          <h5>Diff between FE 1.0 vs FIR</h5>
+        </button></div>
+      <div class="collapse show" id="collapse0">
+        <div class="card-body p-1">
+          <div id="diff0" style="width: 100%"></div>
+        </div>
+      </div>
+      <script type="text/javascript">                (function() {
+                    const diffString = `--- tests/extensions/throwOutCandidatesByReceiver.kt
++++ tests/extensions/throwOutCandidatesByReceiver.fir.kt
+@@ -1,55 +1,55 @@
+ package bar
+ 
+ 
+ // should be thrown away
+ 
+ fun <R> List<R>.a() {}
+ 
+ fun test1(i: Int?) {
+     1.<!UNRESOLVED_REFERENCE_WRONG_RECEIVER!>a<!>()
+     i.<!UNRESOLVED_REFERENCE_WRONG_RECEIVER!>a<!>()
+ }
+ 
+ fun <R> test2(c: Collection<R>) {
+     c.<!UNRESOLVED_REFERENCE_WRONG_RECEIVER!>a<!>()
+ }
+ 
+ fun Int.foo() {}
+ 
+ fun test3(s: String?) {
+     "".<!UNRESOLVED_REFERENCE_WRONG_RECEIVER!>foo<!>()
+     s.<!UNRESOLVED_REFERENCE_WRONG_RECEIVER!>foo<!>()
+-    "".<!UNRESOLVED_REFERENCE_WRONG_RECEIVER!>foo<!>(1)
+-    s.<!UNRESOLVED_REFERENCE_WRONG_RECEIVER!>foo<!>("a")
++    "".foo(<!TOO_MANY_ARGUMENTS!>1<!>)
++    s.foo(<!TOO_MANY_ARGUMENTS!>"a"<!>)
+ }
+ 
+ interface A
+ fun <T: A> T.c() {}
+ 
+ fun test4() {
+     1.<!UNRESOLVED_REFERENCE_WRONG_RECEIVER!>c<!>()
+ }
+ 
+ 
+ // should be an error on receiver, shouldn't be thrown away
+ 
+ fun test5() {
+-    1.<!FUNCTION_EXPECTED!>(fun String.()=1)<!>()
++    1.(<!FUNCTION_EXPECTED!>fun String.()=1<!>)()
+ }
+ 
+ fun <R: Any> R?.sure() : R = this!!
+ 
+ fun <T> test6(l: List<T>?) {
+     l.<!UNRESOLVED_REFERENCE_WRONG_RECEIVER!>sure<!><T>()
+ }
+ 
+ 
+ fun List<String>.b() {}
+ 
+ fun test7(l: List<String?>) {
+     l.<!UNRESOLVED_REFERENCE_WRONG_RECEIVER!>b<!>()
+ }
+ 
+ fun test8(l: List<Any>?) {
+     l.<!UNRESOLVED_REFERENCE_WRONG_RECEIVER!>b<!>()
+ }`;
+                    const targetElement = $('#diff0')[0];
+                    const configuration = {
+                        drawFileList: false,
+                        fileListToggle: false,
+                        fileListStartVisible: false,
+                        fileContentToggle: false,
+                        matching: 'lines',
+                        outputFormat: 'side-by-side',
+                        synchronisedScroll: true,
+                        highlight: true,
+                        renderNothingWhenEmpty: false,
+                        rawTemplates: {
+                            'generic-file-path': `
+                                <div class="col">
+                                    <a href="https://github.com/JetBrains/kotlin/blob/b946a284b00dbcbcd3f5d34d4e3dccc04849e5d0/compiler/testData/diagnostics/tests/extensions/throwOutCandidatesByReceiver.kt" target="_blank">
+                                        <strong>FE 1.0:</strong> tests/extensions/throwOutCandidatesByReceiver.kt
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="https://github.com/JetBrains/kotlin/blob/b946a284b00dbcbcd3f5d34d4e3dccc04849e5d0/compiler/testData/diagnostics/tests/extensions/throwOutCandidatesByReceiver.fir.kt" target="_blank">
+                                        <strong>FIR:</strong> tests/extensions/throwOutCandidatesByReceiver.fir.kt
+                                    </a>
+                                </div>
+                            `
+                        }
+                    };
+                    const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                    diff2htmlUi.draw();
+                    diff2htmlUi.highlightCode();
+                })();</script>
+    </div>
+  </body>
+</html>

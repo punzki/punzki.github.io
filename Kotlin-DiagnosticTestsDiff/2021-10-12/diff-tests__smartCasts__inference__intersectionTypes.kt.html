@@ -1,0 +1,128 @@
+<html>
+  <head>
+    <title>Diagnostics diff: tests/smartCasts/inference/intersectionTypes.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="card-header p-0" id="heading0"><button class="btn btn-link btn-block text-left" data-toggle="collapse" data-target="#collapse0">
+          <h5>Diff between FE 1.0 vs FIR</h5>
+        </button></div>
+      <div class="collapse show" id="collapse0">
+        <div class="card-body p-1">
+          <div id="diff0" style="width: 100%"></div>
+        </div>
+      </div>
+      <script type="text/javascript">                (function() {
+                    const diffString = `--- tests/smartCasts/inference/intersectionTypes.kt
++++ tests/smartCasts/inference/intersectionTypes.fir.kt
+@@ -1,62 +1,62 @@
+ // !CHECK_TYPE
+ 
+ package a
+ 
+ import checkSubtype
+ 
+ fun <T> id(t: T): T = t
+ 
+ fun <T> two(u: T, v: T): T = u
+ 
+ fun <T> three(a: T, b: T, c: T): T = c
+ 
+ interface A
+ interface B: A
+ interface C: A
+ 
+ fun test(a: A, b: B, c: C) {
+     if (a is B && a is C) {
+         val d: C = id(a)
+         val e: Any = id(a)
+         val f = id(a)
+         checkSubtype<A>(f)
+-        val g = two(<!DEBUG_INFO_SMARTCAST!>a<!>, b)
++        val g = two(a, b)
+         checkSubtype<B>(g)
+         checkSubtype<A>(g)
+ 
+         // smart cast isn't needed, but is reported due to KT-4294
+-        val h: Any = two(<!DEBUG_INFO_SMARTCAST!>a<!>, b)
++        val h: Any = two(a, b)
+ 
+         val k = three(a, b, c)
+         checkSubtype<A>(k)
+-        checkSubtype<B>(<!TYPE_MISMATCH!>k<!>)
+-        val l: Int = <!TYPE_MISMATCH, TYPE_MISMATCH, TYPE_MISMATCH, TYPE_MISMATCH!>three(a, b, c)<!>
++        checkSubtype<B>(<!ARGUMENT_TYPE_MISMATCH!>k<!>)
++        val l: Int = <!INITIALIZER_TYPE_MISMATCH, TYPE_MISMATCH, TYPE_MISMATCH, TYPE_MISMATCH!>three(a, b, c)<!>
+ 
+         use(d, e, f, g, h, k, l)
+     }
+ }
+ 
+ fun <T> foo(t: T, l: MutableList<T>): T = t
+ 
+ fun testErrorMessages(a: A, ml: MutableList<String>) {
+     if (a is B && a is C) {
+-        foo(a, <!TYPE_MISMATCH!>ml<!>)
++        foo(a, <!ARGUMENT_TYPE_MISMATCH!>ml<!>)
+     }
+ 
+     if(a is C) {
+-        foo(a, <!TYPE_MISMATCH!>ml<!>)
++        foo(a, <!ARGUMENT_TYPE_MISMATCH!>ml<!>)
+     }
+ }
+ 
+ fun rr(s: String?) {
+     if (s != null) {
+-        val l = arrayListOf("", <!DEBUG_INFO_SMARTCAST!>s<!>)
++        val l = arrayListOf("", s)
+         checkSubtype<MutableList<String>>(l)
+-        checkSubtype<MutableList<String?>>(<!TYPE_MISMATCH!>l<!>)
++        checkSubtype<MutableList<String?>>(<!ARGUMENT_TYPE_MISMATCH!>l<!>)
+     }
+ }
+ 
+ //from library
+ fun <T> arrayListOf(vararg values: T): MutableList<T> = throw Exception()
+ 
+ fun use(vararg a: Any) = a`;
+                    const targetElement = $('#diff0')[0];
+                    const configuration = {
+                        drawFileList: false,
+                        fileListToggle: false,
+                        fileListStartVisible: false,
+                        fileContentToggle: false,
+                        matching: 'lines',
+                        outputFormat: 'side-by-side',
+                        synchronisedScroll: true,
+                        highlight: true,
+                        renderNothingWhenEmpty: false,
+                        rawTemplates: {
+                            'generic-file-path': `
+                                <div class="col">
+                                    <a href="https://github.com/JetBrains/kotlin/blob/b946a284b00dbcbcd3f5d34d4e3dccc04849e5d0/compiler/testData/diagnostics/tests/smartCasts/inference/intersectionTypes.kt" target="_blank">
+                                        <strong>FE 1.0:</strong> tests/smartCasts/inference/intersectionTypes.kt
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="https://github.com/JetBrains/kotlin/blob/b946a284b00dbcbcd3f5d34d4e3dccc04849e5d0/compiler/testData/diagnostics/tests/smartCasts/inference/intersectionTypes.fir.kt" target="_blank">
+                                        <strong>FIR:</strong> tests/smartCasts/inference/intersectionTypes.fir.kt
+                                    </a>
+                                </div>
+                            `
+                        }
+                    };
+                    const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                    diff2htmlUi.draw();
+                    diff2htmlUi.highlightCode();
+                })();</script>
+    </div>
+  </body>
+</html>

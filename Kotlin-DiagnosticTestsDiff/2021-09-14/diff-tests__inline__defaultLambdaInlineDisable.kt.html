@@ -1,0 +1,118 @@
+<html>
+  <head>
+    <title>Diagnostics diff: tests/inline/defaultLambdaInlineDisable.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="card-header p-0" id="heading0"><button class="btn btn-link btn-block text-left" data-toggle="collapse" data-target="#collapse0">
+          <h5>Diff between FE 1.0 vs FIR</h5>
+        </button></div>
+      <div class="collapse show" id="collapse0">
+        <div class="card-body p-1">
+          <div id="diff0" style="width: 100%"></div>
+        </div>
+      </div>
+      <script type="text/javascript">                (function() {
+                    const diffString = `--- tests/inline/defaultLambdaInlineDisable.kt
++++ tests/inline/defaultLambdaInlineDisable.fir.kt
+@@ -1,48 +1,48 @@
+ // !DIAGNOSTICS: -UNUSED_EXPRESSION -UNUSED_PARAMETER -UNUSED_VARIABLE -NOTHING_TO_INLINE
+ // !LANGUAGE: -InlineDefaultFunctionalParameters
+ 
+ fun test() = "OK"
+ 
+ val prop = "OK"
+ 
+ class Foo {
+     fun test() = "OK"
+     val prop = "OK"
+ }
+ 
+ object FooObject {
+     fun test() = "OK"
+     val prop = "OK"
+ }
+ 
+-inline fun default1(<!NOT_YET_SUPPORTED_IN_INLINE!>s : () -> String = { "OK" }<!>) {}
+-inline fun default2(<!NOT_YET_SUPPORTED_IN_INLINE!>s : () -> String = ::test<!>) {}
+-inline fun default3(<!NOT_YET_SUPPORTED_IN_INLINE!>s : () -> String = ::prop<!>) {}
+-inline fun default4(<!NOT_YET_SUPPORTED_IN_INLINE!>s : () -> String = FooObject::test<!>) {}
+-inline fun default5(<!NOT_YET_SUPPORTED_IN_INLINE!>s : () -> String = FooObject::prop<!>) {}
+-inline fun default6(<!NOT_YET_SUPPORTED_IN_INLINE!>s : (a: Foo) -> String = Foo::test<!>) {}
+-inline fun default7(<!NOT_YET_SUPPORTED_IN_INLINE!>s : (a: Foo) -> String = Foo::prop<!>) {}
++inline fun default1(s : () -> String = { "OK" }) {}
++inline fun default2(s : () -> String = ::test) {}
++inline fun default3(s : () -> String = ::prop) {}
++inline fun default4(s : () -> String = FooObject::test) {}
++inline fun default5(s : () -> String = FooObject::prop) {}
++inline fun default6(s : (a: Foo) -> String = Foo::test) {}
++inline fun default7(s : (a: Foo) -> String = Foo::prop) {}
+ 
+ val a = Foo()
+ 
+-inline fun default8(<!NOT_YET_SUPPORTED_IN_INLINE!>s : () -> String = a::test<!>) {}
+-inline fun default9(<!NOT_YET_SUPPORTED_IN_INLINE!>s : () -> String = a::prop<!>) {}
++inline fun default8(s : () -> String = a::test) {}
++inline fun default9(s : () -> String = a::prop) {}
+ 
+-inline fun default10(<!NOT_YET_SUPPORTED_IN_INLINE!>s : () -> String = object : Function0<String> {
++inline fun default10(s : () -> String = <!INVALID_DEFAULT_FUNCTIONAL_PARAMETER_FOR_INLINE!>object<!> : Function0<String> {
+     override fun invoke(): String {
+         return "FAIL"
+     }
+-}<!>) {}
++}) {}
+ 
+ 
+ abstract class Base {
+     abstract fun foo(f: () -> Unit = { })
+ }
+ 
+ class Derived : Base() {
+     <!OVERRIDE_BY_INLINE!>override final inline fun foo(<!NOT_YET_SUPPORTED_IN_INLINE!>f: () -> Unit<!>)<!> {
+         f()
+     }
+ }
+ 
+-inline fun default11(<!NOT_YET_SUPPORTED_IN_INLINE!>s : () -> Derived = ::Derived<!>) {}
++inline fun default11(s : () -> Derived = ::Derived) {}`;
+                    const targetElement = $('#diff0')[0];
+                    const configuration = {
+                        drawFileList: false,
+                        fileListToggle: false,
+                        fileListStartVisible: false,
+                        fileContentToggle: false,
+                        matching: 'lines',
+                        outputFormat: 'side-by-side',
+                        synchronisedScroll: true,
+                        highlight: true,
+                        renderNothingWhenEmpty: false,
+                        rawTemplates: {
+                            'generic-file-path': `
+                                <div class="col">
+                                    <a href="https://github.com/JetBrains/kotlin/blob/3c69a5efc89f69903227c8b77f6eb4d776acef74/compiler/testData/diagnostics/tests/inline/defaultLambdaInlineDisable.kt" target="_blank">
+                                        <strong>FE 1.0:</strong> tests/inline/defaultLambdaInlineDisable.kt
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="https://github.com/JetBrains/kotlin/blob/3c69a5efc89f69903227c8b77f6eb4d776acef74/compiler/testData/diagnostics/tests/inline/defaultLambdaInlineDisable.fir.kt" target="_blank">
+                                        <strong>FIR:</strong> tests/inline/defaultLambdaInlineDisable.fir.kt
+                                    </a>
+                                </div>
+                            `
+                        }
+                    };
+                    const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                    diff2htmlUi.draw();
+                    diff2htmlUi.highlightCode();
+                })();</script>
+    </div>
+  </body>
+</html>

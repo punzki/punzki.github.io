@@ -1,0 +1,125 @@
+<html>
+  <head>
+    <title>Diagnostics diff: testsWithJsStdLib/dynamicTypes/extensionVars.kt</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css" integrity="sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/css/diff2html.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.3/bundles/js/diff2html-ui.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="card-header p-0" id="heading0"><button class="btn btn-link btn-block text-left" data-toggle="collapse" data-target="#collapse0">
+          <h5>Diff between FE 1.0 vs FIR</h5>
+        </button></div>
+      <div class="collapse show" id="collapse0">
+        <div class="card-body p-1">
+          <div id="diff0" style="width: 100%"></div>
+        </div>
+      </div>
+      <script type="text/javascript">                (function() {
+                    const diffString = `--- testsWithJsStdLib/dynamicTypes/extensionVars.kt
++++ testsWithJsStdLib/dynamicTypes/extensionVars.kt
+@@ -1,67 +1,67 @@
+ // !MARK_DYNAMIC_CALLS
+ // !DIAGNOSTICS:-USELESS_CAST
+ 
+ fun test(d: dynamic) {
+     d.<!DEBUG_INFO_DYNAMIC!>onAnyVar<!>
+     d.<!DEBUG_INFO_DYNAMIC!>onAnyVar<!> = 1
+ 
+     d?.<!DEBUG_INFO_DYNAMIC!>onAnyVar<!>
+     d?.<!DEBUG_INFO_DYNAMIC!>onAnyVar<!> = 1
+ 
+     run {
+         d!!.<!DEBUG_INFO_DYNAMIC!>onAnyVar<!>
+ 
+     }
+     run {
+         d!!.<!DEBUG_INFO_DYNAMIC!>onAnyVar<!> = 1
+     }
+ 
+     d.<!DEBUG_INFO_DYNAMIC!>onNullableAnyVar<!> = 1
+ 
+     d.<!DEBUG_INFO_DYNAMIC!>onStringVar<!> = 1
+ 
+     d.<!DEBUG_INFO_DYNAMIC!>onDynamicVar<!> = 1
+ 
+     d?.<!DEBUG_INFO_DYNAMIC!>onDynamicVar<!> = 1
+ 
+     (d as String).onStringVar
+     (d as Any).onAnyVar
+     (d as Any?).onNullableAnyVar
+     (d as Any).<!UNRESOLVED_REFERENCE!>onDynamicVar<!>
+ 
+     (d as String).onStringVar = 1
+     (d as Any).onAnyVar = 1
+     (d as Any?).onNullableAnyVar = 1
+     (d as Any).<!UNRESOLVED_REFERENCE!>onDynamicVar<!> = 1
+ }
+ 
+ var Any.onAnyVar: Int
+     get() = 1
+     set(<!UNUSED_PARAMETER!>v<!>) {}
+ 
+ var Any?.onNullableAnyVar: Int
+     get() = 1
+     set(<!UNUSED_PARAMETER!>v<!>) {}
+ 
+ var String.onStringVar: Int
+     get() = 1
+     set(<!UNUSED_PARAMETER!>v<!>) {}
+ 
+ var <!DYNAMIC_RECEIVER_NOT_ALLOWED!>dynamic<!>.onDynamicVar: Int
+     get() = 1
+     set(<!UNUSED_PARAMETER!>v<!>) {}
+ 
+ class C {
+     fun test(d: dynamic) {
+         d.<!DEBUG_INFO_DYNAMIC!>memberVar<!>
+         d.<!DEBUG_INFO_DYNAMIC!>memberExtensionVar<!>
+ 
+         d.<!DEBUG_INFO_DYNAMIC!>memberVar<!> = 1
+         d.<!DEBUG_INFO_DYNAMIC!>memberExtensionVar<!> = 1
+     }
+ 
+     var memberVar = 1
+     var Any.memberExtensionVar: Int
+         get() = 1
+         set(<!UNUSED_PARAMETER!>v<!>) {}
+ }`;
+                    const targetElement = $('#diff0')[0];
+                    const configuration = {
+                        drawFileList: false,
+                        fileListToggle: false,
+                        fileListStartVisible: false,
+                        fileContentToggle: false,
+                        matching: 'lines',
+                        outputFormat: 'side-by-side',
+                        synchronisedScroll: true,
+                        highlight: true,
+                        renderNothingWhenEmpty: false,
+                        rawTemplates: {
+                            'generic-file-path': `
+                                <div class="col">
+                                    <a href="https://github.com/JetBrains/kotlin/blob/3c69a5efc89f69903227c8b77f6eb4d776acef74/compiler/testData/diagnostics/testsWithJsStdLib/dynamicTypes/extensionVars.kt" target="_blank">
+                                        <strong>FE 1.0:</strong> testsWithJsStdLib/dynamicTypes/extensionVars.kt
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="https://github.com/JetBrains/kotlin/blob/3c69a5efc89f69903227c8b77f6eb4d776acef74/compiler/testData/diagnostics/testsWithJsStdLib/dynamicTypes/extensionVars.kt" target="_blank">
+                                        <strong>FIR:</strong> testsWithJsStdLib/dynamicTypes/extensionVars.kt
+                                    </a>
+                                </div>
+                            `
+                        }
+                    };
+                    const diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+                    diff2htmlUi.draw();
+                    diff2htmlUi.highlightCode();
+                })();</script>
+    </div>
+  </body>
+</html>
